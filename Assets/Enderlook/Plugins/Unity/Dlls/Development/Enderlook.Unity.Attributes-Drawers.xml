@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Enderlook.Unity.Attributes-Drawers</name>
+    </assembly>
+    <members>
+        <member name="M:Enderlook.Unity.Attributes.RestrictTypeChecking.CheckRestrictionFeasibility(Enderlook.Unity.Attributes.RestrictTypeAttribute,System.Type,System.String@)">
+            <summary>
+            Check if the given type restriction is possible.
+            </summary>
+            <param name="attribute">Attribute which produces the restriction.</param>
+            <param name="fieldType">Field to restrict.</param>
+            <param name="errorMessage">Message error, if return is <see langword="false"/>.</param>
+            <returns>Whenever its allowed or there is an error.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.RestrictTypeChecking.CheckIfTypeIsAllowed(Enderlook.Unity.Attributes.RestrictTypeAttribute,System.Type,System.String@)">
+            <summary>
+            Check if the given type is allowed by <paramref name="attribute"/> restrictions.
+            </summary>
+            <param name="attribute">Attribute which produces the restriction.</param>
+            <param name="resultType"><see cref="T:System.Type"/> to be checked</param>
+            <param name="errorMessage">Message error, if return is <see langword="false"/>.</param>
+            <returns>Whenever its allowed or there is an error.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.RestrictTypeChecking.CheckIfTypeIsAllowed(Enderlook.Unity.Attributes.RestrictTypeAttribute,System.Type)">
+            <summary>
+            Check if the given type is allowed by <paramref name="attribute"/> restrictions.
+            </summary>
+            <param name="attribute">Attribute which produces the restriction.</param>
+            <param name="resultType"><see cref="T:System.Type"/> to be checked</param>
+            <returns>Whenever its allowed or there is an error.</returns>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.SerializedPropertyGUIHelper">
+            <summary>
+            A helper class to manage <see cref="T:Enderlook.Unity.Attributes.GUIAttribute"/> and <see cref="T:Enderlook.Unity.Attributes.NameAttribute"/>.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.SerializedPropertyGUIHelper.GetGUIContent(Enderlook.Unity.Utils.UnityEditor.SerializedPropertyHelper,UnityEngine.GUIContent@)">
+            <summary>
+            Check if the <see cref="T:UnityEditor.SerializedProperty"/> does have a <see cref="T:Enderlook.Unity.Attributes.GUIAttribute"/> <see cref="!:Attribute"/> and if has change <paramref name="label"/> by its <see cref="T:UnityEngine.GUIContent"/>.
+            </summary>
+            <param name="helper"></param>
+            <param name="label">Current <see cref="T:UnityEngine.GUIContent"/>.</param>
+            <returns>Whenever there was or not an special <see cref="T:UnityEngine.GUIContent"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.SerializedPropertyGUIHelper.GetGUIContent(UnityEditor.SerializedProperty,UnityEngine.GUIContent@)">
+            <summary>
+            Check if the <see cref="T:UnityEditor.SerializedProperty"/> does have a <see cref="T:Enderlook.Unity.Attributes.GUIAttribute"/> <see cref="!:Attribute"/> and if has change <paramref name="label"/> by its <see cref="T:UnityEngine.GUIContent"/>.
+            </summary>
+            <param name="serializedProperty"></param>
+            <param name="label">Current <see cref="T:UnityEngine.GUIContent"/>.</param>
+            <returns>Whenever there was or not an special <see cref="T:UnityEngine.GUIContent"/>.</returns>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.ShowIfDrawer.active">
+            <summary>
+            If <see langword="true"/>, the property field is either disabled or hidden.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.UnityEditor.SerializedObjectExtensionsHasConfirmationField.ToggleableField(UnityEditor.SerializedObject,System.String,System.Boolean,System.Reflection.BindingFlags)" -->
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.UnityEditor.SerializedObjectExtensionsHasConfirmationField.ShowToggleableFields(UnityEditor.SerializedObject,System.Boolean,System.Reflection.BindingFlags)" -->
+    </members>
+</doc>

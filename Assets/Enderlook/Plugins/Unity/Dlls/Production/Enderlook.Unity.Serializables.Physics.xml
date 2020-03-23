@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Enderlook.Unity.Serializables.Physics</name>
+    </assembly>
+    <members>
+        <!-- Badly formed XML comment ignored for member "T:Enderlook.Unity.Serializables.Physics.Raycaster" -->
+        <!-- Badly formed XML comment ignored for member "T:Enderlook.Unity.Serializables.Physics.RaycasterWithOffset" -->
+    </members>
+</doc>

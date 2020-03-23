@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Enderlook.Unity.Attributes.AttributeUsage</name>
+    </assembly>
+    <members>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageAccessibilityAttribute.#ctor(System.Reflection.BindingFlags)">
+            <summary>
+            Determines which <see cref="T:System.Reflection.BindingFlags"/> must have the decorated.
+            </summary>
+            <param name="bindingFlags">Necessary binding flags.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageMethodAttribute.parameterNumber" -->
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageMethodAttribute.parameterType">
+            <summary>
+            Determine the type of parameter. Use <see cref="F:Enderlook.Unity.Attributes.AttributeUsage.ParameterMode.VoidOrNone"/> to specify that it should not exist.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageMethodAttribute.checkingFlags">
+            <summary>
+            Additional checking rules.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageMethodAttribute.#ctor(System.Int32,System.Type[])" -->
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageRequireDataTypeAttribute.typeFlags">
+            <summary>
+            Additional checking rules.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageRequireDataTypeAttribute.isBlackList" -->
+        <!-- Badly formed XML comment ignored for member "F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageRequireDataTypeAttribute.includeEnumerableTypes" -->
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageRequireDataTypeAttribute.#ctor(System.Type[])">
+            <summary>
+            Each time Unity compile script, they will be analyzed to check if the attribute is being used in proper DataTypes.
+            </summary>
+            <param name="types">Data types allowed. Use <see cref="!:CheckingFlags.IsBlackList"/> in <see cref="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageRequireDataTypeAttribute.typeFlags"/> to become it forbidden data types.</param>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.AttributeUsage.FieldSerialization">
+            <summary>
+            Rules that should be match by the field.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:Enderlook.Unity.Attributes.AttributeUsage.FieldSerialization.NotSerializableByUnity" -->
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.FieldSerialization.SerializableByUnity">
+            <summary>
+            Serializable fields by Unity are allowed.
+            <seealso cref="!:ReflectionHelper.CanBeSerializedByUnity(FieldInfo)"/>.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:Enderlook.Unity.Attributes.AttributeUsage.FieldSerialization.EitherSerializableOrNotByUnity" -->
+        <member name="T:Enderlook.Unity.Attributes.AttributeUsage.ParameterMode">
+            <summary>
+            The parameter mode.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:Enderlook.Unity.Attributes.AttributeUsage.ParameterMode.Common" -->
+        <!-- Badly formed XML comment ignored for member "F:Enderlook.Unity.Attributes.AttributeUsage.ParameterMode.In" -->
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.ParameterMode.Out">
+            <summary>
+            Specifies an out parameter.
+            If <see cref="!:parameterNumber"/> is 0, this will be ignored.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.ParameterMode.Ref">
+            <summary>
+            Specifies a reference parameter.
+            If <see cref="!:parameterNumber"/> is 0, this will be ignored.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.ParameterMode.VoidOrNone">
+            <summary>
+            Specifies that this parameter should not exist.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.AttributeUsage.TypeCasting">
+            <summary>
+            Determine relation of types to look for.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.TypeCasting.ExactMatch">
+            <summary>
+            It must check for the same exact type.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.TypeCasting.CheckSubclassTypes">
+            <summary>
+            Whenever it should check if the type is a subclass of one of the listed types.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.TypeCasting.CheckSuperclassTypes">
+            <summary>
+            Whenever it should check if the type is superclass of one of the listed types.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.TypeCasting.CheckIsAssignableTypes">
+            <summary>
+            Whenever it should check for assignable from type to one of the listed types.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.TypeCasting.CheckSubclassOrAssignable">
+            <summary>
+            <see cref="F:Enderlook.Unity.Attributes.AttributeUsage.TypeCasting.CheckSubclassTypes"/> or <see cref="F:Enderlook.Unity.Attributes.AttributeUsage.TypeCasting.CheckIsAssignableTypes"/>.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.TypeCasting.CheckCanBeAssignedTypes">
+            <summary>
+            Whenever it should check if type can be assigned to one of the listed types.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.TypeCasting.CheckSuperClassOrCanBeAssigned">
+            <summary>
+            <see cref="F:Enderlook.Unity.Attributes.AttributeUsage.TypeCasting.CheckIsAssignableTypes"/> or <see cref="F:Enderlook.Unity.Attributes.AttributeUsage.TypeCasting.CheckCanBeAssignedTypes"/>.
+            </summary>
+        </member>
+    </members>
+</doc>

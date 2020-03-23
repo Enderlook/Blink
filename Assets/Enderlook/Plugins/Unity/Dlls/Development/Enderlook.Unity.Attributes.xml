@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Enderlook.Unity.Attributes</name>
+    </assembly>
+    <members>
+        <member name="F:Enderlook.Unity.Attributes.DrawVectorRelativeToTransformAttribute.usePositionHandler">
+            <summary>
+            Whenever it should use <see cref="M:UnityEditor.Handles.PositionHandle(UnityEngine.Vector3,UnityEngine.Quaternion)"/> or <see cref="M:UnityEditor.Handles.FreeMoveHandle(UnityEngine.Vector3,UnityEngine.Quaternion,System.Single,UnityEngine.Vector3,UnityEditor.Handles.CapFunction)"/> to draw the handler.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.DrawVectorRelativeToTransformAttribute.icon">
+            <summary>
+            Icon displayed in scene. If empty no icon will be displayed.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.DrawVectorRelativeToTransformAttribute.reference">
+            <summary>
+            Reference used to show handler. If empty, <see cref="T:UnityEngine.Transform"/> of the <see cref="T:UnityEngine.GameObject"/> will be used.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.GUIAttribute.Mode">
+            <summary>
+            How the name will behave
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.GUIAttribute.Mode.Value">
+            <summary>
+            Use the string as value
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.GUIAttribute.Mode.Reference">
+            <summary>
+            Use the string to get the real value by reflection.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.HasConfirmationFieldAttribute.IsConfirmed``1(``0,System.Reflection.BindingFlags)" -->
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.HasConfirmationFieldAttribute.IsConfirmed``1(``0)" -->
+        <member name="M:Enderlook.Unity.Attributes.HasConfirmationFieldAttribute.GetFieldsWithConfirmationAttribute``1(``0,System.Reflection.BindingFlags)">
+            <summary>
+            Get all fields from <typeparamref name="T"/> type in <paramref name="instance"/> which has <see cref="T:Enderlook.Unity.Attributes.HasConfirmationFieldAttribute"/>.
+            </summary>
+            <typeparam name="T">Type of data to look for fields.</typeparam>
+            <param name="instance">Instance of <typeparamref name="T"/> used to find fields.</param>
+            <param name="bindingFlags">Binding flags used to find fields.</param>
+            <returns>Field and its confirmation attribute</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.HasConfirmationFieldAttribute.GetFieldsWithConfirmationAttribute``1(``0)">
+            <summary>
+            Get all fields from <typeparamref name="T"/> type in <paramref name="instance"/> which has <see cref="T:Enderlook.Unity.Attributes.HasConfirmationFieldAttribute"/>.
+            </summary>
+            <typeparam name="T">Type of data to look for fields.</typeparam>
+            <param name="instance">Instance of <typeparamref name="T"/> used to find fields.</param>
+            <returns>Field and its confirmation attribute</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.HasConfirmationFieldAttribute.GetConfirmedFields``1(``0,System.Reflection.BindingFlags)">
+            <summary>
+            Get all fields from <typeparamref name="T"/> type in <paramref name="instance"/> which has <see cref="T:Enderlook.Unity.Attributes.HasConfirmationFieldAttribute"/> and is <see langword="true"/>.
+            </summary>
+            <typeparam name="T">Type of data to look for fields.</typeparam>
+            <param name="instance">Instance of <typeparamref name="T"/> used to find fields.</param>
+            <param name="bindingFlags">Binding flags used to find fields.</param>
+            <returns>Fields which attribute are <see langword="true"/></returns>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.HasConfirmationFieldAttribute.GetConfirmedFields``1(``0)">
+            <summary>
+            Get all fields from <typeparamref name="T"/> type in <paramref name="instance"/> which has <see cref="T:Enderlook.Unity.Attributes.HasConfirmationFieldAttribute"/> and is <see langword="true"/>.
+            </summary>
+            <typeparam name="T">Type of data to look for fields.</typeparam>
+            <param name="instance">Instance of <typeparamref name="T"/> used to find fields.</param>
+            <returns>Fields which attribute are <see langword="true"/></returns>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.IndentedAttribute">
+            <summary>
+            Add or remove indentation to the drew serialized property.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.IndentedAttribute.indentationOffset">
+            <summary>
+            Indentation to add.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.IndentedAttribute.#ctor(System.Int32)">
+            <summary>
+            Add or remove indentation to the drew serialized property.
+            </summary>
+            <param name="indentationOffset">Indentation to add. Negative values remove indentation.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.RestrictTypeAttribute.#ctor(System.Type[])">
+            <summary>
+            Restrict the values of this field by only types which implement, inherit or can be casted to all the types from <paramref name="restriction"/>.<br/>
+            Additionally, the values of this field must inherit from <see cref="T:UnityEngine.Object"/>.
+            </summary>
+            <param name="restriction">Values must implement, inherit or be castable to all this types.<br/>
+            If a type is a class, it must inherit from <see cref="T:UnityEngine.Object"/>. Struct types are not allowed.</param>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.ShowIfAttribute.ActionMode">
+            <summary>
+            Action to take depending of the condition.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.ShowIfAttribute.ActionMode.ShowHide">
+            <summary>
+            The property will be hidden or show depending of the condition.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.ShowIfAttribute.ActionMode.EnableDisable">
+            <summary>
+            The property will be disabled or enabled depending of the condition.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.ShowIfAttribute.#ctor(System.String,Enderlook.Unity.Attributes.ShowIfAttribute.ActionMode,System.Boolean)">
+            <summary>
+            Action to take depending of the condition.
+            </summary>
+            <param name="nameOfConditional">Action to take depending of the condition.</param>
+            <param name="goal">Required boolean state to show or enable the property.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.ShowIfAttribute.#ctor(System.String,System.Boolean)">
+            <summary>
+            Action to take depending of the condition.
+            </summary>
+            <param name="goal">Required boolean state to show or enable the property.</param>
+        </member>
+    </members>
+</doc>

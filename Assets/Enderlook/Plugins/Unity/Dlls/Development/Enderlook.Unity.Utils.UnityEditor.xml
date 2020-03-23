@@ -1,0 +1,327 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Enderlook.Unity.Utils.UnityEditor</name>
+    </assembly>
+    <members>
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.UnityEditor.AssetDatabaseHelper.CreateAsset(UnityEngine.Object,System.String,System.Boolean)" -->
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.UnityEditor.AssetDatabaseHelper.CreateAssetFromObjects(System.Collections.Generic.IEnumerable{UnityEngine.Object},System.String,System.Boolean)" -->
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.UnityEditor.AssetDatabaseHelper.AddObjectToAsset(UnityEngine.Object,System.String,System.Boolean)" -->
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.UnityEditor.AssetDatabaseHelper.AddObjectToAsset(System.Collections.Generic.IEnumerable{UnityEngine.Object},System.String,System.Boolean)" -->
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.AssetDatabaseHelper.GetAssetDirectory(UnityEngine.Object)">
+            <summary>
+            Get directory of the asset <paramref name="object"/>.
+            </summary>
+            <param name="object">Asset to get directory.</param>
+            <returns>Directory where thee asset is saved.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.AssetDatabaseHelper.GetAssetPath(UnityEngine.Object)">
+            <summary>
+            Get the asset path of <paramref name="object"/>.<br/>
+            For <see cref="T:UnityEngine.GameObject"/>s it does return the file where it's being save, which can be an scene or prefab file.
+            </summary>
+            <param name="object">Object to get asset path.</param>
+            <returns>Asset path of object, if any.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.AssetDatabaseHelper.GetAssetPath(UnityEditor.SerializedObject)">
+            <summary>
+            Get the asset path of <paramref name="serializedObject"/>.<br/>
+            For <see cref="T:UnityEngine.GameObject"/>s it does return the file where it's being save, which can be an scene or prefab file.
+            </summary>
+            <param serializedObject="object"><see cref="T:UnityEditor.SerializedObject"/> to get asset path.</param>
+            <returns>Asset path of object, if any.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.AssetDatabaseHelper.GetAssetPath(UnityEditor.SerializedProperty)">
+            <summary>
+            Get the asset path of <paramref name="serializedProperty"/>.<br/>
+            For <see cref="T:UnityEngine.GameObject"/>s it does return the file where it's being save, which can be an scene or prefab file.
+            </summary>
+            <param serializedProperty="object"><see cref="T:UnityEditor.SerializedProperty"/> to get asset path.</param>
+            <returns>Asset path of object, if any.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.AssetDatabaseHelper.ExtractSubAsset(UnityEngine.Object,System.String)">
+            <summary>
+            Extract a sub asset from an asset file to <paramref name="newPath"/>.
+            </summary>
+            <param name="subAsset">Sub asset to extract. Can't be main asset.</param>
+            <param name="newPath">Path to new asset file.</param>
+            <returns>New sub asset. <see langword="null"/> if <paramref name="subAsset"/> was a main asset.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.AssetDatabaseHelper.ExtractSubAsset(UnityEngine.Object@,System.String)">
+            <summary>
+            Extract a sub asset from an asset file to <paramref name="newPath"/>.<br/>
+            </summary>
+            <param name="subAsset">Sub asset to extract. Can't be main asset, otherwise <paramref name="subAsset"/> becomes <see langword="null"/>.</param>
+            <param name="newPath">Path to new asset file.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.AssetDatabaseHelper.ExtractSubAsset(UnityEngine.Object@)">
+            <summary>
+            Extract a sub asset from an asset file.<br/>
+            </summary>
+            <param name="subAsset">Sub asset to extract. Can't be main asset, otherwise <paramref name="subAsset"/> becomes <see langword="null"/>.</param>
+            <returns>New sub asset path, if fail this path is invalid.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.GUIHelper.Header(System.String)">
+            <summary>
+            Add a header.
+            </summary>
+            <param name="text">Text of header.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.GUIHelper.DrawScriptField(UnityEditor.Editor)">
+            <summary>
+            Draw the grey script field of the target script of this custom editor.
+            </summary>
+            <param name="source">Custom editor whose target script field will be draw.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.PropertyDrawerHelper.FindAllSerializePropertiesInActiveEditorWithTheAttribute``1(System.Boolean)">
+            <summary>
+            Get all <see cref="T:UnityEditor.SerializedProperty"/> that have the <typeparamref name="T"/> attribute and are in one of the <see cref="!:MonoBehaviour"/> of the current(s) active(s) editor(s).
+            </summary>
+            <typeparam name="T">Attribute type to look for.</typeparam>
+            <param name="inherit">Whenever it should look for inherited attributes.</param>
+            <returns>An enumerable with all the properties, fields, attributes and the editor where they were taken.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.UnityEditor.SerializedObjectExtensions.PropertyFieldAutoSave(UnityEditor.SerializedObject,UnityEditor.SerializedProperty,System.Boolean)" -->
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedObjectExtensions.PropertyFieldAutoSave(UnityEditor.SerializedObject,System.String,System.Boolean)">
+            <summary>
+            Create a Property Field and save it changes.
+            </summary>
+            <param name="source">Instance where its executed this method.</param>
+            <param name="serializedProperty">Name of the <see cref="T:UnityEditor.SerializedProperty"/> to show in the inspector./param>
+            <param name="includeChildren"/>If <see langword="true"/> the property including children is drawn.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedObjectExtensions.ChangeCheck``1(UnityEditor.SerializedObject,System.Func{``0},``0@,System.String)">
+            <summary>
+            Store the change done in <paramref name="func"/> inside <paramref name="field"/>.
+            </summary>
+            <typeparam name="T">Type of return value by <paramref name="func"/>.</typeparam>
+            <param name="source">Instance where its executed this method.</param>
+            <param name="func">Function to execute in order to get changes.</param>
+            <param name="field">Variable to store the changes made by <paramref name="func"/>.</param>
+            <param name="reason">Reason to save.</param>
+            <see url="https://forum.unity.com/threads/custom-editor-losing-settings-on-play.130889/"/>
+            <see url="https://docs.unity3d.com/ScriptReference/Undo.RecordObject.html"/>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedObjectExtensions.DrawFieldIfConfirmed``1(UnityEditor.SerializedObject,``0@,System.Func{``0},System.Boolean,System.String)">
+            <summary>
+            Draw an indented field if <paramref name="confirm"/> is <see langword="true"/> and save an undo for it changes.
+            </summary>
+            <typeparam name="T">Type of return value by <paramref name="toShowField"/>.</typeparam>
+            <param name="source">Instance where its executed this method.</param>
+            <param name="field">Field to store the changes made by the function.</param>
+            <param name="toShowField">Function which creates the field on Unity Inspector.</param>
+            <param name="confirm">Whenever it should be drew or not.</param>
+            <param name="reasonForUndo">Reason used when save undo operation.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedObjectExtensions.DrawFieldIfConfirmed(UnityEditor.SerializedObject,UnityEditor.SerializedProperty,System.Boolean,System.Boolean)">
+            <summary>
+            Draw an indented property field if <paramref name="confirm"/> is <see langword="true"/> and save an undo for it changes.
+            </summary>
+            <param name="source">Instance where its executed this method.</param>
+            <param name="serializedProperty"><see cref="T:UnityEditor.SerializedProperty"/> to show in the inspector./param>
+            <param name="includeChildren"/>If <see langword="true"/> the property including children is drawn.</param>
+            <param name="confirm">Whenever it should be drew or not.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedObjectExtensions.DrawFieldIfConfirmed(UnityEditor.SerializedObject,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Draw an indented property field if <paramref name="confirm"/> is <see langword="true"/> and save an undo for it changes.
+            </summary>
+            <param name="source">Instance where its executed this method.</param>
+            <param name="serializedProperty">Name of the <see cref="T:UnityEditor.SerializedProperty"/> to show in the inspector./param>
+            <param name="includeChildren"/>If <see langword="true"/> the property including children is drawn.</param>
+            <param name="confirm">Whenever it should be drew or not.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedObjectExtensions.DrawIdentedIfConfirmed(System.Action,System.Boolean)">
+            <summary>
+            Do something indented in the Unity Inspector if <paramref name="confirm"/> is <see langword="true"/>.
+            </summary>
+            <param name="action"><see cref="T:System.Action"/> to be performed indented.</param>
+            <param name="confirm">Whenever it should be drew or not.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.UnityEditor.SerializedObjectExtensions.ToggleableField``1(UnityEditor.SerializedObject,``0@,System.Func{``0},System.Boolean@,System.String,System.String,System.String)" -->
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.UnityEditor.SerializedObjectExtensions.ToggleableField``1(UnityEditor.SerializedObject,``0@,System.Func{``0},System.Boolean@,UnityEngine.GUIContent,System.String)" -->
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.UnityEditor.SerializedObjectExtensions.ToggleableField(UnityEditor.SerializedObject,UnityEditor.SerializedProperty,System.Boolean@,UnityEngine.GUIContent,System.String,System.Boolean)" -->
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.UnityEditor.SerializedObjectExtensions.ToggleableField(UnityEditor.SerializedObject,System.String,System.Boolean@,UnityEngine.GUIContent,System.String,System.Boolean)" -->
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedObjectExtensions.ToggleableField(UnityEditor.SerializedObject,UnityEditor.SerializedProperty,UnityEditor.SerializedProperty,System.Boolean)">
+            <summary>
+            Generate a toggleable button to hide or show a certain field, which is also created by this method.
+            </summary>
+            <param name="source">Instance where its executed this method.</param>
+            <param name="serializedProperty"><see cref="T:UnityEditor.SerializedProperty"/> to show in the inspector.</param>
+            <param name="booleanSerializedProperty"><see cref="T:UnityEditor.SerializedProperty"/> to show in the inspector as confirmation checkbox./param>
+            <param name="includeChildren"/>If <see langword="true"/> the <paramref name="serializedProperty"/> including children is drawn.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.UnityEditor.SerializedObjectExtensions.ToggleableField(UnityEditor.SerializedObject,System.String,System.String,System.Boolean)" -->
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedObjectExtensions.FindBackingFieldOfProperty(UnityEditor.SerializedObject,System.String)">
+            <summary>
+            Get the <see cref="T:UnityEditor.SerializedProperty"/> of the backing field of a property.
+            </summary>
+            <param name="source"><see cref="T:UnityEditor.SerializedObject"/> where the <see cref="T:UnityEditor.SerializedProperty"/> will be taken.</param>
+            <param name="name">Name of the property which backing field will be get.</param>
+            <returns><see cref="T:UnityEditor.SerializedProperty"/> of the backing field of <paramref name="name"/> property.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedObjectExtensions.FindPropertyOrBackingField(UnityEditor.SerializedObject,System.String)">
+            <summary>
+            Get the <see cref="T:UnityEditor.SerializedProperty"/> of the field or backing field of it property.
+            </summary>
+            <param name="source"><see cref="T:UnityEditor.SerializedObject"/> where the <see cref="T:UnityEditor.SerializedProperty"/> will be taken.</param>
+            <param name="name">Name of the property to get.</param>
+            <returns><see cref="T:UnityEditor.SerializedProperty"/> of the field or backing field of <paramref name="name"/> property.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyExtensions.IsArrayOrListElement(UnityEditor.SerializedProperty)">
+            <summary>
+            Check if <paramref name="source"/> is an element from an array or list.
+            </summary>
+            <param name="source"><see cref="T:UnityEditor.SerializedProperty"/> to check.</param>
+            <returns>Whenever it's an element of an array or list, or not.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyExtensions.IsArrayOrListSize(UnityEditor.SerializedProperty)">
+            <summary>
+            Check if <paramref name="source"/> is the array or list size.
+            </summary>
+            <param name="source"><see cref="T:UnityEditor.SerializedProperty"/> to check.</param>
+            <returns>Whenever it's the array or list size, or not</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyExtensions.GetEnumerableTargetObjectOfProperty(UnityEditor.SerializedProperty,System.Boolean,System.Boolean)">
+            <summary>
+            Gets the target object hierarchy of <paramref name="source"/>. It does work for nested serialized properties.
+            </summary>
+            <param name="source"><see cref="T:UnityEditor.SerializedProperty"/> whose value will be get.</param>
+            <param name="includeItself">If <see langword="true"/> the first returned element will be <c><paramref name="source"/>.serializedObject.targetObject</c>.</param>
+            <param name="preferNullInsteadOfException">If <see langword="true"/>, it will return <see langword="null"/> instead of throwing exceptions if can't find objects.</param>
+            <returns>Hierarchy traveled to get the target object.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyExtensions.GetTargetObjectOfProperty(UnityEditor.SerializedProperty,System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyExtensions.GetParentTargetObjectOfProperty(UnityEditor.SerializedProperty)" -->
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyExtensions.GetTargetObjectAccessors(UnityEditor.SerializedProperty)" -->
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyExtensions.GetGUIContent(UnityEditor.SerializedProperty)">
+            <summary>
+            Produce a <see cref="T:UnityEngine.GUIContent"/> with the <see cref="P:UnityEditor.SerializedProperty.displayName"/> as <see cref="P:UnityEngine.GUIContent.text"/> and <see cref="P:UnityEditor.SerializedProperty.tooltip"/> as <see cref="P:UnityEngine.GUIContent.tooltip"/>.
+            </summary>
+            <param name="source">><see cref="T:UnityEditor.SerializedProperty"/> to get <see cref="T:UnityEngine.GUIContent"/>.</param>
+            <returns><see cref="T:UnityEngine.GUIContent"/> of <paramref name="source"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyExtensions.GetGUIContentOfBackingField(UnityEditor.SerializedProperty)">
+            <summary>
+            Produce a <see cref="T:UnityEngine.GUIContent"/> with the <see cref="P:UnityEditor.SerializedProperty.displayName"/> as <see cref="P:UnityEngine.GUIContent.text"/> and <see cref="P:UnityEditor.SerializedProperty.tooltip"/> as <see cref="P:UnityEngine.GUIContent.tooltip"/>, but removing the backing field tag.
+            </summary>
+            <param name="source">><see cref="T:UnityEditor.SerializedProperty"/> to get <see cref="T:UnityEngine.GUIContent"/>.</param>
+            <returns><see cref="T:UnityEngine.GUIContent"/> of <paramref name="source"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyExtensions.GetCurrentPropertyValueType(UnityEditor.SerializedProperty)">
+            <summary>
+            Get the <see cref="T:System.Type"/> of the current value of <paramref name="source"/>.
+            </summary>
+            <param name="source"><see cref="T:UnityEditor.SerializedProperty"/> whose current <see cref="T:System.Type"/> will be get.</param>
+            <returns><see cref="T:System.Type"/> of the current value of <paramref name="source"/>. Or <see langword="null"/> if it is empty.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyExtensions.GetFieldInfo(UnityEditor.SerializedProperty,System.Boolean)">
+            <summary>
+            Get the <see cref="T:System.Reflection.FieldInfo"/> of <see cref="T:UnityEditor.SerializedProperty"/>.
+            </summary>
+            <param name="source"><see cref="T:UnityEditor.SerializedProperty"/> whose <see cref="T:System.Reflection.FieldInfo"/> will be get.</param>
+            <param name="includeInheritedPrivate">Whenever it should also search private fields of supper-classes.</param>
+            <returns><see cref="T:System.Reflection.FieldInfo"/> of <paramref name="source"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyExtensions.GetFieldType(UnityEditor.SerializedProperty,System.Boolean)">
+            <summary>
+            Get the field <see cref="T:System.Type"/> of <paramref name="source"/>.
+            </summary>
+            <param name="source"><see cref="T:UnityEditor.SerializedProperty"/> whose <see cref="T:System.Type"/> will be get.</param>
+            <param name="includeInheritedPrivate">Whenever it should also search private fields of supper-classes.</param>
+            <returns><see cref="T:System.Type"/> of the <paramref name="source"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyExtensions.GetIndexFromArray(UnityEditor.SerializedProperty)">
+            <summary>
+            Get the index of the <paramref name="source"/> if it's an element of an array.
+            </summary>
+            <param name="source"><see cref="T:UnityEditor.SerializedProperty"/> element of array.</param>
+            <returns>Its index.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when <paramref name="source"/> doesn't come from an array.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyExtensions.FindRelativeBackingFieldOfProperty(UnityEditor.SerializedProperty,System.String)">
+            <summary>
+            Get the <see cref="T:UnityEditor.SerializedProperty"/> of the backing field of a property.
+            </summary>
+            <param name="source"><see cref="T:UnityEditor.SerializedProperty"/> where the <see cref="T:UnityEditor.SerializedProperty"/> will be taken.</param>
+            <param name="name">Name of the property which backing field will be get.</param>
+            <returns><see cref="T:UnityEditor.SerializedProperty"/> of the backing field of <paramref name="name"/> property.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyExtensions.FindRelativePropertyOrBackingField(UnityEditor.SerializedProperty,System.String)">
+            <summary>
+            Get the <see cref="T:UnityEditor.SerializedProperty"/> of the field or backing field of it property.
+            </summary>
+            <param name="source"><see cref="T:UnityEditor.SerializedProperty"/> where the <see cref="T:UnityEditor.SerializedProperty"/> will be taken.</param>
+            <param name="name">Name of the property to get.</param>
+            <returns><see cref="T:UnityEditor.SerializedProperty"/> of the field or backing field of <paramref name="name"/> property.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyHelper.ResetCycle">
+            <summary>
+            Reset cached values, this method should be executed once per Unity Editor update.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyHelper.GetParentTargetObjectOfProperty" -->
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyHelper.GetTargetObjectOfProperty(System.Int32)" -->
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyHelper.TryGetParentTargetObjectOfPropertyUnsafe(System.Object@)">
+            <summary>
+            Try to execute <see cref="M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyHelper.GetParentTargetObjectOfProperty"/> ignoring error produced by property drawer rendering before update of the <see cref="T:UnityEditor.SerializedProperty"/>.<br/>
+            It does not ignore other types of errors.
+            Executing this more than one time per Unity Editor frame may wrong result.<br/>
+            </summary>
+            <param name="result">Parent target object of property.</param>
+            <returns>Whenever it was successful or not.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyHelper.TryGetParentTargetObjectOfProperty(System.Object@)">
+            <summary>
+            Try to execute <see cref="M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyHelper.GetParentTargetObjectOfProperty"/> ignoring error produced by property drawer rendering before update of the <see cref="T:UnityEditor.SerializedProperty"/>.<br/>
+            It does not ignore other types of errors.
+            This value is cached until <see cref="M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyHelper.ResetCycle"/> is <see langword="true"/>;
+            </summary>
+            <param name="result">Parent target object of property.</param>
+            <returns>Whenever it was successful or not.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyHelper.TryGetTargetObjectOfPropertyUnsafe(System.Object@)">
+            <summary>
+            Try to execute <see cref="M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyHelper.GetTargetObjectOfProperty(System.Int32)"/> ignoring error produced by property drawer rendering before update of the <see cref="T:UnityEditor.SerializedProperty"/>.<br/>
+            It does not ignore other types of errors.<br/>
+            Executing this more than one time per Unity Editor frame may produce wrong results.<br/>
+            </summary>
+            <param name="result">Parent target object of property.</param>
+            <returns>Whenever it was successful or not.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyHelper.TryGetTargetObjectOfProperty(System.Object@)">
+            <summary>
+            Try to execute <see cref="M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyHelper.GetTargetObjectOfProperty(System.Int32)"/> ignoring error produced by property drawer rendering before update of the <see cref="T:UnityEditor.SerializedProperty"/>.<br/>
+            It does not ignore other types of errors.<br/>
+            This value is cached until <see cref="M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyHelper.ResetCycle"/> is <see langword="true"/>;
+            </summary>
+            <param name="result">Parent target object of property.</param>
+            <returns>Whenever it was successful or not.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyHelper.GetGUIContent">
+            <summary>
+            Produce a <see cref="T:UnityEngine.GUIContent"/> with the <see cref="P:UnityEditor.SerializedProperty.displayName"/> as <see cref="P:UnityEngine.GUIContent.text"/> and <see cref="P:UnityEditor.SerializedProperty.tooltip"/> as <see cref="P:UnityEngine.GUIContent.tooltip"/>.
+            </summary>
+            <returns><see cref="T:UnityEngine.GUIContent"/> of <paramref name="source"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyHelper.GetAttributeFromField``1(System.Boolean)">
+            <summary>
+            Get the <see cref="T:System.Attribute"/> of type <typeparamref name="T"/> of the field.<br/>
+            It does include <see langword="private"/> fields of super-classes.
+            </summary>
+            <typeparam name="T">Type of the <see cref="T:System.Attribute"/></typeparam>
+            <param name="includeInheritedPrivate">Whenever it should also search private fields of supper-classes.</param>
+            <returns>The <see cref="T:System.Attribute"/> of type <typeparamref name="T"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyHelper.TryGetAttributeFromField``1(``0@,System.Boolean)">
+            <summary>
+            Try get the <see cref="T:System.Attribute"/> of type <typeparamref name="T"/> of the field.<br/>
+            It does include <see langword="private"/> fields of super-classes.
+            </summary>
+            <typeparam name="T">Type of the <see cref="T:System.Attribute"/></typeparam>
+            <param name="attribute">The <see cref="T:System.Attribute"/> of type <typeparamref name="T"/>.</param>
+            <param name="includeInheritedPrivate">Whenever it should also search private fields of supper-classes.</param>
+            <returns>Whenever it could be found or not.</returns>
+        </member>
+    </members>
+</doc>

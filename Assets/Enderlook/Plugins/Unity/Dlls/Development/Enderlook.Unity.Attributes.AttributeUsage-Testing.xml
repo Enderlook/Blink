@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Enderlook.Unity.Attributes.AttributeUsage-Testing</name>
+    </assembly>
+    <members>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.DoNotCheckAttributeTesting.CheckIfShouldBeIgnored(System.Reflection.MemberInfo,System.Type)">
+            <summary>
+            Check if this <paramref name="memberInfo"/> should be ignored when checking if has <paramref name="typeThatMayBeIgnored"/>.
+            </summary>
+            <param name="memberInfo">Member to check.</param>
+            <param name="typeThatMayBeIgnored">Type of attribute that it's being checked.</param>
+            <returns>Whenever it should be ignored or not.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.DoNotCheckAttributeTesting.CheckIfShouldBeIgnored(System.Type,System.Type)">
+            <summary>
+            Check if this <paramref name="type"/> should be ignored when checking if has <paramref name="typeThatMayBeIgnored"/>.
+            </summary>
+            <param name="type">Type to check.</param>
+            <param name="typeThatMayBeIgnored">Type of attribute that it's being checked.</param>
+            <returns>Whenever it should be ignored or not.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.DoNotCheckAttributeTesting.GetAttributeTypesThatShouldBeIgnored(System.Reflection.MemberInfo)">
+            <summary>
+            Get attribute types that should be ignored.
+            </summary>
+            <param name="memberInfo">Member to check.</param>
+            <returns>Attribute types that should be ignored.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.DoNotCheckAttributeTesting.GetAttributeTypesThatShouldBeIgnored(System.Type)">
+            <summary>
+            Get attribute types that should be ignored.
+            </summary>
+            <param name="type">Type to check.</param>
+            <returns>Attribute types that should be ignored.</returns>
+        </member>
+    </members>
+</doc>

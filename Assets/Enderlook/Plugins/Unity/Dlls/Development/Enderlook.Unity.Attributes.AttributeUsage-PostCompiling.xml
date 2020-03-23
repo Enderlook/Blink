@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Enderlook.Unity.Attributes.AttributeUsage-PostCompiling</name>
+    </assembly>
+    <members>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.AssembliesHelper.GetAllAssembliesOfPlayerAndEditorAssemblies(System.Boolean)">
+            <summary>
+            Get all assemblies from <see cref="P:System.AppDomain.CurrentDomain"/> which are in the <see cref="M:UnityEditor.Compilation.CompilationPipeline.GetAssemblies"/> either <see cref="F:UnityEditor.Compilation.AssembliesType.Editor"/> and <see cref="F:UnityEditor.Compilation.AssembliesType.Player"/>.
+            </summary>
+            <param name="ingoreCache">Whenever it should recalculate the value regardless the cache.</param>
+            <returns>Assemblies which matches criteria.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.BaseExecuteWhenScriptsReloads.loop" -->
+        <!-- Badly formed XML comment ignored for member "T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachFieldOfEachTypeWhenScriptsReloads" -->
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachFieldOfEachTypeWhenScriptsReloads.fieldFilter">
+            <summary>
+            Determines rules about in which field does match.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachFieldOfEachTypeWhenScriptsReloads.#ctor(Enderlook.Unity.Attributes.AttributeUsage.FieldSerialization,System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachMemberOfEachTypeWhenScriptsReloads" -->
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachMemberOfEachTypeWhenScriptsReloads.#ctor(System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachMethodOfEachTypeWhenScriptsReloads" -->
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachMethodOfEachTypeWhenScriptsReloads.#ctor(System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachPropertyOfEachTypeWhenScriptsReloads" -->
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachPropertyOfEachTypeWhenScriptsReloads.#ctor(System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads" -->
+        <member name="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads.TypeFlags">
+            <summary>
+            Rules that should be match by the type.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads.TypeFlags.IsEnum">
+            <summary>
+            Only execute on types which <see cref="P:System.Type.IsEnum"/> is <see langword="true"/>.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads.TypeFlags.IsNonEnum">
+            <summary>
+            Only execute on types which <see cref="P:System.Type.IsEnum"/> is <see langword="false"/>.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads.TypeFlags.IsEitherEnumNonEnum">
+            <summary>
+            Execute on types regardless <see cref="P:System.Type.IsEnum"/>.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads.typeFilter">
+            <summary>
+            Determines rules about in which types does match.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads.#ctor(Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads.TypeFlags,System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteWhenScriptsReloads" -->
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteWhenScriptsReloads.#ctor(System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeOnEachTypeLessEnums(System.Action{System.Type},System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeOnEachTypeEnum(System.Action{System.Type},System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeOnEachMemberOfTypes(System.Action{System.Reflection.MemberInfo},System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeOnEachSerializableByUnityFieldOfTypes(System.Action{System.Reflection.FieldInfo},System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeOnEachNonSerializableByUnityFieldOfTypes(System.Action{System.Reflection.FieldInfo},System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeOnEachPropertyOfTypes(System.Action{System.Reflection.PropertyInfo},System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeOnEachMethodOfTypes(System.Action{System.Reflection.MethodInfo},System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeToExecuteOnce(System.Action,System.Int32)" -->
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.GetAllTypesThatShouldBeInspected">
+            <summary>
+            Get all types from assemblies which doesn't have <see cref="T:Enderlook.Unity.Attributes.AttributeUsage.DoNotInspectAttribute"/> either the type or the assembly.
+            </summary>
+            <returns>All types of Player and Editor assemblies, which matches criteria..</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.ReflectionHelper.CanBeSerializedByUnity(System.Type)">
+            <summary>
+            Check if the given type can be serialized by Unity.
+            </summary>
+            <param name="type">Type to check.</param>
+            <returns>Whenever the field can be serialized by Unity of not.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.ReflectionHelper.CanBeSerializedByUnity(System.Reflection.FieldInfo)">
+            <summary>
+            Check if the given field can be serialized by Unity.
+            </summary>
+            <param name="fieldInfo">Field to check.</param>
+            <returns>Whenever the field can be serialized by Unity of not.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.ReflectionHelper.CanBeSerializedByUnity(System.Reflection.TypeInfo)">
+            <summary>
+            Check if the given type can be serialized by Unity.
+            </summary>
+            <param name="typeInfo">Typeinfo of type to check.</param>
+            <returns>Whenever the field can be serialized by Unity of not.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.ReflectionHelper.FieldsPropertiesAndMethodsWithReturnTypeOf(System.Type,System.Type)">
+            <summary>
+            Get all member names of <paramref name="class"/> which:
+            <list type="bullet">
+                <item><description>If <see cref="T:System.Reflection.MethodInfo"/>, its <see cref="P:System.Reflection.MethodInfo.ReturnType"/> must be <typeparamref name="T"/> and it must not require mandatory parameters (can have optionals or params).</description></item>
+                <item><description>If <see cref="T:System.Reflection.PropertyInfo"/>, its <see cref="P:System.Reflection.PropertyInfo.PropertyType"/> must be <typeparamref name="T"/> and it must have a setter.</description></item>
+                <item><description>If <see cref="T:System.Reflection.FieldInfo"/>, its <see cref="P:System.Reflection.FieldInfo.FieldType"/> must be <typeparamref name="T"/>.</description></item>
+            </list>
+            </summary>
+            <param name="class">Type where member are looked for.</param>
+            <param name="return">Return type for criteria.</param>
+            <returns>Member names which matches the criteria.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.ReflectionHelper.FieldsPropertiesAndMethodsWithReturnTypeOf``1(System.Type)">
+            <summary>
+            Get all member names of <paramref name="class"/> which:
+            <list type="bullet">
+                <item><description>If <see cref="T:System.Reflection.MethodInfo"/>, its <see cref="P:System.Reflection.MethodInfo.ReturnType"/> must be <typeparamref name="T"/> and it must not require mandatory parameters (can have optionals or params).</description></item>
+                <item><description>If <see cref="T:System.Reflection.PropertyInfo"/>, its <see cref="P:System.Reflection.PropertyInfo.PropertyType"/> must be <typeparamref name="T"/> and it must have a setter.</description></item>
+                <item><description>If <see cref="T:System.Reflection.FieldInfo"/>, its <see cref="P:System.Reflection.FieldInfo.FieldType"/> must be <typeparamref name="T"/>.</description></item>
+            </list>
+            </summary>
+            <typeparam name="T">Return type for criteria.</typeparam>
+            <param name="class">Type where member are looked for.</param>
+            <returns>Member names which matches the criteria.</returns>
+        </member>
+    </members>
+</doc>
