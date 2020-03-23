@@ -29,7 +29,7 @@ RectTransform:
   m_GameObject: {fileID: 8150760654224925313}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_Children:
   - {fileID: 8150760654684562820}
   m_Father: {fileID: 0}
@@ -115,7 +115,7 @@ MonoBehaviour:
   timeBeforeDestroy: 1
   textColor: {r: 1, g: 0, b: 0, a: 1}
   randomOffset: {x: 0.5, y: 0.5}
-  scaleMultiplier: 1
+  scaleMultiplier: 0.05
   digitPrecision: 0
   typeOfRounding: 0
   text: {fileID: 8150760654684562821}
