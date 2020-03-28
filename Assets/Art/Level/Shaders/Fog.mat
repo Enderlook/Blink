@@ -26,10 +26,10 @@ Material:
     m_Floats:
     - _Amount: 8
     - _FogIntensity: 1
-    - _FogMaxIntensifty: 0.22
+    - _FogMaxIntensifty: 0.5
     - _FogMinIntensity: 0
     - _Opacity: 5
-    - _Scale: 5
+    - _Scale: 10
     - __dirty: 0
     m_Colors:
     - _Color0: {r: 0, g: 0, b: 0, a: 0}
