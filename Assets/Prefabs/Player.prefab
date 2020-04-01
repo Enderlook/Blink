@@ -146,7 +146,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed:
     <Mode>k__BackingField: 0
-    inline: 3
+    inline: 5
+    scriptableObject: {fileID: 0}
+    component: {fileID: 0}
+  speerRotation:
+    <Mode>k__BackingField: 0
+    inline: 0
     scriptableObject: {fileID: 0}
     component: {fileID: 0}
 --- !u!114 &3923965836766991614

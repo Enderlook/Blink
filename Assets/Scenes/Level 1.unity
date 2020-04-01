@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -132,6 +132,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 4785087967260609584, guid: d1e5779aca5274e43a2c900967f89b39,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6412673231941145200, guid: d1e5779aca5274e43a2c900967f89b39,
         type: 3}
@@ -298,7 +303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &140297995
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1984,6 +1989,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6952807709850768134, guid: 4da935c89518a414585708d9da0d5c4f,
+        type: 3}
+      propertyPath: layer.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 8262798945068407728, guid: 4da935c89518a414585708d9da0d5c4f,
         type: 3}
