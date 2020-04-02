@@ -9,14 +9,23 @@ namespace Game.Creatures.Player
     [RequireComponent(typeof(Rigidbody))]
     public class PlayerMovement : MonoBehaviour
     {
+        [SerializeField, Tooltip("Animator component.")]
+        private Animator animator;
+
+        [SerializeField, Tooltip("Run animation name.")]
+        private string runAnimation;
+
         [SerializeField, Tooltip("Movement speed.")]
         private FloatGetReference speed;
+
+        [SerializeField, Tooltip("Layer to get mouse position.")]
+        private LayerMask layerGround;
 
         // We hide a Unity obsolete API
         private new Rigidbody rigidbody;
 
         private Vector3 velocity;
-        private LayerMask layerGround = LayerMask.GetMask("Ground");
+        
 
         private int LayerGround => 1 << layerGround.ToLayer();
 
@@ -24,10 +33,10 @@ namespace Game.Creatures.Player
 
         private void FixedUpdate()
         {
-            float h = Input.GetAxis("Horizontal");
-            float v = Input.GetAxis("Vertical");
+            float hor = Input.GetAxis("Horizontal");
+            float ver = Input.GetAxis("Vertical");
 
-            Move(h, v, speed);
+            Move(hor, ver, speed);
 
             Turn();
         }
@@ -39,6 +48,10 @@ namespace Game.Creatures.Player
             velocity = velocity.normalized * s * Time.deltaTime;
 
             rigidbody.MovePosition(rigidbody.position + velocity);
+
+            bool running = h != 0 || v != 0;
+
+            animator.SetBool(runAnimation, running);
         }
 
         private void Turn()

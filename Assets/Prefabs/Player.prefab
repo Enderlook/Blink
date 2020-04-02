@@ -149,11 +149,9 @@ MonoBehaviour:
     inline: 5
     scriptableObject: {fileID: 0}
     component: {fileID: 0}
-  speerRotation:
-    <Mode>k__BackingField: 0
-    inline: 0
-    scriptableObject: {fileID: 0}
-    component: {fileID: 0}
+  layerGround:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &3923965836766991614
 MonoBehaviour:
   m_ObjectHideFlags: 0

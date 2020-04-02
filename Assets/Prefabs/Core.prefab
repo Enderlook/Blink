@@ -664,6 +664,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1344934417346002557, guid: ec5a7298db69af4448dcd0188eec695e,
+        type: 3}
+      propertyPath: speed.inline
+      value: 5.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3692124869620070486, guid: ec5a7298db69af4448dcd0188eec695e,
         type: 3}
       propertyPath: onEvent.m_PersistentCalls.m_Calls.Array.size
