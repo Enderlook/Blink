@@ -524,6 +524,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 319900706}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &354174708 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7917376453932561475, guid: 4da935c89518a414585708d9da0d5c4f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1606774636824472499}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &354174713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354174708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 530a83ab61e7db94a8ba4890e172eb94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &361816110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -927,7 +945,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 2.8e-44, y: 3e-44, z: 3.1e-44, w: NaN}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
