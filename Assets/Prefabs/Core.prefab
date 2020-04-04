@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 450414879, guid: 530c1218c11516947ab5c141f552cda6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transformToFollow: {fileID: 0}
+  transformToFollow: {fileID: 8679692848945331401}
 --- !u!1001 &1606774636277817289
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -560,6 +560,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1606774636831480567}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8223650789495831887 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7236211299169920952, guid: d53e9038544373f468a4d49b83a0d569,
+    type: 3}
+  m_PrefabInstance: {fileID: 1606774636831480567}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -609711369, guid: 8514bc2c934c20949bcfbd938774ada4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3843444039129581098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -567,6 +579,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1606774635587644479}
     m_Modifications:
+    - target: {fileID: 3795391135267441686, guid: a49ed22391a51eb4cb605b74d0ecb77f,
+        type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 8223650789495831887}
     - target: {fileID: 5558235056462052067, guid: a49ed22391a51eb4cb605b74d0ecb77f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -625,7 +642,7 @@ PrefabInstance:
     - target: {fileID: 5558235056462145219, guid: a49ed22391a51eb4cb605b74d0ecb77f,
         type: 3}
       propertyPath: m_Name
-      value: Player-Red
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a49ed22391a51eb4cb605b74d0ecb77f, type: 3}
@@ -697,6 +714,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5443965981887742039, guid: 6fe0b5ab5f249fe42b468d4b8c3dbe32,
+        type: 3}
+      propertyPath: maxHealth.scriptableObject
+      value: 
+      objectReference: {fileID: -7247885882411041942, guid: 6fe0b5ab5f249fe42b468d4b8c3dbe32,
+        type: 3}
     - target: {fileID: 8650836753710101940, guid: 6fe0b5ab5f249fe42b468d4b8c3dbe32,
         type: 3}
       propertyPath: healthBar
