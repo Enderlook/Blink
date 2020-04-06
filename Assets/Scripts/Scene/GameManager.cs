@@ -5,7 +5,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Game
+namespace Game.Scene
 {
     public class GameManager : MonoBehaviour
     {
