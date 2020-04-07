@@ -16,6 +16,7 @@ namespace Game.Scene
     {
         private const string SPAWN_POINTS_PROPERTY_PATH = "spawnPoints";
         private const string DISTANCE_CHECK_PROPERTY_PATH = "distanceCheck";
+        private const string DISTANCE_PER_POINT_CANNOT_BE_ZERO = "Distance Per Point can not be zero";
 
         private static readonly GUIContent CLEAR_SPAWN_POINT_CONTENT = new GUIContent("Clear Spawn Points", "Clear the spawn points list.");
         private static readonly GUIContent CLEAR_HELPER_CONTENT = new GUIContent("Clear", "Clear spawn point helper.");
@@ -34,7 +35,9 @@ namespace Game.Scene
             set => spawnPointsInfo.SetValue(target, value);
         }
 
-        private bool isExpanded = false;
+        private bool isExpanded;
+        private bool wasLockedBefore;
+
         private Vector2 surface;
         private Vector3 center;
         private float distancePerPoint;
@@ -43,6 +46,8 @@ namespace Game.Scene
 
         private SerializedProperty spawnPointsProperty;
         private SerializedProperty distanceCheckProperty;
+
+        private const int MAXIMUM_RENDERING_TIME = 15;
 
         private void OnEnable()
         {
@@ -67,18 +72,33 @@ namespace Game.Scene
             Handles.color = Color.blue;
             Handles.DrawWireCube(center, new Vector3(surface.x, .1f, surface.y));
 
-            for (int i = 0; i < points.Length; i++)
+            // Draw points
+
+            int timePerRender = DateTime.Now.Millisecond;
+
+            int length = points.Length;
+            for (int i = 0; i < length; i++)
             {
                 float distanceCheck = distanceCheckProperty.floatValue;
 
-                Handles.color = IsAllowed(points[i]) ? Color.green : Color.red;
-                Handles.DrawWireDisc(points[i], Vector3.forward, distanceCheck);
-                Handles.DrawWireDisc(points[i], Vector3.right, distanceCheck);
+                Vector3 point = points[i];
+
+                Handles.color = IsAllowed(point) ? Color.green : Color.red;
+                Handles.DrawWireDisc(point, Vector3.forward, distanceCheck);
+                Handles.DrawWireDisc(point, Vector3.right, distanceCheck);
 
                 if (fastDraw)
                     continue;
-                Handles.DrawWireDisc(points[i], new Vector3(.5f, 0, .5f), distanceCheck);
-                Handles.DrawWireDisc(points[i], new Vector3(.5f, 0, -.5f), distanceCheck);
+
+                Handles.DrawWireDisc(point, new Vector3(.5f, 0, .5f), distanceCheck);
+                Handles.DrawWireDisc(point, new Vector3(.5f, 0, -.5f), distanceCheck);
+            }
+
+            if (length > 0)
+            {
+                timePerRender = DateTime.Now.Millisecond - timePerRender;
+                if (timePerRender > MAXIMUM_RENDERING_TIME && !fastDraw)
+                    fastDraw = true;
             }
         }
 
@@ -87,14 +107,15 @@ namespace Game.Scene
             this.DrawScriptField();
 
             EditorGUI.BeginChangeCheck();
-            SerializedProperty spawnPointsProperty = serializedObject.FindProperty(SPAWN_POINTS_PROPERTY_PATH);
 
             EditorGUILayout.PropertyField(spawnPointsProperty, true);
 
             EditorGUILayout.PropertyField(distanceCheckProperty);
 
-            if (isExpanded = EditorGUILayout.Foldout(isExpanded, FOLDOUT_CONTENT, true))
+            if (EditorGUILayout.Foldout(isExpanded, FOLDOUT_CONTENT, true))
             {
+                LockEditor();
+
                 if (GUILayout.Button(CLEAR_SPAWN_POINT_CONTENT))
                     Clear();
 
@@ -114,7 +135,12 @@ namespace Game.Scene
 #pragma warning restore RCS1233 // Use short-circuiting operator.
 
                 if (HasChanged(ref distancePerPoint, EditorGUILayout.FloatField(DISTANCE_PER_POINT_CONTENT, distancePerPoint)) || change)
-                    points = GetUniformPoints().ToArray();
+                {
+                    if (distancePerPoint > 0)
+                        points = GetUniformPoints().ToArray();
+                    else
+                        EditorGUILayout.HelpBox(DISTANCE_PER_POINT_CANNOT_BE_ZERO, MessageType.Error);
+                }
 
                 fastDraw = EditorGUILayout.Toggle(FAST_DRAW_CONTENT, fastDraw);
 
@@ -128,9 +154,34 @@ namespace Game.Scene
                 if (GUILayout.Button(CLEAR_HELPER_CONTENT))
                     ClearHelper();
             }
+            else
+                UnlockEditor();
 
             if (EditorGUI.EndChangeCheck())
                 serializedObject.ApplyModifiedProperties();
+        }
+
+        private void UnlockEditor()
+        {
+            if (isExpanded)
+            {
+                isExpanded = false;
+                // Return lock to before start editing
+                ActiveEditorTracker.sharedTracker.isLocked = wasLockedBefore;
+            }
+        }
+
+        private void LockEditor()
+        {
+            // We activate the editing mode
+            if (!isExpanded)
+            {
+                isExpanded = true;
+                // Check if it was already locked or not
+                wasLockedBefore = ActiveEditorTracker.sharedTracker.isLocked;
+                // Lock inspector window so we don't lose focus of it when we click in the scene
+                ActiveEditorTracker.sharedTracker.isLocked = true;
+            }
         }
 
         private void ClearHelper()
@@ -165,7 +216,7 @@ namespace Game.Scene
                     yield return new Vector3(x + center.x, center.y, z + center.z);
         }
 
-        private bool IsAllowed(Vector3 point) => Physics.OverlapSphere(point, distanceCheckProperty.floatValue).Length == 0;
+        private bool IsAllowed(Vector3 point) => Physics.CheckSphere(point, distanceCheckProperty.floatValue);
 
         private bool HasChanged<T>(ref T variable, T newValue)
         {
