@@ -42,18 +42,25 @@ namespace Game.Scene
         private Vector3 center;
         private float distancePerPoint;
         private Vector3[] points;
+        private bool[] allowedPoints;
         private bool fastDraw = false;
 
         private SerializedProperty spawnPointsProperty;
         private SerializedProperty distanceCheckProperty;
 
-        private const int MAXIMUM_RENDERING_TIME = 15;
+        private const int MAXIMUM_RENDERING_TIME = 10;
+        private const int MAXIMUM_PHYSICS_TIME = 10;
+
+        private float distanceCheck;
+
+        private IEnumerator<bool> validator;
 
         private void OnEnable()
         {
             ClearHelper();
             spawnPointsProperty = serializedObject.FindProperty(SPAWN_POINTS_PROPERTY_PATH);
             distanceCheckProperty = serializedObject.FindProperty(DISTANCE_CHECK_PROPERTY_PATH);
+            validator = ValidatePoints().GetEnumerator();
         }
 
         private void OnSceneGUI()
@@ -76,14 +83,15 @@ namespace Game.Scene
 
             int timePerRender = DateTime.Now.Millisecond;
 
-            int length = points.Length;
-            for (int i = 0; i < length; i++)
+            int pointsLength = points.Length;
+
+            for (int i = 0; i < pointsLength; i++)
             {
                 float distanceCheck = distanceCheckProperty.floatValue;
 
                 Vector3 point = points[i];
 
-                Handles.color = IsAllowed(point) ? Color.green : Color.red;
+                Handles.color = allowedPoints[i] ? Color.green : Color.red;
                 Handles.DrawWireDisc(point, Vector3.forward, distanceCheck);
                 Handles.DrawWireDisc(point, Vector3.right, distanceCheck);
 
@@ -94,12 +102,14 @@ namespace Game.Scene
                 Handles.DrawWireDisc(point, new Vector3(.5f, 0, -.5f), distanceCheck);
             }
 
-            if (length > 0)
+            if (pointsLength > 0)
             {
                 timePerRender = DateTime.Now.Millisecond - timePerRender;
                 if (timePerRender > MAXIMUM_RENDERING_TIME && !fastDraw)
                     fastDraw = true;
             }
+
+            validator.MoveNext();
         }
 
         public override void OnInspectorGUI()
@@ -111,6 +121,8 @@ namespace Game.Scene
             EditorGUILayout.PropertyField(spawnPointsProperty, true);
 
             EditorGUILayout.PropertyField(distanceCheckProperty);
+
+            distanceCheck = distanceCheckProperty.floatValue;
 
             if (EditorGUILayout.Foldout(isExpanded, FOLDOUT_CONTENT, true))
             {
@@ -137,7 +149,7 @@ namespace Game.Scene
                 if (HasChanged(ref distancePerPoint, EditorGUILayout.FloatField(DISTANCE_PER_POINT_CONTENT, distancePerPoint)) || change)
                 {
                     if (distancePerPoint > 0)
-                        points = GetUniformPoints().ToArray();
+                        GenerateUniformPoints();
                     else
                         EditorGUILayout.HelpBox(DISTANCE_PER_POINT_CANNOT_BE_ZERO, MessageType.Error);
                 }
@@ -208,6 +220,12 @@ namespace Game.Scene
             Repaint();
         }
 
+        private void GenerateUniformPoints()
+        {
+            points = GetUniformPoints().ToArray();
+            allowedPoints = new bool[points.Length];
+        }
+
         private IEnumerable<Vector3> GetUniformPoints()
         {
             Vector2 halfSurface = surface / 2;
@@ -216,7 +234,27 @@ namespace Game.Scene
                     yield return new Vector3(x + center.x, center.y, z + center.z);
         }
 
-        private bool IsAllowed(Vector3 point) => Physics.CheckSphere(point, distanceCheckProperty.floatValue);
+        private IEnumerable<bool> ValidatePoints()
+        {
+            while (true)
+            {
+                int time = DateTime.Now.Millisecond;
+                int length = points.Length;
+                for (int i = 0; i < length; i++)
+                {
+                    allowedPoints[i] = IsAllowed(points[i]);
+                    // We don't check all the time because it's expensive.
+                    if (i % 10 == 0 && DateTime.Now.Millisecond - time >= MAXIMUM_PHYSICS_TIME)
+                    {
+                        yield return true;
+                        time = DateTime.Now.Millisecond;
+                    }
+                }
+                yield return false;
+            }
+        }
+
+        private bool IsAllowed(Vector3 point) => !Physics.CheckSphere(point, distanceCheck);
 
         private bool HasChanged<T>(ref T variable, T newValue)
         {
