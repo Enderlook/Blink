@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 8090056155581765739}
   - component: {fileID: 736945582545901106}
   - component: {fileID: 1139533052831224919}
-  - component: {fileID: 2390241143571249390}
+  - component: {fileID: 6115033253236520023}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -428,7 +428,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7917376453932561475}
   m_Enabled: 1
---- !u!114 &2390241143571249390
+--- !u!114 &6115033253236520023
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -437,9 +437,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 7917376453932561475}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 450414879, guid: 530c1218c11516947ab5c141f552cda6, type: 3}
+  m_Script: {fileID: 1047976408, guid: 530c1218c11516947ab5c141f552cda6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLocalPosition: 0
+  followPosX: 1
+  followPosY: 0
+  followPosZ: 1
+  isLocalRotation: 0
+  followRotX: 0
+  followRotY: 0
+  followRotZ: 0
+  followScaleX: 0
+  followScaleY: 0
+  followScaleZ: 0
   transformToFollow: {fileID: 8679692848945331401}
 --- !u!1001 &1606774636277817289
 PrefabInstance:
