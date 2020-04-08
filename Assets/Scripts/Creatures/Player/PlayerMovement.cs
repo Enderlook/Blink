@@ -17,6 +17,7 @@ namespace Game.Creatures.Player
 
         [SerializeField, Tooltip("Movement speed.")]
         private FloatGetReference speed;
+#pragma warning restore CS0649
 
         [SerializeField, Tooltip("Layer to get mouse position.")]
         private LayerMask layerGround;
