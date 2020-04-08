@@ -9,6 +9,7 @@ namespace Game.Creatures
     [RequireComponent(typeof(FloatingTextController))]
     public class HealthFeedback : MonoBehaviour
     {
+#pragma warning disable CS0649
         [SerializeField]
         private IntGetReference health;
 
@@ -20,6 +21,7 @@ namespace Game.Creatures
 
         [SerializeField]
         private HealthBar healthBar;
+#pragma warning restore CS0649
 
         private FloatingTextController floatingTextController;
 
