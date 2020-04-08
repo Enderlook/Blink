@@ -4,8 +4,24 @@
         <name>Enderlook.Unity.Extensions</name>
     </assembly>
     <members>
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Extensions.ColorExtensions.GetColorTag(UnityEngine.Color,System.String)" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Extensions.ColorExtensions.ColorizeWith(System.String,UnityEngine.Color)" -->
+        <member name="M:Enderlook.Unity.Extensions.ColorExtensions.GetColorTag(UnityEngine.Color,System.String)">
+            <summary>
+            Warps <paramref name="text"/> in HTML color tag with <paramref name="color"/>.<br/>
+            Do the same as <see cref="M:Enderlook.Unity.Extensions.ColorExtensions.ColorizeWith(System.String,UnityEngine.Color)"/>.
+            </summary>
+            <param name="color">Color to tint <paramref name="text"/>.</param>
+            <param name="text">Text to by tinted by <paramref name="color"/>.</param>
+            <returns>Text with HTML color tag.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.ColorExtensions.ColorizeWith(System.String,UnityEngine.Color)">
+            <summary>
+            Warps <paramref name="text"/> in HTML color tag with <paramref name="color"/>..<br/>
+            Do the same as <see cref="M:Enderlook.Unity.Extensions.ColorExtensions.GetColorTag(UnityEngine.Color,System.String)"/>.
+            </summary>
+            <param name="color">Color to tint <paramref name="text"/>.</param>
+            <param name="text">Text to by tinted by <paramref name="color"/>.</param>
+            <returns>Text with HTML color tag.</returns>
+        </member>
         <member name="M:Enderlook.Unity.Extensions.ColorExtensions.ToColoredString(UnityEngine.Color)">
             <summary>
             Return the <paramref name="color"/> string version but colored with HTML color tag.

@@ -4,5 +4,15 @@
         <name>Enderlook.Unity.Components</name>
     </assembly>
     <members>
+        <member name="T:Enderlook.Unity.Components.DontDestroyOnLoad">
+            <summary>
+            Configure the <see cref="T:UnityEngine.GameObject"/> where this <see cref="T:UnityEngine.Component"/> is attached to, to not destroy when Unity loads a new scene.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Components.TransformFollower">
+            <summary>
+            Make the <see cref="T:UnityEngine.GameObject"/> where this <see cref="T:UnityEngine.Component"/> is attached to, to follow another <see cref="T:UnityEngine.GameObject"/> in position, rotation and or scale.
+            </summary>
+        </member>
     </members>
 </doc>

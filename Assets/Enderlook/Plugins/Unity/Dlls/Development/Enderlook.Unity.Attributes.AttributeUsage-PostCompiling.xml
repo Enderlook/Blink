@@ -6,26 +6,81 @@
     <members>
         <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.AssembliesHelper.GetAllAssembliesOfPlayerAndEditorAssemblies(System.Boolean)">
             <summary>
-            Get all assemblies from <see cref="P:System.AppDomain.CurrentDomain"/> which are in the <see cref="M:UnityEditor.Compilation.CompilationPipeline.GetAssemblies"/> either <see cref="F:UnityEditor.Compilation.AssembliesType.Editor"/> and <see cref="F:UnityEditor.Compilation.AssembliesType.Player"/>.
+            Get all assemblies from <see cref="P:System.AppDomain.CurrentDomain"/> which are in the <see cref="M:UnityEditor.Compilation.CompilationPipeline.GetAssemblies(UnityEditor.Compilation.AssembliesType)"/> either <see cref="F:UnityEditor.Compilation.AssembliesType.Editor"/> and <see cref="F:UnityEditor.Compilation.AssembliesType.Player"/>.
             </summary>
             <param name="ingoreCache">Whenever it should recalculate the value regardless the cache.</param>
             <returns>Assemblies which matches criteria.</returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "F:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.BaseExecuteWhenScriptsReloads.loop" -->
-        <!-- Badly formed XML comment ignored for member "T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachFieldOfEachTypeWhenScriptsReloads" -->
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.BaseExecuteWhenScriptsReloads.loop">
+            <summary>
+            In which loop of the execution will this script executed.<br/>
+            Accept any kind of number.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachFieldOfEachTypeWhenScriptsReloads">
+            <summary>
+            Executes the method decorated by this attribute for each field on each <see cref="T:System.Type"/> compiled by Unity each time Unity compiles code.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Reflection.FieldInfo"/>).
+            </summary>
+        </member>
         <member name="F:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachFieldOfEachTypeWhenScriptsReloads.fieldFilter">
             <summary>
             Determines rules about in which field does match.
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachFieldOfEachTypeWhenScriptsReloads.#ctor(Enderlook.Unity.Attributes.AttributeUsage.FieldSerialization,System.Int32)" -->
-        <!-- Badly formed XML comment ignored for member "T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachMemberOfEachTypeWhenScriptsReloads" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachMemberOfEachTypeWhenScriptsReloads.#ctor(System.Int32)" -->
-        <!-- Badly formed XML comment ignored for member "T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachMethodOfEachTypeWhenScriptsReloads" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachMethodOfEachTypeWhenScriptsReloads.#ctor(System.Int32)" -->
-        <!-- Badly formed XML comment ignored for member "T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachPropertyOfEachTypeWhenScriptsReloads" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachPropertyOfEachTypeWhenScriptsReloads.#ctor(System.Int32)" -->
-        <!-- Badly formed XML comment ignored for member "T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads" -->
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachFieldOfEachTypeWhenScriptsReloads.#ctor(Enderlook.Unity.Attributes.AttributeUsage.FieldSerialization,System.Int32)">
+            <summary>
+            Executes the method decorated by this attribute for each field on each <see cref="T:System.Type"/> compiled by Unity.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Reflection.FieldInfo"/>).
+            </summary>
+            <param name="fieldFlags">Whenever it must be Unity able to serialize it or if it does not matter.</param>
+            <param name="loop">In which loop of the execution will this script execute.</param>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachMemberOfEachTypeWhenScriptsReloads">
+            <summary>
+            Executes the method decorated by this attribute for each member on each <see cref="T:System.Type"/> compiled by Unity each time Unity compiles code.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Reflection.MemberInfo"/>).
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachMemberOfEachTypeWhenScriptsReloads.#ctor(System.Int32)">
+            <summary>
+            Executes the method decorated by this attribute for each member on each <see cref="T:System.Type"/> compiled by Unity.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Reflection.MemberInfo"/>).
+            </summary>
+            <param name="loop">In which loop of the execution will this script execute.</param>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachMethodOfEachTypeWhenScriptsReloads">
+            <summary>
+            Executes the method decorated by this attribute for each method on each <see cref="T:System.Type"/> compiled by Unity each time Unity compiles code.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Reflection.MethodInfo"/>).
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachMethodOfEachTypeWhenScriptsReloads.#ctor(System.Int32)">
+            <summary>
+            Executes the method decorated by this attribute for each method on each <see cref="T:System.Type"/> compiled by Unity.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Reflection.MethodInfo"/>).
+            </summary>
+            <param name="loop">In which loop of the execution will this script execute.</param>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachPropertyOfEachTypeWhenScriptsReloads">
+            <summary>
+            Executes the method decorated by this attribute for each property on each <see cref="T:System.Type"/> compiled by Unity each time Unity compiles code.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Reflection.PropertyInfo"/>).
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachPropertyOfEachTypeWhenScriptsReloads.#ctor(System.Int32)">
+            <summary>
+            Executes the method decorated by this attribute for each property on each <see cref="T:System.Type"/> compiled by Unity.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Reflection.PropertyInfo"/>).
+            </summary>
+            <param name="loop">In which loop of the execution will this script execute.</param>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads">
+            <summary>
+            Executes the method decorated by this attribute for each <see cref="T:System.Type"/> compiled by Unity each time Unity compiles code.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Type"/>).
+            </summary>
+        </member>
         <member name="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads.TypeFlags">
             <summary>
             Rules that should be match by the type.
@@ -51,17 +106,91 @@
             Determines rules about in which types does match.
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads.#ctor(Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads.TypeFlags,System.Int32)" -->
-        <!-- Badly formed XML comment ignored for member "T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteWhenScriptsReloads" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteWhenScriptsReloads.#ctor(System.Int32)" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeOnEachTypeLessEnums(System.Action{System.Type},System.Int32)" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeOnEachTypeEnum(System.Action{System.Type},System.Int32)" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeOnEachMemberOfTypes(System.Action{System.Reflection.MemberInfo},System.Int32)" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeOnEachSerializableByUnityFieldOfTypes(System.Action{System.Reflection.FieldInfo},System.Int32)" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeOnEachNonSerializableByUnityFieldOfTypes(System.Action{System.Reflection.FieldInfo},System.Int32)" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeOnEachPropertyOfTypes(System.Action{System.Reflection.PropertyInfo},System.Int32)" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeOnEachMethodOfTypes(System.Action{System.Reflection.MethodInfo},System.Int32)" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeToExecuteOnce(System.Action,System.Int32)" -->
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads.#ctor(Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads.TypeFlags,System.Int32)">
+            <summary>
+            Executes the method decorated by this attribute for each <see cref="T:System.Type"/> compiled by Unity, that matches the <paramref name="typeFlags"/> criteria.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Type"/>).
+            </summary>
+            <param name="typeFlags">Determines rules about in which types does match.</param>
+            <param name="loop">In which loop of the execution will this script execute.</param>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteWhenScriptsReloads">
+            <summary>
+            Executes the method decorated by this attribute each time Unity compiles code.<br/>
+            The method to decorate must have the signature DoSomething().
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteWhenScriptsReloads.#ctor(System.Int32)">
+            <summary>
+            Executes the method decorated by this attribute.<br/>
+            The method to decorate must have the signature DoSomething().
+            </summary>
+            <param name="loop">In which loop of the execution will this script execute.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeOnEachTypeLessEnums(System.Action{System.Type},System.Int32)">
+            <summary>
+            Subscribes <paramref name="action"/> to be executed on each <see cref="T:System.Type"/> in the assemblies compiled by Unity which <see cref="P:System.Type.IsEnum"/> is <see langword="false"/>.<br/>
+            If possible, it's strongly advisable to use <see cref="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads"/> attribute instead of this method.
+            </summary>
+            <param name="action">Action to subscribe.</param>
+            <param name="order">Priority of this method to execute. After all other callbacks of lower order are executed on all targets this will be executed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeOnEachTypeEnum(System.Action{System.Type},System.Int32)">
+            <summary>
+            Subscribes <paramref name="action"/> to be executed on each <see cref="T:System.Type"/> in the assemblies compiled by Unity which <see cref="P:System.Type.IsEnum"/> is <see langword="true"/>.<br/>
+            If possible, it's strongly advisable to use <see cref="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads"/> attribute instead of this method.
+            </summary>
+            <param name="action">Action to subscribe.</param>
+            <param name="order">Priority of this method to execute. After all other callbacks of lower order are executed on all targets this will be executed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeOnEachMemberOfTypes(System.Action{System.Reflection.MemberInfo},System.Int32)">
+            <summary>
+            Subscribes <paramref name="action"/> to be executed on each member of each <see cref="T:System.Type"/> in the assemblies compiled by Unity.<br/>
+            If possible, it's strongly advisable to use <see cref="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads"/> attribute instead of this method.
+            </summary>
+            <param name="action">Action to subscribe.</param>
+            <param name="order">Priority of this method to execute. After all other callbacks of lower order are executed on all targets this will be executed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeOnEachSerializableByUnityFieldOfTypes(System.Action{System.Reflection.FieldInfo},System.Int32)">
+            <summary>
+            Subscribes <paramref name="action"/> to be executed on each field of each <see cref="T:System.Type"/> in the assemblies compiled by Unity which can be serialized by Unity (<seealso cref="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.ReflectionHelper.CanBeSerializedByUnity(System.Reflection.FieldInfo)"/>).<br/>
+            If possible, it's strongly advisable to use <see cref="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads"/> attribute instead of this method.
+            </summary>
+            <param name="action">Action to subscribe.</param>
+            <param name="order">Priority of this method to execute. After all other callbacks of lower order are executed on all targets this will be executed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeOnEachNonSerializableByUnityFieldOfTypes(System.Action{System.Reflection.FieldInfo},System.Int32)">
+            <summary>
+            Subscribes <paramref name="action"/> to be executed on each member of each <see cref="T:System.Type"/> in the assemblies compiled by Unity which can be serialized by Unity (<seealso cref="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.ReflectionHelper.CanBeSerializedByUnity(System.Reflection.FieldInfo)"/>).<br/>
+            If possible, it's strongly advisable to use <see cref="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads"/> attribute instead of this method.
+            </summary>
+            <param name="action">Action to subscribe.</param>
+            <param name="order">Priority of this method to execute. After all other callbacks of lower order are executed on all targets this will be executed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeOnEachPropertyOfTypes(System.Action{System.Reflection.PropertyInfo},System.Int32)">
+            <summary>
+            Subscribes <paramref name="action"/> to be executed on each property of each <see cref="T:System.Type"/> in the assemblies compiled by Unity.<br/>
+            If possible, it's strongly advisable to use <see cref="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads"/> attribute instead of this method.
+            </summary>
+            <param name="action">Action to subscribe.</param>
+            <param name="order">Priority of this method to execute. After all other callbacks of lower order are executed on all targets this will be executed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeOnEachMethodOfTypes(System.Action{System.Reflection.MethodInfo},System.Int32)">
+            <summary>
+            Subscribes <paramref name="action"/> to be executed on each method of each <see cref="T:System.Type"/> in the assemblies compiled by Unity.<br/>
+            If possible, it's strongly advisable to use <see cref="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads"/> attribute instead of this method.
+            </summary>
+            <param name="action">Action to subscribe.</param>
+            <param name="order">Priority of this method to execute. After all other callbacks of lower order are executed on all targets this will be executed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeToExecuteOnce(System.Action,System.Int32)">
+            <summary>
+            Subscribes <paramref name="action"/> to be executed once wen Unity ompiles assemblies.<br/>
+            If possible, it's strongly advisable to use <see cref="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteWhenScriptsReloads"/> attribute instead of this method.
+            </summary>
+            <param name="action">Action to subscribe.</param>
+            <param name="order">Priority of this method to execute. After all other callbacks of lower order are executed on all targets this will be executed.</param>
+        </member>
         <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.GetAllTypesThatShouldBeInspected">
             <summary>
             Get all types from assemblies which doesn't have <see cref="T:Enderlook.Unity.Attributes.AttributeUsage.DoNotInspectAttribute"/> either the type or the assembly.
