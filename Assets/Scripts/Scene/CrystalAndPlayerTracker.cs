@@ -8,11 +8,13 @@ namespace Game.Scene
     {
         private static CrystalAndPlayerTracker instance;
 
+#pragma warning disable CS0649
         [SerializeField]
         private Transform crystal;
 
         [SerializeField]
         private Transform player;
+#pragma warning restore CS0649
 
         public static Vector3 Crystal => instance.crystal.position;
 

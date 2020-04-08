@@ -25,9 +25,11 @@ namespace Game.Scene
         [SerializeField, Range(0, 1)]
         private float difficultyInSceneFactor = .5f;
 
+#pragma warning disable CS0649
         [Header("Setup")]
         [SerializeField]
         private Text timer;
+#pragma warning restore CS0649
 
         private int currentLevel = 1;
 
