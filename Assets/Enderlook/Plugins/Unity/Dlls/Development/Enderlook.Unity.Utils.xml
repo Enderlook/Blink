@@ -231,5 +231,56 @@
             <param name="camera">Camera used to get viewport position coordinates.</param>
             <returns>Viewport position coordinates.</returns>
         </member>
+        <member name="T:Enderlook.Unity.Utils.RoundingMode">
+            <summary>
+            Determines how number are rounded.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Utils.RoundingMode.None">
+            <summary>
+            Values are show in decimal.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Utils.RoundingMode.Round">
+            <summary>
+            Uses <see cref="M:UnityEngine.Mathf.Round(System.Single)"/>
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Utils.RoundingMode.Ceil">
+            <summary>
+            Uses <see cref="M:UnityEngine.Mathf.Ceil(System.Single)"/>
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Utils.RoundingMode.Floor">
+            <summary>
+            Uses <see cref="M:UnityEngine.Mathf.Floor(System.Single)"/>.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Utils.RoundingMode.Trunc">
+            <summary>
+            Cast value to <see cref="T:System.Int32"/>.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Utils.RoundingModeExtensions">
+            <summary>
+            Helper functions for <see cref="T:Enderlook.Unity.Utils.RoundingMode"/>
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.RoundingModeExtensions.Round(Enderlook.Unity.Utils.RoundingMode,System.Single)">
+            <summary>
+            Round <paramref name="value"/> with a method determined by <paramref name="mode"/>.
+            </summary>
+            <param name="mode">Rounding mode.</param>
+            <param name="value">Value to round.</param>
+            <returns>Rounded value</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.RoundingModeExtensions.RoundToInt(Enderlook.Unity.Utils.RoundingMode,System.Single)">
+            <summary>
+            Round <paramref name="value"/> with a method determined by <paramref name="mode"/>.
+            </summary>
+            <param name="mode">Rounding mode.</param>
+            <param name="value">Value to round.</param>
+            <returns>Rounded value</returns>
+        </member>
     </members>
 </doc>
