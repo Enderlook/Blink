@@ -41,9 +41,10 @@ namespace Game.Scene
                     // Additional check to be sure
                     Vector3 point2 = new Vector3(point.x, 0, point.z);
                     viewPosition = camera.WorldToViewportPoint(point2);
-                    if (viewPosition.x < negativeCheck || viewPosition.x > positiveCheck
+                    if ((viewPosition.x < negativeCheck || viewPosition.x > positiveCheck
                         || viewPosition.y < negativeCheck || viewPosition.y > positiveCheck
                         || viewPosition.z <= 0)
+                        && !Physics.CheckSphere(point, distanceCheck))
                         return point;
                 }
             }
