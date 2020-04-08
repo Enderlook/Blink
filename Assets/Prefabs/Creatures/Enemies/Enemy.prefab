@@ -242,6 +242,11 @@ MonoBehaviour:
     inline: 0
     scriptableObject: {fileID: 0}
     component: {fileID: 6182153272523996434}
+  maxHealth:
+    <Mode>k__BackingField: 0
+    inline: 0
+    scriptableObject: {fileID: 0}
+    component: {fileID: 0}
 --- !u!114 &6182153272523996434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,6 +332,11 @@ MonoBehaviour:
     event: {fileID: 0}
     managedScriptableObject: {fileID: 0}
     managedComponent: {fileID: 6182153272523996434}
+  maxHealthEvent:
+    <Mode>k__BackingField: 2
+    event: {fileID: 0}
+    managedScriptableObject: {fileID: 0}
+    managedComponent: {fileID: 731368825069099440}
   healthBar: {fileID: 3435220169134953365}
 --- !u!114 &7542903011891867435
 MonoBehaviour:

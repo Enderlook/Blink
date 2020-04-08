@@ -132,6 +132,11 @@ MonoBehaviour:
     inline: 0
     scriptableObject: {fileID: 3692065462055061938}
     component: {fileID: 0}
+  maxHealth:
+    <Mode>k__BackingField: 0
+    inline: 0
+    scriptableObject: {fileID: 0}
+    component: {fileID: 0}
 --- !u!114 &8650836753710101940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +162,11 @@ MonoBehaviour:
   healthEvent2:
     <Mode>k__BackingField: 0
     event: {fileID: -8291800690213229252}
+    managedScriptableObject: {fileID: 0}
+    managedComponent: {fileID: 0}
+  maxHealthEvent:
+    <Mode>k__BackingField: 0
+    event: {fileID: 8690457696745335886}
     managedScriptableObject: {fileID: 0}
     managedComponent: {fileID: 0}
   healthBar: {fileID: 0}
@@ -279,7 +289,7 @@ MonoBehaviour:
   value: 100
   oldValue: 100
   transformer: {fileID: 0}
-  changed: {fileID: 0}
+  changed: {fileID: 8690457696745335886}
   changedWithHistory: {fileID: 0}
 --- !u!114 &-2325885416423649629
 MonoBehaviour:
@@ -329,7 +339,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialValue: 100
   value: 100
-  oldValue: 0
+  oldValue: 100
   transformer: {fileID: 692037252537730776}
   changed: {fileID: -2325885416423649629}
   changedWithHistory: {fileID: -8291800690213229252}
+--- !u!114 &8690457696745335886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1144320121, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Max Health Event
+  m_EditorClassIdentifier: 

@@ -37,6 +37,11 @@ PrefabInstance:
       propertyPath: healthEvent2.event
       value: 
       objectReference: {fileID: -6940658207911830950}
+    - target: {fileID: 2756341807398398881, guid: bf6819a2f5c5a2c4b9193710b5fe1ed1,
+        type: 3}
+      propertyPath: maxHealthEvent.event
+      value: 
+      objectReference: {fileID: 2987738147444546909}
     - target: {fileID: 3355662261693803171, guid: bf6819a2f5c5a2c4b9193710b5fe1ed1,
         type: 3}
       propertyPath: health.scriptableObject
@@ -1561,7 +1566,7 @@ MonoBehaviour:
   value: 100
   oldValue: 100
   transformer: {fileID: 0}
-  changed: {fileID: 0}
+  changed: {fileID: 2987738147444546909}
   changedWithHistory: {fileID: 0}
 --- !u!114 &-6940658207911830950
 MonoBehaviour:
@@ -1615,3 +1620,15 @@ MonoBehaviour:
     inline: 0
     scriptableObject: {fileID: -9049296588952162490}
     component: {fileID: 0}
+--- !u!114 &2987738147444546909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1144320121, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Max Health Event
+  m_EditorClassIdentifier: 

@@ -19,6 +19,9 @@ namespace Game.Creatures
         private IntEventReference2 healthEvent2;
 
         [SerializeField]
+        private IntEventReference maxHealthEvent;
+
+        [SerializeField]
         private HealthBar healthBar;
 
         private FloatingTextController floatingTextController;
@@ -29,6 +32,7 @@ namespace Game.Creatures
             floatingTextController = GetComponent<FloatingTextController>();
             healthBar.ManualUpdate(health, maxHealth);
             healthEvent2.Register(OnHealthChange);
+            maxHealthEvent.Register(OnMaxHealthChange);
         }
 
         private void OnHealthChange(int newValue, int oldValue)
@@ -40,5 +44,7 @@ namespace Game.Creatures
             if (difference < 0)
                 floatingTextController.SpawnFloatingText(-difference, Color.green);
         }
+
+        private void OnMaxHealthChange(int newValue) => healthBar.MaxHealth = newValue;
     }
 }
