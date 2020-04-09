@@ -1017,7 +1017,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 5.849e-42, y: 1.05e-43, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1959,8 +1959,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75de19fae24c3b341881563b39d4c549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoints: []
-  distanceCheck: 1.5
+  spawnPoints:
+    points: []
+    distanceCheck: 1
 --- !u!1001 &1872387975
 PrefabInstance:
   m_ObjectHideFlags: 0
