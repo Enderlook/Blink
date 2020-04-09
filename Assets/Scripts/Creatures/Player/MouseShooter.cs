@@ -17,22 +17,9 @@ namespace Game.Creatures.Player
             damage = shootAbility.Damage;
         }
 
-        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
-        //private void Update()
-        //{
-        //    if (Input.GetMouseButtonDown((int)mouseButton)
-        //        && mouseButton != MouseButton.None
-        //        && Time.time >= nextAttack)
-        //    {
-        //        animator.SetTrigger(basicAttack);
-        //        nextAttack = Time.time + timeBtwAttack;
-        //    }
-        //}
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         public void Fire()
         {
-            Debug.Log($"Your damage ammount is: {damage}");
             animator.SetTrigger(animationName);
         }
     }

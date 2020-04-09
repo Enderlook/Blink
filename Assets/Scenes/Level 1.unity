@@ -1578,45 +1578,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1437372758}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1469222072 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8679692848945553641, guid: 4da935c89518a414585708d9da0d5c4f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1606774636824472499}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1469222073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469222072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b1b0fbd352f6ed4cb167d08ecbae2d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ability: {fileID: 11400000, guid: 38d6f5792879f954f943f2dee2726392, type: 2}
-  mouseButton: 0
---- !u!114 &1469222074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469222072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 805ef5d2f569aa84697626fd4099d12a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 1469222080}
---- !u!95 &1469222080 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8679692848938128187, guid: 4da935c89518a414585708d9da0d5c4f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1606774636824472499}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1492079757
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2233,21 +2194,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6296748115616996130, guid: 4da935c89518a414585708d9da0d5c4f,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 84
-      objectReference: {fileID: 0}
-    - target: {fileID: 8679692848938128187, guid: 4da935c89518a414585708d9da0d5c4f,
-        type: 3}
-      propertyPath: m_WarningMessage
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8679692848938128187, guid: 4da935c89518a414585708d9da0d5c4f,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8679692848945331329, guid: 4da935c89518a414585708d9da0d5c4f,
         type: 3}

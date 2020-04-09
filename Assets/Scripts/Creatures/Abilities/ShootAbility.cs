@@ -27,12 +27,35 @@ namespace Game.Creatures.Abilities.ShootAbility
         {
             mouseShooter = gameObj.GetComponent<MouseShooter>();
             mouseShooter.Initialize(this);
-
         }
 
-        public override void TriggerAbility()
+        public override void AwakeBehaviour()
         {
-            mouseShooter.Fire();
+            base.AwakeBehaviour();
         }
+
+        protected override void OnButtonDown()
+        {
+            base.OnButtonDown();
+
+            if (Time.time > lastCooldown + Cooldown)
+            {
+                lastCooldown = Time.time;
+                TriggerAbility();
+            }
+        }
+
+        protected override void OnButtonHold()
+        {
+            base.OnButtonHold();
+
+            if (Time.time > lastCooldown + Cooldown)
+            {
+                lastCooldown = Time.time;
+                TriggerAbility();
+            }
+        }
+
+        public override void TriggerAbility() => mouseShooter.Fire();
     }
 }

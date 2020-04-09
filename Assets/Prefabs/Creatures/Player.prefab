@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &9093263735883253344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5558235056462145219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1b0fbd352f6ed4cb167d08ecbae2d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilities:
+  - {fileID: 11400000, guid: 38d6f5792879f954f943f2dee2726392, type: 2}
+--- !u!114 &1366041514198048283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5558235056462145219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 805ef5d2f569aa84697626fd4099d12a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 5558235056454882577}
 --- !u!1001 &1363339880222058423
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1540,10 +1567,22 @@ PrefabInstance:
     - target: {fileID: 8133398208624540351, guid: bf6819a2f5c5a2c4b9193710b5fe1ed1,
         type: 3}
       propertyPath: m_Constraints
-      value: 80
+      value: 84
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf6819a2f5c5a2c4b9193710b5fe1ed1, type: 3}
+--- !u!1 &5558235056462145219 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6902152563992215924, guid: bf6819a2f5c5a2c4b9193710b5fe1ed1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1363339880222058423}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5558235056454882577 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6902152564001714854, guid: bf6819a2f5c5a2c4b9193710b5fe1ed1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1363339880222058423}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5027760681633624517 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6281887982986253938, guid: bf6819a2f5c5a2c4b9193710b5fe1ed1,
