@@ -86,7 +86,7 @@ namespace Game.Scene
             int minutes = (int)(time / 60);
             int seconds = (int)(time % 60);
 
-            timer.text = minutes > 0 ? $"{minutes}:{seconds}" : $"{seconds}";
+            timer.text = minutes > 0 ? $"{minutes}:{seconds}" : seconds.ToString();
         }
 
         private float GetDifficulty()
