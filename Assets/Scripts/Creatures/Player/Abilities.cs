@@ -1,56 +1,40 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using System.Collections.Generic;
+using UnityEngine;
+
 using Game.Creatures.Abilities;
 
 namespace Game.Creatures.Player
 {
     public class Abilities : MonoBehaviour
     {
-        public enum MouseButton { None = -1, Left = 0, Right = 1, Middle = 2 }
-
         [SerializeField, Tooltip("Ability")]
-        private Ability ability;
+        private List<Ability> abilities;
 
-        [SerializeField, Tooltip("Mouse button.")]
-        private MouseButton mouseButton;
+        private void Awake() => Initialize(abilities);
 
-        private float cooldownDuration;
-        private float nextReadyTime;
-        private float cooldownTimeLeft;
-
-        private void Awake() => Initialize(ability);
-
-        public void Initialize(Ability selectedAbility)
+        public void Initialize(List<Ability> selectedAbility)
         {
-            ability = selectedAbility;
-            cooldownDuration = ability.Cooldown;
-            ability.Initialize(gameObject);
+            foreach (Ability ability in selectedAbility)
+            {
+                ability.Initialize(gameObject);
+                ability.AwakeBehaviour();
+            }
         }
 
         private void Update()
         {
-            if (Time.time > nextReadyTime)
+            foreach (Ability ability in abilities)
             {
-                if (Input.GetMouseButtonDown((int)mouseButton) && mouseButton != MouseButton.None)
-                {
-                    Triggered();
-                }
-            }
-            else
-            {
-                Cooldown();
-            }
-        }
+                bool shouldShoot = ability.CanBeHoldDown
+                    ? Input.GetKey(ability.KeyButton) || (Input.GetMouseButton(ability.ThisMouseButton) && ability.ThisMouseButton != -1)
+                    : Input.GetKeyDown(ability.KeyButton) || (Input.GetMouseButtonDown(ability.ThisMouseButton) && ability.ThisMouseButton != -1);
 
-        private void Cooldown()
-        {
-            cooldownTimeLeft -= Time.deltaTime;
-        }
-
-        private void Triggered()
-        {
-            nextReadyTime = cooldownDuration + Time.time;
-            cooldownTimeLeft = cooldownDuration;
-            ability.TriggerAbility();
+                if (shouldShoot && ability.CanBeHoldDown)
+                    ability.ButtonHold();
+                else if (shouldShoot)
+                    ability.ButtonDown();
+            }
         }
     }
 }

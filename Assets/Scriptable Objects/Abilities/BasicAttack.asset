@@ -16,5 +16,8 @@ MonoBehaviour:
   abilitySprite: {fileID: 0}
   cooldown: 1
   damage: 10
+  keyButton: 0
+  mouseButton: 0
+  canBeHoldDown: 1
   hitForce: 0
   animationName: Basic Attack
