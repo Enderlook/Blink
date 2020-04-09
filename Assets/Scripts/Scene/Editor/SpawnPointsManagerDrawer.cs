@@ -16,7 +16,7 @@ namespace Game.Scene
     public class SpawnPointsManagerDrawer : PropertyDrawer
     {
         // Values in miliseconds
-        private const int MAXIMUM_PHYSICS_TIME = 10;
+        private const int MAXIMUM_PHYSICS_TIME = 5;
         private const int MAXIMUM_RENDERING_TIME = 10;
 
         private const string pointsPath = "points";
@@ -50,6 +50,7 @@ namespace Game.Scene
         private Vector3 center = Vector3.zero;
         private Vector2 surface = Vector2.zero;
         private float distancePerPoint = 1;
+        private float distanceCheck;
 
         private Vector3[] points = Array.Empty<Vector3>();
         private bool[] allowedPoints = Array.Empty<bool>();
@@ -64,14 +65,13 @@ namespace Game.Scene
         static SpawnPointsManagerDrawer()
         {
             validatorProcessor = ProcessValidators();
-            SceneView.duringSceneGui += Update;
+            // This is executed when scene is draw
+            SceneView.duringSceneGui += UpdateSceneGUIs;
+            // This is executed as many times as possible
+            EditorApplication.update += ProcessValidatorChunk;
         }
 
-        private static void Update(SceneView sceneView)
-        {
-            validatorProcessor.MoveNext();
-            UpdateSceneGUIs();
-        }
+        private static void ProcessValidatorChunk() => validatorProcessor.MoveNext();
 
         private static IEnumerator ProcessValidators()
         {
@@ -91,11 +91,15 @@ namespace Game.Scene
             }
         }
 
-        private static void UpdateSceneGUIs()
+        private static void UpdateSceneGUIs(SceneView sceneView)
         {
             for (int i = drawers.Count - 1; i >= 0; i--)
                 if (drawers[i].TryGetTarget(out SpawnPointsManagerDrawer drawer))
-                    drawer.OnSceneGUI();
+                    try
+                    {
+                        drawer.OnSceneGUI();
+                    }
+                    catch (Exception) { } // Catch when drawer has been disposed but it wasn't garbage collected yet.
         }
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
@@ -117,6 +121,7 @@ namespace Game.Scene
                 EditorGUI.indentLevel++;
                 EditorGUILayout.PropertyField(pointsProperty, true);
                 EditorGUILayout.PropertyField(distanceCheckProperty);
+                distanceCheck = distanceCheckProperty.floatValue;
 
                 if (isEditorExpanded = EditorGUILayout.Foldout(isEditorExpanded, EDITOR_FOLDOUT_CONTENT, true))
                 {
@@ -226,7 +231,7 @@ namespace Game.Scene
             }
         }
 
-        private bool IsAllowed(Vector3 point) => !Physics.CheckSphere(point, distanceCheckProperty.floatValue);
+        private bool IsAllowed(Vector3 point) => !Physics.CheckSphere(point, distanceCheck);
 
         private void ValdiateChunk() => validator.MoveNext();
 
