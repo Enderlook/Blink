@@ -1017,7 +1017,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 5.849e-42, y: 1.05e-43, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 2.1e-44}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1229,6 +1229,42 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 633553226691859815, guid: e25d6bce4c3c6e44a80a6f457863d8f1,
     type: 3}
   m_PrefabInstance: {fileID: 832214626}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &912540617 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7917376453932561475, guid: 4da935c89518a414585708d9da0d5c4f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1606774636824472499}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &912540619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912540617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1047976408, guid: 530c1218c11516947ab5c141f552cda6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLocalPosition: 0
+  followPosX: 1
+  followPosY: 0
+  followPosZ: 1
+  isLocalRotation: 0
+  followRotX: 0
+  followRotY: 0
+  followRotZ: 0
+  followScaleX: 0
+  followScaleY: 0
+  followScaleZ: 0
+  transformToFollow: {fileID: 946983239}
+--- !u!4 &946983239 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8679692848945331401, guid: 4da935c89518a414585708d9da0d5c4f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1606774636824472499}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1115595826
 PrefabInstance:
