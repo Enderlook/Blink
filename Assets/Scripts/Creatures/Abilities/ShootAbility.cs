@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Game.Creatures.Player;
 
-namespace Game.Creatures.Abilities.ShootAbility
+namespace Game.Creatures.AbilitiesSystem
 {
     [CreateAssetMenu(menuName = "Abilities/ShootAbility")]
     public class ShootAbility : Ability
@@ -21,13 +21,10 @@ namespace Game.Creatures.Abilities.ShootAbility
 
         public float Damage => damage;
 
-        private MouseShooter mouseShooter;
-
-        public override void Initialize(GameObject gameObj)
-        {
-            mouseShooter = gameObj.GetComponent<MouseShooter>();
-            mouseShooter.Initialize(this);
-        }
+        //public override void Initialize(Abilities abilities)
+        //{
+        //    base.Initialize(abilities);
+        //}
 
         public override void AwakeBehaviour()
         {
@@ -56,6 +53,6 @@ namespace Game.Creatures.Abilities.ShootAbility
             }
         }
 
-        public override void TriggerAbility() => mouseShooter.Fire();
+        public override void TriggerAbility() => ThisAnimator.SetTrigger(animationName);
     }
 }
