@@ -32,8 +32,8 @@ namespace Game.Creatures.Player
             foreach (Ability ability in abilities)
             {
                 bool shouldShoot = ability.CanBeHoldDown
-                    ? Input.GetKey(ability.KeyButton) || (Input.GetMouseButton(ability.ThisMouseButton) && ability.ThisMouseButton != -1)
-                    : Input.GetKeyDown(ability.KeyButton) || (Input.GetMouseButtonDown(ability.ThisMouseButton) && ability.ThisMouseButton != -1);
+                    ? Input.GetKey(ability.KeyButton) || (Input.GetMouseButton((int)ability.ThisMouseButton) && ability.ThisMouseButton != Ability.MouseButton.None)
+                    : Input.GetKeyDown(ability.KeyButton) || (Input.GetMouseButtonDown((int)ability.ThisMouseButton) && ability.ThisMouseButton != Ability.MouseButton.None);
 
                 if (shouldShoot && ability.CanBeHoldDown)
                     ability.ButtonHold();

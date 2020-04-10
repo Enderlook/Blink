@@ -5,8 +5,8 @@ using Game.Creatures.Player;
 
 namespace Game.Creatures.AbilitiesSystem
 {
-    [CreateAssetMenu(menuName = "Abilities/ShootAbility")]
-    public class ShootAbility : Ability
+    [CreateAssetMenu(menuName = "Abilities/Projectile")]
+    public class Projectile : Ability
     {
         //[SerializeField, Tooltip("Prefab to be instantiate.")]
         //private GameObject projectile;
@@ -17,9 +17,9 @@ namespace Game.Creatures.AbilitiesSystem
         [SerializeField, Tooltip("Animation name.")]
         private string animationName;
 
-        public string AnimationName => animationName;
+        public string AnimationName { get { return animationName; } set { animationName = value; } }
 
-        public float Damage => damage;
+        public float Damage { get { return damage; } set { damage = value; } }
 
         //public override void Initialize(Abilities abilities)
         //{

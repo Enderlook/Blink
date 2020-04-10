@@ -1,21 +1,31 @@
 ﻿using UnityEngine;
+
 using Game.Creatures.Player;
 
 namespace Game.Creatures.AbilitiesSystem
 {
     public abstract class Ability : ScriptableObject
     {
+        public enum IconTypes { None, Icon }
+
         public enum MouseButton { None = -1, Left = 0, Right = 1, Middle = 2 }
+
+        //Serialize variables
 
         [SerializeField, Tooltip("Ability name.")]
         private string abilityName;
 
+        [SerializeField, Tooltip("Ability description")]
+        private string description;
+
+        [SerializeField]
+        private IconTypes iconType;
+
         [SerializeField, Tooltip("Ability sprite.")]
-        private Sprite abilitySprite;
+        private Sprite abilityIcon;
 
         [SerializeField, Tooltip("Cooldown.")]
         private float cooldown = 1f;
-        
 
         [SerializeField, Tooltip("Damage.")]
         protected float damage;
@@ -29,20 +39,28 @@ namespace Game.Creatures.AbilitiesSystem
         [SerializeField, Tooltip("Can be hold down.")]
         private bool canBeHoldDown;
 
-        private Animator animator;
-
+        // Properties
         public Animator ThisAnimator { get { return animator; } set { animator = value; } }
 
-        public string AbilityName => abilityName;
+        public string AbilityName { get { return abilityName; } set { abilityName = value; } }
 
-        public float Cooldown => cooldown;
+        public string Description { get { return description; } set { description = value; } }
 
-        public KeyCode KeyButton => keyButton;
+        public float Cooldown { get { return cooldown; } set { cooldown = value; } }
 
-        public int ThisMouseButton => (int)mouseButton;
+        public KeyCode KeyButton { get { return keyButton; } set { keyButton = value; } }
 
-        public bool CanBeHoldDown => canBeHoldDown;
+        public MouseButton ThisMouseButton { get { return mouseButton; } set { mouseButton = value; } }
 
+        public bool CanBeHoldDown { get { return canBeHoldDown; } set { canBeHoldDown = value; } }
+
+        public IconTypes IconType { get { return iconType; } set { iconType = value; } }
+
+        public Sprite AbilityIcon { get { return abilityIcon; } set { abilityIcon = value; } }
+
+        // Privates variables
+
+        private Animator animator;
         protected float lastCooldown = 0;
 
         public virtual void Initialize(Abilities abilities)
