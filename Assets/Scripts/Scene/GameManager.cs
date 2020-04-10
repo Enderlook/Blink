@@ -22,6 +22,9 @@ namespace Game.Scene
         [SerializeField, Min(.1f)]
         private float levelDifficultyFactor = .5f;
 
+        [SerializeField, Min(.1f)]
+        private float levelDifficultyPowerFactor = .5f;
+
         [SerializeField, Range(0, 1)]
         private float difficultyInSceneFactor = .5f;
 
@@ -43,9 +46,37 @@ namespace Game.Scene
 
         private IBasicClockwork currentClockwork;
 
+        private int lastDifficultyUpdateFrame = 0;
+
+        private float lastUpdatedDifficulty;
+
+        private float DifficultyValue {
+            get {
+                int frameCount = Time.frameCount;
+                if (lastDifficultyUpdateFrame < frameCount)
+                {
+                    lastDifficultyUpdateFrame = frameCount;
+                    lastUpdatedDifficulty = GetDifficulty();
+                }
+                return lastUpdatedDifficulty;
+            }
+        }
+
+        private static GameManager instance;
+
+        /// <summary>
+        /// Current difficulty of the game.
+        /// </summary>
+        public static float Difficulty => instance.DifficultyValue;
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()
         {
+            if (instance == null)
+                instance = this;
+            else
+                throw new InvalidOperationException($"Only a single instance of {nameof(GameManager)} can exist at the same time.");
+
             timeUntilStart = new Clockwork(startTime, SetStateToRunning, true, 0);
             timeUntilNextScene = new Clockwork(timePerScene, AdvanceScene, true, 0);
             SetStateToStarting();
@@ -71,6 +102,7 @@ namespace Game.Scene
             gameState = GameState.Running;
             timeUntilNextScene.ResetCycles(1);
             currentClockwork = timeUntilNextScene;
+            FindObjectOfType<EnemySpawner>().StartSpawing();
         }
 
         private void SetStateToStarting()
@@ -91,7 +123,7 @@ namespace Game.Scene
 
         private float GetDifficulty()
         {
-            float DifficultyByScene(int scene) => baseDifficulty * Mathf.Pow(scene, levelDifficultyFactor);
+            float DifficultyByScene(int scene) => baseDifficulty * Mathf.Pow(scene, levelDifficultyPowerFactor) + baseDifficulty * scene * levelDifficultyFactor;
             return Mathf.Lerp(DifficultyByScene(currentLevel), DifficultyByScene(currentLevel + 1), timeUntilNextScene.WarmupPercent * difficultyInSceneFactor);
         }
     }
