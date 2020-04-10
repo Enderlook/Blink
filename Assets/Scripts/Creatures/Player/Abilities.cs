@@ -2,14 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-using Game.Creatures.Abilities;
+using Game.Creatures.AbilitiesSystem;
 
 namespace Game.Creatures.Player
 {
     public class Abilities : MonoBehaviour
     {
+        [SerializeField, Tooltip("Animator component.")]
+        private Animator animator;
+
         [SerializeField, Tooltip("Ability")]
         private List<Ability> abilities;
+
+        public Animator ThisAnimator => animator;
 
         private void Awake() => Initialize(abilities);
 
@@ -17,7 +22,7 @@ namespace Game.Creatures.Player
         {
             foreach (Ability ability in selectedAbility)
             {
-                ability.Initialize(gameObject);
+                ability.Initialize(this);
                 ability.AwakeBehaviour();
             }
         }

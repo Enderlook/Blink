@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
+using Game.Creatures.Player;
 
-namespace Game.Creatures.Abilities
+namespace Game.Creatures.AbilitiesSystem
 {
     public abstract class Ability : ScriptableObject
     {
@@ -14,6 +15,7 @@ namespace Game.Creatures.Abilities
 
         [SerializeField, Tooltip("Cooldown.")]
         private float cooldown = 1f;
+        
 
         [SerializeField, Tooltip("Damage.")]
         protected float damage;
@@ -27,6 +29,10 @@ namespace Game.Creatures.Abilities
         [SerializeField, Tooltip("Can be hold down.")]
         private bool canBeHoldDown;
 
+        private Animator animator;
+
+        public Animator ThisAnimator { get { return animator; } set { animator = value; } }
+
         public string AbilityName => abilityName;
 
         public float Cooldown => cooldown;
@@ -39,7 +45,10 @@ namespace Game.Creatures.Abilities
 
         protected float lastCooldown = 0;
 
-        public abstract void Initialize(GameObject gameObj);
+        public virtual void Initialize(Abilities abilities)
+        {
+            ThisAnimator = abilities.ThisAnimator;
+        }
 
         public virtual void AwakeBehaviour()
         {
