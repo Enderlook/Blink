@@ -4,8 +4,28 @@
         <name>Enderlook.Extensions</name>
     </assembly>
     <members>
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Extensions.CastExtensions.TryCast``1(System.Object,``0@)" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Extensions.CastExtensions.CastOrDefault``1(System.Object)" -->
+        <member name="M:Enderlook.Extensions.CastExtensions.TryCast``1(System.Object,``0@)">
+            <summary>
+            Try to cast <paramref name="obj"/> into <typeparamref name="T"/> in <paramref name="result"/>.<br/>
+            If <paramref name="obj"/> isn't <typeparamref name="T"/>, <paramref name="result"/> is set with <c>default(<typeparamref name="T"/>)</c>.
+            </summary>
+            <typeparam name="T">Type of the value to cast.</typeparam>
+            <param name="obj"><see cref="T:System.Object"/> to cast.</param>
+            <param name="result">Casted result.</param>
+            <returns><see langword="true"/> if the cast was successful. <see langword="false"/> if it wasn't able to cast.</returns>
+            <seealso url="https://codereview.stackexchange.com/questions/17982/trycastt-method"/>
+            <seealso cref="M:Enderlook.Extensions.CastExtensions.CastOrDefault``1(System.Object)"/>
+            <seealso cref="M:Enderlook.Extensions.CastExtensions.CastOrNull``1(System.Object,Enderlook.Extensions.CastExtensions.RequireStruct{``0})"/>
+            <seealso cref="M:Enderlook.Extensions.CastExtensions.CastOrNull``1(System.Object,Enderlook.Extensions.CastExtensions.RequireClass{``0})"/>
+        </member>
+        <member name="M:Enderlook.Extensions.CastExtensions.CastOrDefault``1(System.Object)">
+            <summary>
+            Try to cast <paramref name="obj"/> into <typeparamref name="T"/>.
+            </summary>
+            <typeparam name="T">Type of the value to cast.</typeparam>
+            <param name="obj"><see cref="T:System.Object"/> to cast.</param>
+            <returns>Return <c>(<typeparamref name="T"/>)<paramref name="obj"/></c>. <c>default(<typeparamref name="T"/>)</c> if it can't cast.</returns>
+        </member>
         <member name="T:Enderlook.Extensions.CastExtensions.RequireStruct`1">
             <summary>
             Don't use me.
@@ -52,7 +72,7 @@
             <param name="from">The type to cast from.</param>
             <param name="to">The type to be casted to.</param>
             <returns><see langword="true"/> if <paramref name="from"/> can be casted to <paramref name="to"/>. <see langword="false"/> otherwise.</returns>
-            <see cref="!:https://stackoverflow.com/questions/18256742/c-sharp-is-operator-check-castability-for-all-conversions-available"/>
+            <seealso url="https://stackoverflow.com/questions/18256742/c-sharp-is-operator-check-castability-for-all-conversions-available"/>
             <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="from"/> or <paramref name="to"/> are <see langword="null"/></exception>
         </member>
         <member name="M:Enderlook.Extensions.CastExtensions.IsCastableTo``1(System.Type)">
@@ -63,7 +83,7 @@
             <typeparam name="T">The type to be casted to.</typeparam>
             <param name="from">The type to cast from.</param>
             <returns><see langword="true"/> if <paramref name="from"/> can be casted to <typeparamref name="T"/>. <see langword="false"/> otherwise.</returns>
-            <see cref="!:https://stackoverflow.com/questions/18256742/c-sharp-is-operator-check-castability-for-all-conversions-available"/>
+            <seealso url="https://stackoverflow.com/questions/18256742/c-sharp-is-operator-check-castability-for-all-conversions-available"/>
             <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="from"/> is <see langword="null"/></exception>
         </member>
         <member name="M:Enderlook.Extensions.CastExtensions.IsCastableTo``2">
@@ -73,8 +93,8 @@
             </summary>
             <typeparam name="T">The type to cast from.</typeparam>
             <typeparam name="U">The type to be casted to.</typeparam>
-            <returns><see langword="true"/> if <paramref name="from"/> can be casted to <typeparamref name="T"/>. <see langword="false"/> otherwise.</returns>
-            <see cref="!:https://stackoverflow.com/questions/18256742/c-sharp-is-operator-check-castability-for-all-conversions-available"/>
+            <returns><see langword="true"/> if <typeparamref name="U"/> can be casted to <typeparamref name="T"/>. <see langword="false"/> otherwise.</returns>
+            <seealso url="https://stackoverflow.com/questions/18256742/c-sharp-is-operator-check-castability-for-all-conversions-available"/>
         </member>
         <member name="M:Enderlook.Extensions.ArrayExtensions.ForEach``1(``0[],System.Action{``0})">
             <summary>
@@ -87,7 +107,7 @@
         </member>
         <member name="M:Enderlook.Extensions.ArrayExtensions.ChangeEach``1(``0[],System.Func{``0,``0})">
             <summary>
-            Performs the specified <paramref name="action"/> on each element of the <paramref name="source"/>.
+            Performs the specified <paramref name="function"/> on each element of the <paramref name="source"/>.
             </summary>
             <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
             <param name="source">Source to look for element to perform the <paramref name="function"/></param>
@@ -95,10 +115,54 @@
             <returns>Updated <paramref name="source"/>.</returns>
             <seealso cref="M:System.Array.ForEach``1(``0[],System.Action{``0})"/>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Extensions.BinarySearchExtensions.BinarySearchFirst``1(System.Collections.Generic.List{``0},``0,System.Collections.Generic.IComparer{``0})" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Extensions.BinarySearchExtensions.BinarySearchFirst``1(System.Collections.Generic.List{``0},``0,System.Int32,System.Int32,System.Collections.Generic.IComparer{``0})" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Extensions.BinarySearchExtensions.BinarySearchFirst``1(``0[],``0,System.Collections.Generic.IComparer{``0})" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Extensions.BinarySearchExtensions.BinarySearchFirst``1(``0[],``0,System.Int32,System.Int32,System.Collections.Generic.IComparer{``0})" -->
+        <member name="M:Enderlook.Extensions.BinarySearchExtensions.BinarySearchFirst``1(System.Collections.Generic.List{``0},``0,System.Collections.Generic.IComparer{``0})">
+            <summary>
+            Returns the zero-based index of the first occurrence of a value in the <paramref name="source"/> or in a portion of it.<br/>
+            Only use if <paramref name="source"/> is sorted.
+            </summary>
+            <typeparam name="T">Element <paramref name="item"/>.</typeparam>
+            <param name="source">Where the index of <paramref name="item"/> will be looked for.</param>
+            <param name="item">The object to locate in the <paramref name="source"/>. The value can be <see langword="null"/> for reference types.</param>
+            <param name="comparer">The <see cref="T:System.Collections.Generic.IComparer`1"/> implementation to use when comparing elements. Use <see langword="null"/> to use <see cref="P:System.Collections.Generic.Comparer`1.Default"/>.</param>
+            <returns>The zero-based index of value in the sorted <paramref name="source"/>, if <paramref name="item"/> is found; otherwise -1.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.BinarySearchExtensions.BinarySearchFirst``1(System.Collections.Generic.List{``0},``0,System.Int32,System.Int32,System.Collections.Generic.IComparer{``0})">
+            <summary>
+            Returns the zero-based index of the first occurrence of a value in the <paramref name="source"/> or in a portion of it.<br/>
+            Only use if <paramref name="source"/> is sorted.
+            </summary>
+            <typeparam name="T">Element <paramref name="item"/>.</typeparam>
+            <param name="source">Where the index of <paramref name="item"/> will be looked for.</param>
+            <param name="item">The object to locate in the <paramref name="source"/>. The value can be <see langword="null"/> for reference types.</param>
+            <param name="index">The zero-based starting index of the range to search.</param>
+            <param name="count">The length of the range to search.</param>
+            <param name="comparer">The <see cref="T:System.Collections.Generic.IComparer`1"/> implementation to use when comparing elements. Use <see langword="null"/> to use <see cref="P:System.Collections.Generic.Comparer`1.Default"/>.</param>
+            <returns>The zero-based index of value in the sorted <paramref name="source"/>, if <paramref name="item"/> is found; otherwise -1.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.BinarySearchExtensions.BinarySearchFirst``1(``0[],``0,System.Collections.Generic.IComparer{``0})">
+            <summary>
+            Returns the zero-based index of the first occurrence of a value in the <paramref name="source"/> or in a portion of it.<br/>
+            Only use if <paramref name="source"/> is sorted.
+            </summary>
+            <typeparam name="T">Element <paramref name="item"/>.</typeparam>
+            <param name="source">Where the index of <paramref name="item"/> will be looked for.</param>
+            <param name="item">The object to locate in the <paramref name="source"/>. The value can be <see langword="null"/> for reference types.</param>
+            <param name="comparer">The <see cref="T:System.Collections.Generic.IComparer`1"/> implementation to use when comparing elements. Use <see langword="null"/> to use <see cref="P:System.Collections.Generic.Comparer`1.Default"/>.</param>
+            <returns>The zero-based index of value in the sorted <paramref name="source"/>, if <paramref name="item"/> is found; otherwise -1.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.BinarySearchExtensions.BinarySearchFirst``1(``0[],``0,System.Int32,System.Int32,System.Collections.Generic.IComparer{``0})">
+            <summary>
+            Returns the zero-based index of the first occurrence of a value in the <paramref name="source"/> or in a portion of it.<br/>
+            Only use if <paramref name="source"/> is sorted.
+            </summary>
+            <typeparam name="T">Element <paramref name="item"/>.</typeparam>
+            <param name="source">Where the index of <paramref name="item"/> will be looked for.</param>
+            <param name="item">The object to locate in the <paramref name="source"/>. The value can be <see langword="null"/> for reference types.</param>
+            <param name="index">The zero-based starting index of the range to search.</param>
+            <param name="count">The length of the range to search.</param>
+            <param name="comparer">The <see cref="T:System.Collections.Generic.IComparer`1"/> implementation to use when comparing elements. Use <see langword="null"/> to use <see cref="P:System.Collections.Generic.Comparer`1.Default"/>.</param>
+            <returns>The zero-based index of value in the sorted <paramref name="source"/>, if <paramref name="item"/> is found; otherwise -1.</returns>
+        </member>
         <member name="M:Enderlook.Extensions.BinarySearchExtensions.BinarySearch``1(System.Collections.Generic.IList{``0},``0,System.Collections.Generic.IComparer{``0})">
             <summary>
             Searches the entire sorted <see cref="T:System.Collections.Generic.IList`1"/> for <paramref name="item"/> and returns the zero-based index of the element.
@@ -109,7 +173,17 @@
             <param name="comparer">The <see cref="T:System.Collections.Generic.IComparer`1"/> implementation to use when comparing elements. Use <see langword="null"/> to use <see cref="P:System.Collections.Generic.Comparer`1.Default"/>.</param>
             <returns>The zero-based index of item in the sorted <see cref="T:System.Collections.Generic.IList`1"/>, if item is found; otherwise, a negative number that is the bitwise complement of the index of the next element that is larger than item or, if there is no larger element, the bitwise complement of <see cref="P:System.Collections.Generic.ICollection`1.Count"/>.</returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Extensions.BinarySearchExtensions.BinarySearchFirst``1(System.Collections.Generic.IList{``0},``0,System.Collections.Generic.IComparer{``0})" -->
+        <member name="M:Enderlook.Extensions.BinarySearchExtensions.BinarySearchFirst``1(System.Collections.Generic.IList{``0},``0,System.Collections.Generic.IComparer{``0})">
+            <summary>
+            Returns the zero-based index of the first occurrence of a value in the <paramref name="source"/> or in a portion of it.<br/>
+            Only use if <paramref name="source"/> is sorted.
+            </summary>
+            <typeparam name="T">Element <paramref name="item"/>.</typeparam>
+            <param name="source">Where the index of <paramref name="item"/> will be looked for.</param>
+            <param name="item">The object to locate in the <paramref name="source"/>. The value can be <see langword="null"/> for reference types.</param>
+            <param name="comparer">The <see cref="T:System.Collections.Generic.IComparer`1"/> implementation to use when comparing elements. Use <see langword="null"/> to use <see cref="P:System.Collections.Generic.Comparer`1.Default"/>.</param>
+            <returns>The zero-based index of value in the sorted <paramref name="source"/>, if <paramref name="item"/> is found; otherwise -1.</returns>
+        </member>
         <member name="M:Enderlook.Extensions.CollectionExtensions.PushRange``1(System.Collections.Generic.Stack{``0},``0[])">
             <summary>
             Push elements from <paramref name="values"/> into <paramref name="source"/>.
@@ -154,6 +228,11 @@
             <param name="source">Where elements will be enqueue.</param>
             <param name="values">Elements to enqueue.</param>
         </member>
+        <member name="T:Enderlook.Extensions.IListExtensions">
+            <summary>
+            Extension functions for <see cref="T:System.Collections.Generic.IList`1"/>.
+            </summary>
+        </member>
         <member name="M:Enderlook.Extensions.IListExtensions.RemoveBy``1(System.Collections.Generic.IList{``0},System.Func{``0,System.Boolean},System.Boolean,System.Int32)">
             <summary>
             Removes an element from a list if matches a criteria determined by <paramref name="selector"/>.
@@ -193,13 +272,10 @@
             <param name="source">List to remove item.</param>
             <param name="selector">Function to determine if the item must be removed.</param>
             <returns><paramref name="source"/>.</returns>
-            <see cref="!:RemoveBy&lt;T&gt;(List&lt;T&gt;, Func&lt;T, bool&gt;, bool, int)"/>
-            <seealso cref="!:RemoveFirstBy&lt;T&gt;(List&lt;T&gt;, Func&lt;T, bool&gt;, int)"/>
-            <seealso cref="!:RemoveLastBy&lt;T&gt;(List&lt;T&gt;, Func&lt;T, bool&gt;, int)"/>
         </member>
         <member name="M:Enderlook.Extensions.IListExtensions.ChangeEach``1(System.Collections.Generic.IList{``0},System.Func{``0,``0})">
             <summary>
-            Performs the specified <paramref name="action"/> on each element of the <paramref name="source"/>.
+            Performs the specified <paramref name="function"/> on each element of the <paramref name="source"/>.
             </summary>
             <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
             <param name="source">Source to look for element to perform the <paramref name="function"/></param>
@@ -256,7 +332,7 @@
         </member>
         <member name="M:Enderlook.Extensions.IListExtensions.RemoveAtOrdered``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{System.Int32})">
             <summary>
-            Remove several elements from <see cref="!:source"/> at indexes <paramref name="indexes"/>.<br/>
+            Remove several elements from <paramref name="source"/> at indexes <paramref name="indexes"/>.<br/>
             Indexes must be sorted from lowest to higher or undefined behavior will happen.
             </summary>
             <typeparam name="T">Type of element.</typeparam>
@@ -266,7 +342,7 @@
         </member>
         <member name="M:Enderlook.Extensions.IListExtensions.RemoveAtOrdered``1(System.Collections.Generic.IList{``0},System.Int32[])">
             <summary>
-            Remove several elements from <see cref="!:source"/> at indexes <paramref name="indexes"/>.<br/>
+            Remove several elements from <paramref name="source"/> at indexes <paramref name="indexes"/>.<br/>
             Indexes must be sorted from lowest to higher or undefined behavior will happen.
             </summary>
             <typeparam name="T">Type of element.</typeparam>
@@ -276,7 +352,7 @@
         </member>
         <member name="M:Enderlook.Extensions.IListExtensions.RemoveAt``1(System.Collections.Generic.IList{``0},System.Int32[])">
             <summary>
-            Remove several elements from <see cref="!:source"/> at indexes <paramref name="indexes"/>.
+            Remove several elements from <paramref name="source"/> at indexes <paramref name="indexes"/>.
             <paramref name="indexes"/> become ordered after executing this method.
             </summary>
             <typeparam name="T">Type of element.</typeparam>
@@ -286,12 +362,33 @@
         </member>
         <member name="M:Enderlook.Extensions.IListExtensions.RemoveAt``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{System.Int32})">
             <summary>
-            Remove several elements from <see cref="!:source"/> at indexes <paramref name="indexes"/>.<br/>
+            Remove several elements from <paramref name="source"/> at indexes <paramref name="indexes"/>.<br/>
             </summary>
             <typeparam name="T">Type of element.</typeparam>
             <param name="source"><see cref="T:System.Collections.Generic.IList`1"/> where elements are removed.</param>
             <param name="indexes">Indexes to remove.</param>
             <exception cref="T:System.ArgumentOutOfRangeException">Thrown when the last element of <paramref name="indexes"/> (the highest) is greater or equal than <paramref name="source"/> <see cref="P:System.Collections.Generic.ICollection`1.Count"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IListExtensions.RandomPickWeighted``1(System.Collections.Generic.IList{``0},System.Func{``0,System.Single})">
+            <summary>
+            Returns a random element from <paramref name="source"/> taking into account its weight produced by <paramref name="weighter"/>.
+            </summary>
+            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
+            <param name="source">Source to look for a random element.</param>
+            <param name="weighter">Produce weight of elements.</param>
+            <returns>Random element from <paramref name="source"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when any of the parameters is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IListExtensions.RandomPickWeighted``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{System.Single})">
+            <summary>
+            Returns a random element from <paramref name="source"/> taking into account its weight from <paramref name="weights"/>.
+            </summary>
+            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
+            <param name="source">Source to look for a random element.</param>
+            <param name="weights">Weight of each element.</param>
+            <returns>Random element from <paramref name="source"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when any of the parameters is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when parameters doesn't have same length.</exception>
         </member>
         <member name="M:Enderlook.Extensions.IEnumerableAggregateExtensions.AggregateWhile``1(System.Collections.Generic.IEnumerable{``0},Enderlook.Extensions.IEnumerableAggregateExtensions.AggregatorWhile{``0})">
             <summary>
@@ -404,11 +501,11 @@
         </member>
         <member name="M:Enderlook.Extensions.IEnumerableRandomExtensions.RandomPickWeighted``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{System.Single})">
             <summary>
-            Returns a random element from <paramref name="source"/> taking into account its weight from <paramref name="weigths"/>.
+            Returns a random element from <paramref name="source"/> taking into account its weight from <paramref name="weights"/>.
             </summary>
             <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
             <param name="source">Source to look for a random element.</param>
-            <param name="weigths">Weight of each element.</param>
+            <param name="weights">Weight of each element.</param>
             <returns>Random element from <paramref name="source"/>.</returns>
         </member>
         <member name="M:Enderlook.Extensions.IEnumerableRandomExtensions.RandomPickWeighted``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Single})">
@@ -419,6 +516,18 @@
             <param name="source">Source to look for a random element.</param>
             <param name="weighter">Produce weight of elements.</param>
             <returns>Random element from <paramref name="source"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when any of the parameters is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableRandomExtensions.RandomPickWeighted``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IList{System.Single})">
+            <summary>
+            Returns a random element from <paramref name="source"/> taking into account its weight from <paramref name="weights"/>.
+            </summary>
+            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
+            <param name="source">Source to look for a random element.</param>
+            <param name="weights">Weight of each element.</param>
+            <returns>Random element from <paramref name="source"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when any of the parameters is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="source"/> have a lower length than <paramref name="weights"/>.</exception>
         </member>
         <member name="M:Enderlook.Extensions.IEnumerableToExtensions.ToDictionary``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})">
             <summary>
@@ -525,6 +634,51 @@
             <summary>
             Deconstruction of <seealso cref="T:System.Collections.Generic.KeyValuePair`2"/>.
             </summary>
+        </member>
+        <member name="T:Enderlook.Extensions.RandomExtension">
+            <summary>
+            An extension class for <see cref="T:System.Random"/>.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Extensions.RandomExtension.Range(System.Random,System.Int32,System.Int32)">
+            <inheritdoc cref="M:System.Random.Next(System.Int32,System.Int32)"/>
+        </member>
+        <member name="M:Enderlook.Extensions.RandomExtension.Range(System.Random,System.Int32)">
+            <inheritdoc cref="M:System.Random.Next(System.Int32)"/>
+        </member>
+        <member name="M:Enderlook.Extensions.RandomExtension.Range(System.Random,System.Double,System.Double)">
+            <summary>
+            Returns a random double that is without the specified range.
+            </summary>
+            <param name="source">Seed.</param>
+            <param name="min">Minimum value.</param>
+            <param name="max">Maximum value</param>
+            <returns>Random number between <paramref name="min"/> and <paramref name="max"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.RandomExtension.Range(System.Random,System.Double)">
+            <summary>
+            Returns a random double that is less than the specified <paramref name="max"/>.
+            </summary>
+            <param name="source">Seed.</param>
+            <param name="max">Maximum value</param>
+            <returns>Random number less than<paramref name="max"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.RandomExtension.Range(System.Random,System.Single,System.Single)">
+            <summary>
+            Returns a random double that is without the specified range.
+            </summary>
+            <param name="source">Seed.</param>
+            <param name="min">Minimum value.</param>
+            <param name="max">Maximum value</param>
+            <returns>Random number between <paramref name="min"/> and <paramref name="max"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.RandomExtension.Range(System.Random,System.Single)">
+            <summary>
+            Returns a random double that is less than the specified <paramref name="max"/>.
+            </summary>
+            <param name="source">Seed.</param>
+            <param name="max">Maximum value</param>
+            <returns>Random number less than<paramref name="max"/>.</returns>
         </member>
         <member name="M:Enderlook.Extensions.AssemblyExtensions.GetReferencedAssemblyNamesRecursive(System.Reflection.Assembly,System.Collections.Generic.IEnumerable{System.Reflection.AssemblyName}@,System.Collections.Generic.IEnumerable{System.Reflection.AssemblyName}@)">
             <summary>
@@ -726,6 +880,11 @@
             <param name="bindingFlags"><see cref="T:System.Reflection.BindingFlags"/> used to get the method.</param>
             <returns>The first method which match the name <paramref name="name"/>.</returns>
         </member>
+        <member name="T:Enderlook.Extensions.StringExtensions">
+            <summary>
+            Extension functions for <see cref="T:System.String"/>.
+            </summary>
+        </member>
         <member name="M:Enderlook.Extensions.StringExtensions.FirstCharToUpper(System.String)">
             <summary>
             Convert the first character of the string to uppercase.
@@ -748,11 +907,80 @@
             <returns>Converted string.</returns>
             <example>the Quick Brown Fox Jumps Over The Lazy Dog. -> The quick brown fox jumps over the lazy dog.</example>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Extensions.StringExtensions.SplitByCamelCase(System.String,System.Boolean)" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Extensions.StringExtensions.SplitByPascalCase(System.String,System.Boolean)" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Extensions.StringExtensions.SplitByTitleCase(System.String,System.Boolean)" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Extensions.StringExtensions.SplitBySnakeCase(System.String,System.Boolean)" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Extensions.StringExtensions.SplitByKebabCase(System.String,System.Boolean)" -->
+        <member name="M:Enderlook.Extensions.StringExtensions.SplitByCamelCase(System.String,System.Boolean)">
+            <summary>
+            Split the string in each non-first, non-last uppercase. Only the last consecutive uppercase it splitted.
+            Convert the string from camel case to common.
+            Does the same as <see cref="M:Enderlook.Extensions.StringExtensions.SplitByPascalCase(System.String,System.Boolean)"/>.
+            </summary>
+            <param name="source">String to convert.</param>
+            <param name="firstCharToUpper">If the first letter should be converted to uppercase through <see cref="M:Enderlook.Extensions.StringExtensions.FirstCharToUpper(System.String)"/>.</param>
+            <returns>Converted string.</returns>
+            <example>
+                • camelCase -> camel Case<br/>
+                • PascalCase -> Pascal Case<br/>
+                • HTMLCase -> HTML Case
+            </example>
+        </member>
+        <member name="M:Enderlook.Extensions.StringExtensions.SplitByPascalCase(System.String,System.Boolean)">
+            <summary>
+            Split the string in each non-first, non-last uppercase. Only the last consecutive uppercase it splitted.
+            Convert the string from pascal case to common.
+            Does the same as <see cref="M:Enderlook.Extensions.StringExtensions.SplitByCamelCase(System.String,System.Boolean)"/>.
+            </summary>
+            <param name="source">String to convert.</param>
+            <param name="firstCharToUpper">If the first letter should be converted to uppercase through <see cref="M:Enderlook.Extensions.StringExtensions.FirstCharToUpper(System.String)"/>.</param>
+            <returns>Converted string.</returns>
+            <example>
+                • camelCase -> camel Case<br/>
+                • PascalCase -> Pascal Case<br/>
+                • HTMLCase -> HTML Case
+            </example>
+        </member>
+        <member name="M:Enderlook.Extensions.StringExtensions.SplitByTitleCase(System.String,System.Boolean)">
+            <summary>
+            Split the string in each non-first, non-last uppercase.
+            Convert the string from title case to common.
+            </summary>
+            <param name="source">String to convert.</param>
+            <param name="firstCharToUpper">If the first letter should be converted to uppercase through <see cref="M:Enderlook.Extensions.StringExtensions.FirstCharToUpper(System.String)"/>.</param>
+            <returns>Converted string.</returns>
+            <example>
+                • camelCase -> camel Case<br/>
+                • PascalCase -> Pascal Case<br/>
+                • HTMLCase -> H T M L Case
+            </example>
+        </member>
+        <member name="M:Enderlook.Extensions.StringExtensions.SplitBySnakeCase(System.String,System.Boolean)">
+            <summary>
+            Split the string in each non-first, non-last underscore. Treats all consecutive underscores as one.<br/>
+            Convert the string from snake case to common.
+            </summary>
+            <param name="source">String to convert.</param>
+            <param name="firstCharToUpper">If the first letter should be converted to uppercase through <see cref="M:Enderlook.Extensions.StringExtensions.FirstCharToUpper(System.String)"/>.</param>
+            <returns>Converted string.</returns>
+            <example>
+                • snake_case -> snake case<br/>
+                • _snake_case -> snake case<br/>
+                • snake_case_ -> snake case<br/>
+                • snake__case -> snake case
+            </example>
+        </member>
+        <member name="M:Enderlook.Extensions.StringExtensions.SplitByKebabCase(System.String,System.Boolean)">
+            <summary>
+            Split the string in each non-first, non-last middle score. Treats all consecutive middle score as one.<br/>
+            Convert the string from kebab case to common.
+            </summary>
+            <param name="source">String to convert.</param>
+            <param name="firstCharToUpper">If the first letter should be converted to uppercase through <see cref="M:Enderlook.Extensions.StringExtensions.FirstCharToUpper(System.String)"/>.</param>
+            <returns>Converted string.</returns>
+            <example>
+                • kebab-case -> kebab case<br/>
+                • -kebab-case -> kebab case<br/>
+                • kebab-case_ -> kebab case<br/>
+                • kebab--case -> kebab case
+            </example>
+        </member>
         <member name="M:Enderlook.Extensions.StringExtensions.ToCapitalWords(System.String)">
             <summary>
             Capitalize each word delimited by whitespace
@@ -761,9 +989,41 @@
             <returns>Converted string.</returns>
             <example>the quick brown fox jumps over the lazy dog ->  The Quick Brown Fox Jumps Over The Lazy Dog</example>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Extensions.StringExtensions.ToPascalCase(System.String)" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Extensions.StringExtensions.ToTitleCase(System.String)" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Extensions.StringExtensions.ToCamelCase(System.String)" -->
+        <member name="M:Enderlook.Extensions.StringExtensions.ToPascalCase(System.String)">
+            <summary>
+            Capitalize each word delimited by whitespace and join them together.
+            Does the same as <see cref="M:Enderlook.Extensions.StringExtensions.ToTitleCase(System.String)"/>.
+            </summary>
+            <param name="source">String to convert.</param>
+            <returns>Converted string.</returns>
+            <example>
+                • pascal case -> PascalCase<br/>
+                • pAscal CaSe -> PascalCase<br/>
+            </example>
+        </member>
+        <member name="M:Enderlook.Extensions.StringExtensions.ToTitleCase(System.String)">
+            <summary>
+            Capitalize each word delimited by whitespace and join them together.
+            Does the same as <see cref="M:Enderlook.Extensions.StringExtensions.ToPascalCase(System.String)"/>.
+            </summary>
+            <param name="source">String to convert.</param>
+            <returns>Converted string.</returns>
+            <example>
+                • title case -> TitleCase<br/>
+                • tItle caSe -> TitleCase<br/>
+            </example>
+        </member>
+        <member name="M:Enderlook.Extensions.StringExtensions.ToCamelCase(System.String)">
+            <summary>
+            Capitalize each word delimited by whitespace and join them together, except the first word which remains in lowercase.
+            </summary>
+            <param name="source">String to convert.</param>
+            <returns>Converted string.</returns>
+            <example>
+                • camel case -> cameCase<br/>
+                • cAmel caSe -> cameCase<br/>
+            </example>
+        </member>
         <member name="M:Enderlook.Extensions.StringExtensions.ToSnakeCase(System.String)">
             <summary>
             Convert to lowercase and join each word delimited by whitespace with underscores.
