@@ -14,7 +14,12 @@ namespace Game.Creatures.Player
         [SerializeField, Tooltip("Ability")]
         private List<Ability> abilities;
 
+        [SerializeField, Tooltip("Shot Position.")]
+        private Transform shotPosition;
+
         public Animator ThisAnimator => animator;
+
+        public Transform ThisShotPosition => shotPosition;
 
         private void Awake() => Initialize(abilities);
 
@@ -39,6 +44,15 @@ namespace Game.Creatures.Player
                     ability.ButtonHold();
                 else if (shouldShoot)
                     ability.ButtonDown();
+                ability.UpdateBehaviour();
+            }
+        }
+
+        public void ActiveSkill() 
+        {
+            foreach (Ability ability in abilities)
+            {
+                ability.TriggerAbility();
             }
         }
     }

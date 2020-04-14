@@ -22,6 +22,9 @@ namespace Game.Creatures.Player
         [SerializeField, Tooltip("Layer to get mouse position.")]
         private LayerMask layerGround;
 
+        [SerializeField, Tooltip("Range of the ray.")]
+        private float range;
+
         // We hide a Unity obsolete API
         private new Rigidbody rigidbody;
 
@@ -60,7 +63,7 @@ namespace Game.Creatures.Player
         {
             Ray camRayPoint = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            Vector3 pointOnScreen = Physics.Raycast(camRayPoint, out RaycastHit ground, LayerGround) ? ground.point : Vector3.zero;
+            Vector3 pointOnScreen = Physics.Raycast(camRayPoint, out RaycastHit ground, range, LayerGround) ? ground.point : Vector3.zero;
 
             Vector3 playerDirection = rigidbody.position.VectorSubtraction(pointOnScreen);
 
