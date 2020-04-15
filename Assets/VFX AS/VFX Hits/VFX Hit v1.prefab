@@ -31,6 +31,7 @@ Transform:
   - {fileID: 4268112447548455803}
   - {fileID: 4268112447438988528}
   - {fileID: 4268112448026936387}
+  - {fileID: 8077470713075634931}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18296,18 +18297,18 @@ ParticleSystem:
       properties: 0
       emitProbability: 1
   LightsModule:
-    enabled: 0
-    ratio: 0
-    light: {fileID: 0}
+    enabled: 1
+    ratio: 0.4
+    light: {fileID: 6207523524587838884}
     randomDistribution: 1
     color: 1
     range: 1
     intensity: 1
     rangeCurve:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 1
-      minScalar: 1
+      minMaxState: 3
+      scalar: 1.2
+      minScalar: 0.2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -18358,9 +18359,9 @@ ParticleSystem:
         m_RotationOrder: 4
     intensityCurve:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 1
-      minScalar: 1
+      minMaxState: 3
+      scalar: 1.2
+      minScalar: 0.8
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -18409,7 +18410,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    maxLights: 20
+    maxLights: 5
   TrailModule:
     enabled: 0
     mode: 0
@@ -19287,3 +19288,84 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!1001 &2178871941569106672
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4268112446736551423}
+    m_Modifications:
+    - target: {fileID: 7936495577329844227, guid: a7e5836609091d94dbfd3dc70bf62475,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7936495577329844227, guid: a7e5836609091d94dbfd3dc70bf62475,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7936495577329844227, guid: a7e5836609091d94dbfd3dc70bf62475,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7936495577329844227, guid: a7e5836609091d94dbfd3dc70bf62475,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7936495577329844227, guid: a7e5836609091d94dbfd3dc70bf62475,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7936495577329844227, guid: a7e5836609091d94dbfd3dc70bf62475,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7936495577329844227, guid: a7e5836609091d94dbfd3dc70bf62475,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7936495577329844227, guid: a7e5836609091d94dbfd3dc70bf62475,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7936495577329844227, guid: a7e5836609091d94dbfd3dc70bf62475,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7936495577329844227, guid: a7e5836609091d94dbfd3dc70bf62475,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7936495577329844227, guid: a7e5836609091d94dbfd3dc70bf62475,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8134368222263648595, guid: a7e5836609091d94dbfd3dc70bf62475,
+        type: 3}
+      propertyPath: m_Name
+      value: BeamLight
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a7e5836609091d94dbfd3dc70bf62475, type: 3}
+--- !u!4 &8077470713075634931 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7936495577329844227, guid: a7e5836609091d94dbfd3dc70bf62475,
+    type: 3}
+  m_PrefabInstance: {fileID: 2178871941569106672}
+  m_PrefabAsset: {fileID: 0}
+--- !u!108 &6207523524587838884 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 5195295508137676628, guid: a7e5836609091d94dbfd3dc70bf62475,
+    type: 3}
+  m_PrefabInstance: {fileID: 2178871941569106672}
+  m_PrefabAsset: {fileID: 0}
