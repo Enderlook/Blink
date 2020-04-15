@@ -10,7 +10,16 @@
             </summary>
             <param name="bindingFlags">Necessary binding flags.</param>
         </member>
-        <!-- Badly formed XML comment ignored for member "F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageMethodAttribute.parameterNumber" -->
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageMethodAttribute.parameterNumber">
+            <summary>
+            Number of the parameter to check.<br/>
+            Example:<br/>
+                • 0 -> Return type.<br/>
+                • 1 -> First method parameter.<br/>
+                • 2 -> Second method parameter<br/>
+                • 3 -> Third method parameter...
+            </summary>
+        </member>
         <member name="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageMethodAttribute.parameterType">
             <summary>
             Determine the type of parameter. Use <see cref="F:Enderlook.Unity.Attributes.AttributeUsage.ParameterMode.VoidOrNone"/> to specify that it should not exist.
@@ -21,50 +30,93 @@
             Additional checking rules.
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageMethodAttribute.#ctor(System.Int32,System.Type[])" -->
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageMethodAttribute.#ctor(System.Int32,System.Type[])">
+            <summary>
+            Each time Unity compile script, they will be analyzed to check if the attribute is being used in proper methods.
+            </summary>
+            <param name="parameterNumber">Number of the parameter to check.<br/>
+            Example:<br/>
+                • 0 -> Return type.<br/>
+                • 1 -> First method parameter.<br/>
+                • 2 -> Second method parameter<br/>
+                • 3 -> Third method parameter...</param>
+            <param name="types">Data types allowed.<br/>
+            If empty, any data type is allowed.<br/>
+            To specify that a parameter should not exist, use <see cref="F:Enderlook.Unity.Attributes.AttributeUsage.ParameterMode.VoidOrNone"/> in <see cref="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageMethodAttribute.parameterType"/>.</param>
+        </member>
         <member name="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageRequireDataTypeAttribute.typeFlags">
             <summary>
             Additional checking rules.
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageRequireDataTypeAttribute.isBlackList" -->
-        <!-- Badly formed XML comment ignored for member "F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageRequireDataTypeAttribute.includeEnumerableTypes" -->
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageRequireDataTypeAttribute.isBlackList">
+            <summary>
+            If <see langword="true"/>, <see cref="!:Types"/> will be forbidden types (blacklist).<br/>
+            If <see langword="false"/>, they will be the only allowed types (white list).<br/>
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageRequireDataTypeAttribute.includeEnumerableTypes">
+            <summary>
+            If <see langword="true"/>, it will also check for array o list versions of types.<br/>
+            Useful because Unity <see cref="T:UnityEditor.PropertyDrawer"/> are draw on each element of an array or list <see cref="T:UnityEditor.SerializedProperty"/>.
+            </summary>
+        </member>
         <member name="M:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageRequireDataTypeAttribute.#ctor(System.Type[])">
             <summary>
             Each time Unity compile script, they will be analyzed to check if the attribute is being used in proper DataTypes.
             </summary>
-            <param name="types">Data types allowed. Use <see cref="!:CheckingFlags.IsBlackList"/> in <see cref="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageRequireDataTypeAttribute.typeFlags"/> to become it forbidden data types.</param>
+            <param name="types">Data types allowed. Set <see cref="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageRequireDataTypeAttribute.isBlackList"/> to <see langword="true"/> in order to become it forbidden data types.</param>
         </member>
         <member name="T:Enderlook.Unity.Attributes.AttributeUsage.FieldSerialization">
             <summary>
             Rules that should be match by the field.
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "F:Enderlook.Unity.Attributes.AttributeUsage.FieldSerialization.NotSerializableByUnity" -->
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.FieldSerialization.NotSerializableByUnity">
+            <summary>
+            Non serializable fields by Unity are allowed.<br/>
+            <seealso cref="!:ReflectionHelper.CanBeSerializedByUnity(FieldInfo)"/>.
+            </summary>
+        </member>
         <member name="F:Enderlook.Unity.Attributes.AttributeUsage.FieldSerialization.SerializableByUnity">
             <summary>
             Serializable fields by Unity are allowed.
             <seealso cref="!:ReflectionHelper.CanBeSerializedByUnity(FieldInfo)"/>.
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "F:Enderlook.Unity.Attributes.AttributeUsage.FieldSerialization.EitherSerializableOrNotByUnity" -->
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.FieldSerialization.EitherSerializableOrNotByUnity">
+            <summary>
+            Either serializable or not serializable fields by Unity are allowed.<br/>
+            <seealso cref="F:Enderlook.Unity.Attributes.AttributeUsage.FieldSerialization.NotSerializableByUnity"/> and <seealso cref="F:Enderlook.Unity.Attributes.AttributeUsage.FieldSerialization.SerializableByUnity"/>.
+            </summary>
+        </member>
         <member name="T:Enderlook.Unity.Attributes.AttributeUsage.ParameterMode">
             <summary>
             The parameter mode.
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "F:Enderlook.Unity.Attributes.AttributeUsage.ParameterMode.Common" -->
-        <!-- Badly formed XML comment ignored for member "F:Enderlook.Unity.Attributes.AttributeUsage.ParameterMode.In" -->
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.ParameterMode.Common">
+            <summary>
+            Specifies an common parameter.<br/>
+            If <see cref="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageMethodAttribute.parameterNumber"/> is 0, this will be ignored.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.ParameterMode.In">
+            <summary>
+            Specifies an in parameter.<br/>
+            If <see cref="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageMethodAttribute.parameterNumber"/> is 0, this will be ignored.
+            </summary>
+        </member>
         <member name="F:Enderlook.Unity.Attributes.AttributeUsage.ParameterMode.Out">
             <summary>
             Specifies an out parameter.
-            If <see cref="!:parameterNumber"/> is 0, this will be ignored.
+            If <see cref="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageMethodAttribute.parameterNumber"/> is 0, this will be ignored.
             </summary>
         </member>
         <member name="F:Enderlook.Unity.Attributes.AttributeUsage.ParameterMode.Ref">
             <summary>
             Specifies a reference parameter.
-            If <see cref="!:parameterNumber"/> is 0, this will be ignored.
+            If <see cref="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageMethodAttribute.parameterNumber"/> is 0, this will be ignored.
             </summary>
         </member>
         <member name="F:Enderlook.Unity.Attributes.AttributeUsage.ParameterMode.VoidOrNone">

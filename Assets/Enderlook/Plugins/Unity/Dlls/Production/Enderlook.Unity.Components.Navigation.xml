@@ -150,8 +150,23 @@
         </member>
         <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Components.Navigation.Node.AddConnectionTo(Enderlook.Unity.Components.Navigation.Node,System.Boolean)" -->
         <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Components.Navigation.Node.AddConnectionFrom(Enderlook.Unity.Components.Navigation.Node,System.Boolean)" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Components.Navigation.Node.AddConnection(Enderlook.Unity.Components.Navigation.Connection)" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Components.Navigation.Node.TryGetConnectionTo(Enderlook.Unity.Components.Navigation.Node,Enderlook.Unity.Components.Navigation.Connection@,System.Boolean)" -->
+        <member name="M:Enderlook.Unity.Components.Navigation.Node.AddConnection(Enderlook.Unity.Components.Navigation.Connection)">
+            <summary>
+            Add a <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> to this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>.<br/>
+            <paramref name="connection"/> <see cref="F:Enderlook.Unity.Components.Navigation.Connection.start"/> must be this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>, but <see cref="F:Enderlook.Unity.Components.Navigation.Connection.end"/> must not be this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>.
+            </summary>
+            <param name="connection"><see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> to add.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Navigation.Node.TryGetConnectionTo(Enderlook.Unity.Components.Navigation.Node,Enderlook.Unity.Components.Navigation.Connection@,System.Boolean)">
+            <summary>
+            Try get the <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> from this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/> to <paramref name="end"/> <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>.
+            </summary>
+            <param name="end">Target <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>. <see cref="F:Enderlook.Unity.Components.Navigation.Connection.end"/> == <paramref name="end"/>.</param>
+            <param name="connection"><see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> from this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/> to <paramref name="end"/> <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>.</param>
+            <param name="safe">On <see langword="true"/>, this method won't throw exception if <paramref name="end"/> and this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/> are the same.<br/>
+            Though it throw raise exception for <see cref="T:System.ArgumentNullException"/> in <paramref name="end"/>.</param>
+            <returns>Whenever if the <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> was found or not.</returns>
+        </member>
         <member name="M:Enderlook.Unity.Components.Navigation.Node.GetConnectionTo(Enderlook.Unity.Components.Navigation.Node)">
             <summary>
             Get the <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> from this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/> to <paramref name="end"/> <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>.
@@ -159,14 +174,30 @@
             <param name="end">Target <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>. <see cref="F:Enderlook.Unity.Components.Navigation.Connection.end"/> == <paramref name="end"/>.</param>
             <returns><see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> from this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/> to <paramref name="end"/> <see cref="T:Enderlook.Unity.Components.Navigation.Node"/></returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Components.Navigation.Node.TryRemoveConnectionTo(Enderlook.Unity.Components.Navigation.Node,System.Boolean)" -->
+        <member name="M:Enderlook.Unity.Components.Navigation.Node.TryRemoveConnectionTo(Enderlook.Unity.Components.Navigation.Node,System.Boolean)">
+            <summary>
+            Try to remove a <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> from this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/> to <paramref name="end"/>.
+            </summary>
+            <param name="end"><see cref="F:Enderlook.Unity.Components.Navigation.Connection.end"/> = <paramref name="end"/>.</param>
+            <param name="safe">On <see langword="true"/>, this method won't throw exception if <paramref name="end"/> and this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/> are the same.<br/>
+            Though it throw raise exception for <see cref="T:System.ArgumentNullException"/> in <paramref name="end"/>.</param>
+            <returns>Whenever there was a <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> which was removed or nothing could be found.</returns>
+        </member>
         <member name="M:Enderlook.Unity.Components.Navigation.Node.RemoveConnectionTo(Enderlook.Unity.Components.Navigation.Node)">
             <summary>
             Remove a <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> from this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/> to <paramref name="start"/>.
             </summary>
             <param name="end"><see cref="F:Enderlook.Unity.Components.Navigation.Connection.end"/> = <paramref name="end"/>.</param>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Components.Navigation.Node.TryRemoveConnectionFrom(Enderlook.Unity.Components.Navigation.Node,System.Boolean)" -->
+        <member name="M:Enderlook.Unity.Components.Navigation.Node.TryRemoveConnectionFrom(Enderlook.Unity.Components.Navigation.Node,System.Boolean)">
+            <summary>
+            Try to remove a <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> from <paramref name="start"/> to this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/> .
+            </summary>
+            <param name="start"><see cref="F:Enderlook.Unity.Components.Navigation.Connection.start"/> = <paramref name="start"/>.</param>
+            <param name="safe">On <see langword="true"/>, this method won't throw exception if <paramref name="start"/> and this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/> are the same.<br/>
+            Though it throw raise exception for <see cref="T:System.ArgumentNullException"/> in <paramref name="start"/>.</param>
+            <returns>Whenever there was a <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> which was removed or nothing could be found.</returns>
+        </member>
         <member name="M:Enderlook.Unity.Components.Navigation.Node.RemoveConnectionFrom(Enderlook.Unity.Components.Navigation.Node)">
             <summary>
             Remove a <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> from <paramref name="start"/> to this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>.
@@ -186,7 +217,14 @@
             </summary>
             <param name="connection"><see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> to remove.</param>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Components.Navigation.Node.DisconnectNode(Enderlook.Unity.Components.Navigation.Node)" -->
+        <member name="M:Enderlook.Unity.Components.Navigation.Node.DisconnectNode(Enderlook.Unity.Components.Navigation.Node)">
+            <summary>
+            Remove <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> <paramref name="other"/> from this, and this from <paramref name="other"/>.<br/>
+            Equivalent to:<br/>
+            <code><paramref name="other"/>.<see cref="!:TryRemoveConnectionTo(Node)"/>(this)
+            this.<see cref="!:TryRemoveConnectionTo(Node)"/>(<paramref name="other"/>)</code>
+            </summary>
+        </member>
         <member name="M:Enderlook.Unity.Components.Navigation.Node.CreateNode(UnityEngine.Vector2,System.Boolean)">
             <summary>
             Create a new <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>.
@@ -195,7 +233,17 @@
             <param name="isActive">Whenever it's active or not.</param>
             <returns>New <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>.</returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Components.Navigation.Node.CreateNode(UnityEngine.Vector2,System.Collections.Generic.IEnumerable{Enderlook.Unity.Components.Navigation.Node},System.Boolean,System.Nullable{System.Boolean})" -->
+        <member name="M:Enderlook.Unity.Components.Navigation.Node.CreateNode(UnityEngine.Vector2,System.Collections.Generic.IEnumerable{Enderlook.Unity.Components.Navigation.Node},System.Boolean,System.Nullable{System.Boolean})">
+            <summary>
+            Create a new <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>.
+            </summary>
+            <param name="position">Its position.</param>
+            <param name="connectionsTo">The new <see cref="T:Enderlook.Unity.Components.Navigation.Node"/> will connect to all this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>s.</param>
+            <param name="isActive">Whenever it's active or not.</param>
+            <param name="areConnectionsActive">Whenever this <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/>s are enabled or not.<br/>
+            Use <see langword="null"/> to use <paramref name="isActive"/> instead.</param>
+            <returns>New <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>.</returns>
+        </member>
         <member name="T:Enderlook.Unity.Components.Navigation.PositionReference">
             <summary>
             How position of <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>s is calculated.

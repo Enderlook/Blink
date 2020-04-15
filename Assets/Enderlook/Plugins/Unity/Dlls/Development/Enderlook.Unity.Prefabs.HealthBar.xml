@@ -10,16 +10,27 @@
         <member name="P:Enderlook.Unity.Prefabs.HealthBarGUI.HealthBar.IsEnabled">
             <inheritdoc cref="P:Enderlook.Unity.Prefabs.HealthBarGUI.IHealthBarViewer.IsEnabled"/>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Prefabs.HealthBarGUI.HealthBar.ManualUpdate(System.Single,System.Single)" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Prefabs.HealthBarGUI.HealthBar.ManualUpdate(System.Single)" -->
+        <member name="M:Enderlook.Unity.Prefabs.HealthBarGUI.HealthBar.ManualUpdate(System.Single,System.Single)">
+            <inheritdoc cref="M:Enderlook.Unity.Prefabs.HealthBarGUI.IHealthBarWorker.ManualUpdate(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Enderlook.Unity.Prefabs.HealthBarGUI.HealthBar.ManualUpdate(System.Single)">
+            <inheritdoc cref="M:Enderlook.Unity.Prefabs.HealthBarGUI.IHealthBarWorker.ManualUpdate(System.Single)"/>
+        </member>
+        <member name="M:Enderlook.Unity.Prefabs.HealthBarGUI.HealthBar.FinishCurrentAnimation">
+            <inheritdoc cref="M:Enderlook.Unity.Prefabs.HealthBarGUI.IHealthBarWorker.FinishCurrentAnimation"/>
+        </member>
         <member name="M:Enderlook.Unity.Prefabs.HealthBarGUI.HealthBar.GetHealthColor">
             <summary>
             Get the <see cref="F:Enderlook.Unity.Prefabs.HealthBarGUI.HealthBar.healthImage"/> color taking into account the percentage of remaining health.
             </summary>
             <returns>Color of the <see cref="F:Enderlook.Unity.Prefabs.HealthBarGUI.HealthBar.healthImage"/></returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Prefabs.HealthBarGUI.HealthBar.UpdateValues(System.Single,System.Single)" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Prefabs.HealthBarGUI.HealthBar.UpdateValues(System.Single)" -->
+        <member name="M:Enderlook.Unity.Prefabs.HealthBarGUI.HealthBar.UpdateValues(System.Single,System.Single)">
+            <inheritdoc cref="M:Enderlook.Unity.Prefabs.HealthBarGUI.IHealthBarWorker.UpdateValues(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Enderlook.Unity.Prefabs.HealthBarGUI.HealthBar.UpdateValues(System.Single)">
+            <inheritdoc cref="M:Enderlook.Unity.Prefabs.HealthBarGUI.IHealthBarWorker.UpdateValues(System.Single)"/>
+        </member>
         <member name="M:Enderlook.Unity.Prefabs.HealthBarGUI.HealthBar.Set(System.Single)">
             <summary>
             Set the new health value and updates bars.
@@ -131,6 +142,11 @@
             </summary>
             <param name="health">Current health value.</param>
             <param name="maxHealth">Maximum health value.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Prefabs.HealthBarGUI.IHealthBarWorker.FinishCurrentAnimation">
+            <summary>
+            Finish instantaneously the animation of current health bar, damage bar, healing bar and health number. 
+            </summary>
         </member>
         <member name="M:Enderlook.Unity.Prefabs.HealthBarGUI.IHealthBarWorker.UpdateValues(System.Single)">
             <summary>

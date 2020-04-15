@@ -4,7 +4,12 @@
         <name>Enderlook.Unity.Serializables</name>
     </assembly>
     <members>
-        <!-- Badly formed XML comment ignored for member "T:Enderlook.Unity.Serializables.Calculator" -->
+        <member name="T:Enderlook.Unity.Serializables.Calculator">
+            <summary>
+            Used to calculate formulas.<br/>
+            It can be either serialized in Unity inspector or construct using new.
+            </summary>
+        </member>
         <member name="P:Enderlook.Unity.Serializables.Calculator.Compile">
             <summary>
             Whenever the regex object is compiled or not.

@@ -4,5 +4,125 @@
         <name>Enderlook.Unity.Components</name>
     </assembly>
     <members>
+        <member name="M:Enderlook.Unity.Components.DestroyNotifier.RegisterCallback(System.Action)">
+            <summary>
+            Registers a callback to be executed when the <see cref="T:UnityEngine.GameObject"/> is destroyed.
+            </summary>
+            <param name="onDestroy">Callback that will be executed when the <see cref="T:UnityEngine.GameObject"/> is destroyed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.DestroyNotifier.UnregisterCallback(System.Action)">
+            <summary>
+            Unregisters a callback to be executed when the <see cref="T:UnityEngine.GameObject"/> is destroyed.
+            </summary>
+            <param name="onDestroy">Callback that will not be executed when the <see cref="T:UnityEngine.GameObject"/> is destroyed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.DestroyNotifier.ExecuteOnDestroy(UnityEngine.GameObject,System.Action)">
+            <summary>
+            Executes a <paramref name="onDestroy"/> when <paramref name="gameObject"/> is destroyed.<br/>
+            This method will register <paramref name="onDestroy"/> on a <see cref="T:Enderlook.Unity.Components.DestroyNotifier"/> attached to <paramref name="gameObject"/>.<br/>
+            If no component can be found, a new one is added.
+            </summary>
+            <param name="gameObject"><see cref="T:UnityEngine.GameObject"/> to check for destroy.</param>
+            <param name="onDestroy">Callback executed when <paramref name="gameObject"/> is destroyed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.DestroyNotifier.RegisterCallback(System.Action{UnityEngine.GameObject})">
+            <summary>
+            Registers a callback to be executed when the <see cref="T:UnityEngine.GameObject"/> is destroyed.
+            </summary>
+            <param name="onDestroy">Callback that will be executed when the <see cref="T:UnityEngine.GameObject"/> is destroyed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.DestroyNotifier.UnregisterCallback(System.Action{UnityEngine.GameObject})">
+            <summary>
+            Unregisters a callback to be executed when the <see cref="T:UnityEngine.GameObject"/> is destroyed.
+            </summary>
+            <param name="onDestroy">Callback that will not be executed when the <see cref="T:UnityEngine.GameObject"/> is destroyed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.DestroyNotifier.ExecuteOnDestroy(UnityEngine.GameObject,System.Action{UnityEngine.GameObject})">
+            <summary>
+            Executes a <paramref name="onDestroy"/>. when <paramref name="gameObject"/> is destroyed.<br/>
+            This method will register <paramref name="onDestroy"/> on a <see cref="T:Enderlook.Unity.Components.DestroyNotifier"/> attached to <paramref name="gameObject"/>.<br/>
+            If no component can be found, a new one is added.
+            </summary>
+            <param name="gameObject"><see cref="T:UnityEngine.GameObject"/> to check for destroy.</param>
+            <param name="onDestroy">Callback executed when <paramref name="gameObject"/> is destroyed.</param>
+        </member>
+        <member name="T:Enderlook.Unity.Components.DontDestroyOnLoad">
+            <summary>
+            Configure the <see cref="T:UnityEngine.GameObject"/> where this <see cref="T:UnityEngine.Component"/> is attached to, to not destroy when Unity loads a new scene.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Components.GameObjectCounter">
+            <summary>
+            Creates a counter to maintain track of alives <see cref="T:UnityEngine.GameObject"/>s.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.GameObjectCounter.Alives">
+            <summary>
+            Current amount of alive <see cref="T:UnityEngine.GameObject"/>s.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.GameObjectCounter.Destroyed">
+            <summary>
+            How many registered <see cref="T:UnityEngine.GameObject"/>s has been destroyed.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.GameObjectCounter.RegisterDestroy(System.Action{Enderlook.Unity.Components.GameObjectCounter,UnityEngine.GameObject})">
+            <summary>
+            Register a <paramref name="callback"/> that will be executed when a registered <see cref="T:UnityEngine.GameObject"/> is destroyed.
+            </summary>
+            <param name="callback">Callback to execute when a <see cref="T:UnityEngine.GameObject"/> is destroyed</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.GameObjectCounter.UnregisterDestroy(System.Action{Enderlook.Unity.Components.GameObjectCounter,UnityEngine.GameObject})">
+            <summary>
+            Unregister a <paramref name="callback"/> that will be executed when a registered <see cref="T:UnityEngine.GameObject"/> is destroyed.
+            </summary>
+            <param name="callback">Callback executed when a <see cref="T:UnityEngine.GameObject"/> is destroyed</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.GameObjectCounter.RegisterGameObject(UnityEngine.GameObject)">
+            <summary>
+            Regist an <paramref name="gameObject"/> to the counter.<br/>
+            The <paramref name="gameObject"/> will be automatically unregisted when is destroyed.
+            </summary>
+            <param name="gameObject"><see cref="T:UnityEngine.GameObject"/> to register.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.GameObjectCounter.RegisterGameObject(UnityEngine.GameObject,System.Action{UnityEngine.GameObject})">
+            <summary>
+            Regist an <paramref name="gameObject"/> to the counter.<br/>
+            The <paramref name="gameObject"/> will be automatically unregisted when is destroyed.
+            </summary>
+            <param name="gameObject"><see cref="T:UnityEngine.GameObject"/> to register.</param>
+            <param name="onDestroy">Callback executed when <paramref name="gameObject"/> is destroyed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.GameObjectCounter.RegisterGameObject(UnityEngine.GameObject,System.Action)">
+            <summary>
+            Regist an <paramref name="gameObject"/> to the counter.<br/>
+            The <paramref name="gameObject"/> will be automatically unregisted when is destroyed.
+            </summary>
+            <param name="gameObject"><see cref="T:UnityEngine.GameObject"/> to register.</param>
+            <param name="onDestroy">Callback executed when <paramref name="gameObject"/> is destroyed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.GameObjectCounter.GetAliveGameObjects">
+            <summary>
+            Get all alive registered <see cref="T:UnityEngine.GameObject"/>s.
+            </summary>
+            <returns>All alive registered <see cref="T:UnityEngine.GameObject"/>s.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Components.GameObjectCounter.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Get all alive registered <see cref="T:UnityEngine.GameObject"/>s.
+            </summary>
+            <returns>All alive registered <see cref="T:UnityEngine.GameObject"/>s.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Components.GameObjectCounter.GetEnumerator">
+            <summary>
+            Get all alive registered <see cref="T:UnityEngine.GameObject"/>s.
+            </summary>
+            <returns>All alive registered <see cref="T:UnityEngine.GameObject"/>s.</returns>
+        </member>
+        <member name="T:Enderlook.Unity.Components.TransformFollower">
+            <summary>
+            Make the <see cref="T:UnityEngine.GameObject"/> where this <see cref="T:UnityEngine.Component"/> is attached to, to follow another <see cref="T:UnityEngine.GameObject"/> in position, rotation and or scale.
+            </summary>
+        </member>
     </members>
 </doc>
