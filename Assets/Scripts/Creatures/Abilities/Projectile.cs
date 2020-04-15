@@ -58,6 +58,7 @@ namespace Game.Creatures.AbilitiesSystem
             if (Time.time > lastCooldown + Cooldown)
             {
                 lastCooldown = Time.time;
+                active = true;
                 StartFire();
             }
         }
@@ -69,6 +70,7 @@ namespace Game.Creatures.AbilitiesSystem
             if (Time.time > lastCooldown + Cooldown)
             {
                 lastCooldown = Time.time;
+                active = true;
                 StartFire();
             }
         }
@@ -77,7 +79,11 @@ namespace Game.Creatures.AbilitiesSystem
 
         public override void TriggerAbility()
         {
-            Instantiate(projectile, shotPosition.position, shotPosition.rotation);
+            if (active)
+            {
+                Instantiate(projectile, shotPosition.position, shotPosition.rotation);
+                active = false;
+            }
         }
     }
 }

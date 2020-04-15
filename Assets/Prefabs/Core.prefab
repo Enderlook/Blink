@@ -48,6 +48,7 @@ MonoBehaviour:
   timePerScene: 120
   baseDifficulty: 1
   levelDifficultyFactor: 0.5
+  levelDifficultyPowerFactor: 0.5
   difficultyInSceneFactor: 0.5
   timer: {fileID: 8118707543177352285}
 --- !u!114 &1928472508134121915
@@ -815,9 +816,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9093263735883253344, guid: a49ed22391a51eb4cb605b74d0ecb77f,
         type: 3}
+      propertyPath: abilities.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9093263735883253344, guid: a49ed22391a51eb4cb605b74d0ecb77f,
+        type: 3}
       propertyPath: abilities.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 0f309a873d630f64d809b9348c3bc09e,
+        type: 2}
+    - target: {fileID: 9093263735883253344, guid: a49ed22391a51eb4cb605b74d0ecb77f,
+        type: 3}
+      propertyPath: abilities.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 334c6fa7e6e8dd04eb3c88c6f1d085a2,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a49ed22391a51eb4cb605b74d0ecb77f, type: 3}

@@ -59,6 +59,7 @@ namespace Game.Creatures.AbilitiesSystem
 
         private Animator animator;
         protected float lastCooldown = 0;
+        protected bool active = false;
 
         public virtual void Initialize(Abilities abilities)
         {
