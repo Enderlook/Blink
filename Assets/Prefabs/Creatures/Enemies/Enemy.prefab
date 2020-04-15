@@ -243,10 +243,10 @@ MonoBehaviour:
     scriptableObject: {fileID: 0}
     component: {fileID: 6182153272523996434}
   maxHealth:
-    <Mode>k__BackingField: 0
+    <Mode>k__BackingField: 2
     inline: 0
     scriptableObject: {fileID: 0}
-    component: {fileID: 0}
+    component: {fileID: 731368825069099440}
 --- !u!114 &6182153272523996434
 MonoBehaviour:
   m_ObjectHideFlags: 0
