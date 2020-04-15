@@ -96,15 +96,6 @@
             <returns><see langword="true"/> if <typeparamref name="U"/> can be casted to <typeparamref name="T"/>. <see langword="false"/> otherwise.</returns>
             <seealso url="https://stackoverflow.com/questions/18256742/c-sharp-is-operator-check-castability-for-all-conversions-available"/>
         </member>
-        <member name="M:Enderlook.Extensions.ArrayExtensions.ForEach``1(``0[],System.Action{``0})">
-            <summary>
-            Performs the specified <paramref name="action"/> on each element of the <paramref name="source"/>.
-            </summary>
-            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
-            <param name="source">Source to look for element to perform the <paramref name="action"/></param>
-            <param name="action">Action to perform on each element of <paramref name="source"/></param>
-            <seealso cref="M:System.Array.ForEach``1(``0[],System.Action{``0})"/>
-        </member>
         <member name="M:Enderlook.Extensions.ArrayExtensions.ChangeEach``1(``0[],System.Func{``0,``0})">
             <summary>
             Performs the specified <paramref name="function"/> on each element of the <paramref name="source"/>.
@@ -378,6 +369,7 @@
             <param name="weighter">Produce weight of elements.</param>
             <returns>Random element from <paramref name="source"/>.</returns>
             <exception cref="T:System.ArgumentNullException">Thrown when any of the parameters is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="source"/> count is 0.</exception>
         </member>
         <member name="M:Enderlook.Extensions.IListExtensions.RandomPickWeighted``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{System.Single})">
             <summary>
@@ -389,6 +381,35 @@
             <returns>Random element from <paramref name="source"/>.</returns>
             <exception cref="T:System.ArgumentNullException">Thrown when any of the parameters is <see langword="null"/>.</exception>
             <exception cref="T:System.ArgumentOutOfRangeException">Thrown when parameters doesn't have same length.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="source"/> or <paramref name="weights"/> count is 0.</exception>
+        </member>
+        <member name="T:Enderlook.Extensions.Collections.IReadOnlyCollectionExtensions">
+            <summary>
+            Extension functions for <see cref="T:System.Collections.Generic.IReadOnlyCollection`1"/>.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Extensions.Collections.IReadOnlyCollectionExtensions.CopyTo``1(System.Collections.Generic.IReadOnlyCollection{``0},``0[],System.Int32)">
+            <inheritdoc cref="M:System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)"/>
+        </member>
+        <member name="T:Enderlook.Extensions.Collections.IReadOnlyListExtensions">
+            <summary>
+            Extension functions for <see cref="T:System.Collections.Generic.IReadOnlyList`1"/>.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Extensions.Collections.IReadOnlyListExtensions.ForEach``1(System.Collections.Generic.IReadOnlyList{``0},System.Action{``0})">
+            <summary>
+            Performs the specified <paramref name="action"/> on each element of the <paramref name="source"/>.
+            </summary>
+            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
+            <param name="source">Source to look for element to perform the <paramref name="action"/></param>
+            <param name="action">Action to perform on each element of <paramref name="source"/></param>
+            <seealso cref="M:System.Array.ForEach``1(``0[],System.Action{``0})"/>
+        </member>
+        <member name="M:Enderlook.Extensions.Collections.IReadOnlyListExtensions.CopyTo``1(System.Collections.Generic.IReadOnlyCollection{``0},``0[])">
+            <inheritdoc cref="M:System.Collections.Generic.List`1.CopyTo(`0[])"/>
+        </member>
+        <member name="M:Enderlook.Extensions.Collections.IReadOnlyListExtensions.CopyTo``1(System.Collections.Generic.IReadOnlyList{``0},System.Int32,``0[],System.Int32,System.Int32)">
+            <inheritdoc cref="M:System.Collections.Generic.List`1.CopyTo(System.Int32,`0[],System.Int32,System.Int32)"/>
         </member>
         <member name="M:Enderlook.Extensions.IEnumerableAggregateExtensions.AggregateWhile``1(System.Collections.Generic.IEnumerable{``0},Enderlook.Extensions.IEnumerableAggregateExtensions.AggregatorWhile{``0})">
             <summary>
