@@ -10,7 +10,7 @@ namespace Game.Creatures.Player
     public class PlayerMovement : MonoBehaviour
     {
         [SerializeField, Tooltip("Animator component.")]
-        private Animator animator;
+        private Animator animator = null;
 
         [SerializeField, Tooltip("Run animation name.")]
         private string runAnimation;

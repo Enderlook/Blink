@@ -10,22 +10,30 @@ namespace Game.Creatures.AbilitiesSystem
 
         public enum MouseButton { None = -1, Left = 0, Right = 1, Middle = 2 }
 
+        [SerializeField]
         private string abilityName;
 
+        [SerializeField]
         private string description;
 
+        [SerializeField]
         private IconTypes iconType;
 
+        [SerializeField]
         private Sprite abilityIcon;
 
+        [SerializeField]
         private float cooldown = 1f;
 
-        protected float damage;
+        //protected float damage;
 
+        [SerializeField]
         private KeyCode keyButton;
 
+        [SerializeField]
         private MouseButton mouseButton;
 
+        [SerializeField]
         private bool canBeHoldDown;
 
         // Properties

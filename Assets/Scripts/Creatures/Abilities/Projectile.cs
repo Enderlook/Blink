@@ -10,27 +10,26 @@ namespace Game.Creatures.AbilitiesSystem
     {
         public GameObject Prefab { get { return projectile; } set { projectile = value; } }
 
-        public AudioClip ShotSFX { get { return shotSFX; } set { shotSFX = value; } }
-
-        public AudioClip HitSFX { get { return hitSFX; } set { hitSFX = value; } }
-
         public string AnimationName { get { return animationName; } set { animationName = value; } }
 
         public Transform ShotPosition { get { return shotPosition; } set { shotPosition = value; } }
 
         public float Damage { get { return damage; } set { damage = value; } }
 
+        [SerializeField]
         private GameObject projectile;
 
-        private AudioClip shotSFX;
-
-        private AudioClip hitSFX;
-
+        [SerializeField]
         private float hitForce;
 
+        [SerializeField]
         private string animationName;
 
+        [SerializeField]
         private Transform shotPosition;
+
+        [SerializeField]
+        private float damage;
 
         private Abilities abilitiesRef;
         private Rigidbody rbProjectile;

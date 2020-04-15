@@ -12,12 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8ff232314c4ba64c99737eab65a2749, type: 3}
   m_Name: Basic Projectile Attack
   m_EditorClassIdentifier: 
-  abilityName: Basic Projectile Attack
-  description: 
+  abilityName: Basic Fire Attack
+  description: Cast fire orbs
   iconType: 0
   abilityIcon: {fileID: 0}
   cooldown: 0.6
-  damage: 10
   keyButton: 0
   mouseButton: 0
   canBeHoldDown: 1
+  projectile: {fileID: 3848868523013015357, guid: 076321aafc95272429f1b2f15ef6c88f,
+    type: 3}
+  hitForce: 0
+  animationName: Basic Attack
+  shotPosition: {fileID: 0}
+  damage: 10

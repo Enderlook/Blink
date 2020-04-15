@@ -8,7 +8,7 @@ namespace Game.Creatures.Player
     public class Abilities : MonoBehaviour
     {
         [SerializeField, Tooltip("Animator component.")]
-        private Animator animator;
+        private Animator animator = null;
 
         [SerializeField, Tooltip("Ability")]
         private List<Ability> abilities;

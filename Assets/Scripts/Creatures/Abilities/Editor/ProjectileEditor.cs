@@ -15,12 +15,14 @@ public class ProjectileEditor : Editor
 
     public override void OnInspectorGUI()
     {
+        serializedObject.Update();
+
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("Name", EditorStyles.boldLabel);
         EditorGUILayout.EndHorizontal();
 
         EditorGUILayout.BeginHorizontal();
-        ability.AbilityName = EditorGUILayout.TextField(ability.AbilityName);
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("abilityName"), GUIContent.none);
         EditorGUILayout.EndHorizontal();
 
         EditorGUILayout.Space();
@@ -30,7 +32,7 @@ public class ProjectileEditor : Editor
         EditorGUILayout.EndHorizontal();
 
         EditorGUILayout.BeginHorizontal();
-        ability.Description = EditorGUILayout.TextArea(ability.Description, EditorStyles.textField, GUILayout.MaxHeight(65f));
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("description"), GUIContent.none, GUILayout.MaxHeight(65f));
         EditorGUILayout.EndHorizontal();
 
         EditorGUILayout.Space();
@@ -39,16 +41,16 @@ public class ProjectileEditor : Editor
         EditorGUILayout.LabelField("Attributes", EditorStyles.boldLabel);
         EditorGUILayout.EndHorizontal();
 
-        ability.IconType = (Ability.IconTypes)EditorGUILayout.EnumPopup("Icon Type", ability.IconType);
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("iconType"), new GUIContent("Icon Type"));
 
         if (ability.IconType != Ability.IconTypes.None)
             ability.AbilityIcon = (Sprite)EditorGUILayout.ObjectField(ability.AbilityIcon, typeof(Sprite), false, GUILayout.Width(65f), GUILayout.Height(65f));
 
-        ability.Cooldown = EditorGUILayout.FloatField("Cooldown", ability.Cooldown);
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("cooldown"), new GUIContent("Cooldown"));
 
-        ability.Damage = EditorGUILayout.FloatField("Damage", ability.Damage);
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("damage"), new GUIContent("Damage"));
 
-        ability.AnimationName = EditorGUILayout.TextField("Animation", ability.AnimationName);
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("animationName"), new GUIContent("Animation"));
 
         EditorGUILayout.Space();
 
@@ -56,11 +58,11 @@ public class ProjectileEditor : Editor
         EditorGUILayout.LabelField("Input Configuration", EditorStyles.boldLabel);
         EditorGUILayout.EndHorizontal();
 
-        ability.KeyButton = (KeyCode)EditorGUILayout.EnumPopup("Keyboard Button", ability.KeyButton);
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("keyButton"), new GUIContent("Keyboard Button"));
 
-        ability.ThisMouseButton = (Ability.MouseButton)EditorGUILayout.EnumPopup("Mouse Button", ability.ThisMouseButton);
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("mouseButton"), new GUIContent("Mouse Button"));
 
-        ability.CanBeHoldDown = EditorGUILayout.Toggle("Can Be Hold Down", ability.CanBeHoldDown);
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("canBeHoldDown"), new GUIContent("Can Be Hold"));
 
         EditorGUILayout.Space();
 
@@ -68,22 +70,11 @@ public class ProjectileEditor : Editor
         EditorGUILayout.LabelField("Setup", EditorStyles.boldLabel);
         EditorGUILayout.EndHorizontal();
 
-        ability.Prefab = (GameObject)EditorGUILayout.ObjectField("Projectile", ability.Prefab, typeof(GameObject), false);
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("projectile"), new GUIContent("Projectile"));
 
-        ability.ShotSFX = (AudioClip)EditorGUILayout.ObjectField("Shot SFX", ability.ShotSFX, typeof(AudioClip), false);
+        EditorGUILayout.Space();
 
-        ability.HitSFX = (AudioClip)EditorGUILayout.ObjectField("Hit SFX", ability.HitSFX, typeof(AudioClip), false);
-        
-        //ability.ShotPosition = (Transform)EditorGUILayout.ObjectField("Shot Position", ability.ShotPosition, typeof(Transform), false);
-
-        GUILayout.Space(65f);
-
-        EditorGUILayout.BeginHorizontal();
-
-        if (GUILayout.Button("Save"))
-            EditorUtility.SetDirty(ability);
-
-        EditorGUILayout.EndHorizontal();
+        serializedObject.ApplyModifiedProperties();
 
     }
 }
