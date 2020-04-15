@@ -20,5 +20,6 @@ MonoBehaviour:
   keyButton: 101
   mouseButton: -1
   canBeHoldDown: 0
-  aoePrefab: {fileID: 0}
+  aoePrefab: {fileID: 6054988555229686210, guid: 1b9603c2f82de53449c6d95b26b315eb,
+    type: 3}
   animationName: Summon Elemental Attack

@@ -38,13 +38,11 @@ namespace Game.Creatures.AbilitiesSystem
         {
             if (active)
             {
-                //Ray camRayPoint = Camera.main.ScreenPointToRay(Input.mousePosition);
+                Ray camRayPoint = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-                //Vector3 pointOnScreen = Physics.Raycast(camRayPoint, out RaycastHit ground, 100f, layerGround) ? ground.point : Vector3.zero;
+                Vector3 pointOnScreen = Physics.Raycast(camRayPoint, out RaycastHit ground, 100f, layerGround) ? ground.point : Vector3.zero;
 
-                //Instantiate(aoePrefab, pointOnScreen, aoePrefab.transform.rotation);
-
-                Debug.Log("Invoke prefab");
+                Instantiate(aoePrefab, pointOnScreen, aoePrefab.transform.rotation);
 
                 active = false;
             }
