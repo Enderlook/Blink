@@ -733,6 +733,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1606774635587644479}
     m_Modifications:
+    - target: {fileID: 3579364912643671090, guid: a49ed22391a51eb4cb605b74d0ecb77f,
+        type: 3}
+      propertyPath: spawningPoints.Array.data[0].x
+      value: 6.705591e-37
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579364912643671090, guid: a49ed22391a51eb4cb605b74d0ecb77f,
+        type: 3}
+      propertyPath: spawningPoints.Array.data[0].y
+      value: 6.99e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579364912643671090, guid: a49ed22391a51eb4cb605b74d0ecb77f,
+        type: 3}
+      propertyPath: spawningPoints.Array.data[0].z
+      value: 5.9848045e-37
+      objectReference: {fileID: 0}
     - target: {fileID: 3795391135267441686, guid: a49ed22391a51eb4cb605b74d0ecb77f,
         type: 3}
       propertyPath: healthBar
@@ -819,6 +834,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1606774635587644479}
     m_Modifications:
+    - target: {fileID: 2724751873822049734, guid: 6fe0b5ab5f249fe42b468d4b8c3dbe32,
+        type: 3}
+      propertyPath: spawningPoints.Array.data[0].x
+      value: 3.3584626e-32
+      objectReference: {fileID: 0}
+    - target: {fileID: 2724751873822049734, guid: 6fe0b5ab5f249fe42b468d4b8c3dbe32,
+        type: 3}
+      propertyPath: spawningPoints.Array.data[0].y
+      value: 6.99e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 2724751873822049734, guid: 6fe0b5ab5f249fe42b468d4b8c3dbe32,
+        type: 3}
+      propertyPath: spawningPoints.Array.data[0].z
+      value: 2.6591e-41
+      objectReference: {fileID: 0}
     - target: {fileID: 5368581019380635685, guid: 6fe0b5ab5f249fe42b468d4b8c3dbe32,
         type: 3}
       propertyPath: m_LocalPosition.x

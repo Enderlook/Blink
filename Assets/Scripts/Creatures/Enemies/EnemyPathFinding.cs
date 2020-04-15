@@ -3,11 +3,9 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-using Random = UnityEngine.Random;
-
 namespace Game.Creatures
 {
-    [RequireComponent(typeof(NavMeshAgent))]
+    [RequireComponent(typeof(NavMeshAgent)), DefaultExecutionOrder(10)]
     public class EnemyPathFinding : MonoBehaviour
     {
         [SerializeField, Tooltip("Determines the weight of the crystal when deciding to move towards it or the player.")]
@@ -21,19 +19,30 @@ namespace Game.Creatures
         private NavMeshPath playerPath;
         private int navMeshFrameCheck;
 
+        private static int frameCheck;
+        private const int MaxCheckFrame = 10;
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
             crystalPath = new NavMeshPath();
             playerPath = new NavMeshPath();
-            navMeshFrameCheck = Random.Range(0, 10);
+            navMeshFrameCheck = (frameCheck++) % MaxCheckFrame;
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
+        private void Start()
+        {
+            DetermineTarget();
+            Vector3 pathEndPosition = navMeshAgent.pathEndPosition;
+            transform.LookAt(new Vector3(pathEndPosition.x, transform.position.y, pathEndPosition.z));
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Update()
         {
-            if (Time.frameCount % 10 == navMeshFrameCheck)
+            if (Time.frameCount % MaxCheckFrame == navMeshFrameCheck)
                 DetermineTarget();
         }
 

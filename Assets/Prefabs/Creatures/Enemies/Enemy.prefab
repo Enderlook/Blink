@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2922391611578092094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.53, y: 0.48, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.2, z: 0.2}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.5}
   m_Children: []
   m_Father: {fileID: 5260934473511848282}
   m_RootOrder: 0
@@ -287,8 +287,9 @@ MonoBehaviour:
   m_Script: {fileID: -1508324098, guid: 4fb5f411dbeffa54cac90fb5e06e0199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEnable: 0
   spawningPoints:
-  - {fileID: 0}
+  - {x: 1e-45, y: 0, z: 0}
   maximumAmountFloatingText: 10
   overrideTimeBeforeDestroy: 0
   timeBeforeDestroy: 0
@@ -301,7 +302,7 @@ MonoBehaviour:
   overrideDigitPrecision: 0
   digitPrecision: 0
   overrideTypeOfRounding: 0
-  typeOfRounding: 0
+  roundingType: 1
   floatingTextPrefab: {fileID: 8150760654224925313, guid: 2464453f149ba994292ee710d0ceaab7,
     type: 3}
   floatingTextParent: {fileID: 7284217543061989996}
