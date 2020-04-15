@@ -38,13 +38,20 @@ public class ProjectileEditor : Editor
         EditorGUILayout.Space();
 
         EditorGUILayout.BeginHorizontal();
-        EditorGUILayout.LabelField("Attributes", EditorStyles.boldLabel);
+        EditorGUILayout.LabelField("Icon", EditorStyles.boldLabel);
         EditorGUILayout.EndHorizontal();
 
         EditorGUILayout.PropertyField(serializedObject.FindProperty("iconType"), new GUIContent("Icon Type"));
 
         if (ability.IconType != Ability.IconTypes.None)
             ability.AbilityIcon = (Sprite)EditorGUILayout.ObjectField(ability.AbilityIcon, typeof(Sprite), false, GUILayout.Width(65f), GUILayout.Height(65f));
+
+        EditorGUILayout.Space();
+
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField("Attributes", EditorStyles.boldLabel);
+        EditorGUILayout.EndHorizontal();
+
 
         EditorGUILayout.PropertyField(serializedObject.FindProperty("cooldown"), new GUIContent("Cooldown"));
 
