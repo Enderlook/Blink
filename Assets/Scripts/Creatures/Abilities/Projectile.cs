@@ -14,15 +14,11 @@ namespace Game.Creatures.AbilitiesSystem
 
         public AudioClip HitSFX { get { return hitSFX; } set { hitSFX = value; } }
 
-        public float Speed { get { return speed; } set { speed = value; } }
-
         public string AnimationName { get { return animationName; } set { animationName = value; } }
 
         public Transform ShotPosition { get { return shotPosition; } set { shotPosition = value; } }
 
         public float Damage { get { return damage; } set { damage = value; } }
-
-        public LayerMask ShoteableMask { get { return shoteableMask; } set { shoteableMask = value; } }
 
         private GameObject projectile;
 
@@ -30,15 +26,11 @@ namespace Game.Creatures.AbilitiesSystem
 
         private AudioClip hitSFX;
 
-        private float speed;
-
         private float hitForce;
 
         private string animationName;
 
         private Transform shotPosition;
-
-        private LayerMask shoteableMask;
 
         private Abilities abilitiesRef;
         private Rigidbody rbProjectile;
@@ -53,12 +45,11 @@ namespace Game.Creatures.AbilitiesSystem
         public override void AwakeBehaviour()
         {
             base.AwakeBehaviour();
-            rbProjectile = Prefab.GetComponent<Rigidbody>();
+            rbProjectile = projectile.GetComponent<Rigidbody>();
         }
 
         public override void UpdateBehaviour()
         {
-            //Debug.Log($"Collision: ");
         }
 
         protected override void OnButtonDown()
@@ -87,9 +78,7 @@ namespace Game.Creatures.AbilitiesSystem
 
         public override void TriggerAbility()
         {
-            rbProjectile = Instantiate(projectile, shotPosition.position, shotPosition.rotation).GetComponent<Rigidbody>();
-
-            rbProjectile.velocity = rbProjectile.transform.forward * speed;
+            Instantiate(projectile, shotPosition.position, shotPosition.rotation);
         }
     }
 }

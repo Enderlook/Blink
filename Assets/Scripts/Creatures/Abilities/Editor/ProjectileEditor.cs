@@ -50,8 +50,6 @@ public class ProjectileEditor : Editor
 
         ability.AnimationName = EditorGUILayout.TextField("Animation", ability.AnimationName);
 
-        ability.Speed = EditorGUILayout.FloatField("Speed", ability.Speed);
-
         EditorGUILayout.Space();
 
         EditorGUILayout.BeginHorizontal();
@@ -75,8 +73,6 @@ public class ProjectileEditor : Editor
         ability.ShotSFX = (AudioClip)EditorGUILayout.ObjectField("Shot SFX", ability.ShotSFX, typeof(AudioClip), false);
 
         ability.HitSFX = (AudioClip)EditorGUILayout.ObjectField("Hit SFX", ability.HitSFX, typeof(AudioClip), false);
-
-        ability.ShoteableMask = EditorGUILayout.LayerField("Shoteable Layer", ability.ShoteableMask);
         
         //ability.ShotPosition = (Transform)EditorGUILayout.ObjectField("Shot Position", ability.ShotPosition, typeof(Transform), false);
 

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3848868523013015358}
   - component: {fileID: 1114671982}
   - component: {fileID: 1114671980}
+  - component: {fileID: -6448368753637950133}
   m_Layer: 0
   m_Name: VFX Projectile Prototype
   m_TagString: Untagged
@@ -64,6 +65,23 @@ CapsuleCollider:
   m_Height: 2.040426
   m_Direction: 2
   m_Center: {x: -0.056201965, y: -0.0048856437, z: -1.2770832}
+--- !u!114 &-6448368753637950133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3848868523013015357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b8d18d1088441147928b034f060f4db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 1114671982}
+  speed: 20
+  shoteableLayer:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1 &3848868523691553026
 GameObject:
   m_ObjectHideFlags: 0
