@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 using Game.Creatures.AbilitiesSystem;
@@ -48,12 +47,6 @@ namespace Game.Creatures.Player
             }
         }
 
-        public void ActiveSkill() 
-        {
-            foreach (Ability ability in abilities)
-            {
-                ability.TriggerAbility();
-            }
-        }
+        public void ActiveSkill() => abilities.ForEach(ability => { ability.TriggerAbility(); });
     }
 }
