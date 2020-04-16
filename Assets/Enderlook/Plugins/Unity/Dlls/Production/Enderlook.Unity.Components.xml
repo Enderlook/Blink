@@ -124,5 +124,96 @@
             Make the <see cref="T:UnityEngine.GameObject"/> where this <see cref="T:UnityEngine.Component"/> is attached to, to follow another <see cref="T:UnityEngine.GameObject"/> in position, rotation and or scale.
             </summary>
         </member>
+        <member name="P:Enderlook.Unity.Components.TransformFollower.IsLocalPosition">
+            <summary>
+            Whenever it will follow position locally or globally.<br/>
+            Changing this value may lead to minor math inaccuracies.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.TransformFollower.FollowPosX">
+            <summary>
+            Whenever it will follow the X axis position.<br/>
+            Changing this value may lead to minor math inaccuracies.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.TransformFollower.FollowPosY">
+            <summary>
+            Whenever it will follow the Y axis position.<br/>
+            Changing this value may lead to minor math inaccuracies.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.TransformFollower.FollowPosZ">
+            <summary>
+            Whenever it will follow the Z axis position.<br/>
+            Changing this value may lead to minor math inaccuracies.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.TransformFollower.IsLocalRotation">
+            <summary>
+            Whenever it will follow rotation locally or globally.<br/>
+            Changing this value may lead to minor math inaccuracies.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.TransformFollower.FollowRotX">
+            <summary>
+            Whenever it will follow the X axis rotation.<br/>
+            Changing this value may lead to minor math inaccuracies.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.TransformFollower.FollowRotY">
+            <summary>
+            Whenever it will follow the Y axis rotation.<br/>
+            Changing this value may lead to minor math inaccuracies.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.TransformFollower.FollowRotZ">
+            <summary>
+            Whenever it will follow the Z axis rotation.<br/>
+            Changing this value may lead to minor math inaccuracies.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.TransformFollower.FollowScaleX">
+            <summary>
+            Whenever it will follow the X axis scale.<br/>
+            Changing this value may lead to minor math inaccuracies.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.TransformFollower.FollowScaleY">
+            <summary>
+            Whenever it will follow the Y axis scale.<br/>
+            Changing this value may lead to minor math inaccuracies.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.TransformFollower.FollowScaleZ">
+            <summary>
+            Whenever it will follow the Z axis scale.<br/>
+            Changing this value may lead to minor math inaccuracies.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.TransformFollower.TransformToFollow">
+            <summary>
+            Transform that will be followed.<br/>
+            Changing this value may lead to minor math inaccuracies.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.TransformFollower.AddTransformFollower(UnityEngine.GameObject,UnityEngine.Transform,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Add a <see cref="T:Enderlook.Unity.Components.TransformFollower"/> component to <paramref name="gameObject"/>.
+            </summary>
+            <param name="gameObject"><see cref="T:UnityEngine.GameObject"/> where <see cref="T:Enderlook.Unity.Components.TransformFollower"/> is added.</param>
+            <param name="transformToFollow">Transform that will be followed.</param>
+            <param name="isLocalPosition">Whenever it will follow position locally or globally.</param>
+            <param name="followPosX">Whenever it will follow the X axis position.</param>
+            <param name="followPosY">Whenever it will follow the Y axis position.</param>
+            <param name="followPosZ">Whenever it will follow the Z axis position.</param>
+            <param name="isLocalRotation">Whenever it will follow rotation locally or globally.</param>
+            <param name="followRotX">Whenever it will follow the X axis rotation.</param>
+            <param name="followRotY">Whenever it will follow the Y axis rotation.</param>
+            <param name="followRotZ">Whenever it will follow the Z axis rotation.</param>
+            <param name="followScaleX">Whenever it will follow the X axis scale.</param>
+            <param name="followScaleY">Whenever it will follow the Y axis scale.</param>
+            <param name="followScaleZ">Whenever it will follow the Z axis scale.</param>
+            <returns>Added component.</returns>
+        </member>
     </members>
 </doc>
