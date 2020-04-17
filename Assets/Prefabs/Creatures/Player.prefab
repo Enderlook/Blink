@@ -44,7 +44,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 5558235056454882577}
   abilities:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 0f309a873d630f64d809b9348c3bc09e, type: 2}
+  - {fileID: 11400000, guid: 334c6fa7e6e8dd04eb3c88c6f1d085a2, type: 2}
   shotPosition: {fileID: 3780633358736254396}
 --- !u!1001 &1363339880222058423
 PrefabInstance:

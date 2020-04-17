@@ -737,7 +737,7 @@ PrefabInstance:
     - target: {fileID: 3579364912643671090, guid: a49ed22391a51eb4cb605b74d0ecb77f,
         type: 3}
       propertyPath: spawningPoints.Array.data[0].x
-      value: 6.705591e-37
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3579364912643671090, guid: a49ed22391a51eb4cb605b74d0ecb77f,
         type: 3}
@@ -814,23 +814,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 9093263735883253344, guid: a49ed22391a51eb4cb605b74d0ecb77f,
-        type: 3}
-      propertyPath: abilities.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9093263735883253344, guid: a49ed22391a51eb4cb605b74d0ecb77f,
-        type: 3}
-      propertyPath: abilities.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 0f309a873d630f64d809b9348c3bc09e,
-        type: 2}
-    - target: {fileID: 9093263735883253344, guid: a49ed22391a51eb4cb605b74d0ecb77f,
-        type: 3}
-      propertyPath: abilities.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 334c6fa7e6e8dd04eb3c88c6f1d085a2,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a49ed22391a51eb4cb605b74d0ecb77f, type: 3}
 --- !u!4 &8679692848945331401 stripped
