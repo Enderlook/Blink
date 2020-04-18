@@ -17,6 +17,9 @@ MonoBehaviour:
   iconType: 0
   abilityIcon: {fileID: 0}
   cooldown: 0.6
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 3072
   keyButton: 0
   mouseButton: 0
   canBeHoldDown: 1

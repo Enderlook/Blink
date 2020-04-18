@@ -33,6 +33,9 @@ namespace Game.Creatures.AbilitiesSystem
 
         private Abilities abilitiesRef;
         private Rigidbody rbProjectile;
+        private Transform projectileTransform;
+        private CapsuleCollider projectileCapsule;
+        private Color gizmoColor = Color.red;
 
         public override void Initialize(Abilities abilities)
         {
@@ -45,10 +48,27 @@ namespace Game.Creatures.AbilitiesSystem
         {
             base.AwakeBehaviour();
             rbProjectile = projectile.GetComponent<Rigidbody>();
+            projectileTransform = projectile.GetComponent<Transform>();
         }
 
         public override void UpdateBehaviour()
         {
+            if (projectileCapsule != null)
+            {
+                Vector3 ls = rbProjectile.transform.lossyScale;
+                float rScale = Mathf.Max(Mathf.Abs(ls.x), Mathf.Abs(ls.z));
+                float radius = projectileCapsule.radius * rScale;
+
+                float halfHeight = projectileCapsule.height * Mathf.Abs(ls.y) * .5f;
+                Vector3 capsuleBoundsStart = projectileCapsule.bounds.center + projectileTransform.up * halfHeight;
+                Vector3 capsuleBoundsEnd = projectileCapsule.bounds.center - projectileTransform.up * halfHeight;
+
+                bool col = Physics.CheckCapsule(capsuleBoundsStart, capsuleBoundsEnd, radius, targetLayer);
+                if (col)
+                {
+                    projectileCapsule = null;
+                }
+            }
         }
 
         protected override void OnButtonDown()

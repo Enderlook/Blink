@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
 using Game.Creatures.Player;
+using Game.Creatures.AbilitiesSystem.Actions;
 
 namespace Game.Creatures.AbilitiesSystem
 {
@@ -24,6 +25,9 @@ namespace Game.Creatures.AbilitiesSystem
 
         [SerializeField]
         private float cooldown = 1f;
+
+        [SerializeField]
+        protected LayerMask targetLayer;
 
         //protected float damage;
 
@@ -58,12 +62,14 @@ namespace Game.Creatures.AbilitiesSystem
         // Privates variables
 
         private Animator animator;
+        protected Transform selfTransform;
         protected float lastCooldown = 0;
         protected bool active = false;
 
         public virtual void Initialize(Abilities abilities)
         {
             ThisAnimator = abilities.ThisAnimator;
+            selfTransform = abilities.transform;
         }
 
         public virtual void AwakeBehaviour()
@@ -82,6 +88,19 @@ namespace Game.Creatures.AbilitiesSystem
         public void ButtonHold() => OnButtonHold();
 
         protected virtual void OnButtonHold() { }
+
+        public bool GenerateRayCastByCapsuleCollider(CapsuleCollider capsule, Transform t)
+        {
+            Vector3 ls = t.transform.lossyScale;
+            float rScale = Mathf.Max(Mathf.Abs(ls.x), Mathf.Abs(ls.z));
+            float radius = capsule.radius * rScale;
+
+            float halfHeight = capsule.height * Mathf.Abs(ls.y) * .5f;
+            Vector3 capsuleBoundsStart = capsule.bounds.center + t.up * halfHeight;
+            Vector3 capsuleBoundsEnd = capsule.bounds.center - t.up * halfHeight;
+
+            return Physics.CheckCapsule(capsuleBoundsStart, capsuleBoundsEnd, radius, targetLayer);
+        }
     }
 }
 

@@ -46,12 +46,15 @@ public class AoEEditor : Editor
         EditorGUILayout.PropertyField(serializedObject.FindProperty("iconType"), new GUIContent("Icon Type"));
 
         if (ability.IconType != Ability.IconTypes.None)
-            ability.AbilityIcon = (Sprite)EditorGUILayout.ObjectField(ability.AbilityIcon, typeof(Sprite), false, 
-                GUILayout.Width(65f), GUILayout.Height(65f));
+        {
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("abilityIcon"), GUIContent.none, GUILayout.Width(80f), GUILayout.Height(65f));
+        }
 
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("Attributes", EditorStyles.boldLabel);
         EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("target"), new GUIContent("Activatin Type"));
 
         EditorGUILayout.PropertyField(serializedObject.FindProperty("cooldown"), new GUIContent("Cooldown"));
 
@@ -72,6 +75,8 @@ public class AoEEditor : Editor
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("Setup", EditorStyles.boldLabel);
         EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("targetLayer"), new GUIContent("Target Layer"));
 
         EditorGUILayout.PropertyField(serializedObject.FindProperty("aoePrefab"), new GUIContent("AoE"));
 
