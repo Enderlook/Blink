@@ -10,7 +10,7 @@ namespace Game.Creatures.Player
     public class PlayerMovement : MonoBehaviour
     {
         [SerializeField, Tooltip("Animator component.")]
-        private Animator animator;
+        private Animator animator = null;
 
         [SerializeField, Tooltip("Run animation name.")]
         private string runAnimation;
@@ -22,16 +22,20 @@ namespace Game.Creatures.Player
         [SerializeField, Tooltip("Layer to get mouse position.")]
         private LayerMask layerGround;
 
+        [SerializeField, Tooltip("Range of the ray.")]
+        private float range;
+
         // We hide a Unity obsolete API
         private new Rigidbody rigidbody;
 
-        private Vector3 velocity;
-        
+        private Vector3 velocity;        
 
         private int LayerGround => 1 << layerGround.ToLayer();
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake() => rigidbody = GetComponent<Rigidbody>();
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void FixedUpdate()
         {
             float hor = Input.GetAxis("Horizontal");
@@ -59,9 +63,7 @@ namespace Game.Creatures.Player
         {
             Ray camRayPoint = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            RaycastHit ground;
-
-            Vector3 pointOnScreen = Physics.Raycast(camRayPoint, out ground, LayerGround) ? ground.point : Vector3.zero;
+            Vector3 pointOnScreen = Physics.Raycast(camRayPoint, out RaycastHit ground, range, LayerGround) ? ground.point : Vector3.zero;
 
             Vector3 playerDirection = rigidbody.position.VectorSubtraction(pointOnScreen);
 

@@ -48,6 +48,7 @@ MonoBehaviour:
   timePerScene: 120
   baseDifficulty: 1
   levelDifficultyFactor: 0.5
+  levelDifficultyPowerFactor: 0.5
   difficultyInSceneFactor: 0.5
   timer: {fileID: 8118707543177352285}
 --- !u!114 &1928472508134121915
@@ -736,7 +737,7 @@ PrefabInstance:
     - target: {fileID: 3579364912643671090, guid: a49ed22391a51eb4cb605b74d0ecb77f,
         type: 3}
       propertyPath: spawningPoints.Array.data[0].x
-      value: 6.705591e-37
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3579364912643671090, guid: a49ed22391a51eb4cb605b74d0ecb77f,
         type: 3}

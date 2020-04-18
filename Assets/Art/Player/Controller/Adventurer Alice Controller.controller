@@ -466,7 +466,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: Summon Storm
+  - m_Name: Summon Elemental Attack
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -478,7 +478,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: Summon Great Storm
+  - m_Name: Summon Great Elemental Attack
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -970,7 +970,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Summon Great Storm
+    m_ConditionEvent: Summon Great Elemental Attack
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 110242656}
@@ -1064,7 +1064,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Summon Storm
+    m_ConditionEvent: Summon Elemental Attack
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 110234997}
@@ -1272,7 +1272,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 8cbbd031f5e4f3741843e8ae61e6e90b, type: 3}
+  m_Motion: {fileID: 7400000, guid: 2b13feddee8bba749be67921f5833856, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1362,7 +1362,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Summon Storm
+  m_Name: Summon Elemental Attack
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1376,7 +1376,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: f418776508ec7e049a1133207a4126c8, type: 3}
+  m_Motion: {fileID: 7400000, guid: 92f46d8119342c84c9b854139fbd349f, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1416,7 +1416,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Summon Great Storm
+  m_Name: Summon Great Elemental Attack
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1692,7 +1692,7 @@ AnimatorStateMachine:
     m_Position: {x: -130, y: -200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110298283}
-    m_Position: {x: 110, y: -200, z: 0}
+    m_Position: {x: 120, y: -200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110221387}
     m_Position: {x: 120, y: 24, z: 0}
