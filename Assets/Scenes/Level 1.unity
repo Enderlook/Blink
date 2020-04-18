@@ -1972,6 +1972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75de19fae24c3b341881563b39d4c549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyLevelData: {fileID: 11400000, guid: 8f82da012ee78924da06417cab871421, type: 2}
   spawnPoints:
     points:
     - {x: -17.809656, y: 2, z: -17.809656}
