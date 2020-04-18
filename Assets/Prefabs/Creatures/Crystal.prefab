@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 1741552311086650580}
   - component: {fileID: 5443965981887742039}
   - component: {fileID: 4161397081516224447}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Crystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,8 +182,9 @@ MonoBehaviour:
   m_Script: {fileID: -1508324098, guid: 4fb5f411dbeffa54cac90fb5e06e0199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEnable: 0
   spawningPoints:
-  - {fileID: 2513729591677359853}
+  - {x: -1.7104839e+19, y: 9.77e-43, z: 7.03e-43}
   maximumAmountFloatingText: 10
   overrideTimeBeforeDestroy: 0
   timeBeforeDestroy: 0
@@ -196,7 +197,7 @@ MonoBehaviour:
   overrideDigitPrecision: 0
   digitPrecision: 0
   overrideTypeOfRounding: 0
-  typeOfRounding: 0
+  roundingType: 1
   floatingTextPrefab: {fileID: 8150760654224925313, guid: 2464453f149ba994292ee710d0ceaab7,
     type: 3}
   floatingTextParent: {fileID: 0}
@@ -339,7 +340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialValue: 100
   value: 100
-  oldValue: 100
+  oldValue: 70
   transformer: {fileID: 692037252537730776}
   changed: {fileID: -2325885416423649629}
   changedWithHistory: {fileID: -8291800690213229252}

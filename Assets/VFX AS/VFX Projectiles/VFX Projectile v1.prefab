@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5171739633273962874}
   - component: {fileID: -2427719211101300063}
   - component: {fileID: 2883801851507613969}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: VFX Projectile v1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,9 +78,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: -2427719211101300063}
   speed: 20
-  shoteableLayer:
+  enemyLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 0
+  hitVFX: {fileID: 0}
+  trails: []
 --- !u!1 &4892331685819631602
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4892331685819631597}
   - component: {fileID: 4892331685819631596}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +230,7 @@ GameObject:
   - component: {fileID: 4892331686148682299}
   - component: {fileID: 4892331686148682293}
   - component: {fileID: 4892331686148682298}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Particles Out
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5040,7 +5042,7 @@ GameObject:
   - component: {fileID: 4892331686315281195}
   - component: {fileID: 4892331686315281189}
   - component: {fileID: 4892331686315281194}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}

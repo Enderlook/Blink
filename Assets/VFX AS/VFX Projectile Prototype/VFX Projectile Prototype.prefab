@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1114671982}
   - component: {fileID: 1114671980}
   - component: {fileID: -2342785984966262924}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: VFX Projectile Prototype
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 3848868523691553027}
   - component: {fileID: 3848868523691553029}
   - component: {fileID: 3848868523691553028}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Particles (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4848,7 +4848,7 @@ GameObject:
   - component: {fileID: 3848868523970139211}
   - component: {fileID: 3848868523970139213}
   - component: {fileID: 3848868523970139212}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9601,7 +9601,7 @@ GameObject:
   - component: {fileID: 3848868524364136273}
   - component: {fileID: 3848868524364136275}
   - component: {fileID: 3848868524364136274}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14426,6 +14426,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BeamLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 8134368222263648595, guid: a7e5836609091d94dbfd3dc70bf62475,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7e5836609091d94dbfd3dc70bf62475, type: 3}
