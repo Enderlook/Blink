@@ -77,6 +77,8 @@ public class ProjectileEditor : Editor
         EditorGUILayout.LabelField("Setup", EditorStyles.boldLabel);
         EditorGUILayout.EndHorizontal();
 
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("targetLayer"), new GUIContent("Target Layer"));
+
         EditorGUILayout.PropertyField(serializedObject.FindProperty("projectile"), new GUIContent("Projectile"));
 
         EditorGUILayout.Space();
