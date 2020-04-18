@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1552471072695507750}
   - component: {fileID: 6168840754801278100}
   - component: {fileID: 5135585012321315966}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Beam Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9633,7 +9633,7 @@ GameObject:
   - component: {fileID: 6054988555042350623}
   - component: {fileID: 6054988555042350617}
   - component: {fileID: 6054988555042350616}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Crack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14445,7 +14445,7 @@ GameObject:
   - component: {fileID: 6054988555053348303}
   - component: {fileID: 6054988555053348297}
   - component: {fileID: 6054988555053348296}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Impact
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19256,7 +19256,7 @@ GameObject:
   - component: {fileID: 6054988555068538544}
   - component: {fileID: 6054988555068538546}
   - component: {fileID: 6054988555068538545}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Crack AB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24067,7 +24067,7 @@ GameObject:
   - component: {fileID: 6054988555168601267}
   - component: {fileID: 6054988555168601277}
   - component: {fileID: 6054988555168601276}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Shockwave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28878,7 +28878,7 @@ GameObject:
   - component: {fileID: 6054988555175980108}
   - component: {fileID: 6054988555175980110}
   - component: {fileID: 6054988555175980109}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Beam Ground Impact
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33695,9 +33695,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6054988555229686211}
-  - component: {fileID: -6120112356926828008}
-  - component: {fileID: 5939959315284062277}
-  m_Layer: 0
+  - component: {fileID: 788130922632460246}
+  m_Layer: 12
   m_Name: 'VFX AoE v1 - Fire '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33721,23 +33720,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &-6120112356926828008
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6054988555229686210}
-  serializedVersion: 2
-  m_Mass: 0.0000001
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!136 &5939959315284062277
+--- !u!136 &788130922632460246
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -33747,10 +33730,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 1.3393956
-  m_Height: 2.6787913
+  m_Radius: 1.6
+  m_Height: 4
   m_Direction: 1
-  m_Center: {x: 0.02851832, y: 0.2806362, z: 0.070777535}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &6054988555754825002
 GameObject:
   m_ObjectHideFlags: 0
@@ -43268,7 +43251,7 @@ GameObject:
   - component: {fileID: 6054988555814918120}
   - component: {fileID: 6054988555814918122}
   - component: {fileID: 6054988555814918121}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Particles Out
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48079,7 +48062,7 @@ GameObject:
   - component: {fileID: 6054988555829802898}
   - component: {fileID: 6054988555829802908}
   - component: {fileID: 6054988555829802899}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Fire Out
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57704,7 +57687,7 @@ GameObject:
   - component: {fileID: 6054988556137226900}
   - component: {fileID: 6054988556137226902}
   - component: {fileID: 6054988556137226901}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Particles Vertical
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62515,7 +62498,7 @@ GameObject:
   - component: {fileID: 6054988556710007081}
   - component: {fileID: 6054988556710007083}
   - component: {fileID: 6054988556710007082}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67396,6 +67379,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BeamLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 8134368222263648595, guid: a7e5836609091d94dbfd3dc70bf62475,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7e5836609091d94dbfd3dc70bf62475, type: 3}

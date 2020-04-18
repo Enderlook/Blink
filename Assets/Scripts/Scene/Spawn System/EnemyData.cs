@@ -9,8 +9,10 @@ namespace Game.Scene
     [CreateAssetMenu(fileName = "Enemy Spawn Data", menuName = "Game/Enemy Spawn Data")]
     public class EnemyData : ScriptableObject
     {
+#pragma warning disable CS0649
         [SerializeField]
         private GameObject enemyPrefab;
+#pragma warning restore CS0649
 
         [SerializeField, Tooltip("Calculates enemy spawn weight.\nWeight = Mathf.Min((Difficulty - X) * Y, Z) + W.")]
         private Vector4 weight = new Vector4(0, 1, 2, 0);
@@ -23,11 +25,10 @@ namespace Game.Scene
 
         public float GetWeight() => GetValue(weight);
 
-        public GameObject SpawnEnemy(Vector3 position)
+        public GameObject SpawnEnemy()
         {
             // Set position
             GameObject instance = Instantiate(enemyPrefab);
-            instance.transform.position = position;
 
             // Set health and max health
             Hurtable hurtable = instance.GetComponent<Hurtable>();

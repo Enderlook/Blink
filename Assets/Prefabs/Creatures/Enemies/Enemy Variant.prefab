@@ -1,0 +1,180 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8568726095512851662
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 731368825069099440, guid: 7b67f0eaa6928054496c6b09eee65dd5,
+        type: 3}
+      propertyPath: baseAtom
+      value: 
+      objectReference: {fileID: 1923278063029813403}
+    - target: {fileID: 5260934473511848282, guid: 7b67f0eaa6928054496c6b09eee65dd5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260934473511848282, guid: 7b67f0eaa6928054496c6b09eee65dd5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260934473511848282, guid: 7b67f0eaa6928054496c6b09eee65dd5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260934473511848282, guid: 7b67f0eaa6928054496c6b09eee65dd5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260934473511848282, guid: 7b67f0eaa6928054496c6b09eee65dd5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260934473511848282, guid: 7b67f0eaa6928054496c6b09eee65dd5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260934473511848282, guid: 7b67f0eaa6928054496c6b09eee65dd5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260934473511848282, guid: 7b67f0eaa6928054496c6b09eee65dd5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260934473511848282, guid: 7b67f0eaa6928054496c6b09eee65dd5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260934473511848282, guid: 7b67f0eaa6928054496c6b09eee65dd5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260934473511848282, guid: 7b67f0eaa6928054496c6b09eee65dd5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260934473511848286, guid: 7b67f0eaa6928054496c6b09eee65dd5,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182153272523996434, guid: 7b67f0eaa6928054496c6b09eee65dd5,
+        type: 3}
+      propertyPath: baseAtom
+      value: 
+      objectReference: {fileID: 8587111726148980781}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7b67f0eaa6928054496c6b09eee65dd5, type: 3}
+--- !u!114 &-6025781781555384183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1144320121, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Health Event
+  m_EditorClassIdentifier: 
+--- !u!114 &-3040380295399751406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1513688783, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Health Clamp
+  m_EditorClassIdentifier: 
+  min:
+    <Mode>k__BackingField: 0
+    inline: 0
+    scriptableObject: {fileID: 0}
+    component: {fileID: 0}
+  max:
+    <Mode>k__BackingField: 1
+    inline: 0
+    scriptableObject: {fileID: 1923278063029813403}
+    component: {fileID: 0}
+--- !u!114 &1923278063029813403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1508624999, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Max Health
+  m_EditorClassIdentifier: 
+  initialValue: 100
+  value: 100
+  oldValue: 0
+  transformer: {fileID: 3552735564107955411}
+  changed: {fileID: -6025781781555384183}
+  changedWithHistory: {fileID: 0}
+--- !u!114 &3552735564107955411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -463164559, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Max Health Min
+  m_EditorClassIdentifier: 
+  min:
+    <Mode>k__BackingField: 0
+    inline: 0
+    scriptableObject: {fileID: 0}
+    component: {fileID: 0}
+--- !u!114 &6298656151320665087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -802117009, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Health Event 2
+  m_EditorClassIdentifier: 
+--- !u!114 &8587111726148980781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1508624999, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Health
+  m_EditorClassIdentifier: 
+  initialValue: 100
+  value: 0
+  oldValue: 0
+  transformer: {fileID: -3040380295399751406}
+  changed: {fileID: 0}
+  changedWithHistory: {fileID: 6298656151320665087}

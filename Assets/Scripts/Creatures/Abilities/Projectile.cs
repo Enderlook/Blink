@@ -14,7 +14,7 @@ namespace Game.Creatures.AbilitiesSystem
 
         public Transform ShotPosition { get { return shotPosition; } set { shotPosition = value; } }
 
-        public float Damage { get { return damage; } set { damage = value; } }
+        public int Damage { get { return damage; } set { damage = value; } }
 
         [SerializeField]
         private GameObject projectile;
@@ -29,7 +29,7 @@ namespace Game.Creatures.AbilitiesSystem
         private Transform shotPosition;
 
         [SerializeField]
-        private float damage;
+        private int damage;
 
         private Abilities abilitiesRef;
         private Rigidbody rbProjectile;
@@ -101,9 +101,8 @@ namespace Game.Creatures.AbilitiesSystem
         {
             if (active)
             {
-                GameObject pro = Instantiate(projectile, shotPosition.position, shotPosition.rotation);
-                projectileCapsule = pro.GetComponent<CapsuleCollider>();
-
+                GameObject instance = Instantiate(projectile, shotPosition.position, shotPosition.rotation);
+                HitDamage.AddComponentTo(instance, damage);
                 active = false;
             }
         }

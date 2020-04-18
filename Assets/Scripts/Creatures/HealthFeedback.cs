@@ -23,13 +23,12 @@ namespace Game.Creatures
         private IntEventReference maxHealthEvent;
 
         [SerializeField]
-        private HealthBar healthBar;
+        protected HealthBar healthBar;
 #pragma warning restore CS0649
 
         private FloatingTextController floatingTextController;
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
-        private void Awake()
+        protected virtual void Awake()
         {
             floatingTextController = GetComponent<FloatingTextController>();
             healthBar.ManualUpdate(health, maxHealth);
