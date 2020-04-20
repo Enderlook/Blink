@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2655943744283462285}
   - component: {fileID: 6755574757074590862}
   - component: {fileID: 3784623212780358336}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Rock 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
