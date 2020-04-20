@@ -77,7 +77,8 @@ PrefabInstance:
       propertyPath: baseAtom
       value: 
       objectReference: {fileID: 8587111726148980781}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1812023851971535389, guid: 7b67f0eaa6928054496c6b09eee65dd5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7b67f0eaa6928054496c6b09eee65dd5, type: 3}
 --- !u!114 &-6025781781555384183
 MonoBehaviour:
@@ -127,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialValue: 100
   value: 100
-  oldValue: 0
+  oldValue: 100
   transformer: {fileID: 3552735564107955411}
   changed: {fileID: -6025781781555384183}
   changedWithHistory: {fileID: 0}
@@ -173,8 +174,8 @@ MonoBehaviour:
   m_Name: Health
   m_EditorClassIdentifier: 
   initialValue: 100
-  value: 0
-  oldValue: 0
+  value: 100
+  oldValue: 100
   transformer: {fileID: -3040380295399751406}
   changed: {fileID: 0}
   changedWithHistory: {fileID: 6298656151320665087}

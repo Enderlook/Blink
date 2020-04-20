@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4304169507501394569}
   - component: {fileID: 6711640046499264237}
   - component: {fileID: 8115085900734622107}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sapling 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
