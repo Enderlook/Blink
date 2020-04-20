@@ -33713,7 +33713,7 @@ AnimationClip:
   m_Events:
   - time: 0.5833333
     functionName: ActiveSkill
-    data: 
+    data: Basic Shoot
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
