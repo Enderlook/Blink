@@ -108677,7 +108677,7 @@ AnimationClip:
   m_Events:
   - time: 0.7
     functionName: ActiveSkill
-    data: 
+    data: Summon Elemental Attack
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

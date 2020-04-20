@@ -44,6 +44,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilities:
   - {fileID: 11400000, guid: bc22bb20b7c086644b347a354f33e543, type: 2}
+  - {fileID: 11400000, guid: f813808a5bd39054d85274466db133ef, type: 2}
   ShootingPosition: {fileID: 3780633358736254396}
 --- !u!1001 &1363339880222058423
 PrefabInstance:
