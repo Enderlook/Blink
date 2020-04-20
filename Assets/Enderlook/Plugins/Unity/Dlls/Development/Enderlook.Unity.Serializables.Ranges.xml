@@ -52,21 +52,24 @@
             Return the lowest bound of the range.<br/>
             </summary>
         </member>
+        <member name="P:Enderlook.Unity.Serializables.Ranges.RangeFloat.Value">
+            <inheritdoc cref="P:Enderlook.Unity.Serializables.Ranges.Range`1.Value"/>
+        </member>
         <member name="P:Enderlook.Unity.Serializables.Ranges.RangeFloat.ValueInt">
             <summary>
-            Return a random integer value between <see cref="!:Min"/> and <see cref="!:Max"/>.
+            Return a random integer value between <see cref="P:Enderlook.Unity.Serializables.Ranges.Range`1.Min"/> and <see cref="P:Enderlook.Unity.Serializables.Ranges.Range`1.Max"/>.
             The result is always an integer. Decimal numbers are used as chance to increment by one.
             </summary>
         </member>
         <member name="M:Enderlook.Unity.Serializables.Ranges.RangeFloat.op_Explicit(Enderlook.Unity.Serializables.Ranges.RangeFloat)~System.Single">
             <summary>
-            Return a random value between <see cref="!:Min"/> and <see cref="!:Max"/>.
+            Return a random value between <see cref="P:Enderlook.Unity.Serializables.Ranges.Range`1.Min"/> and <see cref="P:Enderlook.Unity.Serializables.Ranges.Range`1.Max"/>.
             </summary>
             <param name="source"><see cref="T:Enderlook.Unity.Serializables.Ranges.RangeFloat"/> instance used to determine the random float.</param>
         </member>
         <member name="M:Enderlook.Unity.Serializables.Ranges.RangeFloat.op_Explicit(Enderlook.Unity.Serializables.Ranges.RangeFloat)~System.Int32">
             <summary>
-            Return a random value between <see cref="!:Min"/> and <see cref="!:Max"/>.
+            Return a random value between <see cref="P:Enderlook.Unity.Serializables.Ranges.Range`1.Min"/> and <see cref="P:Enderlook.Unity.Serializables.Ranges.Range`1.Max"/>.
             The result is always an integer. Decimal numbers are used as chance to increment by one.
             </summary>
             <param name="source"><see cref="T:Enderlook.Unity.Serializables.Ranges.RangeFloat"/> instance used to determine the random int.</param>
@@ -217,6 +220,11 @@
         <member name="P:Enderlook.Unity.Serializables.Ranges.Range`1.Min">
             <summary>
             Return the lowest bound of the range.<br/>
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Serializables.Ranges.Range`1.Value">
+            <summary>
+            A random value between <see cref="P:Enderlook.Unity.Serializables.Ranges.Range`1.Min"/> and <see cref="P:Enderlook.Unity.Serializables.Ranges.Range`1.Max"/>.
             </summary>
         </member>
     </members>

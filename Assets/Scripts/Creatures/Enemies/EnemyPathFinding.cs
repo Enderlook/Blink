@@ -6,13 +6,16 @@ using UnityEngine.AI;
 namespace Game.Creatures
 {
     [RequireComponent(typeof(NavMeshAgent)), DefaultExecutionOrder(10)]
-    public class EnemyPathFinding : MonoBehaviour
+    public class EnemyPathFinding : MonoBehaviour, IPushable
     {
         [SerializeField, Tooltip("Determines the weight of the crystal when deciding to move towards it or the player.")]
         private float crystalSeekWeight = 1;
 
         [SerializeField, Tooltip("Determines the weight of the player when deciding to move towards it or the crystal.")]
         private float playerSeekWeight = 1;
+
+        [SerializeField, Tooltip("Used to determine push strength.")]
+        private float mass = 1;
 
         private NavMeshAgent navMeshAgent;
         private NavMeshPath crystalPath;
@@ -55,6 +58,25 @@ namespace Game.Creatures
                 navMeshAgent.SetPath(crystalPath);
             else
                 navMeshAgent.SetPath(playerPath);
+        }
+
+        public void AddForce(Vector3 force, ForceMode mode = ForceMode.Force)
+        {
+            switch (mode)
+            {
+                case ForceMode.Force:
+                    navMeshAgent.velocity += force * mass / (Time.deltaTime * Time.deltaTime);
+                    break;
+                case ForceMode.Acceleration:
+                    navMeshAgent.velocity += force / (Time.deltaTime * Time.deltaTime);
+                    break;
+                case ForceMode.Impulse:
+                    navMeshAgent.velocity += force * mass;
+                    break;
+                case ForceMode.VelocityChange:
+                    navMeshAgent.velocity += force;
+                    break;
+            }
         }
 
         private float GetPathDistance(Vector3 target, NavMeshPath path)
