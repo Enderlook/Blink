@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b759845651953694c8e3e37257c1d50e, type: 3}
   m_Name: Enemy Spawn Data
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 8362014100527030265, guid: 1ead482a57f2731459aedc005ad1fc1c,
+  enemyPrefab: {fileID: 3402435639833403909, guid: 3aff82f3ef27b2a49985700b33e31991,
     type: 3}
   weight: {x: 0, y: 1, z: 2, w: 0}
   health: {x: 1, y: 0.2, z: 2, w: 1}

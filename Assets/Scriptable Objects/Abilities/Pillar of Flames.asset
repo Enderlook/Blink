@@ -21,7 +21,7 @@ MonoBehaviour:
     key: 101
     button: 0
     canBeHoldDown: 0
-  cooldown: 2
+  cooldown: 3
   damage: 25
   pushForce: 10
   timeToProduceDamage: 1.2
