@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 7542903011891867435}
   - component: {fileID: 1106572561168960027}
   - component: {fileID: 6374696799354305013}
+  - component: {fileID: 2738255824067887581}
   m_Layer: 13
   m_Name: Enemy
   m_TagString: Untagged
@@ -363,3 +364,20 @@ MonoBehaviour:
   healthBar: {fileID: 4408493216306834460, guid: 9b27b479a691e1145b86ba683f8b3078,
     type: 3}
   healthBarSpawnPosition: {x: 0, y: 1.5, z: 0}
+--- !u!114 &2738255824067887581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5260934473511848286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7912068e067574caae6528784488e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthEvent:
+    <Mode>k__BackingField: 2
+    event: {fileID: 0}
+    managedScriptableObject: {fileID: 0}
+    managedComponent: {fileID: 6182153272523996434}
