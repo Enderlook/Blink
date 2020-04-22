@@ -123,7 +123,7 @@ namespace Game.Scene
 
         private float GetDifficulty()
         {
-            float DifficultyByScene(int scene) => baseDifficulty * Mathf.Pow(scene, levelDifficultyPowerFactor) + baseDifficulty * scene * levelDifficultyFactor;
+            float DifficultyByScene(int scene) => baseDifficulty * Mathf.Pow(scene, levelDifficultyPowerFactor) + baseDifficulty * (scene - 1) * levelDifficultyFactor;
             return Mathf.Lerp(DifficultyByScene(currentLevel), DifficultyByScene(currentLevel + 1), timeUntilNextScene.WarmupPercent * difficultyInSceneFactor);
         }
     }
