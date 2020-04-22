@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b759845651953694c8e3e37257c1d50e, type: 3}
+  m_Name: Wraith Swordsman-Red 01
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 8081955460700129509, guid: ec840790b738373489810ebf165f7199,
+    type: 3}
+  difficultyThreshold: 1
+  difficultyCap: 2
+  weight: {x: 0.3, y: 0}
+  health: {x: 0.3, y: 1}
+  damage: {x: 0.4, y: 1}
