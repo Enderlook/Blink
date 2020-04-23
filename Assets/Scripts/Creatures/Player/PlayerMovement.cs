@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Game.Creatures.Player
 {
-    [RequireComponent(typeof(Rigidbody)), RequireComponent(typeof(Animator))]
+    [RequireComponent(typeof(Animator))]
     public class PlayerMovement : MonoBehaviour
     {
         [SerializeField, Tooltip("Run animation name.")]
@@ -22,9 +22,6 @@ namespace Game.Creatures.Player
         [SerializeField, Tooltip("Range of the ray.")]
         private float range;
 
-        // We hide a Unity obsolete API
-        private new Rigidbody rigidbody;
-
         private Animator animator;
 
         private Vector3 velocity;
@@ -32,11 +29,7 @@ namespace Game.Creatures.Player
         private int LayerGround => 1 << layerGround.ToLayer();
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
-        private void Awake()
-        {
-            rigidbody = GetComponent<Rigidbody>();
-            animator = GetComponent<Animator>();
-        }
+        private void Awake() => animator = GetComponent<Animator>();
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void FixedUpdate()
@@ -53,7 +46,7 @@ namespace Game.Creatures.Player
             velocity = new Vector3(horizontal, 0, vertical);
             velocity = velocity.normalized * speed * Time.deltaTime;
 
-            rigidbody.MovePosition(rigidbody.position + velocity);
+            transform.position += velocity;
 
             bool running = horizontal != 0 || vertical != 0;
             animator.SetBool(runAnimation, running);
@@ -65,13 +58,10 @@ namespace Game.Creatures.Player
 
             Vector3 pointOnScreen = Physics.Raycast(camRayPoint, out RaycastHit ground, range, LayerGround) ? ground.point : Vector3.zero;
 
-            Vector3 playerDirection = rigidbody.position.VectorSubtraction(pointOnScreen);
-
+            Vector3 playerDirection = pointOnScreen - transform.position;
             playerDirection.y = 0;
 
-            Quaternion newPlayerDirection = Quaternion.LookRotation(playerDirection);
-
-            rigidbody.MoveRotation(newPlayerDirection);
+            transform.rotation = Quaternion.LookRotation(playerDirection);
         }
     }
 }

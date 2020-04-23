@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18454583, g: 0.32045296, b: 0.77738655, a: 1}
+  m_IndirectSpecularColor: {r: 0.24011655, g: 0.33247435, b: 0.8311335, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -840,6 +840,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824987928640131899, guid: d0916b6aa6e10884b9c98657588891d0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824987928640131899, guid: d0916b6aa6e10884b9c98657588891d0,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0916b6aa6e10884b9c98657588891d0, type: 3}
@@ -4470,7 +4480,5 @@ PrefabInstance:
       propertyPath: InitialModule.startRotationY.minMaxState
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2390241143571249390, guid: 4da935c89518a414585708d9da0d5c4f, type: 3}
-    - {fileID: 2856267843586971697, guid: 4da935c89518a414585708d9da0d5c4f, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4da935c89518a414585708d9da0d5c4f, type: 3}
