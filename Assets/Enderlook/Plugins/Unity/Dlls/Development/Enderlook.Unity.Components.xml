@@ -170,10 +170,10 @@
         <member name="M:Enderlook.Unity.Components.BaseColliderContainerObserver.UnsubscribeOnStayEvent(System.Action{UnityEngine.Transform})">
             <inheritdoc cref="M:Enderlook.Unity.Components.IColliderContainerObserver.UnsubscribeOnStayEvent(System.Action{UnityEngine.Transform})"/>
         </member>
-        <member name="T:Enderlook.Unity.Components.ColliderContainerObserver2D">
+        <member name="T:Enderlook.Unity.Components.ColliderContainerObserver">
             <inheritdoc cref="T:Enderlook.Unity.Components.IColliderContainerObserver"/>
         </member>
-        <member name="T:Enderlook.Unity.Components.ColliderContainerObserver3D">
+        <member name="T:Enderlook.Unity.Components.ColliderContainerObserver2D">
             <inheritdoc cref="T:Enderlook.Unity.Components.IColliderContainerObserver"/>
         </member>
         <member name="T:Enderlook.Unity.Components.IColliderContainerObserver">

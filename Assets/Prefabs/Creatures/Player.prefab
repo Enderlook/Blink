@@ -113,6 +113,16 @@ PrefabInstance:
       propertyPath: health.scriptableObject
       value: 
       objectReference: {fileID: 252350925886159260}
+    - target: {fileID: 3355662261693803171, guid: bf6819a2f5c5a2c4b9193710b5fe1ed1,
+        type: 3}
+      propertyPath: maxHealth.<Mode>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355662261693803171, guid: bf6819a2f5c5a2c4b9193710b5fe1ed1,
+        type: 3}
+      propertyPath: maxHealth.scriptableObject
+      value: 
+      objectReference: {fileID: -9049296588952162490}
     - target: {fileID: 6281887982986253938, guid: bf6819a2f5c5a2c4b9193710b5fe1ed1,
         type: 3}
       propertyPath: m_LocalPosition.x

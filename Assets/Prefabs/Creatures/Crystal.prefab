@@ -164,9 +164,9 @@ MonoBehaviour:
     scriptableObject: {fileID: 3692065462055061938}
     component: {fileID: 0}
   maxHealth:
-    <Mode>k__BackingField: 0
+    <Mode>k__BackingField: 1
     inline: 0
-    scriptableObject: {fileID: 0}
+    scriptableObject: {fileID: -7247885882411041942}
     component: {fileID: 0}
 --- !u!114 &8650836753710101940
 MonoBehaviour:
