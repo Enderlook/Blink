@@ -29,6 +29,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Rock, Stones and Pebbles
     second: {fileID: 2100000, guid: e84fe4e487def15408c99c5b7e4e02fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Walls
+    second: {fileID: 2100000, guid: 92335c3ce5790a04e9a45d56eeade293, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

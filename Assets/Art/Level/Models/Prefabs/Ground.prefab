@@ -12,10 +12,6 @@ GameObject:
   - component: {fileID: 6633525160684946095}
   - component: {fileID: 2171311756933741231}
   - component: {fileID: 5406690449134538151}
-  - component: {fileID: 8528860067155267666}
-  - component: {fileID: 2606176062944138868}
-  - component: {fileID: 619557608561488435}
-  - component: {fileID: 5469032639163374032}
   m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
@@ -97,55 +93,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 1453043773871479701, guid: 0d45cd7b846a14d42b93171f7725458b, type: 3}
---- !u!65 &8528860067155267666
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4785087967260609584}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 36, y: 1, z: 5}
-  m_Center: {x: 0, y: 17, z: 2}
---- !u!65 &2606176062944138868
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4785087967260609584}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 36, y: 1, z: 5}
-  m_Center: {x: 0, y: -17, z: 2}
---- !u!65 &619557608561488435
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4785087967260609584}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 36, z: 5}
-  m_Center: {x: -17, y: 0, z: 2}
---- !u!65 &5469032639163374032
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4785087967260609584}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 36, z: 5}
-  m_Center: {x: 17, y: 0, z: 2}
