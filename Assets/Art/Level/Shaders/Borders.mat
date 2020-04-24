@@ -28,11 +28,11 @@ Material:
     - _BorderThick: 0.1
     - _Frequency: 10
     - _MaximumHeight: 0.5
-    - _NoiseScale: 10
-    - _VoronoiScale: 10
+    - _NoiseScale: 25
+    - _VoronoiScale: 25
     - __dirty: 0
     m_Colors:
     - _ASEOutlineColor: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 0.7921569, g: 0.10980394, b: 0.75110936, a: 0}
-    - _Speed: {r: 0, g: -0.25, b: 0, a: 0}
+    - _Speed: {r: -0.05, g: 0, b: 0, a: 0}
     - _Vector0: {r: 0, g: -0.1, b: 0, a: 0}

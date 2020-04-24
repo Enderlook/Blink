@@ -9,10 +9,10 @@ namespace Game.Creatures
 #pragma warning disable CS0649
         [SerializeField, Tooltip("Current health.")]
         private IntGetSetReference health;
-#pragma warning restore CS0649
 
         [SerializeField, Tooltip("Maximum health.")]
         private IntGetSetReference maxHealth;
+#pragma warning restore CS0649
 
         public int Health => health;
 

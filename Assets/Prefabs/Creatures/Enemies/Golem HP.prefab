@@ -30,6 +30,23 @@ CapsuleCollider:
   m_Height: 4.0431743
   m_Direction: 1
   m_Center: {x: 0.021881461, y: 2.0093062, z: 0.23102552}
+--- !u!114 &644370018098784954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8362014100527030265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7912068e067574caae6528784488e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthEvent:
+    <Mode>k__BackingField: 2
+    event: {fileID: 0}
+    managedScriptableObject: {fileID: 0}
+    managedComponent: {fileID: 5239604377403365536}
 --- !u!114 &2700440905395669029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,9 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: -1508324098, guid: 1dbd1fe98358a32418820ec89509d1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnable: 0
+  isEnable: 1
   spawningPoints:
-  - {x: 0, y: 2.86, z: 0}
+  - {x: 0, y: 4.5, z: 0}
   maximumAmountFloatingText: 10
   overrideTimeBeforeDestroy: 0
   timeBeforeDestroy: 0
@@ -75,7 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crystalSeekWeight: 1
   playerSeekWeight: 1
-  mass: 1
+  mass: 4
 --- !u!114 &5239604377403365536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,8 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 1155944686, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseAtom: {fileID: 3692065462055061938, guid: 6fe0b5ab5f249fe42b468d4b8c3dbe32,
-    type: 3}
+  baseAtom: {fileID: 1662641093452128426}
   instacedAtom: {fileID: 0}
 --- !u!195 &6922185498743692886
 NavMeshAgent:
@@ -125,8 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 1155944686, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseAtom: {fileID: -7247885882411041942, guid: 6fe0b5ab5f249fe42b468d4b8c3dbe32,
-    type: 3}
+  baseAtom: {fileID: -5061475496438011049}
   instacedAtom: {fileID: 0}
 --- !u!114 &7625849802041705629
 MonoBehaviour:
@@ -150,6 +165,8 @@ MonoBehaviour:
     inline: 0
     scriptableObject: {fileID: 0}
     component: {fileID: 5239604377403365536}
+  r: {fileID: 0}
+  q: 0
 --- !u!114 &8971253688309494438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,7 +201,7 @@ MonoBehaviour:
     managedComponent: {fileID: 5239604377403365536}
   healthBar: {fileID: 4408493216306834460, guid: 9b27b479a691e1145b86ba683f8b3078,
     type: 3}
-  healthBarSpawnPosition: {x: 0, y: 2.65, z: 0}
+  healthBarSpawnPosition: {x: 0, y: 3.5, z: 0}
 --- !u!1001 &8362845339844249071
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -348,3 +365,121 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8362845339844249071}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &-7544728215236521667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -802117009, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Health Event 2
+  m_EditorClassIdentifier: 
+--- !u!114 &-5061475496438011049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1508624999, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Max Health
+  m_EditorClassIdentifier: 
+  initialValue: 80
+  value: 80
+  oldValue: 80
+  transformer: {fileID: 1679333203498318793}
+  changed: {fileID: -4693451387243853866}
+  changedWithHistory: {fileID: 8600830142021418332}
+--- !u!114 &-4693451387243853866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1144320121, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Max Health Event
+  m_EditorClassIdentifier: 
+--- !u!114 &1662641093452128426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1508624999, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Health
+  m_EditorClassIdentifier: 
+  initialValue: 80
+  value: 80
+  oldValue: 80
+  transformer: {fileID: 8007879997513840307}
+  changed: {fileID: 5607353783033354148}
+  changedWithHistory: {fileID: -7544728215236521667}
+--- !u!114 &1679333203498318793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -463164559, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Max Health Min
+  m_EditorClassIdentifier: 
+  min:
+    <Mode>k__BackingField: 0
+    inline: 0
+    scriptableObject: {fileID: 0}
+    component: {fileID: 0}
+--- !u!114 &5607353783033354148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1144320121, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Health Event
+  m_EditorClassIdentifier: 
+--- !u!114 &8007879997513840307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -463164559, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Health Min
+  m_EditorClassIdentifier: 
+  min:
+    <Mode>k__BackingField: 0
+    inline: 0
+    scriptableObject: {fileID: 0}
+    component: {fileID: 0}
+--- !u!114 &8600830142021418332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -802117009, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Max Health Event 2
+  m_EditorClassIdentifier: 

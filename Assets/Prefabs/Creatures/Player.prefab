@@ -46,6 +46,28 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bc22bb20b7c086644b347a354f33e543, type: 2}
   - {fileID: 11400000, guid: f813808a5bd39054d85274466db133ef, type: 2}
   ShootingPosition: {fileID: 3780633358736254396}
+--- !u!195 &6342552297712404830
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5558235056462145219}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 0
+  m_AutoBraking: 1
+  m_AutoRepath: 0
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &1363339880222058423
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67,6 +89,11 @@ PrefabInstance:
         type: 3}
       propertyPath: range
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 106630659737876704, guid: bf6819a2f5c5a2c4b9193710b5fe1ed1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2542276533689377669, guid: bf6819a2f5c5a2c4b9193710b5fe1ed1,
         type: 3}
@@ -113,6 +140,16 @@ PrefabInstance:
       propertyPath: health.scriptableObject
       value: 
       objectReference: {fileID: 252350925886159260}
+    - target: {fileID: 3355662261693803171, guid: bf6819a2f5c5a2c4b9193710b5fe1ed1,
+        type: 3}
+      propertyPath: maxHealth.<Mode>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355662261693803171, guid: bf6819a2f5c5a2c4b9193710b5fe1ed1,
+        type: 3}
+      propertyPath: maxHealth.scriptableObject
+      value: 
+      objectReference: {fileID: -9049296588952162490}
     - target: {fileID: 6281887982986253938, guid: bf6819a2f5c5a2c4b9193710b5fe1ed1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1826,14 +1863,20 @@ PrefabInstance:
     - target: {fileID: 8133398208624540351, guid: bf6819a2f5c5a2c4b9193710b5fe1ed1,
         type: 3}
       propertyPath: m_Constraints
-      value: 84
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 8133398208624540351, guid: bf6819a2f5c5a2c4b9193710b5fe1ed1,
         type: 3}
       propertyPath: m_IsKinematic
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8133398208624540351, guid: bf6819a2f5c5a2c4b9193710b5fe1ed1,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8133398208624540351, guid: bf6819a2f5c5a2c4b9193710b5fe1ed1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bf6819a2f5c5a2c4b9193710b5fe1ed1, type: 3}
 --- !u!1 &5558235056462145219 stripped
 GameObject:

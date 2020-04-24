@@ -1,13 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class UIManagement : MonoBehaviour
+namespace Game.Scene
 {
-    public void Load(string scene) => SceneManager.LoadSceneAsync(scene);
+    public class UIManagement : MonoBehaviour
+    {
+        public void Load(string scene) => SceneManager.LoadSceneAsync(scene);
 
-    public void Restart() => Load(SceneManager.GetActiveScene().name);
+        public void Restart() => Load(SceneManager.GetActiveScene().name);
 
-    public void Exit() => Application.Quit();
+        public void Exit() => Application.Quit();
+    }
 }

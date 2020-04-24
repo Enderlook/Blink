@@ -103,6 +103,14 @@
             <param name="subAsset">Sub asset to extract. Can't be main asset, otherwise <paramref name="subAsset"/> becomes <see langword="null"/>.</param>
             <returns>New sub asset path, if fail this path is invalid.</returns>
         </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.AssetDatabaseHelper.WithDifferentExtension(System.String,System.String)">
+            <summary>
+            Replaces the last section of the <see cref="T:System.String"/> <paramref name="source"/> delimited by '.' with <paramref name="extension"/>.
+            </summary>
+            <param name="source">Base <see cref="T:System.String"/></param>
+            <param name="extension">New ending <see cref="T:System.String"/></param>
+            <returns><paramref name="source"/> with a <paramref name="extension"/> as replacement of its last '.' segment.</returns>
+        </member>
         <member name="T:Enderlook.Unity.Utils.UnityEditor.AudioUtil">
             <summary>
             A wrapper to a non-exposed AudioUtil api from Unity Editor.

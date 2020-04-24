@@ -37,6 +37,36 @@
             <param name="layerMask"><see cref="T:UnityEngine.LayerMask"/> to convert.</param>
             <returns>Layer number.</returns>
         </member>
+        <member name="M:Enderlook.Unity.Extensions.LayerMaskExtensions.ToLayerMask(System.Int32)">
+            <summary>
+            Convert a given layer to a layer mask.<br/>
+            <c>1 &lt;&lt; <paramref name="layer"/></c>.
+            </summary>
+            <param name="layer">Layer to produce a layer mask.</param>
+            <returns>Layer mast of layer</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.LayerMaskExtensions.ToLayerMask(UnityEngine.LayerMask)">
+            <summary>
+            Convert a given layer to a layer mask.<br/>
+            <c>1 &lt;&lt; <paramref name="layer"/></c>.
+            </summary>
+            <param name="layer">Layer to produce a layer mask.</param>
+            <returns>Layer mast of layer</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.LayerMaskExtensions.InvertLayerMask(System.Int32)">
+            <summary>
+            Invert a layer to match exactly the opposite.
+            </summary>
+            <param name="layer">Layer mask to invert.</param>
+            <returns>Inverted layermask.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.LayerMaskExtensions.InvertLayerMask(UnityEngine.LayerMask)">
+            <summary>
+            Invert a layer to match exactly the opposite.
+            </summary>
+            <param name="layer">Layer mask to invert.</param>
+            <returns>Inverted layermask.</returns>
+        </member>
         <member name="M:Enderlook.Unity.Extensions.LayerMaskExtensions.LayerMatchTest(UnityEngine.LayerMask,UnityEngine.LayerMask)">
             <summary>
             Check if the <paramref name="layerToCheck"/> have <paramref name="layerTrigger"/>.
