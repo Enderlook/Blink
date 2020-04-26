@@ -30,7 +30,7 @@ namespace Game.Creatures.Player.AbilitySystem
             foreach (Ability ability in abilities)
             {
                 ability.UpdateBehaviour(Time.deltaTime);
-                ability.TryExectue();
+                ability.TryExecute();
             }
         }
 

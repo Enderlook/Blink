@@ -55,7 +55,7 @@ namespace Game.Creatures.Player.AbilitySystem
                 clockwork.UpdateBehaviour(deltaTime);
         }
 
-        public void TryExectue()
+        public void TryExecute()
         {
             if (IsReady && control.HasUserRequestTrigger())
             {
