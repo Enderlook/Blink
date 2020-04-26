@@ -13,8 +13,8 @@ namespace Game.Creatures.Player.AbilitySystem
         [SerializeField, Multiline]
         private string description;
 
-        [SerializeField/*, DrawTexture(50, false)*/]
-        private Sprite icon;
+        [field: SerializeField, IsProperty/*, DrawTexture(50, false)*/]
+        public Sprite Icon { get; private set; }
 
         [SerializeField, Tooltip("Animation executed on shoot.")]
         private string animationName;
@@ -35,6 +35,8 @@ namespace Game.Creatures.Player.AbilitySystem
         private bool isActive;
 
         public bool IsReady => clockwork.IsReady;
+
+        public float Percentage => clockwork.WarmupPercent;
 
         public void Initialize(AbilitiesManager abilityManager)
         {
