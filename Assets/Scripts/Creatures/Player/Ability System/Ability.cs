@@ -61,6 +61,7 @@ namespace Game.Creatures.Player.AbilitySystem
             {
                 isActive = true;
                 animator.SetTrigger(animationName);
+                clockwork.ResetTime();
             }
         }
 
