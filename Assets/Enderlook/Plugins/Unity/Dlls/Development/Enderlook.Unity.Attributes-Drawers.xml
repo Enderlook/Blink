@@ -4,6 +4,48 @@
         <name>Enderlook.Unity.Attributes-Drawers</name>
     </assembly>
     <members>
+        <member name="F:Enderlook.Unity.Attributes.ShowIfDrawer.active">
+            <summary>
+            If <see langword="true"/>, the property field is either disabled or hidden.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.PropertyPopup">
+            <summary>
+            A helper class to draw properties according to a popup selector.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.PropertyPopup.#ctor(System.String,Enderlook.Unity.Attributes.PropertyPopupOption[])">
+            <summary>
+            Determie the posible options for the popup.
+            </summary>
+            <param name="modeProperty">Property used to determine which property draw.</param>
+            <param name="modes">Possible options. (name to show in inspector, name of property which must show if selected, target value to determine if chosen).</param>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.PropertyPopup.DrawField(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Draw the field in the given place.
+            </summary>
+            <param name="position">Position to draw the field.</param>
+            <param name="property">Property used to draw the field.</param>
+            <param name="label">Label to show in inspector.</param>
+            <returns>Property height.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.PropertyPopup.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Draw the field in the given place.
+            </summary>
+            <param name="position">Position to draw the field.</param>
+            <param name="property">Property used to draw the field.</param>
+            <param name="label">Label to show in inspector.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.PropertyPopup.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Get the height of the drawed property
+            </summary>
+            <param name="property">Property used to draw the field.</param>
+            <param name="label">Label to show in inspector.</param>
+            <returns>Property height.</returns>
+        </member>
         <member name="M:Enderlook.Unity.Attributes.RestrictTypeChecking.CheckRestrictionFeasibility(Enderlook.Unity.Attributes.RestrictTypeAttribute,System.Type,System.String@)">
             <summary>
             Check if the given type restriction is possible.
@@ -50,11 +92,6 @@
             <param name="serializedProperty"></param>
             <param name="label">Current <see cref="T:UnityEngine.GUIContent"/>.</param>
             <returns>Whenever there was or not an special <see cref="T:UnityEngine.GUIContent"/>.</returns>
-        </member>
-        <member name="F:Enderlook.Unity.Attributes.ShowIfDrawer.active">
-            <summary>
-            If <see langword="true"/>, the property field is either disabled or hidden.
-            </summary>
         </member>
         <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedObjectExtensionsHasConfirmationField.ToggleableField(UnityEditor.SerializedObject,System.String,System.Boolean,System.Reflection.BindingFlags)">
             <summary>
