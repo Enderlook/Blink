@@ -164,9 +164,7 @@ MonoBehaviour:
     <Mode>k__BackingField: 2
     inline: 0
     scriptableObject: {fileID: 0}
-    component: {fileID: 5239604377403365536}
-  r: {fileID: 0}
-  q: 0
+    component: {fileID: 7207003049618981415}
 --- !u!114 &8971253688309494438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,7 +186,7 @@ MonoBehaviour:
     <Mode>k__BackingField: 2
     inline: 0
     scriptableObject: {fileID: 0}
-    component: {fileID: 5239604377403365536}
+    component: {fileID: 7207003049618981415}
   healthEvent2:
     <Mode>k__BackingField: 2
     event: {fileID: 0}
@@ -198,7 +196,7 @@ MonoBehaviour:
     <Mode>k__BackingField: 2
     event: {fileID: 0}
     managedScriptableObject: {fileID: 0}
-    managedComponent: {fileID: 5239604377403365536}
+    managedComponent: {fileID: 7207003049618981415}
   healthBar: {fileID: 4408493216306834460, guid: 9b27b479a691e1145b86ba683f8b3078,
     type: 3}
   healthBarSpawnPosition: {x: 0, y: 3.5, z: 0}
