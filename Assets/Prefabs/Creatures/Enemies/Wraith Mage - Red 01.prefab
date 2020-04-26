@@ -75,14 +75,12 @@ MonoBehaviour:
     <Mode>k__BackingField: 2
     inline: 0
     scriptableObject: {fileID: 0}
-    component: {fileID: 8116652157970478327}
+    component: {fileID: 591751500254043145}
   maxHealth:
     <Mode>k__BackingField: 2
     inline: 0
     scriptableObject: {fileID: 0}
     component: {fileID: 8116652157970478327}
-  r: {fileID: 0}
-  q: 0
 --- !u!114 &5518954677451802844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,7 +150,7 @@ MonoBehaviour:
     <Mode>k__BackingField: 2
     inline: 0
     scriptableObject: {fileID: 0}
-    component: {fileID: 8116652157970478327}
+    component: {fileID: 591751500254043145}
   maxHealth:
     <Mode>k__BackingField: 2
     inline: 0
@@ -162,7 +160,7 @@ MonoBehaviour:
     <Mode>k__BackingField: 2
     event: {fileID: 0}
     managedScriptableObject: {fileID: 0}
-    managedComponent: {fileID: 8116652157970478327}
+    managedComponent: {fileID: 591751500254043145}
   maxHealthEvent:
     <Mode>k__BackingField: 2
     event: {fileID: 0}
