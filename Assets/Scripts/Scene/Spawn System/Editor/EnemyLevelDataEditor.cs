@@ -15,16 +15,30 @@ namespace Game.Scene
     [CustomEditor(typeof(EnemyLevelData))]
     public class EnemyLevelDataEditor : Editor
     {
-        private static MethodInfo getValue = typeof(EnemyData).GetMethod("GetValue", BindingFlags.NonPublic | BindingFlags.Instance);
+        private static MethodInfo getValueEnemyLevelData = typeof(EnemyLevelData).GetMethod("GetValue", BindingFlags.NonPublic | BindingFlags.Static);
+        private static MethodInfo getValueEnemyData = typeof(EnemyData).GetMethod("GetValue", BindingFlags.NonPublic | BindingFlags.Instance);
         private static FieldInfo health = typeof(EnemyData).GetField("health", BindingFlags.NonPublic | BindingFlags.Instance);
         private static FieldInfo damage = typeof(EnemyData).GetField("damage", BindingFlags.NonPublic | BindingFlags.Instance);
 
+        private bool show;
+
         public override void OnInspectorGUI()
         {
-            base.DrawDefaultInspector();
+            DrawDefaultInspector();
 
-            if (EditorApplication.isPlaying)
+            if (EditorApplication.isPlaying && (show = EditorGUILayout.Foldout(show, "Playing Stats", true)))
             {
+                EditorGUILayout.LabelField("Spawning Stats", EditorStyles.boldLabel);
+                EditorGUILayout.BeginVertical(GUI.skin.box);
+                EditorGUILayout.LabelField("Current Difficulty", GameManager.Difficulty.ToString());
+
+                SerializedProperty maximumEnemies = serializedObject.FindProperty("maximumEnemies");
+                EditorGUILayout.LabelField("Maximum Enemies", getValueEnemyLevelData.Invoke(null, new object[] { maximumEnemies.vector4Value }).ToString());
+
+                SerializedProperty enemiesPerSecond = serializedObject.FindProperty("enemiesPerSecond");
+                EditorGUILayout.LabelField("Enemies/Seconds", getValueEnemyLevelData.Invoke(null, new object[] { enemiesPerSecond.vector4Value }).ToString());
+                EditorGUILayout.EndVertical();
+
                 SerializedProperty enemiesData = serializedObject.FindProperty("enemiesData");
                 (string name, float weight, float health, float damage)[] items = new (string name, float weight, float health, float damage)[enemiesData.arraySize];
                 for (int i = 0; i < enemiesData.arraySize; i++)
@@ -80,8 +94,8 @@ namespace Game.Scene
 
         private float Round(float value) => Mathf.Round(value * 100) / 100;
 
-        private static float GetHealth(EnemyData enemyData) => (float)getValue.Invoke(enemyData, new object[] { health.GetValue(enemyData) });
+        private static float GetHealth(EnemyData enemyData) => (float)getValueEnemyData.Invoke(enemyData, new object[] { health.GetValue(enemyData) });
 
-        private static float GetDamage(EnemyData enemyData) => (float)getValue.Invoke(enemyData, new object[] { damage.GetValue(enemyData) });
+        private static float GetDamage(EnemyData enemyData) => (float)getValueEnemyData.Invoke(enemyData, new object[] { damage.GetValue(enemyData) });
     }
 }
