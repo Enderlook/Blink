@@ -22,7 +22,7 @@ MonoBehaviour:
     button: 0
     canBeHoldDown: 1
   cooldown: 1
-  damage: 10
+  damage: 20
   pushForce: 10
   speed: 10
   prefab: {fileID: 3848868523013015357, guid: 076321aafc95272429f1b2f15ef6c88f, type: 3}
