@@ -44,7 +44,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -52,6 +52,22 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1922355704522019973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8081955460700129509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 072abdd6a1aee3e499f6a5ac8da847e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPathFinding: {fileID: 4481983273274332164}
+  animator: {fileID: 8081955460692720293}
+  animationKey: Melee Attack01
+  cooldown: 1
 --- !u!114 &2471253571719665823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -707,11 +723,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7128622873845828381, guid: 2d14bff838599234e8f16f538060b4ed,
+        type: 3}
+      propertyPath: enemyPathFinding
+      value: 
+      objectReference: {fileID: 4481983273274332164}
+    m_RemovedComponents:
+    - {fileID: 7128622873845828381, guid: 2d14bff838599234e8f16f538060b4ed, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2d14bff838599234e8f16f538060b4ed, type: 3}
 --- !u!1 &8081955460700129509 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100128, guid: 2d14bff838599234e8f16f538060b4ed,
+    type: 3}
+  m_PrefabInstance: {fileID: 8081955460700098501}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8081955460692720293 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: 2d14bff838599234e8f16f538060b4ed,
     type: 3}
   m_PrefabInstance: {fileID: 8081955460700098501}
   m_PrefabAsset: {fileID: 0}
