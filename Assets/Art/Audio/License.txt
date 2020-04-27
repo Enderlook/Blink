@@ -12,3 +12,15 @@ Magic SFX Sample made by ViRiX under license CC-BY 3.0
 Snow about a Castle made by Telaron under license GPL 2.0, GPL 3.0
 	https://opengameart.org/content/snow-about-a-castle
 	snow_about_a_castle.mp3
+
+Epic Departur made by Of Far Different Nature under license CC-BY 4.0
+	https://opengameart.org/content/epic-departure
+	Of Far Different Nature - Scene - Epic Departure (CC-BY).mp3
+
+Short Medieval Loop made by remaxim under license CPL 2.0, GPL 3.0, CC-BY-SA 3.0
+	https://opengameart.org/content/short-medieval-loop
+	medieval_loop.wav
+
+Fanfare 03 made by Fantasy Musica under license CC-BY 4.0
+	https://opengameart.org/content/fanfare-03
+	Fanfare 03.ogg
