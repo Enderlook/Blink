@@ -208,6 +208,28 @@
             </summary>
             <param name="indentationOffset">Indentation to add. Negative values remove indentation.</param>
         </member>
+        <member name="F:Enderlook.Unity.Attributes.PropertyPopupAttribute.modeName">
+            <summary>
+            Name of field used to determine which property must be used.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.PropertyPopupAttribute.#ctor(System.String)">
+            <summary>
+            Enable property popup on the class which is being decorated.
+            </summary>
+            <param name="modeName">Name of field used to determine which property must be used.</param>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.PropertyPopupOptionAttribute.target">
+            <summary>
+            Value that must match the mode field in other to show this field.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.PropertyPopupOptionAttribute.#ctor(System.Object)">
+            <summary>
+            Allow to use the decoreated field as option for the property popup.
+            </summary>
+            <param name="target">Value that must match the mode field in other to show this field.</param>
+        </member>
         <member name="M:Enderlook.Unity.Attributes.RestrictTypeAttribute.#ctor(System.Type[])">
             <summary>
             Restrict the values of this field by only types which implement, inherit or can be casted to all the types from <paramref name="restriction"/>.<br/>

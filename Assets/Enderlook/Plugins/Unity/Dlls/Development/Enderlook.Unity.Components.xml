@@ -255,6 +255,11 @@
             </summary>
             <param name="action">Action to subscribe.</param>
         </member>
+        <member name="T:Enderlook.Unity.Components.DestroyNotifier">
+            <summary>
+            Raises an event when the <see cref="T:UnityEngine.GameObject"/> is destroyed.
+            </summary>
+        </member>
         <member name="M:Enderlook.Unity.Components.DestroyNotifier.RegisterCallback(System.Action)">
             <summary>
             Registers a callback to be executed when the <see cref="T:UnityEngine.GameObject"/> is destroyed.
@@ -296,6 +301,84 @@
             </summary>
             <param name="gameObject"><see cref="T:UnityEngine.GameObject"/> to check for destroy.</param>
             <param name="onDestroy">Callback executed when <paramref name="gameObject"/> is destroyed.</param>
+        </member>
+        <member name="T:Enderlook.Unity.Components.Destroy.DestroyOnExitAnimationState">
+            <summary>
+            Desotroy the <see cref="T:UnityEngine.GameObject"/> when the animation state ends.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds">
+            <summary>
+            Desotry the <see cref="T:UnityEngine.GameObject"/> when the <see cref="T:UnityEngine.AudioSource"/> stop playing.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode">
+            <summary>
+            Determines how will <see cref="T:UnityEngine.AudioSource"/> be checked for destroyment.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode.CheckOnStartForClipLength">
+            <summary>
+            During Start, the current <see cref="T:UnityEngine.AudioClip"/> length will be used to determine when the <see cref="T:UnityEngine.GameObject"/> will be destroyed.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode.CheckOnUpdateIfIsNotPlaying">
+            <summary>
+            During Update, <see cref="T:UnityEngine.AudioSource"/> will be check to determine if it's playing or the <see cref="T:UnityEngine.GameObject"/> should be destroyed.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode.CheckOnUpdateIfStartedAndThenStopedPlaying">
+            <summary>
+            During Update, <see cref="T:UnityEngine.AudioSource"/> will be check to determine it was not playing, then playing, and finaly stopped playing to destroy the <see cref="T:UnityEngine.GameObject"/>
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.AddComponent(UnityEngine.GameObject,Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode)">
+            <summary>
+            Set <paramref name="gameObject"/> to be destroyed when <see cref="T:UnityEngine.AudioSource"/> stop playing.
+            </summary>
+            <param name="gameObject"><see cref="T:UnityEngine.GameObject"/> to check.</param>
+            <param name="mode">How checking will occur.</param>
+        </member>
+        <member name="T:Enderlook.Unity.Components.Destroy.DestroyWhenParticleSystemIsNotAlive">
+            <summary>
+            Desotry <see cref="T:UnityEngine.GameObject"/> when <see cref="T:UnityEngine.ParticleSystem"/> is not alive.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Components.DestroyWhenAnimationEnds">
+            <summary>
+            Destroy the <see cref="T:UnityEngine.GameObject"/> when the current animation ends.<br/>
+            This component must be added after the animation starts but in the same frame.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Components.DestroyWhenAnimationEnds.Mode">
+            <summary>
+            Determines how will <see cref="T:UnityEngine.Animator"/> be checked for destroyment.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Components.DestroyWhenAnimationEnds.Mode.CheckOnStart">
+            <summary>
+            During Start, the current animation state length will be used to determine when the <see cref="T:UnityEngine.GameObject"/> will be destroyed.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Components.DestroyWhenAnimationEnds.Mode.CheckOnUpdate">
+            <summary>
+            During Update, the current animation state normalized time will be used to determine when the <see cref="T:UnityEngine.GameObject"/> will be destroyed.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.DestroyWhenAnimationEnds.AddComponent(UnityEngine.GameObject,Enderlook.Unity.Components.DestroyWhenAnimationEnds.Mode,System.Int32)">
+            <summary>
+            Set <paramref name="gameObject"/> to be destroyed when animation ends.
+            </summary>
+            <param name="gameObject"><see cref="T:UnityEngine.GameObject"/> to check.</param>
+            <param name="mode">How checking will occur.</param>
+            <param name="layer">Which layer of the <see cref="T:UnityEngine.Animator"/> should check.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.DestroyWhenAnimationEnds.AddComponent(UnityEngine.GameObject,System.Int32)">
+            <summary>
+            Set <paramref name="gameobject"/> to be destroyed when animation ends.
+            </summary>
+            <param name="gameobject"><see cref="T:UnityEngine.GameObject"/> to check.</param>
+            <param name="layer">Which layer of the <see cref="T:UnityEngine.Animator"/> should check.</param>
         </member>
         <member name="T:Enderlook.Unity.Components.DontDestroyOnLoad">
             <summary>

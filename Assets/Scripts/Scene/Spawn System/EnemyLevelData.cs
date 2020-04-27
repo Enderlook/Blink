@@ -1,7 +1,6 @@
 ﻿using Enderlook.Extensions;
 using Enderlook.Unity.Components;
 #if UNITY_EDITOR
-using Enderlook.Unity.Utils.UnityEditor;
 using Enderlook.Utils;
 using System.Linq;
 using UnityEditor;
@@ -13,9 +12,11 @@ namespace Game.Scene
     [CreateAssetMenu(fileName = "Enemy Level Data", menuName = "Game/Enemy Level Data")]
     public class EnemyLevelData : ScriptableObject
     {
+        // Keep name in sync with EnemyLevelDataEditor
         [SerializeField, Tooltip("Calculates maximum enemies at the same time.\nMaximum Enemies = Mathf.Min(Difficulty * X, Y) * Z + W.")]
         private Vector4 maximumEnemies = new Vector4(1, 1, 10, 5);
 
+        // Keep name in sync with EnemyLevelDataEditor
         [SerializeField, Tooltip("Calculates amount of enemies spawn per second.\nEnemies Per Second = Mathf.Min(Difficulty * X, Y) * Z + W.")]
         private Vector4 enemiesPerSecond = new Vector4(.5f, 2, 1, .25f);
         private float timeSinceLastSpawn;
@@ -71,10 +72,13 @@ namespace Game.Scene
 
         private EnemyData GetRandomEnemyData() => enemiesData.RandomPickWeighted(e => e.GetWeight());
 
-        private float GetValue(Vector4 parameters)
+        private static float GetValue(Vector4 parameters)
             => (Mathf.Min(GameManager.Difficulty * parameters.x, parameters.y) * parameters.z) + parameters.w;
 
 #if UNITY_EDITOR
+        private static float GetValueEditorOnly(Vector4 parameters, float difficulty)
+           => (Mathf.Min(difficulty * parameters.x, parameters.y) * parameters.z) + parameters.w;
+
         [MenuItem("Assets/Game/Create Enemy Level Data")]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private static void CreateEnemyLevelData()

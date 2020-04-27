@@ -32,7 +32,9 @@ PluginImporter:
     second:
       enabled: 1
       settings:
+        CPU: AnyCPU
         DefaultValueInitialized: true
+        OS: AnyOS
   - first:
       Facebook: Win
     second:

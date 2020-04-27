@@ -96,26 +96,26 @@
         </member>
         <member name="M:Enderlook.Unity.Serializables.Ranges.RangeFloatStepSwitchable.op_Explicit(Enderlook.Unity.Serializables.Ranges.RangeFloatStepSwitchable)~System.Single">
             <summary>
-            Return a random value between <see cref="!:Min"/> and <see cref="!:Max"/>.
+            Return the stored value.
             </summary>
             <param name="source"><see cref="T:Enderlook.Unity.Serializables.Ranges.RangeFloatSwitchable"/> instance used to determine the random float.</param>
         </member>
         <member name="M:Enderlook.Unity.Serializables.Ranges.RangeFloatStepSwitchable.op_Explicit(Enderlook.Unity.Serializables.Ranges.RangeFloatStepSwitchable)~System.Int32">
             <summary>
-            Return a random value between <see cref="!:Min"/> and <see cref="!:Max"/>.
+            Return the stored value.
             The result is always an integer. Decimal numbers are used as chance to increment by one.
             </summary>
             <param name="source"><see cref="T:Enderlook.Unity.Serializables.Ranges.RangeFloatSwitchable"/> instance used to determine the random int.</param>
         </member>
         <member name="M:Enderlook.Unity.Serializables.Ranges.RangeFloatSwitchable.op_Explicit(Enderlook.Unity.Serializables.Ranges.RangeFloatSwitchable)~System.Single">
             <summary>
-            Return a random value between <see cref="!:Min"/> and <see cref="!:Max"/>.
+            Return the stored value.
             </summary>
             <param name="source"><see cref="T:Enderlook.Unity.Serializables.Ranges.RangeFloatSwitchable"/> instance used to determine the random float.</param>
         </member>
         <member name="M:Enderlook.Unity.Serializables.Ranges.RangeFloatSwitchable.op_Explicit(Enderlook.Unity.Serializables.Ranges.RangeFloatSwitchable)~System.Int32">
             <summary>
-            Return a random value between <see cref="!:Min"/> and <see cref="!:Max"/>.
+            Return the stored value.
             The result is always an integer. Decimal numbers are used as chance to increment by one.
             </summary>
             <param name="source"><see cref="T:Enderlook.Unity.Serializables.Ranges.RangeFloatSwitchable"/> instance used to determine the random int.</param>
@@ -134,13 +134,13 @@
         </member>
         <member name="M:Enderlook.Unity.Serializables.Ranges.RangeIntStepSwitchable.op_Explicit(Enderlook.Unity.Serializables.Ranges.RangeIntStepSwitchable)~System.Int32">
             <summary>
-            Return a random value between <see cref="!:Min"/> and <see cref="!:Max"/>.
+            Return the stored value.
             </summary>
             <param name="source"><see cref="T:Enderlook.Unity.Serializables.Ranges.RangeIntStepSwitchable"/> instance used to determine the random int.</param>
         </member>
         <member name="M:Enderlook.Unity.Serializables.Ranges.RangeIntSwitchable.op_Explicit(Enderlook.Unity.Serializables.Ranges.RangeIntSwitchable)~System.Int32">
             <summary>
-            Return a random value between <see cref="!:Min"/> and <see cref="!:Max"/>.
+            Return the stored value.
             </summary>
             <param name="source"><see cref="T:Enderlook.Unity.Serializables.Ranges.RangeIntSwitchable"/> instance used to determine the random int.</param>
         </member>

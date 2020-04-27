@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e823fb9d73d8dd49ba046222355682f, type: 3}
   m_Name: Enemy Level Data
   m_EditorClassIdentifier: 
-  maximumEnemies: {x: 1, y: 1, z: 3, w: 1}
-  enemiesPerSecond: {x: 0.25, y: 1.5, z: 1, w: 0.25}
+  maximumEnemies: {x: 0.6, y: 3, z: 2, w: 1}
+  enemiesPerSecond: {x: 0.1, y: 1.25, z: 1, w: 0.25}
   enemiesData:
   - {fileID: 11400000, guid: a5a894de4abe9264697605b71b784775, type: 2}
   - {fileID: 11400000, guid: 494d2c11de52ebf4db6a3718727bdc49, type: 2}

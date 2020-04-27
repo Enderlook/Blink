@@ -1,11 +1,13 @@
-﻿using UnityEngine;
+﻿using Enderlook.Unity.Attributes;
+
+using UnityEngine;
 
 namespace Game.Scene
 {
     public class EnemySpawner : MonoBehaviour
     {
 #pragma warning disable CS0649
-        [SerializeField]
+        [SerializeField, Expandable]
         private EnemyLevelData enemyLevelData;
 
         [SerializeField]
