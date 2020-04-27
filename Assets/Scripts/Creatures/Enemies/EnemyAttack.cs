@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using AvalonStudios.Extensions;
+
 using UnityEngine;
 
 namespace Game.Creatures
@@ -15,8 +15,17 @@ namespace Game.Creatures
         [SerializeField, Tooltip("Animation key")]
         private string animationKey;
 
+        [SerializeField, Tooltip("Damage")]
+        private int damage;
+
         [SerializeField, Tooltip("Cooldown")]
         private float cooldown;
+
+        [SerializeField, Tooltip("Player layer")]
+        private LayerMask playerLayer;
+
+        [SerializeField, Tooltip("Crystal layer")]
+        private LayerMask crystalLayer;
 
         private float nextAttack;
 
@@ -29,6 +38,15 @@ namespace Game.Creatures
                     animator.SetTrigger(animationKey);
                     nextAttack = Time.time + cooldown;
                 }
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.layer == playerLayer.ToLayer() || other.gameObject.layer == crystalLayer.ToLayer())
+            {
+                if (other.gameObject.TryGetComponent(out IDamagable damagable))
+                    damagable.TakeDamage(damage);
             }
         }
 
