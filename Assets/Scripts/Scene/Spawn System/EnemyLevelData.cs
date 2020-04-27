@@ -76,6 +76,9 @@ namespace Game.Scene
             => (Mathf.Min(GameManager.Difficulty * parameters.x, parameters.y) * parameters.z) + parameters.w;
 
 #if UNITY_EDITOR
+        private static float GetValueEditorOnly(Vector4 parameters, float difficulty)
+           => (Mathf.Min(difficulty * parameters.x, parameters.y) * parameters.z) + parameters.w;
+
         [MenuItem("Assets/Game/Create Enemy Level Data")]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private static void CreateEnemyLevelData()

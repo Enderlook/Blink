@@ -13,6 +13,8 @@ namespace Game.Scene
     [CreateAssetMenu(fileName = "Enemy Spawn Data", menuName = "Game/Enemy Spawn Data")]
     public class EnemyData : ScriptableObject
     {
+        // Keep names in sync with EnemyDataEditor
+
 #pragma warning disable CS0649
         [SerializeField]
         private GameObject enemyPrefab;
@@ -59,6 +61,9 @@ namespace Game.Scene
             => Mathf.Min(GameManager.Difficulty - difficultyThreshold, difficultyCap) * parameters.x + parameters.y;
 
 #if UNITY_EDITOR
+        private float GetValueEditorOnly(Vector2 parameters, float amount)
+           => Mathf.Min(amount - difficultyThreshold, difficultyCap) * parameters.x + parameters.y;
+
         [MenuItem("Assets/Game/Create Enemy Data")]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private static void CreateEnemyData()
