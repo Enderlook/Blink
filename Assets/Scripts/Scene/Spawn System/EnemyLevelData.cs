@@ -1,8 +1,6 @@
 ﻿using Enderlook.Extensions;
-using Enderlook.Unity.Attributes;
 using Enderlook.Unity.Components;
 #if UNITY_EDITOR
-using Enderlook.Unity.Utils.UnityEditor;
 using Enderlook.Utils;
 using System.Linq;
 using UnityEditor;
