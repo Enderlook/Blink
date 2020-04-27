@@ -18,10 +18,7 @@ namespace Game.Creatures.Player.AbilitySystem
         private void Update()
         {
             for (int i = 0; i < abilities.Length; i++)
-            {
-                Debug.Log($"{abilities[i].name} {abilities[i].Percentage}");
                 abilitiesUIs[i].SetLoadPercentage(abilities[i].Percentage);
-            }
         }
 
         public void SetAbilities(Ability[] abilities)

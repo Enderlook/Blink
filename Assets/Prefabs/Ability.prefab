@@ -89,6 +89,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ablityImage: {fileID: 3906398249834223165}
   fade: {fileID: 5721444282154779200}
+  frame: {fileID: 5738612940143969245}
+  fullColor: {r: 1, g: 0.97662324, b: 0, a: 1}
 --- !u!1 &3045096552197705138
 GameObject:
   m_ObjectHideFlags: 0
