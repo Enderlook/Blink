@@ -8,3 +8,7 @@ Synthesized explosion made by Iwan Gabovitch under license CC0
 Magic SFX Sample made by ViRiX under license CC-BY 3.0
 	https://opengameart.org/content/magic-sfx-sample
 	Fire impact 1.wav
+
+Snow about a Castle made by Telaron under license GPL 2.0, GPL 3.0
+	https://opengameart.org/content/snow-about-a-castle
+	snow_about_a_castle.mp3
