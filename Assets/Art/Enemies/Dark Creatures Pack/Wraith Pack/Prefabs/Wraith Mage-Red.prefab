@@ -12572,6 +12572,7 @@ GameObject:
   m_Component:
   - component: {fileID: 400200}
   - component: {fileID: 9500000}
+  - component: {fileID: 8968465735235951904}
   m_Layer: 0
   m_Name: Wraith Mage-Red
   m_TagString: Untagged
@@ -12650,6 +12651,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8968465735235951904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 072abdd6a1aee3e499f6a5ac8da847e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPathFinding: {fileID: 0}
+  isBoss: 0
+  animator: {fileID: 9500000}
+  basicAttack: Thow Projectile
+  mediumAttack: 
+  strongAttack: 
+  damage: 0
+  cooldown: 2
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  crystalLayer:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &100202
 GameObject:
   m_ObjectHideFlags: 0

@@ -110,8 +110,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPathFinding: {fileID: 4481983273274332164}
+  isBoss: 0
   animator: {fileID: 8081955460692720293}
-  animationKey: Melee Attack01
+  basicAttack: Melee Attack01
+  mediumAttack: 
+  strongAttack: 
   damage: 10
   cooldown: 1
   playerLayer:

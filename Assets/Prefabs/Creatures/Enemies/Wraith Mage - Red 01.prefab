@@ -81,29 +81,6 @@ MonoBehaviour:
     inline: 0
     scriptableObject: {fileID: 0}
     component: {fileID: 8116652157970478327}
---- !u!114 &4309636962831599047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3402435639833403909}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 072abdd6a1aee3e499f6a5ac8da847e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPathFinding: {fileID: 1623135813050582114}
-  animator: {fileID: 3402435639842918413}
-  animationKey: Throw Projectile
-  damage: 0
-  cooldown: 2
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 512
-  crystalLayer:
-    serializedVersion: 2
-    m_Bits: 1024
 --- !u!114 &5518954677451802844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -730,17 +707,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8968465735235951904, guid: 59c0df78cb163cf4c89005ec4b3032c1,
+        type: 3}
+      propertyPath: enemyPathFinding
+      value: 
+      objectReference: {fileID: 1623135813050582114}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59c0df78cb163cf4c89005ec4b3032c1, type: 3}
 --- !u!1 &3402435639833403909 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100200, guid: 59c0df78cb163cf4c89005ec4b3032c1,
-    type: 3}
-  m_PrefabInstance: {fileID: 3402435639833503085}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &3402435639842918413 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9500000, guid: 59c0df78cb163cf4c89005ec4b3032c1,
     type: 3}
   m_PrefabInstance: {fileID: 3402435639833503085}
   m_PrefabAsset: {fileID: 0}

@@ -165,8 +165,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPathFinding: {fileID: 4849378097389699523}
+  isBoss: 0
   animator: {fileID: 8456820351869505155}
-  animationKey: Basic Attack
+  basicAttack: Basic Attack
+  mediumAttack: 
+  strongAttack: 
   damage: 15
   cooldown: 2
   playerLayer:
