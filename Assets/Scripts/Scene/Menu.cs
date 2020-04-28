@@ -129,10 +129,13 @@ namespace Game.Scene
                 case Mode.Win:
                     audioSource.clip = winMusic;
                     winMenu.SetActive(true);
+                    menu.SetActive(false);
                     break;
                 case Mode.Lose:
                     audioSource.clip = loseMusic;
                     winMenu.SetActive(false);
+                    menu.SetActive(false);
+                    loseMenu.SetActive(true);
                     break;
                 case Mode.Playing:
                     throw new InvalidOperationException();
