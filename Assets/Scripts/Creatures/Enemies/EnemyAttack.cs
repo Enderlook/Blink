@@ -1,4 +1,5 @@
 ﻿using AvalonStudios.Extensions;
+using Enderlook.Unity.Attributes;
 
 using UnityEngine;
 
@@ -9,11 +10,20 @@ namespace Game.Creatures
         [SerializeField, Tooltip("Enemy path finding.")]
         private EnemyPathFinding enemyPathFinding;
 
+        [SerializeField, Tooltip("Is Boss")]
+        private bool isBoss;
+
         [SerializeField, Tooltip("Animator component.")]
         private Animator animator;
 
-        [SerializeField, Tooltip("Animation key")]
-        private string animationKey;
+        [SerializeField, Tooltip("Basic attack key")]
+        private string basicAttack;
+
+        [SerializeField, Tooltip("Medium attack."), ShowIf(nameof(isBoss), true)]
+        private string mediumAttack;
+
+        [SerializeField, Tooltip("Strong attack"), ShowIf(nameof(isBoss), true)]
+        private string strongAttack;
 
         [SerializeField, Tooltip("Damage")]
         private int damage;
@@ -35,6 +45,20 @@ namespace Game.Creatures
             {
                 if (Time.time >= nextAttack)
                 {
+                    string animationKey;
+                    if (isBoss)
+                    {
+                        float prob = Random.Range(0, 100);
+                        if (prob >= 0 && prob <= 60)
+                            animationKey = basicAttack;
+                        else if (prob >= 61 && prob <= 90)
+                            animationKey = mediumAttack;
+                        else
+                            animationKey = strongAttack;
+                    }
+                    else
+                        animationKey = basicAttack;
+
                     animator.SetTrigger(animationKey);
                     nextAttack = Time.time + cooldown;
                 }
