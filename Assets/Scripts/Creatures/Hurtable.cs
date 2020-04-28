@@ -56,7 +56,8 @@ namespace Game.Creatures
             }
         }
 
-        public void TakeHealing(int amount) => health.SetValue(health.GetValue() + amount);
+        public void TakeHealing(int amount)
+            => health.SetValue(Mathf.Min(health.GetValue() + amount, maxHealth.GetValue()));
 
         public void SetMaxHealth(int maxHealth) => this.maxHealth.SetValue(maxHealth);
     }

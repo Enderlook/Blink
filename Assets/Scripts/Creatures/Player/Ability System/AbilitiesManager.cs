@@ -42,5 +42,11 @@ namespace Game.Creatures.Player.AbilitySystem
         }
 
         public void ActiveSkill(string key) => abilities.First(e => e.Key == key).TriggerFromAnimator();
+
+        public void InstantReload()
+        {
+            foreach (Ability ability in abilities)
+                ability.UpdateBehaviour(100);
+        }
     }
 }
