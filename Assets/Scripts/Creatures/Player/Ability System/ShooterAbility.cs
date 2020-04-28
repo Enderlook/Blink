@@ -1,4 +1,5 @@
 ﻿using Game.Attacks.Projectiles;
+using AvalonStudios.Extensions;
 
 using UnityEngine;
 
@@ -21,6 +22,9 @@ namespace Game.Creatures.Player.AbilitySystem
         [SerializeField, Tooltip("Projectile prefab.")]
         private GameObject prefab;
 
+        [SerializeField, Tooltip("Layer hit")]
+        private LayerMask hitLayer;
+
         private Transform shootingPosition;
 
         public override void PostInitialize(AbilitiesManager abilityManager)
@@ -30,7 +34,7 @@ namespace Game.Creatures.Player.AbilitySystem
         {
             GameObject instance = Instantiate(prefab, shootingPosition.position, shootingPosition.rotation);
             MoveStraightLine.AddComponentTo(instance, speed);
-            ProjectileHit.AddComponentTo(instance, damage, pushForce);
+            ProjectileHit.AddComponentTo(instance, damage, pushForce, hitLayer.ToLayer());
         }
     }
 }

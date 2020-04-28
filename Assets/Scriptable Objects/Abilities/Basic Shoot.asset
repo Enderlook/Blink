@@ -27,3 +27,6 @@ MonoBehaviour:
   pushForce: 10
   speed: 10
   prefab: {fileID: 6988304715198132126, guid: 580963a91926d3742b0de4ce66d7ed10, type: 3}
+  hitLayer:
+    serializedVersion: 2
+    m_Bits: 8192
