@@ -16,7 +16,7 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: 21300000, guid: b904913d2d1b53042a69b5b524554d6f,
     type: 3}
   animationName: Basic Attack
-  <Key>k__BackingField: Basic Attack
+  <Key>k__BackingField: Basic Shoot
   control:
     useMouse: 1
     key: 0
