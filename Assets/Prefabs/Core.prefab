@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 8318788570864248247}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -202,6 +202,7 @@ MonoBehaviour:
   levelDifficultyPowerFactor: 0.5
   difficultyInSceneFactor: 0.5
   timer: {fileID: 8118707543177352285}
+  abilityData: {fileID: 0}
 --- !u!114 &1928472508134121915
 MonoBehaviour:
   m_ObjectHideFlags: 0
