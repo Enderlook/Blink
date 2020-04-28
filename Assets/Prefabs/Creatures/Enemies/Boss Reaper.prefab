@@ -166,10 +166,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthEvent:
-    <Mode>k__BackingField: 0
+    <Mode>k__BackingField: 2
     event: {fileID: 0}
     managedScriptableObject: {fileID: 0}
-    managedComponent: {fileID: 0}
+    managedComponent: {fileID: 5876144135162259713}
 --- !u!114 &4236240366733532182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 1155944686, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseAtom: {fileID: 0}
+  baseAtom: {fileID: 8772888074451309283}
   instacedAtom: {fileID: 0}
 --- !u!114 &6427452856002539598
 MonoBehaviour:
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 1155944686, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseAtom: {fileID: 0}
+  baseAtom: {fileID: -1652238984549092230}
   instacedAtom: {fileID: 0}
 --- !u!114 &6479962501615774658
 MonoBehaviour:
@@ -229,12 +229,12 @@ MonoBehaviour:
     <Mode>k__BackingField: 2
     inline: 0
     scriptableObject: {fileID: 0}
-    component: {fileID: 0}
+    component: {fileID: 5876144135162259713}
   maxHealth:
     <Mode>k__BackingField: 2
     inline: 0
     scriptableObject: {fileID: 0}
-    component: {fileID: 0}
+    component: {fileID: 6427452856002539598}
 --- !u!114 &9158352503522825529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,22 +251,22 @@ MonoBehaviour:
     <Mode>k__BackingField: 2
     inline: 0
     scriptableObject: {fileID: 0}
-    component: {fileID: 0}
+    component: {fileID: 5876144135162259713}
   maxHealth:
     <Mode>k__BackingField: 2
     inline: 0
     scriptableObject: {fileID: 0}
-    component: {fileID: 0}
+    component: {fileID: 6427452856002539598}
   healthEvent2:
     <Mode>k__BackingField: 2
     event: {fileID: 0}
     managedScriptableObject: {fileID: 0}
-    managedComponent: {fileID: 0}
+    managedComponent: {fileID: 5876144135162259713}
   maxHealthEvent:
     <Mode>k__BackingField: 2
     event: {fileID: 0}
     managedScriptableObject: {fileID: 0}
-    managedComponent: {fileID: 0}
+    managedComponent: {fileID: 6427452856002539598}
   healthBar: {fileID: 4408493216306834460, guid: 9b27b479a691e1145b86ba683f8b3078,
     type: 3}
   healthBarSpawnPosition: {x: 0, y: 2.95, z: 0}
@@ -1669,3 +1669,121 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 5396148646744761275}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &-4631656964704212558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1144320121, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Max Health Event
+  m_EditorClassIdentifier: 
+--- !u!114 &-1652238984549092230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1508624999, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Max Health
+  m_EditorClassIdentifier: 
+  initialValue: 75
+  value: 75
+  oldValue: 75
+  transformer: {fileID: 4723634939478767861}
+  changed: {fileID: -4631656964704212558}
+  changedWithHistory: {fileID: 4875759995793415209}
+--- !u!114 &4206422955681283073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -463164559, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Health Min
+  m_EditorClassIdentifier: 
+  min:
+    <Mode>k__BackingField: 0
+    inline: 0
+    scriptableObject: {fileID: 0}
+    component: {fileID: 0}
+--- !u!114 &4723634939478767861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -463164559, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Max Health Min
+  m_EditorClassIdentifier: 
+  min:
+    <Mode>k__BackingField: 0
+    inline: 0
+    scriptableObject: {fileID: 0}
+    component: {fileID: 0}
+--- !u!114 &4875759995793415209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -802117009, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Max Health Event 2
+  m_EditorClassIdentifier: 
+--- !u!114 &7288878659979626049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -802117009, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Health Event 2
+  m_EditorClassIdentifier: 
+--- !u!114 &7617870426102246029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1144320121, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Health Event
+  m_EditorClassIdentifier: 
+--- !u!114 &8772888074451309283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1508624999, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Health
+  m_EditorClassIdentifier: 
+  initialValue: 75
+  value: 75
+  oldValue: 75
+  transformer: {fileID: 4206422955681283073}
+  changed: {fileID: 7617870426102246029}
+  changedWithHistory: {fileID: 7288878659979626049}
