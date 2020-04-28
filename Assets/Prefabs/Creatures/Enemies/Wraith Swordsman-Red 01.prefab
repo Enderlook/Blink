@@ -208,7 +208,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPathFinding: {fileID: 4481983273274332164}
   isBoss: 0
-  animator: {fileID: 8081955460692720293}
   basicAttack: Melee Attack01
   mediumAttack: 
   strongAttack: 
@@ -338,6 +337,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de294ba695cede42830477309aa5bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 8081955460692720293}
+  walkAnimation: Fly Forward
   crystalSeekWeight: 1
   playerSeekWeight: 1
   mass: 1

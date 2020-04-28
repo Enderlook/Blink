@@ -153,6 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de294ba695cede42830477309aa5bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 3402435639842918413}
+  walkAnimation: Fly Forward
   crystalSeekWeight: 1
   playerSeekWeight: 1
   mass: 1
@@ -831,6 +833,12 @@ PrefabInstance:
 --- !u!1 &3402435639833403909 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100200, guid: 59c0df78cb163cf4c89005ec4b3032c1,
+    type: 3}
+  m_PrefabInstance: {fileID: 3402435639833503085}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3402435639842918413 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: 59c0df78cb163cf4c89005ec4b3032c1,
     type: 3}
   m_PrefabInstance: {fileID: 3402435639833503085}
   m_PrefabAsset: {fileID: 0}

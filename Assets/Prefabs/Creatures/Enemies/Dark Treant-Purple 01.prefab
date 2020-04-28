@@ -167,7 +167,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPathFinding: {fileID: 7720095163662337868}
   isBoss: 0
-  animator: {fileID: 5198749565586220712}
   basicAttack: Head Attack
   mediumAttack: 
   strongAttack: 
@@ -179,6 +178,19 @@ MonoBehaviour:
   crystalLayer:
     serializedVersion: 2
     m_Bits: 1024
+--- !u!114 &5321959198007698116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5198749565576729898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df6d7683ea5adca4380e9028701e2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: {x: 0.8, y: 1.2}
 --- !u!114 &5698202894566074846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,6 +287,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de294ba695cede42830477309aa5bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 5198749565586220712}
+  walkAnimation: Walk
   crystalSeekWeight: 1
   playerSeekWeight: 1
   mass: 1
@@ -327,19 +341,6 @@ MonoBehaviour:
   healthBar: {fileID: 4408493216306834460, guid: 9b27b479a691e1145b86ba683f8b3078,
     type: 3}
   healthBarSpawnPosition: {x: 0, y: 1.9, z: 0}
---- !u!114 &5321959198007698116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5198749565576729898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df6d7683ea5adca4380e9028701e2f31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: {x: 0.8, y: 1.2}
 --- !u!1 &8789855436345416214
 GameObject:
   m_ObjectHideFlags: 0

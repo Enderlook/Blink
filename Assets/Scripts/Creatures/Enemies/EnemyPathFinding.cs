@@ -12,6 +12,16 @@ namespace Game.Creatures
 
         public float TargetDistance => targetDistance;
 
+        public Animator ThisAnimator => animator;
+
+        public string WalkAnimation => walkAnimation;
+
+        [SerializeField, Tooltip("Animator component.")]
+        private Animator animator;
+
+        [SerializeField, Tooltip("Animation key")]
+        private string walkAnimation;
+
         [SerializeField, Tooltip("Determines the weight of the crystal when deciding to move towards it or the player.")]
         private float crystalSeekWeight = 1;
 

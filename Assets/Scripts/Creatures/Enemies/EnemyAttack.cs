@@ -13,9 +13,6 @@ namespace Game.Creatures
         [SerializeField, Tooltip("Is Boss")]
         private bool isBoss;
 
-        [SerializeField, Tooltip("Animator component.")]
-        private Animator animator;
-
         [SerializeField, Tooltip("Basic attack key")]
         private string basicAttack;
 
@@ -43,6 +40,7 @@ namespace Game.Creatures
         {
             if (enemyPathFinding.TargetDistance <= enemyPathFinding.ThisNavMeshAgent.stoppingDistance)
             {
+                enemyPathFinding.ThisAnimator.SetBool(enemyPathFinding.WalkAnimation, false);
                 if (Time.time >= nextAttack)
                 {
                     string animationKey;
@@ -59,10 +57,12 @@ namespace Game.Creatures
                     else
                         animationKey = basicAttack;
 
-                    animator.SetTrigger(animationKey);
+                    enemyPathFinding.ThisAnimator.SetTrigger(animationKey);
                     nextAttack = Time.time + cooldown;
                 }
             }
+            else
+                enemyPathFinding.ThisAnimator.SetBool(enemyPathFinding.WalkAnimation, true);
         }
 
         private void OnTriggerEnter(Collider other)
