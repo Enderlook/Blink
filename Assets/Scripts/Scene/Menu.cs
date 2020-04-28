@@ -43,7 +43,7 @@ namespace Game.Scene
 
         private AudioSource audioSource;
 
-        private bool isPlaying;
+        private bool isPlaying = true;
         public bool IsPlaying {
             get => isPlaying;
             set {
@@ -52,7 +52,7 @@ namespace Game.Scene
                 isPlaying = value;
                 Time.timeScale = value ? 1 : 0;
                 PlayMusic();
-                if (value)
+                if (!value)
                     menu.SetActive(true);
                 else
                 {
@@ -61,11 +61,6 @@ namespace Game.Scene
                     menu.SetActive(false);
                 }
             }
-        }
-
-        public bool IsPause {
-            get => IsPlaying;
-            private set => IsPlaying = !value;
         }
 
         private enum Mode { Playing, Win, Lose }
@@ -128,7 +123,7 @@ namespace Game.Scene
 
         private void ShowGameOver()
         {
-            IsPause = true;
+            IsPlaying = false;
             switch (mode)
             {
                 case Mode.Win:

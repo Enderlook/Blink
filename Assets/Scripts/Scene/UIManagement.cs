@@ -10,5 +10,7 @@ namespace Game.Scene
         public void Restart() => Load(SceneManager.GetActiveScene().name);
 
         public void Exit() => Application.Quit();
+
+        public void GoToMenu() => Load("Menu");
     }
 }
