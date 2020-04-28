@@ -1775,6 +1775,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1723801433}
   - component: {fileID: 1723801434}
+  - component: {fileID: 1723801435}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -3131,6 +3132,20 @@ MonoBehaviour:
   bossCountdown: 120
   bossPrefab: {fileID: 5396148646744920283, guid: 827c926520a58fe479ee33e63fb6e2bc,
     type: 3}
+--- !u!114 &1723801435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723801432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c656a556f0cd818439a915b8dd2f6a8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: f5daa74780d0e1a4398475521c22d182, type: 3}
 --- !u!1001 &1872387975
 PrefabInstance:
   m_ObjectHideFlags: 0
