@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.24767414, g: 0.35330734, b: 0.8285049, a: 1}
+  m_IndirectSpecularColor: {r: 0.24011655, g: 0.33247435, b: 0.8311335, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3128,6 +3128,9 @@ MonoBehaviour:
     - {x: 17.190344, y: 2, z: 16.190344}
     - {x: 17.190344, y: 2, z: 17.190344}
     distanceCheck: 1
+  bossCountdown: 120
+  bossPrefab: {fileID: 5396148646744920283, guid: 827c926520a58fe479ee33e63fb6e2bc,
+    type: 3}
 --- !u!1001 &1872387975
 PrefabInstance:
   m_ObjectHideFlags: 0

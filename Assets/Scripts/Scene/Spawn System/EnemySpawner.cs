@@ -12,6 +12,12 @@ namespace Game.Scene
 
         [SerializeField]
         private SpawnPointsManager spawnPoints;
+
+        [SerializeField, Tooltip("Time in seconds before spawn the boss.")]
+        private float bossCountdown;
+
+        [SerializeField, Tooltip("Prefab of the boss.")]
+        private GameObject bossPrefab;
 #pragma warning restore CS0649
 
         // Hide an obsolete API
@@ -27,6 +33,16 @@ namespace Game.Scene
         {
             if (canSpawn && enemyLevelData.TrySpawnEnemy(out GameObject enemy, Time.deltaTime))
                 enemy.transform.position = spawnPoints.GetSpawnPoint(Camera);
+
+            if (bossCountdown > 0)
+            {
+                bossCountdown -= Time.deltaTime;
+                if (bossCountdown < 0)
+                {
+                    GameObject instance = Instantiate(bossPrefab);
+                    instance.transform.position = spawnPoints.GetSpawnPoint(Camera);
+                }
+            }
         }
 
         internal void StartSpawing()
