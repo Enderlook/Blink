@@ -116,9 +116,14 @@ namespace Game.Scene
             if (value == 0)
             {
                 mode = Mode.Lose;
-                IsPlaying = false;
                 ShowGameOver();
             }
+        }
+
+        public void Win()
+        {
+            mode = Mode.Win;
+            ShowGameOver();
         }
 
         private void ShowGameOver()
