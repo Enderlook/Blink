@@ -266,6 +266,9 @@ MonoBehaviour:
     event: {fileID: 0}
     managedScriptableObject: {fileID: 0}
     managedComponent: {fileID: 5876144135162259713}
+  useAnimator: 1
+  animator: {fileID: 5396148646754177895}
+  deadAnimation: Dead
 --- !u!114 &4236240366733532182
 MonoBehaviour:
   m_ObjectHideFlags: 0

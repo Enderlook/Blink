@@ -189,6 +189,9 @@ MonoBehaviour:
     event: {fileID: 0}
     managedScriptableObject: {fileID: 0}
     managedComponent: {fileID: 5239604377403365536}
+  useAnimator: 1
+  animator: {fileID: 8456820351869505155}
+  deadAnimation: Die
 --- !u!114 &1572738100418293115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,6 +248,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de294ba695cede42830477309aa5bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  walkAnimation: 
   crystalSeekWeight: 1
   playerSeekWeight: 1
   mass: 4
@@ -276,7 +281,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPathFinding: {fileID: 4849378097389699523}
   isBoss: 0
-  animator: {fileID: 8456820351869505155}
   basicAttack: Basic Attack
   mediumAttack: 
   strongAttack: 

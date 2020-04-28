@@ -35,34 +35,40 @@ namespace Game.Creatures
         private LayerMask crystalLayer;
 
         private float nextAttack;
+        private DestroyWhenDie destroyWhenDie;
+
+        private void Awake() => destroyWhenDie = GetComponent<DestroyWhenDie>();
 
         private void Update()
         {
-            if (enemyPathFinding.TargetDistance <= enemyPathFinding.ThisNavMeshAgent.stoppingDistance)
+            if (!destroyWhenDie.IsDead)
             {
-                enemyPathFinding.ThisAnimator.SetBool(enemyPathFinding.WalkAnimation, false);
-                if (Time.time >= nextAttack)
+                if (enemyPathFinding.TargetDistance <= enemyPathFinding.ThisNavMeshAgent.stoppingDistance)
                 {
-                    string animationKey;
-                    if (isBoss)
+                    enemyPathFinding.ThisAnimator.SetBool(enemyPathFinding.WalkAnimation, false);
+                    if (Time.time >= nextAttack)
                     {
-                        float prob = Random.Range(0, 100);
-                        if (prob >= 0 && prob <= 60)
-                            animationKey = basicAttack;
-                        else if (prob >= 61 && prob <= 90)
-                            animationKey = mediumAttack;
+                        string animationKey;
+                        if (isBoss)
+                        {
+                            float prob = Random.Range(0, 100);
+                            if (prob >= 0 && prob <= 60)
+                                animationKey = basicAttack;
+                            else if (prob >= 61 && prob <= 90)
+                                animationKey = mediumAttack;
+                            else
+                                animationKey = strongAttack;
+                        }
                         else
-                            animationKey = strongAttack;
-                    }
-                    else
-                        animationKey = basicAttack;
+                            animationKey = basicAttack;
 
-                    enemyPathFinding.ThisAnimator.SetTrigger(animationKey);
-                    nextAttack = Time.time + cooldown;
+                        enemyPathFinding.ThisAnimator.SetTrigger(animationKey);
+                        nextAttack = Time.time + cooldown;
+                    }
                 }
+                else
+                    enemyPathFinding.ThisAnimator.SetBool(enemyPathFinding.WalkAnimation, true);
             }
-            else
-                enemyPathFinding.ThisAnimator.SetBool(enemyPathFinding.WalkAnimation, true);
         }
 
         private void OnTriggerEnter(Collider other)
