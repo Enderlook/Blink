@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Basic Shoot
   m_EditorClassIdentifier: 
   description: 
-  <Icon>k__BackingField: {fileID: 21300000, guid: f7e1153cbdbe17645b274b27c870d942,
+  <Icon>k__BackingField: {fileID: 21300000, guid: 68efddc240e01384c9c5a3dc5398dec8,
     type: 3}
   animationName: Basic Attack
   <Key>k__BackingField: Basic Shoot

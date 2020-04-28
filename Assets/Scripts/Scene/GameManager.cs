@@ -1,5 +1,7 @@
 ﻿using Enderlook.Unity.Utils.Clockworks;
 
+using Game.Creatures.Player.AbilitySystem;
+
 using System;
 
 using UnityEngine;
@@ -9,6 +11,8 @@ namespace Game.Scene
 {
     public class GameManager : MonoBehaviour
     {
+        public AbilityData AbilityData => abilityData;
+
         [Header("Configuration")]
         [SerializeField, Tooltip("Time in seconds before starting to spawn enemies.")]
         private int startTime = 5;
@@ -32,6 +36,9 @@ namespace Game.Scene
         [Header("Setup")]
         [SerializeField]
         private Text timer;
+
+        [SerializeField, Tooltip("Player abilities")]
+        private AbilityData abilityData;
 #pragma warning restore CS0649
 
         private int currentLevel = 1;

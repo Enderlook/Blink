@@ -3344,6 +3344,11 @@ PrefabInstance:
       propertyPath: spawningPoints.Array.data[0].x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 454254142539141933, guid: 4da935c89518a414585708d9da0d5c4f,
+        type: 3}
+      propertyPath: m_TagString
+      value: GameController
+      objectReference: {fileID: 0}
     - target: {fileID: 579305659236831211, guid: 4da935c89518a414585708d9da0d5c4f,
         type: 3}
       propertyPath: m_Sprite
@@ -3866,6 +3871,12 @@ PrefabInstance:
       propertyPath: m_PreserveAspect
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8071420073055536668, guid: 4da935c89518a414585708d9da0d5c4f,
+        type: 3}
+      propertyPath: abilityData
+      value: 
+      objectReference: {fileID: 11400000, guid: afc63148d3a11654e954abd8bf2e6b62,
+        type: 2}
     - target: {fileID: 8203927546487970684, guid: 4da935c89518a414585708d9da0d5c4f,
         type: 3}
       propertyPath: m_AnchorMax.y
