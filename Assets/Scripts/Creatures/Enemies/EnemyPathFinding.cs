@@ -8,6 +8,10 @@ namespace Game.Creatures
     [RequireComponent(typeof(NavMeshAgent)), DefaultExecutionOrder(10)]
     public class EnemyPathFinding : MonoBehaviour, IPushable
     {
+        public NavMeshAgent ThisNavMeshAgent => navMeshAgent;
+
+        public float TargetDistance => targetDistance;
+
         [SerializeField, Tooltip("Determines the weight of the crystal when deciding to move towards it or the player.")]
         private float crystalSeekWeight = 1;
 
@@ -24,6 +28,8 @@ namespace Game.Creatures
 
         private static int frameCheck;
         private const int MaxCheckFrame = 10;
+
+        private float targetDistance;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()
@@ -55,9 +61,15 @@ namespace Game.Creatures
             float playerDistance = GetPathDistance(CrystalAndPlayerTracker.Player, playerPath);
 
             if (crystalDistance * (1 / crystalSeekWeight) < playerDistance * (1 / playerSeekWeight))
+            {
+                targetDistance = crystalDistance;
                 navMeshAgent.SetPath(crystalPath);
+            }
             else
+            {
+                targetDistance = playerDistance;
                 navMeshAgent.SetPath(playerPath);
+            }
         }
 
         public void AddForce(Vector3 force, ForceMode mode = ForceMode.Force)
@@ -79,7 +91,7 @@ namespace Game.Creatures
             }
         }
 
-        private float GetPathDistance(Vector3 target, NavMeshPath path)
+        public float GetPathDistance(Vector3 target, NavMeshPath path)
         {
             // https://forum.unity.com/threads/getting-the-distance-in-nav-mesh.315846/#post-2052142
 

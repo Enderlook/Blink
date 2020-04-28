@@ -77,6 +77,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 16e23047c52f93c499d4f1f4dc3cff7d, type: 2}
+    - target: {fileID: 4309636962831599047, guid: 3aff82f3ef27b2a49985700b33e31991,
+        type: 3}
+      propertyPath: basicAttack
+      value: Thow Projectile
+      objectReference: {fileID: 0}
     - target: {fileID: 8116652157970478327, guid: 3aff82f3ef27b2a49985700b33e31991,
         type: 3}
       propertyPath: baseAtom
