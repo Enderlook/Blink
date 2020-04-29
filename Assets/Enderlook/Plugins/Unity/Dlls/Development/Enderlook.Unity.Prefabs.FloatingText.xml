@@ -4,6 +4,11 @@
         <name>Enderlook.Unity.Prefabs.FloatingText</name>
     </assembly>
     <members>
+        <member name="F:Enderlook.Unity.Prefabs.FloatingText.FloatingTextController.isEnable">
+            <summary>
+            On <see langword="false"/>, this instance ignores any method call to spawn a floaing text.
+            </summary>
+        </member>
         <member name="M:Enderlook.Unity.Prefabs.FloatingText.FloatingTextController.SetFloatingTextParentStatic(UnityEngine.Transform)">
             <summary>
             Set the parent of all Floating Text <see cref="T:UnityEngine.GameObject"/>s spawned by <see cref="T:Enderlook.Unity.Prefabs.FloatingText.FloatingTextController"/>s which <see cref="F:Enderlook.Unity.Prefabs.FloatingText.FloatingTextController.floatingTextParent"/> is <see langword="null"/>.
@@ -26,7 +31,7 @@
             <summary>
             Spawns a floating text and return its <see cref="T:Enderlook.Unity.Prefabs.FloatingText.FloatingTextItem"/> script.<br/>
             </summary>
-            <returns></returns>
+            <returns>Instanced <see cref="T:Enderlook.Unity.Prefabs.FloatingText.FloatingTextItem"/> script.</returns>
         </member>
         <member name="M:Enderlook.Unity.Prefabs.FloatingText.FloatingTextController.AddToFloatingTextList(UnityEngine.GameObject)">
             <summary>
@@ -46,18 +51,18 @@
             <param name="timeBeforeDestroy">Time in seconds before destroy itself.</param>
             <param name="randomOffset">Random offset applied on spawn of the floating text.</param>
         </member>
-        <member name="M:Enderlook.Unity.Prefabs.FloatingText.FloatingTextController.SpawnFloatingText(System.Single,System.Nullable{UnityEngine.Color},System.Nullable{System.Int32},System.Nullable{System.Single},System.Nullable{System.Single},System.Nullable{UnityEngine.Vector2},System.Nullable{Enderlook.Unity.Prefabs.FloatingText.FloatingTextItem.TYPE_OF_ROUNDING})">
+        <member name="M:Enderlook.Unity.Prefabs.FloatingText.FloatingTextController.SpawnFloatingText(System.Single,System.Nullable{UnityEngine.Color},System.Nullable{System.Int32},System.Nullable{System.Single},System.Nullable{System.Single},System.Nullable{UnityEngine.Vector2},System.Nullable{Enderlook.Unity.Utils.RoundingMode})">
             <summary>
             Spawns a floating text.<br/>
             All the configuration don't provided in this method will be replaced by the configuration already set on <see cref="T:Enderlook.Unity.Prefabs.FloatingText.FloatingTextController"/>, or, if also null, on the <see cref="F:Enderlook.Unity.Prefabs.FloatingText.FloatingTextController.floatingTextPrefab"/>.
             </summary>
             <param name="number">Number to display.</param>
             <param name="numberColor">Color of the number.</param>
-            <param name="digitPrecision">Amount of decimals able to show (more decimals will be rounded by <paramref name="typeOfRounding"/>).</param>
+            <param name="digitPrecision">Amount of decimals able to show (more decimals will be rounded by <paramref name="roundingMode"/>).</param>
             <param name="scaleMultiplier">Scale multiplier to current scale.</param>
             <param name="timeBeforeDestroy">Time in seconds before destroy itself.</param>
             <param name="randomOffset">Random offset applied on spawn of the floating text.</param>
-            <param name="typeOfRounding">Type of rounding used to round the number to the given <paramref name="digitPrecision"/></param>
+            <param name="roundingMode">Type of rounding used to round the number to the given <paramref name="digitPrecision"/></param>
         </member>
         <member name="M:Enderlook.Unity.Prefabs.FloatingText.FloatingTextItem.SetConfiguration(System.String,System.Nullable{UnityEngine.Color},System.Nullable{System.Single},System.Nullable{System.Single},System.Nullable{UnityEngine.Vector2})">
             <summary>
@@ -74,9 +79,9 @@
             <seealso cref="M:Enderlook.Unity.Prefabs.FloatingText.FloatingTextItem.SetScaleMultiplier(System.Single)"/>
             <seealso cref="M:Enderlook.Unity.Prefabs.FloatingText.FloatingTextItem.SetTimeBeforeDestroy(System.Single)"/>
             <seealso cref="M:Enderlook.Unity.Prefabs.FloatingText.FloatingTextItem.SetRandomOffset(UnityEngine.Vector2)"/>
-            <seealso cref="M:Enderlook.Unity.Prefabs.FloatingText.FloatingTextItem.SetConfiguration(System.Single,System.Nullable{UnityEngine.Color},System.Nullable{System.Single},System.Nullable{System.Single},System.Nullable{UnityEngine.Vector2},System.Nullable{System.Int32},System.Nullable{Enderlook.Unity.Prefabs.FloatingText.FloatingTextItem.TYPE_OF_ROUNDING})"/>
+            <seealso cref="M:Enderlook.Unity.Prefabs.FloatingText.FloatingTextItem.SetConfiguration(System.Single,System.Nullable{UnityEngine.Color},System.Nullable{System.Single},System.Nullable{System.Single},System.Nullable{UnityEngine.Vector2},System.Nullable{System.Int32},System.Nullable{Enderlook.Unity.Utils.RoundingMode})"/>
         </member>
-        <member name="M:Enderlook.Unity.Prefabs.FloatingText.FloatingTextItem.SetConfiguration(System.Single,System.Nullable{UnityEngine.Color},System.Nullable{System.Single},System.Nullable{System.Single},System.Nullable{UnityEngine.Vector2},System.Nullable{System.Int32},System.Nullable{Enderlook.Unity.Prefabs.FloatingText.FloatingTextItem.TYPE_OF_ROUNDING})">
+        <member name="M:Enderlook.Unity.Prefabs.FloatingText.FloatingTextItem.SetConfiguration(System.Single,System.Nullable{UnityEngine.Color},System.Nullable{System.Single},System.Nullable{System.Single},System.Nullable{UnityEngine.Vector2},System.Nullable{System.Int32},System.Nullable{Enderlook.Unity.Utils.RoundingMode})">
             <summary>
             Configure the <see cref="T:Enderlook.Unity.Prefabs.FloatingText.FloatingTextItem"/>.<br/>
             Used to override the configuration of the <see cref="T:Enderlook.Unity.Prefabs.FloatingText.FloatingTextItem"/> Prefab.
@@ -86,8 +91,8 @@
             <param name="scaleMultiplier">Scale multiplier to current scale.</param>
             <param name="timeBeforeDestroy">Time in seconds before destroy itself.</param>
             <param name="randomOffset">Random offset applied on spawn of the floating text.</param>
-            <param name="digitPrecision">Amount of decimals able to show (more decimals will be rounded by <paramref name="typeOfRounding"/>).</param>
-            <param name="typeOfRounding">Type of rounding used to round the number to the given <paramref name="digitPrecision"/></param>
+            <param name="digitPrecision">Amount of decimals able to show (more decimals will be rounded by <paramref name="roundingMode"/>).</param>
+            <param name="roundingMode">Type of rounding used to round the number to the given <paramref name="digitPrecision"/></param>
             <seealso cref="M:Enderlook.Unity.Prefabs.FloatingText.FloatingTextItem.SetText(System.String)"/>
             <seealso cref="M:Enderlook.Unity.Prefabs.FloatingText.FloatingTextItem.SetTextColor(UnityEngine.Color)"/>
             <seealso cref="M:Enderlook.Unity.Prefabs.FloatingText.FloatingTextItem.SetScaleMultiplier(System.Single)"/>

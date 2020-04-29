@@ -1,0 +1,205 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5041803396308523876
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2962016791602870819, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: baseAtom
+      value: 
+      objectReference: {fileID: -6516640405812693818}
+    - target: {fileID: 3281733224939759508, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: baseAtom
+      value: 
+      objectReference: {fileID: 339086536735261138}
+    - target: {fileID: 8081955460697015397, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 16e23047c52f93c499d4f1f4dc3cff7d, type: 2}
+    - target: {fileID: 8081955460699706565, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081955460699706565, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081955460699706565, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081955460699706565, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081955460699706565, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081955460699706565, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081955460699706565, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081955460699706565, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081955460699706565, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081955460699706565, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081955460699706565, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081955460700129509, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: m_Name
+      value: Wraith Swordsman-Purple 01
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1352534644918109400, guid: ec840790b738373489810ebf165f7199, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: ec840790b738373489810ebf165f7199, type: 3}
+--- !u!114 &-7913990751494156789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -463164559, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Health Min
+  m_EditorClassIdentifier: 
+  min:
+    <Mode>k__BackingField: 0
+    inline: 0
+    scriptableObject: {fileID: 0}
+    component: {fileID: 0}
+--- !u!114 &-7757037407123418148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -463164559, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Max Heath Min
+  m_EditorClassIdentifier: 
+  min:
+    <Mode>k__BackingField: 0
+    inline: 0
+    scriptableObject: {fileID: 0}
+    component: {fileID: 0}
+--- !u!114 &-7726100623587423237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1144320121, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Health Event
+  m_EditorClassIdentifier: 
+--- !u!114 &-6516640405812693818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1508624999, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Health
+  m_EditorClassIdentifier: 
+  initialValue: 40
+  value: 40
+  oldValue: 40
+  transformer: {fileID: -7913990751494156789}
+  changed: {fileID: -7726100623587423237}
+  changedWithHistory: {fileID: -2106275218192799251}
+--- !u!114 &-6085917690108425049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -802117009, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Max Heath Event 2
+  m_EditorClassIdentifier: 
+--- !u!114 &-2106275218192799251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -802117009, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Health Event 2
+  m_EditorClassIdentifier: 
+--- !u!114 &-550605787623214845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1144320121, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Max Heath Event
+  m_EditorClassIdentifier: 
+--- !u!114 &339086536735261138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1508624999, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: Max Health
+  m_EditorClassIdentifier: 
+  initialValue: 40
+  value: 40
+  oldValue: 40
+  transformer: {fileID: -7757037407123418148}
+  changed: {fileID: -550605787623214845}
+  changedWithHistory: {fileID: -6085917690108425049}

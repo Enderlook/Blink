@@ -9,8 +9,23 @@
             Default <see cref="T:Enderlook.Unity.Utils.DebugHelper.TraceMode"/> used when a method provides a null trace.
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.DebugHelper.Log(System.Object[])" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.DebugHelper.Log(System.Object,UnityEngine.Object,System.String,System.String,System.Int32)" -->
+        <member name="M:Enderlook.Unity.Utils.DebugHelper.Log(System.Object[])">
+            <summary>
+            Print to console all <paramref name="objects"/> as strings separated by ', '.<br/>
+            <see langword="null"/>s are turned into "null".
+            Objects of type <see cref="T:UnityEngine.Color"/> will have included the HTMl tag color.
+            </summary>
+            <param name="objects">Objects to print in console.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.DebugHelper.Log(System.Object,UnityEngine.Object,System.String,System.String,System.Int32)">
+            <summary>
+            Print to console <paramref name="object"/> as strings.<br/>
+            <see langword="null"/>s are turned into "null".
+            Objects of type <see cref="T:UnityEngine.Color"/> will have included the HTMl tag color.
+            </summary>
+            <param name="object">Object to print in console.</param>
+            <param name="context">Object to which the message applies.</param>
+        </member>
         <member name="M:Enderlook.Unity.Utils.DebugHelper.LogWarning(System.Object[])">
             <summary>
             Print to console all <paramref name="objects"/> as strings separated by ', '.
@@ -19,7 +34,15 @@
             </summary>
             <param name="objects">Objects to print in console.</param>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.DebugHelper.LogWarning(System.Object,UnityEngine.Object,System.String,System.String,System.Int32)" -->
+        <member name="M:Enderlook.Unity.Utils.DebugHelper.LogWarning(System.Object,UnityEngine.Object,System.String,System.String,System.Int32)">
+            <summary>
+            Print to console <paramref name="object"/> as strings.<br/>
+            <see langword="null"/>s are turned into "null".
+            Objects of type <see cref="T:UnityEngine.Color"/> will have included the HTMl tag color.
+            </summary>
+            <param name="object">Object to print in console.</param>
+            <param name="context">Object to which the message applies.</param>
+        </member>
         <member name="M:Enderlook.Unity.Utils.DebugHelper.LogError(System.Object[])">
             <summary>
             Print to console all <paramref name="objects"/> as strings separated by ', '.
@@ -28,15 +51,120 @@
             </summary>
             <param name="objects">Objects to print in console.</param>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.DebugHelper.LogError(System.Object,UnityEngine.Object,System.String,System.String,System.Int32)" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.DebugHelper.Log(System.String,UnityEngine.Object,System.Nullable{Enderlook.Unity.Utils.DebugHelper.TraceMode},System.String,System.String,System.Int32,System.Object[])" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.DebugHelper.LogError(System.String,UnityEngine.Object,System.Nullable{Enderlook.Unity.Utils.DebugHelper.TraceMode},System.String,System.String,System.Int32,System.Object[])" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.DebugHelper.LogWarning(System.String,UnityEngine.Object,System.Nullable{Enderlook.Unity.Utils.DebugHelper.TraceMode},System.String,System.String,System.Int32,System.Object[])" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.DebugHelper.GetString(System.Object)" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.DebugHelper.GetStrings(System.Object[])" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.DebugHelper.LogLines``1(System.Collections.Generic.IEnumerable{``0},UnityEngine.Object,System.Boolean,System.Nullable{Enderlook.Unity.Utils.DebugHelper.TraceMode},System.String,System.String,System.Int32)" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.DebugHelper.LogWarningLines``1(System.Collections.Generic.IEnumerable{``0},UnityEngine.Object,System.Boolean,System.Nullable{Enderlook.Unity.Utils.DebugHelper.TraceMode},System.String,System.String,System.Int32)" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Utils.DebugHelper.LogErrorLines``1(System.Collections.Generic.IEnumerable{``0},UnityEngine.Object,System.Boolean,System.Nullable{Enderlook.Unity.Utils.DebugHelper.TraceMode},System.String,System.String,System.Int32)" -->
+        <member name="M:Enderlook.Unity.Utils.DebugHelper.LogError(System.Object,UnityEngine.Object,System.String,System.String,System.Int32)">
+            <summary>
+            Print to console <paramref name="object"/> as strings.<br/>
+            <see langword="null"/>s are turned into "null".
+            Objects of type <see cref="T:UnityEngine.Color"/> will have included the HTMl tag color.
+            </summary>
+            <param name="object">Object to print in console.</param>
+            <param name="context">Object to which the message applies.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.DebugHelper.Log(System.String,UnityEngine.Object,System.Nullable{Enderlook.Unity.Utils.DebugHelper.TraceMode},System.String,System.String,System.Int32,System.Object[])">
+            <summary>
+            Print to console all <paramref name="objects"/> as strings separated by ', ', preceded by message.<br/>
+            <see langword="null"/>s are turned into "null".
+            Objects of type <see cref="T:UnityEngine.Color"/> will have included the HTMl tag color.
+            </summary>
+            <param name="message">A message to print in console. It will be treated as an additional object.</param>
+            <param name="context">Object to which the message applies.</param>
+            <param name="traceMode">Tracing mode showed in console. If <see langword="null"/> it will use class <see cref="F:Enderlook.Unity.Utils.DebugHelper.traceMode"/>.</param>
+            <param name="memberName">Do not complete.</param>
+            <param name="sourceFilePath">Do not complete.</param>
+            <param name="sourceLineNumber">Do not complete.</param>
+            <param name="objects">Objects to print in console.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.DebugHelper.LogError(System.String,UnityEngine.Object,System.Nullable{Enderlook.Unity.Utils.DebugHelper.TraceMode},System.String,System.String,System.Int32,System.Object[])">
+            <summary>
+            Print to console all <paramref name="objects"/> as strings separated by ', ', preceded by message.<br/>
+            <see langword="null"/>s are turned into "null".
+            Objects of type <see cref="T:UnityEngine.Color"/> will have included the HTMl tag color.
+            </summary>
+            <param name="message">A message to print in console. It will be treated as an additional object.</param>
+            <param name="context">Object to which the message applies.</param>
+            <param name="traceMode">Tracing mode showed in console. If <see langword="null"/> it will use class <see cref="F:Enderlook.Unity.Utils.DebugHelper.traceMode"/>.</param>
+            <param name="memberName">Do not complete.</param>
+            <param name="sourceFilePath">Do not complete.</param>
+            <param name="sourceLineNumber">Do not complete.</param>
+            <param name="objects">Objects to print in console.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.DebugHelper.LogWarning(System.String,UnityEngine.Object,System.Nullable{Enderlook.Unity.Utils.DebugHelper.TraceMode},System.String,System.String,System.Int32,System.Object[])">
+            <summary>
+            Print to console all <paramref name="objects"/> as strings separated by ', ', preceded by message.<br/>
+            <see langword="null"/>s are turned into "null".
+            Objects of type <see cref="T:UnityEngine.Color"/> will have included the HTMl tag color.
+            </summary>
+            <param name="message">A message to print in console. It will be treated as an additional object.</param>
+            <param name="context">Object to which the message applies.</param>
+            <param name="traceMode">Tracing mode showed in console. If <see langword="null"/> it will use class <see cref="F:Enderlook.Unity.Utils.DebugHelper.traceMode"/>.</param>
+            <param name="memberName">Do not complete.</param>
+            <param name="sourceFilePath">Do not complete.</param>
+            <param name="sourceLineNumber">Do not complete.</param>
+            <param name="objects">Objects to print in console.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.DebugHelper.GetString(System.Object)">
+            <summary>
+            Return an string with the <paramref name="object"/> as string.<br/>
+            <see langword="null"/>s are turned into "null".<br/>
+            Objects of type <see cref="T:UnityEngine.Color"/> will have included the HTMl tag color.
+            </summary>
+            <param name="object">Object to get string.</param>
+            <returns>String version of <paramref name="object"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.DebugHelper.GetStrings(System.Object[])">
+            <summary>
+            Return an string with all objects as strings separated by ', '.<br/>
+            <see langword="null"/>s are turned into "null".
+            Objects of type <see cref="T:UnityEngine.Color"/> will have included the HTMl tag color.
+            </summary>
+            <param name="objects">Objects to join as string.</param>
+            <returns>String version of <paramref name="objects"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.DebugHelper.LogLines``1(System.Collections.Generic.IEnumerable{``0},UnityEngine.Object,System.Boolean,System.Nullable{Enderlook.Unity.Utils.DebugHelper.TraceMode},System.String,System.String,System.Int32)">
+            <summary>
+            Print to console all <paramref name="enumerable"/> as strings separated by , preceded by message.<br/>
+            <see langword="null"/>s are turned into "null".
+            Objects of type <see cref="T:UnityEngine.Color"/> will have included the HTMl tag color.
+            </summary>
+            <typeparam name="T"><see cref="T:System.Type"/> of <paramref name="enumerable"/> elements.</typeparam>
+            <param name="enumerable">Enumerable to print in console.</param>
+            <param name="context">Object to which the message applies.</param>
+            <param name="compact">Whenever it use a single log or several ones, one per line.</param>
+            <param name="traceMode">Tracing mode showed in console. If <see langword="null"/> it will use class <see cref="F:Enderlook.Unity.Utils.DebugHelper.traceMode"/>.</param>
+            <param name="memberName">Do not complete.</param>
+            <param name="sourceFilePath">Do not complete.</param>
+            <param name="sourceLineNumber">Do not complete.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.DebugHelper.LogWarningLines``1(System.Collections.Generic.IEnumerable{``0},UnityEngine.Object,System.Boolean,System.Nullable{Enderlook.Unity.Utils.DebugHelper.TraceMode},System.String,System.String,System.Int32)">
+            <summary>
+            Print to console all <paramref name="enumerable"/> as strings separated by , preceded by message.<br/>
+            <see langword="null"/>s are turned into "null".
+            Objects of type <see cref="T:UnityEngine.Color"/> will have included the HTMl tag color.
+            </summary>
+            <typeparam name="T"><see cref="T:System.Type"/> of <paramref name="enumerable"/> elements.</typeparam>
+            <param name="enumerable">Enumerable to print in console.</param>
+            <param name="context">Object to which the message applies.</param>
+            <param name="compact">Whenever it use a single log or several ones, one per line.</param>
+            <param name="traceMode">Tracing mode showed in console. If <see langword="null"/> it will use class <see cref="F:Enderlook.Unity.Utils.DebugHelper.traceMode"/>.</param>
+            <param name="memberName">Do not complete.</param>
+            <param name="sourceFilePath">Do not complete.</param>
+            <param name="sourceLineNumber">Do not complete.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.DebugHelper.LogErrorLines``1(System.Collections.Generic.IEnumerable{``0},UnityEngine.Object,System.Boolean,System.Nullable{Enderlook.Unity.Utils.DebugHelper.TraceMode},System.String,System.String,System.Int32)">
+            <summary>
+            Print to console all <paramref name="enumerable"/> as strings separated by , preceded by message.<br/>
+            <see langword="null"/>s are turned into "null".
+            Objects of type <see cref="T:UnityEngine.Color"/> will have included the HTMl tag color.
+            </summary>
+            <typeparam name="T"><see cref="T:System.Type"/> of <paramref name="enumerable"/> elements.</typeparam>
+            <param name="enumerable">Enumerable to print in console.</param>
+            <param name="context">Object to which the message applies.</param>
+            <param name="compact">Whenever it use a single log or several ones, one per line.</param>
+            <param name="traceMode">Tracing mode showed in console. If <see langword="null"/> it will use class <see cref="F:Enderlook.Unity.Utils.DebugHelper.traceMode"/>.</param>
+            <param name="memberName">Do not complete.</param>
+            <param name="sourceFilePath">Do not complete.</param>
+            <param name="sourceLineNumber">Do not complete.</param>
+        </member>
         <member name="M:Enderlook.Unity.Utils.MouseHelper.GetMouseWorldPositionInEditor">
             <summary>
             Get the world position coordinates of the mouse position in editor.
@@ -102,6 +230,57 @@
             </summary>
             <param name="camera">Camera used to get viewport position coordinates.</param>
             <returns>Viewport position coordinates.</returns>
+        </member>
+        <member name="T:Enderlook.Unity.Utils.RoundingMode">
+            <summary>
+            Determines how number are rounded.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Utils.RoundingMode.None">
+            <summary>
+            Values are show in decimal.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Utils.RoundingMode.Round">
+            <summary>
+            Uses <see cref="M:UnityEngine.Mathf.Round(System.Single)"/>
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Utils.RoundingMode.Ceil">
+            <summary>
+            Uses <see cref="M:UnityEngine.Mathf.Ceil(System.Single)"/>
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Utils.RoundingMode.Floor">
+            <summary>
+            Uses <see cref="M:UnityEngine.Mathf.Floor(System.Single)"/>.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Utils.RoundingMode.Trunc">
+            <summary>
+            Cast value to <see cref="T:System.Int32"/>.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Utils.RoundingModeExtensions">
+            <summary>
+            Helper functions for <see cref="T:Enderlook.Unity.Utils.RoundingMode"/>
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.RoundingModeExtensions.Round(Enderlook.Unity.Utils.RoundingMode,System.Single)">
+            <summary>
+            Round <paramref name="value"/> with a method determined by <paramref name="mode"/>.
+            </summary>
+            <param name="mode">Rounding mode.</param>
+            <param name="value">Value to round.</param>
+            <returns>Rounded value</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.RoundingModeExtensions.RoundToInt(Enderlook.Unity.Utils.RoundingMode,System.Single)">
+            <summary>
+            Round <paramref name="value"/> with a method determined by <paramref name="mode"/>.
+            </summary>
+            <param name="mode">Rounding mode.</param>
+            <param name="value">Value to round.</param>
+            <returns>Rounded value</returns>
         </member>
     </members>
 </doc>

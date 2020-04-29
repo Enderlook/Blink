@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e823fb9d73d8dd49ba046222355682f, type: 3}
+  m_Name: Enemy Level Data
+  m_EditorClassIdentifier: 
+  maximumEnemies: {x: 0.6, y: 3, z: 2, w: 1}
+  enemiesPerSecond: {x: 0.1, y: 1.25, z: 1, w: 0.25}
+  enemiesData:
+  - {fileID: 11400000, guid: a5a894de4abe9264697605b71b784775, type: 2}
+  - {fileID: 11400000, guid: 494d2c11de52ebf4db6a3718727bdc49, type: 2}
+  - {fileID: 11400000, guid: 0b6be1ecfc1fc5f4fb3339b424bc6a20, type: 2}
+  - {fileID: 11400000, guid: d6b7d7af21935d344a6cd3cf22c19c5d, type: 2}
+  - {fileID: 11400000, guid: 143b66325da854d41b703415280257d8, type: 2}
+  - {fileID: 11400000, guid: e785a85c5ae39c94bbd24469636355dd, type: 2}

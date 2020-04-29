@@ -1,12 +1,11 @@
 fileFormatVersion: 2
-guid: afb2fd746807ab7499154669a2bdafe4
+guid: fc0be970660c0f4479d89500ddc8c2fa
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2
   iconMap: {}
   executionOrder: {}
-  defineConstraints:
-  - UNITY_EDITOR
+  defineConstraints: []
   isPreloaded: 0
   isOverridable: 0
   isExplicitlyReferenced: 0
@@ -18,15 +17,15 @@ PluginImporter:
       enabled: 0
       settings:
         Exclude Editor: 0
-        Exclude Linux64: 0
-        Exclude OSXUniversal: 0
-        Exclude WebGL: 0
-        Exclude Win: 0
-        Exclude Win64: 0
+        Exclude Linux64: 1
+        Exclude OSXUniversal: 1
+        Exclude WebGL: 1
+        Exclude Win: 1
+        Exclude Win64: 1
   - first:
       Any: 
     second:
-      enabled: 1
+      enabled: 0
       settings: {}
   - first:
       Editor: Editor
@@ -34,31 +33,6 @@ PluginImporter:
       enabled: 1
       settings:
         DefaultValueInitialized: true
-  - first:
-      Standalone: Linux64
-    second:
-      enabled: 1
-      settings: {}
-  - first:
-      Standalone: OSXUniversal
-    second:
-      enabled: 1
-      settings: {}
-  - first:
-      Standalone: Win
-    second:
-      enabled: 1
-      settings: {}
-  - first:
-      Standalone: Win64
-    second:
-      enabled: 1
-      settings: {}
-  - first:
-      WebGL: WebGL
-    second:
-      enabled: 1
-      settings: {}
   - first:
       Windows Store Apps: WindowsStoreApps
     second:

@@ -4,7 +4,12 @@
         <name>Enderlook.Unity.Serializables</name>
     </assembly>
     <members>
-        <!-- Badly formed XML comment ignored for member "T:Enderlook.Unity.Serializables.Calculator" -->
+        <member name="T:Enderlook.Unity.Serializables.Calculator">
+            <summary>
+            Used to calculate formulas.<br/>
+            It can be either serialized in Unity inspector or construct using new.
+            </summary>
+        </member>
         <member name="P:Enderlook.Unity.Serializables.Calculator.Compile">
             <summary>
             Whenever the regex object is compiled or not.
@@ -46,6 +51,28 @@
             <param name="nameOfMethod">Name of method to look for using reflection.</param>
             <param name="parameters">Parameters to pass in <paramref name="nameOfMethod"/> method.</param>
             <returns>Result of the <paramref name="nameOfMethod"/> method.</returns>
+        </member>
+        <member name="P:Enderlook.Unity.Serializables.DerivedSwitch`1.Mode">
+            <summary>
+            Current mode.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.DerivedSwitch`1.GetValue">
+            <inheritdoc cref="M:Enderlook.Unity.Utils.Interfaces.IGet`1.GetValue"/>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.DerivedSwitch`3.GetValue">
+            <inheritdoc cref="M:Enderlook.Unity.Serializables.DerivedSwitch`1.GetValue"/>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.DerivedSwitch`4.GetValue">
+            <inheritdoc cref="M:Enderlook.Unity.Serializables.DerivedSwitch`1.GetValue"/>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.DerivedSwitch`5.GetValue">
+            <inheritdoc cref="M:Enderlook.Unity.Serializables.DerivedSwitch`1.GetValue"/>
+        </member>
+        <member name="P:Enderlook.Unity.Serializables.Switch.Mode">
+            <summary>
+            Current mode.
+            </summary>
         </member>
     </members>
 </doc>

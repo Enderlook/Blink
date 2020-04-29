@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1e5a3826f43ad47873da403f0d603c, type: 3}
+  m_Name: Pillar of Flames
+  m_EditorClassIdentifier: 
+  description: 
+  <Icon>k__BackingField: {fileID: 21300000, guid: 1f88a2a0b5eaa2748a0e22e360ed5a19,
+    type: 3}
+  animationName: Summon Elemental Attack
+  <Key>k__BackingField: Summon Elemental Attack
+  control:
+    useMouse: 0
+    key: 101
+    button: 0
+    canBeHoldDown: 0
+  cooldown: 3
+  damage: 25
+  pushForce: 10
+  timeToProduceDamage: 1.2
+  prefab: {fileID: 6054988555229686210, guid: 1b9603c2f82de53449c6d95b26b315eb, type: 3}
+  layer: 8

@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: -609711369, guid: 8514bc2c934c20949bcfbd938774ada4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textShowed: '{0} / {1} ({2}%)'
+  textShowed: '{0} / {1}'
   dynamicNumbers: 1
   maxHealthColor: {r: 0, g: 1, b: 0, a: 1}
   minHealthColor: {r: 1, g: 0, b: 0, a: 1}

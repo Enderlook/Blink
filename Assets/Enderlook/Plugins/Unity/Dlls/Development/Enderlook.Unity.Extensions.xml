@@ -4,14 +4,72 @@
         <name>Enderlook.Unity.Extensions</name>
     </assembly>
     <members>
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Extensions.ColorExtensions.GetColorTag(UnityEngine.Color,System.String)" -->
-        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Extensions.ColorExtensions.ColorizeWith(System.String,UnityEngine.Color)" -->
+        <member name="M:Enderlook.Unity.Extensions.ColorExtensions.GetColorTag(UnityEngine.Color,System.String)">
+            <summary>
+            Warps <paramref name="text"/> in HTML color tag with <paramref name="color"/>.<br/>
+            Do the same as <see cref="M:Enderlook.Unity.Extensions.ColorExtensions.ColorizeWith(System.String,UnityEngine.Color)"/>.
+            </summary>
+            <param name="color">Color to tint <paramref name="text"/>.</param>
+            <param name="text">Text to by tinted by <paramref name="color"/>.</param>
+            <returns>Text with HTML color tag.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.ColorExtensions.ColorizeWith(System.String,UnityEngine.Color)">
+            <summary>
+            Warps <paramref name="text"/> in HTML color tag with <paramref name="color"/>..<br/>
+            Do the same as <see cref="M:Enderlook.Unity.Extensions.ColorExtensions.GetColorTag(UnityEngine.Color,System.String)"/>.
+            </summary>
+            <param name="text">Text to by tinted by <paramref name="color"/>.</param>
+            <param name="color">Color to tint <paramref name="text"/>.</param>
+            <returns>Text with HTML color tag.</returns>
+        </member>
         <member name="M:Enderlook.Unity.Extensions.ColorExtensions.ToColoredString(UnityEngine.Color)">
             <summary>
             Return the <paramref name="color"/> string version but colored with HTML color tag.
             </summary>
             <param name="color">Color to get string colored version.</param>
             <returns>String HTML colored version of <paramref name="color"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.ColorExtensions.GetHue(UnityEngine.Color)">
+            <summary>
+            Returns the hue of <paramref name="color"/>.
+            </summary>
+            <param name="color"><see cref="T:UnityEngine.Color"/> to get hue.</param>
+            <returns>Hue of <paramref name="color"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.ColorExtensions.GetSaturation(UnityEngine.Color)">
+            <summary>
+            Returns the saturation of <paramref name="color"/>.
+            </summary>
+            <param name="color"><see cref="T:UnityEngine.Color"/> to get saturation.</param>
+            <returns>Saturation of <paramref name="color"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.ColorExtensions.GetValue(UnityEngine.Color)">
+            <summary>
+            Returns the value of <paramref name="color"/>.
+            </summary>
+            <param name="color"><see cref="T:UnityEngine.Color"/> to get value.</param>
+            <returns>Value of <paramref name="color"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.ColorExtensions.SetHue(UnityEngine.Color@,System.Single)">
+            <summary>
+            Set hue of <paramref name="color"/>.
+            </summary>
+            <param name="color"><see cref="T:UnityEngine.Color"/> to set hue.</param>
+            <param name="hue">New hue.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.ColorExtensions.SetSaturation(UnityEngine.Color@,System.Single)">
+            <summary>
+            Set saturation of <paramref name="color"/>.
+            </summary>
+            <param name="color"><see cref="T:UnityEngine.Color"/> to set hue.</param>
+            <param name="saturation">New hue.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.ColorExtensions.SetValue(UnityEngine.Color@,System.Single)">
+            <summary>
+            Set value of <paramref name="color"/>.
+            </summary>
+            <param name="color"><see cref="T:UnityEngine.Color"/> to set value.</param>
+            <param name="value">New value.</param>
         </member>
         <member name="M:Enderlook.Unity.Extensions.LayerMaskExtensions.ToLayer(UnityEngine.LayerMask)">
             <summary>
@@ -20,6 +78,36 @@
             </summary>
             <param name="layerMask"><see cref="T:UnityEngine.LayerMask"/> to convert.</param>
             <returns>Layer number.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.LayerMaskExtensions.ToLayerMask(System.Int32)">
+            <summary>
+            Convert a given layer to a layer mask.<br/>
+            <c>1 &lt;&lt; <paramref name="layer"/></c>.
+            </summary>
+            <param name="layer">Layer to produce a layer mask.</param>
+            <returns>Layer mast of layer</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.LayerMaskExtensions.ToLayerMask(UnityEngine.LayerMask)">
+            <summary>
+            Convert a given layer to a layer mask.<br/>
+            <c>1 &lt;&lt; <paramref name="layer"/></c>.
+            </summary>
+            <param name="layer">Layer to produce a layer mask.</param>
+            <returns>Layer mast of layer</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.LayerMaskExtensions.InvertLayerMask(System.Int32)">
+            <summary>
+            Invert a layer to match exactly the opposite.
+            </summary>
+            <param name="layer">Layer mask to invert.</param>
+            <returns>Inverted layermask.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.LayerMaskExtensions.InvertLayerMask(UnityEngine.LayerMask)">
+            <summary>
+            Invert a layer to match exactly the opposite.
+            </summary>
+            <param name="layer">Layer mask to invert.</param>
+            <returns>Inverted layermask.</returns>
         </member>
         <member name="M:Enderlook.Unity.Extensions.LayerMaskExtensions.LayerMatchTest(UnityEngine.LayerMask,UnityEngine.LayerMask)">
             <summary>
