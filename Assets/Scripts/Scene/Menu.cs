@@ -52,14 +52,6 @@ namespace Game.Scene
                 isPlaying = value;
                 Time.timeScale = value ? 1 : 0;
                 PlayMusic();
-                if (!value)
-                    menu.SetActive(true);
-                else
-                {
-                    for (int i = 0; i < panels.Length; i++)
-                        panels[i].SetActive(false);
-                    menu.SetActive(false);
-                }
             }
         }
 
@@ -87,7 +79,10 @@ namespace Game.Scene
         private void ToggleMenu()
         {
             if (IsPlaying)
+            {
                 IsPlaying = false;
+                menu.SetActive(true);
+            }
             else
             {
                 for (int i = 0; i < panels.Length; i++)
@@ -97,6 +92,7 @@ namespace Game.Scene
                         return;
                     }
                 IsPlaying = true;
+                menu.SetActive(false);
             }
         }
 
@@ -129,12 +125,9 @@ namespace Game.Scene
                 case Mode.Win:
                     audioSource.clip = winMusic;
                     winMenu.SetActive(true);
-                    menu.SetActive(false);
                     break;
                 case Mode.Lose:
                     audioSource.clip = loseMusic;
-                    winMenu.SetActive(false);
-                    menu.SetActive(false);
                     loseMenu.SetActive(true);
                     break;
                 case Mode.Playing:
