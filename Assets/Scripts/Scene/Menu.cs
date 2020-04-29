@@ -98,6 +98,10 @@ namespace Game.Scene
 
         private void PlayMusic()
         {
+            // Fix bug
+            if (audioSource == null)
+                audioSource = GetComponent<AudioSource>();
+
             audioSource.clip = IsPlaying ? playMusic.RandomPick() : menuMusic.RandomPick();
             audioSource.Play();
         }
