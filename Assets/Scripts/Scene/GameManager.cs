@@ -1,18 +1,15 @@
 ﻿using Enderlook.Unity.Utils.Clockworks;
 
-using Game.Creatures.Player.AbilitySystem;
-
 using System;
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Game.Scene
 {
     public class GameManager : MonoBehaviour
     {
-        public AbilityData AbilityData => abilityData;
-
         [Header("Configuration")]
         [SerializeField, Tooltip("Time in seconds before starting to spawn enemies.")]
         private int startTime = 5;
@@ -37,8 +34,8 @@ namespace Game.Scene
         [SerializeField]
         private Text timer;
 
-        [SerializeField, Tooltip("Player abilities")]
-        private AbilityData abilityData;
+        [SerializeField, Tooltip("Playable scenes.")]
+        private Scenes scenes;
 #pragma warning restore CS0649
 
         private int currentLevel = 1;
@@ -100,9 +97,11 @@ namespace Game.Scene
         {
             currentLevel++;
             SetStateToStarting();
-
-            throw new NotImplementedException();
+            ChangeScene();
         }
+
+        private void ChangeScene()
+            => SceneManager.LoadSceneAsync(scenes.GetScene(), LoadSceneMode.Single);
 
         private void SetStateToRunning()
         {

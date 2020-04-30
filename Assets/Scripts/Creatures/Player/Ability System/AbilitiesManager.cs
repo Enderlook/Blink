@@ -1,5 +1,4 @@
 ﻿using Enderlook.Unity.Attributes;
-using Game.Scene;
 
 using System.Linq;
 
@@ -11,34 +10,25 @@ namespace Game.Creatures.Player.AbilitySystem
     [RequireComponent(typeof(Animator))]
     public class AbilitiesManager : MonoBehaviour
     {
-        [SerializeField, Tooltip("Abilities of the player.")]
         private Ability[] abilities;
 
         [SerializeField, IsProperty, Tooltip("Where ablities which requires a shooting point does shoot.")]
         public Transform ShootingPosition;
 
-        [SerializeField]
-        private AbilityUIManager abilityUIManager;
-
-        private GameManager gameManager;
-
         public Animator Animator { get; private set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
-        private void Awake()
-        {
-            gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-            abilities = gameManager.AbilityData.AbilitiesData.ToArray();
-            Animator = GetComponent<Animator>();
-            foreach (Ability ability in abilities)
-                ability.Initialize(this);
-
-            abilityUIManager.SetAbilities(abilities);
-        }
+        private void Awake() => Animator = GetComponent<Animator>();
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Update()
         {
+            if (abilities == null)
+            {
+                Debug.LogWarning("Abilities was null. We will try on next frame.");
+                return;
+            }
+
             foreach (Ability ability in abilities)
             {
                 ability.UpdateBehaviour(Time.deltaTime);
@@ -52,6 +42,15 @@ namespace Game.Creatures.Player.AbilitySystem
         {
             foreach (Ability ability in abilities)
                 ability.UpdateBehaviour(100);
+        }
+
+        public void SetAbilities(Ability[] abilities)
+        {
+            this.abilities = abilities;
+            foreach (Ability ability in abilities)
+                ability.Initialize(this);
+
+            FindObjectOfType<AbilityUIManager>().SetAbilities(abilities);
         }
     }
 }

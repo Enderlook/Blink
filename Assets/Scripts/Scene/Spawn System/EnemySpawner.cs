@@ -1,5 +1,6 @@
 ﻿using Enderlook.Unity.Attributes;
 using Enderlook.Unity.Components;
+
 using UnityEngine;
 
 namespace Game.Scene
@@ -18,9 +19,6 @@ namespace Game.Scene
 
         [SerializeField, Tooltip("Prefab of the boss.")]
         private GameObject bossPrefab;
-
-        [SerializeField]
-        private Menu menu;
 #pragma warning restore CS0649
 
         // Hide an obsolete API
@@ -29,7 +27,10 @@ namespace Game.Scene
         private bool canSpawn;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
-        private void Awake() => Camera = Camera.main;
+        private void Awake()
+        {
+            Camera = Camera.main;
+        }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Update()
@@ -44,7 +45,7 @@ namespace Game.Scene
                 {
                     GameObject instance = Instantiate(bossPrefab);
                     instance.transform.position = spawnPoints.GetSpawnPoint(Camera);
-                    DestroyNotifier.ExecuteOnDestroy(instance, menu.Win);
+                    DestroyNotifier.ExecuteOnDestroy(instance, Menu.Instance.Win);
                 }
             }
         }

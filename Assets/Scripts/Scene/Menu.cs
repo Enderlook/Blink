@@ -63,12 +63,16 @@ namespace Game.Scene
             }
         }
 
+        public static Menu Instance { get; private set; }
+        
         private enum Mode { Playing, Win, Lose }
         private Mode mode;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
-        private void Awake()
+        private void Start()
         {
+            Instance = this;
+
             audioSource = GetComponent<AudioSource>();
             for (int i = 0; i < events.Length; i++)
                 events[i].Register(CheckLose);
@@ -102,7 +106,13 @@ namespace Game.Scene
 
         private void PlayMusic()
         {
-            audioSource.clip = IsPlaying ? playMusic.RandomPick() : menuMusic.RandomPick();
+            AudioClip[] audioClip = (IsPlaying ? playMusic : menuMusic);
+            if (audioClip.Length == 0)
+            {
+                Debug.LogWarning("Play music was empty. We will try on next frame.");
+                return;
+            }
+            audioSource.clip = audioClip.RandomPick();
             audioSource.Play();
         }
 
