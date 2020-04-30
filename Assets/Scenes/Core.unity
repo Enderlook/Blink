@@ -164,6 +164,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: -0.33, y: 8.1, z: -5.84}
   rotation: {x: 47.28, y: 10, z: 0}
+--- !u!114 &1288085126 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7236211299169920952, guid: d53e9038544373f468a4d49b83a0d569,
+    type: 3}
+  m_PrefabInstance: {fileID: 1606774636406718527}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -609711369, guid: 8514bc2c934c20949bcfbd938774ada4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1918018920 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7236211299169920952, guid: d53e9038544373f468a4d49b83a0d569,
+    type: 3}
+  m_PrefabInstance: {fileID: 1606774636960384257}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -609711369, guid: 8514bc2c934c20949bcfbd938774ada4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &7359009457183760
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2065,8 +2089,7 @@ PrefabInstance:
         type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 8223650789495831887, guid: 4da935c89518a414585708d9da0d5c4f,
-        type: 3}
+      objectReference: {fileID: 1918018920}
     - target: {fileID: 5558235056462052067, guid: a49ed22391a51eb4cb605b74d0ecb77f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2381,8 +2404,7 @@ PrefabInstance:
         type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 8223650790083049585, guid: 4da935c89518a414585708d9da0d5c4f,
-        type: 3}
+      objectReference: {fileID: 1288085126}
     - target: {fileID: 8996606725872200246, guid: 6fe0b5ab5f249fe42b468d4b8c3dbe32,
         type: 3}
       propertyPath: m_Name
@@ -3022,7 +3044,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   console: {fileID: 5217159044075732424}
   content: {fileID: 1352285503841942162}
-  input: {fileID: 7513858160151244096}
+  inputText: {fileID: 7513858160151244096}
+  inputField: {fileID: 8715235951866982705}
   introCode: 13
   openConsole: 13
   logPrefab: {fileID: 7409065352249510760, guid: 1f3632a969baab149a99fbed2770d7a7,

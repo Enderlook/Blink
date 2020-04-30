@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Game.Scene
@@ -19,7 +20,10 @@ namespace Game.Scene
         private RectTransform content;
 
         [SerializeField, Tooltip("Text used as input.")]
-        private Text input;
+        private Text inputText;
+
+        [SerializeField, Tooltip("Input field.")]
+        private InputField inputField;
 
         [SerializeField, Tooltip("Key used to execute command.")]
         private KeyCode introCode;
@@ -37,6 +41,8 @@ namespace Game.Scene
         private Hurtable crystal;
 #pragma warning restore CS0649
 
+        private EventSystem eventSystem;
+
         private int logLength = 10;
 
         private Dictionary<(string command, int parameters), Action<string[]>> commands;
@@ -44,13 +50,16 @@ namespace Game.Scene
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()
         {
+            eventSystem = FindObjectOfType<EventSystem>();
+
             commands = new Dictionary<(string command, int parameters), Action<string[]>>()
             {
                 { ("log", 0), LogAmount0 },
                 { ("log", 1), LogAmount1 },
                 { ("exit", 0), Exit },
                 { ("close", 0), Close },
-                { ("freeze", 1), Freeze },
+                { ("freeze", 0), Freeze },
+                { ("freeze", 1), Freeze1 },
                 { ("heal", 1), Heal1 },
                 { ("heal", 2), Heal2 },
                 { ("hurt", 1), Hurt1 },
@@ -65,7 +74,11 @@ namespace Game.Scene
         private void Update()
         {
             if (!console.activeSelf && Input.GetKeyDown(openConsole))
+            {
                 console.SetActive(true);
+                eventSystem.SetSelectedGameObject(inputField.gameObject, null);
+                inputField.OnPointerClick(null);
+            }
 
             if (Input.GetKeyDown(introCode))
                 Accept();
@@ -76,9 +89,9 @@ namespace Game.Scene
 		
 		public void Accept()
 		{
-			Write(input.text);
-			Process(input.text);
-			input.text = "";
+			Write(inputText.text);
+			Process(inputText.text);
+			inputText.text = "";
 		}
 		
         private void Process(string text)
@@ -127,6 +140,20 @@ namespace Game.Scene
 
         private void Freeze(string[] sections)
         {
+            if (Time.timeScale == 0)
+            {
+                Time.timeScale = 1;
+                Write("Time unfreezed.");
+            }
+            else
+            {
+                Time.timeScale = 0;
+                Write("Time freezed.");
+            }
+        }
+
+        private void Freeze1(string[] sections)
+        {
             switch (sections[1].ToLower())
             {
                 case "true":
@@ -145,6 +172,7 @@ namespace Game.Scene
 
         private void DoInCreatures(string[] sections, Action<Hurtable, string> action)
         {
+                Debug.Log(sections[1]);
             switch (sections[1].ToLower())
             {
                 case "player":
