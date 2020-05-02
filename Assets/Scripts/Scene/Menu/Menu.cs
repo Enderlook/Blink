@@ -43,7 +43,7 @@ namespace Game.Scene
 
         private AudioSource audioSource;
 
-        private bool isPlaying = true;
+        private bool isPlaying;
         public bool IsPlaying {
             get => isPlaying;
             set {
@@ -67,6 +67,9 @@ namespace Game.Scene
         
         private enum Mode { Playing, Win, Lose }
         private Mode mode;
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
+        private void Awake() => isPlaying = Time.timeScale == 1;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Start()
