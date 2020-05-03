@@ -67,6 +67,152 @@
             </summary>
             <param name="types">Data types allowed. Set <see cref="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageRequireDataTypeAttribute.isBlackList"/> to <see langword="true"/> in order to become it forbidden data types.</param>
         </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.BaseExecuteWhenScriptsReloads.loop">
+            <summary>
+            In which loop of the execution will this script executed.<br/>
+            Accept any kind of number.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachFieldOfEachTypeWhenScriptsReloads">
+            <summary>
+            Executes the method decorated by this attribute for each field on each <see cref="T:System.Type"/> compiled by Unity each time Unity compiles code.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Reflection.FieldInfo"/>).
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachFieldOfEachTypeWhenScriptsReloads.fieldFilter">
+            <summary>
+            Determines rules about in which field does match.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachFieldOfEachTypeWhenScriptsReloads.#ctor(Enderlook.Unity.Attributes.AttributeUsage.FieldSerialization,System.Int32)">
+            <summary>
+            Executes the method decorated by this attribute for each field on each <see cref="T:System.Type"/> compiled by Unity.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Reflection.FieldInfo"/>).
+            </summary>
+            <param name="fieldFlags">Whenever it must be Unity able to serialize it or if it does not matter.</param>
+            <param name="loop">In which loop of the execution will this script execute.</param>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachMemberOfEachTypeWhenScriptsReloads">
+            <summary>
+            Executes the method decorated by this attribute for each member on each <see cref="T:System.Type"/> compiled by Unity each time Unity compiles code.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Reflection.MemberInfo"/>).
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachMemberOfEachTypeWhenScriptsReloads.#ctor(System.Int32)">
+            <summary>
+            Executes the method decorated by this attribute for each member on each <see cref="T:System.Type"/> compiled by Unity.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Reflection.MemberInfo"/>).
+            </summary>
+            <param name="loop">In which loop of the execution will this script execute.</param>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachMethodOfEachTypeWhenScriptsReloads">
+            <summary>
+            Executes the method decorated by this attribute for each method on each <see cref="T:System.Type"/> compiled by Unity each time Unity compiles code.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Reflection.MethodInfo"/>).
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachMethodOfEachTypeWhenScriptsReloads.#ctor(System.Int32)">
+            <summary>
+            Executes the method decorated by this attribute for each method on each <see cref="T:System.Type"/> compiled by Unity.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Reflection.MethodInfo"/>).
+            </summary>
+            <param name="loop">In which loop of the execution will this script execute.</param>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachPropertyOfEachTypeWhenScriptsReloads">
+            <summary>
+            Executes the method decorated by this attribute for each property on each <see cref="T:System.Type"/> compiled by Unity each time Unity compiles code.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Reflection.PropertyInfo"/>).
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachPropertyOfEachTypeWhenScriptsReloads.#ctor(System.Int32)">
+            <summary>
+            Executes the method decorated by this attribute for each property on each <see cref="T:System.Type"/> compiled by Unity.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Reflection.PropertyInfo"/>).
+            </summary>
+            <param name="loop">In which loop of the execution will this script execute.</param>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads">
+            <summary>
+            Executes the method decorated by this attribute for each <see cref="T:System.Type"/> compiled by Unity each time Unity compiles code.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Type"/>).
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads.TypeFlags">
+            <summary>
+            Rules that should be match by the type.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads.TypeFlags.IsEnum">
+            <summary>
+            Only execute on types which <see cref="P:System.Type.IsEnum"/> is <see langword="true"/>.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads.TypeFlags.IsNonEnum">
+            <summary>
+            Only execute on types which <see cref="P:System.Type.IsEnum"/> is <see langword="false"/>.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads.TypeFlags.IsEitherEnumNonEnum">
+            <summary>
+            Execute on types regardless <see cref="P:System.Type.IsEnum"/>.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads.typeFilter">
+            <summary>
+            Determines rules about in which types does match.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads.#ctor(Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads.TypeFlags,System.Int32)">
+            <summary>
+            Executes the method decorated by this attribute for each <see cref="T:System.Type"/> compiled by Unity, that matches the <paramref name="typeFlags"/> criteria.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Type"/>).
+            </summary>
+            <param name="typeFlags">Determines rules about in which types does match.</param>
+            <param name="loop">In which loop of the execution will this script execute.</param>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteWhenScriptsReloads">
+            <summary>
+            Executes the method decorated by this attribute each time Unity compiles code.<br/>
+            The method to decorate must have the signature DoSomething().
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteWhenScriptsReloads.#ctor(System.Int32)">
+            <summary>
+            Executes the method decorated by this attribute.<br/>
+            The method to decorate must have the signature DoSomething().
+            </summary>
+            <param name="loop">In which loop of the execution will this script execute.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.DoNotCheckAttributeTesting.CheckIfShouldBeIgnored(System.Reflection.MemberInfo,System.Type)">
+            <summary>
+            Check if this <paramref name="memberInfo"/> should be ignored when checking if has <paramref name="typeThatMayBeIgnored"/>.
+            </summary>
+            <param name="memberInfo">Member to check.</param>
+            <param name="typeThatMayBeIgnored">Type of attribute that it's being checked.</param>
+            <returns>Whenever it should be ignored or not.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.DoNotCheckAttributeTesting.CheckIfShouldBeIgnored(System.Type,System.Type)">
+            <summary>
+            Check if this <paramref name="type"/> should be ignored when checking if has <paramref name="typeThatMayBeIgnored"/>.
+            </summary>
+            <param name="type">Type to check.</param>
+            <param name="typeThatMayBeIgnored">Type of attribute that it's being checked.</param>
+            <returns>Whenever it should be ignored or not.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.DoNotCheckAttributeTesting.GetAttributeTypesThatShouldBeIgnored(System.Reflection.MemberInfo)">
+            <summary>
+            Get attribute types that should be ignored.
+            </summary>
+            <param name="memberInfo">Member to check.</param>
+            <returns>Attribute types that should be ignored.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.DoNotCheckAttributeTesting.GetAttributeTypesThatShouldBeIgnored(System.Type)">
+            <summary>
+            Get attribute types that should be ignored.
+            </summary>
+            <param name="type">Type to check.</param>
+            <returns>Attribute types that should be ignored.</returns>
+        </member>
         <member name="T:Enderlook.Unity.Attributes.AttributeUsage.FieldSerialization">
             <summary>
             Rules that should be match by the field.

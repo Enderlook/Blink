@@ -50,13 +50,6 @@
             <param name="createIfNotExist">If <see language="true"/> it will create the asset if it doesn't exist.</param>
             <return>Path to created or modified file.</return>
         </member>
-        <member name="M:Enderlook.Unity.Utils.UnityEditor.AssetDatabaseHelper.GetAssetDirectory(UnityEngine.Object)">
-            <summary>
-            Get directory of the asset <paramref name="object"/>.
-            </summary>
-            <param name="object">Asset to get directory.</param>
-            <returns>Directory where thee asset is saved.</returns>
-        </member>
         <member name="M:Enderlook.Unity.Utils.UnityEditor.AssetDatabaseHelper.GetAssetPath(UnityEngine.Object)">
             <summary>
             Get the asset path of <paramref name="object"/>.<br/>
@@ -80,6 +73,102 @@
             </summary>
             <param serializedProperty="object"><see cref="T:UnityEditor.SerializedProperty"/> to get asset path.</param>
             <returns>Asset path of object, if any.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.AssetDatabaseHelper.GetAssetDirectory(UnityEngine.Object)">
+            <summary>
+            Get the asset directory path of <paramref name="object"/>.<br/>
+            For <see cref="T:UnityEngine.GameObject"/>s it does return the directory of the file where it's being save, which can be an scene or prefab file.
+            </summary>
+            <param name="object">Object to get asset path.</param>
+            <returns>Asset directory path of object, if any.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.AssetDatabaseHelper.GetAssetDirectory(UnityEditor.SerializedObject)">
+            <summary>
+            Get the asset path of <paramref name="serializedObject"/>.<br/>
+            For <see cref="T:UnityEngine.GameObject"/>s it does return the directory of the file where it's being save, which can be an scene or prefab file.
+            </summary>
+            <param serializedObject="object"><see cref="T:UnityEditor.SerializedObject"/> to get asset path.</param>
+            <returns>Asset directory path of object, if any.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.AssetDatabaseHelper.GetAssetDirectory(UnityEditor.SerializedProperty)">
+            <summary>
+            Get the asset path of <paramref name="serializedProperty"/>.<br/>
+            For <see cref="T:UnityEngine.GameObject"/>s it does return the directory of the file where it's being save, which can be an scene or prefab file.
+            </summary>
+            <param serializedProperty="object"><see cref="T:UnityEditor.SerializedProperty"/> to get asset path.</param>
+            <returns>Asset directory path of object, if any.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.AssetDatabaseHelper.GetAssetFileName(UnityEngine.Object)">
+            <summary>
+            Get the asset file name of <paramref name="object"/>.<br/>
+            For <see cref="T:UnityEngine.GameObject"/>s it does return file name where it's being save, which can be an scene or prefab file.
+            </summary>
+            <param name="object">Object to get asset path.</param>
+            <returns>Asset file name of object, if any.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.AssetDatabaseHelper.GetAssetFileName(UnityEditor.SerializedObject)">
+            <summary>
+            Get the asset file name of <paramref name="serializedObject"/>.<br/>
+            For <see cref="T:UnityEngine.GameObject"/>s it does return the file name where it's being save, which can be an scene or prefab file.
+            </summary>
+            <param serializedObject="object"><see cref="T:UnityEditor.SerializedObject"/> to get asset path.</param>
+            <returns>Asset file name of object, if any.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.AssetDatabaseHelper.GetAssetFileName(UnityEditor.SerializedProperty)">
+            <summary>
+            Get the asset file name of <paramref name="serializedProperty"/>.<br/>
+            For <see cref="T:UnityEngine.GameObject"/>s it does return the file name where it's being save, which can be an scene or prefab file.
+            </summary>
+            <param serializedProperty="object"><see cref="T:UnityEditor.SerializedProperty"/> to get asset path.</param>
+            <returns>Asset file name of object, if any.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.AssetDatabaseHelper.GetAssetFileNameWithoutExtension(UnityEngine.Object)">
+            <summary>
+            Get the asset file name without extension of <paramref name="object"/>.<br/>
+            For <see cref="T:UnityEngine.GameObject"/>s it does return file name without extension where it's being save, which can be an scene or prefab file.
+            </summary>
+            <param name="object">Object to get asset path.</param>
+            <returns>Asset file name without extension of object, if any.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.AssetDatabaseHelper.GetAssetFileNameWithoutExtension(UnityEditor.SerializedObject)">
+            <summary>
+            Get the asset file name without extension of <paramref name="serializedObject"/>.<br/>
+            For <see cref="T:UnityEngine.GameObject"/>s it does return the file name without extension where it's being save, which can be an scene or prefab file.
+            </summary>
+            <param serializedObject="object"><see cref="T:UnityEditor.SerializedObject"/> to get asset path.</param>
+            <returns>Asset file name without extension of object, if any.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.AssetDatabaseHelper.GetAssetFileNameWithoutExtension(UnityEditor.SerializedProperty)">
+            <summary>
+            Get the asset file name without extension of <paramref name="serializedProperty"/>.<br/>
+            For <see cref="T:UnityEngine.GameObject"/>s it does return the file name without extension where it's being save, which can be an scene or prefab file.
+            </summary>
+            <param serializedProperty="object"><see cref="T:UnityEditor.SerializedProperty"/> to get asset path.</param>
+            <returns>Asset file name without extension of object, if any.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.AssetDatabaseHelper.GetAssetExtension(UnityEngine.Object)">
+            <summary>
+            Get the asset file extension of <paramref name="object"/>.<br/>
+            For <see cref="T:UnityEngine.GameObject"/>s it does return file extension where it's being save, which can be an scene or prefab file.
+            </summary>
+            <param name="object">Object to get asset path.</param>
+            <returns>Asset file extension of object, if any.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.AssetDatabaseHelper.GetAssetExtension(UnityEditor.SerializedObject)">
+            <summary>
+            Get the asset file extension of <paramref name="serializedObject"/>.<br/>
+            For <see cref="T:UnityEngine.GameObject"/>s it does return the file extension where it's being save, which can be an scene or prefab file.
+            </summary>
+            <param serializedObject="object"><see cref="T:UnityEditor.SerializedObject"/> to get asset path.</param>
+            <returns>Asset file extension of object, if any.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.AssetDatabaseHelper.GetAssetExtension(UnityEditor.SerializedProperty)">
+            <summary>
+            Get the asset file extension of <paramref name="serializedProperty"/>.<br/>
+            For <see cref="T:UnityEngine.GameObject"/>s it does return the file extension where it's being save, which can be an scene or prefab file.
+            </summary>
+            <param serializedProperty="object"><see cref="T:UnityEditor.SerializedProperty"/> to get asset path.</param>
+            <returns>Asset file extension of object, if any.</returns>
         </member>
         <member name="M:Enderlook.Unity.Utils.UnityEditor.AssetDatabaseHelper.ExtractSubAsset(UnityEngine.Object,System.String)">
             <summary>
@@ -322,6 +411,15 @@
             </summary>
             <param name="source"><see cref="T:UnityEditor.SerializedProperty"/> to check.</param>
             <returns>Whenever it's an element of an array or list, or not.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyExtensions.GetFieldName(UnityEditor.SerializedProperty)">
+            <summary>
+            Get the last field name of the <paramref name="source"/>.<br/>
+            For array or list index or element it returns the field name instead of the index of the size property.
+            </summary>
+            <param name="source"><see cref="T:UnityEditor.SerializedProperty"/> where field name is gotten.</param>
+            <returns>Last field name of <paramref name="source"/>.</returns>
         </member>
         <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyExtensions.IsArrayOrListSize(UnityEditor.SerializedProperty)">
             <summary>
@@ -329,6 +427,7 @@
             </summary>
             <param name="source"><see cref="T:UnityEditor.SerializedProperty"/> to check.</param>
             <returns>Whenever it's the array or list size, or not</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> is <see langword="null"/>.</exception>
         </member>
         <member name="M:Enderlook.Unity.Utils.UnityEditor.SerializedPropertyExtensions.GetEnumerableTargetObjectOfProperty(UnityEditor.SerializedProperty,System.Boolean,System.Boolean)">
             <summary>
