@@ -1662,6 +1662,7 @@ GameObject:
   - component: {fileID: 1723801433}
   - component: {fileID: 1723801434}
   - component: {fileID: 1723801435}
+  - component: {fileID: 1723801436}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -3034,6 +3035,20 @@ MonoBehaviour:
   abilities:
   - {fileID: 11400000, guid: bc22bb20b7c086644b347a354f33e543, type: 2}
   - {fileID: 11400000, guid: f813808a5bd39054d85274466db133ef, type: 2}
+--- !u!114 &1723801436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723801432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88104d22490317c458a36192c98f3e93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crystal: {x: 0, y: 0, z: 0}
+  player: {x: 3, y: 0, z: 0}
 --- !u!1001 &1872387975
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -75,8 +75,8 @@ namespace Game.Creatures
 
         private void DetermineTarget()
         {
-            float crystalDistance = GetPathDistance(CrystalAndPlayerTracker.Crystal, crystalPath);
-            float playerDistance = GetPathDistance(CrystalAndPlayerTracker.Player, playerPath);
+            float crystalDistance = GetPathDistance(CrystalAndPlayerTracker.CrystalPosition, crystalPath);
+            float playerDistance = GetPathDistance(CrystalAndPlayerTracker.PlayerPosition, playerPath);
 
             if (crystalDistance * (1 / crystalSeekWeight) < playerDistance * (1 / playerSeekWeight))
             {

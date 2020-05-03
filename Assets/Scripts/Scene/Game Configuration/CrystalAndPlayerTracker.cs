@@ -16,9 +16,13 @@ namespace Game.Scene
         private Transform player;
 #pragma warning restore CS0649
 
-        public static Vector3 Crystal => instance.crystal.position;
+        public static Vector3 CrystalPosition => instance.crystal.position;
 
-        public static Vector3 Player => instance.player.position;
+        public static Vector3 PlayerPosition => instance.player.position;
+
+        public static Transform Crystal => instance.crystal;
+
+        public static Transform Player => instance.player;
 
         private void Awake()
         {
