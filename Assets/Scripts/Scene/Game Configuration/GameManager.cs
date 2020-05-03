@@ -54,6 +54,8 @@ namespace Game.Scene
 
         private float lastUpdatedDifficulty;
 
+        private bool isLoadingNewLevel;
+
         private float DifficultyValue {
             get {
                 int frameCount = Time.frameCount;
@@ -82,25 +84,35 @@ namespace Game.Scene
                 throw new InvalidOperationException($"Only a single instance of {nameof(GameManager)} can exist at the same time.");
 
             timeUntilStart = new Clockwork(startTime, SetStateToRunning, true, 0);
-            timeUntilNextScene = new Clockwork(timePerScene, AdvanceScene, true, 0);
+            timeUntilNextScene = new Clockwork(timePerScene, SetStateToStarting, true, 0);
             SetStateToStarting();
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Update()
         {
+            if (isLoadingNewLevel)
+                return;
+
             currentClockwork.UpdateBehaviour(Time.deltaTime);
             ShowTimer(currentClockwork);
         }
 
-        private void AdvanceScene()
+        public AsyncOperation AdvanceScene()
         {
-            currentLevel++;
-            SetStateToStarting();
-            ChangeScene();
+            if (gameState != GameState.Starting)
+                SetStateToStarting();
+            isLoadingNewLevel = true;
+            AsyncOperation operation = ChangeScene();
+            operation.completed += (_) =>
+            {
+                currentLevel++;
+                isLoadingNewLevel = false;
+            };
+            return operation;
         }
 
-        private void ChangeScene()
+        private AsyncOperation ChangeScene()
             => SceneManager.LoadSceneAsync(scenes.GetScene(), LoadSceneMode.Single);
 
         private void SetStateToRunning()
