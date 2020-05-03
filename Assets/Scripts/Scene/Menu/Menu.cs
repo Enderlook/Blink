@@ -51,7 +51,7 @@ namespace Game.Scene
         private bool isPlaying;
         public bool IsPlaying {
             get => isPlaying;
-            set {
+            private set {
                 if (isPlaying == value)
                     return;
                 isPlaying = value;
@@ -185,6 +185,14 @@ namespace Game.Scene
                     yield return null;
                 }
             }
+        }
+
+        public void Continue()
+        {
+            for (int i = 0; i < panels.Length; i++)
+                panels[i].SetActive(false);
+            menu.SetActive(false);
+            IsPlaying = true;
         }
     }
 }
