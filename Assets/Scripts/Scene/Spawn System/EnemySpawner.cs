@@ -1,5 +1,6 @@
 ﻿using Enderlook.Unity.Attributes;
 using Enderlook.Unity.Components;
+
 using UnityEngine;
 
 namespace Game.Scene
@@ -18,9 +19,6 @@ namespace Game.Scene
 
         [SerializeField, Tooltip("Prefab of the boss.")]
         private GameObject bossPrefab;
-
-        [SerializeField]
-        private Menu menu;
 #pragma warning restore CS0649
 
         // Hide an obsolete API
@@ -44,7 +42,7 @@ namespace Game.Scene
                 {
                     GameObject instance = Instantiate(bossPrefab);
                     instance.transform.position = spawnPoints.GetSpawnPoint(Camera);
-                    DestroyNotifier.ExecuteOnDestroy(instance, menu.Win);
+                    DestroyNotifier.ExecuteOnDestroy(instance, Menu.Instance.Win);
                 }
             }
         }

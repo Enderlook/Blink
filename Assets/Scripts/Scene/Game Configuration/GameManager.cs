@@ -1,18 +1,15 @@
 ﻿using Enderlook.Unity.Utils.Clockworks;
 
-using Game.Creatures.Player.AbilitySystem;
-
 using System;
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Game.Scene
 {
     public class GameManager : MonoBehaviour
     {
-        public AbilityData AbilityData => abilityData;
-
         [Header("Configuration")]
         [SerializeField, Tooltip("Time in seconds before starting to spawn enemies.")]
         private int startTime = 5;
@@ -37,8 +34,8 @@ namespace Game.Scene
         [SerializeField]
         private Text timer;
 
-        [SerializeField, Tooltip("Player abilities")]
-        private AbilityData abilityData;
+        [SerializeField, Tooltip("Playable scenes.")]
+        private Scenes scenes;
 #pragma warning restore CS0649
 
         private int currentLevel = 1;
@@ -56,6 +53,8 @@ namespace Game.Scene
         private int lastDifficultyUpdateFrame = 0;
 
         private float lastUpdatedDifficulty;
+
+        private bool isLoadingNewLevel;
 
         private float DifficultyValue {
             get {
@@ -85,24 +84,36 @@ namespace Game.Scene
                 throw new InvalidOperationException($"Only a single instance of {nameof(GameManager)} can exist at the same time.");
 
             timeUntilStart = new Clockwork(startTime, SetStateToRunning, true, 0);
-            timeUntilNextScene = new Clockwork(timePerScene, AdvanceScene, true, 0);
+            timeUntilNextScene = new Clockwork(timePerScene, SetStateToStarting, true, 0);
             SetStateToStarting();
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Update()
         {
+            if (isLoadingNewLevel)
+                return;
+
             currentClockwork.UpdateBehaviour(Time.deltaTime);
             ShowTimer(currentClockwork);
         }
 
-        private void AdvanceScene()
+        public AsyncOperation AdvanceScene()
         {
-            currentLevel++;
-            SetStateToStarting();
-
-            throw new NotImplementedException();
+            if (gameState != GameState.Starting)
+                SetStateToStarting();
+            isLoadingNewLevel = true;
+            AsyncOperation operation = ChangeScene();
+            operation.completed += (_) =>
+            {
+                currentLevel++;
+                isLoadingNewLevel = false;
+            };
+            return operation;
         }
+
+        private AsyncOperation ChangeScene()
+            => SceneManager.LoadSceneAsync(scenes.GetScene(), LoadSceneMode.Single);
 
         private void SetStateToRunning()
         {
