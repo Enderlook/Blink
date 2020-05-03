@@ -127,10 +127,13 @@ namespace Game.Scene
         private void CheckLose(int value)
         {
             if (value == 0)
-            {
-                mode = Mode.Lose;
-                ShowGameOver();
-            }
+                Lose();
+        }
+
+        public void Lose()
+        {
+            mode = Mode.Lose;
+            ShowGameOver();
         }
 
         public void Win()

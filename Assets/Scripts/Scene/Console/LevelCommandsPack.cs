@@ -24,6 +24,8 @@ namespace Game.Scene.Command
             "/Hurt ('player'|'crystal'|'enemies'): Reduce all hit points of choosen creature(s).",
             "/Hurt ('player'|'crystal'|'enemies') (int): Reduce X hit points of choosen creature(s).",
             "/Reload: Reload all player's abilities.",
+            "/Win: Auto win.",
+            "/Lose: Auto loose",
         };
 
         public override IEnumerable<string> Help => help;
@@ -39,7 +41,9 @@ namespace Game.Scene.Command
                 { ("heal", 2), Heal2 },
                 { ("hurt", 1), Hurt1 },
                 { ("hurt", 2), Hurt2 },
-                { ("reload", 0), Reload }
+                { ("reload", 0), Reload },
+                { ("win", 0), Win },
+                { ("loose", 0), Loose},
             };
         }
 
@@ -153,5 +157,9 @@ namespace Game.Scene.Command
         }
 
         private void Reload(string[] sections) => player.GetComponent<AbilitiesManager>().InstantReload();
+
+        private void Win(string[] sections) => FindObjectOfType<Menu>().Win();
+
+        private void Loose(string[] sections) => FindObjectOfType<Menu>().Lose();
     }
 }
