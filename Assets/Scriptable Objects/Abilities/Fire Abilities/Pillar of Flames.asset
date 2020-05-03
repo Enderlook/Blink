@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pillar of Flames
   m_EditorClassIdentifier: 
   description: 
-  <Icon>k__BackingField: {fileID: 21300000, guid: 4f05d65090b41084dbe0d66622d5f758,
+  <Icon>k__BackingField: {fileID: 21300000, guid: bd995386fbec3c244ad8f1437cbd4193,
     type: 3}
   animationName: Summon Elemental Attack
   <Key>k__BackingField: Summon Elemental Attack
