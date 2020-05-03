@@ -3223,7 +3223,7 @@ MonoBehaviour:
   levelDifficultyPowerFactor: 0.5
   difficultyInSceneFactor: 0.5
   timer: {fileID: 8118707543037823915}
-  scenes: {fileID: 0}
+  scenes: {fileID: 11400000, guid: e7c1918123ff2994196af9c4083be1fa, type: 2}
 --- !u!114 &8118707543037823915
 MonoBehaviour:
   m_ObjectHideFlags: 0
