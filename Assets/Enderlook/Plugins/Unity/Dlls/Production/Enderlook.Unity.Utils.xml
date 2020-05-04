@@ -4,6 +4,57 @@
         <name>Enderlook.Unity.Utils</name>
     </assembly>
     <members>
+        <member name="T:Enderlook.Unity.Utils.AudioClipUtils">
+            <summary>
+            Utility methods for <see cref="T:UnityEngine.AudioClip"/>.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.AudioClipUtils.CreateSlice(UnityEngine.AudioClip,System.String,System.Single,System.Single)">
+            <summary>
+            Creates a new <see cref="T:UnityEngine.AudioClip"/> from <paramref name="source"/> with new <paramref name="start"/> and <paramref name="length"/> values.
+            </summary>
+            <param name="source">Base <see cref="T:UnityEngine.AudioClip"/> where data is gotten.</param>
+            <param name="name">Name of new <see cref="T:UnityEngine.AudioClip"/>.</param>
+            <param name="start">Start position in seconds.</param>
+            <param name="length">Lenght in seconds.</param>
+            <returns>New <see cref="T:UnityEngine.AudioClip"/> with specified duration.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="source"/> or <paramref name="name"/> are <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentException">Thrown if <paramref name="name"/> is empty.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Throw if <paramref name="start"/> is negative, <paramref name="length"/> isn't greater than 0 or the sum of <paramref name="start"/> and <paramref name="length"/> is greater than <c><paramref name="source"/>.length</c>.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.AudioClipUtils.CreateSlice(UnityEngine.AudioClip,System.Single,System.Single)">
+            <summary>
+            Creates a new <see cref="T:UnityEngine.AudioClip"/> from <paramref name="source"/> with new <paramref name="start"/>.
+            </summary>
+            <param name="source">Base <see cref="T:UnityEngine.AudioClip"/> where data is gotten.</param>
+            <param name="start">Start position in seconds.</param>
+            <param name="length">Lenght in seconds.</param>
+            <returns>New <see cref="T:UnityEngine.AudioClip"/> with specified duration.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="source"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Throw if <paramref name="start"/> is negative, <paramref name="length"/> isn't greater than 0 or the sum of <paramref name="start"/> and <paramref name="length"/> is greater than <c><paramref name="source"/>.length</c>.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.AudioClipUtils.CreateSlice(UnityEngine.AudioClip,System.String,System.Single)">
+            <summary>
+            Creates a new <see cref="T:UnityEngine.AudioClip"/> from <paramref name="source"/> with new <paramref name="start"/>.
+            </summary>
+            <param name="source">Base <see cref="T:UnityEngine.AudioClip"/> where data is gotten.</param>
+            <param name="name">Name of new <see cref="T:UnityEngine.AudioClip"/>.</param>
+            <param name="start">Start position in seconds.</param>
+            <returns>New <see cref="T:UnityEngine.AudioClip"/> with specified duration.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="source"/> or <paramref name="name"/> are <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentException">Thrown if <paramref name="name"/> is empty.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Throw if <paramref name="start"/> is negative.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.AudioClipUtils.CreateSlice(UnityEngine.AudioClip,System.Single)">
+            <summary>
+            Creates a new <see cref="T:UnityEngine.AudioClip"/> from <paramref name="source"/> with new <paramref name="start"/>.
+            </summary>
+            <param name="source">Base <see cref="T:UnityEngine.AudioClip"/> where data is gotten.</param>
+            <param name="start">Start position in seconds.</param>
+            <returns>New <see cref="T:UnityEngine.AudioClip"/> with specified duration.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="source"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Throw if <paramref name="start"/> is negative.</exception>
+        </member>
         <member name="F:Enderlook.Unity.Utils.DebugHelper.traceMode">
             <summary>
             Default <see cref="T:Enderlook.Unity.Utils.DebugHelper.TraceMode"/> used when a method provides a null trace.

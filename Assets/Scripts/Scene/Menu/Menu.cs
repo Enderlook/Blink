@@ -51,20 +51,12 @@ namespace Game.Scene
         private bool isPlaying;
         public bool IsPlaying {
             get => isPlaying;
-            set {
+            private set {
                 if (isPlaying == value)
                     return;
                 isPlaying = value;
                 Time.timeScale = value ? 1 : 0;
                 PlayMusic();
-                if (!value)
-                    menu.SetActive(true);
-                else
-                {
-                    for (int i = 0; i < panels.Length; i++)
-                        panels[i].SetActive(false);
-                    menu.SetActive(false);
-                }
             }
         }
 
@@ -99,7 +91,10 @@ namespace Game.Scene
         private void ToggleMenu()
         {
             if (IsPlaying)
+            {
                 IsPlaying = false;
+                menu.SetActive(true);
+            }
             else
             {
                 for (int i = 0; i < panels.Length; i++)
@@ -109,11 +104,16 @@ namespace Game.Scene
                         return;
                     }
                 IsPlaying = true;
+                menu.SetActive(false);
             }
         }
 
         private void PlayMusic()
         {
+            // Fix bug
+            if (audioSource == null)
+                audioSource = GetComponent<AudioSource>();
+
             AudioClip[] audioClip = (IsPlaying ? playMusic : menuMusic);
             if (audioClip.Length == 0)
             {
@@ -150,12 +150,9 @@ namespace Game.Scene
                 case Mode.Win:
                     audioSource.clip = winMusic;
                     winMenu.SetActive(true);
-                    menu.SetActive(false);
                     break;
                 case Mode.Lose:
                     audioSource.clip = loseMusic;
-                    winMenu.SetActive(false);
-                    menu.SetActive(false);
                     loseMenu.SetActive(true);
                     break;
                 case Mode.Playing:
@@ -188,6 +185,14 @@ namespace Game.Scene
                     yield return null;
                 }
             }
+        }
+
+        public void Continue()
+        {
+            for (int i = 0; i < panels.Length; i++)
+                panels[i].SetActive(false);
+            menu.SetActive(false);
+            IsPlaying = true;
         }
     }
 }
