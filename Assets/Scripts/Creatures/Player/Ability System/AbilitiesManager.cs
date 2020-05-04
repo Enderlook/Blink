@@ -1,5 +1,7 @@
 ﻿using Enderlook.Unity.Attributes;
 
+using Game.Scene.CLI;
+
 using System.Linq;
 
 using UnityEngine;
@@ -32,7 +34,8 @@ namespace Game.Creatures.Player.AbilitySystem
             foreach (Ability ability in abilities)
             {
                 ability.UpdateBehaviour(Time.deltaTime);
-                ability.TryExecute();
+                if (!Console.IsConsoleEnabled)
+                    ability.TryExecute();
             }
         }
 

@@ -1,7 +1,9 @@
 ﻿using Enderlook.Extensions;
 using Enderlook.Unity.Atoms;
+using Enderlook.Unity.Prefabs.HealthBarGUI;
 
 using System;
+using System.Collections;
 
 using UnityEngine;
 
@@ -41,6 +43,9 @@ namespace Game.Scene
         [SerializeField, Tooltip("When any of this values reaches 0, player loose.")]
         private IntEvent[] events;
 
+        [SerializeField, Tooltip("Loading screen.")]
+        private GameObject loadingScreen;
+
         private AudioSource audioSource;
 
         private bool isPlaying;
@@ -64,7 +69,7 @@ namespace Game.Scene
         }
 
         public static Menu Instance { get; private set; }
-        
+
         private enum Mode { Playing, Win, Lose }
         private Mode mode;
 
@@ -122,10 +127,13 @@ namespace Game.Scene
         private void CheckLose(int value)
         {
             if (value == 0)
-            {
-                mode = Mode.Lose;
-                ShowGameOver();
-            }
+                Lose();
+        }
+
+        public void Lose()
+        {
+            mode = Mode.Lose;
+            ShowGameOver();
         }
 
         public void Win()
@@ -161,6 +169,25 @@ namespace Game.Scene
             playMusic = clips;
             if (isPlaying)
                 PlayMusic();
+        }
+
+        public void NextLevel()
+        {
+            GameObject instance = Instantiate(loadingScreen);
+            HealthBar healthBar = instance.GetComponentInChildren<HealthBar>();
+            healthBar.ManualUpdate(0, 1);
+            AsyncOperation operation = FindObjectOfType<GameManager>().AdvanceScene();
+
+            StartCoroutine(LoadingBarCharge());
+
+            IEnumerator LoadingBarCharge()
+            {
+                while (operation.progress <= 0.9f)
+                {
+                    healthBar.ManualUpdate(operation.progress);
+                    yield return null;
+                }
+            }
         }
     }
 }

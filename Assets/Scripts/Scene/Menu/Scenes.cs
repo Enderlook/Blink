@@ -10,6 +10,19 @@ namespace Game.Scene
         [SerializeField]
         private int[] scenes;
 
-        public int GetScene() => scenes.RandomPick();
+        private int lastVisitedScene = -1;
+
+        public int GetScene()
+        {
+            if (scenes.Length == 1)
+                return scenes.RandomPick();
+
+            while (true)
+            {
+                int value = scenes.RandomPick();
+                if (value != lastVisitedScene)
+                    return value;
+            }
+        }
     }
 }

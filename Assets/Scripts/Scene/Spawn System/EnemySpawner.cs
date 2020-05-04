@@ -27,10 +27,7 @@ namespace Game.Scene
         private bool canSpawn;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
-        private void Awake()
-        {
-            Camera = Camera.main;
-        }
+        private void Awake() => Camera = Camera.main;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Update()
