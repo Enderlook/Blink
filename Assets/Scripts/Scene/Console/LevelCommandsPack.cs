@@ -26,6 +26,7 @@ namespace Game.Scene.Command
             "/Reload: Reload all player's abilities.",
             "/Win: Auto win.",
             "/Lose: Auto loose",
+            "/Goto: Go to the specified scene index."
         };
 
         public override IEnumerable<string> Help => help;
@@ -44,6 +45,7 @@ namespace Game.Scene.Command
                 { ("reload", 0), Reload },
                 { ("win", 0), Win },
                 { ("loose", 0), Loose},
+                { ("goto", 1), GoTo },
             };
         }
 
@@ -161,5 +163,17 @@ namespace Game.Scene.Command
         private void Win(string[] sections) => FindObjectOfType<Menu>().Win();
 
         private void Loose(string[] sections) => FindObjectOfType<Menu>().Lose();
+
+        public void GoTo(string[] sections)
+        {
+            if (int.TryParse(sections[1], out int index))
+            {
+                if (index < 1)
+                    Write("Goto amounts can't be lower than 1.");
+                FindObjectOfType<GameManager>().AdvanceScene(index);
+            }
+            else
+                Write($"Could not parse '{sections[1]}' as integer.");
+        }
     }
 }

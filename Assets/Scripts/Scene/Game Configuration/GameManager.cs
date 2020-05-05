@@ -98,12 +98,14 @@ namespace Game.Scene
             ShowTimer(currentClockwork);
         }
 
-        public AsyncOperation AdvanceScene()
+        public AsyncOperation AdvanceScene() => AdvanceScene(scenes.GetScene());
+
+        public AsyncOperation AdvanceScene(int scene)
         {
             if (gameState != GameState.Starting)
                 SetStateToStarting();
             isLoadingNewLevel = true;
-            AsyncOperation operation = ChangeScene();
+            AsyncOperation operation = ChangeScene(scene);
             operation.completed += (_) =>
             {
                 currentLevel++;
@@ -112,8 +114,8 @@ namespace Game.Scene
             return operation;
         }
 
-        private AsyncOperation ChangeScene()
-            => SceneManager.LoadSceneAsync(scenes.GetScene(), LoadSceneMode.Single);
+        private AsyncOperation ChangeScene(int scene)
+            => SceneManager.LoadSceneAsync(scene, LoadSceneMode.Single);
 
         private void SetStateToRunning()
         {
