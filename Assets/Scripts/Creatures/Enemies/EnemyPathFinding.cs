@@ -30,7 +30,7 @@ namespace Game.Creatures
 
         private int navMeshFrameCheck;
         private static int frameCheck;
-        private const int MaxCheckFrame = 10;
+        private const int MAX_CHECK_FRAME = 10;
 
         private bool isDead;
 
@@ -40,7 +40,7 @@ namespace Game.Creatures
             navMeshAgent = GetComponent<NavMeshAgent>();
             crystalPath = new NavMeshPath();
             playerPath = new NavMeshPath();
-            navMeshFrameCheck = (frameCheck++) % MaxCheckFrame;
+            navMeshFrameCheck = frameCheck++ % MAX_CHECK_FRAME;
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
@@ -58,7 +58,7 @@ namespace Game.Creatures
                 navMeshAgent.enabled = false;
             else
             {
-                if (Time.frameCount % MaxCheckFrame == navMeshFrameCheck)
+                if (Time.frameCount % MAX_CHECK_FRAME == navMeshFrameCheck)
                     DetermineTarget();
             }
         }
