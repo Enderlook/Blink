@@ -1,9 +1,18 @@
-﻿using UnityEngine;
+﻿using Game.Others;
+
+using UnityEngine;
+using UnityEngine.Audio;
 
 namespace Game.Pickups
 {
     public abstract class Orb : MonoBehaviour
     {
+        [SerializeField, Tooltip("Sound played when picked up.")]
+        private AudioClip clip;
+
+        [SerializeField, Tooltip("Audio Mixer Group used to play pick up sound.")]
+        private AudioMixerGroup audioMixerGroup;
+
         protected int value = 1;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
@@ -15,6 +24,12 @@ namespace Game.Pickups
         {
             this.value = value;
             AutoSize();
+        }
+
+        protected void Pickup()
+        {
+            AudioSourceSpawner.Play(clip, transform.position, audioMixerGroup);
+            Destroy(gameObject);
         }
     }
 }

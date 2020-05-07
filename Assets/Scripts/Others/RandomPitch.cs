@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Game.Attacks
+namespace Game.Others
 {
     [RequireComponent(typeof(AudioSource)), AddComponentMenu("Game/Others/Random Pitch")]
     public class RandomPitch : MonoBehaviour

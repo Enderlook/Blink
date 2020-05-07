@@ -8,7 +8,7 @@ namespace Game.Pickups
         public void Accept(CrystalPickupMagnet picker)
         {
             picker.AddEnergy(value);
-            Destroy(gameObject);
+            Pickup();
         }
     }
 }
