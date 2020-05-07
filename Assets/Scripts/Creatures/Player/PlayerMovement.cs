@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Game.Creatures.Player
 {
-    [RequireComponent(typeof(Animator))]
+    [RequireComponent(typeof(Animator)), AddComponentMenu("Game/Creatures/Player/Movement")]
     public class PlayerMovement : MonoBehaviour
     {
         [SerializeField, Tooltip("Run animation name.")]
