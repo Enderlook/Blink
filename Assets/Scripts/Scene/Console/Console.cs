@@ -31,7 +31,7 @@ namespace Game.Scene.CLI
         private KeyCode openConsole;
 
         [SerializeField, Tooltip("Prefab used for console logs.")]
-        private Text logPrefab;
+        private GameObject logPrefab;
 
         [SerializeField, Tooltip("Scroll rect of logs.")]
         private ScrollRect scrollRect;
@@ -169,9 +169,9 @@ namespace Game.Scene.CLI
 
         public void Write(string text)
         {
-            Text instance = Instantiate(logPrefab);
-            instance.text = text;
+            GameObject instance = Instantiate(logPrefab);
             instance.transform.SetParent(content.transform);
+            instance.GetComponentInChildren<Text>().text = text;
         }
     }
 }
