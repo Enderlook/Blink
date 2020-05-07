@@ -2,8 +2,7 @@
 
 namespace Game.Attacks
 {
-    [AddComponentMenu("Game/Attacks/Random Pitch")]
-    [RequireComponent(typeof(AudioSource))]
+    [RequireComponent(typeof(AudioSource)), AddComponentMenu("Game/Others/Random Pitch")]
     public class RandomPitch : MonoBehaviour
     {
         [SerializeField, Tooltip("Random pitch range.")]

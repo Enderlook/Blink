@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace Game.Creatures
 {
+    [AddComponentMenu("Game/Creatures/Enemies/Attack")]
     public class EnemyAttack : MonoBehaviour, IDie
     {
         [SerializeField, Tooltip("Enemy path finding.")]

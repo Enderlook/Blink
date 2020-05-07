@@ -7,8 +7,7 @@ using UnityEngine;
 
 namespace Game.Attacks
 {
-    [AddComponentMenu("Game/Attacks/Area of Damage")]
-    [RequireComponent(typeof(Collider))]
+    [RequireComponent(typeof(Collider)), AddComponentMenu("Game/Attacks/Area of Damage")]
     public class AreaOfDamage : MonoBehaviour
     {
         [Header("Configuration")]

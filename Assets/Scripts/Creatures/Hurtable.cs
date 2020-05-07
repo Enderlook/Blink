@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Game.Creatures
 {
-    [RequireComponent(typeof(AudioSource)), RequireComponent(typeof(RandomPitch))]
+    [RequireComponent(typeof(AudioSource)), RequireComponent(typeof(RandomPitch)), AddComponentMenu("Game/Creatures/Hurtable")]
     public class Hurtable : MonoBehaviour, IDamagable
     {
 #pragma warning disable CS0649

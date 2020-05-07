@@ -1,12 +1,10 @@
 ﻿using Game.Creatures;
-using AvalonStudios.Extensions;
 
 using UnityEngine;
 
 namespace Game.Attacks.Projectiles
 {
-    [AddComponentMenu("Game/Attacks/Projectile Hit")]
-    [RequireComponent(typeof(Collider))]
+    [RequireComponent(typeof(Collider)), AddComponentMenu("Game/Attacks/Projectile Hit")]
     public class ProjectileHit : MonoBehaviour
     {
         [SerializeField, Tooltip("Damage done on hit.")]
@@ -37,7 +35,7 @@ namespace Game.Attacks.Projectiles
                         pushable.AddForce(transform.forward * pushForce, ForceMode.Impulse);
                 }
             }
-            
+
         }
 
         public static void AddComponentTo(GameObject source, int damage, float pushForce = 0, int hitLayer = 0)

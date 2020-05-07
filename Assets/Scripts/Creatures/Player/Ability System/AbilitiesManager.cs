@@ -8,8 +8,7 @@ using UnityEngine;
 
 namespace Game.Creatures.Player.AbilitySystem
 {
-    [AddComponentMenu("Game/Abilites Manager")]
-    [RequireComponent(typeof(Animator))]
+    [RequireComponent(typeof(Animator)), AddComponentMenu("Game/Creatures/Player/Abilites Manager")]
     public class AbilitiesManager : MonoBehaviour
     {
         private Ability[] abilities;

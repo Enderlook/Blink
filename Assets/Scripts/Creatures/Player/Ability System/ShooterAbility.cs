@@ -1,5 +1,6 @@
-﻿using Game.Attacks.Projectiles;
-using AvalonStudios.Extensions;
+﻿using AvalonStudios.Extensions;
+
+using Game.Attacks.Projectiles;
 
 using UnityEngine;
 

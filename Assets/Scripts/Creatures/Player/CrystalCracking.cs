@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Game.Creatures
 {
+    [AddComponentMenu("Game/Creatures/Crystal/Cracking")]
     public class CrystalCracking : MonoBehaviour
     {
 #pragma warning disable CS0649

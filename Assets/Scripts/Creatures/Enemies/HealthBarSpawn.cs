@@ -1,12 +1,11 @@
 ﻿using Enderlook.Unity.Attributes;
 using Enderlook.Unity.Components;
 
-using Game.Scene;
-
 using UnityEngine;
 
 namespace Game.Creatures
 {
+    [AddComponentMenu("Game/Creatures/Enemy/Health Bar Spawn")]
     public class HealthBarSpawn : HealthFeedback
     {
         [SerializeField, Tooltip("Determines in which point relative to this transfor does the healh bar spawns."), DrawVectorRelativeToTransform]

@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 namespace Game.Creatures
 {
-    [RequireComponent(typeof(NavMeshAgent)), DefaultExecutionOrder(10)]
+    [RequireComponent(typeof(NavMeshAgent)), AddComponentMenu("Game/Creatures/Enemy/Path Finding"), DefaultExecutionOrder(10)]
     public class EnemyPathFinding : MonoBehaviour, IPushable
     {
         public NavMeshAgent ThisNavMeshAgent => navMeshAgent;
