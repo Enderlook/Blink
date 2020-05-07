@@ -1,5 +1,4 @@
 ﻿using Enderlook.Unity.Attributes;
-using Game.Creatures;
 
 using UnityEngine;
 
@@ -7,14 +6,13 @@ using RangeInt = Enderlook.Unity.Serializables.Ranges.RangeInt;
 
 namespace Game.Pickups
 {
-    [AddComponentMenu("Game/Pickups/Spawn Orbs On Death")]
-    public class SpawnOrbsOnDeath : MonoBehaviour, IDie
+    public abstract class SpawnOrbs : MonoBehaviour
     {
         [SerializeField, Tooltip("Prefab of orbs to spawn.")]
         private Orb prefab;
 
         [SerializeField, Tooltip("Range of energy to spawn.")]
-        private RangeInt energyToSpawn;
+        private RangeInt valueToSpawn;
 
         [SerializeField, Tooltip("Random range of spawning.")]
         private float spawnRadius;
@@ -25,9 +23,9 @@ namespace Game.Pickups
         [SerializeField, Tooltip("Speed at which orbs are spawned.")]
         private float spawnSpeed;
 
-        void IDie.Die()
+        protected void Spawn()
         {
-            int value = energyToSpawn.Value;
+            int value = valueToSpawn.Value;
             int maximumSize = (int)(Mathf.Log(value + 7, 1.25f) - 8);
 
             while (value > 0)
@@ -48,7 +46,7 @@ namespace Game.Pickups
             Vector3 center = spawnPoint + transform.position;
             Vector3 position = center + (spawnRadius * Random.onUnitSphere);
             Orb instance = Instantiate(prefab, position, transform.rotation);
-            instance.SetEnergy(value);
+            instance.SetValue(value);
 
             if (instance.TryGetComponent(out Rigidbody rigidbody))
                 rigidbody.AddForce((position - center).normalized * spawnSpeed, ForceMode.VelocityChange);

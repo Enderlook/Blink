@@ -353,6 +353,25 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d0186b7607a053341b87d1b178bb05a6, type: 3}
   dieSounds:
   - {fileID: 8300000, guid: 04e057e33f40d094d9335e3087d187ea, type: 3}
+--- !u!114 &8310941219382366745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8362014100527030265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe78c54683329145893e11a373d54ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3662898833235316202, guid: 35e0681ddaf5864468f153fb870722db, type: 3}
+  valueToSpawn:
+    min: 10
+    max: 20
+  spawnRadius: 0.75
+  spawnPoint: {x: 0, y: 1.25, z: 0}
+  spawnSpeed: 1
 --- !u!114 &8971253688309494438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,25 +407,6 @@ MonoBehaviour:
   healthBar: {fileID: 4408493216306834460, guid: 9b27b479a691e1145b86ba683f8b3078,
     type: 3}
   healthBarSpawnPosition: {x: 0, y: 3.5, z: 0}
---- !u!114 &8310941219382366745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8362014100527030265}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abe78c54683329145893e11a373d54ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 3662898833235316202, guid: 35e0681ddaf5864468f153fb870722db, type: 3}
-  energyToSpawn:
-    min: 10
-    max: 20
-  spawnRadius: 0.75
-  spawnPoint: {x: 0, y: 1.25, z: 0}
-  spawnSpeed: 1
 --- !u!1001 &8362845339844249071
 PrefabInstance:
   m_ObjectHideFlags: 0

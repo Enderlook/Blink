@@ -278,6 +278,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseAtom: {fileID: -5997528580348898024}
   instacedAtom: {fileID: 0}
+--- !u!114 &3220008560783399071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8081955460700129509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe78c54683329145893e11a373d54ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3662898833235316202, guid: 35e0681ddaf5864468f153fb870722db, type: 3}
+  valueToSpawn:
+    min: 12
+    max: 18
+  spawnRadius: 0.75
+  spawnPoint: {x: 0, y: 1, z: 0}
+  spawnSpeed: 1
 --- !u!114 &3281733224939759508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,25 +407,6 @@ MonoBehaviour:
   floatingTextPrefab: {fileID: 8150760654224925313, guid: 2464453f149ba994292ee710d0ceaab7,
     type: 3}
   floatingTextParent: {fileID: 0}
---- !u!114 &3220008560783399071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8081955460700129509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abe78c54683329145893e11a373d54ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 3662898833235316202, guid: 35e0681ddaf5864468f153fb870722db, type: 3}
-  energyToSpawn:
-    min: 12
-    max: 18
-  spawnRadius: 0.75
-  spawnPoint: {x: 0, y: 1, z: 0}
-  spawnSpeed: 1
 --- !u!1001 &8081955460700098501
 PrefabInstance:
   m_ObjectHideFlags: 0

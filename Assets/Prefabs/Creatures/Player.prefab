@@ -174,9 +174,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b1b0fbd352f6ed4cb167d08ecbae2d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilities: []
   ShootingPosition: {fileID: 3780633358736254396}
-  abilityUIManager: {fileID: 0}
+--- !u!114 &1632046503376733656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5558235056462145219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d4128d0787c9054c991e31d2b2f79ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickingRadius: 0.5
+  magnetRadius: 2
+  magnetSpeed: 3
+  layerToPickup:
+    serializedVersion: 2
+    m_Bits: 32768
 --- !u!1001 &1363339880222058423
 PrefabInstance:
   m_ObjectHideFlags: 0

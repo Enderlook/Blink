@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 3662898833235316202, guid: 35e0681ddaf5864468f153fb870722db, type: 3}
-  energyToSpawn:
+  valueToSpawn:
     min: 10
     max: 15
   spawnRadius: 0.75
