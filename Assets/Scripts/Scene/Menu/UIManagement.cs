@@ -9,8 +9,6 @@ namespace Game.Scene
 
         public void Load(string scene) => FixTimeWhenSceneEndsLoading(SceneManager.LoadSceneAsync(scene));
 
-        public void Restart() => Load(SceneManager.GetActiveScene().name);
-
         public void Exit() => Application.Quit();
 
         public void GoToMenu()

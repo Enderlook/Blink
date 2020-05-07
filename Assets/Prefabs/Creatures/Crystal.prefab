@@ -541,7 +541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialValue: 100
   value: 100
-  oldValue: 10
+  oldValue: 100
   transformer: {fileID: 692037252537730776}
   changed: {fileID: -2325885416423649629}
   changedWithHistory: {fileID: -8291800690213229252}

@@ -1,5 +1,4 @@
 ﻿using Enderlook.Unity.Utils.Clockworks;
-
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -77,10 +76,9 @@ namespace Game.Scene
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()
         {
-            if (instance == null)
-                instance = this;
-            else
+            if (instance != null)
                 throw new InvalidOperationException($"Only a single instance of {nameof(GameManager)} can exist at the same time.");
+            instance = this;
 
             timeUntilStart = new Clockwork(startTime, SetStateToRunning, true, 0);
             SetStateToStarting();
@@ -89,21 +87,25 @@ namespace Game.Scene
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Update()
         {
-            switch (gameState)
-            {
-                case GameState.Starting:
-                    timeUntilStart.UpdateBehaviour(Time.deltaTime);
-                    ShowTimer(timeUntilStart);
-                    break;
-                case GameState.Running:
-                    ShowPercent();
-                    if (EnergyPercent >= 1)
-                        Complete();
-                    break;
-            }
+            if (Menu.Instance.IsPlaying)
+                switch (gameState)
+                {
+                    case GameState.Starting:
+                        timeUntilStart.UpdateBehaviour(Time.deltaTime);
+                        ShowTimer(timeUntilStart);
+                        break;
+                    case GameState.Running:
+                        ShowPercent();
+                        if (EnergyPercent >= 1)
+                            Complete();
+                        break;
+                }
         }
 
-        private void Complete() => Menu.Instance.Win();
+        private void Complete()
+        {
+            Menu.Instance.Win();
+        }
 
         private void ShowPercent() => timer.text = $"{Mathf.RoundToInt(EnergyPercent * 100)}%";
 
