@@ -7,7 +7,7 @@ using UnityEngine.AI;
 
 namespace Game.Creatures
 {
-    [AddComponentMenu("Game/Creatures/Enemies/Attack"), RequireComponent(typeof(EnemyPathFinding)), RequireComponent(typeof(NavMeshAgent))]
+    [AddComponentMenu("Game/Creatures/Enemies/Attack"), RequireComponent(typeof(EnemyPathFinding)), RequireComponent(typeof(NavMeshAgent)), RequireComponent(typeof(Animator))]
     public class EnemyAttack : MonoBehaviour, IDie
     {
         [SerializeField, Tooltip("Is Boss")]
@@ -42,11 +42,14 @@ namespace Game.Creatures
 
         private NavMeshAgent navMeshAgent;
 
+        private Animator animator;
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()
         {
             enemyPathFinding = GetComponent<EnemyPathFinding>();
             navMeshAgent = GetComponent<NavMeshAgent>();
+            animator = GetComponent<Animator>();
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
@@ -74,7 +77,7 @@ namespace Game.Creatures
                     else
                         animationKey = basicAttack;
 
-                    enemyPathFinding.ThisAnimator.SetTrigger(animationKey);
+                    animator.SetTrigger(animationKey);
                     nextAttack = Time.time + cooldown;
                 }
             }
