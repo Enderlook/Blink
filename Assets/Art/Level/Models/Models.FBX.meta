@@ -12,6 +12,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Crystal
+    second: {fileID: 2100000, guid: 689910dc7f17bfc4c8a3a51382138dfb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Ground
     second: {fileID: 2100000, guid: 748e4b7eebcec0646b042f0249af4711, type: 2}
   - first:
@@ -19,6 +24,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Log
     second: {fileID: 2100000, guid: a2c60f58a125eac4ea916e8759c3e752, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 9fab153721794134c9858744f7aa5860, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orb
+    second: {fileID: 2100000, guid: a3aaad5f9aa15be41ae94a1cf7085342, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

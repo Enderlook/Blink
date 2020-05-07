@@ -236,7 +236,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 072abdd6a1aee3e499f6a5ac8da847e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPathFinding: {fileID: 4236240366733532182}
   isBoss: 1
   basicAttack: Basic Attack
   mediumAttack: Medium Attack
@@ -388,6 +387,25 @@ MonoBehaviour:
   healthBar: {fileID: 4408493216306834460, guid: 9b27b479a691e1145b86ba683f8b3078,
     type: 3}
   healthBarSpawnPosition: {x: 0, y: 2.95, z: 0}
+--- !u!114 &6538582884702715930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5396148646744920283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe78c54683329145893e11a373d54ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3662898833235316202, guid: 35e0681ddaf5864468f153fb870722db, type: 3}
+  energyToSpawn:
+    min: 30
+    max: 50
+  spawnRadius: 1
+  spawnPoint: {x: 0, y: 2, z: 0}
+  spawnSpeed: 1
 --- !u!1001 &5396148646744761275
 PrefabInstance:
   m_ObjectHideFlags: 0

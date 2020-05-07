@@ -12,6 +12,16 @@ PrefabInstance:
       propertyPath: baseAtom
       value: 
       objectReference: {fileID: -6516640405812693818}
+    - target: {fileID: 3220008560783399071, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: energyToSpawn.min
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3220008560783399071, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: energyToSpawn.max
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 3281733224939759508, guid: ec840790b738373489810ebf165f7199,
         type: 3}
       propertyPath: baseAtom
