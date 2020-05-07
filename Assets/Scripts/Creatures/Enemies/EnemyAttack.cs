@@ -50,7 +50,7 @@ namespace Game.Creatures
 
             if (enemyPathFinding.TargetDistance <= enemyPathFinding.ThisNavMeshAgent.stoppingDistance)
             {
-                enemyPathFinding.ThisAnimator.SetBool(enemyPathFinding.WalkAnimation, false);
+                enemyPathFinding.PlayWalkAnimation(false);
                 if (Time.time >= nextAttack)
                 {
                     string animationKey;
@@ -72,7 +72,7 @@ namespace Game.Creatures
                 }
             }
             else
-                enemyPathFinding.ThisAnimator.SetBool(enemyPathFinding.WalkAnimation, true);
+                enemyPathFinding.PlayWalkAnimation(true);
         }
 
         private void OnTriggerEnter(Collider other)

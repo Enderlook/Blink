@@ -13,9 +13,6 @@ namespace Game.Creatures
         public float TargetDistance => targetDistance;
 
         public Animator ThisAnimator => animator;
-
-        public string WalkAnimation => walkAnimation;
-
         [SerializeField, Tooltip("Animator component.")]
         private Animator animator;
 
@@ -129,5 +126,7 @@ namespace Game.Creatures
         }
 
         void IDie.Die() => isDead = true;
+
+        public void PlayWalkAnimation(bool play) => animator.SetBool(walkAnimation, play);
     }
 }
