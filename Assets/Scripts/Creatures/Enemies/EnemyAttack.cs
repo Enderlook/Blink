@@ -6,12 +6,9 @@ using UnityEngine;
 
 namespace Game.Creatures
 {
-    [AddComponentMenu("Game/Creatures/Enemies/Attack")]
+    [AddComponentMenu("Game/Creatures/Enemies/Attack"), RequireComponent(typeof(EnemyPathFinding))]
     public class EnemyAttack : MonoBehaviour, IDie
     {
-        [SerializeField, Tooltip("Enemy path finding.")]
-        private EnemyPathFinding enemyPathFinding;
-
         [SerializeField, Tooltip("Is Boss")]
         private bool isBoss;
 
@@ -39,6 +36,11 @@ namespace Game.Creatures
         private float nextAttack;
 
         private bool isDead;
+
+        private EnemyPathFinding enemyPathFinding;
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
+        private void Awake() => enemyPathFinding = GetComponent<EnemyPathFinding>();
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Update()
