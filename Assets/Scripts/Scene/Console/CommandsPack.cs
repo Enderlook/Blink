@@ -3,18 +3,18 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-namespace Game.Scene.Command
+namespace Game.Scene.CLI
 {
     public abstract class CommandsPack : MonoBehaviour
     {
-        private CLI.Console console;
+        private Console console;
 
         protected Dictionary<(string command, int parameters), Action<string[]>> commands;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Start()
         {
-            console = FindObjectOfType<CLI.Console>();
+            console = FindObjectOfType<Console>();
             console.SetCommandsPack(this);
         }
 

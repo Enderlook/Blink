@@ -1,5 +1,4 @@
-﻿using Game.Scene.Command;
-
+﻿
 using System;
 using System.Collections.Generic;
 
@@ -31,7 +30,7 @@ namespace Game.Scene.CLI
         private KeyCode openConsole;
 
         [SerializeField, Tooltip("Prefab used for console logs.")]
-        private Text logPrefab;
+        private GameObject logPrefab;
 
         [SerializeField, Tooltip("Scroll rect of logs.")]
         private ScrollRect scrollRect;
@@ -49,7 +48,10 @@ namespace Game.Scene.CLI
 
         private static Console instance;
 
-        public static bool IsConsoleEnabled => instance.console.activeSelf;
+        public static bool IsConsoleEnabled {
+            get => instance.console.activeSelf;
+            set => instance.console.SetActive(value);
+        }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()
@@ -169,9 +171,9 @@ namespace Game.Scene.CLI
 
         public void Write(string text)
         {
-            Text instance = Instantiate(logPrefab);
-            instance.text = text;
+            GameObject instance = Instantiate(logPrefab);
             instance.transform.SetParent(content.transform);
+            instance.GetComponentInChildren<Text>().text = text;
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Linq;
 
 using UnityEngine;
 
-namespace Game.Scene.Command
+namespace Game.Scene.CLI
 {
     public class LevelCommandsPack : CommandsPack
     {
@@ -52,17 +52,15 @@ namespace Game.Scene.Command
 
         private void SetEnergy(string[] sections)
         {
-            if(int.TryParse(sections[1], out int value))
-            {
+            if (int.TryParse(sections[1], out int value))
                 if (value < 0)
                     Write("Goto amounts can't be negative.");
                 else
-                {                 
+                {
                     Write($"Setted energy to {value}.");
                     GameManager gameManager = FindObjectOfType<GameManager>();
                     gameManager.AddEnergy(value - gameManager.CurrentEnergy);
                 }
-            }
             else
                 Write($"Could not parse '{sections[1]}' as integer.");
         }
