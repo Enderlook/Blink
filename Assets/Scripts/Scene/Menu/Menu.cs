@@ -13,6 +13,7 @@ namespace Game.Scene
     [RequireComponent(typeof(AudioSource))]
     public class Menu : MonoBehaviour
     {
+#pragma warning disable CS0649
         [SerializeField, Tooltip("Music play while pause.")]
         private AudioClip[] menuMusic;
 
@@ -45,6 +46,7 @@ namespace Game.Scene
 
         [SerializeField, Tooltip("Loading screen.")]
         private GameObject loadingScreen;
+#pragma warning resotre CS0649
 
         private AudioSource audioSource;
 
