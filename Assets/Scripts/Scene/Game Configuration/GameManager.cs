@@ -51,8 +51,9 @@ namespace Game.Scene
         private float lastUpdatedDifficulty;
 
         private int currentRequiredEnergy;
-        private int currentEnergy;
-        private float EnergyPercent => currentEnergy / (float)currentRequiredEnergy;
+        public int CurrentEnergy { get; private set; }
+
+        private float EnergyPercent => CurrentEnergy / (float)currentRequiredEnergy;
 
         private float DifficultyValue {
             get {
@@ -156,9 +157,9 @@ namespace Game.Scene
 
         public void AddEnergy(int energy)
         {
-            currentEnergy += energy;
-            if (currentEnergy > currentRequiredEnergy)
-                currentEnergy = currentRequiredEnergy;
+            CurrentEnergy += energy;
+            if (CurrentEnergy > currentRequiredEnergy)
+                CurrentEnergy = currentRequiredEnergy;
         }
     }
 }

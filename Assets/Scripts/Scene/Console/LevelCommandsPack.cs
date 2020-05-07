@@ -27,14 +27,14 @@ namespace Game.Scene.Command
             "/Win: Auto win.",
             "/Lose: Auto loose",
             "/Goto (int): Go to the specified scene index.",
+            "/AddEnergy (int): Add the specified amount of energy.",
+            "/SetEnergy (int): Set the specified amount of energy.",
         };
 
         public override IEnumerable<string> Help => help;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
-        private void Awake()
-        {
-            commands = new Dictionary<(string command, int parameters), Action<string[]>>()
+        private void Awake() => commands = new Dictionary<(string command, int parameters), Action<string[]>>()
             {
                 { ("freeze", 0), Freeze },
                 { ("freeze", 1), Freeze1 },
@@ -46,7 +46,36 @@ namespace Game.Scene.Command
                 { ("win", 0), Win },
                 { ("loose", 0), Loose},
                 { ("goto", 1), GoTo },
+                { ("setEnergy", 1), SetEnergy},
+                { ("addEnergy", 1), AddEnergy},
             };
+
+        private void SetEnergy(string[] sections)
+        {
+            if(int.TryParse(sections[1], out int value))
+            {
+                if (value < 0)
+                    Write("Goto amounts can't be negative.");
+                else
+                {                 
+                    Write($"Setted energy to {value}.");
+                    GameManager gameManager = FindObjectOfType<GameManager>();
+                    gameManager.AddEnergy(value - gameManager.CurrentEnergy);
+                }
+            }
+            else
+                Write($"Could not parse '{sections[1]}' as integer.");
+        }
+
+        private void AddEnergy(string[] sections)
+        {
+            if (int.TryParse(sections[1], out int value))
+            {
+                Write($"Added {value} energy!");
+                FindObjectOfType<GameManager>().AddEnergy(value);
+            }
+            else
+                Write($"Could not parse '{sections[1]}' as integer.");
         }
 
         private void Freeze(string[] sections)
