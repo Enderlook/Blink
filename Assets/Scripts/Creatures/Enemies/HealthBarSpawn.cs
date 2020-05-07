@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Game.Creatures
 {
     [AddComponentMenu("Game/Creatures/Enemy/Health Bar Spawn")]
-    public class HealthBarSpawn : HealthFeedback
+    public class HealthBarSpawn : HealthFeedback, IDie
     {
         [SerializeField, Tooltip("Determines in which point relative to this transfor does the healh bar spawns."), DrawVectorRelativeToTransform]
         private Vector3 healthBarSpawnPosition;
@@ -31,7 +31,6 @@ namespace Game.Creatures
                 false, false, false);
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
-        private void OnDestroy() => Destroy(healthBarParent);
+        void IDie.Die() => Destroy(healthBarParent);
     }
 }
