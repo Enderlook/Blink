@@ -497,6 +497,7 @@ MonoBehaviour:
   hudScene: 1
   loadingProgress: {fileID: 12125993}
   panel: {fileID: 889703966}
+  disableConsole: 27
 --- !u!114 &301598319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1724,7 +1725,7 @@ MonoBehaviour:
   inputField: {fileID: 1480083566586783133}
   introCode: 13
   openConsole: 13
-  logPrefab: {fileID: 7409065352249510760, guid: 1f3632a969baab149a99fbed2770d7a7,
+  logPrefab: {fileID: 2939018434129118812, guid: 1f3632a969baab149a99fbed2770d7a7,
     type: 3}
   scrollRect: {fileID: 1302986432791034126}
 --- !u!1 &2603078692589234532

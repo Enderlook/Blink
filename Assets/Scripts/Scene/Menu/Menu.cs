@@ -7,6 +7,8 @@ using System.Collections;
 
 using UnityEngine;
 
+using Console = Game.Scene.CLI.Console;
+
 namespace Game.Scene
 {
     [AddComponentMenu("Game/Menu")]
@@ -84,8 +86,13 @@ namespace Game.Scene
             if (!audioSource.isPlaying)
                 PlayMusic();
 
-            if (Input.GetKeyDown(pauseKey) && mode == Mode.Playing)
-                ToggleMenu();
+            if (Input.GetKeyDown(pauseKey))
+            {
+                if (Console.IsConsoleEnabled)
+                    Console.IsConsoleEnabled = false;
+                else if (mode == Mode.Playing)
+                    ToggleMenu();
+            }
         }
 
         private void ToggleMenu()

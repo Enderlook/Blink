@@ -1,9 +1,10 @@
 ﻿using Enderlook.Unity.Prefabs.HealthBarGUI;
-
+using Game.Scene.CLI;
 using System.Collections;
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 namespace Game.Scene
 {
@@ -21,12 +22,22 @@ namespace Game.Scene
         [SerializeField]
         private GameObject panel;
 
+        [SerializeField, Tooltip("Key pressed to disable console.")]
+        private KeyCode disableConsole;
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         public void Awake()
         {
             GameObject core = GameObject.Find("Core");
             if (core != null)
                 Destroy(core);
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
+        private void Update()
+        {
+            if (Input.GetKeyDown(disableConsole) && Console.IsConsoleEnabled)
+                Console.IsConsoleEnabled = false;
         }
 
         public void InitializeGame()

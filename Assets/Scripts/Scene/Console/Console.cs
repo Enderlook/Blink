@@ -49,7 +49,10 @@ namespace Game.Scene.CLI
 
         private static Console instance;
 
-        public static bool IsConsoleEnabled => instance.console.activeSelf;
+        public static bool IsConsoleEnabled {
+            get => instance.console.activeSelf;
+            set => instance.console.SetActive(value);
+        }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()
