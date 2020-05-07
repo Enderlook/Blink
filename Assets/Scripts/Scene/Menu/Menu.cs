@@ -196,5 +196,26 @@ namespace Game.Scene
             menu.SetActive(false);
             IsPlaying = true;
         }
+
+        public void Restart()
+        {
+            GameObject go = new GameObject();
+            go.AddComponent<Slave>();
+            DontDestroyOnLoad(go);
+            FindObjectOfType<UIManagement>().GoToMenu();            
+        }
+
+        private class Slave : MonoBehaviour
+        {
+            [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
+            private void Update()
+            {
+                MainMenu mainMenu = FindObjectOfType<MainMenu>();
+                if (mainMenu == null)
+                    return;
+                mainMenu.InitializeGame();
+                Destroy(gameObject);
+            }
+        }
     }
 }
