@@ -22,19 +22,11 @@ namespace Game.Attacks.Projectiles
             GameObject otherGameObject = collider.gameObject;
             if (otherGameObject.LayerMatchTest(hitLayer))
             {
-                if (damage > 0)
-                {
-                    IDamagable damagable = otherGameObject.GetComponent<IDamagable>();
-                    if (damagable != null)
-                        damagable.TakeDamage(damage);
-                }
+                if (damage > 0 && otherGameObject.TryGetComponent(out IDamagable damagable))
+                    damagable.TakeDamage(damage);
 
-                if (pushForce > 0)
-                {
-                    IPushable pushable = otherGameObject.GetComponent<IPushable>();
-                    if (pushable != null)
-                        pushable.AddForce(transform.forward * pushForce, ForceMode.Impulse);
-                }
+                if (pushForce > 0 && otherGameObject.TryGetComponent(out IPushable pushable))
+                    pushable.AddForce(transform.forward * pushForce, ForceMode.Impulse);
             }
         }
 
