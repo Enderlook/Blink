@@ -26,7 +26,7 @@ namespace Game.Scene.Command
             "/Reload: Reload all player's abilities.",
             "/Win: Auto win.",
             "/Lose: Auto loose",
-            "/Goto: Go to the specified scene index."
+            "/Goto (int): Go to the specified scene index.",
         };
 
         public override IEnumerable<string> Help => help;
