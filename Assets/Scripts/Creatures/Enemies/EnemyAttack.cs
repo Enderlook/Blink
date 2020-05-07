@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Game.Creatures
 {
-    public class EnemyAttack : MonoBehaviour
+    public class EnemyAttack : MonoBehaviour, IDie
     {
         [SerializeField, Tooltip("Enemy path finding.")]
         private EnemyPathFinding enemyPathFinding;
@@ -35,40 +35,39 @@ namespace Game.Creatures
         private LayerMask crystalLayer;
 
         private float nextAttack;
-        private DestroyWhenDie destroyWhenDie;
 
-        private void Awake() => destroyWhenDie = GetComponent<DestroyWhenDie>();
+        private bool isDead;
 
         private void Update()
         {
-            if (!destroyWhenDie.IsDead)
-            {
-                if (enemyPathFinding.TargetDistance <= enemyPathFinding.ThisNavMeshAgent.stoppingDistance)
-                {
-                    enemyPathFinding.ThisAnimator.SetBool(enemyPathFinding.WalkAnimation, false);
-                    if (Time.time >= nextAttack)
-                    {
-                        string animationKey;
-                        if (isBoss)
-                        {
-                            float prob = Random.Range(0, 100);
-                            if (prob >= 0 && prob <= 60)
-                                animationKey = basicAttack;
-                            else if (prob >= 61 && prob <= 90)
-                                animationKey = mediumAttack;
-                            else
-                                animationKey = strongAttack;
-                        }
-                        else
-                            animationKey = basicAttack;
+            if (isDead)
+                return;
 
-                        enemyPathFinding.ThisAnimator.SetTrigger(animationKey);
-                        nextAttack = Time.time + cooldown;
+            if (enemyPathFinding.TargetDistance <= enemyPathFinding.ThisNavMeshAgent.stoppingDistance)
+            {
+                enemyPathFinding.ThisAnimator.SetBool(enemyPathFinding.WalkAnimation, false);
+                if (Time.time >= nextAttack)
+                {
+                    string animationKey;
+                    if (isBoss)
+                    {
+                        float prob = Random.Range(0, 100);
+                        if (prob >= 0 && prob <= 60)
+                            animationKey = basicAttack;
+                        else if (prob >= 61 && prob <= 90)
+                            animationKey = mediumAttack;
+                        else
+                            animationKey = strongAttack;
                     }
+                    else
+                        animationKey = basicAttack;
+
+                    enemyPathFinding.ThisAnimator.SetTrigger(animationKey);
+                    nextAttack = Time.time + cooldown;
                 }
-                else
-                    enemyPathFinding.ThisAnimator.SetBool(enemyPathFinding.WalkAnimation, true);
             }
+            else
+                enemyPathFinding.ThisAnimator.SetBool(enemyPathFinding.WalkAnimation, true);
         }
 
         private void OnTriggerEnter(Collider other)
@@ -80,5 +79,6 @@ namespace Game.Creatures
             }
         }
 
+        void IDie.Die() => isDead = true;
     }
 }
