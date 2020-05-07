@@ -59,6 +59,10 @@ namespace Game.Creatures
             go.AddComponent<RandomPitch>();
             source.Play();
             go.AddComponent<DestroyWhenAudioSourceEnds>();
+
+            IDie[] actions = GetComponentsInChildren<IDie>();
+            for (int i = 0; i < actions.Length; i++)
+                actions[i].Die();
         }
 
         public void TakeHealing(int amount)
