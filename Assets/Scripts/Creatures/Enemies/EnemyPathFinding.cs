@@ -8,9 +8,8 @@ namespace Game.Creatures
     [RequireComponent(typeof(NavMeshAgent)), AddComponentMenu("Game/Creatures/Enemy/Path Finding"), DefaultExecutionOrder(10)]
     public class EnemyPathFinding : MonoBehaviour, IPushable, IDie
     {
-        public float TargetDistance => targetDistance;
-
         public Animator ThisAnimator => animator;
+
         [SerializeField, Tooltip("Animator component.")]
         private Animator animator;
 
@@ -33,8 +32,7 @@ namespace Game.Creatures
 
         private static int frameCheck;
         private const int MaxCheckFrame = 10;
-
-        private float targetDistance;
+        public float TargetDistance { get; private set; }
 
         private bool isDead;
 
@@ -74,12 +72,12 @@ namespace Game.Creatures
 
             if (crystalDistance * (1 / crystalSeekWeight) < playerDistance * (1 / playerSeekWeight))
             {
-                targetDistance = crystalDistance;
+                TargetDistance = crystalDistance;
                 navMeshAgent.SetPath(crystalPath);
             }
             else
             {
-                targetDistance = playerDistance;
+                TargetDistance = playerDistance;
                 navMeshAgent.SetPath(playerPath);
             }
         }
