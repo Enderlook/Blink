@@ -2196,6 +2196,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -7247885882411041942, guid: 6fe0b5ab5f249fe42b468d4b8c3dbe32,
         type: 3}
+    - target: {fileID: 6862659441686072569, guid: 6fe0b5ab5f249fe42b468d4b8c3dbe32,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 8071420072918112746}
     - target: {fileID: 8650836753710101940, guid: 6fe0b5ab5f249fe42b468d4b8c3dbe32,
         type: 3}
       propertyPath: healthBar
@@ -2615,7 +2620,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.0908331, y: 0.7918368}
   m_AnchorMax: {x: 0.90912527, y: 0.9253472}
-  m_AnchoredPosition: {x: 1.5, y: -0.40000153}
+  m_AnchoredPosition: {x: 1.5, y: -0.40000916}
   m_SizeDelta: {x: 62, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5586656665031670661
@@ -2690,7 +2695,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.0908331, y: 0.7918368}
   m_AnchorMax: {x: 0.90912527, y: 0.9253472}
-  m_AnchoredPosition: {x: 1.5, y: -0.40000153}
+  m_AnchoredPosition: {x: 1.5, y: -0.40000916}
   m_SizeDelta: {x: 62, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5939098081113653358
@@ -2746,7 +2751,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.0908331, y: 0.7918368}
   m_AnchorMax: {x: 0.90912527, y: 0.9253472}
-  m_AnchoredPosition: {x: 1.5, y: -0.40000153}
+  m_AnchoredPosition: {x: 1.5, y: -0.40000916}
   m_SizeDelta: {x: 62, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &6144991796514222377
@@ -3070,7 +3075,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.0908331, y: 0.7918368}
   m_AnchorMax: {x: 0.90912527, y: 0.9253472}
-  m_AnchoredPosition: {x: 1.5, y: -0.40000153}
+  m_AnchoredPosition: {x: 1.5, y: -0.40000916}
   m_SizeDelta: {x: 62, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7352570734985703018
@@ -3427,10 +3432,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startTime: 5
-  timePerScene: 120
+  baseEnergy: 50
+  linearIncreaseEnergy: 10
   baseDifficulty: 1
-  levelDifficultyFactor: 0.5
-  levelDifficultyPowerFactor: 0.5
+  linearIncreaseDifficulty: 0.5
+  geometryIncreaseDifficulty: 0.5
   difficultyInSceneFactor: 0.5
   timer: {fileID: 8118707543037823915}
   scenes: {fileID: 11400000, guid: e7c1918123ff2994196af9c4083be1fa, type: 2}

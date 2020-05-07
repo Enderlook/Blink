@@ -28,4 +28,4 @@ MonoBehaviour:
   prefab: {fileID: 5741362053491865567, guid: 9cc9290495e6f684da084dcee353e807, type: 3}
   hitLayer:
     serializedVersion: 2
-    m_Bits: 8192
+    m_Bits: 10240

@@ -279,7 +279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 072abdd6a1aee3e499f6a5ac8da847e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPathFinding: {fileID: 4849378097389699523}
   isBoss: 0
   basicAttack: Basic Attack
   mediumAttack: 
@@ -354,6 +353,25 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d0186b7607a053341b87d1b178bb05a6, type: 3}
   dieSounds:
   - {fileID: 8300000, guid: 04e057e33f40d094d9335e3087d187ea, type: 3}
+--- !u!114 &8310941219382366745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8362014100527030265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe78c54683329145893e11a373d54ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3662898833235316202, guid: 35e0681ddaf5864468f153fb870722db, type: 3}
+  valueToSpawn:
+    min: 10
+    max: 20
+  spawnRadius: 0.75
+  spawnPoint: {x: 0, y: 1.25, z: 0}
+  spawnSpeed: 1
 --- !u!114 &8971253688309494438
 MonoBehaviour:
   m_ObjectHideFlags: 0

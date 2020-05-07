@@ -52,3 +52,11 @@ My sounds! » scream1.wav made by Deathstardude under license CC-BY 3.0
 Woman Voice » Girl Taking Damage made by MadamVicious under license CC0 1.0
 	https://freesound.org/people/MadamVicious/sounds/218190/
 	218190__madamvicious__girl-taking-damage.wav
+
+Space Ship Shield Sounds made by bart under license CC0
+	https://opengameart.org/content/space-ship-shield-sounds
+	space shield sounds - 1.wav
+
+3 Heal Spells made by DoKashiteru under license CC-BY 3.0, GPL 3.0, GPL 2.0
+	https://opengameart.org/content/3-heal-spells
+	healspell2.aif
