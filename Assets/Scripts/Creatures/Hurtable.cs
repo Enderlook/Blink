@@ -46,14 +46,17 @@ namespace Game.Creatures
             audioSource.Play();
 
             if (health.GetValue() == 0)
-            {
-                GameObject go = new GameObject($"Die Sound of {gameObject.name}");
-                AudioSource source = go.AddComponent<AudioSource>();
-                source.clip = dieSounds.RandomPick();
-                go.AddComponent<RandomPitch>();
-                source.Play();
-                go.AddComponent<DestroyWhenAudioSourceEnds>();
-            }
+                Die();
+        }
+
+        private void Die()
+        {
+            GameObject go = new GameObject($"Die Sound of {gameObject.name}");
+            AudioSource source = go.AddComponent<AudioSource>();
+            source.clip = dieSounds.RandomPick();
+            go.AddComponent<RandomPitch>();
+            source.Play();
+            go.AddComponent<DestroyWhenAudioSourceEnds>();
         }
 
         public void TakeHealing(int amount)
