@@ -22,15 +22,15 @@ namespace Game.Creatures
 
         [SerializeField, Tooltip("Used to determine push strength.")]
         private float mass = 1;
+        public float TargetDistance { get; private set; }
 
         private NavMeshAgent navMeshAgent;
         private NavMeshPath crystalPath;
         private NavMeshPath playerPath;
-        private int navMeshFrameCheck;
 
+        private int navMeshFrameCheck;
         private static int frameCheck;
         private const int MaxCheckFrame = 10;
-        public float TargetDistance { get; private set; }
 
         private bool isDead;
 
