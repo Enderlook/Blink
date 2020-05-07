@@ -3,10 +3,11 @@
 using Enderlook.Unity.Attributes;
 
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Game.Creatures
 {
-    [AddComponentMenu("Game/Creatures/Enemies/Attack"), RequireComponent(typeof(EnemyPathFinding))]
+    [AddComponentMenu("Game/Creatures/Enemies/Attack"), RequireComponent(typeof(EnemyPathFinding)), RequireComponent(typeof(NavMeshAgent))]
     public class EnemyAttack : MonoBehaviour, IDie
     {
         [SerializeField, Tooltip("Is Boss")]
@@ -39,8 +40,14 @@ namespace Game.Creatures
 
         private EnemyPathFinding enemyPathFinding;
 
+        private NavMeshAgent navMeshAgent;
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
-        private void Awake() => enemyPathFinding = GetComponent<EnemyPathFinding>();
+        private void Awake()
+        {
+            enemyPathFinding = GetComponent<EnemyPathFinding>();
+            navMeshAgent = GetComponent<NavMeshAgent>();
+        }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Update()
@@ -48,7 +55,7 @@ namespace Game.Creatures
             if (isDead)
                 return;
 
-            if (enemyPathFinding.TargetDistance <= enemyPathFinding.ThisNavMeshAgent.stoppingDistance)
+            if (enemyPathFinding.TargetDistance <= navMeshAgent.stoppingDistance)
             {
                 enemyPathFinding.PlayWalkAnimation(false);
                 if (Time.time >= nextAttack)

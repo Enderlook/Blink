@@ -8,8 +8,6 @@ namespace Game.Creatures
     [RequireComponent(typeof(NavMeshAgent)), AddComponentMenu("Game/Creatures/Enemy/Path Finding"), DefaultExecutionOrder(10)]
     public class EnemyPathFinding : MonoBehaviour, IPushable, IDie
     {
-        public NavMeshAgent ThisNavMeshAgent => navMeshAgent;
-
         public float TargetDistance => targetDistance;
 
         public Animator ThisAnimator => animator;
