@@ -1,4 +1,5 @@
 ﻿using AvalonStudios.Extensions;
+
 using Enderlook.Unity.Attributes;
 
 using UnityEngine;
@@ -38,6 +39,7 @@ namespace Game.Creatures
 
         private bool isDead;
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Update()
         {
             if (isDead)
