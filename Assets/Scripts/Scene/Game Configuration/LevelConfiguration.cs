@@ -1,7 +1,7 @@
 ﻿using Enderlook.Extensions;
 
 using Game.Creatures.Player.AbilitySystem;
-
+using System.Linq;
 using UnityEngine;
 
 namespace Game.Scene
@@ -19,7 +19,17 @@ namespace Game.Scene
         private void Awake()
         {
             Menu.Instance.SetGameMusic(clips);
-            FindObjectOfType<AbilitiesManager>().SetAbilities(abilityData.RandomPick());
+            SetAbilityPack(Random.Range(0, abilityData.Length));
+        }
+
+        public string SetAbilityPack(int index)
+        {
+            if (index > abilityData.Length)
+                return null;
+
+            AbilitiesPack abilities = abilityData[index];
+            FindObjectOfType<AbilitiesManager>().SetAbilities(abilities);
+            return abilities.name;
         }
     }
 }

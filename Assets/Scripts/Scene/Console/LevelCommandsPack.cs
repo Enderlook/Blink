@@ -30,6 +30,7 @@ namespace Game.Scene.CLI
             "/Goto (int) (true): Go to the specified scene index and advances level counter.",
             "/AddEnergy (int): Add the specified amount of energy.",
             "/SetEnergy (int): Set the specified amount of energy.",
+            "/SetAbilityPack (int): Set the specified ability pack."
         };
 
         public override IEnumerable<string> Help => help;
@@ -50,6 +51,7 @@ namespace Game.Scene.CLI
                 { ("goto", 2), GoToAdvance },
                 { ("setenergy", 1), SetEnergy},
                 { ("addenergy", 1), AddEnergy},
+                { ("setabilitypack", 1), SetAbilityPack},
             };
 
         private void SetEnergy(string[] sections)
@@ -218,6 +220,25 @@ namespace Game.Scene.CLI
                         FindObjectOfType<GameManager>().AdvanceScene(index, advance);
                     else
                         Write($"Could not parse '{sections[2]}' as boolean.");
+                }
+            }
+            else
+                Write($"Could not parse '{sections[1]}' as integer.");
+        }
+
+        public void SetAbilityPack(string[] sections)
+        {
+            if (int.TryParse(sections[1], out int index))
+            {
+                if (index < 0)
+                    Write("Index can't be negative.");
+                else
+                {
+                    string name = FindObjectOfType<LevelConfiguration>().SetAbilityPack(index);
+                    if (name == null)
+                        Write("Abilities out of range.");
+                    else
+                        Write($"Succesfully changed to {name}");
                 }
             }
             else
