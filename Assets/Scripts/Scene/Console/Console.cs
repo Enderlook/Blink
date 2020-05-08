@@ -99,7 +99,7 @@ namespace Game.Scene.CLI
 
         public void Accept()
         {
-            string text = inputText.text;
+            string text = inputText.text.ToLower();
             inputText.text = string.Empty;
             Write(text);
             Process(text);
