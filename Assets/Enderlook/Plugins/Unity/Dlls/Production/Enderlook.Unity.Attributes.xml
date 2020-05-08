@@ -111,7 +111,7 @@
         </member>
         <member name="F:Enderlook.Unity.Attributes.DrawVectorRelativeToTransformAttribute.usePositionHandler">
             <summary>
-            Whenever it should use <see cref="M:UnityEditor.Handles.PositionHandle(UnityEngine.Vector3,UnityEngine.Quaternion)"/> or <see cref="M:UnityEditor.Handles.FreeMoveHandle(UnityEngine.Vector3,UnityEngine.Quaternion,System.Single,UnityEngine.Vector3,UnityEditor.Handles.CapFunction)"/> to draw the handler.
+            Whenever it should use <see cref="!:UnityEditor.Handles.PositionHandle(Vector3, Quaternion)"/> or <see cref="!:UnityEditor.Handles.FreeMoveHandle(Vector3, Quaternion, float, Vector3, UnityEditor.Handles.CapFunction)"/> to draw the handler.
             </summary>
         </member>
         <member name="F:Enderlook.Unity.Attributes.DrawVectorRelativeToTransformAttribute.icon">

@@ -4,6 +4,139 @@
         <name>Enderlook.Unity.Components</name>
     </assembly>
     <members>
+        <member name="T:Enderlook.Unity.Components.AudioSourceUtils">
+            <summary>
+            Helper methods for <see cref="T:UnityEngine.AudioSource"/>.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.AudioSourceUtils.PlayAndDestroy(UnityEngine.AudioClip,Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode)">
+            <summary>
+            Creates and <see cref="T:UnityEngine.AudioSource"/> to play <paramref name="clip"/> and destroy it when ends playing.
+            </summary>
+            <param name="clip">Clip to play.</param>
+             <param name="destroyMode">How destroy time will be calculated.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="clip"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Components.AudioSourceUtils.PlayAndDestroy(UnityEngine.AudioClip,UnityEngine.Vector3,Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode)">
+            <summary>
+            Creates and <see cref="T:UnityEngine.AudioSource"/> to play <paramref name="clip"/> and destroy it when ends playing.
+            </summary>
+            <param name="clip">Clip to play.</param>
+            <param name="position">Position where <see cref="T:UnityEngine.AudioSource"/> will be instanced.</param>
+            <param name="destroyMode">How destroy time will be calculated.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="clip"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Components.AudioSourceUtils.PlayAndDestroy(UnityEngine.AudioClip,UnityEngine.Vector3,System.Single,Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode)">
+            <summary>
+            Creates and <see cref="T:UnityEngine.AudioSource"/> to play <paramref name="clip"/> and destroy it when ends playing.
+            </summary>
+            <param name="clip">Clip to play.</param>
+            <param name="position">Position where <see cref="T:UnityEngine.AudioSource"/> will be instanced.</param>
+            <param name="volume">Volume of <see cref="T:UnityEngine.AudioSource"/>. Between 0 and 1.</param>
+            <param name="destroyMode">How destroy time will be calculated.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="clip"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="volume"/> isn't between 0 and 1.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Components.AudioSourceUtils.PlayAndDestroy(UnityEngine.AudioClip,UnityEngine.Vector3,System.Single,System.Single,Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode)">
+            <summary>
+            Creates and <see cref="T:UnityEngine.AudioSource"/> to play <paramref name="clip"/> and destroy it when ends playing.
+            </summary>
+            <param name="clip">Clip to play.</param>
+            <param name="position">Position where <see cref="T:UnityEngine.AudioSource"/> will be instanced.</param>
+            <param name="volume">Volume of <see cref="T:UnityEngine.AudioSource"/>. Between 0 and 1.</param>
+            <param name="pitch">Pitch of <see cref="T:UnityEngine.AudioSource"/>. Between -3 and 3.</param>
+            <param name="destroyMode">How destroy time will be calculated.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="clip"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="volume"/> isn't between 0 and 1, or when <paramref name="pitch"/> isn't between -3 and 3.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Components.AudioSourceUtils.PlayAndDestroy(UnityEngine.AudioClip,UnityEngine.Vector3,System.Single,System.Single,UnityEngine.Audio.AudioMixerGroup,Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode)">
+            <summary>
+            Creates and <see cref="T:UnityEngine.AudioSource"/> to play <paramref name="clip"/> and destroy it when ends playing.
+            </summary>
+            <param name="clip">Clip to play.</param>
+            <param name="position">Position where <see cref="T:UnityEngine.AudioSource"/> will be instanced.</param>
+            <param name="volume">Volume of <see cref="T:UnityEngine.AudioSource"/>. Between 0 and 1.</param>
+            <param name="pitch">Pitch of <see cref="T:UnityEngine.AudioSource"/>. Between -3 and 3.</param>
+            <param name="audioMixerGroup">Mixer group used by <see cref="T:UnityEngine.AudioSource"/>.</param>
+            <param name="destroyMode">How destroy time will be calculated.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="clip"/> or <paramref name="audioMixerGroup"/> are <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="volume"/> isn't between 0 and 1, or when <paramref name="pitch"/> isn't between -3 and 3.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Components.AudioSourceUtils.PlayAndDestroy(UnityEngine.AudioClip,System.Single,Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode)">
+            <summary>
+            Creates and <see cref="T:UnityEngine.AudioSource"/> to play <paramref name="clip"/> and destroy it when ends playing.
+            </summary>
+            <param name="clip">Clip to play.</param>
+            <param name="volume">Volume of <see cref="T:UnityEngine.AudioSource"/>. Between 0 and 1.</param>
+            <param name="destroyMode">How destroy time will be calculated.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="clip"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="volume"/> isn't between 0 and 1.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Components.AudioSourceUtils.PlayAndDestroy(UnityEngine.AudioClip,System.Single,System.Single,Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode)">
+            <summary>
+            Creates and <see cref="T:UnityEngine.AudioSource"/> to play <paramref name="clip"/> and destroy it when ends playing.
+            </summary>
+            <param name="clip">Clip to play.</param>
+            <param name="volume">Volume of <see cref="T:UnityEngine.AudioSource"/>. Between 0 and 1.</param>
+            <param name="pitch">Pitch of <see cref="T:UnityEngine.AudioSource"/>. Between -3 and 3.</param>
+            <param name="destroyMode">How destroy time will be calculated.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="clip"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="volume"/> isn't between 0 and 1, or when <paramref name="pitch"/> isn't between -3 and 3.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Components.AudioSourceUtils.PlayAndDestroy(UnityEngine.AudioClip,System.Single,System.Single,UnityEngine.Audio.AudioMixerGroup,Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode)">
+            <summary>
+            Creates and <see cref="T:UnityEngine.AudioSource"/> to play <paramref name="clip"/> and destroy it when ends playing.
+            </summary>
+            <param name="clip">Clip to play.</param>
+            <param name="volume">Volume of <see cref="T:UnityEngine.AudioSource"/>. Between 0 and 1.</param>
+            <param name="pitch">Pitch of <see cref="T:UnityEngine.AudioSource"/>. Between -3 and 3.</param>
+            <param name="audioMixerGroup">Mixer group used by <see cref="T:UnityEngine.AudioSource"/>.</param>
+            <param name="destroyMode">How destroy time will be calculated.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="clip"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="volume"/> isn't between 0 and 1, or when <paramref name="pitch"/> isn't between -3 and 3.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Components.AudioSourceUtils.PlayAndDestroy(UnityEngine.AudioClip,UnityEngine.Audio.AudioMixerGroup,Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode)">
+            <summary>
+            Creates and <see cref="T:UnityEngine.AudioSource"/> to play <paramref name="clip"/> and destroy it when ends playing.
+            </summary>
+            <param name="clip">Clip to play.</param>
+            <param name="audioMixerGroup">Mixer group used by <see cref="T:UnityEngine.AudioSource"/>.</param>
+            <param name="destroyMode">How destroy time will be calculated.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="clip"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Components.AudioSourceUtils.PlayAndDestroy(UnityEngine.AudioClip,UnityEngine.Vector3,System.Single,UnityEngine.Audio.AudioMixerGroup,Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode)">
+            <summary>
+            Creates and <see cref="T:UnityEngine.AudioSource"/> to play <paramref name="clip"/> and destroy it when ends playing.
+            </summary>
+            <param name="clip">Clip to play.</param>
+            <param name="position">Position where <see cref="T:UnityEngine.AudioSource"/> will be instanced.</param>
+            <param name="volume">Volume of <see cref="T:UnityEngine.AudioSource"/>. Between 0 and 1.</param>
+            <param name="audioMixerGroup">Mixer group used by <see cref="T:UnityEngine.AudioSource"/>.</param>
+            <param name="destroyMode">How destroy time will be calculated.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="clip"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="volume"/> isn't between 0 and 1.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Components.AudioSourceUtils.PlayAndDestroy(UnityEngine.AudioClip,UnityEngine.Vector3,UnityEngine.Audio.AudioMixerGroup,Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode)">
+            <summary>
+            Creates and <see cref="T:UnityEngine.AudioSource"/> to play <paramref name="clip"/> and destroy it when ends playing.
+            </summary>
+            <param name="clip">Clip to play.</param>
+            <param name="position">Position where <see cref="T:UnityEngine.AudioSource"/> will be instanced.</param>
+            <param name="audioMixerGroup">Mixer group used by <see cref="T:UnityEngine.AudioSource"/>.</param>
+            <param name="destroyMode">How destroy time will be calculated.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="clip"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Components.AudioSourceUtils.PlayAndDestroy(UnityEngine.AudioClip,System.Single,UnityEngine.Audio.AudioMixerGroup,Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode)">
+            <summary>
+            Creates and <see cref="T:UnityEngine.AudioSource"/> to play <paramref name="clip"/> and destroy it when ends playing.
+            </summary>
+            <param name="clip">Clip to play.</param>
+            <param name="volume">Volume of <see cref="T:UnityEngine.AudioSource"/>. Between 0 and 1.</param>
+            <param name="audioMixerGroup">Mixer group used by <see cref="T:UnityEngine.AudioSource"/>.</param>
+            <param name="destroyMode">How destroy time will be calculated.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="clip"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="volume"/> isn't between 0 and 1.</exception>
+        </member>
         <member name="T:Enderlook.Unity.Components.BaseColliderContainer">
             <inheritdoc cref="T:Enderlook.Unity.Components.IColliderContainer"/>
         </member>

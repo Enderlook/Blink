@@ -156,7 +156,7 @@
         </member>
         <member name="M:Enderlook.Unity.Extensions.StringExtensions.ToDisplayUnity(System.String)">
             <summary>
-            Emulate <see cref="P:UnityEditor.SerializedProperty.displayName"/> calling <see cref="!:StringExtensions.SplitByCamelCase(string)"/>, <see cref="!:StringExtensions.SplitBySnakeCase(string)"/>, <see cref="!:StringExtensions.ToCapitalWords(string)"/>.
+            Emulate <see cref="!:UnityEditor.SerializedProperty.displayName"/> calling <see cref="!:StringExtensions.SplitByCamelCase(string)"/>, <see cref="!:StringExtensions.SplitBySnakeCase(string)"/>, <see cref="!:StringExtensions.ToCapitalWords(string)"/>.
             </summary>
             <param name="source">String to convert.</param>
             <returns>Converted string.</returns>
