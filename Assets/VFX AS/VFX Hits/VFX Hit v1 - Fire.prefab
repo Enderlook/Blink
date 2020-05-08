@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 284396716749083651}
-  - component: {fileID: 4895169476015839732}
-  - component: {fileID: 973913781953296841}
-  - component: {fileID: 1614018150504238804}
+  - component: {fileID: 1620773828616448069}
+  - component: {fileID: -6422554233960919658}
+  - component: {fileID: -135479227812589999}
   m_Layer: 0
   m_Name: VFX Hit v1 - Fire
   m_TagString: Untagged
@@ -35,7 +35,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4895169476015839732
+--- !u!114 &1620773828616448069
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   includeNestedParticleSystems: 1
---- !u!82 &973913781953296841
+--- !u!82 &-6422554233960919658
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,7 +145,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1614018150504238804
+--- !u!114 &-135479227812589999
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
