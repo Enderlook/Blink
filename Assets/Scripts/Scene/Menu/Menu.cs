@@ -123,7 +123,7 @@ namespace Game.Scene
             if (audioSource == null)
                 audioSource = GetComponent<AudioSource>();
 
-            AudioClip[] audioClip = (IsPlaying ? playMusic : menuMusic);
+            AudioClip[] audioClip = IsPlaying ? playMusic : menuMusic;
             if (audioClip.Length == 0)
             {
                 Debug.LogWarning("Play music was empty. We will try on next frame.");
@@ -184,6 +184,10 @@ namespace Game.Scene
             healthBar.ManualUpdate(0, 1);
             AsyncOperation operation = FindObjectOfType<GameManager>().AdvanceScene();
 
+            HideMenu();
+
+            operation.completed += (_) => IsPlaying = true;
+
             StartCoroutine(LoadingBarCharge());
 
             IEnumerator LoadingBarCharge()
@@ -198,10 +202,17 @@ namespace Game.Scene
 
         public void Continue()
         {
+            HideMenu();
+            IsPlaying = true;
+        }
+
+        private void HideMenu()
+        {
             for (int i = 0; i < panels.Length; i++)
                 panels[i].SetActive(false);
+            winMenu.SetActive(false);
+            loseMenu.SetActive(false);
             menu.SetActive(false);
-            IsPlaying = true;
         }
 
         public void Restart()
