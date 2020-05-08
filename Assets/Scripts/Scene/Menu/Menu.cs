@@ -48,7 +48,7 @@ namespace Game.Scene
 
         [SerializeField, Tooltip("Loading screen.")]
         private GameObject loadingScreen;
-#pragma warning resotre CS0649
+#pragma warning restore CS0649
 
         private AudioSource audioSource;
 
