@@ -48,8 +48,8 @@ namespace Game.Scene.CLI
                 { ("loose", 0), Loose},
                 { ("goto", 1), GoTo },
                 { ("goto", 2), GoToAdvance },
-                { ("setEnergy", 1), SetEnergy},
-                { ("addEnergy", 1), AddEnergy},
+                { ("setenergy", 1), SetEnergy},
+                { ("addenergy", 1), AddEnergy},
             };
 
         private void SetEnergy(string[] sections)
