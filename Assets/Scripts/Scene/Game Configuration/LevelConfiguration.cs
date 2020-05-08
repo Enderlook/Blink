@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Game.Scene
 {
-    [AddComponentMenu("Game/Level Configuration")]
+    [AddComponentMenu("Game/Level Configuration"), DefaultExecutionOrder(1)]
     public class LevelConfiguration : MonoBehaviour
     {
         [SerializeField, Tooltip("Musics play during game.")]
