@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Great Chaos Orb
   m_EditorClassIdentifier: 
   description: 
-  <Icon>k__BackingField: {fileID: 0}
+  <Icon>k__BackingField: {fileID: 21300000, guid: 1f88a2a0b5eaa2748a0e22e360ed5a19,
+    type: 3}
   animationName: Charged Attack
   <Key>k__BackingField: Charged Attack
   control:
