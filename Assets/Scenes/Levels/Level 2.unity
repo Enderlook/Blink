@@ -3044,6 +3044,7 @@ MonoBehaviour:
   abilities:
   - {fileID: 11400000, guid: bc22bb20b7c086644b347a354f33e543, type: 2}
   - {fileID: 11400000, guid: f813808a5bd39054d85274466db133ef, type: 2}
+  - {fileID: 11400000, guid: 086935082d43dda4197251f009741ca9, type: 2}
 --- !u!114 &1723801436
 MonoBehaviour:
   m_ObjectHideFlags: 0
