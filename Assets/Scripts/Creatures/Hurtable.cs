@@ -1,12 +1,13 @@
 ﻿using Enderlook.Extensions;
 using Enderlook.Unity.Atoms;
-using Enderlook.Unity.Components.Destroy;
-using Game.Attacks;
+
+using Game.Others;
+
 using UnityEngine;
 
 namespace Game.Creatures
 {
-    [RequireComponent(typeof(AudioSource)), RequireComponent(typeof(RandomPitch))]
+    [RequireComponent(typeof(AudioSource)), RequireComponent(typeof(RandomPitch)), AddComponentMenu("Game/Creatures/Hurtable")]
     public class Hurtable : MonoBehaviour, IDamagable
     {
 #pragma warning disable CS0649
@@ -46,14 +47,16 @@ namespace Game.Creatures
             audioSource.Play();
 
             if (health.GetValue() == 0)
-            {
-                GameObject go = new GameObject($"Die Sound of {gameObject.name}");
-                AudioSource source = go.AddComponent<AudioSource>();
-                source.clip = dieSounds.RandomPick();
-                go.AddComponent<RandomPitch>();
-                source.Play();
-                go.AddComponent<DestroyWhenAudioSourceEnds>();
-            }
+                Die();
+        }
+
+        private void Die()
+        {
+            AudioSourceSpawner.Play(dieSounds.RandomPick(), transform.position, audioSource.outputAudioMixerGroup);
+
+            IDie[] actions = GetComponentsInChildren<IDie>();
+            for (int i = 0; i < actions.Length; i++)
+                actions[i].Die();
         }
 
         public void TakeHealing(int amount)

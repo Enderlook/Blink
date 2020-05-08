@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Game.Creatures
 {
-    [RequireComponent(typeof(FloatingTextController))]
+    [RequireComponent(typeof(FloatingTextController)), AddComponentMenu("Game/Creatures")]
     public class HealthFeedback : MonoBehaviour
     {
 #pragma warning disable CS0649

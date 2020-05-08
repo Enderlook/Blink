@@ -1,5 +1,4 @@
 ﻿using Game.Attacks.Projectiles;
-using AvalonStudios.Extensions;
 
 using UnityEngine;
 
@@ -34,7 +33,7 @@ namespace Game.Creatures.Player.AbilitySystem
         {
             GameObject instance = Instantiate(prefab, shootingPosition.position, shootingPosition.rotation);
             MoveStraightLine.AddComponentTo(instance, speed);
-            ProjectileHit.AddComponentTo(instance, damage, pushForce, hitLayer.ToLayer());
+            ProjectileHit.AddComponentTo(instance, damage, pushForce, hitLayer);
         }
     }
 }

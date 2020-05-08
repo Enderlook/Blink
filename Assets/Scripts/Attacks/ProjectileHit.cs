@@ -1,12 +1,11 @@
-﻿using Game.Creatures;
-using AvalonStudios.Extensions;
+﻿using Enderlook.Unity.Extensions;
+using Game.Creatures;
 
 using UnityEngine;
 
 namespace Game.Attacks.Projectiles
 {
-    [AddComponentMenu("Game/Attacks/Projectile Hit")]
-    [RequireComponent(typeof(Collider))]
+    [RequireComponent(typeof(Collider)), AddComponentMenu("Game/Attacks/Projectile Hit")]
     public class ProjectileHit : MonoBehaviour
     {
         [SerializeField, Tooltip("Damage done on hit.")]
@@ -15,32 +14,23 @@ namespace Game.Attacks.Projectiles
         [SerializeField, Tooltip("Amount of force applied to targets.")]
         private float pushForce = 10;
 
-        private int hitLayer = 0;
+        private LayerMask hitLayer;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void OnCollisionEnter(Collision collider)
         {
             GameObject otherGameObject = collider.gameObject;
-            if (otherGameObject.layer == hitLayer)
+            if (otherGameObject.LayerMatchTest(hitLayer))
             {
-                if (damage > 0)
-                {
-                    IDamagable damagable = otherGameObject.GetComponent<IDamagable>();
-                    if (damagable != null)
-                        damagable.TakeDamage(damage);
-                }
+                if (damage > 0 && otherGameObject.TryGetComponent(out IDamagable damagable))
+                    damagable.TakeDamage(damage);
 
-                if (pushForce > 0)
-                {
-                    IPushable pushable = otherGameObject.GetComponent<IPushable>();
-                    if (pushable != null)
-                        pushable.AddForce(transform.forward * pushForce, ForceMode.Impulse);
-                }
+                if (pushForce > 0 && otherGameObject.TryGetComponent(out IPushable pushable))
+                    pushable.AddForce(transform.forward * pushForce, ForceMode.Impulse);
             }
-            
         }
 
-        public static void AddComponentTo(GameObject source, int damage, float pushForce = 0, int hitLayer = 0)
+        public static void AddComponentTo(GameObject source, int damage, float pushForce = 0, LayerMask hitLayer = default)
         {
             ProjectileHit component = source.AddComponent<ProjectileHit>();
             component.damage = damage;

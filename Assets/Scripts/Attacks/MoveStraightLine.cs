@@ -2,8 +2,7 @@
 
 namespace Game.Attacks.Projectiles
 {
-    [AddComponentMenu("Game/Attacks/Move Straight Line")]
-    [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(Rigidbody)), AddComponentMenu("Game/Attacks/Move Straight Line")]
     public class MoveStraightLine : MonoBehaviour
     {
         [SerializeField, Tooltip("Speed of movement per second.")]

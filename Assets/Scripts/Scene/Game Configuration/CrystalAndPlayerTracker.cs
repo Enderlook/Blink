@@ -26,10 +26,9 @@ namespace Game.Scene
 
         private void Awake()
         {
-            if (instance == null)
-                instance = this;
-            else
-                throw new InvalidOperationException($"Only one instance of {nameof(CrystalAndPlayerTracker)} can ever exist.");
+            if (instance != null)
+                throw new InvalidOperationException($"Only a single instance of {nameof(CrystalAndPlayerTracker)} can exist at the same time.");
+            instance = this;
         }
     }
 }

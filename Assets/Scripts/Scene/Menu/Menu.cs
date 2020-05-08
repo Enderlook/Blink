@@ -7,12 +7,15 @@ using System.Collections;
 
 using UnityEngine;
 
+using Console = Game.Scene.CLI.Console;
+
 namespace Game.Scene
 {
     [AddComponentMenu("Game/Menu")]
     [RequireComponent(typeof(AudioSource))]
     public class Menu : MonoBehaviour
     {
+#pragma warning disable CS0649
         [SerializeField, Tooltip("Music play while pause.")]
         private AudioClip[] menuMusic;
 
@@ -45,6 +48,7 @@ namespace Game.Scene
 
         [SerializeField, Tooltip("Loading screen.")]
         private GameObject loadingScreen;
+#pragma warning resotre CS0649
 
         private AudioSource audioSource;
 
@@ -84,8 +88,13 @@ namespace Game.Scene
             if (!audioSource.isPlaying)
                 PlayMusic();
 
-            if (Input.GetKeyDown(pauseKey) && mode == Mode.Playing)
-                ToggleMenu();
+            if (Input.GetKeyDown(pauseKey))
+            {
+                if (Console.IsConsoleEnabled)
+                    Console.IsConsoleEnabled = false;
+                else if (mode == Mode.Playing)
+                    ToggleMenu();
+            }
         }
 
         private void ToggleMenu()
@@ -193,6 +202,27 @@ namespace Game.Scene
                 panels[i].SetActive(false);
             menu.SetActive(false);
             IsPlaying = true;
+        }
+
+        public void Restart()
+        {
+            GameObject go = new GameObject();
+            go.AddComponent<Slave>();
+            DontDestroyOnLoad(go);
+            FindObjectOfType<UIManagement>().GoToMenu();            
+        }
+
+        private class Slave : MonoBehaviour
+        {
+            [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
+            private void Update()
+            {
+                MainMenu mainMenu = FindObjectOfType<MainMenu>();
+                if (mainMenu == null)
+                    return;
+                mainMenu.InitializeGame();
+                Destroy(gameObject);
+            }
         }
     }
 }

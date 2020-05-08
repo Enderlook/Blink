@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 
-namespace Game.Attacks
+namespace Game.Others
 {
-    [AddComponentMenu("Game/Attacks/Random Pitch")]
-    [RequireComponent(typeof(AudioSource))]
+    [RequireComponent(typeof(AudioSource)), AddComponentMenu("Game/Others/Random Pitch")]
     public class RandomPitch : MonoBehaviour
     {
         [SerializeField, Tooltip("Random pitch range.")]

@@ -18,6 +18,7 @@ namespace Game.Scene
             Transform camera = Camera.main.transform;
             camera.position = position;
             camera.rotation = Quaternion.Euler(rotation);
+
             TransformFollower.AddTransformFollower(camera.gameObject, transform,
                 false, true, false, true, false, false, false, false, false, false, false);
         }

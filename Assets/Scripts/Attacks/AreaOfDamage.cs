@@ -7,8 +7,7 @@ using UnityEngine;
 
 namespace Game.Attacks
 {
-    [AddComponentMenu("Game/Attacks/Area of Damage")]
-    [RequireComponent(typeof(Collider))]
+    [RequireComponent(typeof(Collider)), AddComponentMenu("Game/Attacks/Area of Damage")]
     public class AreaOfDamage : MonoBehaviour
     {
         [Header("Configuration")]
@@ -23,9 +22,9 @@ namespace Game.Attacks
         private float timeToExplode = 1;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
-        private void Start() => StartCoroutine(Explode().GetEnumerator());
+        private void Start() => StartCoroutine(Explode());
 
-        private IEnumerable Explode()
+        private IEnumerator Explode()
         {
             Collider[] colliders = GetComponentsInChildren<Collider>();
             Array.ForEach(colliders, e => e.enabled = false);
@@ -39,19 +38,11 @@ namespace Game.Attacks
         private void OnTriggerEnter(Collider other)
         {
             GameObject otherGameObject = other.gameObject;
-            if (damage > 0)
-            {
-                IDamagable damagable = otherGameObject.GetComponent<IDamagable>();
-                if (damagable != null)
-                    damagable.TakeDamage(damage);
-            }
+            if (damage > 0 && otherGameObject.TryGetComponent(out IDamagable damagable))
+                damagable.TakeDamage(damage);
 
-            if (pushForce > 0)
-            {
-                IPushable pushable = otherGameObject.GetComponent<IPushable>();
-                if (pushable != null)
-                    pushable.AddForce((other.transform.position - transform.position) * pushForce, ForceMode.Impulse);
-            }
+            if (pushForce > 0 && otherGameObject.TryGetComponent(out IPushable pushable))
+                pushable.AddForce((other.transform.position - transform.position) * pushForce, ForceMode.Impulse);
         }
 
         public static void AddComponentTo(GameObject source, float timeToExplode, int damage, float pushForce = 0)

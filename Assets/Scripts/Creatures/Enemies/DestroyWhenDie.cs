@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Game.Creatures
 {
-    [AddComponentMenu("Game/Destroy When Die")]
+    [AddComponentMenu("Game/Creatures/Destroy When Die")]
     public class DestroyWhenDie : MonoBehaviour
     {
         public bool IsDead => isDead;

@@ -1,15 +1,15 @@
 ﻿using AvalonStudios.Extensions;
+
 using Enderlook.Unity.Attributes;
 
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Game.Creatures
 {
-    public class EnemyAttack : MonoBehaviour
+    [AddComponentMenu("Game/Creatures/Enemies/Attack"), RequireComponent(typeof(EnemyPathFinding)), RequireComponent(typeof(NavMeshAgent)), RequireComponent(typeof(Animator))]
+    public class EnemyAttack : MonoBehaviour, IDie
     {
-        [SerializeField, Tooltip("Enemy path finding.")]
-        private EnemyPathFinding enemyPathFinding;
-
         [SerializeField, Tooltip("Is Boss")]
         private bool isBoss;
 
@@ -34,41 +34,52 @@ namespace Game.Creatures
         [SerializeField, Tooltip("Crystal layer")]
         private LayerMask crystalLayer;
 
+        private EnemyPathFinding enemyPathFinding;
+        private NavMeshAgent navMeshAgent;
+        private Animator animator;
+
         private float nextAttack;
-        private DestroyWhenDie destroyWhenDie;
+        private bool isDead;
 
-        private void Awake() => destroyWhenDie = GetComponent<DestroyWhenDie>();
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
+        private void Awake()
+        {
+            enemyPathFinding = GetComponent<EnemyPathFinding>();
+            navMeshAgent = GetComponent<NavMeshAgent>();
+            animator = GetComponent<Animator>();
+        }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Update()
         {
-            if (!destroyWhenDie.IsDead)
-            {
-                if (enemyPathFinding.TargetDistance <= enemyPathFinding.ThisNavMeshAgent.stoppingDistance)
-                {
-                    enemyPathFinding.ThisAnimator.SetBool(enemyPathFinding.WalkAnimation, false);
-                    if (Time.time >= nextAttack)
-                    {
-                        string animationKey;
-                        if (isBoss)
-                        {
-                            float prob = Random.Range(0, 100);
-                            if (prob >= 0 && prob <= 60)
-                                animationKey = basicAttack;
-                            else if (prob >= 61 && prob <= 90)
-                                animationKey = mediumAttack;
-                            else
-                                animationKey = strongAttack;
-                        }
-                        else
-                            animationKey = basicAttack;
+            if (isDead)
+                return;
 
-                        enemyPathFinding.ThisAnimator.SetTrigger(animationKey);
-                        nextAttack = Time.time + cooldown;
+            if (enemyPathFinding.TargetDistance <= navMeshAgent.stoppingDistance)
+            {
+                enemyPathFinding.PlayWalkAnimation(false);
+                if (Time.time >= nextAttack)
+                {
+                    string animationKey;
+                    if (isBoss)
+                    {
+                        float prob = Random.Range(0, 100);
+                        if (prob >= 0 && prob <= 60)
+                            animationKey = basicAttack;
+                        else if (prob >= 61 && prob <= 90)
+                            animationKey = mediumAttack;
+                        else
+                            animationKey = strongAttack;
                     }
+                    else
+                        animationKey = basicAttack;
+
+                    animator.SetTrigger(animationKey);
+                    nextAttack = Time.time + cooldown;
                 }
-                else
-                    enemyPathFinding.ThisAnimator.SetBool(enemyPathFinding.WalkAnimation, true);
             }
+            else
+                enemyPathFinding.PlayWalkAnimation(true);
         }
 
         private void OnTriggerEnter(Collider other)
@@ -80,5 +91,6 @@ namespace Game.Creatures
             }
         }
 
+        void IDie.Die() => isDead = true;
     }
 }

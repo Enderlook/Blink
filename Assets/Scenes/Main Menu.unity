@@ -497,6 +497,7 @@ MonoBehaviour:
   hudScene: 1
   loadingProgress: {fileID: 12125993}
   panel: {fileID: 889703966}
+  disableConsole: 27
 --- !u!114 &301598319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -761,7 +762,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 488163075}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.7740974, y: 44.113773, z: -387.5141}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1724,7 +1725,7 @@ MonoBehaviour:
   inputField: {fileID: 1480083566586783133}
   introCode: 13
   openConsole: 13
-  logPrefab: {fileID: 7409065352249510760, guid: 1f3632a969baab149a99fbed2770d7a7,
+  logPrefab: {fileID: 2939018434129118812, guid: 1f3632a969baab149a99fbed2770d7a7,
     type: 3}
   scrollRect: {fileID: 1302986432791034126}
 --- !u!1 &2603078692589234532
@@ -2674,8 +2675,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.0000076293945}
-  m_SizeDelta: {x: 0, y: -1.6901894}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: -117.69611}
   m_Pivot: {x: 0, y: 1}
 --- !u!81 &9144967518361889071
 AudioListener:

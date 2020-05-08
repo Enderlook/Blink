@@ -7,7 +7,7 @@ using System.Linq;
 
 using UnityEngine;
 
-namespace Game.Scene.Command
+namespace Game.Scene.CLI
 {
     public class LevelCommandsPack : CommandsPack
     {
@@ -26,14 +26,15 @@ namespace Game.Scene.Command
             "/Reload: Reload all player's abilities.",
             "/Win: Auto win.",
             "/Lose: Auto loose",
+            "/Goto (int): Go to the specified scene index.",
+            "/AddEnergy (int): Add the specified amount of energy.",
+            "/SetEnergy (int): Set the specified amount of energy.",
         };
 
         public override IEnumerable<string> Help => help;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
-        private void Awake()
-        {
-            commands = new Dictionary<(string command, int parameters), Action<string[]>>()
+        private void Awake() => commands = new Dictionary<(string command, int parameters), Action<string[]>>()
             {
                 { ("freeze", 0), Freeze },
                 { ("freeze", 1), Freeze1 },
@@ -44,7 +45,35 @@ namespace Game.Scene.Command
                 { ("reload", 0), Reload },
                 { ("win", 0), Win },
                 { ("loose", 0), Loose},
+                { ("goto", 1), GoTo },
+                { ("setEnergy", 1), SetEnergy},
+                { ("addEnergy", 1), AddEnergy},
             };
+
+        private void SetEnergy(string[] sections)
+        {
+            if (int.TryParse(sections[1], out int value))
+                if (value < 0)
+                    Write("Goto amounts can't be negative.");
+                else
+                {
+                    Write($"Setted energy to {value}.");
+                    GameManager gameManager = FindObjectOfType<GameManager>();
+                    gameManager.AddEnergy(value - gameManager.CurrentEnergy);
+                }
+            else
+                Write($"Could not parse '{sections[1]}' as integer.");
+        }
+
+        private void AddEnergy(string[] sections)
+        {
+            if (int.TryParse(sections[1], out int value))
+            {
+                Write($"Added {value} energy!");
+                FindObjectOfType<GameManager>().AddEnergy(value);
+            }
+            else
+                Write($"Could not parse '{sections[1]}' as integer.");
         }
 
         private void Freeze(string[] sections)
@@ -161,5 +190,17 @@ namespace Game.Scene.Command
         private void Win(string[] sections) => FindObjectOfType<Menu>().Win();
 
         private void Loose(string[] sections) => FindObjectOfType<Menu>().Lose();
+
+        public void GoTo(string[] sections)
+        {
+            if (int.TryParse(sections[1], out int index))
+            {
+                if (index < 1)
+                    Write("Goto amounts can't be lower than 1.");
+                FindObjectOfType<GameManager>().AdvanceScene(index);
+            }
+            else
+                Write($"Could not parse '{sections[1]}' as integer.");
+        }
     }
 }

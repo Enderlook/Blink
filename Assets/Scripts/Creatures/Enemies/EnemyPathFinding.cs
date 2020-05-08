@@ -5,17 +5,9 @@ using UnityEngine.AI;
 
 namespace Game.Creatures
 {
-    [RequireComponent(typeof(NavMeshAgent)), DefaultExecutionOrder(10)]
-    public class EnemyPathFinding : MonoBehaviour, IPushable
+    [RequireComponent(typeof(NavMeshAgent)), AddComponentMenu("Game/Creatures/Enemy/Path Finding"), DefaultExecutionOrder(10)]
+    public class EnemyPathFinding : MonoBehaviour, IPushable, IDie
     {
-        public NavMeshAgent ThisNavMeshAgent => navMeshAgent;
-
-        public float TargetDistance => targetDistance;
-
-        public Animator ThisAnimator => animator;
-
-        public string WalkAnimation => walkAnimation;
-
         [SerializeField, Tooltip("Animator component.")]
         private Animator animator;
 
@@ -30,27 +22,25 @@ namespace Game.Creatures
 
         [SerializeField, Tooltip("Used to determine push strength.")]
         private float mass = 1;
+        public float TargetDistance { get; private set; }
 
         private NavMeshAgent navMeshAgent;
         private NavMeshPath crystalPath;
         private NavMeshPath playerPath;
+
         private int navMeshFrameCheck;
-
-        private DestroyWhenDie destroyWhenDie;
-
         private static int frameCheck;
-        private const int MaxCheckFrame = 10;
+        private const int MAX_CHECK_FRAME = 10;
 
-        private float targetDistance;
+        private bool isDead;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()
         {
-            destroyWhenDie = GetComponent<DestroyWhenDie>();
             navMeshAgent = GetComponent<NavMeshAgent>();
             crystalPath = new NavMeshPath();
             playerPath = new NavMeshPath();
-            navMeshFrameCheck = (frameCheck++) % MaxCheckFrame;
+            navMeshFrameCheck = frameCheck++ % MAX_CHECK_FRAME;
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
@@ -64,13 +54,13 @@ namespace Game.Creatures
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Update()
         {
-            if (!destroyWhenDie.IsDead)
+            if (isDead)
+                navMeshAgent.enabled = false;
+            else
             {
-                if (Time.frameCount % MaxCheckFrame == navMeshFrameCheck)
+                if (Time.frameCount % MAX_CHECK_FRAME == navMeshFrameCheck)
                     DetermineTarget();
             }
-            else
-                navMeshAgent.enabled = false;
         }
 
         private void DetermineTarget()
@@ -80,12 +70,12 @@ namespace Game.Creatures
 
             if (crystalDistance * (1 / crystalSeekWeight) < playerDistance * (1 / playerSeekWeight))
             {
-                targetDistance = crystalDistance;
+                TargetDistance = crystalDistance;
                 navMeshAgent.SetPath(crystalPath);
             }
             else
             {
-                targetDistance = playerDistance;
+                TargetDistance = playerDistance;
                 navMeshAgent.SetPath(playerPath);
             }
         }
@@ -128,5 +118,9 @@ namespace Game.Creatures
 
             return distance;
         }
+
+        void IDie.Die() => isDead = true;
+
+        public void PlayWalkAnimation(bool play) => animator.SetBool(walkAnimation, play);
     }
 }
