@@ -1,5 +1,6 @@
 ﻿using Enderlook.Extensions;
 using Enderlook.Unity.Atoms;
+using Enderlook.Unity.Components;
 
 using Game.Others;
 
@@ -52,7 +53,7 @@ namespace Game.Creatures
 
         private void Die()
         {
-            AudioSourceSpawner.Play(dieSounds.RandomPick(), transform.position, audioSource.outputAudioMixerGroup);
+            AudioSourceUtils.PlayAndDestroy(dieSounds.RandomPick(), transform.position, audioSource.outputAudioMixerGroup);
 
             IDie[] actions = GetComponentsInChildren<IDie>();
             for (int i = 0; i < actions.Length; i++)
