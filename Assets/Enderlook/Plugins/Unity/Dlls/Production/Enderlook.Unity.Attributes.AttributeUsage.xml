@@ -58,7 +58,7 @@
         <member name="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageRequireDataTypeAttribute.includeEnumerableTypes">
             <summary>
             If <see langword="true"/>, it will also check for array o list versions of types.<br/>
-            Useful because Unity <see cref="T:UnityEditor.PropertyDrawer"/> are draw on each element of an array or list <see cref="T:UnityEditor.SerializedProperty"/>.
+            Useful because Unity <see cref="!:UnityEditor.PropertyDrawer"/> are draw on each element of an array or list <see cref="!:UnityEditor.SerializedProperty"/>.
             </summary>
         </member>
         <member name="M:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageRequireDataTypeAttribute.#ctor(System.Type[])">

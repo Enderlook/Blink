@@ -87,6 +87,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bush 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6539837743916927594, guid: 83b348e3643db7b458c4ec7516bde615,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539837743916927594, guid: 83b348e3643db7b458c4ec7516bde615,
+        type: 3}
+      propertyPath: m_Height
+      value: 1.35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83b348e3643db7b458c4ec7516bde615, type: 3}
 --- !u!1 &1348149203241456445 stripped

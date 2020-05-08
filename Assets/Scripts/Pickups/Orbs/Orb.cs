@@ -1,4 +1,4 @@
-﻿using Game.Others;
+﻿using Enderlook.Unity.Components;
 
 using UnityEngine;
 using UnityEngine.Audio;
@@ -28,7 +28,7 @@ namespace Game.Pickups
 
         protected void Pickup()
         {
-            AudioSourceSpawner.Play(clip, transform.position, audioMixerGroup);
+            AudioSourceUtils.PlayAndDestroy(clip, transform.position, audioMixerGroup);
             Destroy(gameObject);
         }
     }
