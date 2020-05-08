@@ -195,9 +195,10 @@ namespace Game.Scene.CLI
         {
             if (int.TryParse(sections[1], out int index))
             {
-                if (index < 1)
-                    Write("Goto amounts can't be lower than 1.");
-                FindObjectOfType<GameManager>().AdvanceScene(index);
+                if (index < 2)
+                    Write("Goto amounts can't be lower than 2.");
+                else
+                    FindObjectOfType<GameManager>().AdvanceScene(index);
             }
             else
                 Write($"Could not parse '{sections[1]}' as integer.");
