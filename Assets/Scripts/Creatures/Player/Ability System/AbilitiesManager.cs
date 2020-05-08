@@ -11,7 +11,7 @@ namespace Game.Creatures.Player.AbilitySystem
     [RequireComponent(typeof(Animator)), AddComponentMenu("Game/Creatures/Player/Abilites Manager")]
     public class AbilitiesManager : MonoBehaviour
     {
-        private Ability[] abilities;
+        private AbilitiesPack abilities;
 
         [SerializeField, IsProperty, Tooltip("Where ablities which requires a shooting point does shoot.")]
         public Transform ShootingPosition;
@@ -46,7 +46,7 @@ namespace Game.Creatures.Player.AbilitySystem
                 ability.UpdateBehaviour(100);
         }
 
-        public void SetAbilities(Ability[] abilities)
+        public void SetAbilities(AbilitiesPack abilities)
         {
             this.abilities = abilities;
             foreach (Ability ability in abilities)
