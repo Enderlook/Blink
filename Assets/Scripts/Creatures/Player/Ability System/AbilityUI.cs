@@ -5,6 +5,7 @@ namespace Game.Creatures.Player.AbilitySystem
 {
     public class AbilityUI : MonoBehaviour
     {
+#pragma warning disable CS0649
         [SerializeField]
         private Image ablityImage;
 
@@ -13,6 +14,7 @@ namespace Game.Creatures.Player.AbilitySystem
 
         [SerializeField]
         private Image frame;
+#pragma warning restore CS0649
 
         [SerializeField]
         private Color fullColor = Color.green;

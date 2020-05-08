@@ -10,6 +10,7 @@ namespace Game.Creatures
     [AddComponentMenu("Game/Creatures/Enemies/Attack"), RequireComponent(typeof(EnemyPathFinding)), RequireComponent(typeof(NavMeshAgent)), RequireComponent(typeof(Animator))]
     public class EnemyAttack : MonoBehaviour, IDie
     {
+#pragma warning disable CS0649
         [SerializeField, Tooltip("Is Boss")]
         private bool isBoss;
 
@@ -33,6 +34,7 @@ namespace Game.Creatures
 
         [SerializeField, Tooltip("Crystal layer")]
         private LayerMask crystalLayer;
+#pragma warning restore CS0649
 
         private EnemyPathFinding enemyPathFinding;
         private NavMeshAgent navMeshAgent;

@@ -11,18 +11,19 @@ namespace Game.Creatures.Player
     [RequireComponent(typeof(Animator)), AddComponentMenu("Game/Creatures/Player/Movement")]
     public class PlayerMovement : MonoBehaviour
     {
+#pragma warning disable CS0649
         [SerializeField, Tooltip("Run animation name.")]
         private string runAnimation;
 
         [SerializeField, Tooltip("Movement speed.")]
         private FloatGetReference speed;
-#pragma warning restore CS0649
 
         [SerializeField, Tooltip("Layer to get mouse position.")]
         private LayerMask layerGround;
 
         [SerializeField, Tooltip("Range of the ray.")]
         private float range;
+#pragma warning restore CS0649
 
         private Animator animator;
 

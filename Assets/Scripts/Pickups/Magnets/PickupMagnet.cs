@@ -4,6 +4,7 @@ namespace Game.Pickups
 {
     public abstract class PickupMagnet<T> : MonoBehaviour where T : PickupMagnet<T>
     {
+#pragma warning disable CS0649
         [SerializeField, Min(0), Tooltip("Maximum distance to pickup items.")]
         private float pickingRadius;
 
@@ -15,6 +16,7 @@ namespace Game.Pickups
 
         [SerializeField, Tooltip("Items from which layers are picked up.")]
         private LayerMask layerToPickup;
+#pragma warning restore CS0649
 
         private int magnetFrameCheck;
         private static int frameCheck;

@@ -8,8 +8,10 @@ namespace Game
     [AddComponentMenu("Game/Pickups/Bush")]
     public class Bush : SpawnOrbs, IDamagable
     {
+#pragma warning disable CS0649
         [SerializeField]
         private GameObject berries;
+#pragma warning restore CS0649
 
         void IDamagable.TakeDamage(int amount)
         {

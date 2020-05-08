@@ -8,6 +8,7 @@ namespace Game.Pickups
 {
     public abstract class SpawnOrbs : MonoBehaviour
     {
+#pragma warning disable CS0649
         [SerializeField, Tooltip("Prefab of orbs to spawn.")]
         private Orb prefab;
 
@@ -22,6 +23,7 @@ namespace Game.Pickups
 
         [SerializeField, Tooltip("Speed at which orbs are spawned.")]
         private float spawnSpeed;
+#pragma warning restore CS0649
 
         protected void Spawn()
         {

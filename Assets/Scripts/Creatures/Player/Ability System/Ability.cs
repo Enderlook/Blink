@@ -8,11 +8,12 @@ namespace Game.Creatures.Player.AbilitySystem
 {
     public abstract class Ability : ScriptableObject, IInitialize<AbilitiesManager>, IUpdate
     {
-#pragma warning disable IDE0051
+#pragma warning disable CS0649
         [Header("Setup")]
         [SerializeField, Multiline]
         private string description;
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         [field: SerializeField, IsProperty/*, DrawTexture(50, false)*/]
         public Sprite Icon { get; private set; }
 
@@ -21,6 +22,7 @@ namespace Game.Creatures.Player.AbilitySystem
 
         [field: SerializeField, IsProperty, Tooltip("This value must match with the value used by the animation event in order to raise this ability properly.")]
         public string Key { get; private set; }
+#pragma warning restore CS0649
 
         [Header("Configuration")]
         [SerializeField]
@@ -28,7 +30,6 @@ namespace Game.Creatures.Player.AbilitySystem
 
         [SerializeField, Tooltip("Time to use this ability again in seconds.")]
         private float cooldown = 1;
-#pragma warning restore
 
         private BasicClockwork clockwork;
         private Animator animator;

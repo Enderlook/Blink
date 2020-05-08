@@ -6,11 +6,13 @@ namespace Game.Creatures.Player.AbilitySystem
 {
     public class AbilityUIManager : MonoBehaviour
     {
+#pragma warning disable CS0649
         [SerializeField]
         private RectTransform abilitiesRoot;
 
         [SerializeField]
         private AbilityUI prefab;
+#pragma warning restore CS0649
 
         private AbilitiesPack abilities;
         private AbilityUI[] abilitiesUIs = Array.Empty<AbilityUI>();

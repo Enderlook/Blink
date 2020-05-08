@@ -7,6 +7,7 @@ namespace Game.Creatures.Player.AbilitySystem
     [CreateAssetMenu(fileName = "Shooter Ability", menuName = "Game/Abilities/Shooter")]
     public class ShooterAbility : Ability
     {
+#pragma warning disable CS0649
         [Header("Configuration")]
         [SerializeField, Tooltip("Damage done on hit.")]
         private int damage = 10;
@@ -23,6 +24,7 @@ namespace Game.Creatures.Player.AbilitySystem
 
         [SerializeField, Tooltip("Layer hit")]
         private LayerMask hitLayer;
+#pragma warning restore CS0649
 
         private Transform shootingPosition;
 

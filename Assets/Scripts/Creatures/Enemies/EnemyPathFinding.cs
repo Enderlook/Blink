@@ -8,6 +8,7 @@ namespace Game.Creatures
     [RequireComponent(typeof(NavMeshAgent)), AddComponentMenu("Game/Creatures/Enemy/Path Finding"), DefaultExecutionOrder(10)]
     public class EnemyPathFinding : MonoBehaviour, IPushable, IDie
     {
+#pragma warning disable CS0649
         [SerializeField, Tooltip("Animator component.")]
         private Animator animator;
 
@@ -22,6 +23,8 @@ namespace Game.Creatures
 
         [SerializeField, Tooltip("Used to determine push strength.")]
         private float mass = 1;
+#pragma warning restore CS0649
+
         public float TargetDistance { get; private set; }
 
         private NavMeshAgent navMeshAgent;

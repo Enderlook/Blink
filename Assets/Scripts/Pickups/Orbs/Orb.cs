@@ -7,11 +7,13 @@ namespace Game.Pickups
 {
     public abstract class Orb : MonoBehaviour
     {
+#pragma warning disable CS0649
         [SerializeField, Tooltip("Sound played when picked up.")]
         private AudioClip clip;
 
         [SerializeField, Tooltip("Audio Mixer Group used to play pick up sound.")]
         private AudioMixerGroup audioMixerGroup;
+#pragma warning restore CS0649
 
         protected int value = 1;
 

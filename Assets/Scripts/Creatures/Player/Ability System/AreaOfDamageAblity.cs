@@ -9,6 +9,7 @@ namespace Game.Creatures.Player.AbilitySystem
     [CreateAssetMenu(fileName = "Area Of Damage Ability", menuName = "Game/Abilities/Area Of Damage")]
     public class AreaOfDamageAblity : Ability
     {
+#pragma warning disable CS0649
         [Header("Configuration")]
         [SerializeField, Tooltip("Damage done on hit.")]
         private int damage = 25;
@@ -25,6 +26,7 @@ namespace Game.Creatures.Player.AbilitySystem
 
         [SerializeField, Layer, Tooltip("Which layer is the floor.")]
         private int layer;
+#pragma warning restore CS0649
 
         private Camera camera;
 

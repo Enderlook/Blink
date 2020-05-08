@@ -11,11 +11,13 @@ namespace Game.Scene.CLI
 {
     public class LevelCommandsPack : CommandsPack
     {
+#pragma warning disable CS0649
         [SerializeField]
         private Hurtable player;
 
         [SerializeField]
         private Hurtable crystal;
+#pragma warning restore CS0649
 
         private string[] help = new string[]
         {
