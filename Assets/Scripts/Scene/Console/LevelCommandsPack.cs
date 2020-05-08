@@ -27,6 +27,7 @@ namespace Game.Scene.CLI
             "/Win: Auto win.",
             "/Lose: Auto loose",
             "/Goto (int): Go to the specified scene index.",
+            "/Goto (int) (true): Go to the specified scene index and advances level counter.",
             "/AddEnergy (int): Add the specified amount of energy.",
             "/SetEnergy (int): Set the specified amount of energy.",
         };
@@ -46,6 +47,7 @@ namespace Game.Scene.CLI
                 { ("win", 0), Win },
                 { ("loose", 0), Loose},
                 { ("goto", 1), GoTo },
+                { ("goto", 2), GoToAdvance },
                 { ("setEnergy", 1), SetEnergy},
                 { ("addEnergy", 1), AddEnergy},
             };
@@ -198,7 +200,25 @@ namespace Game.Scene.CLI
                 if (index < 2)
                     Write("Goto amounts can't be lower than 2.");
                 else
-                    FindObjectOfType<GameManager>().AdvanceScene(index);
+                    FindObjectOfType<GameManager>().AdvanceScene(index, false);
+            }
+            else
+                Write($"Could not parse '{sections[1]}' as integer.");
+        }
+
+        public void GoToAdvance(string[] sections)
+        {
+            if (int.TryParse(sections[1], out int index))
+            {
+                if (index < 2)
+                    Write("Goto amounts can't be lower than 2.");
+                else
+                {
+                    if (bool.TryParse(sections[2], out bool advance))
+                        FindObjectOfType<GameManager>().AdvanceScene(index, advance);
+                    else
+                        Write($"Could not parse '{sections[2]}' as boolean.");
+                }
             }
             else
                 Write($"Could not parse '{sections[1]}' as integer.");

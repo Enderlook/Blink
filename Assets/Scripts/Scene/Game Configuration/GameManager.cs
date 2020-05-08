@@ -112,14 +112,15 @@ namespace Game.Scene
 
         public AsyncOperation AdvanceScene() => AdvanceScene(scenes.GetScene());
 
-        public AsyncOperation AdvanceScene(int scene)
+        public AsyncOperation AdvanceScene(int scene, bool incrementLevelCounter = true)
         {
             SetStateToLoading();
 
             AsyncOperation operation = ChangeScene(scene);
             operation.completed += (_) =>
             {
-                currentLevel++;
+                if (incrementLevelCounter)
+                    currentLevel++;
                 SetStateToStarting();
             };
             return operation;
