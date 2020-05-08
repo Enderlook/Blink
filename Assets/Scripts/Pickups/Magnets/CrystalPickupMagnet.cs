@@ -1,5 +1,4 @@
-﻿using Game.Creatures;
-using Game.Scene;
+﻿using Game.Scene;
 
 using UnityEngine;
 

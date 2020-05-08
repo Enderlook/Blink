@@ -220,7 +220,7 @@ namespace Game.Scene
             GameObject go = new GameObject();
             go.AddComponent<Slave>();
             DontDestroyOnLoad(go);
-            FindObjectOfType<UIManagement>().GoToMenu();            
+            FindObjectOfType<UIManagement>().GoToMenu();
         }
 
         private class Slave : MonoBehaviour

@@ -1,7 +1,9 @@
 ﻿using AvalonStudios.Extensions;
 
 using Enderlook.Unity.Atoms;
+
 using Game.Scene.CLI;
+
 using UnityEngine;
 
 namespace Game.Creatures.Player

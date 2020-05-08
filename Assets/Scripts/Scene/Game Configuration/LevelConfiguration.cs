@@ -1,7 +1,5 @@
-﻿using Enderlook.Extensions;
+﻿using Game.Creatures.Player.AbilitySystem;
 
-using Game.Creatures.Player.AbilitySystem;
-using System.Linq;
 using UnityEngine;
 
 namespace Game.Scene

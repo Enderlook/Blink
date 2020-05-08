@@ -1,5 +1,4 @@
-﻿using Enderlook.Unity.Extensions;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Game.Pickups
 {
