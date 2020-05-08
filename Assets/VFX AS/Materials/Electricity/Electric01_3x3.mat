@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Electric01_3x3
-  m_Shader: {fileID: 4800000, guid: 634ea362182a3aa4e9c8afb3b64c5d04, type: 3}
+  m_Shader: {fileID: 4800000, guid: f267c64e82b045742907c29f8ed3646c, type: 3}
   m_ShaderKeywords: _ALPHABLEND_ON
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
@@ -55,6 +55,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BlendOp: 0
     - _BumpScale: 1
@@ -90,9 +94,10 @@ Material:
     - _SrcBlend: 5
     - _UVSec: 0
     - _ZWrite: 0
+    - __dirty: 0
     m_Colors:
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
-    - _Color: {r: 2.6390157, g: 2.6390157, b: 2.6390157, a: 1}
+    - _Color: {r: 4.5412054, g: 4.5412054, b: 4.5412054, a: 1}
     - _ColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
