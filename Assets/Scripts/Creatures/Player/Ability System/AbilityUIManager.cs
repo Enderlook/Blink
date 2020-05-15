@@ -20,6 +20,12 @@ namespace Game.Creatures.Player.AbilitySystem
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Update()
         {
+            if (abilities == null)
+            {
+                Debug.Log("Abilities was null. We will try on next frame.");
+                return;
+            }
+
             for (int i = 0; i < abilities.Count; i++)
                 abilitiesUIs[i].SetLoadPercentage(abilities[i].Percentage);
         }
