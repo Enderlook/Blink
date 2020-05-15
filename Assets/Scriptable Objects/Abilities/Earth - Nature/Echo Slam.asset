@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1e5a3826f43ad47873da403f0d603c, type: 3}
+  m_Name: Echo Slam
+  m_EditorClassIdentifier: 
+  description: 
+  <Icon>k__BackingField: {fileID: 21300000, guid: d797b96efaaf2e84f9a1110dcc79d66b,
+    type: 3}
+  animationName: Basic Stun
+  <Key>k__BackingField: Basic Stun
+  control:
+    useMouse: 0
+    key: 101
+    button: 0
+    canBeHoldDown: 0
+  cooldown: 3
+  damage: 30
+  pushForce: 10
+  timeToProduceDamage: 1.2
+  prefab: {fileID: 26743888876781745, guid: cb8c3130400c0084abec9006565234eb, type: 3}
+  layer: 8
