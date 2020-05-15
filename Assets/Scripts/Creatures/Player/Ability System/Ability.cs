@@ -22,7 +22,6 @@ namespace Game.Creatures.Player.AbilitySystem
 
         [field: SerializeField, IsProperty, Tooltip("This value must match with the value used by the animation event in order to raise this ability properly.")]
         public string Key { get; private set; }
-#pragma warning restore CS0649
 
         [Header("Configuration")]
         [SerializeField]
@@ -30,6 +29,7 @@ namespace Game.Creatures.Player.AbilitySystem
 
         [SerializeField, Tooltip("Time to use this ability again in seconds.")]
         private float cooldown = 1;
+#pragma warning restore CS0649
 
         private BasicClockwork clockwork;
         private Animator animator;
