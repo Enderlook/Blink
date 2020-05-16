@@ -3,7 +3,7 @@
 namespace Game.Creatures.Player.AbilitySystem
 {
     [CreateAssetMenu(fileName = "Self Area Of Damage Ability", menuName = "Game/Abilities/Self Area Of Damage")]
-    public class SelfAreaOfDamageAblity : AreaOfDamageAblity
+    public class SelfAreaOfDamageAbility : AreaOfDamageAblity
     {
         private Transform player;
 
