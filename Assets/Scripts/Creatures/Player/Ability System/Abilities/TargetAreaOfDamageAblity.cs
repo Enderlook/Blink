@@ -9,20 +9,36 @@ namespace Game.Creatures.Player.AbilitySystem
     {
 #pragma warning disable CS0649
         [Header("Setup")]
-        [SerializeField, Layer, Tooltip("Which layer is the floor.")]
+
+        [SerializeField, Tooltip("Cast from player?")]
+        private bool castFromPlayer;
+
+        [SerializeField, Layer, Tooltip("Which layer is the floor."), ShowIf(nameof(castFromPlayer), false)]
         private int layer;
+        
 #pragma warning restore CS0649
 
         private Camera camera;
+        private Transform character;
 
         public override void PostInitialize(AbilitiesManager abilitiesManager)
-            => camera = Camera.main;
+        {
+            character = abilitiesManager.transform;
+            camera = Camera.main;
+        }
 
         public override void Execute()
         {
-            Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hit, 1 << layer))
-                InstantiatePrefab(hit.point);
+            if (!castFromPlayer)
+            {
+                Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(ray, out RaycastHit hit, 1 << layer))
+                    InstantiatePrefab(hit.point);
+            }
+            else
+            {
+                InstantiatePrefab(character.position);
+            }
         }
     }
 }
