@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be1e5a3826f43ad47873da403f0d603c, type: 3}
-  m_Name: Wrath of Heaven
+  m_Name: Ground Slam
   m_EditorClassIdentifier: 
   description: 
-  <Icon>k__BackingField: {fileID: 21300000, guid: d420466c90bd9ea43b06860823acdffa,
+  <Icon>k__BackingField: {fileID: 21300000, guid: d797b96efaaf2e84f9a1110dcc79d66b,
     type: 3}
-  animationName: Summon Elemental Attack
-  <Key>k__BackingField: Summon Elemental Attack
+  animationName: Basic Stun
+  <Key>k__BackingField: Basic Stun
   control:
     useMouse: 0
     key: 101
     button: 0
     canBeHoldDown: 0
   cooldown: 3
-  damage: 30
+  damage: 25
   pushForce: 10
-  prefab: {fileID: 4954210968689801141, guid: 531ae87f5bf93914dafbb02d6a711aaf, type: 3}
-  timeToProduceDamage: 1.2
-  castFromPlayer: 0
+  prefab: {fileID: 26743888876781745, guid: cb8c3130400c0084abec9006565234eb, type: 3}
+  timeToProduceDamage: 1
+  castFromPlayer: 1
   layer: 8
