@@ -26,6 +26,6 @@ MonoBehaviour:
   damage: 25
   pushForce: 10
   prefab: {fileID: 26743888876781745, guid: cb8c3130400c0084abec9006565234eb, type: 3}
-  timeToProduceDamage: 1
+  timeToProduceDamage: 0.1
   castFromPlayer: 1
   layer: 8
