@@ -37,6 +37,16 @@ PrefabInstance:
       propertyPath: baseAtom
       value: 
       objectReference: {fileID: 339086536735261138}
+    - target: {fileID: 4279119262023984044, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: valueToSpawn.min
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279119262023984044, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: valueToSpawn.max
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8081955460697015397, guid: ec840790b738373489810ebf165f7199,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
