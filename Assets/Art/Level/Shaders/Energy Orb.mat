@@ -27,11 +27,17 @@ Material:
     - _Blending: 15.33
     - _ChromaticAberration: 0.1
     - _Float0: 1
+    - _InflationSpeed: 1
+    - _MaxInflation: 0.02
+    - _Opacity: 0.7
+    - _OpacityFactor: 15
     - _Power: 15.33
     - _PrimaryPower: 3
+    - _RotationSpeed: 1
     - _Scale: 5
     - _SecondaryPower: 1
     - _Smoothness: 1
+    - _TextureSpeed: 1
     - _TransAmbient: 0.2
     - _TransDirect: 1
     - _TransNormalDistortion: 0.1
