@@ -2,8 +2,9 @@
 
 using RangeInt = Enderlook.Unity.Serializables.Ranges.RangeInt;
 
-namespace Game.Pickups
+namespace Game.Pickups.Orbs
 {
+    [AddComponentMenu("Game/Pickups/Orbs/Spawn Orbs")]
     public class SpawnOrbs : SpawnPickup, IPickupSpawner
     {
 #pragma warning disable CS0649

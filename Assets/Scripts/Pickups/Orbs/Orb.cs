@@ -3,7 +3,7 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
-namespace Game.Pickups
+namespace Game.Pickups.Orbs
 {
     public abstract class Orb : MonoBehaviour
     {
