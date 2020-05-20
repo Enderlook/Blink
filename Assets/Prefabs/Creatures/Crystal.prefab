@@ -335,7 +335,6 @@ MonoBehaviour:
     event: {fileID: -2325885416423649629}
     managedScriptableObject: {fileID: 0}
     managedComponent: {fileID: 0}
-  materialCrystal: {fileID: 2100000, guid: ddd0d06501935fd4981636508cdde18f, type: 2}
 --- !u!82 &2490833635830965518
 AudioSource:
   m_ObjectHideFlags: 0
