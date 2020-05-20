@@ -13,11 +13,13 @@ namespace Game.Pickups
     [AddComponentMenu("Game/Pickups/Spawn On Hit"), RequireComponent(typeof(IPickupSpawner))]
     public class SpawnOnHit : MonoBehaviour, IDamagable
     {
+#pragma warning disable CS0649
         [SerializeField, Range(0, 1), Tooltip("Amount of childs remain after awake.")]
         private float survivalPercent = 1;
 
         [SerializeField, Tooltip("Amount of childs destroyed and spawn drops per hit.")]
         private RangeInt desotrysPerHit;
+#pragma warning restore CS0649
 
         private List<GameObject> childs;
 

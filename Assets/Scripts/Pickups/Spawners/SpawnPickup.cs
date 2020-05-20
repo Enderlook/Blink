@@ -18,12 +18,17 @@ namespace Game.Pickups
 
         [SerializeField, Tooltip("Velocity at which pickups are spawned.")]
         private float spawnSpeed;
+
+        [SerializeField, Tooltip("Only spawn above the Y position of Spawn Radius.")]
+        private bool spawnOnlyAbove;
 #pragma warning restore CS0649
 
         protected T Spawn<T>(T prefab) where T : Object
         {
             Vector3 center = spawnPoint + transform.position;
             Vector3 offset = spawnRadius * Random.onUnitSphere;
+            if (spawnOnlyAbove)
+                offset.y = Mathf.Max(offset.y, spawnPoint.y);
             if (offset.magnitude < minSpawnRadius)
                 offset = offset * minSpawnRadius / offset.magnitude;
             T instance = Instantiate(prefab, offset + center, transform.rotation);

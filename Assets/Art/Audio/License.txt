@@ -60,3 +60,7 @@ Space Ship Shield Sounds made by bart under license CC0
 3 Heal Spells made by DoKashiteru under license CC-BY 3.0, GPL 3.0, GPL 2.0
 	https://opengameart.org/content/3-heal-spells
 	healspell2.aif
+
+coin bonus collect 02 sound effect
+	http://freesoundeffect.net/sound/coin-bonus-collect-02-sound-effect
+	coin-bonus-collect-02-sound-effect-67034913.mp3

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Game.Creatures;
+
+using System;
 
 using UnityEngine;
 
@@ -24,11 +26,16 @@ namespace Game.Scene
 
         public static Transform Player => instance.player;
 
+        public static Hurtable CrystalHurtable => instance.crystalHurtable;
+
+        private Hurtable crystalHurtable;
+
         private void Awake()
         {
             if (instance != null)
                 throw new InvalidOperationException($"Only a single instance of {nameof(CrystalAndPlayerTracker)} can exist at the same time.");
             instance = this;
+            crystalHurtable = crystal.GetComponent<Hurtable>();
         }
     }
 }

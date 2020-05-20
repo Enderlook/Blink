@@ -8,7 +8,7 @@ namespace Game.Pickups.Orbs
         public void Accept(PlayerPickupMagnet picker)
         {
             picker.hurtable.TakeHealing(value);
-            Pickup();
+            Pick();
         }
     }
 }
