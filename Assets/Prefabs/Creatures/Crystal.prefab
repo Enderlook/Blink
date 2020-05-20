@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 3324734453298428516}
   - component: {fileID: 6862659441686072569}
   - component: {fileID: 4482170671282523124}
+  - component: {fileID: 5879996381768255834}
   m_Layer: 10
   m_Name: Crystal
   m_TagString: Untagged
@@ -476,6 +477,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPercent: 0.25
+--- !u!114 &5879996381768255834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8996606725872200246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d01867f87bcf64fa856aee3d4e9856, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maximumSpeed: 3
 --- !u!114 &-8291800690213229252
 MonoBehaviour:
   m_ObjectHideFlags: 0

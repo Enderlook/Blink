@@ -2,7 +2,7 @@
 
 using UnityEngine;
 
-namespace Game.Creatures
+namespace Game.Creatures.Crystal
 {
     [AddComponentMenu("Game/Creatures/Crystal/Cracking"), RequireComponent(typeof(MeshRenderer))]
     public class CrystalCracking : MonoBehaviour
