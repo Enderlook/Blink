@@ -10,8 +10,7 @@ namespace Game.Creatures.Player.AbilitySystem
 #pragma warning disable CS0649
         [Header("Setup")]
         [SerializeField, Layer, Tooltip("Which layer is the floor.")]
-        private int layer;
-        
+        private int layer;        
 #pragma warning restore CS0649
 
         private Camera camera;

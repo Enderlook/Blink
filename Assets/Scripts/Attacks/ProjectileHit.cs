@@ -15,6 +15,7 @@ namespace Game.Attacks.Projectiles
         [SerializeField, Tooltip("Amount of force applied to targets.")]
         private float pushForce = 10;
 
+        [SerializeField, Tooltip("Layer to affect.")]
         private LayerMask hitLayer;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]

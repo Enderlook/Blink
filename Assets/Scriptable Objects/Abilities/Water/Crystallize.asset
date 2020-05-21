@@ -16,6 +16,9 @@ MonoBehaviour:
   pushForce: 10
   prefab: {fileID: 6054988555229686210, guid: 1b9603c2f82de53449c6d95b26b315eb, type: 3}
   timeToProduceDamage: 1.2
+  hitLayer:
+    serializedVersion: 2
+    m_Bits: 10240
   layer: 8
 --- !u!114 &11400000
 MonoBehaviour:
