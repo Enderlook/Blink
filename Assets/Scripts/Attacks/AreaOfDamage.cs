@@ -1,4 +1,6 @@
-﻿using Game.Creatures;
+﻿using Enderlook.Unity.Extensions;
+
+using Game.Creatures;
 
 using System;
 using System.Collections;
@@ -16,6 +18,9 @@ namespace Game.Attacks
 
         [SerializeField, Tooltip("Amount of force applied to targets.")]
         private float pushForce = 10;
+
+        [SerializeField, Tooltip("Layer to affect.")]
+        private LayerMask hitLayer;
 
         [Header("Setup")]
         [SerializeField, Tooltip("Time since spawn to produce damage.")]
@@ -38,19 +43,23 @@ namespace Game.Attacks
         private void OnTriggerEnter(Collider other)
         {
             GameObject otherGameObject = other.gameObject;
-            if (damage > 0 && otherGameObject.TryGetComponent(out IDamagable damagable))
-                damagable.TakeDamage(damage);
+            if (otherGameObject.LayerMatchTest(hitLayer))
+            {
+                if (damage > 0 && otherGameObject.TryGetComponent(out IDamagable damagable))
+                    damagable.TakeDamage(damage);
 
-            if (pushForce > 0 && otherGameObject.TryGetComponent(out IPushable pushable))
-                pushable.AddForce((other.transform.position - transform.position) * pushForce, ForceMode.Impulse);
+                if (pushForce > 0 && otherGameObject.TryGetComponent(out IPushable pushable))
+                    pushable.AddForce((other.transform.position - transform.position) * pushForce, ForceMode.Impulse);
+            }
         }
 
-        public static void AddComponentTo(GameObject source, float timeToExplode, int damage, float pushForce = 0)
+        public static void AddComponentTo(GameObject source, float timeToExplode, int damage, float pushForce = 0, LayerMask hitLayer = default)
         {
             AreaOfDamage component = source.AddComponent<AreaOfDamage>();
             component.damage = damage;
             component.pushForce = pushForce;
             component.timeToExplode = timeToExplode;
+            component.hitLayer = hitLayer;
         }
     }
 }

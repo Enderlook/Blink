@@ -10,12 +10,15 @@ namespace Game.Creatures.Player.AbilitySystem
         [Header("Configuration")]
         [SerializeField, Tooltip("Time in seconds since the prefab is spawn to produce damage.")]
         private float timeToProduceDamage = 1;
+
+        [SerializeField, Tooltip("Layer to affect.")]
+        private LayerMask hitLayer;
 #pragma warning restore CS0649
 
         protected void InstantiatePrefab(Vector3 position, Quaternion rotation)
         {
             GameObject instance = Instantiate(prefab, position, rotation);
-            AreaOfDamage.AddComponentTo(instance, timeToProduceDamage, damage, pushForce);
+            AreaOfDamage.AddComponentTo(instance, timeToProduceDamage, damage, pushForce, hitLayer);
         }
 
         protected void InstantiatePrefab(Vector3 position) => InstantiatePrefab(position, Quaternion.identity);
