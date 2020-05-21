@@ -4,6 +4,8 @@ using Enderlook.Unity.Components;
 
 using Game.Others;
 
+using System;
+
 using UnityEngine;
 
 namespace Game.Creatures
@@ -42,6 +44,9 @@ namespace Game.Creatures
 
         public void TakeDamage(int amount)
         {
+            if (amount < 0)
+                Debug.LogWarning($"{nameof(amount)} ({amount}) should not be negative in {nameof(Hurtable)}. {nameof(gameObject)} {gameObject.name} is restoring health.");
+
             randomPitch.Randomize();
             health.SetValue(health.GetValue() - amount);
             audioSource.clip = hurtSounds.RandomPick();
@@ -61,8 +66,18 @@ namespace Game.Creatures
         }
 
         public void TakeHealing(int amount)
-            => health.SetValue(Mathf.Min(health.GetValue() + amount, maxHealth.GetValue()));
+        {
+            if (amount < 0)
+                Debug.LogWarning($"{nameof(amount)} ({amount}) should not be negative in {nameof(Hurtable)}. {nameof(gameObject)} {gameObject.name} is loosing health.");
 
-        public void SetMaxHealth(int maxHealth) => this.maxHealth.SetValue(maxHealth);
+            health.SetValue(Mathf.Min(health.GetValue() + amount, maxHealth.GetValue()));
+        }
+
+        public void SetMaxHealth(int amount)
+        {
+            if (amount <= 0) throw new ArgumentOutOfRangeException(nameof(amount), amount, $"Can't be negative or zero.");
+
+            maxHealth.SetValue(maxHealth.GetValue() + amount);
+        }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game.Creatures.Player.AbilitySystem
 {
-    [CreateAssetMenu(fileName = "Target Area Of Damage Ability", menuName = "Game/Abilities/Target Area Of Damage")]
+    [CreateAssetMenu(fileName = "Target Area Of Damage Ability", menuName = "Game/Ability System/Abilities/Target Area Of Damage")]
     public class TargetAreaOfDamageAblity : AreaOfDamageAblity
     {
 #pragma warning disable CS0649
@@ -18,7 +18,7 @@ namespace Game.Creatures.Player.AbilitySystem
 
         public override void PostInitialize(AbilitiesManager abilitiesManager) => camera = Camera.main;
 
-        public override void Execute()
+        protected override void ExecuteEnd()
         {
             Ray ray = camera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit, 1 << layer))

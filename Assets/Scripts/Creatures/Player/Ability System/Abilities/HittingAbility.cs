@@ -2,7 +2,7 @@
 
 namespace Game.Creatures.Player.AbilitySystem
 {
-    public abstract class HittingAbility : Ability
+    public abstract class HittingAbility : AnimatedAbility
     {
 #pragma warning disable CS0649
         [Header("Configuration")]

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game.Creatures.Player.AbilitySystem
 {
-    [CreateAssetMenu(fileName = "Shooter Ability", menuName = "Game/Abilities/Shooter")]
+    [CreateAssetMenu(fileName = "Shooter Ability", menuName = "Game/Ability System/Abilities/Shooter")]
     public class ShooterAbility : HittingAbility
     {
 #pragma warning disable CS0649
@@ -22,7 +22,7 @@ namespace Game.Creatures.Player.AbilitySystem
         public override void PostInitialize(AbilitiesManager abilityManager)
             => shootingPosition = abilityManager.ShootingPosition;
 
-        public override void Execute()
+        protected override void ExecuteEnd()
         {
             GameObject instance = Instantiate(prefab, shootingPosition.position, shootingPosition.rotation);
             MoveStraightLine.AddComponentTo(instance, speed);

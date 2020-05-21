@@ -191,7 +191,7 @@ namespace Game.Scene.CLI
             }
         }
 
-        private void Reload(string[] sections) => player.GetComponent<AbilitiesManager>().InstantReload();
+        private void Reload(string[] sections) => player.GetComponent<AbilitiesManager>().ChargeAbilitiesToMaximum();
 
         private void Win(string[] sections) => FindObjectOfType<Menu>().Win();
 

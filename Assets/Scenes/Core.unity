@@ -1302,8 +1302,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e16643ca4ecf2a447ab8c581f027112a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crystal: {fileID: 139665403}
-  player: {fileID: 139665402}
+  crystal: {fileID: 139665402}
+  player: {fileID: 139665403}
 --- !u!222 &2017337962404363060
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1851,6 +1851,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1606774635450086345}
     m_Modifications:
+    - target: {fileID: 3168258437712715670, guid: a49ed22391a51eb4cb605b74d0ecb77f,
+        type: 3}
+      propertyPath: uiManager
+      value: 
+      objectReference: {fileID: 4163712101158995573}
+    - target: {fileID: 3168258437712715670, guid: a49ed22391a51eb4cb605b74d0ecb77f,
+        type: 3}
+      propertyPath: <UIManager>k__BackingField
+      value: 
+      objectReference: {fileID: 4163712101158995573}
     - target: {fileID: 3579364912643671090, guid: a49ed22391a51eb4cb605b74d0ecb77f,
         type: 3}
       propertyPath: spawningPoints.Array.data[0].x

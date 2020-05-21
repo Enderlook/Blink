@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.24011655, g: 0.33247435, b: 0.8311335, a: 1}
+  m_IndirectSpecularColor: {r: 0.4941265, g: 0.61355454, b: 0.92294675, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -967,7 +967,7 @@ Light:
   m_BounceIntensity: 0.8
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: -1.114e-42, y: 6e-45, z: 4e-44, w: 1e-45}
+  m_BoundingSphereOverride: {x: 9.43e-43, y: -2.3832322e+38, z: 9.43e-43, w: 3.5248401e-12}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -3167,10 +3167,10 @@ MonoBehaviour:
   clips:
   - {fileID: 8300000, guid: f5daa74780d0e1a4398475521c22d182, type: 3}
   abilityData:
-  - {fileID: 11400000, guid: 063746d3325afc147bcb6a9b02d3ddd8, type: 2}
-  - {fileID: 11400000, guid: afc63148d3a11654e954abd8bf2e6b62, type: 2}
-  - {fileID: 11400000, guid: 6c36772e0e7139140b32b7d27b14537e, type: 2}
-  - {fileID: 11400000, guid: d9e4ccda67a934944905efc7196ce40f, type: 2}
+  - {fileID: 11400000, guid: f66c48ed46927c742bc835d9fb484fc1, type: 2}
+  - {fileID: 11400000, guid: 9e3f530070283514a895ad54a6c75f9a, type: 2}
+  - {fileID: 11400000, guid: 1e99f6f5588172c46ab248c94dc33a3b, type: 2}
+  - {fileID: 11400000, guid: 15e8567441bffee4782031815315bad7, type: 2}
 --- !u!114 &1723801436
 MonoBehaviour:
   m_ObjectHideFlags: 0
