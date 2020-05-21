@@ -30,6 +30,7 @@ namespace Game.Scene
 
         private Hurtable crystalHurtable;
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()
         {
             if (instance != null)
