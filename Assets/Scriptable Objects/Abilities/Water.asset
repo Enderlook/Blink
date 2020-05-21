@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Water
   m_EditorClassIdentifier: 
   abilities:
-  - {fileID: 11400000, guid: 4129fc5829f796747bf1f36f1f7e1153, type: 2}
-  - {fileID: 11400000, guid: c41ad6d84983ba84894c78f2a7f3a7b9, type: 2}
+  - {fileID: 11400000, guid: 0a230a49948485b48b2c303c8b91c1f0, type: 2}
+  - {fileID: 11400000, guid: b1b248b6ebd6ac34193eea367c7a74c7, type: 2}
   controls:
   - useMouse: 1
     key: 0

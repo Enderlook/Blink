@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game.Creatures.Player.AbilitySystem
 {
-    public abstract class AreaOfDamageAblity : HittingAbility
+    public abstract class AreaOfDamageAbilityComponent : HittingAbilityComponent
     {
 #pragma warning disable CS0649
         [Header("Configuration")]

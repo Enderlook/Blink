@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace Game.Creatures.Player.AbilitySystem
 {
-    [CreateAssetMenu(fileName = "Shooter Ability", menuName = "Game/Ability System/Abilities/Shooter")]
-    public class ShooterAbility : HittingAbility
+    [CreateAssetMenu(fileName = "Shooter Ability", menuName = "Game/Ability System/Components/Shooter")]
+    public class ShooterAbilityComponent : HittingAbilityComponent
     {
 #pragma warning disable CS0649
         [Header("Configuration")]
@@ -19,10 +19,10 @@ namespace Game.Creatures.Player.AbilitySystem
 
         private Transform shootingPosition;
 
-        public override void PostInitialize(AbilitiesManager abilityManager)
+        public override void Initialize(AbilitiesManager abilityManager)
             => shootingPosition = abilityManager.ShootingPosition;
 
-        protected override void ExecuteEnd()
+        public override void Execute()
         {
             GameObject instance = Instantiate(prefab, shootingPosition.position, shootingPosition.rotation);
             MoveStraightLine.AddComponentTo(instance, speed);

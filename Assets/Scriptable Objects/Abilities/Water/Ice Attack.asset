@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &11400000
+--- !u!114 &-7979187644668596102
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,17 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8edbdb9f6fd4f654899a3d265cf6fb6c, type: 3}
-  m_Name: Ice Attack
+  m_Name: Component
   m_EditorClassIdentifier: 
-  maxCharge: 0.5
-  <Icon>k__BackingField: {fileID: 21300000, guid: b904913d2d1b53042a69b5b524554d6f,
-    type: 3}
-  animationName: Basic Attack
-  <Key>k__BackingField: Basic Shoot
-  damage: 15
+  damage: 25
   pushForce: 10
   prefab: {fileID: 6663092405320373549, guid: 60846a407fc39854798234385c93f2f1, type: 3}
   speed: 20
   hitLayer:
     serializedVersion: 2
     m_Bits: 10240
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e38a1c2b6c720846bae5e0a17d34784, type: 3}
+  m_Name: Ice Attack
+  m_EditorClassIdentifier: 
+  maxCharge: 1.2
+  abilityComponent: {fileID: -7979187644668596102}
+  <Icon>k__BackingField: {fileID: 21300000, guid: b904913d2d1b53042a69b5b524554d6f,
+    type: 3}
+  animationName: Basic Attaack
+  <Key>k__BackingField: Basic Shoot

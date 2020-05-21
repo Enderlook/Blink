@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Air
   m_EditorClassIdentifier: 
   abilities:
-  - {fileID: 11400000, guid: e2ab4cc5a9b384145bb71738f82eac3c, type: 2}
-  - {fileID: 11400000, guid: fdfd4d30942018542ae625a3f06775aa, type: 2}
+  - {fileID: 11400000, guid: f7e765da4486ad849a31edc7654c76f3, type: 2}
+  - {fileID: 11400000, guid: 247faebd5bf54c74bafae4efd5476ce1, type: 2}
   controls:
   - useMouse: 1
     key: 0

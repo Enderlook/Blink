@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Earth
   m_EditorClassIdentifier: 
   abilities:
-  - {fileID: 11400000, guid: f3bf96e21bc2978499e32795595857c0, type: 2}
-  - {fileID: 11400000, guid: 3edb515d6a131c942ae35a3d8e0e760c, type: 2}
+  - {fileID: 11400000, guid: 484d18f6b6fb9b34da5084df0d639eef, type: 2}
+  - {fileID: 11400000, guid: 7534eb85c905d9b4db17fe43860c47a1, type: 2}
   controls:
   - useMouse: 1
     key: 0
