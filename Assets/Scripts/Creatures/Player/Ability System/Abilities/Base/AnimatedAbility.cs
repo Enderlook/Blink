@@ -4,7 +4,8 @@ using UnityEngine;
 
 namespace Game.Creatures.Player.AbilitySystem
 {
-    public abstract class AnimatedAbility : TriggerableAbility
+    [CreateAssetMenu(fileName = "Ability", menuName = "Game/Ability System/Abilities/Animated")]
+    public class AnimatedAbility : TriggerableAbility
     {
 #pragma warning disable CS0649
         [SerializeField, Tooltip("Animation to execute.")]
@@ -16,13 +17,7 @@ namespace Game.Creatures.Player.AbilitySystem
 
         private Animator animator;
 
-        public override sealed void Initialize(AbilitiesManager manager)
-        {
-            animator = manager.Animator;
-            PostInitialize(manager);
-        }
-
-        public virtual void PostInitialize(AbilitiesManager manager) { }
+        protected override sealed void PostInitialize(AbilitiesManager initializer) => animator = initializer.Animator;
 
         protected override sealed void ExecuteStart() => animator.SetTrigger(animationName);
     }

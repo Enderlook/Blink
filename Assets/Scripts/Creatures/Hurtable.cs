@@ -77,7 +77,7 @@ namespace Game.Creatures
         {
             if (amount <= 0) throw new ArgumentOutOfRangeException(nameof(amount), amount, $"Can't be negative or zero.");
 
-            maxHealth.SetValue(maxHealth.GetValue() + amount);
+            maxHealth.SetValue(amount);
         }
     }
 }

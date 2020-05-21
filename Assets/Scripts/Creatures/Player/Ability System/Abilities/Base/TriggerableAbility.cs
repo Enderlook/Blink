@@ -20,6 +20,6 @@
             ExecuteEnd();
         }
 
-        protected abstract void ExecuteEnd();
+        protected virtual void ExecuteEnd() => ExecuteComponent();
     }
 }

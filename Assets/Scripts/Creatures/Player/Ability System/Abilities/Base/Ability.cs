@@ -7,12 +7,16 @@ using UnityEngine;
 
 namespace Game.Creatures.Player.AbilitySystem
 {
-    public abstract class Ability : ScriptableObject, IInitialize<AbilitiesManager>
+    [CreateAssetMenu(fileName = "Ability", menuName = "Game/Ability System/Abilities/Basic")]
+    public class Ability : ScriptableObject, IInitialize<AbilitiesManager>
     {
 #pragma warning disable CS0649
         [Header("Configuration")]
         [SerializeField, Tooltip("Required charge to execute.")]
         private float maxCharge;
+
+        [SerializeField, Tooltip("Ability behaviour.")]
+        private AbilityComponent abilityComponent;
 
         [field: Header("Setup")]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
@@ -26,7 +30,13 @@ namespace Game.Creatures.Player.AbilitySystem
 
         public virtual bool IsReady => charge == maxCharge;
 
-        public virtual void Initialize(AbilitiesManager initializer) { }
+        public void Initialize(AbilitiesManager initializer)
+        {
+            abilityComponent.Initialize(initializer);
+            PostInitialize(initializer);
+        }
+
+        protected virtual void PostInitialize(AbilitiesManager initializer) { }
 
         public void ChargeToMaximum() => charge = maxCharge;
 
@@ -42,6 +52,8 @@ namespace Game.Creatures.Player.AbilitySystem
             ExecuteBehaviour();
         }
 
-        protected abstract void ExecuteBehaviour();
+        protected virtual void ExecuteBehaviour() => ExecuteComponent();
+
+        protected void ExecuteComponent() => abilityComponent.Execute();
     }
 }

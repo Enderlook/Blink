@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Fire
   m_EditorClassIdentifier: 
   abilities:
-  - {fileID: 11400000, guid: bc22bb20b7c086644b347a354f33e543, type: 2}
-  - {fileID: 11400000, guid: f813808a5bd39054d85274466db133ef, type: 2}
-  - {fileID: 11400000, guid: 086935082d43dda4197251f009741ca9, type: 2}
+  - {fileID: 11400000, guid: 80382c9dae9d0f644847ff68b979d7d5, type: 2}
+  - {fileID: 11400000, guid: 995d0006b96057d4586d119dae08eac5, type: 2}
+  - {fileID: 11400000, guid: d433878aa360e0f40b5fa75bf52ca515, type: 2}
   controls:
   - useMouse: 1
     key: 0

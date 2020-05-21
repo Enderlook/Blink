@@ -23,8 +23,6 @@ namespace Game.Creatures.Player.AbilitySystem
 
         public void Initialize(AbilitiesManager manager) => Array.ForEach(abilities, e => e.Initialize(manager));
 
-        public void ChargeToMaximum() => Array.ForEach(abilities, e => e.ChargeToMaximum());
-
         public AbilitiesPack CreateInstance(params Ability[] abilities)
         {
             AbilitiesPack instance = CreateInstance<AbilitiesPack>();
