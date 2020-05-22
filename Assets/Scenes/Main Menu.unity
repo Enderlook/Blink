@@ -657,7 +657,7 @@ GameObject:
   - component: {fileID: 380059135}
   - component: {fileID: 380059134}
   m_Layer: 5
-  m_Name: Help
+  m_Name: Options
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1063,7 +1063,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: HELP
+  m_Text: OPTIONS
 --- !u!222 &734806105
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1420,6 +1420,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1059414774}
     m_Modifications:
+    - target: {fileID: 1621695563545285, guid: dfbe9a393af0b0d429ccb7096ef1ee5f, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1948368687032190658, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -1433,17 +1437,12 @@ PrefabInstance:
     - target: {fileID: 1988915644377373636, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
         type: 3}
       propertyPath: m_Name
-      value: Help
+      value: Options
       objectReference: {fileID: 0}
-    - target: {fileID: 1988915644377373636, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
+    - target: {fileID: 3922772567794439727, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2325383201750243709, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.4000244
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3958738966713931740, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
         type: 3}
@@ -1550,7 +1549,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 4949895756386009016, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
+    - target: {fileID: 4114062996251846193, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8045068526238543329, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
         type: 3}
       propertyPath: m_IsActive
       value: 1
