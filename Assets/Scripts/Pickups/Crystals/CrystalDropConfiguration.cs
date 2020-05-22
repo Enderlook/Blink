@@ -2,14 +2,6 @@
 
 namespace Game.Pickups.Crystals
 {
-    public enum CrystalElement
-    {
-        Air,
-        Earth,
-        Fire,
-        Water,
-    }
-
     [AddComponentMenu("Game/Pickups/Crystals/Crystal Drop Configuration"), DefaultExecutionOrder(-1)]
     public class CrystalDropConfiguration : MonoBehaviour
     {
@@ -22,16 +14,11 @@ namespace Game.Pickups.Crystals
 
         [SerializeField, Tooltip("Material of crystal drops and rods.")]
         private Material material;
-
-        [SerializeField, Tooltip("Crystal type effect.")]
-        private CrystalElement element;
 #pragma warning restore CS0649
 
         private static CrystalDropConfiguration instance;
 
         public static Material Material => instance.material;
-
-        public static CrystalElement Element => instance.element;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()
