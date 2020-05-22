@@ -15,6 +15,7 @@ MonoBehaviour:
   abilities:
   - {fileID: 11400000, guid: 0a230a49948485b48b2c303c8b91c1f0, type: 2}
   - {fileID: 11400000, guid: b1b248b6ebd6ac34193eea367c7a74c7, type: 2}
+  - {fileID: 11400000, guid: 2273c0de2654556449d37bdd20d6ffc5, type: 2}
   controls:
   - useMouse: 1
     key: 0
@@ -22,5 +23,9 @@ MonoBehaviour:
     canBeHoldDown: 1
   - useMouse: 0
     key: 101
+    button: 0
+    canBeHoldDown: 0
+  - useMouse: 0
+    key: 113
     button: 0
     canBeHoldDown: 0
