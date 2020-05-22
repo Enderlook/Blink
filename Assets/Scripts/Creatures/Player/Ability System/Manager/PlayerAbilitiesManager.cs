@@ -21,10 +21,17 @@ namespace Game.Creatures.Player.AbilitySystem
             for (int i = 0; i < abilities.Count; i++)
             {
                 (Ability ability, Control control) = abilities[i];
-                ability.Charge(Time.deltaTime);
+                if (ability.UseTimer)
+                {
+                    ability.Charge(Time.deltaTime);
+                    UIManager.UpdateAbility(i);
+                }
+
                 if (!Console.IsConsoleEnabled && ability.IsReady && control.HasUserRequestTrigger())
+                {
                     ability.Execute();
-                UIManager.UpdateAbility(i);
+                    UIManager.UpdateAbility(i);
+                }
             }
         }
 
@@ -33,7 +40,22 @@ namespace Game.Creatures.Player.AbilitySystem
             base.SetAbilities(abilities);
             this.abilities = abilities;
             foreach (Ability ability in (AbilitiesPack)abilities)
-                ability.ChargeToMaximum();
+            {
+                if (ability.UseTimer)
+                    ability.ChargeToMaximum();
+            }
+        }
+
+        public void ChargeManualAbilities(float amount)
+        {
+            for (int i = 0; i < abilities.Count; i++)
+            {
+                Ability ability = ((AbilitiesPack)abilities)[i];
+                if (ability.UseTimer)
+                    continue;
+                ability.Charge(amount);
+                UIManager.UpdateAbility(i);
+            }
         }
     }
 }

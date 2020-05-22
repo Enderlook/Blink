@@ -22,7 +22,14 @@ namespace Game.Creatures.Player.AbilitySystem
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake() => Animator = GetComponent<Animator>();
 
-        public void ChargeAbilitiesToMaximum() => abilities.ChargeToMaximum();
+        public void ChargeAbilitiesToMaximum()
+        {
+            for (int i = 0; i < abilities.Count; i++)
+            {
+                abilities[i].ChargeToMaximum();
+                UIManager.UpdateAbility(i);
+            }
+        }
 
         protected void SetAbilities(AbilitiesPack abilities)
         {
