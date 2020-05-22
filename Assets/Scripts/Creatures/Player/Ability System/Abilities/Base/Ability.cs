@@ -18,6 +18,9 @@ namespace Game.Creatures.Player.AbilitySystem
         [SerializeField, Tooltip("Ability behaviour.")]
         private AbilityComponent abilityComponent;
 
+        [field: SerializeField, IsProperty, Tooltip("Does this ability charge with time?")]
+        public bool UseTimer { get; private set; } = true;
+
         [field: Header("Setup")]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         [field: SerializeField, IsProperty/*, DrawTexture(50, false)*/]

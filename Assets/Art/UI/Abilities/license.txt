@@ -6,3 +6,4 @@ Painterly Spell Icons part 3 made by J. W. Bjerk under license CC-BY 3.0, CC-BY-
 	https://opengameart.org/content/painterly-spell-icons-part-3
 	explosion-red-3.png
 	frame-9-grey.png
+	leaf-acid-3.png
