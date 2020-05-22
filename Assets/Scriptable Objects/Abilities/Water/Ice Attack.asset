@@ -35,5 +35,5 @@ MonoBehaviour:
   abilityComponent: {fileID: -7979187644668596102}
   <Icon>k__BackingField: {fileID: 21300000, guid: b904913d2d1b53042a69b5b524554d6f,
     type: 3}
-  animationName: Basic Attaack
+  animationName: Basic Attack
   <Key>k__BackingField: Basic Shoot
