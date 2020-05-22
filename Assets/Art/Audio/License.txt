@@ -68,3 +68,7 @@ coin bonus collect 02 sound effect
 Spell Sounds Starter Pack made by p0ss under license CC-BY-SA 3.0, GPL 3.0, GPL 2.0
 	https://opengameart.org/content/spell-sounds-starter-pack
 	blessing2.ogg
+
+Freeze Spell made by artisticdude under license CC0
+	https://opengameart.org/content/freeze-spell-0
+	freeze.wav

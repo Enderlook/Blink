@@ -34,7 +34,7 @@ MonoBehaviour:
   damage: 25
   pushForce: 10
   prefab: {fileID: 627897877563974230, guid: ec803aea0d7da264295e0a5f7e817724, type: 3}
-  timeToProduceDamage: 0.1
+  timeToProduceDamage: 0.15
   hitLayer:
     serializedVersion: 2
     m_Bits: 10240
