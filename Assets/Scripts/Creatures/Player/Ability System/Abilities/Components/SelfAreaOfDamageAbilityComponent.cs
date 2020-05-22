@@ -10,6 +10,6 @@ namespace Game.Creatures.Player.AbilitySystem
         public override void Initialize(AbilitiesManager manager)
             => player = manager.transform;
 
-        public override void Execute() => InstantiatePrefab(player.position);
+        public override void Execute() => InstantiatePrefab(player.position, player.rotation);
     }
 }
