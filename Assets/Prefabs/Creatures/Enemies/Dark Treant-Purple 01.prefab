@@ -177,6 +177,26 @@ MonoBehaviour:
   crystalLayer:
     serializedVersion: 2
     m_Bits: 1024
+--- !u!114 &4730705964721883545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5198749565576729898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8431340bae0f184b87e20b31f9f9241, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnRadius: 0.75
+  minSpawnRadius: 0.5
+  spawnPoint: {x: 0, y: 0.5, z: 0}
+  spawnSpeed: 1
+  prefab: {fileID: 3662898833235316202, guid: 35e0681ddaf5864468f153fb870722db, type: 3}
+  valueToSpawn:
+    min: 1
+    max: 5
 --- !u!114 &5321959198007698116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,13 +309,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe78c54683329145893e11a373d54ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3662898833235316202, guid: 35e0681ddaf5864468f153fb870722db, type: 3}
-  valueToSpawn:
-    min: 1
-    max: 5
-  spawnRadius: 0.75
-  spawnPoint: {x: 0, y: 1, z: 0}
-  spawnSpeed: 1
 --- !u!114 &7720095163662337868
 MonoBehaviour:
   m_ObjectHideFlags: 0

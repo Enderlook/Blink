@@ -1,6 +1,7 @@
 ﻿using AvalonStudios.Extensions;
 
 using Enderlook.Unity.Attributes;
+using Enderlook.Unity.Utils.Clockworks;
 
 using UnityEngine;
 using UnityEngine.AI;
@@ -8,7 +9,7 @@ using UnityEngine.AI;
 namespace Game.Creatures
 {
     [AddComponentMenu("Game/Creatures/Enemies/Attack"), RequireComponent(typeof(EnemyPathFinding)), RequireComponent(typeof(NavMeshAgent)), RequireComponent(typeof(Animator))]
-    public class EnemyAttack : MonoBehaviour, IDie
+    public class EnemyAttack : MonoBehaviour, IDie, IStunnable
     {
 #pragma warning disable CS0649
         [SerializeField, Tooltip("Is Boss")]
@@ -42,6 +43,8 @@ namespace Game.Creatures
 
         private float nextAttack;
         private bool isDead;
+        private bool isStunned;
+        private Clockwork stunningClockwork;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()
@@ -49,6 +52,7 @@ namespace Game.Creatures
             enemyPathFinding = GetComponent<EnemyPathFinding>();
             navMeshAgent = GetComponent<NavMeshAgent>();
             animator = GetComponent<Animator>();
+            stunningClockwork = new Clockwork(0, UnStun, true, 0);
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
@@ -57,7 +61,9 @@ namespace Game.Creatures
             if (isDead)
                 return;
 
-            if (enemyPathFinding.TargetDistance <= navMeshAgent.stoppingDistance)
+            if (isStunned)
+                stunningClockwork.UpdateBehaviour(Time.deltaTime);
+            else if (enemyPathFinding.TargetDistance <= navMeshAgent.stoppingDistance)
             {
                 enemyPathFinding.PlayWalkAnimation(false);
                 if (Time.time >= nextAttack)
@@ -94,5 +100,14 @@ namespace Game.Creatures
         }
 
         void IDie.Die() => isDead = true;
+
+        public void Stun(float duration)
+        {
+            isStunned = true;
+            stunningClockwork.ResetCycles(1);
+            stunningClockwork.ResetTime(duration);
+        }
+
+        private void UnStun() => isStunned = false;
     }
 }

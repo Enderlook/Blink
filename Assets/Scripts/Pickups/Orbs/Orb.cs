@@ -1,20 +1,9 @@
-﻿using Enderlook.Unity.Components;
+﻿using UnityEngine;
 
-using UnityEngine;
-using UnityEngine.Audio;
-
-namespace Game.Pickups
+namespace Game.Pickups.Orbs
 {
-    public abstract class Orb : MonoBehaviour
+    public abstract class Orb : Pickup
     {
-#pragma warning disable CS0649
-        [SerializeField, Tooltip("Sound played when picked up.")]
-        private AudioClip clip;
-
-        [SerializeField, Tooltip("Audio Mixer Group used to play pick up sound.")]
-        private AudioMixerGroup audioMixerGroup;
-#pragma warning restore CS0649
-
         protected int value = 1;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
@@ -26,12 +15,6 @@ namespace Game.Pickups
         {
             this.value = value;
             AutoSize();
-        }
-
-        protected void Pickup()
-        {
-            AudioSourceUtils.PlayAndDestroy(clip, transform.position, audioMixerGroup);
-            Destroy(gameObject);
         }
     }
 }

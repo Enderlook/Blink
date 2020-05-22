@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Game.Creatures;
+
+using System;
 
 using UnityEngine;
 
 namespace Game.Scene
 {
+    [DefaultExecutionOrder(-1)]
     public class CrystalAndPlayerTracker : MonoBehaviour
     {
         private static CrystalAndPlayerTracker instance;
@@ -24,11 +27,17 @@ namespace Game.Scene
 
         public static Transform Player => instance.player;
 
+        public static Hurtable CrystalHurtable => instance.crystalHurtable;
+
+        private Hurtable crystalHurtable;
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()
         {
             if (instance != null)
                 throw new InvalidOperationException($"Only a single instance of {nameof(CrystalAndPlayerTracker)} can exist at the same time.");
             instance = this;
+            crystalHurtable = crystal.GetComponent<Hurtable>();
         }
     }
 }

@@ -54,7 +54,7 @@ namespace Game.Scene
         private int currentRequiredEnergy;
         public int CurrentEnergy { get; private set; }
 
-        private float EnergyPercent => CurrentEnergy / (float)currentRequiredEnergy;
+        public float EnergyPercent => CurrentEnergy / (float)currentRequiredEnergy;
 
         private float DifficultyValue {
             get {

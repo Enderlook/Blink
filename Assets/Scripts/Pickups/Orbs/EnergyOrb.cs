@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 
-namespace Game.Pickups
+namespace Game.Pickups.Orbs
 {
-    [AddComponentMenu("Game/Pickups/Energy Orb")]
+    [AddComponentMenu("Game/Pickups/Orbs/Energy Orb")]
     public class EnergyOrb : Orb, IPickupable<CrystalPickupMagnet>
     {
         public void Accept(CrystalPickupMagnet picker)
         {
             picker.AddEnergy(value);
-            Pickup();
+            Pick();
         }
     }
 }

@@ -12,14 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7acd66efb213b084ca0777bfad4e608d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  survivalPercent: 1
+  desotrysPerHit:
+    min: 1
+    max: 2
+--- !u!114 &6741409058749950717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6221724110923692224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8431340bae0f184b87e20b31f9f9241, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnRadius: 0.75
+  minSpawnRadius: 0.5
+  spawnPoint: {x: 0, y: 0.5, z: -0.15}
+  spawnSpeed: 1
   prefab: {fileID: 843449112955945419, guid: f06ad5b5b6cd4374a8934f9f997000d3, type: 3}
   valueToSpawn:
     min: 10
     max: 30
-  spawnRadius: 0.5
-  spawnPoint: {x: 0, y: 0.5, z: 0}
-  spawnSpeed: 1
-  berries: {fileID: 6341397711281663979}
 --- !u!1001 &8423533751712139382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -102,12 +118,6 @@ PrefabInstance:
 --- !u!1 &6221724110923692224 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2503550920043147446, guid: ecc58049b103ec04b86ff83bb0bc88af,
-    type: 3}
-  m_PrefabInstance: {fileID: 8423533751712139382}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &6341397711281663979 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3235639311516559261, guid: ecc58049b103ec04b86ff83bb0bc88af,
     type: 3}
   m_PrefabInstance: {fileID: 8423533751712139382}
   m_PrefabAsset: {fileID: 0}

@@ -5,7 +5,10 @@ using Enderlook.Unity.Prefabs.HealthBarGUI;
 using System;
 using System.Collections;
 
+using UnityEditor;
+
 using UnityEngine;
+using UnityEngine.UI;
 
 using Console = Game.Scene.CLI.Console;
 
@@ -16,6 +19,7 @@ namespace Game.Scene
     public class Menu : MonoBehaviour
     {
 #pragma warning disable CS0649
+        [Header("Music")]
         [SerializeField, Tooltip("Music play while pause.")]
         private AudioClip[] menuMusic;
 
@@ -28,20 +32,25 @@ namespace Game.Scene
         [SerializeField, Tooltip("Music play on lose.")]
         private AudioClip loseMusic;
 
+        [Header("Special Menus")]
         [SerializeField, Tooltip("Menu show on win.")]
         private GameObject winMenu;
 
         [SerializeField, Tooltip("Menu show on lose.")]
         private GameObject loseMenu;
 
+        [SerializeField, Tooltip("Menu panel.")]
+        private GameObject menu;
+
         [SerializeField, Tooltip("Key pressed to enable, disable menu or rollback panels from menu.")]
         private KeyCode pauseKey;
 
-        [SerializeField, Tooltip("Menu.")]
-        private GameObject menu;
+        [Header("Others")]
+        [SerializeField, Tooltip("Background image.")]
+        private Image background;
 
-        [SerializeField, Tooltip("Menu panels.")]
-        private GameObject[] panels;
+        [SerializeField, Tooltip("Help panel.")]
+        private GameObject help;
 
         [SerializeField, Tooltip("When any of this values reaches 0, player loose.")]
         private IntEvent[] events;
@@ -102,18 +111,20 @@ namespace Game.Scene
             if (IsPlaying)
             {
                 IsPlaying = false;
+                background.enabled = true;
                 menu.SetActive(true);
             }
             else
             {
-                for (int i = 0; i < panels.Length; i++)
-                    if (panels[i].activeSelf)
-                    {
-                        panels[i].SetActive(false);
-                        return;
-                    }
+                if (help.activeSelf)
+                {
+                    help.SetActive(false);
+                    menu.SetActive(true);
+                    return;
+                }
                 IsPlaying = true;
                 menu.SetActive(false);
+                background.enabled = false;
             }
         }
 
@@ -168,6 +179,7 @@ namespace Game.Scene
                     throw new InvalidOperationException();
             }
             audioSource.Play();
+            background.enabled = true;
         }
 
         public void SetGameMusic(AudioClip[] clips)
@@ -208,11 +220,11 @@ namespace Game.Scene
 
         private void HideMenu()
         {
-            for (int i = 0; i < panels.Length; i++)
-                panels[i].SetActive(false);
+            help.SetActive(false);
             winMenu.SetActive(false);
             loseMenu.SetActive(false);
             menu.SetActive(false);
+            background.enabled = false;
         }
 
         public void Restart()

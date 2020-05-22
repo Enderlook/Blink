@@ -1,4 +1,6 @@
-﻿using Game.Scene;
+﻿using Enderlook.Unity.Utils.Clockworks;
+
+using Game.Scene;
 
 using UnityEngine;
 using UnityEngine.AI;
@@ -6,7 +8,7 @@ using UnityEngine.AI;
 namespace Game.Creatures
 {
     [RequireComponent(typeof(NavMeshAgent)), AddComponentMenu("Game/Creatures/Enemy/Path Finding"), DefaultExecutionOrder(10)]
-    public class EnemyPathFinding : MonoBehaviour, IPushable, IDie
+    public class EnemyPathFinding : MonoBehaviour, IPushable, IDie, IStunnable
     {
 #pragma warning disable CS0649
         [SerializeField, Tooltip("Animator component.")]
@@ -36,6 +38,8 @@ namespace Game.Creatures
         private const int MAX_CHECK_FRAME = 10;
 
         private bool isDead;
+        private bool isStunned;
+        private Clockwork stunningClockwork;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()
@@ -44,6 +48,7 @@ namespace Game.Creatures
             crystalPath = new NavMeshPath();
             playerPath = new NavMeshPath();
             navMeshFrameCheck = frameCheck++ % MAX_CHECK_FRAME;
+            stunningClockwork = new Clockwork(0, UnStun, true, 0);
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
@@ -58,12 +63,12 @@ namespace Game.Creatures
         private void Update()
         {
             if (isDead)
-                navMeshAgent.enabled = false;
-            else
-            {
-                if (Time.frameCount % MAX_CHECK_FRAME == navMeshFrameCheck)
+                return;
+
+            if (isStunned)
+                stunningClockwork.UpdateBehaviour(Time.deltaTime);
+            else if(Time.frameCount % MAX_CHECK_FRAME == navMeshFrameCheck)
                     DetermineTarget();
-            }
         }
 
         private void DetermineTarget()
@@ -122,8 +127,27 @@ namespace Game.Creatures
             return distance;
         }
 
-        void IDie.Die() => isDead = true;
+        void IDie.Die()
+        {
+            isDead = true;
+            navMeshAgent.enabled = false;
+        }
 
         public void PlayWalkAnimation(bool play) => animator.SetBool(walkAnimation, play);
+
+        public void Stun(float duration)
+        {
+            isStunned = true;
+            navMeshAgent.enabled = false;
+            stunningClockwork.ResetCycles(1);
+            stunningClockwork.ResetTime(duration);
+        }
+
+        private void UnStun()
+        {
+            isStunned = false;
+            if (!isDead)
+                navMeshAgent.enabled = true;
+        }
     }
 }

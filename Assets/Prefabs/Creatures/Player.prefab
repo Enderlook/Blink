@@ -158,6 +158,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: {x: 0.8, y: 1.2}
+--- !u!114 &5988732930266936313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5558235056462145219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1516e98eeaff5f14099bf99402f41092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPercent: 0.25
 --- !u!195 &6342552297712404830
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -180,7 +193,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &9093263735883253344
+--- !u!114 &3168258437712715670
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,10 +202,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5558235056462145219}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b1b0fbd352f6ed4cb167d08ecbae2d4, type: 3}
+  m_Script: {fileID: 11500000, guid: bfb29fdf64dee9d48a5d421252977872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ShootingPosition: {fileID: 3780633358736254396}
+  uiManager: {fileID: 0}
 --- !u!1001 &1363339880222058423
 PrefabInstance:
   m_ObjectHideFlags: 0

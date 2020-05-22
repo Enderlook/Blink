@@ -13,11 +13,14 @@ namespace Game.Scene.CLI
     {
 #pragma warning disable CS0649
         [SerializeField]
+        private ControlledAbilitiesPack[] abilities;
+#pragma warning restore CS0649
+
+        private Hurtable crystal;
         private Hurtable player;
 
-        [SerializeField]
-        private Hurtable crystal;
-#pragma warning restore CS0649
+        private bool isCrystalInmortal;
+        private bool isPlayerInmortal;
 
         private string[] help = new string[]
         {
@@ -32,13 +35,19 @@ namespace Game.Scene.CLI
             "/Goto (int) (true): Go to the specified scene index and advances level counter.",
             "/AddEnergy (int): Add the specified amount of energy.",
             "/SetEnergy (int): Set the specified amount of energy.",
-            "/SetAbilityPack (int): Set the specified ability pack."
+            "/SetAbilityPack (int): Set the specified ability pack.",
+            "/SetInmortality: ('player'|'crystal'): Toggle imortality in choosen creature.",
+            "/SetInmortality: ('player'|'crystal') (boolean): Set imortality in choosen creature.",
+            "/SetInmortality: Toogle imortality in player and crystal creature.",
+            "/SetInmortality: (boolean): Set imortality in player and crystal creature.",
         };
 
         public override IEnumerable<string> Help => help;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
-        private void Awake() => commands = new Dictionary<(string command, int parameters), Action<string[]>>()
+        private void Awake()
+        {
+            commands = new Dictionary<(string command, int parameters), Action<string[]>>()
             {
                 { ("freeze", 0), Freeze },
                 { ("freeze", 1), Freeze1 },
@@ -54,7 +63,24 @@ namespace Game.Scene.CLI
                 { ("setenergy", 1), SetEnergy},
                 { ("addenergy", 1), AddEnergy},
                 { ("setabilitypack", 1), SetAbilityPack},
+                { ("setinmortality", 0), SetInmortal1 },
+                { ("setinmortality", 1), SetInmortal2 },
+                { ("setinmortality", 2), SetInmortal3 },
             };
+
+            player = CrystalAndPlayerTracker.Player.GetComponent<Hurtable>();
+            crystal = CrystalAndPlayerTracker.CrystalHurtable;
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
+        private void Update()
+        {
+            if (isPlayerInmortal)
+                player.TakeHealing(player.MaxHealth);
+
+            if (isCrystalInmortal)
+                crystal.TakeHealing(crystal.MaxHealth);
+        }
 
         private void SetEnergy(string[] sections)
         {
@@ -191,7 +217,7 @@ namespace Game.Scene.CLI
             }
         }
 
-        private void Reload(string[] sections) => player.GetComponent<AbilitiesManager>().InstantReload();
+        private void Reload(string[] sections) => player.GetComponent<AbilitiesManager>().ChargeAbilitiesToMaximum();
 
         private void Win(string[] sections) => FindObjectOfType<Menu>().Win();
 
@@ -236,15 +262,69 @@ namespace Game.Scene.CLI
                     Write("Index can't be negative.");
                 else
                 {
-                    string name = FindObjectOfType<LevelConfiguration>().SetAbilityPack(index);
-                    if (name == null)
+                    if (index >= abilities.Length)
                         Write("Abilities out of range.");
                     else
+                    {
+                        string name = FindObjectOfType<LevelConfiguration>().SetAbilityPack(abilities[index]);
                         Write($"Succesfully changed to {name}");
+                    }
                 }
             }
             else
                 Write($"Could not parse '{sections[1]}' as integer.");
+        }
+
+        public void SetInmortal1(string[] sections)
+        {
+                isPlayerInmortal = !isPlayerInmortal;
+                Write($"Set player inmortality: {isPlayerInmortal}");
+                isCrystalInmortal = !isCrystalInmortal;
+                Write($"Set crystal inmortality: {isPlayerInmortal}");
+        }
+
+        public void SetInmortal2(string[] sections)
+        {
+            if (sections[1] == "player")
+            {
+                isPlayerInmortal = !isPlayerInmortal;
+                Write($"Set player inmortality: {isPlayerInmortal}");
+            }
+            else if (sections[1] == "crystal")
+            {
+                isCrystalInmortal = !isCrystalInmortal;
+                Write($"Set crystal inmortality: {isPlayerInmortal}");
+            }
+            else if (bool.TryParse(sections[2], out bool set))
+            {
+                isPlayerInmortal = !isPlayerInmortal;
+                Write($"Set player inmortality: {isPlayerInmortal}");
+                isCrystalInmortal = !isCrystalInmortal;
+                Write($"Set crystal inmortality: {isPlayerInmortal}");
+            }
+            else
+                Write($"'{sections[1]}' is not 'player' nor 'crystal', nor could be parsed as boolean.");
+        }
+
+        public void SetInmortal3(string[] sections)
+        {
+            if (bool.TryParse(sections[2], out bool set))
+            {
+                if (sections[1] == "player")
+                {
+                    isPlayerInmortal = set;
+                    Write($"Set player inmortality: {isPlayerInmortal}");
+                }
+                else if (sections[1] == "crystal")
+                {
+                    isCrystalInmortal = set;
+                    Write($"Set crystal inmortality: {isPlayerInmortal}");
+                }
+                else
+                    Write($"'{sections[1]}' is not 'player' nor 'crystal'.");
+            }
+            else
+                Write($"Could not parse '{sections[2]}' as boolean.");
         }
     }
 }

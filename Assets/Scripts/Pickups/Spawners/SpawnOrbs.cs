@@ -1,31 +1,22 @@
-﻿using Enderlook.Unity.Attributes;
-
-using UnityEngine;
+﻿using UnityEngine;
 
 using RangeInt = Enderlook.Unity.Serializables.Ranges.RangeInt;
 
-namespace Game.Pickups
+namespace Game.Pickups.Orbs
 {
-    public abstract class SpawnOrbs : MonoBehaviour
+    [AddComponentMenu("Game/Pickups/Orbs/Spawn Orbs")]
+    public class SpawnOrbs : SpawnPickup, IPickupSpawner
     {
 #pragma warning disable CS0649
         [SerializeField, Tooltip("Prefab of orbs to spawn.")]
         private Orb prefab;
 
-        [SerializeField, Tooltip("Range of energy to spawn.")]
+        [SerializeField, Tooltip("Range of values to spawn.")]
         private RangeInt valueToSpawn;
 
-        [SerializeField, Tooltip("Random range of spawning.")]
-        private float spawnRadius;
-
-        [SerializeField, Tooltip("Center of spawn range."), DrawVectorRelativeToTransform]
-        private Vector3 spawnPoint;
-
-        [SerializeField, Tooltip("Speed at which orbs are spawned.")]
-        private float spawnSpeed;
 #pragma warning restore CS0649
 
-        protected void Spawn()
+        public void Spawn()
         {
             int value = valueToSpawn.Value;
             int maximumSize = (int)(Mathf.Log(value + 7, 1.25f) - 8);
@@ -45,20 +36,8 @@ namespace Game.Pickups
 
         private void Spawn(int value)
         {
-            Vector3 center = spawnPoint + transform.position;
-            Vector3 position = center + (spawnRadius * Random.onUnitSphere);
-            Orb instance = Instantiate(prefab, position, transform.rotation);
+            Orb instance = Spawn(prefab);
             instance.SetValue(value);
-
-            if (instance.TryGetComponent(out Rigidbody rigidbody))
-                rigidbody.AddForce((position - center).normalized * spawnSpeed, ForceMode.VelocityChange);
-        }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
-        private void OnDrawGizmos()
-        {
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(spawnPoint + transform.position, spawnRadius);
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Game.Scene
         private AudioClip[] clips;
 
         [SerializeField, Tooltip("Abilities of player. A random element is choosen.")]
-        private AbilitiesPack[] abilityData;
+        private ControlledAbilitiesPack[] abilityData;
 #pragma warning restore CS0649
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
@@ -27,9 +27,13 @@ namespace Game.Scene
             if (index > abilityData.Length)
                 return null;
 
-            AbilitiesPack abilities = abilityData[index];
-            FindObjectOfType<AbilitiesManager>().SetAbilities(abilities);
-            return abilities.name;
+            return SetAbilityPack(abilityData[index]);
+        }
+
+        public string SetAbilityPack(ControlledAbilitiesPack pack)
+        {
+            CrystalAndPlayerTracker.Player.GetComponentInChildren<PlayerAbilitiesManager>().SetAbilities(pack);
+            return pack.name;
         }
     }
 }

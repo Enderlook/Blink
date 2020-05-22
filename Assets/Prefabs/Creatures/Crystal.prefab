@@ -98,6 +98,8 @@ GameObject:
   - component: {fileID: 2490833635830965518}
   - component: {fileID: 3324734453298428516}
   - component: {fileID: 6862659441686072569}
+  - component: {fileID: 4482170671282523124}
+  - component: {fileID: 5879996381768255834}
   m_Layer: 10
   m_Name: Crystal
   m_TagString: Untagged
@@ -334,7 +336,6 @@ MonoBehaviour:
     event: {fileID: -2325885416423649629}
     managedScriptableObject: {fileID: 0}
     managedComponent: {fileID: 0}
-  materialCrystal: {fileID: 2100000, guid: ddd0d06501935fd4981636508cdde18f, type: 2}
 --- !u!82 &2490833635830965518
 AudioSource:
   m_ObjectHideFlags: 0
@@ -463,6 +464,32 @@ MonoBehaviour:
   layerToPickup:
     serializedVersion: 2
     m_Bits: 32768
+--- !u!114 &4482170671282523124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8996606725872200246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1516e98eeaff5f14099bf99402f41092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPercent: 0.25
+--- !u!114 &5879996381768255834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8996606725872200246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d01867f87bcf64fa856aee3d4e9856, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maximumSpeed: 3
 --- !u!114 &-8291800690213229252
 MonoBehaviour:
   m_ObjectHideFlags: 0
