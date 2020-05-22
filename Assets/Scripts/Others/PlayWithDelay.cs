@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Game.Attacks
+namespace Game
 {
     [RequireComponent(typeof(AudioSource)), AddComponentMenu("Game/Others/Play With Delay")]
     public class PlayWithDelay : MonoBehaviour
