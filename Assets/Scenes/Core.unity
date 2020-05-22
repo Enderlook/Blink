@@ -590,8 +590,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d96a46c0dd31249bf7876e71305c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 3843444038992288221}
-  crystal: {fileID: 4118403232125912082}
+  abilities:
+  - {fileID: 11400000, guid: f66c48ed46927c742bc835d9fb484fc1, type: 2}
+  - {fileID: 11400000, guid: 9e3f530070283514a895ad54a6c75f9a, type: 2}
+  - {fileID: 11400000, guid: 1e99f6f5588172c46ab248c94dc33a3b, type: 2}
+  - {fileID: 11400000, guid: 15e8567441bffee4782031815315bad7, type: 2}
 --- !u!222 &20737164318855950
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1834,18 +1837,6 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a49ed22391a51eb4cb605b74d0ecb77f, type: 3}
---- !u!114 &3843444038992288221 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4357860914053188884, guid: a49ed22391a51eb4cb605b74d0ecb77f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3843444038992288220}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 139665404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7d88ec00dc719b4199260976a1a7385, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3950941802148759175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1972,18 +1963,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fe0b5ab5f249fe42b468d4b8c3dbe32, type: 3}
---- !u!114 &4118403232125912082 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5427123861330736485, guid: 6fe0b5ab5f249fe42b468d4b8c3dbe32,
-    type: 3}
-  m_PrefabInstance: {fileID: 4118403232125912081}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7d88ec00dc719b4199260976a1a7385, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4163712101158995573
 MonoBehaviour:
   m_ObjectHideFlags: 0

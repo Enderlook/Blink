@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.24767414, g: 0.35330734, b: 0.8285049, a: 1}
+  m_IndirectSpecularColor: {r: 0.24011655, g: 0.33247435, b: 0.8311335, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1042,7 +1042,7 @@ Light:
   m_BounceIntensity: 0.5
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 3.589e-42, y: 1.02e-43, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 4e-45}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1366,6 +1366,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Crystal Drop Configuration Ice
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523831922271754275, guid: 0bb8c41f490233542878ff1af4869904,
+        type: 3}
+      propertyPath: element
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8669825223523854250, guid: 0bb8c41f490233542878ff1af4869904,
         type: 3}
@@ -3316,9 +3321,6 @@ MonoBehaviour:
   clips:
   - {fileID: 8300000, guid: f5daa74780d0e1a4398475521c22d182, type: 3}
   abilityData:
-  - {fileID: 11400000, guid: f66c48ed46927c742bc835d9fb484fc1, type: 2}
-  - {fileID: 11400000, guid: 9e3f530070283514a895ad54a6c75f9a, type: 2}
-  - {fileID: 11400000, guid: 1e99f6f5588172c46ab248c94dc33a3b, type: 2}
   - {fileID: 11400000, guid: 15e8567441bffee4782031815315bad7, type: 2}
 --- !u!114 &1723801436
 MonoBehaviour:

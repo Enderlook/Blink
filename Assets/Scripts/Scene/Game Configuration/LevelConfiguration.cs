@@ -27,9 +27,13 @@ namespace Game.Scene
             if (index > abilityData.Length)
                 return null;
 
-            ControlledAbilitiesPack abilities = abilityData[index];
-            CrystalAndPlayerTracker.Player.GetComponentInChildren<PlayerAbilitiesManager>().SetAbilities(abilities);
-            return abilities.name;
+            return SetAbilityPack(abilityData[index]);
+        }
+
+        public string SetAbilityPack(ControlledAbilitiesPack pack)
+        {
+            CrystalAndPlayerTracker.Player.GetComponentInChildren<PlayerAbilitiesManager>().SetAbilities(pack);
+            return pack.name;
         }
     }
 }

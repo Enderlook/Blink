@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4941265, g: 0.61355454, b: 0.92294675, a: 1}
+  m_IndirectSpecularColor: {r: 0.24011655, g: 0.33247435, b: 0.8311335, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3167,10 +3167,7 @@ MonoBehaviour:
   clips:
   - {fileID: 8300000, guid: f5daa74780d0e1a4398475521c22d182, type: 3}
   abilityData:
-  - {fileID: 11400000, guid: f66c48ed46927c742bc835d9fb484fc1, type: 2}
   - {fileID: 11400000, guid: 9e3f530070283514a895ad54a6c75f9a, type: 2}
-  - {fileID: 11400000, guid: 1e99f6f5588172c46ab248c94dc33a3b, type: 2}
-  - {fileID: 11400000, guid: 15e8567441bffee4782031815315bad7, type: 2}
 --- !u!114 &1723801436
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,13 +11,8 @@ namespace Game.Scene.CLI
 {
     public class LevelCommandsPack : CommandsPack
     {
-#pragma warning disable CS0649
         [SerializeField]
-        private Hurtable player;
-
-        [SerializeField]
-        private Hurtable crystal;
-#pragma warning restore CS0649
+        private ControlledAbilitiesPack[] abilities;
 
         private string[] help = new string[]
         {
@@ -119,13 +114,13 @@ namespace Game.Scene.CLI
             switch (sections[1].ToLower())
             {
                 case "player":
-                    action(player, "Player");
+                    action(CrystalAndPlayerTracker.Player.GetComponent<Hurtable>(), "Player");
                     break;
                 case "crystal":
-                    action(crystal, "Crystal");
+                    action(CrystalAndPlayerTracker.CrystalHurtable, "Crystal");
                     break;
                 case "enemies":
-                    foreach (Hurtable enemy in FindObjectsOfType<Hurtable>().Except(new[] { player, crystal }))
+                    foreach (Hurtable enemy in FindObjectsOfType<Hurtable>().Except(new[] { CrystalAndPlayerTracker.Player.GetComponent<Hurtable>(), CrystalAndPlayerTracker.CrystalHurtable }))
                         action(enemy, enemy.gameObject.name);
                     break;
                 default:
@@ -191,7 +186,7 @@ namespace Game.Scene.CLI
             }
         }
 
-        private void Reload(string[] sections) => player.GetComponent<AbilitiesManager>().ChargeAbilitiesToMaximum();
+        private void Reload(string[] sections) => CrystalAndPlayerTracker.Player.GetComponent<AbilitiesManager>().ChargeAbilitiesToMaximum();
 
         private void Win(string[] sections) => FindObjectOfType<Menu>().Win();
 
@@ -236,11 +231,13 @@ namespace Game.Scene.CLI
                     Write("Index can't be negative.");
                 else
                 {
-                    string name = FindObjectOfType<LevelConfiguration>().SetAbilityPack(index);
-                    if (name == null)
+                    if (index >= abilities.Length)
                         Write("Abilities out of range.");
                     else
+                    {
+                        string name = FindObjectOfType<LevelConfiguration>().SetAbilityPack(abilities[index]);
                         Write($"Succesfully changed to {name}");
+                    }
                 }
             }
             else
