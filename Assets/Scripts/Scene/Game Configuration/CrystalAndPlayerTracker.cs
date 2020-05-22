@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace Game.Scene
 {
+    [DefaultExecutionOrder(-1)]
     public class CrystalAndPlayerTracker : MonoBehaviour
     {
         private static CrystalAndPlayerTracker instance;
