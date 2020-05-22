@@ -28781,9 +28781,9 @@ GameObject:
   - component: {fileID: 6663092405320373548}
   - component: {fileID: 2555390560046208490}
   - component: {fileID: 4191015851224058022}
-  - component: {fileID: 6576127444481538838}
-  - component: {fileID: 5059251955544584999}
-  - component: {fileID: 7885268341756375721}
+  - component: {fileID: 4530176883882682522}
+  - component: {fileID: -5553896302231122928}
+  - component: {fileID: -8565766798809448299}
   m_Layer: 0
   m_Name: VFX Projectile Ice V1
   m_TagString: Untagged
@@ -28822,10 +28822,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.047433317
-  m_Height: 0.24962124
+  m_Radius: 0.13115166
+  m_Height: 0.6615519
   m_Direction: 2
-  m_Center: {x: 0.000000014901161, y: -0.001924321, z: 0.03890966}
+  m_Center: {x: -0.0021466166, y: -0.001924321, z: 0.07297936}
 --- !u!54 &4191015851224058022
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28842,7 +28842,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 20
   m_CollisionDetection: 0
---- !u!114 &6576127444481538838
+--- !u!114 &4530176883882682522
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -28855,7 +28855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 4268112446736551422, guid: 5470ce65d57fc964494840b65580be9c, type: 3}
---- !u!82 &5059251955544584999
+--- !u!82 &-5553896302231122928
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -28952,7 +28952,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7885268341756375721
+--- !u!114 &-8565766798809448299
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
