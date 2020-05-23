@@ -10,14 +10,43 @@ public class GameConfiguration : MonoBehaviour
     [SerializeField, Tooltip("Component dropdown of resolution.")]
     private Dropdown resolutionDropdown = null;
 
+    [SerializeField, Tooltip("Component dropdown of quality.")]
+    private Dropdown qualityDropdown = null;
+
+    [SerializeField, Tooltip("Values of quality dropdown")]
+    private List<string> qualityValues = null;
+
     private List<Resolution> resolutions = new List<Resolution>();
 
     private static int currentResolutionIndex;
     private static bool resolutionChanged = false;
+    private static int currentQuality;
+    private static bool qualityChanged = false;
 
     public void Start()
     {
         SetResolutionsInDropdown();
+        SetQualityValuesInDropdown();
+    }
+
+    private void SetQualityValuesInDropdown()
+    {
+        qualityDropdown.ClearOptions();
+
+        List<string> optionsInDropdown = new List<string>();
+
+        foreach (string quality in qualityValues)
+        {
+            string option = quality;
+            optionsInDropdown.Add(option);
+
+            if (!qualityChanged)
+                currentQuality = qualityValues.IndexOf(quality) == QualitySettings.GetQualityLevel() ? qualityValues.IndexOf(quality) : currentQuality;
+        }
+
+        qualityDropdown.AddOptions(optionsInDropdown);
+        qualityDropdown.value = currentQuality;
+        qualityDropdown.RefreshShownValue();
     }
 
     private void SetResolutionsInDropdown()
@@ -49,5 +78,12 @@ public class GameConfiguration : MonoBehaviour
         currentResolutionIndex = index;
         resolutionChanged = true;
         Screen.SetResolution(resolutions[index].width, resolutions[index].height, Screen.fullScreen);
+    }
+
+    public void SetQuality(int index)
+    {
+        currentQuality = index;
+        qualityChanged = true;
+        QualitySettings.SetQualityLevel(index);
     }
 }
