@@ -13,6 +13,7 @@ public class GameConfiguration : MonoBehaviour
     private List<Resolution> resolutions = new List<Resolution>();
 
     private static int currentResolutionIndex;
+    private static bool resolutionChanged = false;
 
     public void Start()
     {
@@ -33,8 +34,9 @@ public class GameConfiguration : MonoBehaviour
             string option = $"{resolution.width}x{resolution.height}";
             optionsInDropdown.Add(option);
 
-            currentResolutionIndex = resolution.width == Screen.currentResolution.width
-                && resolution.height == Screen.currentResolution.height ? resolutions.IndexOf(resolution) : currentResolutionIndex;
+            if (!resolutionChanged)
+                currentResolutionIndex = resolution.width == Screen.currentResolution.width
+                    && resolution.height == Screen.currentResolution.height ? resolutions.IndexOf(resolution) : currentResolutionIndex;
         }
 
         resolutionDropdown.AddOptions(optionsInDropdown);
@@ -45,6 +47,7 @@ public class GameConfiguration : MonoBehaviour
     public void SetResolution(int index)
     {
         currentResolutionIndex = index;
+        resolutionChanged = true;
         Screen.SetResolution(resolutions[index].width, resolutions[index].height, Screen.fullScreen);
     }
 }
