@@ -706,6 +706,7 @@ GameObject:
   - component: {fileID: 7972200902287164703}
   - component: {fileID: 7886577698700421755}
   - component: {fileID: 2521333822436067583}
+  - component: {fileID: 847855973740384451}
   - component: {fileID: 847855973740384452}
   m_Layer: 5
   m_Name: Menu
@@ -714,6 +715,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &847855973740384451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847855973740384450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6ff5285f8e4ce848adae961bd89410e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resolutionDropdown: {fileID: 7942906550795593890}
 --- !u!222 &847855973740384452
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1566,7 +1580,7 @@ MonoBehaviour:
   menu: {fileID: 3798418158083863309}
   pauseKey: 27
   background: {fileID: 781257167}
-  help: {fileID: 8476006843877946213}
+  options: {fileID: 8476006843877946213}
   events:
   - {fileID: -6969189212308661451, guid: a49ed22391a51eb4cb605b74d0ecb77f, type: 3}
   - {fileID: -2325885416423649629, guid: 6fe0b5ab5f249fe42b468d4b8c3dbe32, type: 3}
@@ -2888,8 +2902,50 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5607470562807524001, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607470562807524001, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607470562807524001, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607470562807524001, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 847855973740384451}
+    - target: {fileID: 5607470562807524001, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetResolution
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607470562807524001, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfbe9a393af0b0d429ccb7096ef1ee5f, type: 3}
+--- !u!114 &7942906550795593890 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5607470562807524001, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7942906550795593889}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0b652f32a2cc243917e4028fa0f046, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &7972200902287164703
 RectTransform:
   m_ObjectHideFlags: 0
