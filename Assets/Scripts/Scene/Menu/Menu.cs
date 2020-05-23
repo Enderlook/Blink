@@ -49,8 +49,8 @@ namespace Game.Scene
         [SerializeField, Tooltip("Background image.")]
         private Image background;
 
-        [SerializeField, Tooltip("Help panel.")]
-        private GameObject help;
+        [SerializeField, Tooltip("Options panel.")]
+        private GameObject options;
 
         [SerializeField, Tooltip("When any of this values reaches 0, player loose.")]
         private IntEvent[] events;
@@ -116,9 +116,9 @@ namespace Game.Scene
             }
             else
             {
-                if (help.activeSelf)
+                if (options.activeSelf)
                 {
-                    help.SetActive(false);
+                    options.SetActive(false);
                     menu.SetActive(true);
                     return;
                 }
@@ -220,7 +220,7 @@ namespace Game.Scene
 
         private void HideMenu()
         {
-            help.SetActive(false);
+            options.SetActive(false);
             winMenu.SetActive(false);
             loseMenu.SetActive(false);
             menu.SetActive(false);
