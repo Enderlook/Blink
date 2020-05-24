@@ -3429,7 +3429,7 @@ PrefabInstance:
     - target: {fileID: 95896088034043947, guid: 48dbf0784b1506f4d991d26caf63a3cc,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.1
+      value: 0.3336818
       objectReference: {fileID: 0}
     - target: {fileID: 95896088034043947, guid: 48dbf0784b1506f4d991d26caf63a3cc,
         type: 3}
@@ -3439,7 +3439,7 @@ PrefabInstance:
     - target: {fileID: 95896088034043947, guid: 48dbf0784b1506f4d991d26caf63a3cc,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.9
+      value: 0.6681
       objectReference: {fileID: 0}
     - target: {fileID: 95896088034043947, guid: 48dbf0784b1506f4d991d26caf63a3cc,
         type: 3}
@@ -3474,7 +3474,7 @@ PrefabInstance:
     - target: {fileID: 5854047079676026851, guid: 48dbf0784b1506f4d991d26caf63a3cc,
         type: 3}
       propertyPath: m_Text
-      value: Music Volume
+      value: MUSIC VOLUME
       objectReference: {fileID: 0}
     - target: {fileID: 6466780241841400187, guid: 48dbf0784b1506f4d991d26caf63a3cc,
         type: 3}
@@ -3885,7 +3885,7 @@ PrefabInstance:
     - target: {fileID: 95896088034043947, guid: 48dbf0784b1506f4d991d26caf63a3cc,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.1
+      value: 0.3336818
       objectReference: {fileID: 0}
     - target: {fileID: 95896088034043947, guid: 48dbf0784b1506f4d991d26caf63a3cc,
         type: 3}
@@ -3895,12 +3895,12 @@ PrefabInstance:
     - target: {fileID: 95896088034043947, guid: 48dbf0784b1506f4d991d26caf63a3cc,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.9
+      value: 0.6681
       objectReference: {fileID: 0}
     - target: {fileID: 95896088034043947, guid: 48dbf0784b1506f4d991d26caf63a3cc,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.75
+      value: 0.736
       objectReference: {fileID: 0}
     - target: {fileID: 95896088034043947, guid: 48dbf0784b1506f4d991d26caf63a3cc,
         type: 3}
@@ -3926,6 +3926,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5854047079676026851, guid: 48dbf0784b1506f4d991d26caf63a3cc,
+        type: 3}
+      propertyPath: m_Text
+      value: MASTER VOLUME
       objectReference: {fileID: 0}
     - target: {fileID: 6466780241841400187, guid: 48dbf0784b1506f4d991d26caf63a3cc,
         type: 3}
@@ -4029,7 +4034,7 @@ PrefabInstance:
     - target: {fileID: 95896088034043947, guid: 48dbf0784b1506f4d991d26caf63a3cc,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.1
+      value: 0.3336818
       objectReference: {fileID: 0}
     - target: {fileID: 95896088034043947, guid: 48dbf0784b1506f4d991d26caf63a3cc,
         type: 3}
@@ -4039,7 +4044,7 @@ PrefabInstance:
     - target: {fileID: 95896088034043947, guid: 48dbf0784b1506f4d991d26caf63a3cc,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.9
+      value: 0.6681
       objectReference: {fileID: 0}
     - target: {fileID: 95896088034043947, guid: 48dbf0784b1506f4d991d26caf63a3cc,
         type: 3}
@@ -4074,7 +4079,7 @@ PrefabInstance:
     - target: {fileID: 5854047079676026851, guid: 48dbf0784b1506f4d991d26caf63a3cc,
         type: 3}
       propertyPath: m_Text
-      value: Sound Volume
+      value: SOUND VOLUME
       objectReference: {fileID: 0}
     - target: {fileID: 6466780241841400187, guid: 48dbf0784b1506f4d991d26caf63a3cc,
         type: 3}
