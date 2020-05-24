@@ -31,8 +31,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e38a1c2b6c720846bae5e0a17d34784, type: 3}
   m_Name: Ice Attack
   m_EditorClassIdentifier: 
-  maxCharge: 1.2
+  maxCharge: 0.8
   abilityComponent: {fileID: -7979187644668596102}
+  <UseTimer>k__BackingField: 1
   <Icon>k__BackingField: {fileID: 21300000, guid: b904913d2d1b53042a69b5b524554d6f,
     type: 3}
   animationName: Basic Attack
