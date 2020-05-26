@@ -646,6 +646,14 @@ MonoBehaviour:
   - HIGH
   - VERY HIGH
   - ULTRA
+  hasBackgrounds: 0
+  backgroundSpriteRenderer: {fileID: 0}
+  backgroundMenuStyileDropdown: {fileID: 0}
+  backgroundsUIs: []
+  defaultBG: {fileID: 0}
+  hasCredits: 0
+  credits: {fileID: 0}
+  creditsKeyAnimation: 
 --- !u!222 &847855973740384452
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2177,6 +2185,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7972200902287164703}
     m_Modifications:
+    - target: {fileID: 1095187646518628392, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1948368687032190658, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName

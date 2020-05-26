@@ -18,6 +18,21 @@ public class GameConfiguration : MonoBehaviour
     [SerializeField, Tooltip("Values of quality dropdown")]
     private List<string> qualityValues = null;
 
+    [SerializeField, Tooltip("Has backgrounds?")]
+    private bool hasBackgrounds = false;
+
+    [SerializeField, Tooltip("SpriteRenderer component of Background."), ShowIf(nameof(hasBackgrounds), true)]
+    private SpriteRenderer backgroundSpriteRenderer;
+
+    [SerializeField, Tooltip("Component dropdown of backgrounds menu style."), ShowIf(nameof(hasBackgrounds), true)]
+    private Dropdown backgroundMenuStyileDropdown = null;
+
+    [SerializeField, Tooltip("Values of background menu style dropdown."), ShowIf(nameof(hasBackgrounds), true)]
+    private List<BackgroundsUI> backgroundsUIs = null;
+
+    [SerializeField, Tooltip("Default background."), ShowIf(nameof(hasBackgrounds), true)]
+    private Sprite defaultBG = null;
+
     [SerializeField, Tooltip("Has Credits?")]
     private bool hasCredits = false;
 
@@ -30,14 +45,56 @@ public class GameConfiguration : MonoBehaviour
     private List<Resolution> resolutions = new List<Resolution>();
 
     private static int currentResolutionIndex;
-    private static bool resolutionChanged = false;
+    private static bool resolutionChanged;
+
     private static int currentQuality;
-    private static bool qualityChanged = false;
+    private static bool qualityChanged;
+
+    private static int currentIndexBGUI;
+    private static bool bgStyleMenuChanged;
 
     public void Start()
     {
         SetResolutionsInDropdown();
-        SetQualityValuesInDropdown();
+        if (hasCredits) SetQualityValuesInDropdown();
+        if (hasBackgrounds) SetBGMenuStyleInDropdown();
+    }
+
+    private void SetBGMenuStyleInDropdown()
+    {
+        backgroundMenuStyileDropdown.ClearOptions();
+
+        List<string> optionsInDropdown = new List<string>();
+
+        foreach (BackgroundsUI backgroundUI in backgroundsUIs)
+        {
+            string option = backgroundUI.NameBG;
+            optionsInDropdown.Add(option);
+
+            if (!bgStyleMenuChanged)
+            {
+                if (backgroundUI.BGSprite.Equals(defaultBG))
+                {
+                    currentIndexBGUI = backgroundsUIs.IndexOf(backgroundUI);
+                    backgroundSpriteRenderer.sprite = defaultBG;
+                    GameObject p = backgroundsUIs.ElementAt(currentIndexBGUI).Particle;
+                    backgroundsUIs.ForEach(x => x.Particle.SetActive(x.Particle.Equals(p) ? true : false));
+                }
+                else
+                {
+                    int current = currentIndexBGUI;
+                    currentIndexBGUI = current;
+                    backgroundSpriteRenderer.sprite = backgroundsUIs.ElementAt(currentIndexBGUI).BGSprite;
+                    GameObject p = backgroundsUIs.ElementAt(currentIndexBGUI).Particle;
+                    backgroundsUIs.ForEach(x => x.Particle.SetActive(x.Particle.Equals(p) ? true : false));
+                }
+            }
+                currentIndexBGUI = backgroundUI.BGSprite.Equals(defaultBG) ? backgroundsUIs.IndexOf(backgroundUI) : currentIndexBGUI;
+        }
+
+        backgroundMenuStyileDropdown.AddOptions(optionsInDropdown);
+        backgroundMenuStyileDropdown.value = currentIndexBGUI;
+        backgroundMenuStyileDropdown.RefreshShownValue();
     }
 
     private void SetQualityValuesInDropdown()
@@ -98,5 +155,35 @@ public class GameConfiguration : MonoBehaviour
         QualitySettings.SetQualityLevel(index);
     }
 
+    public void SetMenuStyle(int index)
+    {
+        currentIndexBGUI = index;
+        bgStyleMenuChanged = true;
+        backgroundSpriteRenderer.sprite = backgroundsUIs.ElementAt(index).BGSprite;
+        GameObject p = backgroundsUIs.ElementAt(index).Particle;
+        backgroundsUIs.ForEach(x => x.Particle.SetActive(x.Particle.Equals(p) ? true : false));
+    }
+
     public void StartCredits() => credits.SetTrigger(creditsKeyAnimation);
+}
+
+[System.Serializable]
+public class BackgroundsUI
+{
+    [Header("Background Menu Style")]
+
+    [SerializeField, Tooltip("Name of the bg.")]
+    private string nameBG = "";
+
+    [SerializeField, Tooltip("Sprite of the bg.")]
+    private Sprite bgSprite = null;
+
+    [SerializeField, Tooltip("Particles.")]
+    private GameObject particle;
+
+    public string NameBG => nameBG;
+
+    public Sprite BGSprite => bgSprite;
+
+    public GameObject Particle => particle;
 }
