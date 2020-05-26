@@ -143,6 +143,7 @@ namespace Game.Scene
         {
             gameState = GameState.Starting;
             timeUntilStart.ResetCycles(1);
+            CurrentEnergy = 0;
         }
 
         private void ShowTimer(IBasicClockwork clockwork)
