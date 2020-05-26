@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Enderlook.Unity.Attributes;
+
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
@@ -15,6 +17,15 @@ public class GameConfiguration : MonoBehaviour
 
     [SerializeField, Tooltip("Values of quality dropdown")]
     private List<string> qualityValues = null;
+
+    [SerializeField, Tooltip("Has Credits?")]
+    private bool hasCredits = false;
+
+    [SerializeField, Tooltip("Credits panel."), ShowIf(nameof(hasCredits), true)]
+    private Animator credits;
+
+    [SerializeField, Tooltip("Credits animation parameter."), ShowIf(nameof(hasCredits), true)]
+    private string creditsKeyAnimation;
 
     private List<Resolution> resolutions = new List<Resolution>();
 
@@ -86,4 +97,6 @@ public class GameConfiguration : MonoBehaviour
         qualityChanged = true;
         QualitySettings.SetQualityLevel(index);
     }
+
+    public void StartCredits() => credits.SetTrigger(creditsKeyAnimation);
 }
