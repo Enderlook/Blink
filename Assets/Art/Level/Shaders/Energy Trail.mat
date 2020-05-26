@@ -24,16 +24,16 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _InflationSpeed: 1
-    - _MaxInflation: 1
-    - _Opacity: 0.7
-    - _OpacityFactor: 15
-    - _PrimaryPower: 3
+    - _InflationSpeed: 0
+    - _MaxInflation: 0
+    - _Opacity: 0.019
+    - _OpacityFactor: 63.6
+    - _PrimaryPower: 4
     - _RotationSpeed: 1
-    - _Scale: 1
-    - _SecondaryPower: 1
+    - _Scale: 5
+    - _SecondaryPower: 1.98
     - _TextureSpeed: 1
     - __dirty: 1
     m_Colors:
-    - _Primary: {r: 0, g: 0, b: 0, a: 0}
-    - _Secondary: {r: 0, g: 0, b: 0, a: 0}
+    - _Primary: {r: 0.24705882, g: 0.6509804, b: 0.14901961, a: 0}
+    - _Secondary: {r: 0.5019608, g: 1, b: 0, a: 0}
