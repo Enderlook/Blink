@@ -53,14 +53,19 @@ namespace Game.Scene
         private static int currentQuality;
         private static bool qualityChanged;
 
-        private static int currentIndexBGUI;
+        private static int currentIndexBGUI = -1;
         private static bool bgStyleMenuChanged;
 
         public void Start()
         {
             SetResolutionsInDropdown();
             if (hasCredits) SetQualityValuesInDropdown();
-            if (hasBackgrounds) SetBGMenuStyleInDropdown();
+            if (hasBackgrounds)
+            {
+                if (currentIndexBGUI == -1)
+                    SetMenuStyle(Random.Range(0, backgroundsUIs.Count));
+                SetBGMenuStyleInDropdown();
+            }
         }
 
         private void SetBGMenuStyleInDropdown()
