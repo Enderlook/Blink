@@ -51,6 +51,8 @@ namespace Game.Scene
         private static int currentIndexBGUI;
         private static bool bgStyleMenuChanged;
 
+        private GameObject lastParticleSystem;
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()
         {
@@ -119,8 +121,10 @@ namespace Game.Scene
                 optionsInDropdown.Add(backgroundsUI.Name);
 
                 if (i == currentIndexBGUI)
+                {
                     backgroundSpriteRenderer.sprite = backgroundsUI.Sprite;
-                TweakParticles();
+                    lastParticleSystem = Instantiate(backgroundsUI.Particles);
+                }
             }
 
             backgroundMenuStyleDropdown.AddOptions(optionsInDropdown);
@@ -133,14 +137,8 @@ namespace Game.Scene
             currentIndexBGUI = index;
             bgStyleMenuChanged = true;
             backgroundSpriteRenderer.sprite = backgroundsUIs[index].Sprite;
-            TweakParticles();
-        }
-
-        private void TweakParticles()
-        {
-            GameObject p = backgroundsUIs[currentIndexBGUI].Particles;
-            foreach (BackgroundsUI item in backgroundsUIs)
-                item.Particles.SetActive(item.Particles.Equals(p));
+            Destroy(lastParticleSystem);
+            lastParticleSystem = Instantiate(backgroundsUIs[index].Particles);
         }
     }
 }
