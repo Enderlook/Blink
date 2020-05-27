@@ -275,6 +275,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 122872162}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &122872164 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7395291066456512402, guid: 5f7956d26301ab24a927a1f9132e46e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 122872162}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &139665400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1339,7 +1345,7 @@ MonoBehaviour:
   winMusic: {fileID: 8300000, guid: 85cc2e6902884754d8739d0c78a53ee4, type: 3}
   loseMusic: {fileID: 8300000, guid: c2bdae70ee2ff9048b5c32b5ea565971, type: 3}
   winMenu: {fileID: 2607132490356232957}
-  loseMenu: {fileID: 0}
+  loseMenu: {fileID: 122872164}
   menu: {fileID: 3798418158083863309}
   pauseKey: 27
   background: {fileID: 781257167}
