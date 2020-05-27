@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using System;
 
 namespace Game.Scene
 {
@@ -18,10 +19,8 @@ namespace Game.Scene
         private Dropdown qualityDropdown;
 
         [SerializeField, Tooltip("Values of quality dropdown")]
-        private List<string> qualityValues;
+        private string[] qualityValues;
 #pragma warning restore CS0649
-
-        private List<Resolution> resolutions = new List<Resolution>();
 
         private static int currentResolutionIndex;
         private static bool resolutionChanged;
@@ -40,36 +39,36 @@ namespace Game.Scene
         {
             MainMenu.ConfigureDropdown(qualityDropdown, qualityValues, 4);
 
-            foreach (string quality in qualityValues)
+            if (qualityChanged)
+                qualityDropdown.value = currentQuality;
+            else
             {
-                if (!qualityChanged)
-                    currentQuality = qualityValues.IndexOf(quality) == QualitySettings.GetQualityLevel() ? qualityValues.IndexOf(quality) : currentQuality;
+                for (int i = 0; i < qualityValues.Length; i++)
+                {
+                    if (i == QualitySettings.GetQualityLevel())
+                    {
+                        currentQuality = qualityDropdown.value = i;
+                        break;
+                    }
+                }
             }
-
-            qualityDropdown.value = currentQuality;
         }
 
         private void SetResolutionsInDropdown()
         {
             MainMenu.ConfigureDropdown(resolutionDropdown, Screen.resolutions.Select(e => $"{e.width}x{e.height}"), 4);
 
-            foreach (Resolution resolution in resolutions)
-            {
-                string option = $"{resolution.width}x{resolution.height}";
-
-                if (!resolutionChanged)
-                    currentResolutionIndex = resolution.width == Screen.currentResolution.width
-                        && resolution.height == Screen.currentResolution.height ? resolutions.IndexOf(resolution) : currentResolutionIndex;
-            }
-
-            resolutionDropdown.value = currentResolutionIndex;
+            if (resolutionChanged)
+                resolutionDropdown.value = currentResolutionIndex;
+            else
+                currentResolutionIndex = resolutionDropdown.value = Array.IndexOf(Screen.resolutions, Screen.currentResolution);
         }
 
         public void SetResolution(int index)
         {
             currentResolutionIndex = index;
             resolutionChanged = true;
-            Screen.SetResolution(resolutions[index].width, resolutions[index].height, Screen.fullScreen);
+            Screen.SetResolution(Screen.resolutions[index].width, Screen.resolutions[index].height, Screen.fullScreen);
         }
 
         public void SetQuality(int index)
