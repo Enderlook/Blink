@@ -750,6 +750,25 @@ MonoBehaviour:
   disableConsole: 27
   credits: {fileID: 301598321}
   creditsKeyAnimation: Start Credits
+  backgroundSpriteRenderer: {fileID: 933526908}
+  backgroundMenuStyleDropdown: {fileID: 1117372078}
+  backgroundsUIs:
+  - <Name>k__BackingField: Water
+    <Sprite>k__BackingField: {fileID: 21300000, guid: 98fcb2b4d3879524fb827a9ea74118c4,
+      type: 3}
+    <Particles>k__BackingField: {fileID: 974588069}
+  - <Name>k__BackingField: Fire
+    <Sprite>k__BackingField: {fileID: 21300000, guid: ca530a5af76ed904db8be0a4d257cbc2,
+      type: 3}
+    <Particles>k__BackingField: {fileID: 1670231016}
+  - <Name>k__BackingField: Earth
+    <Sprite>k__BackingField: {fileID: 21300000, guid: 382336bccbc933e4c91730cc62f57338,
+      type: 3}
+    <Particles>k__BackingField: {fileID: 704504044}
+  - <Name>k__BackingField: Lightning
+    <Sprite>k__BackingField: {fileID: 21300000, guid: cd791a97145c99046b8f3125ddf2aa6d,
+      type: 3}
+    <Particles>k__BackingField: {fileID: 974588069}
 --- !u!114 &301598319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -783,26 +802,6 @@ MonoBehaviour:
   - HIGH
   - VERY HIGH
   - ULTRA
-  hasBackgrounds: 1
-  backgroundSpriteRenderer: {fileID: 933526908}
-  backgroundMenuStyileDropdown: {fileID: 1117372078}
-  backgroundsUIs:
-  - nameBG: Water
-    bgSprite: {fileID: 21300000, guid: 98fcb2b4d3879524fb827a9ea74118c4, type: 3}
-    particle: {fileID: 974588069}
-  - nameBG: Fire
-    bgSprite: {fileID: 21300000, guid: ca530a5af76ed904db8be0a4d257cbc2, type: 3}
-    particle: {fileID: 1670231016}
-  - nameBG: Earth
-    bgSprite: {fileID: 21300000, guid: 382336bccbc933e4c91730cc62f57338, type: 3}
-    particle: {fileID: 704504044}
-  - nameBG: Lightning
-    bgSprite: {fileID: 21300000, guid: cd791a97145c99046b8f3125ddf2aa6d, type: 3}
-    particle: {fileID: 974588069}
-  defaultBG: {fileID: 21300000, guid: ca530a5af76ed904db8be0a4d257cbc2, type: 3}
-  hasCredits: 1
-  credits: {fileID: 301598321}
-  creditsKeyAnimation: Start Credits
 --- !u!95 &301598321
 Animator:
   serializedVersion: 3
@@ -2038,15 +2037,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ca530a5af76ed904db8be0a4d257cbc2, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 19.2, y: 10.8}
+  m_Size: {x: 0.01, y: 0.01}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &933526909
@@ -2552,6 +2551,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1109715604167552582, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -7.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1948368687032190658, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -2781,7 +2785,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 301598320}
+      objectReference: {fileID: 301598318}
     - target: {fileID: 5540564550575585203, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -2831,6 +2835,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6833383729610217091, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -7.5
       objectReference: {fileID: 0}
     - target: {fileID: 7624525935998408989, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
         type: 3}

@@ -1,11 +1,14 @@
 ﻿using Enderlook.Unity.Prefabs.HealthBarGUI;
 
-using Game.Scene.CLI;
-
 using System.Collections;
+using System.Collections.Generic;
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+using Console = Game.Scene.CLI.Console;
+using Random = UnityEngine.Random;
 
 namespace Game.Scene
 {
@@ -27,19 +30,34 @@ namespace Game.Scene
         [SerializeField, Tooltip("Key pressed to disable console.")]
         private KeyCode disableConsole;
 
+        [Header("Credits")]
         [SerializeField, Tooltip("Credits panel.")]
         private Animator credits;
 
         [SerializeField, Tooltip("Credits animation parameter.")]
         private string creditsKeyAnimation;
+
+        [Header("Backgrounds")]
+        [SerializeField, Tooltip("SpriteRenderer component of Background.")]
+        private SpriteRenderer backgroundSpriteRenderer;
+
+        [SerializeField, Tooltip("Component dropdown of backgrounds menu style.")]
+        private Dropdown backgroundMenuStyleDropdown;
+
+        [SerializeField, Tooltip("Values of background menu style dropdown.")]
+        private BackgroundsUI[] backgroundsUIs;
 #pragma warning restore CS0649
 
+        private static int currentIndexBGUI;
+        private static bool bgStyleMenuChanged;
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
-        public void Awake()
+        private void Awake()
         {
             GameObject core = GameObject.Find("Core");
             if (core != null)
                 Destroy(core);
+            SetBGMenuStyleInDropdown();
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
@@ -80,5 +98,49 @@ namespace Game.Scene
         }
 
         public void StartCredits() => credits.SetTrigger(creditsKeyAnimation);
+
+        private void SetBGMenuStyleInDropdown()
+        {
+            RectTransform rectTransform = backgroundMenuStyleDropdown.transform.Find("Template").GetComponent<RectTransform>();
+            rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, backgroundsUIs.Length * 75);
+
+            backgroundMenuStyleDropdown.ClearOptions();
+
+            List<string> optionsInDropdown = new List<string>();
+
+            if (!bgStyleMenuChanged)
+            {
+                currentIndexBGUI = Random.Range(0, backgroundsUIs.Length);
+            }
+
+            for (int i = 0; i < backgroundsUIs.Length; i++)
+            {
+                BackgroundsUI backgroundsUI = backgroundsUIs[i];
+                optionsInDropdown.Add(backgroundsUI.Name);
+
+                if (i == currentIndexBGUI)
+                    backgroundSpriteRenderer.sprite = backgroundsUI.Sprite;
+                TweakParticles();
+            }
+
+            backgroundMenuStyleDropdown.AddOptions(optionsInDropdown);
+            backgroundMenuStyleDropdown.value = currentIndexBGUI;
+            backgroundMenuStyleDropdown.RefreshShownValue();
+        }
+
+        public void SetMenuStyle(int index)
+        {
+            currentIndexBGUI = index;
+            bgStyleMenuChanged = true;
+            backgroundSpriteRenderer.sprite = backgroundsUIs[index].Sprite;
+            TweakParticles();
+        }
+
+        private void TweakParticles()
+        {
+            GameObject p = backgroundsUIs[currentIndexBGUI].Particles;
+            foreach (BackgroundsUI item in backgroundsUIs)
+                item.Particles.SetActive(item.Particles.Equals(p));
+        }
     }
 }
