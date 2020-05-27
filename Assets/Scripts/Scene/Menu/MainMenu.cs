@@ -2,6 +2,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -101,24 +102,30 @@ namespace Game.Scene
 
         public void StartCredits() => credits.SetTrigger(creditsKeyAnimation);
 
+        public static void ConfigureDropdown(Dropdown dropdown, IEnumerable<string> elements, int maxAmount = -1)
+        {
+            List<string> options = elements.ToList();
+
+            maxAmount = maxAmount == -1 ? options.Count : Mathf.Min(options.Count, maxAmount);
+
+            RectTransform rectTransform = dropdown.transform.Find("Template").GetComponent<RectTransform>();
+            rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, maxAmount * 75);
+
+            dropdown.ClearOptions();
+            dropdown.AddOptions(options);
+            dropdown.RefreshShownValue();
+        }
+
         private void SetBGMenuStyleInDropdown()
         {
-            RectTransform rectTransform = backgroundMenuStyleDropdown.transform.Find("Template").GetComponent<RectTransform>();
-            rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, backgroundsUIs.Length * 75);
-
-            backgroundMenuStyleDropdown.ClearOptions();
-
-            List<string> optionsInDropdown = new List<string>();
+            ConfigureDropdown(backgroundMenuStyleDropdown, backgroundsUIs.Select(e => e.Name));
 
             if (!bgStyleMenuChanged)
-            {
                 currentIndexBGUI = Random.Range(0, backgroundsUIs.Length);
-            }
 
             for (int i = 0; i < backgroundsUIs.Length; i++)
             {
                 BackgroundsUI backgroundsUI = backgroundsUIs[i];
-                optionsInDropdown.Add(backgroundsUI.Name);
 
                 if (i == currentIndexBGUI)
                 {
@@ -127,9 +134,7 @@ namespace Game.Scene
                 }
             }
 
-            backgroundMenuStyleDropdown.AddOptions(optionsInDropdown);
             backgroundMenuStyleDropdown.value = currentIndexBGUI;
-            backgroundMenuStyleDropdown.RefreshShownValue();
         }
 
         public void SetMenuStyle(int index)
