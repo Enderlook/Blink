@@ -26,6 +26,12 @@ namespace Game.Scene
 
         [SerializeField, Tooltip("Key pressed to disable console.")]
         private KeyCode disableConsole;
+
+        [SerializeField, Tooltip("Credits panel.")]
+        private Animator credits;
+
+        [SerializeField, Tooltip("Credits animation parameter.")]
+        private string creditsKeyAnimation;
 #pragma warning restore CS0649
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
@@ -72,5 +78,7 @@ namespace Game.Scene
                 yield return null;
             }
         }
+
+        public void StartCredits() => credits.SetTrigger(creditsKeyAnimation);
     }
 }

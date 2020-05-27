@@ -34,15 +34,6 @@ namespace Game.Scene
 
         [SerializeField, Tooltip("Default background."), ShowIf(nameof(hasBackgrounds), true)]
         private Sprite defaultBG;
-
-        [SerializeField, Tooltip("Has Credits?")]
-        private bool hasCredits;
-
-        [SerializeField, Tooltip("Credits panel."), ShowIf(nameof(hasCredits), true)]
-        private Animator credits;
-
-        [SerializeField, Tooltip("Credits animation parameter."), ShowIf(nameof(hasCredits), true)]
-        private string creditsKeyAnimation;
 #pragma warning restore CS0649
 
         private List<Resolution> resolutions = new List<Resolution>();
@@ -59,7 +50,7 @@ namespace Game.Scene
         public void Start()
         {
             SetResolutionsInDropdown();
-            if (hasCredits) SetQualityValuesInDropdown();
+            SetQualityValuesInDropdown();
             if (hasBackgrounds)
             {
                 if (currentIndexBGUI == -1)
@@ -168,8 +159,6 @@ namespace Game.Scene
             GameObject p = backgroundsUIs[index].Particle;
             backgroundsUIs.ForEach(x => x.Particle.SetActive(x.Particle.Equals(p)));
         }
-
-        public void StartCredits() => credits.SetTrigger(creditsKeyAnimation);
     }
 
     [System.Serializable]

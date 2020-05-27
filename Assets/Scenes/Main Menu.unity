@@ -748,6 +748,8 @@ MonoBehaviour:
   loadingProgress: {fileID: 12125993}
   panel: {fileID: 889703966}
   disableConsole: 27
+  credits: {fileID: 301598321}
+  creditsKeyAnimation: Start Credits
 --- !u!114 &301598319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -928,7 +930,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 301598320}
+      - m_Target: {fileID: 301598318}
         m_MethodName: StartCredits
         m_Mode: 1
         m_Arguments:
