@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Star01
-  m_Shader: {fileID: 4800000, guid: 91c6aaeeff344b043a2f736b7bc5d854, type: 3}
+  m_Name: Star01 - Mobile
+  m_Shader: {fileID: 4800000, guid: a05885942ec7f1d448b5f5ba44b134a8, type: 3}
   m_ShaderKeywords: _ALPHABLEND_ON
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
