@@ -27,7 +27,7 @@ Material:
     - _InflationSpeed: 0
     - _MaxInflation: 0
     - _Opacity: 0.019
-    - _OpacityFactor: 63.6
+    - _OpacityFactor: 94.45
     - _PrimaryPower: 4
     - _RotationSpeed: 1
     - _Scale: 5
@@ -35,5 +35,5 @@ Material:
     - _TextureSpeed: 1
     - __dirty: 1
     m_Colors:
-    - _Primary: {r: 0.24705882, g: 0.6509804, b: 0.14901961, a: 0}
-    - _Secondary: {r: 0.5019608, g: 1, b: 0, a: 0}
+    - _Primary: {r: 0.24679601, g: 0.49095663, b: 0.8867924, a: 0}
+    - _Secondary: {r: 0, g: 0.76862717, b: 1, a: 0}
