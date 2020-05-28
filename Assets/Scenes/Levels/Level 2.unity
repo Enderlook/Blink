@@ -569,7 +569,7 @@ PrefabInstance:
     - target: {fileID: 4715188756852193412, guid: 69fa2176a1420f0459231f5dea185987,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.31
+      value: -4.26
       objectReference: {fileID: 0}
     - target: {fileID: 4715188756852193412, guid: 69fa2176a1420f0459231f5dea185987,
         type: 3}
@@ -1042,7 +1042,7 @@ Light:
   m_BounceIntensity: 0.5
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 4e-45}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 4.5905e-41, w: -7.509061e+13}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1067,6 +1067,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1723801433}
     m_Modifications:
+    - target: {fileID: 1386346629770609317, guid: ed77611a4e20c744fb5687f2f729621b,
+        type: 3}
+      propertyPath: spawnPoint.z
+      value: -0.1500001
+      objectReference: {fileID: 0}
     - target: {fileID: 6159810397355018357, guid: ed77611a4e20c744fb5687f2f729621b,
         type: 3}
       propertyPath: m_Name
@@ -1075,7 +1080,7 @@ PrefabInstance:
     - target: {fileID: 6400778694924351752, guid: ed77611a4e20c744fb5687f2f729621b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.0721035
+      value: -4.87
       objectReference: {fileID: 0}
     - target: {fileID: 6400778694924351752, guid: ed77611a4e20c744fb5687f2f729621b,
         type: 3}
