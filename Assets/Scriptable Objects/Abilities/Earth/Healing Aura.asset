@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Component
   m_EditorClassIdentifier: 
   healing: 50
-  timeToProduceHealing: 1
+  timeToProduceHealing: 1.78
   hitLayer:
     serializedVersion: 2
     m_Bits: 1536
