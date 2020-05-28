@@ -17,13 +17,16 @@ namespace Game.Scene
         public int GetScene()
         {
             if (scenes.Length == 1)
-                return scenes.RandomPick();
+                return scenes[0];
 
             while (true)
             {
                 int value = scenes.RandomPick();
                 if (value != lastVisitedScene)
+                {
+                    lastVisitedScene = value;
                     return value;
+                }
             }
         }
     }
