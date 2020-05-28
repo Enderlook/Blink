@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxCharge: 3.25
   abilityComponent: {fileID: 2084766500535844990}
+  <UseTimer>k__BackingField: 1
   <Icon>k__BackingField: {fileID: 21300000, guid: d797b96efaaf2e84f9a1110dcc79d66b,
     type: 3}
   animationName: Basic Stun
@@ -30,7 +31,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eeeb950ea1239f4c82033e29f2c8656, type: 3}
   m_Name: Component
   m_EditorClassIdentifier: 
-  damage: 25
+  damage: 60
   pushForce: 10
   prefab: {fileID: 26743888876781745, guid: cb8c3130400c0084abec9006565234eb, type: 3}
   timeToProduceDamage: 0.1

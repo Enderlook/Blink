@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8edbdb9f6fd4f654899a3d265cf6fb6c, type: 3}
   m_Name: Component
   m_EditorClassIdentifier: 
-  damage: 25
+  damage: 20
   pushForce: 10
   prefab: {fileID: 6663092405320373549, guid: 60846a407fc39854798234385c93f2f1, type: 3}
   speed: 20
