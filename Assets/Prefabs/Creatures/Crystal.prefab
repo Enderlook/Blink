@@ -459,7 +459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03f12bf783b1d9b49aad804760daa603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickingRadius: 0.75
+  pickingRadius: 0.8
   magnetRadius: 200
   magnetSpeed: 3
   layerToPickup:
