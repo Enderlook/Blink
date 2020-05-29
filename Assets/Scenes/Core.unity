@@ -652,14 +652,6 @@ MonoBehaviour:
   - HIGH
   - VERY HIGH
   - ULTRA
-  hasBackgrounds: 0
-  backgroundSpriteRenderer: {fileID: 0}
-  backgroundMenuStyileDropdown: {fileID: 0}
-  backgroundsUIs: []
-  defaultBG: {fileID: 0}
-  hasCredits: 0
-  credits: {fileID: 0}
-  creditsKeyAnimation: 
 --- !u!222 &847855973740384452
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2417,6 +2409,106 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0b652f32a2cc243917e4028fa0f046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7942906550795593892 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7932083281046407868, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7942906550795593889}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7942906550795593893 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 334849579814696598, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7942906550795593889}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7942906550795593894 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3940920599998260701, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7942906550795593889}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7942906550795593895 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6629582579017669111, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7942906550795593889}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7942906550795593896 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8191413835152955422, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7942906550795593889}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7942906550795593897 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1953518970474472500, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7942906550795593889}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &7942906550795593898 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5215692838567630470, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7942906550795593889}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7942906550795593899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7942906550795593898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 543cb59ad317b7145a8dad4f686b828f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: dfd488224fa8b924c8c9a08865d3c685, type: 2}
+  masterSlider: {fileID: 7942906550795593897}
+  masterValue: {fileID: 7942906550795593896}
+  masterParameter: MasterVolume
+  musicSlider: {fileID: 7942906550795593895}
+  musicValue: {fileID: 7942906550795593894}
+  musicParameter: MusicVolume
+  soundSlider: {fileID: 7942906550795593893}
+  soundValue: {fileID: 7942906550795593892}
+  soundParameter: SoundVolume
 --- !u!224 &7972200902287164703
 RectTransform:
   m_ObjectHideFlags: 0
