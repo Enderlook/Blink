@@ -16,9 +16,6 @@ namespace Game.Scene.CLI
         [SerializeField, Tooltip("Were all logs are stored.")]
         private RectTransform content;
 
-        [SerializeField, Tooltip("Text used as input.")]
-        private Text inputText;
-
         [SerializeField, Tooltip("Input field.")]
         private InputField inputField;
 
@@ -98,8 +95,8 @@ namespace Game.Scene.CLI
 
         public void Accept()
         {
-            string text = inputText.text.ToLower();
-            inputText.text = string.Empty;
+            string text = inputField.text.ToLower();
+            inputField.text = string.Empty;
             Write(text);
             Process(text);
             scrollRect.verticalNormalizedPosition = 0;
