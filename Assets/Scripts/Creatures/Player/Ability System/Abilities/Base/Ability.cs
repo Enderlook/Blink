@@ -33,13 +33,10 @@ namespace Game.Creatures.Player.AbilitySystem
 
         public virtual bool IsReady => charge == maxCharge;
 
-        public void Initialize(AbilitiesManager initializer)
+        public virtual void Initialize(AbilitiesManager initializer)
         {
             abilityComponent.Initialize(initializer);
-            PostInitialize(initializer);
         }
-
-        protected virtual void PostInitialize(AbilitiesManager initializer) { }
 
         public void ChargeToMaximum() => charge = maxCharge;
 
