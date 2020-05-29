@@ -30,7 +30,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd36e7441d3db1c4f8be7b2e3d2f4cac, type: 3}
   m_Name: Healing Aura
   m_EditorClassIdentifier: 
-  maxCharge: 10
+  maxCharge: 7
   abilityComponent: {fileID: -8837171883362530505}
   <UseTimer>k__BackingField: 0
   <Icon>k__BackingField: {fileID: 21300000, guid: a207095f750606d41a993e347372ffd0,
