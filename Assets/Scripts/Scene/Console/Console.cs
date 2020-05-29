@@ -87,12 +87,12 @@ namespace Game.Scene.CLI
 
             if (content.childCount > logLength)
                 Destroy(content.GetChild(0).gameObject);
-
-            if (cleaning)
+            else if (cleaning)
             {
-                while (content.childCount > 0)
+                if (content.childCount > 0)
                     Destroy(content.GetChild(0).gameObject);
-                cleaning = false;
+                else
+                    cleaning = false;
             }
         }
 
