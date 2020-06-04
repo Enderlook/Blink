@@ -13,10 +13,24 @@ namespace Game.Creatures.Player.AbilitySystem
 
         [SerializeField]
         private AbilityUI prefab;
+
+        [SerializeField]
+        private float cancelRequestTimeout = .1f;
 #pragma warning restore CS0649
 
         private AbilitiesPack abilities;
         private AbilityUI[] abilitiesUIs = Array.Empty<AbilityUI>();
+
+#if UNITY_ANDROID
+        private float currentCancelRequestTimeout = 0;
+#endif
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
+        private void Update() => currentCancelRequestTimeout -= Time.deltaTime;
+
+#if UNITY_ANDROID
+        public bool CanUseAbility(int index) => currentCancelRequestTimeout <= 0 && abilitiesUIs[index].IsOn;
+#endif
 
         public void UpdateAbility(int index) => abilitiesUIs[index].SetLoadPercentage(abilities[index]);
 
@@ -32,9 +46,29 @@ namespace Game.Creatures.Player.AbilitySystem
                 AbilityUI instance = Instantiate(prefab, abilitiesRoot);
                 abilitiesUIs[i] = instance;
                 Ability ability = abilities[i];
+                instance.name += " " + ability.name;
+                instance.Initialize(this);
                 instance.SetSprite(ability.Icon);
                 instance.SetLoadPercentage(ability);
             }
+#if UNITY_ANDROID
+            ToggleAbility(0);
+#endif
         }
+
+#if UNITY_ANDROID
+        public void ToggleAbility(int index)
+        {
+            for (int i = 0; i < abilitiesUIs.Length; i++)
+                abilitiesUIs[i].ManualToggle(i == index);
+        }
+
+        public void ToggleAbility(AbilityUI abilityUI)
+        {
+            foreach (AbilityUI ability in abilitiesUIs)
+                ability.ManualToggle(ability == abilityUI);
+            currentCancelRequestTimeout = cancelRequestTimeout;
+        }
+#endif
     }
 }

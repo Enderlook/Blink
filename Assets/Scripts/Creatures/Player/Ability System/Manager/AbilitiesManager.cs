@@ -8,8 +8,8 @@ namespace Game.Creatures.Player.AbilitySystem
     public class AbilitiesManager : MonoBehaviour
     {
 #pragma warning disable CS0649
-        [SerializeField, IsProperty, Tooltip("Where ablities which requires a shooting point does shoot.")]
-        public Transform ShootingPosition;
+        [field: SerializeField, IsProperty, Tooltip("Where ablities which requires a shooting point does shoot.")]
+        public Transform ShootingPosition { get; private set; }
 
         [field: SerializeField, IsProperty]
         protected AbilityUIManager UIManager { get; private set; }

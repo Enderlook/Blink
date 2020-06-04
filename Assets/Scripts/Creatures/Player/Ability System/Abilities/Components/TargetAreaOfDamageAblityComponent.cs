@@ -19,7 +19,18 @@ namespace Game.Creatures.Player.AbilitySystem
 
         public override void Execute()
         {
-            Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+            Vector2 position;
+#if UNITY_ANDROID
+#if UNITY_EDITOR
+            if (!UnityEditor.EditorApplication.isRemoteConnected)
+                position = Input.mousePosition;
+            else
+#endif
+            position = Input.GetTouch(0).position;
+#else
+            position = Input.mousePosition;
+#endif
+            Ray ray = camera.ScreenPointToRay(position);
             if (Physics.Raycast(ray, out RaycastHit hit, 1 << layer))
                 InstantiatePrefab(hit.point);
         }

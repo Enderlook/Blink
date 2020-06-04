@@ -1566,12 +1566,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5443965981887742039, guid: 6fe0b5ab5f249fe42b468d4b8c3dbe32,
-        type: 3}
-      propertyPath: maxHealth.scriptableObject
-      value: 
-      objectReference: {fileID: -7247885882411041942, guid: 6fe0b5ab5f249fe42b468d4b8c3dbe32,
-        type: 3}
     - target: {fileID: 6862659441686072569, guid: 6fe0b5ab5f249fe42b468d4b8c3dbe32,
         type: 3}
       propertyPath: gameManager
@@ -1603,6 +1597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilitiesRoot: {fileID: 5378600813162661941}
   prefab: {fileID: 2789573629715960461, guid: f2a68ff0a2dfae44e8e91055b38dbc73, type: 3}
+  cancelRequestTimeout: 1
 --- !u!114 &4282601507236596367
 MonoBehaviour:
   m_ObjectHideFlags: 0

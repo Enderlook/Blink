@@ -330,7 +330,7 @@ MonoBehaviour:
   maxHealth:
     <Mode>k__BackingField: 1
     inline: 0
-    scriptableObject: {fileID: 3692065462055061938}
+    scriptableObject: {fileID: -7247885882411041942}
     component: {fileID: 0}
   healthEvent:
     <Mode>k__BackingField: 0
