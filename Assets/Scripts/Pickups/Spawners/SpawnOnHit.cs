@@ -18,7 +18,7 @@ namespace Game.Pickups
         private float survivalPercent = 1;
 
         [SerializeField, Tooltip("Amount of childs destroyed and spawn drops per hit.")]
-        private RangeInt desotrysPerHit;
+        private RangeInt destroysPerHit;
 #pragma warning restore CS0649
 
         private List<GameObject> childs;
@@ -40,7 +40,7 @@ namespace Game.Pickups
 
         void IDamagable.TakeDamage(int amount)
         {
-            int value = desotrysPerHit.Value;
+            int value = destroysPerHit.Value;
             for (int i = 0; i < value; i++)
             {
                 if (childs.TryPopLast(out GameObject child))

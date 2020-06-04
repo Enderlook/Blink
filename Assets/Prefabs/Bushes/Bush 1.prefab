@@ -16,6 +16,7 @@ MonoBehaviour:
   minSpawnRadius: 0.5
   spawnPoint: {x: 0, y: 0.5, z: -0.15}
   spawnSpeed: 1
+  spawnOnlyAbove: 0
   prefab: {fileID: 843449112955945419, guid: f06ad5b5b6cd4374a8934f9f997000d3, type: 3}
   valueToSpawn:
     min: 10
@@ -33,7 +34,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   survivalPercent: 1
-  desotrysPerHit:
+  destroysPerHit:
     min: 1
     max: 2
 --- !u!1001 &2970564916462777986
@@ -52,6 +53,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Height
       value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5692001120023083513, guid: bc52210befdf71547875aa322e630890,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8209414795722149770, guid: bc52210befdf71547875aa322e630890,
         type: 3}
