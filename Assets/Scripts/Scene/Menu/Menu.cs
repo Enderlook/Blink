@@ -5,8 +5,6 @@ using Enderlook.Unity.Prefabs.HealthBarGUI;
 using System;
 using System.Collections;
 
-using UnityEditor;
-
 using UnityEngine;
 using UnityEngine.UI;
 
