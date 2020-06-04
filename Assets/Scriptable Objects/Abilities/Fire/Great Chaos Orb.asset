@@ -32,7 +32,10 @@ MonoBehaviour:
   m_Name: Great Chaos Orb
   m_EditorClassIdentifier: 
   maxCharge: 5
-  abilityComponent: {fileID: -4742489244343742138}
+  abilityComponents:
+  - {fileID: -4742489244343742138}
+  <UseTimer>k__BackingField: 1
+  <IsSelf>k__BackingField: 0
   <Icon>k__BackingField: {fileID: 21300000, guid: 4f05d65090b41084dbe0d66622d5f758,
     type: 3}
   animationName: Charged Attack

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.24011655, g: 0.33247435, b: 0.8311335, a: 1}
+  m_IndirectSpecularColor: {r: 0.4941265, g: 0.61355454, b: 0.92294675, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -967,7 +967,7 @@ Light:
   m_BounceIntensity: 0.8
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 9.43e-43, y: -2.3832322e+38, z: 9.43e-43, w: 3.5248401e-12}
+  m_BoundingSphereOverride: {x: NaN, y: -2.249119e-30, z: 7.38e-43, w: NaN}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -3248,6 +3248,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bush 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6741409058749950717, guid: 243039f839963e640b971563f98c5781,
+        type: 3}
+      propertyPath: spawnPoint.z
+      value: -0.14999962
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 243039f839963e640b971563f98c5781, type: 3}

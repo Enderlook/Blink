@@ -1,10 +1,8 @@
 ﻿using Game.Creatures;
 
-using UnityEngine;
-
 using System.Linq;
-using System.Collections.Generic;
-using Enderlook.Extensions;
+
+using UnityEngine;
 
 using RangeInt = Enderlook.Unity.Serializables.Ranges.RangeInt;
 
@@ -21,38 +19,32 @@ namespace Game.Pickups
         private RangeInt destroysPerHit;
 #pragma warning restore CS0649
 
-        private List<GameObject> childs;
-
         private IPickupSpawner spawner;
 
         private void Awake()
         {
             spawner = GetComponent<IPickupSpawner>();
-            childs = new List<GameObject>();
             foreach (Transform child in transform.Cast<Transform>())
             {
                 if (Random.value > survivalPercent)
-                    Destroy(child.gameObject);
-                else
-                    childs.Add(child.gameObject);
+                    child.gameObject.SetActive(false);
             }
         }
 
         void IDamagable.TakeDamage(int amount)
         {
             int value = destroysPerHit.Value;
-            for (int i = 0; i < value; i++)
+            int i = 0;
+            foreach (Transform child in transform.Cast<Transform>())
             {
-                if (childs.TryPopLast(out GameObject child))
+                GameObject childGO = child.gameObject;
+                if (childGO.activeSelf)
                 {
-                    Destroy(child);
                     spawner.Spawn();
-                }
-                else
-                {
-                    Destroy(this);
-                    Destroy((Component)spawner);
-                    return;
+                    child.gameObject.SetActive(false);
+
+                    if (i++ >= value)
+                        break;
                 }
             }
         }

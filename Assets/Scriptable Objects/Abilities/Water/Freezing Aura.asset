@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Freezing Aura
   m_EditorClassIdentifier: 
   maxCharge: 7
-  abilityComponent: {fileID: 7857762273320944531}
+  abilityComponents:
+  - {fileID: 7857762273320944531}
   <UseTimer>k__BackingField: 0
+  <IsSelf>k__BackingField: 0
   <Icon>k__BackingField: {fileID: 21300000, guid: bd560fc711daa1042b5d1260e6084910,
     type: 3}
 --- !u!114 &7857762273320944531

@@ -16,7 +16,7 @@ namespace Game.Creatures.Player.AbilitySystem
         private float maxCharge;
 
         [SerializeField, Tooltip("Ability behaviour.")]
-        private AbilityComponent abilityComponent;
+        private AbilityComponent[] abilityComponents;
 
         [field: SerializeField, IsProperty, Tooltip("Does this ability charge with time?")]
         public bool UseTimer { get; private set; } = true;
@@ -38,7 +38,8 @@ namespace Game.Creatures.Player.AbilitySystem
 
         public virtual void Initialize(AbilitiesManager initializer)
         {
-            abilityComponent.Initialize(initializer);
+            for (int i = 0; i < abilityComponents.Length; i++)
+                abilityComponents[i].Initialize(initializer);
         }
 
         public void ChargeToMaximum() => charge = maxCharge;
@@ -57,6 +58,10 @@ namespace Game.Creatures.Player.AbilitySystem
 
         protected virtual void ExecuteBehaviour() => ExecuteComponent();
 
-        protected void ExecuteComponent() => abilityComponent.Execute();
+        protected void ExecuteComponent()
+        {
+            for (int i = 0; i < abilityComponents.Length; i++)
+                abilityComponents[i].Execute();
+        }
     }
 }
