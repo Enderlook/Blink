@@ -40,6 +40,7 @@ namespace Game.Creatures
         {
             audioSource = GetComponent<AudioSource>();
             randomPitch = GetComponent<RandomPitch>();
+            health.SetValue(maxHealth.GetValue());
         }
 
         public void TakeDamage(int amount)
