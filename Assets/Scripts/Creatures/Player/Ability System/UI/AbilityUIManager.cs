@@ -23,10 +23,10 @@ namespace Game.Creatures.Player.AbilitySystem
 
 #if UNITY_ANDROID
         private float currentCancelRequestTimeout = 0;
-#endif
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Update() => currentCancelRequestTimeout -= Time.deltaTime;
+#endif
 
 #if UNITY_ANDROID
         public bool CanUseAbility(int index) => currentCancelRequestTimeout <= 0 && abilitiesUIs[index].IsOn;

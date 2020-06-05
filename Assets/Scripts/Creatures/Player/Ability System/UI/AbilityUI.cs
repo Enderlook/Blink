@@ -50,8 +50,8 @@ namespace Game.Creatures.Player.AbilitySystem
             }
 #endif
 #else
-            toggle.targetGraphic.color = toggle.colors.normalColor;
-            toggle.enabled = false;
+            _toggle.targetGraphic.color = _toggle.colors.normalColor;
+            _toggle.enabled = false;
 #endif
         }
 

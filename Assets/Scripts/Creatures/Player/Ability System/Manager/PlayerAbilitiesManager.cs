@@ -57,8 +57,8 @@ namespace Game.Creatures.Player.AbilitySystem
 #endif
                     break;
                 }
-#if UNITY_ANDROID
             }
+#if UNITY_ANDROID
             if (hasAbilityBeenCasted
 #if UNITY_EDITOR
                     && UnityEditor.EditorApplication.isRemoteConnected
