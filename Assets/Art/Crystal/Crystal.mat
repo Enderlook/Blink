@@ -39,6 +39,8 @@ Material:
     - _CracksScale: 6
     - _Float0: 1
     - _Float2: 1
+    - _FresnelPower: 2
+    - _FresnelScale: 0.4
     - _Health: 1
     - _HealthScalingPower: 2.5
     - _Int0: 0
