@@ -1,5 +1,7 @@
 ﻿using Enderlook.Unity.Attributes;
 
+using System;
+
 using UnityEngine;
 
 namespace Game.Creatures.Player.AbilitySystem
@@ -15,6 +17,7 @@ namespace Game.Creatures.Player.AbilitySystem
         protected AbilityUIManager UIManager { get; private set; }
 #pragma warning restore CS0649
 
+        [NonSerialized]
         private AbilitiesPack abilities;
 
         public Animator Animator { get; private set; }

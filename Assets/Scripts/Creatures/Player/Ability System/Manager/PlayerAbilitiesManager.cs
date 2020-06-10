@@ -1,12 +1,15 @@
-﻿using Game.Scene.CLI;
+﻿using System;
 
 using UnityEngine;
+
+using Console = Game.Scene.CLI.Console;
 
 namespace Game.Creatures.Player.AbilitySystem
 {
     [RequireComponent(typeof(Animator)), AddComponentMenu("Game/Ability System/Managers/Player Abilites Manager")]
     public class PlayerAbilitiesManager : AbilitiesManager
     {
+        [NonSerialized]
         private ControlledAbilitiesPack abilities;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
