@@ -1150,80 +1150,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 832214626}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &985428338
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3924942810787000642, guid: 0bb8c41f490233542878ff1af4869904,
-        type: 3}
-      propertyPath: m_Name
-      value: Crystal Drop Configuration Ice
-      objectReference: {fileID: 0}
-    - target: {fileID: 7523831922271754275, guid: 0bb8c41f490233542878ff1af4869904,
-        type: 3}
-      propertyPath: element
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8669825223523854250, guid: 0bb8c41f490233542878ff1af4869904,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8669825223523854250, guid: 0bb8c41f490233542878ff1af4869904,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8669825223523854250, guid: 0bb8c41f490233542878ff1af4869904,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8669825223523854250, guid: 0bb8c41f490233542878ff1af4869904,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8669825223523854250, guid: 0bb8c41f490233542878ff1af4869904,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8669825223523854250, guid: 0bb8c41f490233542878ff1af4869904,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8669825223523854250, guid: 0bb8c41f490233542878ff1af4869904,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8669825223523854250, guid: 0bb8c41f490233542878ff1af4869904,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8669825223523854250, guid: 0bb8c41f490233542878ff1af4869904,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8669825223523854250, guid: 0bb8c41f490233542878ff1af4869904,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8669825223523854250, guid: 0bb8c41f490233542878ff1af4869904,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0bb8c41f490233542878ff1af4869904, type: 3}
 --- !u!1001 &1115595826
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3333,3 +3259,72 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1917085343}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6462243642401805231
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2818093289722570946, guid: 7425ff044c056da488254e5902b62c41,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2818093289722570946, guid: 7425ff044c056da488254e5902b62c41,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2818093289722570946, guid: 7425ff044c056da488254e5902b62c41,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2818093289722570946, guid: 7425ff044c056da488254e5902b62c41,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2818093289722570946, guid: 7425ff044c056da488254e5902b62c41,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2818093289722570946, guid: 7425ff044c056da488254e5902b62c41,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2818093289722570946, guid: 7425ff044c056da488254e5902b62c41,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2818093289722570946, guid: 7425ff044c056da488254e5902b62c41,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2818093289722570946, guid: 7425ff044c056da488254e5902b62c41,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2818093289722570946, guid: 7425ff044c056da488254e5902b62c41,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2818093289722570946, guid: 7425ff044c056da488254e5902b62c41,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7580325912724487722, guid: 7425ff044c056da488254e5902b62c41,
+        type: 3}
+      propertyPath: m_Name
+      value: Crystal Drop Configuration
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7425ff044c056da488254e5902b62c41, type: 3}
