@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Game.Scene;
+
+using System;
 
 using UnityEngine;
 
@@ -11,6 +13,11 @@ namespace Game.Creatures.Player.AbilitySystem
     {
         [NonSerialized]
         private ControlledAbilitiesPack abilities;
+
+#if UNITY_EDITOR
+        [SerializeField]
+        private Joystick joystick;
+#endif
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Update()
@@ -36,17 +43,19 @@ namespace Game.Creatures.Player.AbilitySystem
 
                 if (!Console.IsConsoleEnabled
                     && ability.IsReady
+                    &&
 #if UNITY_ANDROID
 #if UNITY_EDITOR
-                    && (UnityEditor.EditorApplication.isRemoteConnected
-                        ? UIManager.CanUseAbility(i) && (ability.IsSelf || Input.touchCount > 0)
+                    (UnityEditor.EditorApplication.isRemoteConnected ?
+#endif
+                        UIManager.CanUseAbility(i)
+                        && (ability.IsSelf || Input.touchCount > (joystick.IsDragging ? 1 : 0))
+#if UNITY_EDITOR
                         : control.HasUserRequestTrigger())
 #else
-                    && !UIManager.MustCancelRequest()
-                    && Input.touchCount > 0
 #endif
 #else
-                    && control.HasUserRequestTrigger()
+                    control.HasUserRequestTrigger()
 #endif
                 )
                 {

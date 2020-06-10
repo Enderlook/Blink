@@ -96,13 +96,18 @@ namespace Game.Scene
                 PlayMusic();
 
             if (Input.GetKeyDown(pauseKey))
-            {
-                if (Console.IsConsoleEnabled)
-                    Console.IsConsoleEnabled = false;
-                else if (mode == Mode.Playing)
-                    ToggleMenu();
-            }
+                MenuButton();
         }
+
+        public void MenuButton()
+        {
+            if (Console.IsConsoleEnabled)
+                Console.IsConsoleEnabled = false;
+            else if (mode == Mode.Playing)
+                ToggleMenu();
+        }
+
+        public void ToggleConsole() => Console.IsConsoleEnabled = !Console.IsConsoleEnabled;
 
         private void ToggleMenu()
         {

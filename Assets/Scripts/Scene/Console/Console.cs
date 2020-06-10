@@ -45,7 +45,16 @@ namespace Game.Scene.CLI
         private static Console instance;
 
         public static bool IsConsoleEnabled {
-            get => instance.console.activeSelf;
+            get {
+                // Fix weird bug
+                if (instance == null)
+                {
+                    Debug.LogWarning("Console was null.");
+                    return false;
+                }
+                return instance.console.activeSelf;
+            }
+
             set => instance.console.SetActive(value);
         }
 
@@ -75,10 +84,7 @@ namespace Game.Scene.CLI
         private void Update()
         {
             if (!console.activeSelf && Input.GetKeyDown(openConsole))
-            {
-                console.SetActive(true);
-                eventSystem.SetSelectedGameObject(inputField.gameObject, null);
-            }
+                Open();
             else if (Input.GetKeyDown(introCode))
                 Accept();
 
@@ -91,6 +97,20 @@ namespace Game.Scene.CLI
                 else
                     cleaning = false;
             }
+        }
+
+        public void Toggle()
+        {
+            if (!console.activeSelf)
+                Open();
+            else
+                Close();
+        }
+
+        private void Open()
+        {
+            console.SetActive(true);
+            eventSystem.SetSelectedGameObject(inputField.gameObject, null);
         }
 
         public void Accept()
@@ -144,6 +164,9 @@ namespace Game.Scene.CLI
             => Application.Quit();
 
         private void Close(string[] sections)
+            => Close();
+
+        private void Close()
             => console.SetActive(false);
 
         public void SetCommandsPack(CommandsPack commandsPack)
