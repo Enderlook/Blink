@@ -3,6 +3,8 @@
 using Enderlook.Unity.Attributes;
 using Enderlook.Unity.Utils.Clockworks;
 
+using System.Collections;
+
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -35,9 +37,6 @@ namespace Game.Creatures
 
         [SerializeField, Tooltip("Crystal layer")]
         private LayerMask crystalLayer;
-
-        [SerializeField, Tooltip("Attack collider")]
-        private new Collider collider;
 #pragma warning restore CS0649
 
         private EnemyPathFinding enemyPathFinding;
@@ -56,15 +55,11 @@ namespace Game.Creatures
             navMeshAgent = GetComponent<NavMeshAgent>();
             animator = GetComponent<Animator>();
             stunningClockwork = new Clockwork(0, UnStun, true, 0);
-            collider.isTrigger = true;
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Update()
         {
-            if (collider.enabled)
-                collider.enabled = false;
-
             if (isDead)
                 return;
 
@@ -91,8 +86,6 @@ namespace Game.Creatures
 
                     animator.SetTrigger(animationKey);
                     nextAttack = Time.time + cooldown;
-
-                    collider.enabled = true;
                 }
             }
             else
@@ -101,9 +94,6 @@ namespace Game.Creatures
 
         private void OnTriggerEnter(Collider other)
         {
-            if (!collider.enabled)
-                return;
-
             GameObject target = other.gameObject;
             if (target.layer == playerLayer.ToLayer() || target.layer == crystalLayer.ToLayer())
             {
