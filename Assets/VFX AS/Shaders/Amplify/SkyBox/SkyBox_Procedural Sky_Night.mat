@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SkyBox_Procedural Sky_Night
+  m_Shader: {fileID: 4800000, guid: 26c649d64ee6c5548ae3b78d3b918bae, type: 3}
+  m_ShaderKeywords: _HASSTARS_ON
+  m_LightmapFlags: 0
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Floats:
+    - _DarkColorStrength: 6
+    - _FogHeight1: 3.9
+    - _HasFog: 0
+    - _HasStars: 1
+    - _LightColorStrength: 1.5
+    - _StarDensity1: 10
+    - __dirty: 0
+    m_Colors:
+    - _Dark: {r: 0.25228596, g: 0, b: 1, a: 1}
+    - _DarkEdge: {r: 0.26394418, g: 0.12941179, b: 0.43529412, a: 0}
+    - _Light: {r: 0.06614756, g: 0.02352939, b: 0.972549, a: 1}
+    - _LightEdge: {r: 0.7850565, g: 0.031372562, b: 0.9137255, a: 1}
+    - _StarsScale: {r: 10, g: 2, b: 0, a: 0}
