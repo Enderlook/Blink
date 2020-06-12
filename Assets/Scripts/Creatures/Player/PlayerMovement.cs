@@ -4,11 +4,14 @@ using Enderlook.Unity.Atoms;
 
 using Game.Scene.CLI;
 
+using System.Collections;
+
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Game.Creatures.Player
 {
-    [RequireComponent(typeof(Animator)), AddComponentMenu("Game/Creatures/Player/Movement")]
+    [RequireComponent(typeof(Animator)), RequireComponent(typeof(NavMeshAgent)), AddComponentMenu("Game/Creatures/Player/Movement")]
     public class PlayerMovement : MonoBehaviour
     {
 #pragma warning disable CS0649
@@ -35,7 +38,19 @@ namespace Game.Creatures.Player
         private float vertical;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
-        private void Awake() => animator = GetComponent<Animator>();
+        private void Awake()
+        {
+            animator = GetComponent<Animator>();
+
+            NavMeshAgent navMeshAgent = GetComponent<NavMeshAgent>();
+            navMeshAgent.enabled = false;
+            StartCoroutine(FixNavMeshAgent());
+            IEnumerator FixNavMeshAgent()
+            {
+                yield return new WaitForSeconds(1f);
+                navMeshAgent.enabled = true;
+            }
+        }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void FixedUpdate()
