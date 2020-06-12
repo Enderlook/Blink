@@ -16,6 +16,7 @@ MonoBehaviour:
   minSpawnRadius: 1.44
   spawnPoint: {x: 0.11, y: 0.97, z: -0.1}
   spawnSpeed: 1
+  spawnOnlyAbove: 0
   prefab: {fileID: 3863031607120699939, guid: 165d3c095ec2366439a23bdb94c3973d, type: 3}
 --- !u!114 &5951377299405911399
 MonoBehaviour:
@@ -30,7 +31,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   survivalPercent: 0.5
-  desotrysPerHit:
+  destroysPerHit:
     min: 1
     max: 3
 --- !u!1001 &175956124747647264

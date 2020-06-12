@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8edbdb9f6fd4f654899a3d265cf6fb6c, type: 3}
   m_Name: Component
   m_EditorClassIdentifier: 
-  damage: 25
+  damage: 20
   pushForce: 10
   prefab: {fileID: 6663092405320373549, guid: 60846a407fc39854798234385c93f2f1, type: 3}
   speed: 20
@@ -31,8 +31,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e38a1c2b6c720846bae5e0a17d34784, type: 3}
   m_Name: Ice Attack
   m_EditorClassIdentifier: 
-  maxCharge: 1.2
-  abilityComponent: {fileID: -7979187644668596102}
+  maxCharge: 0.8
+  abilityComponents:
+  - {fileID: -7979187644668596102}
+  <UseTimer>k__BackingField: 1
+  <IsSelf>k__BackingField: 0
   <Icon>k__BackingField: {fileID: 21300000, guid: b904913d2d1b53042a69b5b524554d6f,
     type: 3}
   animationName: Basic Attack

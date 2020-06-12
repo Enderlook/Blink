@@ -5,8 +5,6 @@ using Enderlook.Unity.Prefabs.HealthBarGUI;
 using System;
 using System.Collections;
 
-using UnityEditor;
-
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -49,8 +47,8 @@ namespace Game.Scene
         [SerializeField, Tooltip("Background image.")]
         private Image background;
 
-        [SerializeField, Tooltip("Help panel.")]
-        private GameObject help;
+        [SerializeField, Tooltip("Options panel.")]
+        private GameObject options;
 
         [SerializeField, Tooltip("When any of this values reaches 0, player loose.")]
         private IntEvent[] events;
@@ -98,13 +96,18 @@ namespace Game.Scene
                 PlayMusic();
 
             if (Input.GetKeyDown(pauseKey))
-            {
-                if (Console.IsConsoleEnabled)
-                    Console.IsConsoleEnabled = false;
-                else if (mode == Mode.Playing)
-                    ToggleMenu();
-            }
+                MenuButton();
         }
+
+        public void MenuButton()
+        {
+            if (Console.IsConsoleEnabled)
+                Console.IsConsoleEnabled = false;
+            else if (mode == Mode.Playing)
+                ToggleMenu();
+        }
+
+        public void ToggleConsole() => Console.IsConsoleEnabled = !Console.IsConsoleEnabled;
 
         private void ToggleMenu()
         {
@@ -116,9 +119,9 @@ namespace Game.Scene
             }
             else
             {
-                if (help.activeSelf)
+                if (options.activeSelf)
                 {
-                    help.SetActive(false);
+                    options.SetActive(false);
                     menu.SetActive(true);
                     return;
                 }
@@ -220,7 +223,7 @@ namespace Game.Scene
 
         private void HideMenu()
         {
-            help.SetActive(false);
+            options.SetActive(false);
             winMenu.SetActive(false);
             loseMenu.SetActive(false);
             menu.SetActive(false);

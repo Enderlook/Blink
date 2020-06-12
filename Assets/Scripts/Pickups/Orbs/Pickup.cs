@@ -17,7 +17,14 @@ namespace Game.Pickups.Orbs
         protected void Pick()
         {
             AudioSourceUtils.PlayAndDestroy(clip, transform.position, audioMixerGroup);
-            Destroy(gameObject);
+            
+            if (TryGetComponent(out TrailRenderer trailRenderer))
+            {
+                GetComponent<Collider>().enabled = false;
+                enabled = false;
+                Destroy(gameObject, trailRenderer.time * 2); // * 2 to be sure
+            } else
+                Destroy(gameObject);
         }
 #pragma warning restore CS0649
     }

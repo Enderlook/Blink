@@ -16,9 +16,6 @@ namespace Game.Scene.CLI
         [SerializeField, Tooltip("Were all logs are stored.")]
         private RectTransform content;
 
-        [SerializeField, Tooltip("Text used as input.")]
-        private Text inputText;
-
         [SerializeField, Tooltip("Input field.")]
         private InputField inputField;
 
@@ -48,7 +45,16 @@ namespace Game.Scene.CLI
         private static Console instance;
 
         public static bool IsConsoleEnabled {
-            get => instance.console.activeSelf;
+            get {
+                // Fix weird bug
+                if (instance == null)
+                {
+                    Debug.LogWarning("Console was null.");
+                    return false;
+                }
+                return instance.console.activeSelf;
+            }
+
             set => instance.console.SetActive(value);
         }
 
@@ -78,28 +84,39 @@ namespace Game.Scene.CLI
         private void Update()
         {
             if (!console.activeSelf && Input.GetKeyDown(openConsole))
-            {
-                console.SetActive(true);
-                eventSystem.SetSelectedGameObject(inputField.gameObject, null);
-            }
+                Open();
             else if (Input.GetKeyDown(introCode))
                 Accept();
 
             if (content.childCount > logLength)
                 Destroy(content.GetChild(0).gameObject);
-
-            if (cleaning)
+            else if (cleaning)
             {
-                while (content.childCount > 0)
+                if (content.childCount > 0)
                     Destroy(content.GetChild(0).gameObject);
-                cleaning = false;
+                else
+                    cleaning = false;
             }
+        }
+
+        public void Toggle()
+        {
+            if (!console.activeSelf)
+                Open();
+            else
+                Close();
+        }
+
+        private void Open()
+        {
+            console.SetActive(true);
+            eventSystem.SetSelectedGameObject(inputField.gameObject, null);
         }
 
         public void Accept()
         {
-            string text = inputText.text.ToLower();
-            inputText.text = string.Empty;
+            string text = inputField.text.ToLower();
+            inputField.text = string.Empty;
             Write(text);
             Process(text);
             scrollRect.verticalNormalizedPosition = 0;
@@ -147,6 +164,9 @@ namespace Game.Scene.CLI
             => Application.Quit();
 
         private void Close(string[] sections)
+            => Close();
+
+        private void Close()
             => console.SetActive(false);
 
         public void SetCommandsPack(CommandsPack commandsPack)

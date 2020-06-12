@@ -30,7 +30,10 @@ namespace Game.Creatures
             if (health == 0)
             {
                 if (useAnimator)
+                {
                     animator.SetBool(deadAnimation, true);
+                    GetComponent<Collider>().enabled = false;
+                }
                 else
                     Destroy(gameObject);
             }

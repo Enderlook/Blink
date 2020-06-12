@@ -13,9 +13,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   survivalPercent: 1
-  desotrysPerHit:
+  destroysPerHit:
     min: 1
     max: 2
+--- !u!114 &5686822385477672522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6221724110923692224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2c7d9f5273a63544a25a5667b7e4ca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regenerationRate: 1
 --- !u!114 &6741409058749950717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32,6 +45,7 @@ MonoBehaviour:
   minSpawnRadius: 0.5
   spawnPoint: {x: 0, y: 0.5, z: -0.15}
   spawnSpeed: 1
+  spawnOnlyAbove: 0
   prefab: {fileID: 843449112955945419, guid: f06ad5b5b6cd4374a8934f9f997000d3, type: 3}
   valueToSpawn:
     min: 10
@@ -46,12 +60,12 @@ PrefabInstance:
     - target: {fileID: 569627896001705808, guid: ecc58049b103ec04b86ff83bb0bc88af,
         type: 3}
       propertyPath: m_Radius
-      value: 0.6
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 569627896001705808, guid: ecc58049b103ec04b86ff83bb0bc88af,
         type: 3}
       propertyPath: m_Height
-      value: 1.4
+      value: 1.64
       objectReference: {fileID: 0}
     - target: {fileID: 2503550920043147446, guid: ecc58049b103ec04b86ff83bb0bc88af,
         type: 3}

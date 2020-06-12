@@ -16,10 +16,13 @@ namespace Game.Creatures.Player.AbilitySystem
         private float maxCharge;
 
         [SerializeField, Tooltip("Ability behaviour.")]
-        private AbilityComponent abilityComponent;
+        private AbilityComponent[] abilityComponents;
 
         [field: SerializeField, IsProperty, Tooltip("Does this ability charge with time?")]
         public bool UseTimer { get; private set; } = true;
+
+        [field: SerializeField, IsProperty, Tooltip("Whenever this ability do not require user click on mobile.")]
+        public bool IsSelf { get; private set; }
 
         [field: Header("Setup")]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
@@ -33,13 +36,11 @@ namespace Game.Creatures.Player.AbilitySystem
 
         public virtual bool IsReady => charge == maxCharge;
 
-        public void Initialize(AbilitiesManager initializer)
+        public virtual void Initialize(AbilitiesManager initializer)
         {
-            abilityComponent.Initialize(initializer);
-            PostInitialize(initializer);
+            for (int i = 0; i < abilityComponents.Length; i++)
+                abilityComponents[i].Initialize(initializer);
         }
-
-        protected virtual void PostInitialize(AbilitiesManager initializer) { }
 
         public void ChargeToMaximum() => charge = maxCharge;
 
@@ -57,6 +58,10 @@ namespace Game.Creatures.Player.AbilitySystem
 
         protected virtual void ExecuteBehaviour() => ExecuteComponent();
 
-        protected void ExecuteComponent() => abilityComponent.Execute();
+        protected void ExecuteComponent()
+        {
+            for (int i = 0; i < abilityComponents.Length; i++)
+                abilityComponents[i].Execute();
+        }
     }
 }

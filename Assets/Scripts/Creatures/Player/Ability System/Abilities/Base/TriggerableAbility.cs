@@ -2,7 +2,16 @@
 {
     public abstract class TriggerableAbility : Ability
     {
-        public bool IsRunning { get; private set; }
+        public bool IsRunning {
+            get;
+            private set;
+        }
+
+        public override void Initialize(AbilitiesManager initializer)
+        {
+            base.Initialize(initializer);
+            IsRunning = false;
+        }
 
         public override sealed bool IsReady => base.IsReady && !IsRunning;
 

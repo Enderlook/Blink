@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: Crystallize
   m_EditorClassIdentifier: 
   maxCharge: 4
-  abilityComponent: {fileID: 3789158990937585984}
+  abilityComponents:
+  - {fileID: 3789158990937585984}
   <UseTimer>k__BackingField: 1
+  <IsSelf>k__BackingField: 0
   <Icon>k__BackingField: {fileID: 21300000, guid: f39688f25c7d00d46a09b894d85c9520,
     type: 3}
-  animationName: Summon Elemental Attack
-  <Key>k__BackingField: Summon Elemental Attack
+  animationName: Wave Spell
+  <Key>k__BackingField: Wave Spell
 --- !u!114 &3789158990937585984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31,7 +33,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eeeb950ea1239f4c82033e29f2c8656, type: 3}
   m_Name: Component
   m_EditorClassIdentifier: 
-  damage: 25
+  damage: 60
   pushForce: 10
   prefab: {fileID: 627897877563974230, guid: ec803aea0d7da264295e0a5f7e817724, type: 3}
   timeToProduceDamage: 0.15

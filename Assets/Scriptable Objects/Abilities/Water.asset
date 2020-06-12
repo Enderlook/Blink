@@ -26,6 +26,6 @@ MonoBehaviour:
     button: 0
     canBeHoldDown: 0
   - useMouse: 0
-    key: 113
+    key: 114
     button: 0
     canBeHoldDown: 0

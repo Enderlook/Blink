@@ -4,6 +4,18 @@
         <name>Enderlook.Unity.Extensions</name>
     </assembly>
     <members>
+        <member name="T:Enderlook.Unity.Extensions.Collision2DExtensions">
+            <summary>
+            Extension methods for <see cref="T:UnityEngine.Collision2D"/>.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.Collision2DExtensions.GetCollisionImpulse(UnityEngine.Collision2D)">
+            <summary>
+            Calculates the collision impulse of a <see cref="T:UnityEngine.Collision2D"/>.
+            </summary>
+            <param name="source"><see cref="T:UnityEngine.Collision2D"/> used to calculate the impulse.</param>
+            <returns>Collision impulse of <paramref name="source"/>.</returns>
+        </member>
         <member name="M:Enderlook.Unity.Extensions.ColorExtensions.GetColorTag(UnityEngine.Color,System.String)">
             <summary>
             Warps <paramref name="text"/> in HTML color tag with <paramref name="color"/>.<br/>

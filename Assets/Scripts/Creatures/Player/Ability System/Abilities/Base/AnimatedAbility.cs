@@ -17,7 +17,11 @@ namespace Game.Creatures.Player.AbilitySystem
 
         private Animator animator;
 
-        protected override sealed void PostInitialize(AbilitiesManager initializer) => animator = initializer.Animator;
+        public override sealed void Initialize(AbilitiesManager initializer)
+        {
+            base.Initialize(initializer);
+            animator = initializer.Animator;
+        }
 
         protected override sealed void ExecuteStart() => animator.SetTrigger(animationName);
     }

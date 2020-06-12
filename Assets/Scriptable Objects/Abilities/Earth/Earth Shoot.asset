@@ -31,8 +31,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e38a1c2b6c720846bae5e0a17d34784, type: 3}
   m_Name: Earth Shoot
   m_EditorClassIdentifier: 
-  maxCharge: 1.35
-  abilityComponent: {fileID: -6798405854417829614}
+  maxCharge: 0.8
+  abilityComponents:
+  - {fileID: -6798405854417829614}
+  <UseTimer>k__BackingField: 1
+  <IsSelf>k__BackingField: 0
   <Icon>k__BackingField: {fileID: 21300000, guid: 9ce7da819b2993c48adc30af7c8c0592,
     type: 3}
   animationName: Basic Attack

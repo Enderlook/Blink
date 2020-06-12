@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Energy Trail
+  m_Shader: {fileID: 4800000, guid: face93902be0dba48b50df1f8caf7984, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _InflationSpeed: 0
+    - _MaxInflation: 0
+    - _Opacity: 0.019
+    - _OpacityFactor: 94.45
+    - _PrimaryPower: 4
+    - _RotationSpeed: 1
+    - _Scale: 5
+    - _SecondaryPower: 1.98
+    - _TextureSpeed: 1
+    - __dirty: 1
+    m_Colors:
+    - _Primary: {r: 0.24679601, g: 0.49095663, b: 0.8867924, a: 0}
+    - _Secondary: {r: 0, g: 0.76862717, b: 1, a: 0}

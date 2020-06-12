@@ -1,11 +1,15 @@
 ﻿using Enderlook.Unity.Prefabs.HealthBarGUI;
 
-using Game.Scene.CLI;
-
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+using Console = Game.Scene.CLI.Console;
+using Random = UnityEngine.Random;
 
 namespace Game.Scene
 {
@@ -26,14 +30,37 @@ namespace Game.Scene
 
         [SerializeField, Tooltip("Key pressed to disable console.")]
         private KeyCode disableConsole;
+
+        [Header("Credits")]
+        [SerializeField, Tooltip("Credits panel.")]
+        private Animator credits;
+
+        [SerializeField, Tooltip("Credits animation parameter.")]
+        private string creditsKeyAnimation;
+
+        [Header("Backgrounds")]
+        [SerializeField, Tooltip("SpriteRenderer component of Background.")]
+        private SpriteRenderer backgroundSpriteRenderer;
+
+        [SerializeField, Tooltip("Component dropdown of backgrounds menu style.")]
+        private Dropdown backgroundMenuStyleDropdown;
+
+        [SerializeField, Tooltip("Values of background menu style dropdown.")]
+        private BackgroundsUI[] backgroundsUIs;
 #pragma warning restore CS0649
 
+        private static int currentIndexBGUI;
+        private static bool bgStyleMenuChanged;
+
+        private GameObject lastParticleSystem;
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
-        public void Awake()
+        private void Awake()
         {
             GameObject core = GameObject.Find("Core");
             if (core != null)
                 Destroy(core);
+            SetBGMenuStyleInDropdown();
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
@@ -71,6 +98,52 @@ namespace Game.Scene
                 loadingProgress.UpdateValues(asyncOperation.progress * 100);
                 yield return null;
             }
+        }
+
+        public void StartCredits() => credits.SetTrigger(creditsKeyAnimation);
+
+        public static void ConfigureDropdown(Dropdown dropdown, IEnumerable<string> elements, int maxAmount = -1)
+        {
+            List<string> options = elements.ToList();
+
+            maxAmount = maxAmount == -1 ? options.Count : Mathf.Min(options.Count, maxAmount);
+
+            RectTransform rectTransform = dropdown.transform.Find("Template").GetComponent<RectTransform>();
+            rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, maxAmount * 75);
+
+            dropdown.ClearOptions();
+            dropdown.AddOptions(options);
+            dropdown.RefreshShownValue();
+        }
+
+        private void SetBGMenuStyleInDropdown()
+        {
+            ConfigureDropdown(backgroundMenuStyleDropdown, backgroundsUIs.Select(e => e.Name));
+
+            if (!bgStyleMenuChanged)
+                currentIndexBGUI = Random.Range(0, backgroundsUIs.Length);
+
+            for (int i = 0; i < backgroundsUIs.Length; i++)
+            {
+                BackgroundsUI backgroundsUI = backgroundsUIs[i];
+
+                if (i == currentIndexBGUI)
+                {
+                    backgroundSpriteRenderer.sprite = backgroundsUI.Sprite;
+                    lastParticleSystem = Instantiate(backgroundsUI.Particles);
+                }
+            }
+
+            backgroundMenuStyleDropdown.value = currentIndexBGUI;
+        }
+
+        public void SetMenuStyle(int index)
+        {
+            currentIndexBGUI = index;
+            bgStyleMenuChanged = true;
+            backgroundSpriteRenderer.sprite = backgroundsUIs[index].Sprite;
+            Destroy(lastParticleSystem);
+            lastParticleSystem = Instantiate(backgroundsUIs[index].Particles);
         }
     }
 }
