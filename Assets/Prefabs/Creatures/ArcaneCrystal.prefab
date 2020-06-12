@@ -4833,6 +4833,9 @@ GameObject:
   - component: {fileID: 4277416371026277697}
   - component: {fileID: 5536155037092516065}
   - component: {fileID: 2956133799038530026}
+  - component: {fileID: 3630726557535505759}
+  - component: {fileID: 25060469870392359}
+  - component: {fileID: 7303299731665589087}
   m_Layer: 10
   m_Name: Crystal
   m_TagString: Untagged
@@ -4880,7 +4883,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ddd0d06501935fd4981636508cdde18f, type: 2}
+  - {fileID: 2100000, guid: 4f71fdefa9fe9354398e1604d02d769b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4931,6 +4934,65 @@ CapsuleCollider:
   m_Height: 7.64
   m_Direction: 2
   m_Center: {x: -0.00000011920929, y: 0, z: 3.8752627}
+--- !u!114 &3630726557535505759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549241393107435933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12ddd4261359cf4498a31926e1b5c43b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health:
+    <Mode>k__BackingField: 1
+    inline: 0
+    scriptableObject: {fileID: -6733355703892206160}
+    component: {fileID: 0}
+  maxHealth:
+    <Mode>k__BackingField: 1
+    inline: 0
+    scriptableObject: {fileID: -6065630850220036355}
+    component: {fileID: 0}
+  healthEvent:
+    <Mode>k__BackingField: 0
+    event: {fileID: -8945341506382438979}
+    managedScriptableObject: {fileID: 0}
+    managedComponent: {fileID: 0}
+--- !u!95 &25060469870392359
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549241393107435933}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7303299731665589087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549241393107435933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d01867f87bcf64fa856aee3d4e9856, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maximumSpeed: 3
 --- !u!1 &5469128242256212943
 GameObject:
   m_ObjectHideFlags: 0
@@ -4972,7 +5034,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6151730945282049992}
   - component: {fileID: 6151730945282049995}
-  - component: {fileID: 7797685271903802924}
   - component: {fileID: 7245609497008281911}
   - component: {fileID: 2712910352005880516}
   - component: {fileID: 702266497345439645}
@@ -5024,19 +5085,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7797685271903802924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6151730945282049994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4d01867f87bcf64fa856aee3d4e9856, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maximumSpeed: 3
 --- !u!82 &7245609497008281911
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5217,7 +5265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03f12bf783b1d9b49aad804760daa603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickingRadius: 0.8
+  pickingRadius: 1.29
   magnetRadius: 200
   magnetSpeed: 3
   layerToPickup:
