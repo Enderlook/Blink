@@ -2109,6 +2109,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1606774635450086345}
     m_Modifications:
+    - target: {fileID: 778813592476149134, guid: a49ed22391a51eb4cb605b74d0ecb77f,
+        type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1918018920}
     - target: {fileID: 3168258437712715670, guid: a49ed22391a51eb4cb605b74d0ecb77f,
         type: 3}
       propertyPath: uiManager
