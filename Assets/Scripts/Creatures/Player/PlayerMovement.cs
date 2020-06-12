@@ -59,7 +59,7 @@ namespace Game.Creatures.Player
                 return;
 
 #if !UNITY_ANDROID || UNITY_EDITOR
-#if UNITY_EDITOR
+#if UNITY_EDITOR && UNITY_ANDROID
             if (!UnityEditor.EditorApplication.isRemoteConnected)
 #endif
                 SetMovementInput(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
