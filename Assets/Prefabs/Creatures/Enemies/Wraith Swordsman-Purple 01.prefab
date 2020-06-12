@@ -112,6 +112,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wraith Swordsman-Purple 01
       objectReference: {fileID: 0}
+    - target: {fileID: 8372086392984397763, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1352534644918109400, guid: ec840790b738373489810ebf165f7199, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ec840790b738373489810ebf165f7199, type: 3}
