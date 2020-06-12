@@ -53,7 +53,7 @@ namespace Game.Creatures
             audioSource.clip = hurtSounds.RandomPick();
             audioSource.Play();
 
-            if (health.GetValue() == 0)
+            if (health.GetValue() <= 0)
                 Die();
         }
 
