@@ -4979,6 +4979,7 @@ GameObject:
   - component: {fileID: 4463178457525923172}
   - component: {fileID: 1949530802522919340}
   - component: {fileID: 7514375133144791472}
+  - component: {fileID: 1790396307462042142}
   m_Layer: 10
   m_Name: ArcaneCrystal
   m_TagString: Untagged
@@ -5234,6 +5235,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPercent: 0.25
+--- !u!114 &1790396307462042142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6151730945282049994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5af029a9972c7004ebf6d0af5625eb5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health:
+    <Mode>k__BackingField: 1
+    inline: 0
+    scriptableObject: {fileID: -6733355703892206160}
+    component: {fileID: 0}
+  maxHealth:
+    <Mode>k__BackingField: 1
+    inline: 0
+    scriptableObject: {fileID: -6065630850220036355}
+    component: {fileID: 0}
+  healthEvent2:
+    <Mode>k__BackingField: 0
+    event: {fileID: 2602616489679049670}
+    managedScriptableObject: {fileID: 0}
+    managedComponent: {fileID: 0}
+  maxHealthEvent:
+    <Mode>k__BackingField: 0
+    event: {fileID: 4929932842347361184}
+    managedScriptableObject: {fileID: 0}
+    managedComponent: {fileID: 0}
+  healthBar: {fileID: 0}
 --- !u!1 &7412720714414690639
 GameObject:
   m_ObjectHideFlags: 0

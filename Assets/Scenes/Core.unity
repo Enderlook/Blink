@@ -3940,6 +3940,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1606774635450086345}
     m_Modifications:
+    - target: {fileID: 1790396307462042142, guid: c76eafe56e9db6345a11fcf3a593465a,
+        type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1288085126}
     - target: {fileID: 2861779853607968287, guid: c76eafe56e9db6345a11fcf3a593465a,
         type: 3}
       propertyPath: healthBar
@@ -4340,6 +4345,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1109715604167552582, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1948368687032190658, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -4504,6 +4514,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4912958236675055738, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5607470562807524001, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
         type: 3}
