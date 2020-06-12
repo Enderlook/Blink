@@ -2021,7 +2021,7 @@ MonoBehaviour:
   options: {fileID: 8476006843877946213}
   events:
   - {fileID: -6969189212308661451, guid: a49ed22391a51eb4cb605b74d0ecb77f, type: 3}
-  - {fileID: -2325885416423649629, guid: 6fe0b5ab5f249fe42b468d4b8c3dbe32, type: 3}
+  - {fileID: -8945341506382438979, guid: c76eafe56e9db6345a11fcf3a593465a, type: 3}
   loadingScreen: {fileID: 8379256019475834399, guid: 5bf214f24c77bc241814a84cca9e85d6,
     type: 3}
 --- !u!1 &2607132490356232957 stripped
