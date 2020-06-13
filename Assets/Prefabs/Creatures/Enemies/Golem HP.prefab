@@ -279,10 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 072abdd6a1aee3e499f6a5ac8da847e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBoss: 0
   basicAttack: Basic Attack
-  mediumAttack: 
-  strongAttack: 
   damage: 15
   cooldown: 2
   playerLayer:

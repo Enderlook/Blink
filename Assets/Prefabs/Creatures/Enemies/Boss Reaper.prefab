@@ -225,30 +225,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &613311055751705613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5396148646744920283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 072abdd6a1aee3e499f6a5ac8da847e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isBoss: 1
-  basicAttack: Basic Attack
-  mediumAttack: Medium Attack
-  strongAttack: Strong Attack
-  damage: 12
-  cooldown: 1
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 512
-  crystalLayer:
-    serializedVersion: 2
-    m_Bits: 1024
 --- !u!114 &769615711123431952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,6 +397,29 @@ MonoBehaviour:
   healthBar: {fileID: 4408493216306834460, guid: 9b27b479a691e1145b86ba683f8b3078,
     type: 3}
   healthBarSpawnPosition: {x: 0, y: 2.95, z: 0}
+--- !u!114 &4312655090515128928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5396148646744920283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67037abc841c105439d6a68c76f547fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basicAttack: Basic Attack
+  damage: 12
+  cooldown: 1
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  crystalLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  mediumAttack: Medium Attack
+  strongAttack: Strong Attack
 --- !u!1001 &5396148646744761275
 PrefabInstance:
   m_ObjectHideFlags: 0

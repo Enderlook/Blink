@@ -1,30 +1,18 @@
 ﻿using AvalonStudios.Extensions;
 
-using Enderlook.Unity.Attributes;
 using Enderlook.Unity.Utils.Clockworks;
-
-using System.Collections;
 
 using UnityEngine;
 using UnityEngine.AI;
 
 namespace Game.Creatures
 {
-    [AddComponentMenu("Game/Creatures/Enemies/Attack"), RequireComponent(typeof(EnemyPathFinding)), RequireComponent(typeof(NavMeshAgent)), RequireComponent(typeof(Animator))]
+    [AddComponentMenu("Game/Creatures/Enemies/Enemy Attack"), RequireComponent(typeof(EnemyPathFinding)), RequireComponent(typeof(NavMeshAgent)), RequireComponent(typeof(Animator))]
     public class EnemyAttack : MonoBehaviour, IDie, IStunnable
     {
 #pragma warning disable CS0649
-        [SerializeField, Tooltip("Is Boss")]
-        private bool isBoss;
-
-        [SerializeField, Tooltip("Basic attack key")]
-        private string basicAttack;
-
-        [SerializeField, Tooltip("Medium attack."), ShowIf(nameof(isBoss), true)]
-        private string mediumAttack;
-
-        [SerializeField, Tooltip("Strong attack"), ShowIf(nameof(isBoss), true)]
-        private string strongAttack;
+        [SerializeField, Tooltip("Basic attack animation name.")]
+        protected string basicAttack;
 
         [SerializeField, Tooltip("Damage")]
         private int damage;
@@ -70,27 +58,15 @@ namespace Game.Creatures
                 enemyPathFinding.PlayWalkAnimation(false);
                 if (Time.time >= nextAttack)
                 {
-                    string animationKey;
-                    if (isBoss)
-                    {
-                        float prob = Random.Range(0, 100);
-                        if (prob >= 0 && prob <= 60)
-                            animationKey = basicAttack;
-                        else if (prob >= 61 && prob <= 90)
-                            animationKey = mediumAttack;
-                        else
-                            animationKey = strongAttack;
-                    }
-                    else
-                        animationKey = basicAttack;
-
-                    animator.SetTrigger(animationKey);
+                    animator.SetTrigger(GetAnimationKey());
                     nextAttack = Time.time + cooldown;
                 }
             }
             else
                 enemyPathFinding.PlayWalkAnimation(true);
         }
+
+        protected virtual string GetAnimationKey() => basicAttack;
 
         private void OnTriggerEnter(Collider other)
         {
