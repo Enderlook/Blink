@@ -168,12 +168,9 @@ MonoBehaviour:
   basicAttack: Head Attack
   damage: 5
   cooldown: 1.6
-  playerLayer:
+  attackLayer:
     serializedVersion: 2
-    m_Bits: 512
-  crystalLayer:
-    serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 1536
 --- !u!114 &4730705964721883545
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -282,12 +282,9 @@ MonoBehaviour:
   basicAttack: Basic Attack
   damage: 15
   cooldown: 2
-  playerLayer:
+  attackLayer:
     serializedVersion: 2
-    m_Bits: 512
-  crystalLayer:
-    serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 1536
 --- !u!195 &6922185498743692886
 NavMeshAgent:
   m_ObjectHideFlags: 0

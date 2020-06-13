@@ -1,5 +1,6 @@
 ﻿using AvalonStudios.Extensions;
 
+using Enderlook.Unity.Extensions;
 using Enderlook.Unity.Utils.Clockworks;
 
 using UnityEngine;
@@ -20,11 +21,8 @@ namespace Game.Creatures
         [SerializeField, Tooltip("Cooldown")]
         private float cooldown;
 
-        [SerializeField, Tooltip("Player layer")]
-        private LayerMask playerLayer;
-
-        [SerializeField, Tooltip("Crystal layer")]
-        private LayerMask crystalLayer;
+        [SerializeField, Tooltip("Layers allowed to attack.")]
+        private LayerMask attackLayer;
 #pragma warning restore CS0649
 
         private EnemyPathFinding enemyPathFinding;
@@ -71,7 +69,7 @@ namespace Game.Creatures
         private void OnTriggerEnter(Collider other)
         {
             GameObject target = other.gameObject;
-            if (target.layer == playerLayer.ToLayer() || target.layer == crystalLayer.ToLayer())
+            if (target.LayerMatchTest(attackLayer))
             {
                 if (target.TryGetComponent(out IDamagable damagable))
                     damagable.TakeDamage(damage);
