@@ -10183,7 +10183,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 0
-  m_Extents: {x: 1.3, y: 3.65, z: 1.3}
+  m_Extents: {x: 0.86, y: 3.65, z: 0.86}
   m_MoveThreshold: 0.1
   m_Carve: 0
   m_CarveOnlyStationary: 1
@@ -15059,7 +15059,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialValue: 100
   value: 100
-  oldValue: 100
+  oldValue: 0
   transformer: {fileID: 5616422358890775839}
   changed: {fileID: -8945341506382438979}
   changedWithHistory: {fileID: 2602616489679049670}
