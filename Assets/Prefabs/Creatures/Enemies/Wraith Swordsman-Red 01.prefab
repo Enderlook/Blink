@@ -212,6 +212,9 @@ MonoBehaviour:
   attackLayer:
     serializedVersion: 2
     m_Bits: 1536
+  thresholdDistance: 0.3
+  angleOfView: 1
+  rotationSpeed: 0.5
 --- !u!114 &2471253571719665823
 MonoBehaviour:
   m_ObjectHideFlags: 0

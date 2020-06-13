@@ -871,8 +871,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8968465735235951904, guid: 59c0df78cb163cf4c89005ec4b3032c1,
         type: 3}
-      propertyPath: attackLayer.m_Bits
-      value: 1536
+      propertyPath: thresholdDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8968465735235951904, guid: 59c0df78cb163cf4c89005ec4b3032c1,
+        type: 3}
+      propertyPath: angleOfView
+      value: 1.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59c0df78cb163cf4c89005ec4b3032c1, type: 3}

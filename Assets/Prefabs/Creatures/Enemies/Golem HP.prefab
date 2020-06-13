@@ -39,8 +39,8 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4703646616608212823}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
+  m_IsTrigger: 1
+  m_Enabled: 0
   m_Radius: 1.67
   m_Height: 4.04
   m_Direction: 2
@@ -285,6 +285,9 @@ MonoBehaviour:
   attackLayer:
     serializedVersion: 2
     m_Bits: 1536
+  thresholdDistance: 0.55
+  angleOfView: 1.25
+  rotationSpeed: 0.5
 --- !u!195 &6922185498743692886
 NavMeshAgent:
   m_ObjectHideFlags: 0
