@@ -29,10 +29,13 @@ namespace Game.Creatures
 
         public float TargetDistance { get; private set; }
 
+        public Vector3 TargetPosition { get; private set; }
+
         private NavMeshAgent navMeshAgent;
         private NavMeshPath crystalPath;
         private NavMeshPath playerPath;
 
+        private int lastCheckAtFrame;
         private int navMeshFrameCheck;
         private static int frameCheck;
         private const int MAX_CHECK_FRAME = 10;
@@ -40,6 +43,20 @@ namespace Game.Creatures
         private bool isDead;
         private bool isStunned;
         private Clockwork stunningClockwork;
+
+        private bool canWalk = true;
+        public bool CanWalk {
+            get => canWalk;
+            set {
+                if (value == canWalk)
+                    return;
+                animator.SetBool(walkAnimation, value);
+                canWalk = value;
+                navMeshAgent.enabled = value;
+                if ((lastCheckAtFrame - Time.frameCount) > MAX_CHECK_FRAME)
+                    DetermineTarget();
+            }
+        }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()
@@ -67,12 +84,13 @@ namespace Game.Creatures
 
             if (isStunned)
                 stunningClockwork.UpdateBehaviour(Time.deltaTime);
-            else if(Time.frameCount % MAX_CHECK_FRAME == navMeshFrameCheck)
+            else if (CanWalk && Time.frameCount % MAX_CHECK_FRAME == navMeshFrameCheck)
                     DetermineTarget();
         }
 
         private void DetermineTarget()
         {
+            lastCheckAtFrame = Time.frameCount;
             float crystalDistance = GetPathDistance(CrystalAndPlayerTracker.CrystalPosition, crystalPath);
             float playerDistance = GetPathDistance(CrystalAndPlayerTracker.PlayerPosition, playerPath);
 
@@ -80,11 +98,13 @@ namespace Game.Creatures
             {
                 TargetDistance = crystalDistance;
                 navMeshAgent.SetPath(crystalPath);
+                TargetPosition = CrystalAndPlayerTracker.CrystalPosition;
             }
             else
             {
                 TargetDistance = playerDistance;
                 navMeshAgent.SetPath(playerPath);
+                TargetPosition = CrystalAndPlayerTracker.PlayerPosition;
             }
         }
 
@@ -132,8 +152,6 @@ namespace Game.Creatures
             isDead = true;
             navMeshAgent.enabled = false;
         }
-
-        public void PlayWalkAnimation(bool play) => animator.SetBool(walkAnimation, play);
 
         public void Stun(float duration)
         {

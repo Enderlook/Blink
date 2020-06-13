@@ -6,11 +6,13 @@ namespace Game.Creatures
     [AddComponentMenu("Game/Creatures/Enemies/Reaper Attack"), RequireComponent(typeof(EnemyPathFinding)), RequireComponent(typeof(NavMeshAgent)), RequireComponent(typeof(Animator))]
     public class ReaperAttack : EnemyAttack
     {
+#pragma warning disable CS0649
         [SerializeField, Tooltip("Medium attack animation name.")]
         private string mediumAttack;
 
         [SerializeField, Tooltip("Strong attack animation name.")]
         private string strongAttack;
+#pragma warning restore CS0649
 
         protected override string GetAnimationKey()
         {
