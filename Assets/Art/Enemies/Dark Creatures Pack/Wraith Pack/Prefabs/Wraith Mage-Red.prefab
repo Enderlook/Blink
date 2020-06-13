@@ -12663,20 +12663,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 072abdd6a1aee3e499f6a5ac8da847e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPathFinding: {fileID: 0}
-  isBoss: 0
-  animator: {fileID: 9500000}
   basicAttack: Thow Projectile
-  mediumAttack: 
-  strongAttack: 
   damage: 0
   cooldown: 2
-  playerLayer:
+  attackLayer:
     serializedVersion: 2
-    m_Bits: 512
-  crystalLayer:
-    serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 1536
+  thresholdDistance: 0
+  angleOfView: 1.5707964
+  rotationSpeed: 0.5
 --- !u!1 &100202
 GameObject:
   m_ObjectHideFlags: 0
