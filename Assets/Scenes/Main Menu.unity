@@ -3745,7 +3745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62305066f1fa8eb42b9e682cef882440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  removeIfRemoteIsNotConnected: 0
+  removeIfRemoteIsNotConnected: 1
 --- !u!114 &1604500710 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8191413835152955422, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
