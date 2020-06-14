@@ -39,6 +39,9 @@ namespace Game.Scene
 
         [SerializeField, Tooltip("Playable scenes.")]
         private Scenes scenes;
+
+        [SerializeField, Tooltip("Animator component.")]
+        private Animator animator;
 #pragma warning restore CS0649
 
         private int currentLevel = 1;
@@ -106,7 +109,8 @@ namespace Game.Scene
 
         private void Complete()
         {
-            Menu.Instance.Win();
+            animator.SetBool("Teleportation", true);
+            //Menu.Instance.Win();
         }
 
         private void ShowPercent() => timer.text = $"{Mathf.RoundToInt(EnergyPercent * 100)}%";
