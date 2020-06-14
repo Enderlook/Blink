@@ -84,7 +84,7 @@ namespace Game.Creatures
 
             if (isStunned)
                 stunningClockwork.UpdateBehaviour(Time.deltaTime);
-            else if (CanWalk && Time.frameCount % MAX_CHECK_FRAME == navMeshFrameCheck)
+            else if (Time.frameCount % MAX_CHECK_FRAME == navMeshFrameCheck)
                     DetermineTarget();
         }
 
