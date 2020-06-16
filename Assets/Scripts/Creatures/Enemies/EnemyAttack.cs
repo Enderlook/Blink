@@ -1,6 +1,8 @@
 ﻿using Enderlook.Unity.Extensions;
 using Enderlook.Unity.Utils.Clockworks;
 
+using Game.Scene;
+
 using System;
 
 using UnityEngine;
@@ -43,6 +45,7 @@ namespace Game.Creatures
         private bool isDead;
         private bool isStunned;
         private Clockwork stunningClockwork;
+        private GameManager gameManager;
 
 #if UNITY_EDITOR
         private Color gizmos = Color.yellow;
@@ -51,6 +54,7 @@ namespace Game.Creatures
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()
         {
+            gameManager = FindObjectOfType<GameManager>();
             enemyPathFinding = GetComponent<EnemyPathFinding>();
             navMeshAgent = GetComponent<NavMeshAgent>();
             animator = GetComponent<Animator>();
@@ -61,6 +65,9 @@ namespace Game.Creatures
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Update()
         {
+            if (gameManager.HasWon)
+                return;
+
             if (isDead)
                 return;
 

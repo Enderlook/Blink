@@ -22,6 +22,9 @@ namespace Game.Creatures.Player.AbilitySystem
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Update()
         {
+            if (gameManager.HasWon)
+                return;
+
             if (abilities == null)
             {
                 Debug.LogWarning($"{nameof(abilities)} was null. We will try on next frame.");

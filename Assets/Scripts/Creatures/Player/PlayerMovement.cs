@@ -3,6 +3,7 @@
 using Enderlook.Unity.Atoms;
 
 using Game.Scene.CLI;
+using Game.Scene;
 
 using System.Collections;
 
@@ -36,10 +37,12 @@ namespace Game.Creatures.Player
 
         private float horizontal;
         private float vertical;
+        private GameManager gameManager;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()
         {
+            gameManager = FindObjectOfType<GameManager>();
             animator = GetComponent<Animator>();
 
             NavMeshAgent navMeshAgent = GetComponent<NavMeshAgent>();
@@ -57,6 +60,12 @@ namespace Game.Creatures.Player
         {
             if (Console.IsConsoleEnabled)
                 return;
+
+            if (gameManager.HasWon)
+            {
+                animator.SetBool(runAnimation, false);
+                return;
+            }
 
 #if !UNITY_ANDROID || UNITY_EDITOR
 #if UNITY_EDITOR && UNITY_ANDROID

@@ -71,6 +71,10 @@ namespace Game.Scene
             }
         }
 
+        private bool hasWon;
+
+        public bool HasWon => hasWon;
+
         private static GameManager instance;
 
         /// <summary>
@@ -109,8 +113,8 @@ namespace Game.Scene
 
         private void Complete()
         {
+            hasWon = true;
             animator.SetBool("Teleportation", true);
-            //Menu.Instance.Win();
         }
 
         private void ShowPercent() => timer.text = $"{Mathf.RoundToInt(EnergyPercent * 100)}%";

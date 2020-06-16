@@ -43,6 +43,7 @@ namespace Game.Creatures
         private bool isDead;
         private bool isStunned;
         private Clockwork stunningClockwork;
+        private GameManager gameManager;
 
         private bool canWalk = true;
         public bool CanWalk {
@@ -61,6 +62,7 @@ namespace Game.Creatures
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()
         {
+            gameManager = FindObjectOfType<GameManager>();
             navMeshAgent = GetComponent<NavMeshAgent>();
             crystalPath = new NavMeshPath();
             playerPath = new NavMeshPath();
@@ -79,6 +81,12 @@ namespace Game.Creatures
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Update()
         {
+            if (gameManager.HasWon)
+            {
+                navMeshAgent.enabled = false;
+                return;
+            }
+
             if (isDead)
                 return;
 
