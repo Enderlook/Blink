@@ -100,6 +100,7 @@ namespace Game.Scene
                 switch (gameState)
                 {
                     case GameState.Starting:
+                        hasWon = false;
                         timeUntilStart.UpdateBehaviour(Time.deltaTime);
                         ShowTimer(timeUntilStart);
                         break;
