@@ -105,15 +105,23 @@ namespace Game.Creatures
             if (crystalDistance * (1 / crystalSeekWeight) < playerDistance * (1 / playerSeekWeight))
             {
                 TargetDistance = crystalDistance;
-                navMeshAgent.SetPath(crystalPath);
+                SetPath(crystalPath);
                 TargetPosition = CrystalAndPlayerTracker.CrystalPosition;
             }
             else
             {
                 TargetDistance = playerDistance;
-                navMeshAgent.SetPath(playerPath);
+                SetPath(playerPath);
                 TargetPosition = CrystalAndPlayerTracker.PlayerPosition;
             }
+        }
+
+        private void SetPath(NavMeshPath path)
+        {
+            bool isEnabled = navMeshAgent.enabled;
+            navMeshAgent.enabled = true;
+            navMeshAgent.SetPath(path);
+            navMeshAgent.enabled = isEnabled;
         }
 
         public void AddForce(Vector3 force, ForceMode mode = ForceMode.Force)
@@ -141,7 +149,10 @@ namespace Game.Creatures
 
             path.ClearCorners();
 
+            bool isEnabled = navMeshAgent.enabled;
+            navMeshAgent.enabled = true;
             navMeshAgent.CalculatePath(target, path);
+            navMeshAgent.enabled = isEnabled;
 
             float distance = 0;
             if (path.status != NavMeshPathStatus.PathInvalid && path.corners.Length > 1)
