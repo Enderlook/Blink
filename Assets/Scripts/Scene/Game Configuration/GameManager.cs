@@ -73,7 +73,10 @@ namespace Game.Scene
 
         private bool hasWon;
 
-        public bool HasWon => hasWon;
+        /// <summary>
+        /// Whenever the player has won.
+        /// </summary>
+        public static bool HasWon => instance.hasWon;
 
         private static GameManager instance;
 

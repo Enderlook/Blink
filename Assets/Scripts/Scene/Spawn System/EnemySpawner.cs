@@ -25,19 +25,14 @@ namespace Game.Scene
         public static Camera Camera { get; private set; }
 
         private bool canSpawn;
-        private GameManager gameManager;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
-        private void Awake()
-        {
-            gameManager = FindObjectOfType<GameManager>();
-            Camera = Camera.main;
-        }
+        private void Awake() => Camera = Camera.main;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Update()
         {
-            if (gameManager.HasWon)
+            if (GameManager.HasWon)
                 return;
 
             if (canSpawn && enemyLevelData.TrySpawnEnemy(out GameObject enemy, Time.deltaTime))
