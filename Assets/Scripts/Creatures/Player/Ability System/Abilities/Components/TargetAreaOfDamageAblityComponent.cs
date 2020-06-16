@@ -21,7 +21,7 @@ namespace Game.Creatures.Player.AbilitySystem
         {
             Vector2 position;
 #if UNITY_ANDROID
-#if UNITY_EDITOR
+#if UNITY_EDITOR && !IGNORE_UNITY_REMOTE
             if (!UnityEditor.EditorApplication.isRemoteConnected)
                 position = Input.mousePosition;
             else

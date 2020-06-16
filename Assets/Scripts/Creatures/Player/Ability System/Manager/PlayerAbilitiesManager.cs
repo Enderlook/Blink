@@ -48,12 +48,12 @@ namespace Game.Creatures.Player.AbilitySystem
                     && ability.IsReady
                     &&
 #if UNITY_ANDROID
-#if UNITY_EDITOR
+#if UNITY_EDITOR && !IGNORE_UNITY_REMOTE
                     (UnityEditor.EditorApplication.isRemoteConnected ?
 #endif
                         UIManager.CanUseAbility(i)
                         && (ability.IsSelf || Input.touchCount > (joystick.IsDragging ? 1 : 0))
-#if UNITY_EDITOR
+#if UNITY_EDITOR && !IGNORE_UNITY_REMOTE
                         : control.HasUserRequestTrigger())
 #else
 #endif
@@ -65,7 +65,7 @@ namespace Game.Creatures.Player.AbilitySystem
                     ability.Execute();
                     UIManager.UpdateAbility(i);
 #if UNITY_ANDROID
-#if UNITY_EDITOR
+#if UNITY_EDITOR && !IGNORE_UNITY_REMOTE
                     if (UnityEditor.EditorApplication.isRemoteConnected)
 #endif
                         hasAbilityBeenCasted = true;
@@ -75,7 +75,7 @@ namespace Game.Creatures.Player.AbilitySystem
             }
 #if UNITY_ANDROID
             if (hasAbilityBeenCasted
-#if UNITY_EDITOR
+#if UNITY_EDITOR && !IGNORE_UNITY_REMOTE
                     && UnityEditor.EditorApplication.isRemoteConnected
 #endif
             )

@@ -66,7 +66,7 @@ namespace Game.Creatures.Player
             }
 
 #if !UNITY_ANDROID || UNITY_EDITOR
-#if UNITY_EDITOR && UNITY_ANDROID
+#if UNITY_EDITOR && UNITY_ANDROID && !IGNORE_UNITY_REMOTE
             if (!UnityEditor.EditorApplication.isRemoteConnected)
 #endif
             SetMovementInput(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
