@@ -1,4 +1,4 @@
-﻿ Shader "AvalonStudios/Additive HDR" 
+﻿ Shader "Custom/Additive HDR" 
  {
     Properties
     {
