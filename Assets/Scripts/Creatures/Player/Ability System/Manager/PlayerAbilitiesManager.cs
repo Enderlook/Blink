@@ -14,7 +14,7 @@ namespace Game.Creatures.Player.AbilitySystem
         [NonSerialized]
         private ControlledAbilitiesPack abilities;
 
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_ANDROID
         [SerializeField]
         private Joystick joystick;
 #endif
