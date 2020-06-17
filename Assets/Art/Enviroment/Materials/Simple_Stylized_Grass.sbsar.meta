@@ -17,7 +17,17 @@ ScriptedImporter:
     generateAllOutputs: 0
     generateMipMaps: 1
     preset: " <sbspreset pkgurl=\"pkg://Simple_Stylized_Grass\" label=\"\" >\n  <presetinput
-      identifier=\"$outputsize\" uid=\"636724037\" type=\"8\" value=\"9,9\" />\n </sbspreset>\n"
+      identifier=\"$outputsize\" uid=\"636724037\" type=\"8\" value=\"9,9\" />\n  <presetinput
+      identifier=\"First_Color\" uid=\"1297190010\" type=\"3\" value=\"0.4,0.631373,0.129412,1\"
+      />\n  <presetinput identifier=\"Second_Color\" uid=\"1297190280\" type=\"3\"
+      value=\"0.196078,0.301961,0.113725,1\" />\n  <presetinput identifier=\"Normal_Intensity\"
+      uid=\"1297190257\" type=\"0\" value=\"1\" />\n  <presetinput identifier=\"Heigh_Position\"
+      uid=\"1297188450\" type=\"0\" value=\"0.387\" />\n  <presetinput identifier=\"AO_Intensity\"
+      uid=\"1297188759\" type=\"0\" value=\"0.732\" />\n  <presetinput identifier=\"X_Amount\"
+      uid=\"1297199335\" type=\"4\" value=\"16\" />\n  <presetinput identifier=\"Y_Amount\"
+      uid=\"1297200144\" type=\"4\" value=\"16\" />\n  <presetinput identifier=\"Pattern_Rotation_Random\"
+      uid=\"1297197149\" type=\"0\" value=\"0.107\" />\n  <presetinput identifier=\"Scale\"
+      uid=\"1297196339\" type=\"0\" value=\"7\" />\n </sbspreset>\n"
     shaderName: Standard
     materialProperties:
       shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
@@ -43,12 +53,12 @@ ScriptedImporter:
         offset: {x: 0, y: 0}
       - name: _EmissionMap
         texture: {instanceID: 0}
-        scale: {x: 18, y: 18}
+        scale: {x: 18, y: 17}
         offset: {x: 0, y: 0}
       - name: _MainTex
         texture: {fileID: 7041858459770715125, guid: 32d9980206ae5144e9a384a776753e63,
           type: 3}
-        scale: {x: 18, y: 18}
+        scale: {x: 18, y: 17}
         offset: {x: 0, y: 0}
       - name: _MetallicGlossMap
         texture: {fileID: 1078011806712165980, guid: 32d9980206ae5144e9a384a776753e63,
@@ -85,9 +95,9 @@ ScriptedImporter:
       - name: _Mode
         float: 0
       - name: _OcclusionStrength
-        float: 1
+        float: 0.5
       - name: _Parallax
-        float: 0.02
+        float: 0.01
       - name: _SmoothnessTextureChannel
         float: 0
       - name: _SpecularHighlights
@@ -228,8 +238,8 @@ ScriptedImporter:
     material: {fileID: 6657788968433268586, guid: 32d9980206ae5144e9a384a776753e63,
       type: 3}
     generatedTextures:
-    - {fileID: 7662596654714066251, guid: 32d9980206ae5144e9a384a776753e63, type: 3}
     - {fileID: 7041858459770715125, guid: 32d9980206ae5144e9a384a776753e63, type: 3}
-    - {fileID: -7961568059166164072, guid: 32d9980206ae5144e9a384a776753e63, type: 3}
-    - {fileID: 1078011806712165980, guid: 32d9980206ae5144e9a384a776753e63, type: 3}
     - {fileID: 3867139509420688779, guid: 32d9980206ae5144e9a384a776753e63, type: 3}
+    - {fileID: 1078011806712165980, guid: 32d9980206ae5144e9a384a776753e63, type: 3}
+    - {fileID: -7961568059166164072, guid: 32d9980206ae5144e9a384a776753e63, type: 3}
+    - {fileID: 7662596654714066251, guid: 32d9980206ae5144e9a384a776753e63, type: 3}
