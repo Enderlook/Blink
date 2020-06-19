@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicAttack: Melee Attack01
-  damage: 10
+  damage: 7
   cooldown: 1
   attackLayer:
     serializedVersion: 2

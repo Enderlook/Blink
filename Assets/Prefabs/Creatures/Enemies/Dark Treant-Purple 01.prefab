@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicAttack: Head Attack
-  damage: 5
+  damage: 4
   cooldown: 1.6
   attackLayer:
     serializedVersion: 2

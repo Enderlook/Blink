@@ -280,7 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicAttack: Basic Attack
-  damage: 15
+  damage: 10
   cooldown: 2
   attackLayer:
     serializedVersion: 2
