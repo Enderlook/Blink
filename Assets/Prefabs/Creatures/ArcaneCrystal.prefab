@@ -15071,7 +15071,7 @@ MonoBehaviour:
   m_Script: {fileID: 1508624999, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
   m_Name: Health
   m_EditorClassIdentifier: 
-  initialValue: 100
+  initialValue: 150
   value: 100
   oldValue: 100
   transformer: {fileID: 5616422358890775839}
@@ -15089,8 +15089,8 @@ MonoBehaviour:
   m_Script: {fileID: 1508624999, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
   m_Name: Max Health
   m_EditorClassIdentifier: 
-  initialValue: 100
-  value: 100
+  initialValue: 150
+  value: 150
   oldValue: 100
   transformer: {fileID: 0}
   changed: {fileID: 4929932842347361184}
