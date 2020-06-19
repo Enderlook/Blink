@@ -44,17 +44,20 @@ namespace Game.Scene
             if (!HaveAds)
                 return;
 
-            Advertisement.Initialize(gameID, testMode);            
+#if UNITY_ANDROID
+            Advertisement.Initialize(gameID, testMode);     
+#endif
         }
 
-        public static void Play(Action<ShowResult> callback) => instance.PlayAds(callback);
+#if UNITY_ANDROID
+        public static void Play(Action<bool> callback) => instance.PlayAds(callback);
 
-        private void PlayAds(Action<ShowResult> callback)
+        private void PlayAds(Action<bool> callback)
         {
             if (HaveAds)
                 StartCoroutine(Work());
             else
-                callback?.Invoke(ShowResult.Failed);
+                callback?.Invoke(false);
 
             IEnumerator Work()
             {
@@ -62,9 +65,12 @@ namespace Game.Scene
                     yield return null;
                 ShowOptions showOptions = new ShowOptions();
                 if (!(callback is null))
-                    showOptions.resultCallback += callback;
+                    showOptions.resultCallback += (result) => callback(result != ShowResult.Failed);
                 Advertisement.Show(adsType, showOptions);
             }
         }
+#else
+        public static void Play(Action<bool> callback) => callback(true);
+#endif
     }
 }
