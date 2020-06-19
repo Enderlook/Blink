@@ -783,18 +783,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1206156861}
   m_CullTransparentMesh: 0
---- !u!114 &1288085126 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7236211299169920952, guid: d53e9038544373f468a4d49b83a0d569,
-    type: 3}
-  m_PrefabInstance: {fileID: 1606774636406718527}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -609711369, guid: 8514bc2c934c20949bcfbd938774ada4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1568451777
 GameObject:
   m_ObjectHideFlags: 0
@@ -1162,18 +1150,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1859692558}
   m_CullTransparentMesh: 0
---- !u!114 &1918018920 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7236211299169920952, guid: d53e9038544373f468a4d49b83a0d569,
-    type: 3}
-  m_PrefabInstance: {fileID: 1606774636960384257}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -609711369, guid: 8514bc2c934c20949bcfbd938774ada4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2070138438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1640,14 +1616,56 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystal Health Bar
       objectReference: {fileID: 0}
+    - target: {fileID: 2317271649115898514, guid: d9beab08979fcd54a9af7d13e0a9390f,
+        type: 3}
+      propertyPath: m_Name
+      value: Crystal Health Bar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8498848999440245663, guid: d9beab08979fcd54a9af7d13e0a9390f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8498848999440245663, guid: d9beab08979fcd54a9af7d13e0a9390f,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.9984343
+      objectReference: {fileID: 0}
+    - target: {fileID: 8498848999440245663, guid: d9beab08979fcd54a9af7d13e0a9390f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8498848999440245663, guid: d9beab08979fcd54a9af7d13e0a9390f,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8498848999440245663, guid: d9beab08979fcd54a9af7d13e0a9390f,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.6765657
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d53e9038544373f468a4d49b83a0d569, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: d9beab08979fcd54a9af7d13e0a9390f, type: 3}
 --- !u!224 &1606774636406718528 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3835330508921528676, guid: d53e9038544373f468a4d49b83a0d569,
+  m_CorrespondingSourceObject: {fileID: 8498848999440245663, guid: d9beab08979fcd54a9af7d13e0a9390f,
     type: 3}
   m_PrefabInstance: {fileID: 1606774636406718527}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1606774636406718529 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2640236603215013187, guid: d9beab08979fcd54a9af7d13e0a9390f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1606774636406718527}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -609711369, guid: 8514bc2c934c20949bcfbd938774ada4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1606774636960384257
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1765,14 +1783,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Health Bar
       objectReference: {fileID: 0}
+    - target: {fileID: 2317271649115898514, guid: d9beab08979fcd54a9af7d13e0a9390f,
+        type: 3}
+      propertyPath: m_Name
+      value: Player Health Bar
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d53e9038544373f468a4d49b83a0d569, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: d9beab08979fcd54a9af7d13e0a9390f, type: 3}
 --- !u!224 &1606774636960384258 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3835330508921528676, guid: d53e9038544373f468a4d49b83a0d569,
+  m_CorrespondingSourceObject: {fileID: 8498848999440245663, guid: d9beab08979fcd54a9af7d13e0a9390f,
     type: 3}
   m_PrefabInstance: {fileID: 1606774636960384257}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1606774636960384259 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2640236603215013187, guid: d9beab08979fcd54a9af7d13e0a9390f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1606774636960384257}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -609711369, guid: 8514bc2c934c20949bcfbd938774ada4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!223 &1606774637087141936
 Canvas:
   m_ObjectHideFlags: 0
@@ -2113,7 +2148,7 @@ PrefabInstance:
         type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 1918018920}
+      objectReference: {fileID: 1606774636960384259}
     - target: {fileID: 3168258437712715670, guid: a49ed22391a51eb4cb605b74d0ecb77f,
         type: 3}
       propertyPath: uiManager
@@ -2148,7 +2183,7 @@ PrefabInstance:
         type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 1918018920}
+      objectReference: {fileID: 0}
     - target: {fileID: 5558235056462051971, guid: a49ed22391a51eb4cb605b74d0ecb77f,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -3944,17 +3979,17 @@ PrefabInstance:
         type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 1288085126}
+      objectReference: {fileID: 1606774636406718529}
     - target: {fileID: 2861779853607968287, guid: c76eafe56e9db6345a11fcf3a593465a,
         type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 1288085126}
+      objectReference: {fileID: 0}
     - target: {fileID: 5546096723779407176, guid: c76eafe56e9db6345a11fcf3a593465a,
         type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 1288085126}
+      objectReference: {fileID: 0}
     - target: {fileID: 6151730945282049992, guid: c76eafe56e9db6345a11fcf3a593465a,
         type: 3}
       propertyPath: m_RootOrder
