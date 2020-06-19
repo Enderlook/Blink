@@ -1,6 +1,7 @@
 ﻿using Enderlook.Unity.Attributes;
 
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Game.Scene
 {
@@ -17,8 +18,11 @@ namespace Game.Scene
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()
         {
-            CrystalAndPlayerTracker.Crystal.position = crystal;
-            CrystalAndPlayerTracker.Player.position = player;
+            CrystalAndPlayerTracker.Crystal.position = crystal + transform.position;
+            NavMeshAgent navMeshAgent = CrystalAndPlayerTracker.Player.GetComponent<NavMeshAgent>();
+            navMeshAgent.enabled = false;
+            CrystalAndPlayerTracker.Player.position = player + transform.position;
+            navMeshAgent.enabled = true;
         }
     }
 }

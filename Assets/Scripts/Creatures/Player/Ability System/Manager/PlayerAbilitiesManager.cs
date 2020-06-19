@@ -14,7 +14,7 @@ namespace Game.Creatures.Player.AbilitySystem
         [NonSerialized]
         private ControlledAbilitiesPack abilities;
 
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_ANDROID
         [SerializeField]
         private Joystick joystick;
 #endif
@@ -22,6 +22,9 @@ namespace Game.Creatures.Player.AbilitySystem
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Update()
         {
+            if (GameManager.HasWon)
+                return;
+
             if (abilities == null)
             {
                 Debug.LogWarning($"{nameof(abilities)} was null. We will try on next frame.");
@@ -45,12 +48,12 @@ namespace Game.Creatures.Player.AbilitySystem
                     && ability.IsReady
                     &&
 #if UNITY_ANDROID
-#if UNITY_EDITOR
+#if UNITY_EDITOR && !IGNORE_UNITY_REMOTE
                     (UnityEditor.EditorApplication.isRemoteConnected ?
 #endif
                         UIManager.CanUseAbility(i)
                         && (ability.IsSelf || Input.touchCount > (joystick.IsDragging ? 1 : 0))
-#if UNITY_EDITOR
+#if UNITY_EDITOR && !IGNORE_UNITY_REMOTE
                         : control.HasUserRequestTrigger())
 #else
 #endif
@@ -62,7 +65,7 @@ namespace Game.Creatures.Player.AbilitySystem
                     ability.Execute();
                     UIManager.UpdateAbility(i);
 #if UNITY_ANDROID
-#if UNITY_EDITOR
+#if UNITY_EDITOR && !IGNORE_UNITY_REMOTE
                     if (UnityEditor.EditorApplication.isRemoteConnected)
 #endif
                         hasAbilityBeenCasted = true;
@@ -72,7 +75,7 @@ namespace Game.Creatures.Player.AbilitySystem
             }
 #if UNITY_ANDROID
             if (hasAbilityBeenCasted
-#if UNITY_EDITOR
+#if UNITY_EDITOR && !IGNORE_UNITY_REMOTE
                     && UnityEditor.EditorApplication.isRemoteConnected
 #endif
             )

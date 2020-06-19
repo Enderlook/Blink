@@ -5041,6 +5041,7 @@ GameObject:
   - component: {fileID: 1949530802522919340}
   - component: {fileID: 7514375133144791472}
   - component: {fileID: 1790396307462042142}
+  - component: {fileID: 6710926243008146486}
   - component: {fileID: 1003403072352620057}
   m_Layer: 10
   m_Name: ArcaneCrystal
@@ -5076,7 +5077,7 @@ Animator:
   m_GameObject: {fileID: 6151730945282049994}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 64de59ce0ced17144b31bff8db67c89a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5317,6 +5318,19 @@ MonoBehaviour:
     managedScriptableObject: {fileID: 0}
     managedComponent: {fileID: 0}
   healthBar: {fileID: 0}
+--- !u!114 &6710926243008146486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6151730945282049994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 862bc22c3e94d9c4cba2dd55954b0dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 6151730945282049995}
 --- !u!136 &1003403072352620057
 CapsuleCollider:
   m_ObjectHideFlags: 0

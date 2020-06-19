@@ -4102,6 +4102,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7d88ec00dc719b4199260976a1a7385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &6151730945610042195 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6151730945282049995, guid: c76eafe56e9db6345a11fcf3a593465a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6151730945610042190}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &6167238340651255103
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4686,6 +4692,7 @@ MonoBehaviour:
   difficultyInSceneFactor: 0.5
   timer: {fileID: 8118707543037823915}
   scenes: {fileID: 11400000, guid: e7c1918123ff2994196af9c4083be1fa, type: 2}
+  animator: {fileID: 6151730945610042195}
 --- !u!114 &8118707543037823915
 MonoBehaviour:
   m_ObjectHideFlags: 0

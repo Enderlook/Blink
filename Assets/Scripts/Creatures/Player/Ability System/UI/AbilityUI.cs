@@ -41,7 +41,7 @@ namespace Game.Creatures.Player.AbilitySystem
         {
 #if UNITY_ANDROID
             Toggle.group = GetComponentInParent<ToggleGroup>();
-#if UNITY_EDITOR
+#if UNITY_EDITOR && !IGNORE_UNITY_REMOTE
             if (!UnityEditor.EditorApplication.isRemoteConnected)
             {
                 Toggle.SetIsOnWithoutNotify(false);

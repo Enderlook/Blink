@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd36e7441d3db1c4f8be7b2e3d2f4cac, type: 3}
+  m_Name: Great Pillar of Chaos
+  m_EditorClassIdentifier: 
+  maxCharge: 7
+  abilityComponents:
+  - {fileID: 6371835594144875466}
+  <UseTimer>k__BackingField: 0
+  <IsSelf>k__BackingField: 0
+  <Icon>k__BackingField: {fileID: 21300000, guid: b74ed259635a6174285dfb76e293f447,
+    type: 3}
+--- !u!114 &6371835594144875466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eeeb950ea1239f4c82033e29f2c8656, type: 3}
+  m_Name: Component
+  m_EditorClassIdentifier: 
+  damage: 90
+  pushForce: 10
+  prefab: {fileID: 7528117504710682951, guid: dd6e2f24fa85ab34eaf03087644affd2, type: 3}
+  timeToProduceDamage: 2.5
+  hitLayer:
+    serializedVersion: 2
+    m_Bits: 10240
+  useCrystal: 1

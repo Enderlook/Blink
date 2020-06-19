@@ -1,6 +1,8 @@
 ﻿using Enderlook.Unity.Extensions;
 using Enderlook.Unity.Utils.Clockworks;
 
+using Game.Scene;
+
 using System;
 
 using UnityEngine;
@@ -61,6 +63,9 @@ namespace Game.Creatures
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Update()
         {
+            if (GameManager.HasWon)
+                return;
+
             if (isDead)
                 return;
 
@@ -144,7 +149,7 @@ namespace Game.Creatures
             Gizmos.DrawWireSphere(transform.position, thresholdDistance + navMeshAgent.stoppingDistance);
 
             Gizmos.color = (gizmos + Color.black) / 2;
-            
+
             const float delta = .1f;
 
             DrawArc(GetPointHorizontal, angleOfView);

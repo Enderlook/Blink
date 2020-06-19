@@ -14,9 +14,12 @@ namespace Game.Creatures.Player.AbilitySystem
         [SerializeField]
         private AbilityUI prefab;
 
+#pragma warning disable CS0414
+#if UNITY_EDITOR || UNITY_ANDROID
         [SerializeField]
         private float cancelRequestTimeout = .1f;
-#pragma warning restore CS0649
+#endif
+#pragma warning restore CS0649, CS0414
 
         private AbilitiesPack abilities;
         private AbilityUI[] abilitiesUIs = Array.Empty<AbilityUI>();

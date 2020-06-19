@@ -39,6 +39,9 @@ namespace Game.Scene
 
         [SerializeField, Tooltip("Playable scenes.")]
         private Scenes scenes;
+
+        [SerializeField, Tooltip("Animator component.")]
+        private Animator animator;
 #pragma warning restore CS0649
 
         private int currentLevel = 1;
@@ -68,6 +71,13 @@ namespace Game.Scene
             }
         }
 
+        private bool hasWon;
+
+        /// <summary>
+        /// Whenever the player has won.
+        /// </summary>
+        public static bool HasWon => instance.hasWon;
+
         private static GameManager instance;
 
         /// <summary>
@@ -93,6 +103,7 @@ namespace Game.Scene
                 switch (gameState)
                 {
                     case GameState.Starting:
+                        hasWon = false;
                         timeUntilStart.UpdateBehaviour(Time.deltaTime);
                         ShowTimer(timeUntilStart);
                         break;
@@ -106,7 +117,8 @@ namespace Game.Scene
 
         private void Complete()
         {
-            Menu.Instance.Win();
+            hasWon = true;
+            animator.SetBool("Teleportation", true);
         }
 
         private void ShowPercent() => timer.text = $"{Mathf.RoundToInt(EnergyPercent * 100)}%";

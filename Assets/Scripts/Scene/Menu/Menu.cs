@@ -232,10 +232,13 @@ namespace Game.Scene
 
         public void Restart()
         {
-            GameObject go = new GameObject();
-            go.AddComponent<Slave>();
-            DontDestroyOnLoad(go);
-            FindObjectOfType<UIManagement>().GoToMenu();
+            AdsManager.Play(_ =>
+            {
+                GameObject go = new GameObject();
+                go.AddComponent<Slave>();
+                DontDestroyOnLoad(go);
+                FindObjectOfType<UIManagement>().GoToMenu();
+            });
         }
 
         private class Slave : MonoBehaviour

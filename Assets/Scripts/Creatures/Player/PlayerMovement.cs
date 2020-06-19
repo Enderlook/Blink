@@ -2,6 +2,7 @@
 
 using Enderlook.Unity.Atoms;
 
+using Game.Scene;
 using Game.Scene.CLI;
 
 using System.Collections;
@@ -58,11 +59,17 @@ namespace Game.Creatures.Player
             if (Console.IsConsoleEnabled)
                 return;
 
+            if (GameManager.HasWon)
+            {
+                animator.SetBool(runAnimation, false);
+                return;
+            }
+
 #if !UNITY_ANDROID || UNITY_EDITOR
-#if UNITY_EDITOR && UNITY_ANDROID
+#if UNITY_EDITOR && UNITY_ANDROID && !IGNORE_UNITY_REMOTE
             if (!UnityEditor.EditorApplication.isRemoteConnected)
 #endif
-                SetMovementInput(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            SetMovementInput(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 #endif
 
             Move(horizontal, vertical);
