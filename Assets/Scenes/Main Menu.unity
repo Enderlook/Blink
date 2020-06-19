@@ -667,6 +667,7 @@ GameObject:
   - component: {fileID: 301598318}
   - component: {fileID: 301598319}
   - component: {fileID: 301598320}
+  - component: {fileID: 301598322}
   - component: {fileID: 301598321}
   m_Layer: 5
   m_Name: Canvas
@@ -776,29 +777,7 @@ MonoBehaviour:
   disableConsole: 27
   credits: {fileID: 301598321}
   creditsKeyAnimation: Start Credits
-  backgroundSpriteRenderer: {fileID: 933526908}
   backgroundMenuStyleDropdown: {fileID: 1117372078}
-  backgroundsUIs:
-  - <Name>k__BackingField: Water
-    <Sprite>k__BackingField: {fileID: 21300000, guid: 98fcb2b4d3879524fb827a9ea74118c4,
-      type: 3}
-    <Particles>k__BackingField: {fileID: 217537638659291323, guid: 4fc988325b4943a4c80736d0918abfee,
-      type: 3}
-  - <Name>k__BackingField: Fire
-    <Sprite>k__BackingField: {fileID: 21300000, guid: ca530a5af76ed904db8be0a4d257cbc2,
-      type: 3}
-    <Particles>k__BackingField: {fileID: 5064735752374379028, guid: b34d53f316673df45964db6a497c9773,
-      type: 3}
-  - <Name>k__BackingField: Earth
-    <Sprite>k__BackingField: {fileID: 21300000, guid: 382336bccbc933e4c91730cc62f57338,
-      type: 3}
-    <Particles>k__BackingField: {fileID: 874054266356412335, guid: b8b0be1f38101524ea5cd569e962185d,
-      type: 3}
-  - <Name>k__BackingField: Lightning
-    <Sprite>k__BackingField: {fileID: 21300000, guid: cd791a97145c99046b8f3125ddf2aa6d,
-      type: 3}
-    <Particles>k__BackingField: {fileID: 8124931423264969857, guid: a2406053162ac7247bed0e713c841eff,
-      type: 3}
 --- !u!114 &301598319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -851,6 +830,40 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &301598322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301598313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ebb801a645ff4c4e9e973a88c9a7db7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundsUIs:
+  - <Name>k__BackingField: Earth
+    <Sprite>k__BackingField: {fileID: 21300000, guid: 382336bccbc933e4c91730cc62f57338,
+      type: 3}
+    <Particles>k__BackingField: {fileID: 5064735752374379028, guid: b34d53f316673df45964db6a497c9773,
+      type: 3}
+  - <Name>k__BackingField: Electricity
+    <Sprite>k__BackingField: {fileID: 21300000, guid: cd791a97145c99046b8f3125ddf2aa6d,
+      type: 3}
+    <Particles>k__BackingField: {fileID: 8124931423264969857, guid: a2406053162ac7247bed0e713c841eff,
+      type: 3}
+  - <Name>k__BackingField: Fire
+    <Sprite>k__BackingField: {fileID: 21300000, guid: ca530a5af76ed904db8be0a4d257cbc2,
+      type: 3}
+    <Particles>k__BackingField: {fileID: 5064735752374379028, guid: b34d53f316673df45964db6a497c9773,
+      type: 3}
+  - <Name>k__BackingField: Ice
+    <Sprite>k__BackingField: {fileID: 21300000, guid: 98fcb2b4d3879524fb827a9ea74118c4,
+      type: 3}
+    <Particles>k__BackingField: {fileID: 2455830839362105190, guid: 469cd1a5a09c89441acda9f741c9d0d3,
+      type: 3}
+  backgroundSpriteRenderer: {fileID: 933526908}
 --- !u!114 &302717049 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6629582579017669111, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
@@ -2011,7 +2024,7 @@ GameObject:
   - component: {fileID: 933526909}
   - component: {fileID: 933526908}
   m_Layer: 5
-  m_Name: BG
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2074,11 +2087,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 933526907}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 100}
   m_LocalScale: {x: 12, y: 12, z: 1}
   m_Children: []
-  m_Father: {fileID: 1335363766}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &947884112
 GameObject:
@@ -2489,6 +2502,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 637736190314935443, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1109715604167552582, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2733,11 +2751,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 301598318}
+      objectReference: {fileID: 301598322}
     - target: {fileID: 5540564550575585203, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetMenuStyle
+      value: SetBackgroundStyle
       objectReference: {fileID: 0}
     - target: {fileID: 5540564550575585203, guid: dfbe9a393af0b0d429ccb7096ef1ee5f,
         type: 3}
@@ -3403,37 +3421,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1317787981}
   m_CullTransparentMesh: 0
---- !u!1 &1335363765
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1335363766}
-  m_Layer: 0
-  m_Name: BGS
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1335363766
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1335363765}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 100}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 933526909}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1337713231
 GameObject:
   m_ObjectHideFlags: 0

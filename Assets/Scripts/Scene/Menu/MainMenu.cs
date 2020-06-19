@@ -9,10 +9,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 using Console = Game.Scene.CLI.Console;
-using Random = UnityEngine.Random;
 
 namespace Game.Scene
 {
+    [RequireComponent(typeof(BackgroundStyle))]
     public class MainMenu : MonoBehaviour
     {
 #pragma warning disable CS0649
@@ -39,24 +39,16 @@ namespace Game.Scene
         private string creditsKeyAnimation;
 
         [Header("Backgrounds")]
-        [SerializeField, Tooltip("SpriteRenderer component of Background.")]
-        private SpriteRenderer backgroundSpriteRenderer;
-
         [SerializeField, Tooltip("Component dropdown of backgrounds menu style.")]
         private Dropdown backgroundMenuStyleDropdown;
-
-        [SerializeField, Tooltip("Values of background menu style dropdown.")]
-        private BackgroundsUI[] backgroundsUIs;
 #pragma warning restore CS0649
 
-        private static int currentIndexBGUI;
-        private static bool bgStyleMenuChanged;
-
-        private GameObject lastParticleSystem;
+        private BackgroundStyle backgroundStyle;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()
         {
+            backgroundStyle = GetComponent<BackgroundStyle>();
             GameObject core = GameObject.Find("Core");
             if (core != null)
                 Destroy(core);
@@ -114,36 +106,10 @@ namespace Game.Scene
             dropdown.ClearOptions();
             dropdown.AddOptions(options);
             dropdown.RefreshShownValue();
+            dropdown.SetValueWithoutNotify(BackgroundStyle.CurrentIndexBGUI);
         }
 
         private void SetBGMenuStyleInDropdown()
-        {
-            ConfigureDropdown(backgroundMenuStyleDropdown, backgroundsUIs.Select(e => e.Name));
-
-            if (!bgStyleMenuChanged)
-                currentIndexBGUI = Random.Range(0, backgroundsUIs.Length);
-
-            for (int i = 0; i < backgroundsUIs.Length; i++)
-            {
-                BackgroundsUI backgroundsUI = backgroundsUIs[i];
-
-                if (i == currentIndexBGUI)
-                {
-                    backgroundSpriteRenderer.sprite = backgroundsUI.Sprite;
-                    lastParticleSystem = Instantiate(backgroundsUI.Particles);
-                }
-            }
-
-            backgroundMenuStyleDropdown.value = currentIndexBGUI;
-        }
-
-        public void SetMenuStyle(int index)
-        {
-            currentIndexBGUI = index;
-            bgStyleMenuChanged = true;
-            backgroundSpriteRenderer.sprite = backgroundsUIs[index].Sprite;
-            Destroy(lastParticleSystem);
-            lastParticleSystem = Instantiate(backgroundsUIs[index].Particles);
-        }
+            => ConfigureDropdown(backgroundMenuStyleDropdown, backgroundStyle.BackgroundsUIs.Select(e => e.Name));
     }
 }
