@@ -14,11 +14,16 @@ namespace Game.Pickups.Crystals
 
         [SerializeField, Tooltip("Material of crystal drops and rods.")]
         private Material material;
+
+        [SerializeField, Tooltip("Light color of cystal.")]
+        private Color lightColor;
 #pragma warning restore CS0649
 
         private static CrystalDropConfiguration instance;
 
         public static Material Material => instance.material;
+
+        public static Color LightColor => instance.lightColor;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()

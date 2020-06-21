@@ -9,6 +9,7 @@ namespace Game.Pickups.Crystals
         private void Awake()
         {
             GetComponent<MeshRenderer>().material = CrystalDropConfiguration.Material;
+            GetComponent<Light>().color = CrystalDropConfiguration.LightColor;
             Destroy(this);
         }
     }

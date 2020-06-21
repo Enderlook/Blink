@@ -29,7 +29,7 @@ Material:
     - _OpacityFactor: 15
     - _PrimaryPower: 3
     - _RotationSpeed: 1
-    - _Scale: 10
+    - _Scale: 4
     - _SecondaryPower: 2.5
     - _TextureSpeed: 1
     - __dirty: 1

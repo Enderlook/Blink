@@ -65,17 +65,17 @@ PrefabInstance:
     - target: {fileID: 3896155708388834240, guid: a17c10be35964d747830d0bbdd24d484,
         type: 3}
       propertyPath: primaryColor.r
-      value: 0.27058825
+      value: 0.27867356
       objectReference: {fileID: 0}
     - target: {fileID: 3896155708388834240, guid: a17c10be35964d747830d0bbdd24d484,
         type: 3}
       propertyPath: primaryColor.g
-      value: 0.8862745
+      value: 0.6415094
       objectReference: {fileID: 0}
     - target: {fileID: 3896155708388834240, guid: a17c10be35964d747830d0bbdd24d484,
         type: 3}
       propertyPath: primaryColor.b
-      value: 0.17254902
+      value: 0.2208971
       objectReference: {fileID: 0}
     - target: {fileID: 3896155708388834240, guid: a17c10be35964d747830d0bbdd24d484,
         type: 3}
@@ -92,10 +92,25 @@ PrefabInstance:
       propertyPath: secondaryColor.b
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3896155708388834240, guid: a17c10be35964d747830d0bbdd24d484,
+        type: 3}
+      propertyPath: lightColor.r
+      value: 0.71752167
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896155708388834240, guid: a17c10be35964d747830d0bbdd24d484,
+        type: 3}
+      propertyPath: lightColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896155708388834240, guid: a17c10be35964d747830d0bbdd24d484,
+        type: 3}
+      propertyPath: lightColor.b
+      value: 0.4292453
+      objectReference: {fileID: 0}
     - target: {fileID: 7495075052015997601, guid: a17c10be35964d747830d0bbdd24d484,
         type: 3}
       propertyPath: m_Name
-      value: Crystal Drop Configuration Green
+      value: Crystal Drop Configuration Earth
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a17c10be35964d747830d0bbdd24d484, type: 3}
