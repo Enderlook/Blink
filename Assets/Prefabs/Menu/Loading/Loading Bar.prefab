@@ -12,6 +12,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Loading Bar
       objectReference: {fileID: 0}
+    - target: {fileID: 2640236603215013187, guid: d9beab08979fcd54a9af7d13e0a9390f,
+        type: 3}
+      propertyPath: minHealthColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640236603215013187, guid: d9beab08979fcd54a9af7d13e0a9390f,
+        type: 3}
+      propertyPath: minHealthColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640236603215013187, guid: d9beab08979fcd54a9af7d13e0a9390f,
+        type: 3}
+      propertyPath: minHealthColor.b
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3007593274578640327, guid: d9beab08979fcd54a9af7d13e0a9390f,
         type: 3}
       propertyPath: m_IsActive
