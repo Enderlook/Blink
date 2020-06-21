@@ -4719,10 +4719,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startTime: 5
-  baseEnergy: 50
-  linearIncreaseEnergy: 10
+  baseEnergy: 75
+  linearIncreaseEnergy: 20
   baseDifficulty: 1
-  linearIncreaseDifficulty: 0.5
+  linearIncreaseDifficulty: 0.4
   geometryIncreaseDifficulty: 0.5
   difficultyInSceneFactor: 0.5
   timer: {fileID: 8118707543037823915}
