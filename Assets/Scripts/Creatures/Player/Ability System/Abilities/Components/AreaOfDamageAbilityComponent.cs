@@ -13,12 +13,15 @@ namespace Game.Creatures.Player.AbilitySystem
 
         [SerializeField, Tooltip("Layer to affect.")]
         private LayerMask hitLayer;
+
+        [SerializeField, Tooltip("Duration of effect in seconds. If 0, it's one frame")]
+        private float duration;
 #pragma warning restore CS0649
 
         protected void InstantiatePrefab(Vector3 position, Quaternion rotation)
         {
             GameObject instance = Instantiate(prefab, position, rotation);
-            AreaOfDamage.AddComponentTo(instance, timeToProduceDamage, damage, pushForce, hitLayer);
+            AreaOfDamage.AddComponentTo(instance, timeToProduceDamage, damage, pushForce, hitLayer, duration);
         }
 
         protected void InstantiatePrefab(Vector3 position) => InstantiatePrefab(position, Quaternion.identity);

@@ -23,13 +23,14 @@ namespace Game.Attacks
                 pushable.AddForce((otherGameObject.transform.position - transform.position) * pushForce, ForceMode.Impulse);
         }
 
-        public static void AddComponentTo(GameObject source, float timeToExplode, int damage, float pushForce = 0, LayerMask hitLayer = default)
+        public static void AddComponentTo(GameObject source, float timeToExplode, int damage, float pushForce = 0, LayerMask hitLayer = default, float duration = 0)
         {
             AreaOfDamage component = source.AddComponent<AreaOfDamage>();
             component.damage = damage;
             component.pushForce = pushForce;
             component.warmupTime = timeToExplode;
             component.hitLayer = hitLayer;
+            component.duration = duration;
         }
     }
 }
