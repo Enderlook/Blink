@@ -32,6 +32,7 @@ namespace Game.Scene
         private static readonly GUIContent FAST_DRAW_CONTENT = new GUIContent("Fast Draw", "If enable, spheres will use half as many discs to be drawn.");
         private static readonly GUIContent TOTAL_POINTS_CONTENT = new GUIContent("Points Amount", "Allowed | Failed | Total.");
         private static readonly GUIContent STORE_POINTS_CONTENT = new GUIContent("Store Points", "Stores the points in the spawnPoints array.");
+        private static readonly GUIContent STORE_ALLOWED_POINTS_CONTENT = new GUIContent("Store Allowed Points", "Stores allowed points in the spawnPoints array.");
         private static readonly GUIContent CLEAR_HELPER_CONTENT = new GUIContent("Clear", "Clear spawn point helper.");
 
         private static readonly FieldInfo pointsFieldInfo = typeof(SpawnPointsManager).GetField("points", BindingFlags.NonPublic | BindingFlags.Instance);
@@ -53,13 +54,25 @@ namespace Game.Scene
         private float distanceCheck;
 
         private Vector3[] points = Array.Empty<Vector3>();
+        private Vector3[] Points {
+            get => points;
+            set {
+                points = value;
+                if (allowedPoints.Length != points.Length)
+                    Array.Resize(ref allowedPoints, points.Length);
+            }
+        }
         private bool[] allowedPoints = Array.Empty<bool>();
 
         private IEnumerator validator;
 
-        private Vector3[] Points {
+        private Vector3[] StoredPoints {
             get => (Vector3[])pointsFieldInfo.GetValue(spawnPointsManager);
-            set => pointsFieldInfo.SetValue(spawnPointsManager, value);
+            set {
+                pointsFieldInfo.SetValue(spawnPointsManager, value);
+                pointsProperty.serializedObject.ApplyModifiedProperties();
+                EditorUtility.SetDirty(pointsProperty.serializedObject.targetObject);
+            }
         }
 
         static SpawnPointsManagerDrawer()
@@ -110,6 +123,7 @@ namespace Game.Scene
                 spawnPointsManager = (SpawnPointsManager)property.GetTargetObjectOfProperty();
                 pointsProperty = property.FindPropertyRelative(pointsPath);
                 distanceCheckProperty = property.FindPropertyRelative(distanceCheckPath);
+                Points = StoredPoints;
                 validator = ValidatePoints().GetEnumerator();
             }
 
@@ -155,13 +169,16 @@ namespace Game.Scene
 
                     fastDraw = EditorGUILayout.Toggle(FAST_DRAW_CONTENT, fastDraw);
 
-                    int allowed = points.Count(IsAllowed);
-                    int total = points.Length;
+                    int allowed = Points.Count(IsAllowed);
+                    int total = Points.Length;
                     int failed = total - allowed;
                     EditorGUILayout.LabelField(TOTAL_POINTS_CONTENT, new GUIContent($"{allowed} | {failed} | {total}", TOTAL_POINTS_CONTENT.tooltip));
 
                     if (GUILayout.Button(STORE_POINTS_CONTENT))
-                        StorePoints();
+                        StorePoints(false);
+
+                    if (GUILayout.Button(STORE_ALLOWED_POINTS_CONTENT))
+                        StorePoints(true);
 
                     if (GUILayout.Button(CLEAR_HELPER_CONTENT))
                         ClearDrawer();
@@ -176,17 +193,20 @@ namespace Game.Scene
             EditorGUI.EndProperty();
         }
 
-        private void ClearPoints() => Points = Array.Empty<Vector3>();
+        private void ClearPoints() => StoredPoints = Array.Empty<Vector3>();
 
-        private void StorePoints()
+        private void StorePoints( bool onlyAlloweds)
         {
             ClearPoints();
-            Points = points;
+            if (onlyAlloweds)
+                StoredPoints = Points = Points.Where(IsAllowed).ToArray();
+            else
+                StoredPoints = Points;
         }
 
         private void ClearDrawer()
         {
-            points = Array.Empty<Vector3>();
+            Points = Array.Empty<Vector3>();
             surface = Vector2.zero;
             center = Vector3.zero;
             distancePerPoint = 1;
@@ -207,8 +227,7 @@ namespace Game.Scene
                 for (float z = -halfSurface.y; z < halfSurface.y; z += distancePerPoint)
                     list.Add(new Vector3(x + center.x, center.y, z + center.z));
 
-            points = list.ToArray();
-            allowedPoints = new bool[points.Length];
+            Points = list.ToArray();
         }
 
         private IEnumerable ValidatePoints()
@@ -216,10 +235,10 @@ namespace Game.Scene
             while (true)
             {
                 int time = DateTime.Now.Millisecond;
-                int length = points.Length;
+                int length = Points.Length;
                 for (int i = 0; i < length; i++)
                 {
-                    allowedPoints[i] = IsAllowed(points[i]);
+                    allowedPoints[i] = IsAllowed(Points[i]);
                     // We don't check all the time because it's expensive.
                     if (i % 10 == 0 && DateTime.Now.Millisecond - time >= MAXIMUM_PHYSICS_TIME)
                     {
@@ -252,13 +271,13 @@ namespace Game.Scene
 
             int timePerRender = DateTime.Now.Millisecond;
 
-            int pointsLength = points.Length;
+            int pointsLength = Points.Length;
 
             for (int i = 0; i < pointsLength; i++)
             {
                 float distanceCheck = distanceCheckProperty.floatValue;
 
-                Vector3 point = points[i];
+                Vector3 point = Points[i];
 
                 Handles.color = allowedPoints[i] ? Color.green : Color.red;
                 Handles.DrawWireDisc(point, Vector3.forward, distanceCheck);
