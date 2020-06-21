@@ -64,7 +64,7 @@ PrefabInstance:
     - target: {fileID: 4785087967260609584, guid: d1e5779aca5274e43a2c900967f89b39,
         type: 3}
       propertyPath: m_Name
-      value: Ground
+      value: Ground With Walls
       objectReference: {fileID: 0}
     - target: {fileID: 6412673231941145200, guid: d1e5779aca5274e43a2c900967f89b39,
         type: 3}
