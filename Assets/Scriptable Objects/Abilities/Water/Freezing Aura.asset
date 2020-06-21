@@ -31,8 +31,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d81e0efb0c9535c4bb95bb78eb9cde72, type: 3}
   m_Name: Component
   m_EditorClassIdentifier: 
-  duration: 5
-  timeToProduceHealing: 0.15
+  duration: 20
+  timeToFreeze: 0.15
   material: {fileID: 2100000, guid: a2939a6b542aca54b886fc080252a8b4, type: 2}
   hitLayer:
     serializedVersion: 2

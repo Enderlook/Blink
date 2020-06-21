@@ -14,7 +14,7 @@ namespace Game.Creatures.Player.AbilitySystem
         protected int duration = 4;
 
         [SerializeField, Tooltip("Time in seconds since the prefab is spawn to freeze the area.")]
-        private float timeToProduceHealing = 1;
+        private float timeToFreeze = 1;
 
         [SerializeField, Tooltip("Material applied to renderers.")]
         private Material material;
@@ -35,7 +35,7 @@ namespace Game.Creatures.Player.AbilitySystem
         public override void Execute()
         {
             GameObject instance = Instantiate(prefab, spawnPoint.position, Quaternion.identity);
-            AreaOfFreezing.AddComponentTo(instance, timeToProduceHealing, duration, material, hitLayer);
+            AreaOfFreezing.AddComponentTo(instance, timeToFreeze, duration, material, hitLayer);
         }
     }
 }
