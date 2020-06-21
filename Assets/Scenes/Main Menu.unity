@@ -846,7 +846,7 @@ MonoBehaviour:
   - <Name>k__BackingField: Earth
     <Sprite>k__BackingField: {fileID: 21300000, guid: 382336bccbc933e4c91730cc62f57338,
       type: 3}
-    <Particles>k__BackingField: {fileID: 5064735752374379028, guid: b34d53f316673df45964db6a497c9773,
+    <Particles>k__BackingField: {fileID: 874054266356412335, guid: b8b0be1f38101524ea5cd569e962185d,
       type: 3}
   - <Name>k__BackingField: Electricity
     <Sprite>k__BackingField: {fileID: 21300000, guid: cd791a97145c99046b8f3125ddf2aa6d,
