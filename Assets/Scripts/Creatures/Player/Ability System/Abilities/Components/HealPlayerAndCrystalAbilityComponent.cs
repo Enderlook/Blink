@@ -5,19 +5,19 @@ using UnityEngine;
 
 namespace Game.Creatures.Player.AbilitySystem
 {
-    [CreateAssetMenu(fileName = "Area Of Healing Ability", menuName = "Game/Ability System/Components/Area Of Healing")]
-    public class AreaOfHealingAbilityComponent : AbilityComponent
+    [CreateAssetMenu(fileName = "Heal Player And Crystal Ability", menuName = "Game/Ability System/Components/Heal Player And Crystal")]
+    public class HealPlayerAndCrystalAbilityComponent : AbilityComponent
     {
 #pragma warning disable CS0649
         [Header("Configuration")]
-        [SerializeField, Tooltip("Health restored by the healing aura")]
-        protected int healing = 25;
+        [SerializeField, Tooltip("Health restored to player.")]
+        protected int playerHealing = 25;
+
+        [SerializeField, Tooltip("Health restored to crystal.")]
+        protected int crystalHealing = 25;
 
         [SerializeField, Tooltip("Time in seconds since the prefab is spawn to produce the healing.")]
         private float timeToProduceHealing = 1;
-
-        [SerializeField, Tooltip("Layer to affect.")]
-        private LayerMask hitLayer;
 
         [Header("Setup")]
         [SerializeField, Tooltip("Spawned prefab.")]
@@ -32,7 +32,7 @@ namespace Game.Creatures.Player.AbilitySystem
         public override void Execute()
         {
             GameObject instance = Instantiate(prefab, spawnPoint.position, Quaternion.identity);
-            AreaOfHealing.AddComponentTo(instance, timeToProduceHealing, healing, hitLayer);
+            HealPlayerAndCrystal.AddComponentTo(instance, timeToProduceHealing, playerHealing, crystalHealing);
         }
     }
 }

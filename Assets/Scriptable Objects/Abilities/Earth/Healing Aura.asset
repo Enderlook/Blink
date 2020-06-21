@@ -12,11 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40f95169ab65374ca46386ba54893f9, type: 3}
   m_Name: Component
   m_EditorClassIdentifier: 
-  healing: 40
+  playerHealing: 40
+  crystalHealing: 60
   timeToProduceHealing: 1.78
-  hitLayer:
-    serializedVersion: 2
-    m_Bits: 1536
   prefab: {fileID: 8043499300776965572, guid: 73266c8b9230d344d9cb28a6d85d12dd, type: 3}
 --- !u!114 &-4493279146327655838
 MonoBehaviour:
