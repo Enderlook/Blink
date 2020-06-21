@@ -107,7 +107,7 @@ namespace Game.Scene
                         range.y,
                         new[] { maximumEnemies, enemiesPerSecond },
                         (property, difficulty) => (float)getValueEnemyLevelDataEditorOnly.Invoke(null, new object[] { property.vector4Value, difficulty })
-                    );                    
+                    );
                 }
             }
         }
