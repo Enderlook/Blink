@@ -54973,7 +54973,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_IsTrigger
+    attribute: m_Enabled
     path: Attack
     classID: 136
     script: {fileID: 0}
@@ -54987,7 +54987,7 @@ AnimationClip:
     genericBindings:
     - serializedVersion: 2
       path: 1080829965
-      attribute: 2693561734
+      attribute: 3305885265
       script: {fileID: 0}
       typeID: 136
       customType: 0
@@ -112827,7 +112827,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_IsTrigger
+    attribute: m_Enabled
     path: Attack
     classID: 136
     script: {fileID: 0}
