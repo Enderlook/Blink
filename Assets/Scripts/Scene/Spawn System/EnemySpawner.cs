@@ -45,7 +45,6 @@ namespace Game.Scene
                 {
                     GameObject instance = Instantiate(bossPrefab);
                     instance.transform.position = spawnPoints.GetSpawnPoint(Camera);
-                    DestroyNotifier.ExecuteOnDestroy(instance, Menu.Instance.Win);
                 }
             }
         }
