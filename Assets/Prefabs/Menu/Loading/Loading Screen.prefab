@@ -109,6 +109,7 @@ MonoBehaviour:
     <Particles>k__BackingField: {fileID: 2455830839362105190, guid: 469cd1a5a09c89441acda9f741c9d0d3,
       type: 3}
   backgroundSpriteRenderer: {fileID: 0}
+  backgroundImage: {fileID: 8379256019475834397}
 --- !u!1001 &2553161590407774693
 PrefabInstance:
   m_ObjectHideFlags: 0

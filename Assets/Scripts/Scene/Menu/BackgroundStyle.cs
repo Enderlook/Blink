@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Game.Scene
 {
@@ -10,6 +12,9 @@ namespace Game.Scene
 
         [SerializeField, Tooltip("SpriteRenderer component of Background.")]
         private SpriteRenderer backgroundSpriteRenderer;
+
+        [SerializeField, Tooltip("Image component of Background.")]
+        private Image backgroundImage;
 
         public IReadOnlyList<BackgroundsUI> BackgroundsUIs => backgroundsUIs;
 
@@ -24,14 +29,24 @@ namespace Game.Scene
                 CurrentIndexBGUI = Random.Range(0, BackgroundsUIs.Count);
 
             lastParticleSystem = Instantiate(backgroundsUIs[CurrentIndexBGUI].Particles);
-            backgroundSpriteRenderer.sprite = backgroundsUIs[CurrentIndexBGUI].Sprite;
+
+            SetSprite(CurrentIndexBGUI);
+        }
+
+        private void SetSprite(int index)
+        {
+            Sprite sprite = backgroundsUIs[index].Sprite;
+            if (backgroundSpriteRenderer != null)
+                backgroundSpriteRenderer.sprite = sprite;
+            else
+                backgroundImage.sprite = sprite;
         }
 
         public void SetBackgroundStyle(int index)
         {
             CurrentIndexBGUI = index;
             bgStyleMenuChanged = true;
-            backgroundSpriteRenderer.sprite = backgroundsUIs[index].Sprite;
+            SetSprite(index);
             Destroy(lastParticleSystem);
             lastParticleSystem = Instantiate(backgroundsUIs[index].Particles);
         }
