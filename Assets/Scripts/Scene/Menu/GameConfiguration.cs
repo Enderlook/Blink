@@ -1,10 +1,8 @@
-﻿using Enderlook.Unity.Attributes;
+﻿using System;
+using System.Linq;
 
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Linq;
-using System;
 
 namespace Game.Scene
 {
