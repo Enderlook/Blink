@@ -1,4 +1,5 @@
-﻿using Enderlook.Unity.Utils.Clockworks;
+﻿using Enderlook.Unity.Prefabs.HealthBarGUI;
+using Enderlook.Unity.Utils.Clockworks;
 
 using System;
 
@@ -36,6 +37,9 @@ namespace Game.Scene
         [Header("Setup")]
         [SerializeField]
         private Text timer;
+
+        [SerializeField]
+        private HealthBar energyBar;
 
         [SerializeField, Tooltip("Playable scenes.")]
         private Scenes scenes;
@@ -121,7 +125,7 @@ namespace Game.Scene
             animator.SetBool("Teleportation", true);
         }
 
-        private void ShowPercent() => timer.text = $"{Mathf.RoundToInt(EnergyPercent * 100)}%";
+        private void ShowPercent() => energyBar.Health = CurrentEnergy;
 
         public AsyncOperation AdvanceScene() => AdvanceScene(scenes.GetScene());
 
@@ -149,6 +153,8 @@ namespace Game.Scene
             gameState = GameState.Running;
             currentRequiredEnergy = baseEnergy + (currentLevel * linearIncreaseEnergy);
             FindObjectOfType<EnemySpawner>().StartSpawing();
+            timer.enabled = false;
+            energyBar.ManualUpdate(CurrentEnergy, currentRequiredEnergy);
         }
 
         private void SetStateToStarting()
@@ -156,6 +162,7 @@ namespace Game.Scene
             gameState = GameState.Starting;
             timeUntilStart.ResetCycles(1);
             CurrentEnergy = 0;
+            energyBar.ManualUpdate(0, 1);
         }
 
         private void ShowTimer(IBasicClockwork clockwork)
