@@ -52,7 +52,7 @@ namespace Game.Creatures
                     return;
                 animator.SetBool(walkAnimation, value);
                 canWalk = value;
-                navMeshAgent.enabled = value;
+                navMeshAgent.isStopped = !value;
                 if ((lastCheckAtFrame - Time.frameCount) > MAX_CHECK_FRAME)
                     DetermineTarget();
             }
@@ -81,7 +81,7 @@ namespace Game.Creatures
         {
             if (GameManager.HasWon)
             {
-                navMeshAgent.enabled = false;
+                navMeshAgent.isStopped = true;
                 return;
             }
 
@@ -103,23 +103,15 @@ namespace Game.Creatures
             if (crystalDistance * (1 / crystalSeekWeight) < playerDistance * (1 / playerSeekWeight))
             {
                 TargetDistance = crystalDistance;
-                SetPath(crystalPath);
+                navMeshAgent.SetPath(crystalPath);
                 TargetPosition = CrystalAndPlayerTracker.CrystalPosition;
             }
             else
             {
                 TargetDistance = playerDistance;
-                SetPath(playerPath);
+                navMeshAgent.SetPath(playerPath);
                 TargetPosition = CrystalAndPlayerTracker.PlayerPosition;
             }
-        }
-
-        private void SetPath(NavMeshPath path)
-        {
-            bool isEnabled = navMeshAgent.enabled;
-            navMeshAgent.enabled = true;
-            navMeshAgent.SetPath(path);
-            navMeshAgent.enabled = isEnabled;
         }
 
         public void AddForce(Vector3 force, ForceMode mode = ForceMode.Force)
@@ -127,13 +119,13 @@ namespace Game.Creatures
             switch (mode)
             {
                 case ForceMode.Force:
-                    navMeshAgent.velocity += force * mass / (Time.deltaTime * Time.deltaTime);
+                    navMeshAgent.velocity += force / mass * Time.deltaTime;
                     break;
                 case ForceMode.Acceleration:
-                    navMeshAgent.velocity += force / (Time.deltaTime * Time.deltaTime);
+                    navMeshAgent.velocity += force * Time.deltaTime;
                     break;
                 case ForceMode.Impulse:
-                    navMeshAgent.velocity += force * mass;
+                    navMeshAgent.velocity += force / mass;
                     break;
                 case ForceMode.VelocityChange:
                     navMeshAgent.velocity += force;
@@ -147,10 +139,7 @@ namespace Game.Creatures
 
             path.ClearCorners();
 
-            bool isEnabled = navMeshAgent.enabled;
-            navMeshAgent.enabled = true;
             navMeshAgent.CalculatePath(target, path);
-            navMeshAgent.enabled = isEnabled;
 
             float distance = 0;
             if (path.status != NavMeshPathStatus.PathInvalid && path.corners.Length > 1)
@@ -167,13 +156,13 @@ namespace Game.Creatures
         void IDie.Die()
         {
             isDead = true;
-            navMeshAgent.enabled = false;
+            navMeshAgent.isStopped = true;
         }
 
         public void Stun(float duration)
         {
             isStunned = true;
-            navMeshAgent.enabled = false;
+            navMeshAgent.isStopped = true;
             stunningClockwork.ResetCycles(1);
             stunningClockwork.ResetTime(duration);
         }
@@ -182,7 +171,7 @@ namespace Game.Creatures
         {
             isStunned = false;
             if (!isDead)
-                navMeshAgent.enabled = true;
+                navMeshAgent.isStopped = false;
         }
     }
 }
