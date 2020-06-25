@@ -101,7 +101,7 @@ namespace Game.Creatures
                 else
                 {
                     navMeshAgent.updateRotation = false;
-                    rigidBody.rotation = Quaternion.Euler(Vector3.RotateTowards(rigidBody.rotation.eulerAngles, direction * Time.deltaTime, rotationSpeed, 0));
+                    rigidBody.rotation = Quaternion.Euler(Vector3.RotateTowards(rigidBody.rotation.eulerAngles, direction, rotationSpeed * Time.deltaTime, 0));
                 }
             }
             else
