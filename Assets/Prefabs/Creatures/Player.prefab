@@ -171,25 +171,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health:
-    <Mode>k__BackingField: 1
+    <Mode>k__BackingField: 2
     inline: 0
-    scriptableObject: {fileID: 252350925886159260}
-    component: {fileID: 0}
+    scriptableObject: {fileID: 0}
+    component: {fileID: 2360161823797513291}
   maxHealth:
-    <Mode>k__BackingField: 1
+    <Mode>k__BackingField: 2
     inline: 0
-    scriptableObject: {fileID: -9049296588952162490}
-    component: {fileID: 0}
+    scriptableObject: {fileID: 0}
+    component: {fileID: 4885112252457088277}
   healthEvent2:
-    <Mode>k__BackingField: 0
-    event: {fileID: -6940658207911830950}
+    <Mode>k__BackingField: 2
+    event: {fileID: 0}
     managedScriptableObject: {fileID: 0}
-    managedComponent: {fileID: 0}
+    managedComponent: {fileID: 2360161823797513291}
   maxHealthEvent:
-    <Mode>k__BackingField: 0
-    event: {fileID: 2987738147444546909}
+    <Mode>k__BackingField: 2
+    event: {fileID: 0}
     managedScriptableObject: {fileID: 0}
-    managedComponent: {fileID: 0}
+    managedComponent: {fileID: 4885112252457088277}
   healthBar: {fileID: 0}
 --- !u!114 &1195279852206736867
 MonoBehaviour:
@@ -204,15 +204,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health:
-    <Mode>k__BackingField: 1
+    <Mode>k__BackingField: 2
     inline: 0
-    scriptableObject: {fileID: 252350925886159260}
-    component: {fileID: 0}
+    scriptableObject: {fileID: 0}
+    component: {fileID: 2360161823797513291}
   maxHealth:
-    <Mode>k__BackingField: 1
+    <Mode>k__BackingField: 2
     inline: 0
-    scriptableObject: {fileID: -9049296588952162490}
-    component: {fileID: 0}
+    scriptableObject: {fileID: 0}
+    component: {fileID: 4885112252457088277}
   hurtSounds:
   - {fileID: 8300000, guid: 8581348003945a94c9c80294575106a5, type: 3}
   - {fileID: 8300000, guid: b1928f82e115cfa41809f30384560209, type: 3}
@@ -327,6 +327,34 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &2360161823797513291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5558235056462145219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1155944686, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseAtom: {fileID: 252350925886159260}
+  instacedAtom: {fileID: 0}
+--- !u!114 &4885112252457088277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5558235056462145219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1155944686, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseAtom: {fileID: -9049296588952162490}
+  instacedAtom: {fileID: 0}
 --- !u!1001 &1363339880222058423
 PrefabInstance:
   m_ObjectHideFlags: 0

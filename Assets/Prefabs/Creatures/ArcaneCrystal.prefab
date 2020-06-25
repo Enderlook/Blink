@@ -5043,6 +5043,8 @@ GameObject:
   - component: {fileID: 1790396307462042142}
   - component: {fileID: 6710926243008146486}
   - component: {fileID: 1003403072352620057}
+  - component: {fileID: 3233033078535522733}
+  - component: {fileID: 5886823355513871089}
   m_Layer: 10
   m_Name: ArcaneCrystal
   m_TagString: Untagged
@@ -5209,15 +5211,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health:
-    <Mode>k__BackingField: 1
+    <Mode>k__BackingField: 2
     inline: 0
-    scriptableObject: {fileID: -6733355703892206160}
-    component: {fileID: 0}
+    scriptableObject: {fileID: 0}
+    component: {fileID: 3233033078535522733}
   maxHealth:
-    <Mode>k__BackingField: 1
+    <Mode>k__BackingField: 2
     inline: 0
-    scriptableObject: {fileID: -6065630850220036355}
-    component: {fileID: 0}
+    scriptableObject: {fileID: 0}
+    component: {fileID: 5886823355513871089}
   hurtSounds:
   - {fileID: 8300000, guid: c0e7dd4847b17cf46b0f7414f01cfde3, type: 3}
   - {fileID: 8300000, guid: 771c0f83e2a1259408b9dc2d6094b27f, type: 3}
@@ -5298,25 +5300,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health:
-    <Mode>k__BackingField: 1
+    <Mode>k__BackingField: 2
     inline: 0
-    scriptableObject: {fileID: -6733355703892206160}
-    component: {fileID: 0}
+    scriptableObject: {fileID: 0}
+    component: {fileID: 3233033078535522733}
   maxHealth:
-    <Mode>k__BackingField: 1
+    <Mode>k__BackingField: 2
     inline: 0
-    scriptableObject: {fileID: -6065630850220036355}
-    component: {fileID: 0}
+    scriptableObject: {fileID: 0}
+    component: {fileID: 5886823355513871089}
   healthEvent2:
-    <Mode>k__BackingField: 0
-    event: {fileID: 2602616489679049670}
+    <Mode>k__BackingField: 2
+    event: {fileID: 0}
     managedScriptableObject: {fileID: 0}
-    managedComponent: {fileID: 0}
+    managedComponent: {fileID: 3233033078535522733}
   maxHealthEvent:
-    <Mode>k__BackingField: 0
-    event: {fileID: 4929932842347361184}
+    <Mode>k__BackingField: 2
+    event: {fileID: 0}
     managedScriptableObject: {fileID: 0}
-    managedComponent: {fileID: 0}
+    managedComponent: {fileID: 5886823355513871089}
   healthBar: {fileID: 0}
 --- !u!114 &6710926243008146486
 MonoBehaviour:
@@ -5345,6 +5347,34 @@ CapsuleCollider:
   m_Height: 5
   m_Direction: 1
   m_Center: {x: 0, y: 1.5, z: 0}
+--- !u!114 &3233033078535522733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6151730945282049994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1155944686, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseAtom: {fileID: -6733355703892206160}
+  instacedAtom: {fileID: 0}
+--- !u!114 &5886823355513871089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6151730945282049994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1155944686, guid: 92c8117d001139c47a4bb81b3e7fb44e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseAtom: {fileID: -6065630850220036355}
+  instacedAtom: {fileID: 0}
 --- !u!1 &7412720714414690639
 GameObject:
   m_ObjectHideFlags: 0
@@ -15072,8 +15102,8 @@ MonoBehaviour:
   m_Name: Health
   m_EditorClassIdentifier: 
   initialValue: 150
-  value: 100
-  oldValue: 100
+  value: 150
+  oldValue: 150
   transformer: {fileID: 5616422358890775839}
   changed: {fileID: -8945341506382438979}
   changedWithHistory: {fileID: 2602616489679049670}
@@ -15091,7 +15121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialValue: 150
   value: 150
-  oldValue: 100
+  oldValue: 150
   transformer: {fileID: 0}
   changed: {fileID: 4929932842347361184}
   changedWithHistory: {fileID: 0}
