@@ -19,6 +19,7 @@ MonoBehaviour:
   hitLayer:
     serializedVersion: 2
     m_Bits: 10240
+  duration: 0.1
   layer: 8
 --- !u!114 &11400000
 MonoBehaviour:

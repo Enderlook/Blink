@@ -40,3 +40,5 @@ MonoBehaviour:
   hitLayer:
     serializedVersion: 2
     m_Bits: 10240
+  duration: 0.1
+  useCrystal: 0
