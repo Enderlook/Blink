@@ -34,7 +34,7 @@ namespace Game.Scene.CLI
 
         private EventSystem eventSystem;
 
-        private int logLength = 10;
+        private int logLength = 25;
 
         private Dictionary<(string command, int parameters), Action<string[]>> commands;
 
