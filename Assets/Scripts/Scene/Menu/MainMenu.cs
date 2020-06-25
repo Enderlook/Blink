@@ -80,15 +80,22 @@ namespace Game.Scene
             loadingProgress.gameObject.SetActive(true);
             loadingProgress.ManualUpdate(0, 1);
 
-            StartCoroutine(Loading(level));
-        }
+            StartCoroutine(Work());
 
-        private IEnumerator Loading(AsyncOperation asyncOperation)
-        {
-            while (!asyncOperation.isDone)
+            IEnumerator Work()
             {
-                loadingProgress.UpdateValues(asyncOperation.progress * 100);
-                yield return null;
+                level.allowSceneActivation = false;
+                hud.allowSceneActivation = false;
+                while (!level.isDone || !hud.isDone)
+                {
+                    // Fix bug
+                    if (level.progress >= .9f && hud.progress >= .9f)
+                        break;
+                    loadingProgress.UpdateValues((level.progress + hud.progress) * 50);
+                    yield return null;
+                }
+                level.allowSceneActivation = true;
+                hud.allowSceneActivation = true;
             }
         }
 
