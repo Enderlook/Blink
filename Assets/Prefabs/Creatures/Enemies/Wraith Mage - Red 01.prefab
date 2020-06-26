@@ -884,6 +884,22 @@ PrefabInstance:
       propertyPath: damage
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 8968465735235951904, guid: 59c0df78cb163cf4c89005ec4b3032c1,
+        type: 3}
+      propertyPath: hasProjectile
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8968465735235951904, guid: 59c0df78cb163cf4c89005ec4b3032c1,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 6988304715198132126, guid: 580963a91926d3742b0de4ce66d7ed10,
+        type: 3}
+    - target: {fileID: 8968465735235951904, guid: 59c0df78cb163cf4c89005ec4b3032c1,
+        type: 3}
+      propertyPath: shotPoint
+      value: 
+      objectReference: {fileID: 4144696274197022819}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59c0df78cb163cf4c89005ec4b3032c1, type: 3}
 --- !u!1 &3402435639833403909 stripped
@@ -895,6 +911,12 @@ GameObject:
 --- !u!95 &3402435639842918413 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 9500000, guid: 59c0df78cb163cf4c89005ec4b3032c1,
+    type: 3}
+  m_PrefabInstance: {fileID: 3402435639833503085}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4144696274197022819 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1635662622827326734, guid: 59c0df78cb163cf4c89005ec4b3032c1,
     type: 3}
   m_PrefabInstance: {fileID: 3402435639833503085}
   m_PrefabAsset: {fileID: 0}

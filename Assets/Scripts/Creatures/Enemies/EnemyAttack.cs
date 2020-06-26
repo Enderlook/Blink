@@ -34,6 +34,15 @@ namespace Game.Creatures
 
         [SerializeField, Tooltip("Maximum radiants rotated per second.")]
         private float rotationSpeed = .5f;
+
+        [SerializeField, Tooltip("Enemy throw projectile?")]
+        private bool hasProjectile = false;
+
+        [SerializeField, Tooltip("Projectile prefab"), Enderlook.Unity.Attributes.ShowIf(nameof(hasProjectile), true)]
+        private GameObject projectile;
+
+        [SerializeField, Tooltip("Projectile shotpoint"), Enderlook.Unity.Attributes.ShowIf(nameof(hasProjectile), true)]
+        private Transform shotPoint;
 #pragma warning restore CS0649
 
         private EnemyPathFinding enemyPathFinding;
@@ -138,6 +147,11 @@ namespace Game.Creatures
         }
 
         private void UnStun() => isStunned = false;
+
+        public void ThrowProjectile()
+        {
+            Instantiate(projectile, shotPoint.position, shotPoint.rotation);
+        }
 
 #if UNITY_EDITOR
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
