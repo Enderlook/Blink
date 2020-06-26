@@ -900,6 +900,11 @@ PrefabInstance:
       propertyPath: shotPoint
       value: 
       objectReference: {fileID: 4144696274197022819}
+    - target: {fileID: 8968465735235951904, guid: 59c0df78cb163cf4c89005ec4b3032c1,
+        type: 3}
+      propertyPath: basicAttack
+      value: Throw Projectile
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59c0df78cb163cf4c89005ec4b3032c1, type: 3}
 --- !u!1 &3402435639833403909 stripped
