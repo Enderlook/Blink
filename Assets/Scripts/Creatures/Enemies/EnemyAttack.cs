@@ -1,6 +1,6 @@
 ﻿using Enderlook.Unity.Extensions;
 using Enderlook.Unity.Utils.Clockworks;
-
+using Game.Attacks.Projectiles;
 using Game.Scene;
 
 using System;
@@ -43,6 +43,15 @@ namespace Game.Creatures
 
         [SerializeField, Tooltip("Projectile shotpoint"), Enderlook.Unity.Attributes.ShowIf(nameof(hasProjectile), true)]
         private Transform shotPoint;
+
+        [SerializeField, Tooltip("Speed projectile"), Enderlook.Unity.Attributes.ShowIf(nameof(hasProjectile), true)]
+        private float speed;
+
+        [SerializeField, Tooltip("PushForce projectile"), Enderlook.Unity.Attributes.ShowIf(nameof(hasProjectile), true)]
+        private float pushForce;
+
+        [SerializeField, Tooltip("PushForce projectile"), Enderlook.Unity.Attributes.ShowIf(nameof(hasProjectile), true)]
+        private LayerMask hitLayer;
 #pragma warning restore CS0649
 
         private EnemyPathFinding enemyPathFinding;
@@ -150,7 +159,9 @@ namespace Game.Creatures
 
         public void ThrowProjectile()
         {
-            Instantiate(projectile, shotPoint.position, shotPoint.rotation);
+            GameObject instance = Instantiate(projectile, shotPoint.position, shotPoint.rotation);
+            MoveStraightLine.AddComponentTo(instance, speed);
+            ProjectileHit.AddComponentTo(instance, damage, pushForce, hitLayer);
         }
 
 #if UNITY_EDITOR
