@@ -5012,8 +5012,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startTime: 5
-  baseEnergy: 75
-  linearIncreaseEnergy: 20
+  baseEnergy: 60
+  linearIncreaseEnergy: 15
   baseDifficulty: 1
   linearIncreaseDifficulty: 0.4
   geometryIncreaseDifficulty: 0.5
