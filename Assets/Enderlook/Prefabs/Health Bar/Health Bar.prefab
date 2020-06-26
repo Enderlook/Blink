@@ -89,8 +89,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textShowed: '{0} / {1}'
   dynamicNumbers: 1
-  maxHealthColor: {r: 0, g: 1, b: 0, a: 1}
-  minHealthColor: {r: 1, g: 0, b: 0, a: 1}
+  maxHealthColor: {r: 0, g: 1, b: 0, a: 0.9019608}
+  minHealthColor: {r: 1, g: 0, b: 0, a: 0.9019608}
   fillingSpeed: 1
   textNumber: {fileID: 7558888381624820514}
   healthBar: {fileID: 7599763248378914896}
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.1981132, g: 0.19344072, b: 0.19344072, a: 1}
+  m_Color: {r: 0.1981132, g: 0.19344072, b: 0.19344072, a: 0.5019608}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 0.9019608}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:

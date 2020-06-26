@@ -148,10 +148,25 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 1796805699}
+    - target: {fileID: 7558202009437361398, guid: d53e9038544373f468a4d49b83a0d569,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.7490196
+      objectReference: {fileID: 0}
+    - target: {fileID: 7558689463201433618, guid: d53e9038544373f468a4d49b83a0d569,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7558894700856959856, guid: d53e9038544373f468a4d49b83a0d569,
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7558930798319532954, guid: d53e9038544373f468a4d49b83a0d569,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.7490196
       objectReference: {fileID: 0}
     - target: {fileID: 7599307599146815358, guid: d53e9038544373f468a4d49b83a0d569,
         type: 3}
