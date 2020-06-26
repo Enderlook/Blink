@@ -51,7 +51,7 @@ namespace Game.Scene
         private GameObject options;
 
         [SerializeField, Tooltip("When any of this values reaches 0, player loose.")]
-        private IntEvent[] events;
+        private IntEventReference[] events;
 
         [SerializeField, Tooltip("Loading screen.")]
         private GameObject loadingScreen;
