@@ -35,7 +35,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 20
   pushForce: 10
-  prefab: {fileID: 7428737394286990410, guid: 1f45b61b2cb7a224b96966b4514b9781, type: 3}
+  prefab: {fileID: 5335530706149435811, guid: 95103be3c586af546bf0a33820b27818, type: 3}
   speed: 15
   hitLayer:
     serializedVersion: 2
