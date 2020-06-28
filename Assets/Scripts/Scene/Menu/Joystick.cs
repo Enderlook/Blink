@@ -41,8 +41,10 @@ namespace Game.Scene
                 localPosition = localPosition.normalized * (localPosition.magnitude - minDistance) / (maxDistance - minDistance);
                 // In PC, players can have both axis at 1 but in mobile that would look odd in the joystick,
                 // so we increases the values a bit
-                playerMovement.SetMovementInput(Mathf.Sqrt(localPosition.x), Mathf.Sqrt(localPosition.y));
+                playerMovement.SetMovementInput(Tweak(localPosition.x), Tweak(localPosition.y));
             }
+
+            float Tweak(float value) => Mathf.Sign(value) * Mathf.Sqrt(Mathf.Abs(value));
         }
 
 #if UNITY_EDITOR

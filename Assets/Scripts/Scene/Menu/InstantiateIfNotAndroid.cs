@@ -20,8 +20,12 @@ namespace Game.Scene
         private void Awake()
         {
 #if !UNITY_ANDROID || UNITY_EDITOR
-#if UNITY_EDITOR && !IGNORE_UNITY_REMOTE
-            if (!UnityEditor.EditorApplication.isRemoteConnected && addIfRemoteIsNotConnected)
+#if UNITY_EDITOR
+            if (!UnityEditor.EditorApplication.isRemoteConnected && addIfRemoteIsNotConnected
+#if IGNORE_UNITY_REMOTE
+                && false
+#endif
+                )
 #endif
                 Instantiate(prefab, transform);
 #endif
