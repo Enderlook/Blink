@@ -12,16 +12,46 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e6dc9fede68c55e48a89c7f17e21d884, type: 2}
+    - target: {fileID: 1649977545183197441, guid: 95103be3c586af546bf0a33820b27818,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 54d89ba130fef4140b5e3296a6290118, type: 2}
+    - target: {fileID: 2889092993117724936, guid: 95103be3c586af546bf0a33820b27818,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b45b744c74d5c344b78253df778e712, type: 2}
+    - target: {fileID: 3365583016667018845, guid: 95103be3c586af546bf0a33820b27818,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 560930182bfeb18439a19c5f16b75248, type: 2}
     - target: {fileID: 3509701412269185550, guid: 95103be3c586af546bf0a33820b27818,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e6dc9fede68c55e48a89c7f17e21d884, type: 2}
+      objectReference: {fileID: 2100000, guid: c7228e8321316cb4e9b951c783e8896c, type: 2}
     - target: {fileID: 3509701412269185550, guid: 95103be3c586af546bf0a33820b27818,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 8e9dd911fc31abf448ad9d1e75b05f7e, type: 2}
+    - target: {fileID: 4858522561544078514, guid: 95103be3c586af546bf0a33820b27818,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858522561544078514, guid: 95103be3c586af546bf0a33820b27818,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858522561544078514, guid: 95103be3c586af546bf0a33820b27818,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5335530706149435811, guid: 95103be3c586af546bf0a33820b27818,
         type: 3}
       propertyPath: m_Name
@@ -92,5 +122,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8425873411931721084, guid: 95103be3c586af546bf0a33820b27818,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0397f91443f76324cad60b60341aeaf4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95103be3c586af546bf0a33820b27818, type: 3}
