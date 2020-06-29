@@ -52,6 +52,11 @@ PrefabInstance:
       propertyPath: prewarm
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6663092403674419043, guid: 60846a407fc39854798234385c93f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8e9dd911fc31abf448ad9d1e75b05f7e, type: 2}
     - target: {fileID: 6663092403895637442, guid: 60846a407fc39854798234385c93f2f1,
         type: 3}
       propertyPath: prewarm
