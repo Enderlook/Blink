@@ -79,3 +79,7 @@ Magic Spells CastShort Ice Aggressive sample made by David Dumais Audio under li
 	If you want to purchase this complete asset, here
 	https://www.unrealengine.com/marketplace/en-US/product/ice-frost-magic-1-sound-fx-pack?sessionInvalidated=true
 	Magic_Spells_CastShort_Ice_Aggressive01.wav
+
+Electric_09 of the pack Electric Sound Effects Compilation made by TechnoMania under license CC0
+	https://www.youtube.com/watch?v=B6ecyvYF2fw&t=44s
+	Electric_09.wav
