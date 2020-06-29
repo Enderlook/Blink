@@ -31,7 +31,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e38a1c2b6c720846bae5e0a17d34784, type: 3}
   m_Name: Ice Attack
   m_EditorClassIdentifier: 
-  maxCharge: 0.8
+  maxCharge: 0.2
   abilityComponents:
   - {fileID: -7979187644668596102}
   <UseTimer>k__BackingField: 1
