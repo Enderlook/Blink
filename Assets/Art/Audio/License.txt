@@ -84,3 +84,7 @@ Electric_09, Electric_12 of the pack Electric Sound Effects Compilation made by 
 	https://www.youtube.com/watch?v=B6ecyvYF2fw&t=44s
 	Electric_09.wav
 	Electric_12.wav
+
+Fireball Caster 01 made by LiamG_SFX under license CC BY 3.0
+	https://freesound.org/people/LiamG_SFX/sounds/334234/
+	liamg-sfx__fireball-cast-1.wav
