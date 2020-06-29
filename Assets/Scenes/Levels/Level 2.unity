@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.3992632, g: 0.3020659, b: 0.47122264, a: 1}
+  m_IndirectSpecularColor: {r: 0.28876457, g: 0.20282549, b: 0.30602112, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -865,6 +865,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VFX Snow
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136421205314663285, guid: 91dfcf08b27bae04785f95b45338c09a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91dfcf08b27bae04785f95b45338c09a, type: 3}
