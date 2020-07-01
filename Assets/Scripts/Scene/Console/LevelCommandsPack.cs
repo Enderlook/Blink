@@ -57,7 +57,7 @@ namespace Game.Scene.CLI
                 { ("hurt", 2), Hurt2 },
                 { ("reload", 0), Reload },
                 { ("win", 0), Win },
-                { ("loose", 0), Loose},
+                { ("lose", 0), Loose},
                 { ("goto", 1), GoTo },
                 { ("goto", 2), GoToAdvance },
                 { ("setenergy", 1), SetEnergy},
