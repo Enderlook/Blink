@@ -41,11 +41,12 @@ namespace Game.Scene
             else
                 Destroy(gameObject);
 
+            DontDestroyOnLoad(gameObject);
+
             if (!HaveAds)
                 return;
-
 #if UNITY_ANDROID
-            Advertisement.Initialize(gameID, testMode);     
+            Advertisement.Initialize(gameID, testMode);
 #endif
         }
 
