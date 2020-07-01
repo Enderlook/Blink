@@ -22,6 +22,21 @@ namespace Game.Scene
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake() => playerMovement = FindObjectOfType<PlayerMovement>();
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
+        private void Update()
+        {
+            Vector3 localPosition = transform.localPosition;
+            if (localPosition.magnitude >= minDistance)
+            {
+                localPosition = localPosition.normalized * (localPosition.magnitude - minDistance) / (maxDistance - minDistance);
+                // In PC, players can have both axis at 1 but in mobile that would look odd in the joystick,
+                // so we increases the values a bit
+                playerMovement.SetMovementInput(Tweak(localPosition.x), Tweak(localPosition.y));
+            }
+
+            float Tweak(float value) => Mathf.Sign(value) * Mathf.Sqrt(Mathf.Abs(value));
+        }
+
         public void OnEndDrag(PointerEventData eventData)
         {
             IsDragging = false;
@@ -33,18 +48,7 @@ namespace Game.Scene
             IsDragging = true;
 
             transform.position = eventData.position;
-            Vector3 localPosition = Vector3.ClampMagnitude(transform.localPosition, maxDistance);
-            transform.localPosition = localPosition;
-
-            if (localPosition.magnitude >= minDistance)
-            {
-                localPosition = localPosition.normalized * (localPosition.magnitude - minDistance) / (maxDistance - minDistance);
-                // In PC, players can have both axis at 1 but in mobile that would look odd in the joystick,
-                // so we increases the values a bit
-                playerMovement.SetMovementInput(Tweak(localPosition.x), Tweak(localPosition.y));
-            }
-
-            float Tweak(float value) => Mathf.Sign(value) * Mathf.Sqrt(Mathf.Abs(value));
+            transform.localPosition = Vector3.ClampMagnitude(transform.localPosition, maxDistance);
         }
 
 #if UNITY_EDITOR
