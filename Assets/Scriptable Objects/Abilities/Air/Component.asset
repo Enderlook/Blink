@@ -18,6 +18,6 @@ MonoBehaviour:
   timeToProduceDamage: 0.92
   hitLayer:
     serializedVersion: 2
-    m_Bits: 10240
+    m_Bits: 8192
   duration: 7.5
   useCrystal: 1
