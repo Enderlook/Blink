@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game.Attacks
 {
-    [RequireComponent(typeof(Collider)), AddComponentMenu("Game/Attacks/Area of Damage")]
+    [AddComponentMenu("Game/Attacks/Area of Damage")]
     public class AreaOfDamage : AreaOfEffect
     {
         [Header("Configuration")]
