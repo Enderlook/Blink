@@ -23,4 +23,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Level Air.unity
     guid: 79724faadb362594bb775adc6817e1df
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level Air 2.unity
+    guid: a459f4511fb92cd47bec8c1d7672ed7d
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level Earth 2.unity
+    guid: 049abeabb4b8b2546a96fbe9d386868c
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level Fire 2.unity
+    guid: 8a5147aae4659de41b918abe7b76bcc4
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level Ice 2.unity
+    guid: 36b9144426f2b4342a04dd08eec7e4a6
   m_configObjects: {}
