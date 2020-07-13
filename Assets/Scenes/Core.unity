@@ -409,6 +409,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lose Panel
       objectReference: {fileID: 0}
+    - target: {fileID: 7395291066456512402, guid: 5f7956d26301ab24a927a1f9132e46e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f7956d26301ab24a927a1f9132e46e4, type: 3}
 --- !u!224 &122872163 stripped
@@ -423,6 +428,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 122872162}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &122872165 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3842200172182356974, guid: 5f7956d26301ab24a927a1f9132e46e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 122872162}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &139665400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2348,19 +2365,21 @@ MonoBehaviour:
   loseMusic: {fileID: 8300000, guid: c2bdae70ee2ff9048b5c32b5ea565971, type: 3}
   winMenu: {fileID: 2607132490356232957}
   loseMenu: {fileID: 122872164}
+  loseText: {fileID: 122872165}
   menu: {fileID: 3798418158083863309}
   pauseKey: 27
   background: {fileID: 781257167}
   options: {fileID: 8476006843877946213}
-  events:
-  - <Mode>k__BackingField: 2
-    event: {fileID: 0}
-    managedScriptableObject: {fileID: 0}
-    managedComponent: {fileID: 6151730945610042196}
-  - <Mode>k__BackingField: 2
+  playerHealtEvent:
+    <Mode>k__BackingField: 2
     event: {fileID: 0}
     managedScriptableObject: {fileID: 0}
     managedComponent: {fileID: 3843444038992288221}
+  crystalHealthEvent:
+    <Mode>k__BackingField: 2
+    event: {fileID: 0}
+    managedScriptableObject: {fileID: 0}
+    managedComponent: {fileID: 6151730945610042196}
   loadingScreen: {fileID: 8379256019475834399, guid: 5bf214f24c77bc241814a84cca9e85d6,
     type: 3}
 --- !u!1 &2607132490356232957 stripped
@@ -4158,7 +4177,7 @@ PrefabInstance:
     - target: {fileID: 3842200172182356974, guid: 5f7956d26301ab24a927a1f9132e46e4,
         type: 3}
       propertyPath: m_Text
-      value: WIN
+      value: Teletransportation Complete!
       objectReference: {fileID: 0}
     - target: {fileID: 4796121555550760577, guid: 5f7956d26301ab24a927a1f9132e46e4,
         type: 3}
@@ -4174,6 +4193,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Win Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395291066456512402, guid: 5f7956d26301ab24a927a1f9132e46e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f7956d26301ab24a927a1f9132e46e4, type: 3}

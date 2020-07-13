@@ -37,6 +37,9 @@ namespace Game.Scene
         [SerializeField, Tooltip("Menu show on lose.")]
         private GameObject loseMenu;
 
+        [SerializeField, Tooltip("Title loose text.")]
+        private Text loseText;
+
         [SerializeField, Tooltip("Menu panel.")]
         private GameObject menu;
 
@@ -50,8 +53,11 @@ namespace Game.Scene
         [SerializeField, Tooltip("Options panel.")]
         private GameObject options;
 
-        [SerializeField, Tooltip("When any of this values reaches 0, player loose.")]
-        private IntEventReference[] events;
+        [SerializeField, Tooltip("This values reaches 0, player loose.")]
+        private IntEventReference playerHealtEvent;
+
+        [SerializeField, Tooltip("This values reaches 0, player loose.")]
+        private IntEventReference crystalHealthEvent;
 
         [SerializeField, Tooltip("Loading screen.")]
         private GameObject loadingScreen;
@@ -85,8 +91,9 @@ namespace Game.Scene
             Instance = this;
 
             audioSource = GetComponent<AudioSource>();
-            for (int i = 0; i < events.Length; i++)
-                events[i].Register(CheckLose);
+
+            playerHealtEvent.Register(CheckPlayerLose);
+            crystalHealthEvent.Register(CheckCrystalLose);
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
@@ -147,10 +154,19 @@ namespace Game.Scene
             audioSource.Play();
         }
 
-        private void CheckLose(int value)
+        private void CheckPlayerLose(int value)
+            => CheckLose(value, "You died!");
+
+        private void CheckCrystalLose(int value)
+            => CheckLose(value, "The last crystal was destroyed!");
+
+        private void CheckLose(int value, string message)
         {
             if (value == 0)
+            {
+                loseText.text = message;
                 Lose();
+            }
         }
 
         public void Lose()
