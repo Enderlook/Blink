@@ -64,7 +64,13 @@ namespace Game.Creatures.Player.AbilitySystem
 
             if (value == 0)
             {
-                if (ability is TriggerableAbility triggerableAbility && !triggerableAbility.IsRunning)
+                bool work;
+                if (ability is TriggerableAbility triggerableAbility)
+                    work = !triggerableAbility.IsRunning;
+                else
+                    work = true;
+
+                if (work)
                 {
                     frame.color = fullColor;
 #if UNITY_ANDROID
