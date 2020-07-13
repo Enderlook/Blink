@@ -8,10 +8,10 @@ namespace Game.Attacks
     public class AreaOfDamage : AreaOfEffect
     {
         [Header("Configuration")]
-        [SerializeField, Tooltip("Damage done on explosion.")]
+        [SerializeField, Tooltip("Damage done on explosion per tick (4 ticks/second).")]
         private int damage = 10;
 
-        [SerializeField, Tooltip("Amount of force applied to targets.")]
+        [SerializeField, Tooltip("Amount of force applied to targets per tick (4 ticks/second).")]
         private float pushForce = 10;
 
         protected override void ProduceEffect(GameObject otherGameObject)

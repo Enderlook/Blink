@@ -34,7 +34,14 @@ namespace Game
         public static void AddComponentTo<T>(GameObject gameObject, float duration, Material material)
             where T : Renderer
         {
-            MaterialApplier materialApplier = gameObject.AddComponent<MaterialApplier>();
+            MaterialApplier materialApplier = gameObject.GetComponent<MaterialApplier>();
+            if (materialApplier != null)
+            {
+                materialApplier.timer = duration;
+                return;
+            }
+
+            materialApplier = gameObject.AddComponent<MaterialApplier>();
             materialApplier.timer = duration;
 
             materialApplier.renderers = gameObject.GetComponentsInChildren<T>();

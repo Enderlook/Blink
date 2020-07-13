@@ -31,8 +31,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eeeb950ea1239f4c82033e29f2c8656, type: 3}
   m_Name: Component
   m_EditorClassIdentifier: 
-  damage: 90
-  pushForce: 10
+  damage: 15
+  pushForce: 1
   prefab: {fileID: 7528117504710682951, guid: dd6e2f24fa85ab34eaf03087644affd2, type: 3}
   timeToProduceDamage: 2.5
   hitLayer:

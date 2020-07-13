@@ -11,8 +11,10 @@ using UnityEngine;
 namespace Game.Creatures
 {
     [RequireComponent(typeof(AudioSource)), RequireComponent(typeof(RandomPitch)), AddComponentMenu("Game/Creatures/Hurtable")]
-    public class Hurtable : MonoBehaviour, IDamagable
+    public class Hurtable : MonoBehaviour, IDamagable, IStunnable
     {
+        private const float STUN_DAMAGE_MULTIPLIER = 1.5f;
+
 #pragma warning disable CS0649
         [SerializeField, Tooltip("Current health.")]
         private IntGetSetReference health;
@@ -35,6 +37,8 @@ namespace Game.Creatures
 
         private RandomPitch randomPitch;
 
+        private float stunUntil;
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()
         {
@@ -47,6 +51,9 @@ namespace Game.Creatures
         {
             if (amount < 0)
                 Debug.LogWarning($"{nameof(amount)} ({amount}) should not be negative in {nameof(Hurtable)}. {nameof(gameObject)} {gameObject.name} is restoring health.");
+
+            if (stunUntil >= Time.time)
+                amount = (int)(amount * STUN_DAMAGE_MULTIPLIER);
 
             randomPitch.Randomize();
             health.SetValue(health.GetValue() - amount);
@@ -76,9 +83,11 @@ namespace Game.Creatures
 
         public void SetMaxHealth(int amount)
         {
-            if (amount <= 0) throw new ArgumentOutOfRangeException(nameof(amount), amount, $"Can't be negative or zero.");
+            if (amount <= 0) throw new ArgumentOutOfRangeException(nameof(amount), amount, "Can't be negative or zero.");
 
             maxHealth.SetValue(amount);
         }
+
+        public void Stun(float duration) => stunUntil = Time.time + duration;
     }
 }

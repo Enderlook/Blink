@@ -33,12 +33,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eeeb950ea1239f4c82033e29f2c8656, type: 3}
   m_Name: Component
   m_EditorClassIdentifier: 
-  damage: 60
-  pushForce: 10
+  damage: 30
+  pushForce: 5
   prefab: {fileID: 627897877563974230, guid: ec803aea0d7da264295e0a5f7e817724, type: 3}
   timeToProduceDamage: 0.15
   hitLayer:
     serializedVersion: 2
     m_Bits: 10240
-  duration: 0.1
+  duration: 0.5
   useCrystal: 0

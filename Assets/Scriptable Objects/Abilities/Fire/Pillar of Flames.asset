@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1e5a3826f43ad47873da403f0d603c, type: 3}
   m_Name: Component
   m_EditorClassIdentifier: 
-  damage: 60
-  pushForce: 10
+  damage: 30
+  pushForce: 5
   prefab: {fileID: 6054988555229686210, guid: 1b9603c2f82de53449c6d95b26b315eb, type: 3}
   timeToProduceDamage: 1.2
   hitLayer:
     serializedVersion: 2
     m_Bits: 10240
-  duration: 0.1
+  duration: 0.5
   layer: 8
 --- !u!114 &11400000
 MonoBehaviour:
