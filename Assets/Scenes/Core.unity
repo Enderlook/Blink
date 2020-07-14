@@ -1932,6 +1932,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystal Health Bar
       objectReference: {fileID: 0}
+    - target: {fileID: 2640236603215013187, guid: d9beab08979fcd54a9af7d13e0a9390f,
+        type: 3}
+      propertyPath: maxHealthColor.r
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640236603215013187, guid: d9beab08979fcd54a9af7d13e0a9390f,
+        type: 3}
+      propertyPath: maxHealthColor.g
+      value: 0.90588236
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640236603215013187, guid: d9beab08979fcd54a9af7d13e0a9390f,
+        type: 3}
+      propertyPath: maxHealthColor.b
+      value: 0.10980392
+      objectReference: {fileID: 0}
     - target: {fileID: 2895237184635374313, guid: d9beab08979fcd54a9af7d13e0a9390f,
         type: 3}
       propertyPath: m_Color.a
@@ -2103,6 +2118,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player Health Bar
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640236603215013187, guid: d9beab08979fcd54a9af7d13e0a9390f,
+        type: 3}
+      propertyPath: maxHealthColor.r
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640236603215013187, guid: d9beab08979fcd54a9af7d13e0a9390f,
+        type: 3}
+      propertyPath: maxHealthColor.g
+      value: 0.90588236
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640236603215013187, guid: d9beab08979fcd54a9af7d13e0a9390f,
+        type: 3}
+      propertyPath: maxHealthColor.b
+      value: 0.10980392
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895237184635374313, guid: d9beab08979fcd54a9af7d13e0a9390f,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.9056604
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895237184635374313, guid: d9beab08979fcd54a9af7d13e0a9390f,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.10679956
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895237184635374313, guid: d9beab08979fcd54a9af7d13e0a9390f,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.32969663
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9beab08979fcd54a9af7d13e0a9390f, type: 3}
