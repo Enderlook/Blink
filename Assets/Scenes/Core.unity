@@ -1952,6 +1952,11 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3007593274578640327, guid: d9beab08979fcd54a9af7d13e0a9390f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8498848999440245663, guid: d9beab08979fcd54a9af7d13e0a9390f,
         type: 3}
       propertyPath: m_RootOrder
@@ -2148,6 +2153,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.r
       value: 0.32969663
+      objectReference: {fileID: 0}
+    - target: {fileID: 3007593274578640327, guid: d9beab08979fcd54a9af7d13e0a9390f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9beab08979fcd54a9af7d13e0a9390f, type: 3}
