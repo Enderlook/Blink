@@ -52,7 +52,12 @@ namespace Game.Creatures.Player.AbilitySystem
                     (UnityEditor.EditorApplication.isRemoteConnected ?
 #endif
                         UIManager.CanUseAbility(i)
-                        && (ability.IsSelf || Input.touchCount > (joystick.IsDragging ? 1 : 0))
+                        && (ability.IsSelf ||
+#if UNITY_EDITOR && IGNORE_UNITY_REMOTE // This allows to use mouse even if mobile behaviour is forced
+                            (control.HasUserRequestTrigger() && !joystick.IsDragging) ||
+#endif
+                            Input.touchCount > (joystick.IsDragging ? 1 : 0)
+                        )
 #if UNITY_EDITOR && !IGNORE_UNITY_REMOTE
                         : control.HasUserRequestTrigger())
 #else
