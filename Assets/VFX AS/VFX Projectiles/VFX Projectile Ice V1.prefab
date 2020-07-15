@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6663092403422663782
 Transform:
   m_ObjectHideFlags: 0
@@ -105,7 +105,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -8698,7 +8698,7 @@ ParticleSystem:
     lifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.15
+      scalar: 0.08
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -8826,7 +8826,7 @@ ParticleSystem:
     widthOverTrail:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.18
+      scalar: 0.1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -19091,7 +19091,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6663092404925858694
 Transform:
   m_ObjectHideFlags: 0
@@ -19179,7 +19179,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -23896,9 +23896,9 @@ GameObject:
   - component: {fileID: 6663092405320373548}
   - component: {fileID: 2555390560046208490}
   - component: {fileID: 4191015851224058022}
-  - component: {fileID: 7767665665397654047}
-  - component: {fileID: -6041218514142660572}
-  - component: {fileID: 5738551623890404646}
+  - component: {fileID: -8213268820197394069}
+  - component: {fileID: -6648435997083138754}
+  - component: {fileID: 3212505615597524838}
   m_Layer: 0
   m_Name: VFX Projectile Ice V1
   m_TagString: Untagged
@@ -23951,7 +23951,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 20
   m_CollisionDetection: 0
---- !u!114 &7767665665397654047
+--- !u!114 &-8213268820197394069
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -23964,7 +23964,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 4268112446736551422, guid: 5470ce65d57fc964494840b65580be9c, type: 3}
---- !u!82 &-6041218514142660572
+--- !u!82 &-6648435997083138754
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -24061,7 +24061,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5738551623890404646
+--- !u!114 &3212505615597524838
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Flames_Alpha Blend Dissolve HDR_03
+  m_Shader: {fileID: 4800000, guid: 228a2cc635c60ac4ea6c6dfdd5f40753, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 0
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Dissolve: 0.4
+    - _DoubleSided1: 0
+    - _FirstFlamesScale: 8
+    - _Grad: 1
+    - _NoiseScaleVertex: 1
+    - _Opacity: 0.8
+    - _OscillatorAmount: 0
+    - _Power: 1.8
+    - _SecondFlameScale: 8
+    - _SharpColor: 0.38
+    - _Speed: 0.35
+    - _Step: 0.365
+    - __dirty: 0
+    m_Colors:
+    - _BackColor: {r: 0.33962262, g: 0.33962262, b: 0.33962262, a: 1}
+    - _MiddleColor: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
