@@ -35,9 +35,6 @@ namespace Game.Scene
         [SerializeField, Tooltip("Calculates enemy health multiplier.\nHealth Multiplier = Mathf.Min(Difficulty - Threshold, Cap) * X + Y.")]
         private Vector2 health = new Vector2(1, 0);
 
-        [SerializeField, Tooltip("Calculates enemy damage multiplier.\nDamage Multiplier = Mathf.Min(Difficulty - Threshold, Cap) * X + Y.")]
-        private Vector2 damage = new Vector2(1, 0);
-
         public float GetWeight() => Mathf.Max(GetValue(weight), 0);
 
         public GameObject SpawnEnemy()
