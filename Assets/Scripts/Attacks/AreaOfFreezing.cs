@@ -34,7 +34,8 @@ namespace Game.Attacks
             component.hitLayer = hitLayer;
             component.material = material;
 
-            MaterialApplier.AddComponentTo<Renderer>(source, component.duration, material);
+            // Uncomment this line to apply material to the particles
+            //MaterialApplier.AddComponentTo<Renderer>(source, component.duration, material);
         }
     }
 }
