@@ -13,7 +13,6 @@ namespace Game.Creatures.Player.AbilitySystem
         [field: SerializeField, IsProperty, Tooltip("Where ablities which requires a shooting point does shoot.")]
         public Transform ShootingPosition { get; private set; }
 
-        [field: SerializeField, IsProperty]
         protected AbilityUIManager UIManager { get; private set; }
 #pragma warning restore CS0649
 
@@ -23,7 +22,22 @@ namespace Game.Creatures.Player.AbilitySystem
         public Animator Animator { get; private set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
-        private void Awake() => Animator = GetComponent<Animator>();
+        private void Awake()
+        {
+#if UNITY_ANDROID
+#if UNITY_EDITOR && !IGNORE_UNITY_REMOTE
+            if (UnityEditor.EditorApplication.isRemoteConnected)
+#endif
+                UIManager = FindObjectOfType<AbilityUIManagerMobile>();
+#if UNITY_EDITOR && !IGNORE_UNITY_REMOTE
+            else
+                UIManager = FindObjectOfType<AbilityUIManagerPC>();
+#endif
+#else
+            UIManager = FindObjectOfType<AbilityUIManagerPC>();
+#endif
+            Animator = GetComponent<Animator>();
+        }
 
         public void ChargeAbilitiesToMaximum()
         {

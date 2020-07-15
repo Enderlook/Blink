@@ -3456,16 +3456,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1524972705}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ba79ac200f8f904d9921970826c84e5, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b1132634fb2b754187e9c821496fe90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAndroid: 1
-  abilitiesRoot: {fileID: 0}
-  prefab: {fileID: 0}
-  prefabs:
-  - {fileID: 5803253249401655136}
-  - {fileID: 847648626}
-  - {fileID: 1124127446}
+  abilitiesRoot: {fileID: 1524972706}
   cancelRequestTimeout: 0.1
 --- !u!1 &1551373515
 GameObject:
@@ -3626,6 +3620,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1568451778}
   - component: {fileID: 1568451779}
+  - component: {fileID: 1568451780}
   m_Layer: 5
   m_Name: Android Only
   m_TagString: Untagged
@@ -3670,6 +3665,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   removeIfRemoteIsNotConnected: 1
+--- !u!114 &1568451780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568451777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b1132634fb2b754187e9c821496fe90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilitiesRoot: {fileID: 1524972706}
+  cancelRequestTimeout: 0.1
 --- !u!1 &1598906489
 GameObject:
   m_ObjectHideFlags: 0
@@ -5518,7 +5527,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5378600813162661941}
   - component: {fileID: 4617626483142837342}
-  - component: {fileID: 4163712101158995573}
+  - component: {fileID: 1926744817416663679}
   - component: {fileID: 1926744817416663678}
   m_Layer: 5
   m_Name: Abilities
@@ -5539,7 +5548,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6153acd6eedba243b367cf7c05b692a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notRemoveIfRemoteIsConnected: 0
+  notRemoveIfRemoteIsNotConnected: 1
+--- !u!114 &1926744817416663679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926744817416663677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dc1f2c4e6d6e15429575d36bc3ea847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilitiesRoot: {fileID: 5378600813162661941}
+  prefab: {fileID: 2789573629715960461, guid: f2a68ff0a2dfae44e8e91055b38dbc73, type: 3}
 --- !u!114 &1928472508263300685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5782,12 +5805,12 @@ PrefabInstance:
         type: 3}
       propertyPath: uiManager
       value: 
-      objectReference: {fileID: 4163712101158995573}
+      objectReference: {fileID: 0}
     - target: {fileID: 3168258437712715670, guid: a49ed22391a51eb4cb605b74d0ecb77f,
         type: 3}
       propertyPath: <UIManager>k__BackingField
       value: 
-      objectReference: {fileID: 4163712101158995573}
+      objectReference: {fileID: 0}
     - target: {fileID: 3168258437712715670, guid: a49ed22391a51eb4cb605b74d0ecb77f,
         type: 3}
       propertyPath: joystick
@@ -7274,23 +7297,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4163712101158995573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1926744817416663677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ba79ac200f8f904d9921970826c84e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAndroid: 0
-  abilitiesRoot: {fileID: 5378600813162661941}
-  prefab: {fileID: 2789573629715960461, guid: f2a68ff0a2dfae44e8e91055b38dbc73, type: 3}
-  prefabs: []
-  cancelRequestTimeout: 1
 --- !u!114 &4282601507236596367
 MonoBehaviour:
   m_ObjectHideFlags: 0

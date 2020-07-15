@@ -38,8 +38,10 @@ namespace Game.Scene
             Sprite sprite = backgroundsUIs[index].Sprite;
             if (backgroundSpriteRenderer != null)
                 backgroundSpriteRenderer.sprite = sprite;
-            else
+            else if (backgroundImage != null)
                 backgroundImage.sprite = sprite;
+            else
+                Debug.LogError($"Both {nameof(backgroundSpriteRenderer)} and {nameof(backgroundImage)} are null. Only one can be null.");
         }
 
         public void SetBackgroundStyle(int index)

@@ -8,7 +8,7 @@ namespace Game.Scene
 #if UNITY_EDITOR
 #pragma warning disable CS0649, CS0414
         [SerializeField]
-        private bool notRemoveIfRemoteIsConnected;
+        private bool notRemoveIfRemoteIsNotConnected;
 #pragma warning restore CS0649, CS0414
 #endif
 
@@ -17,7 +17,7 @@ namespace Game.Scene
         private void Awake()
         {
 #if UNITY_EDITOR
-            if (!(notRemoveIfRemoteIsConnected && UnityEditor.EditorApplication.isRemoteConnected)
+            if (!(notRemoveIfRemoteIsNotConnected || UnityEditor.EditorApplication.isRemoteConnected)
 #if IGNORE_UNITY_REMOTE
                 && false
 #endif
