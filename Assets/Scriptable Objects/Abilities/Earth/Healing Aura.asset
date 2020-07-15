@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8837171883362530505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d40f95169ab65374ca46386ba54893f9, type: 3}
+  m_Name: Component
+  m_EditorClassIdentifier: 
+  playerHealing: 40
+  crystalHealing: 60
+  timeToProduceHealing: 1.78
+  prefab: {fileID: 8043499300776965572, guid: 73266c8b9230d344d9cb28a6d85d12dd, type: 3}
+--- !u!114 &-4493279146327655838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e24cdf9235527ae449e68dc3f319c72d, type: 3}
+  m_Name: Component 2
+  m_EditorClassIdentifier: 
+  timeToExecute: 1.78
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd36e7441d3db1c4f8be7b2e3d2f4cac, type: 3}
+  m_Name: Healing Aura
+  m_EditorClassIdentifier: 
+  maxCharge: 7
+  abilityComponents:
+  - {fileID: -8837171883362530505}
+  - {fileID: -4493279146327655838}
+  <UseTimer>k__BackingField: 0
+  <IsSelf>k__BackingField: 0
+  <Icon>k__BackingField: {fileID: 21300000, guid: a207095f750606d41a993e347372ffd0,
+    type: 3}
+  <IconMobile>k__BackingField: {fileID: 21300000, guid: 0b4ce14f2a5740e47874612940bac420,
+    type: 3}

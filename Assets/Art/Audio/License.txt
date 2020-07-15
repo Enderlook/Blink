@@ -1,9 +1,10 @@
-Spell 4 (fire) made by Bart K. under license CC-BY 3.0, CC-BY-SA 3.0, GPL 3.0, GPL 2.0, OGA-BY 3.0
+﻿Spell 4 (fire) made by Bart K. under license CC-BY 3.0, CC-BY-SA 3.0, GPL 3.0, GPL 2.0, OGA-BY 3.0
 	https://opengameart.org/content/spell-4-fire
 	foom_0.wav
 
 Synthesized explosion made by Iwan Gabovitch under license CC0
 	https://opengameart.org/content/synthesized-explosion
+	synthetic_explosion_1.wav
 
 Magic SFX Sample made by ViRiX under license CC-BY 3.0
 	https://opengameart.org/content/magic-sfx-sample
@@ -52,3 +53,38 @@ My sounds! » scream1.wav made by Deathstardude under license CC-BY 3.0
 Woman Voice » Girl Taking Damage made by MadamVicious under license CC0 1.0
 	https://freesound.org/people/MadamVicious/sounds/218190/
 	218190__madamvicious__girl-taking-damage.wav
+
+Space Ship Shield Sounds made by bart under license CC0
+	https://opengameart.org/content/space-ship-shield-sounds
+	space shield sounds - 1.wav
+
+3 Heal Spells made by DoKashiteru under license CC-BY 3.0, GPL 3.0, GPL 2.0
+	https://opengameart.org/content/3-heal-spells
+	healspell2.aif
+
+coin bonus collect 02 sound effect
+	http://freesoundeffect.net/sound/coin-bonus-collect-02-sound-effect
+	coin-bonus-collect-02-sound-effect-67034913.mp3
+
+Spell Sounds Starter Pack made by p0ss under license CC-BY-SA 3.0, GPL 3.0, GPL 2.0
+	https://opengameart.org/content/spell-sounds-starter-pack
+	blessing2.ogg
+
+Freeze Spell made by artisticdude under license CC0
+	https://opengameart.org/content/freeze-spell-0
+	freeze.wav
+
+Magic Spells CastShort Ice Aggressive sample made by David Dumais Audio under license BY-NC-ND
+    https://drive.google.com/drive/folders/1GjkS6uoNnGydS-VcWO9j6gU7XihfpZ5q
+	If you want to purchase this complete asset, here
+	https://www.unrealengine.com/marketplace/en-US/product/ice-frost-magic-1-sound-fx-pack?sessionInvalidated=true
+	Magic_Spells_CastShort_Ice_Aggressive01.wav
+
+Electric_09, Electric_12 of the pack Electric Sound Effects Compilation made by TechnoMania under license CC0
+	https://www.youtube.com/watch?v=B6ecyvYF2fw&t=44s
+	Electric_09.wav
+	Electric_12.wav
+
+Fireball Caster 01 made by LiamG_SFX under license CC BY 3.0
+	https://freesound.org/people/LiamG_SFX/sounds/334234/
+	liamg-sfx__fireball-cast-1.wav

@@ -1,14 +1,20 @@
 ﻿using Enderlook.Extensions;
 using Enderlook.Unity.Atoms;
-using Enderlook.Unity.Components.Destroy;
-using Game.Attacks;
+using Enderlook.Unity.Components;
+
+using Game.Others;
+
+using System;
+
 using UnityEngine;
 
 namespace Game.Creatures
 {
-    [RequireComponent(typeof(AudioSource)), RequireComponent(typeof(RandomPitch))]
-    public class Hurtable : MonoBehaviour, IDamagable
+    [RequireComponent(typeof(AudioSource)), RequireComponent(typeof(RandomPitch)), AddComponentMenu("Game/Creatures/Hurtable")]
+    public class Hurtable : MonoBehaviour, IDamagable, IStunnable
     {
+        private const float STUN_DAMAGE_MULTIPLIER = 1.5f;
+
 #pragma warning disable CS0649
         [SerializeField, Tooltip("Current health.")]
         private IntGetSetReference health;
@@ -31,34 +37,57 @@ namespace Game.Creatures
 
         private RandomPitch randomPitch;
 
+        private float stunUntil;
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()
         {
             audioSource = GetComponent<AudioSource>();
             randomPitch = GetComponent<RandomPitch>();
+            health.SetValue(maxHealth.GetValue());
         }
 
         public void TakeDamage(int amount)
         {
+            if (amount < 0)
+                Debug.LogWarning($"{nameof(amount)} ({amount}) should not be negative in {nameof(Hurtable)}. {nameof(gameObject)} {gameObject.name} is restoring health.");
+
+            if (stunUntil >= Time.time)
+                amount = (int)(amount * STUN_DAMAGE_MULTIPLIER);
+
             randomPitch.Randomize();
             health.SetValue(health.GetValue() - amount);
             audioSource.clip = hurtSounds.RandomPick();
             audioSource.Play();
 
-            if (health.GetValue() == 0)
-            {
-                GameObject go = new GameObject($"Die Sound of {gameObject.name}");
-                AudioSource source = go.AddComponent<AudioSource>();
-                source.clip = dieSounds.RandomPick();
-                go.AddComponent<RandomPitch>();
-                source.Play();
-                go.AddComponent<DestroyWhenAudioSourceEnds>();
-            }
+            if (health.GetValue() <= 0)
+                Die();
+        }
+
+        private void Die()
+        {
+            AudioSourceUtils.PlayAndDestroy(dieSounds.RandomPick(), transform.position, audioSource.outputAudioMixerGroup);
+
+            IDie[] actions = GetComponentsInChildren<IDie>();
+            for (int i = 0; i < actions.Length; i++)
+                actions[i].Die();
         }
 
         public void TakeHealing(int amount)
-            => health.SetValue(Mathf.Min(health.GetValue() + amount, maxHealth.GetValue()));
+        {
+            if (amount < 0)
+                Debug.LogWarning($"{nameof(amount)} ({amount}) should not be negative in {nameof(Hurtable)}. {nameof(gameObject)} {gameObject.name} is loosing health.");
 
-        public void SetMaxHealth(int maxHealth) => this.maxHealth.SetValue(maxHealth);
+            health.SetValue(Mathf.Min(health.GetValue() + amount, maxHealth.GetValue()));
+        }
+
+        public void SetMaxHealth(int amount)
+        {
+            if (amount <= 0) throw new ArgumentOutOfRangeException(nameof(amount), amount, "Can't be negative or zero.");
+
+            maxHealth.SetValue(amount);
+        }
+
+        public void Stun(float duration) => stunUntil = Time.time + duration;
     }
 }

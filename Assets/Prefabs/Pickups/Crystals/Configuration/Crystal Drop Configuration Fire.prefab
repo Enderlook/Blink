@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &85956854557961355
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2750153077800338505, guid: a17c10be35964d747830d0bbdd24d484,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750153077800338505, guid: a17c10be35964d747830d0bbdd24d484,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750153077800338505, guid: a17c10be35964d747830d0bbdd24d484,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750153077800338505, guid: a17c10be35964d747830d0bbdd24d484,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750153077800338505, guid: a17c10be35964d747830d0bbdd24d484,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750153077800338505, guid: a17c10be35964d747830d0bbdd24d484,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750153077800338505, guid: a17c10be35964d747830d0bbdd24d484,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750153077800338505, guid: a17c10be35964d747830d0bbdd24d484,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750153077800338505, guid: a17c10be35964d747830d0bbdd24d484,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750153077800338505, guid: a17c10be35964d747830d0bbdd24d484,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750153077800338505, guid: a17c10be35964d747830d0bbdd24d484,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896155708388834240, guid: a17c10be35964d747830d0bbdd24d484,
+        type: 3}
+      propertyPath: primaryColor.r
+      value: 0.6698113
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896155708388834240, guid: a17c10be35964d747830d0bbdd24d484,
+        type: 3}
+      propertyPath: primaryColor.g
+      value: 0.23340498
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896155708388834240, guid: a17c10be35964d747830d0bbdd24d484,
+        type: 3}
+      propertyPath: primaryColor.b
+      value: 0.17377181
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896155708388834240, guid: a17c10be35964d747830d0bbdd24d484,
+        type: 3}
+      propertyPath: secondaryColor.g
+      value: 0.62663674
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896155708388834240, guid: a17c10be35964d747830d0bbdd24d484,
+        type: 3}
+      propertyPath: secondaryColor.b
+      value: 0.2117647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896155708388834240, guid: a17c10be35964d747830d0bbdd24d484,
+        type: 3}
+      propertyPath: lightColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896155708388834240, guid: a17c10be35964d747830d0bbdd24d484,
+        type: 3}
+      propertyPath: lightColor.g
+      value: 0.574717
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896155708388834240, guid: a17c10be35964d747830d0bbdd24d484,
+        type: 3}
+      propertyPath: lightColor.b
+      value: 0.3726415
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495075052015997601, guid: a17c10be35964d747830d0bbdd24d484,
+        type: 3}
+      propertyPath: m_Name
+      value: Crystal Drop Configuration Fire
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a17c10be35964d747830d0bbdd24d484, type: 3}

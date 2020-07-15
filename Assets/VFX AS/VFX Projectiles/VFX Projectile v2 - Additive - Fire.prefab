@@ -3853,7 +3853,7 @@ ParticleSystem:
       properties: 0
       emitProbability: 1
   LightsModule:
-    enabled: 1
+    enabled: 0
     ratio: 1
     light: {fileID: 2530600382557275833}
     randomDistribution: 1
@@ -8674,8 +8674,8 @@ ParticleSystem:
     rangeCurve:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 5
-      minScalar: 0.8
+      scalar: 0.7
+      minScalar: 0.4
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -8727,8 +8727,8 @@ ParticleSystem:
     intensityCurve:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 5
-      minScalar: 0.8
+      scalar: 0.7
+      minScalar: 0.2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -9610,7 +9610,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8837b1ca097d5ef43a8985bcfcff6153, type: 2}
+  - {fileID: 2100000, guid: 60c857f265007fd458ab0bdbbe603cc1, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -9704,7 +9704,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 84920d09267ed084eba1dab0574265b3, type: 2}
+  - {fileID: 2100000, guid: 33b5354721c2a764b9e550661343ffca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9883,7 +9883,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 1626506029720995018, guid: dfd488224fa8b924c8c9a08865d3c685,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: c71386cd35ee2424f8c89eb200f4bb0b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 99c8afafa731c4a45a4aed0940e48b5f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.25
   m_Pitch: 1

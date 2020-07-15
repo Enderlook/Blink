@@ -4,6 +4,18 @@
         <name>Enderlook.Unity.Extensions</name>
     </assembly>
     <members>
+        <member name="T:Enderlook.Unity.Extensions.Collision2DExtensions">
+            <summary>
+            Extension methods for <see cref="T:UnityEngine.Collision2D"/>.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.Collision2DExtensions.GetCollisionImpulse(UnityEngine.Collision2D)">
+            <summary>
+            Calculates the collision impulse of a <see cref="T:UnityEngine.Collision2D"/>.
+            </summary>
+            <param name="source"><see cref="T:UnityEngine.Collision2D"/> used to calculate the impulse.</param>
+            <returns>Collision impulse of <paramref name="source"/>.</returns>
+        </member>
         <member name="M:Enderlook.Unity.Extensions.ColorExtensions.GetColorTag(UnityEngine.Color,System.String)">
             <summary>
             Warps <paramref name="text"/> in HTML color tag with <paramref name="color"/>.<br/>
@@ -125,9 +137,38 @@
             <param name="layerTrigger">Layer that must be checked.</param>
             <returns>Whenever <c><paramref name="source"/>.layer</c> is one the layers from <paramref name="layerTrigger"/>.</returns>
         </member>
+        <member name="T:Enderlook.Unity.Extensions.ScrollRectExtensions">
+            <summary>
+            Helper methods to scroll <see cref="T:UnityEngine.UI.ScrollRect"/>.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.ScrollRectExtensions.ScrollBottom(UnityEngine.UI.ScrollRect)">
+            <summary>
+            Scrolls <paramref name="source"/> to bottom.
+            </summary>
+            <param name="source"><see cref="T:UnityEngine.UI.ScrollRect"/> to scroll to bottom.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.ScrollRectExtensions.ScrollTop(UnityEngine.UI.ScrollRect)">
+            <summary>
+            Scrolls <paramref name="source"/> to top.
+            </summary>
+            <param name="source"><see cref="T:UnityEngine.UI.ScrollRect"/> to scroll to top.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.ScrollRectExtensions.ScrollLeft(UnityEngine.UI.ScrollRect)">
+            <summary>
+            Scrolls <paramref name="source"/> to left.
+            </summary>
+            <param name="source"><see cref="T:UnityEngine.UI.ScrollRect"/> to scroll to left.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.ScrollRectExtensions.ScrollRight(UnityEngine.UI.ScrollRect)">
+            <summary>
+            Scrolls <paramref name="source"/> to right.
+            </summary>
+            <param name="source"><see cref="T:UnityEngine.UI.ScrollRect"/> to scroll to right.</param>
+        </member>
         <member name="M:Enderlook.Unity.Extensions.StringExtensions.ToDisplayUnity(System.String)">
             <summary>
-            Emulate <see cref="P:UnityEditor.SerializedProperty.displayName"/> calling <see cref="!:StringExtensions.SplitByCamelCase(string)"/>, <see cref="!:StringExtensions.SplitBySnakeCase(string)"/>, <see cref="!:StringExtensions.ToCapitalWords(string)"/>.
+            Emulate <see cref="!:UnityEditor.SerializedProperty.displayName"/> calling <see cref="!:StringExtensions.SplitByCamelCase(string)"/>, <see cref="!:StringExtensions.SplitBySnakeCase(string)"/>, <see cref="!:StringExtensions.ToCapitalWords(string)"/>.
             </summary>
             <param name="source">String to convert.</param>
             <returns>Converted string.</returns>

@@ -100,7 +100,7 @@
             <summary>
             Performs the specified <paramref name="function"/> on each element of the <paramref name="source"/>.
             </summary>
-            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
             <param name="source">Source to look for element to perform the <paramref name="function"/></param>
             <param name="function">Function to perform on each element of <paramref name="source"/></param>
             <returns>Updated <paramref name="source"/>.</returns>
@@ -111,7 +111,7 @@
             <summary>
             Performs the specified <paramref name="function"/> on each element of the <paramref name="source"/>.
             </summary>
-            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
             <param name="source">Source to look for element to perform the <paramref name="function"/></param>
             <param name="function">Function to perform on each element of <paramref name="source"/></param>
             <returns>Updated <paramref name="source"/>.</returns>
@@ -122,7 +122,7 @@
             <summary>
             Performs the specified <paramref name="action"/> on each element of the <paramref name="source"/>.
             </summary>
-            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
             <param name="source">Source to look for element to perform the <paramref name="action"/></param>
             <param name="action">Action to perform on each element of <paramref name="source"/></param>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> or <paramref name="action"/> are <see langword="null"/>.</exception>
@@ -132,7 +132,7 @@
             <summary>
             Performs the specified <paramref name="action"/> on each element of the <paramref name="source"/>.
             </summary>
-            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
             <param name="source">Source to look for element to perform the <paramref name="action"/></param>
             <param name="action">Action to perform on each element of <paramref name="source"/></param>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> or <paramref name="action"/> are <see langword="null"/>.</exception>
@@ -315,7 +315,7 @@
             <summary>
             Performs the specified <paramref name="function"/> on each element of the <paramref name="source"/>.
             </summary>
-            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
             <param name="source">Source to look for element to perform the <paramref name="function"/></param>
             <param name="function">Function to perform on each element of <paramref name="source"/></param>
             <returns>Updated <paramref name="source"/>.</returns>
@@ -326,7 +326,7 @@
             <summary>
             Performs the specified <paramref name="function"/> on each element of the <paramref name="source"/>.
             </summary>
-            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
             <param name="source">Source to look for element to perform the <paramref name="function"/></param>
             <param name="function">Function to perform on each element of <paramref name="source"/></param>
             <returns>Updated <paramref name="source"/>.</returns>
@@ -430,7 +430,7 @@
             <summary>
             Returns a random element from <paramref name="source"/> taking into account its weight produced by <paramref name="weighter"/>.
             </summary>
-            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
             <param name="source">Source to look for a random element.</param>
             <param name="weighter">Produce weight of elements.</param>
             <returns>Random element from <paramref name="source"/>.</returns>
@@ -441,7 +441,7 @@
             <summary>
             Returns a random element from <paramref name="source"/> taking into account its weight from <paramref name="weights"/>.
             </summary>
-            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
             <param name="source">Source to look for a random element.</param>
             <param name="weights">Weight of each element.</param>
             <returns>Random element from <paramref name="source"/>.</returns>
@@ -453,7 +453,7 @@
             <summary>
             Performs the specified <paramref name="action"/> on each element of the <paramref name="source"/>.
             </summary>
-            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
             <param name="source">Source to look for element to perform the <paramref name="action"/></param>
             <param name="action">Action to perform on each element of <paramref name="source"/></param>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> or <paramref name="action"/> are <see langword="null"/>.</exception>
@@ -462,10 +462,17 @@
             <summary>
             Performs the specified <paramref name="action"/> on each element of the <paramref name="source"/>.
             </summary>
-            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
             <param name="source">Source to look for element to perform the <paramref name="action"/></param>
             <param name="action">Action to perform on each element of <paramref name="source"/></param>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> or <paramref name="action"/> are <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IListExtensions.Suffle``1(System.Collections.Generic.IList{``0})">
+            <summary>
+            Suffle element of <paramref name="source"/>.
+            </summary>
+            <typeparam name="T">Type of elements in <paramref name="source"/>.</typeparam>
+            <param name="source"><see cref="T:System.Collections.Generic.IList`1"/> to shuffle.</param>
         </member>
         <member name="T:Enderlook.Extensions.Collections.IReadOnlyCollectionExtensions">
             <summary>
@@ -484,7 +491,7 @@
             <summary>
             Performs the specified <paramref name="action"/> on each element of the <paramref name="source"/>.
             </summary>
-            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
             <param name="source">Source to look for element to perform the <paramref name="action"/></param>
             <param name="action">Action to perform on each element of <paramref name="source"/></param>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> or <paramref name="action"/> are <see langword="null"/>.</exception>
@@ -496,12 +503,127 @@
         <member name="M:Enderlook.Extensions.Collections.IReadOnlyListExtensions.CopyTo``1(System.Collections.Generic.IReadOnlyList{``0},System.Int32,``0[],System.Int32,System.Int32)">
             <inheritdoc cref="M:System.Collections.Generic.List`1.CopyTo(System.Int32,`0[],System.Int32,System.Int32)"/>
         </member>
-        <member name="T:Enderlook.Extensions.IEnumerableAggregateExtensions">
+        <member name="T:Enderlook.Extensions.code.EnumExtensions">
             <summary>
-            Helper extensions for <see cref="T:System.Collections.Generic.IEnumerable`1"/> related with aggregate function.
+            Extension methods for <see cref="T:System.Enum"/>.
             </summary>
         </member>
-        <member name="M:Enderlook.Extensions.IEnumerableAggregateExtensions.AggregateWhile``1(System.Collections.Generic.IEnumerable{``0},Enderlook.Extensions.IEnumerableAggregateExtensions.AggregatorWhile{``0})">
+        <member name="M:Enderlook.Extensions.code.EnumExtensions.GetUnderlyingValue(System.Enum)">
+            <summary>
+            Returns the underlying primitive value of <paramref name="source"/>.
+            </summary>
+            <param name="source"><see cref="T:System.Enum"/> which value is going to get.</param>
+            <returns>Primitive value of <paramref name="source"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="T:Enderlook.Extensions.code.Linq.Transposer">
+            <summary>
+            Helper extensions for <see cref="T:System.Collections.Generic.IEnumerable`1"/> related to transposition.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Extensions.code.Linq.Transposer.TransposeMode">
+            <summary>
+            Determines how non-uniform enumerations will be handled.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Extensions.code.Linq.Transposer.TransposeMode.StripOnMissing">
+            <summary>
+            It strip rows that have missing elements.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Extensions.code.Linq.Transposer.TransposeMode.DefaultOnMissing">
+            <summary>
+            Replace missing elements with default valuess.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Extensions.code.Linq.Transposer.TransposeMode.ErrorOnMissing">
+            <summary>
+            Raise <see cref="T:System.ArgumentOutOfRangeException"/> when there is a missing value.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Extensions.code.Linq.Transposer.Transpose``1(System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{``0}},Enderlook.Extensions.code.Linq.Transposer.TransposeMode)">
+            <summary>
+            Transpose <paramref name="source"/>.
+            </summary>
+            <typeparam name="T">Type of element of the nested <see cref="T:System.Collections.Generic.IEnumerable`1"/>.</typeparam>
+            <param name="source">Sequence which will be transposed.</param>
+            <param name="mode">How non-uniform sequences are handled.</param>
+            <returns>Transposed <paramref name="source"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.code.Linq.Transposer.Transpose``1(System.Collections.Generic.IList{System.Collections.Generic.IList{``0}},Enderlook.Extensions.code.Linq.Transposer.TransposeMode)">
+            <summary>
+            Transpose <paramref name="source"/>.
+            </summary>
+            <typeparam name="T">Type of element of the nested <see cref="T:System.Collections.Generic.IEnumerable`1"/>.</typeparam>
+            <param name="source">Sequence which will be transposed.</param>
+            <param name="mode">How non-uniform sequences are handled.</param>
+            <returns>Transposed <paramref name="source"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.code.Linq.Transposer.TransposeInPlace``1(``0[0:,0:])">
+            <summary>
+            Transpose the values of <paramref name="source"/> in place.<br/>
+            It can only be used in square 2D multidimensional arrays.
+            </summary>
+            <typeparam name="T">Type of element in <paramref name="source"/>.</typeparam>
+            <param name="source">Array to be transposed in place.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when <paramref name="source"/> width and height aren't the same.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.code.Linq.Transposer.TransposeInPlace``1(``0[][])">
+            <summary>
+            Transpose the values of <paramref name="source"/> in place.<br/>
+            It can only be used in square 2D multidimensional arrays.
+            </summary>
+            <typeparam name="T">Type of element in <paramref name="source"/>.</typeparam>
+            <param name="source">Array to be transposed in place.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when <paramref name="source"/> width and height aren't the same.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.code.Linq.Transposer.TransposeInPlace``1(System.Collections.Generic.IList{System.Collections.Generic.IList{``0}})">
+            <summary>
+            Transpose the values of <paramref name="source"/> in place.<br/>
+            It can only be used in square 2D multidimensional arrays.
+            </summary>
+            <typeparam name="T">Type of element in <paramref name="source"/>.</typeparam>
+            <param name="source">Array to be transposed in place.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when <paramref name="source"/> width and height aren't the same.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.code.Linq.Transposer.Transpose``1(``0[0:,0:])">
+            <summary>
+            Transpose elements of <paramref name="source"/>.
+            </summary>
+            <typeparam name="T">Type of element in <paramref name="source"/>.</typeparam>
+            <param name="source">Array values to be transposed.</param>
+            <returns>Transposed version of <paramref name="source"/>.</returns>
+        </member>
+        <member name="T:Enderlook.Extensions.IEnumerableExtensions">
+            <summary>
+            Helper extensions for <see cref="T:System.Collections.Generic.IEnumerable`1"/>.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Extensions.IEnumerableExtensions.AggregatorWhile`1">
+            <summary>
+            Function applied over the elements of an <see cref="T:System.Collections.Generic.IEnumerable`1"/>.
+            </summary>
+            <typeparam name="TSource">Type of elements in the <see cref="T:System.Collections.Generic.IEnumerable`1"/>.</typeparam>
+            <param name="accumulated">Acumulated value.</param>
+            <param name="current">Current element value.</param>
+            <param name="result">Result produced.</param>
+            <returns>Whenever it should continue or stop.</returns>
+        </member>
+        <member name="T:Enderlook.Extensions.IEnumerableExtensions.AggregatorWhile`2">
+            <summary>
+            Function applied over the elements of an <see cref="T:System.Collections.Generic.IEnumerable`1"/>.
+            </summary>
+            <typeparam name="TSource">Type of elements in the <see cref="T:System.Collections.Generic.IEnumerable`1"/>.</typeparam>
+            <typeparam name="TAccumulate">Type of <paramref name="accumulated"/>.</typeparam>
+            <param name="accumulated">Acumulated value.</param>
+            <param name="current">Current element value.</param>
+            <param name="result">Result produced.</param>
+            <returns>Whenever it should continue or stop.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.AggregateWhile``1(System.Collections.Generic.IEnumerable{``0},Enderlook.Extensions.IEnumerableExtensions.AggregatorWhile{``0})">
             <summary>
             Applies <paramref name="func"/> over the elements of the sequence carrying the last result until it returns <see langword="false"/>.
             </summary>
@@ -511,7 +633,7 @@
             <returns>The last result of <paramref name="func"/>.</returns>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> or <paramref name="func"/> are <see langword="null"/>.</exception>
         </member>
-        <member name="M:Enderlook.Extensions.IEnumerableAggregateExtensions.AggregateWhile``1(System.Collections.Generic.IEnumerable{``0},``0,Enderlook.Extensions.IEnumerableAggregateExtensions.AggregatorWhile{``0})">
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.AggregateWhile``1(System.Collections.Generic.IEnumerable{``0},``0,Enderlook.Extensions.IEnumerableExtensions.AggregatorWhile{``0})">
             <summary>
             Applies <paramref name="func"/> over the elements of the sequence carrying the last result until it returns <see langword="false"/>.
             </summary>
@@ -522,7 +644,7 @@
             <returns>The last result of <paramref name="func"/>.</returns>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> or <paramref name="func"/> are <see langword="null"/>.</exception>
         </member>
-        <member name="M:Enderlook.Extensions.IEnumerableAggregateExtensions.AggregateWhile``2(System.Collections.Generic.IEnumerable{``0},``1,Enderlook.Extensions.IEnumerableAggregateExtensions.AggregatorWhile{``0,``1})">
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.AggregateWhile``2(System.Collections.Generic.IEnumerable{``0},``1,Enderlook.Extensions.IEnumerableExtensions.AggregatorWhile{``0,``1})">
             <summary>
             Applies <paramref name="func"/> over the elements of the sequence carrying the last result until it returns <see langword="false"/>.
             </summary>
@@ -534,7 +656,7 @@
             <returns>Result of <paramref name="func"/>.</returns>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> or <paramref name="func"/> <see langword="null"/>.</exception>
         </member>
-        <member name="M:Enderlook.Extensions.IEnumerableAggregateExtensions.AggregateWhile``3(System.Collections.Generic.IEnumerable{``0},``1,Enderlook.Extensions.IEnumerableAggregateExtensions.AggregatorWhile{``0,``1},System.Func{``1,``2})">
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.AggregateWhile``3(System.Collections.Generic.IEnumerable{``0},``1,Enderlook.Extensions.IEnumerableExtensions.AggregatorWhile{``0,``1},System.Func{``1,``2})">
             <summary>
             Applies <paramref name="func"/> over the elements of the sequence carrying the last result until it returns <see langword="false"/>.
             </summary>
@@ -548,16 +670,11 @@
             <returns>Result of <paramref name="resultSelector"/>.</returns>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/>, <paramref name="func"/> or <paramref name="resultSelector"/> are <see langword="null"/>.</exception>
         </member>
-        <member name="T:Enderlook.Extensions.IEnumerableExtensions">
-            <summary>
-            Helper extensions for <see cref="T:System.Collections.Generic.IEnumerable`1"/>.
-            </summary>
-        </member>
         <member name="M:Enderlook.Extensions.IEnumerableExtensions.AtLeast``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
             <summary>
             Check if <paramref name="source"/> has at least <paramref name="count"/> elements (inclusive).
             </summary>
-            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
             <param name="source">Source to check for amount.</param>
             <param name="count">Minimal amount required.</param>
             <returns>Whenever it has at least <paramref name="count"/> elements.</returns>
@@ -568,7 +685,7 @@
             <summary>
             Check if <paramref name="source"/> has at least <paramref name="count"/> elements which match <paramref name="predicate"/> (inclusive).
             </summary>
-            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
             <param name="source">Source to check for amount.</param>
             <param name="predicate">Elements must match this to be count.</param>
             <param name="count">Minimal amount required.</param>
@@ -580,7 +697,7 @@
             <summary>
             Check if <paramref name="source"/> has at most <paramref name="count"/> elements (inclusive).
             </summary>
-            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
             <param name="source">Source to check for amount.</param>
             <param name="count">Maximal amount required.</param>
             <returns>Whenever it has at most <paramref name="count"/> elements.</returns>
@@ -591,7 +708,7 @@
             <summary>
             Check if <paramref name="source"/> has at most <paramref name="count"/> elements which match <paramref name="predicate"/> (inclusive).
             </summary>
-            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
             <param name="source">Source to check for amount.</param>
             <param name="predicate">Elements must match this to be count.</param>
             <param name="count">Maximal amount required.</param>
@@ -599,42 +716,11 @@
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> or <paramref name="predicate"/> are <see langword="null"/>.</exception>
             <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="count"/> is negative.</exception>
         </member>
-        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Has``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
-            <summary>
-            Check if <paramref name="source"/> has exactly <paramref name="count"/> elements.
-            </summary>
-            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
-            <param name="source">Source to check for amount.</param>
-            <param name="count">Amount that must have.</param>
-            <returns>Whenever it has exactly <paramref name="count"/> elements.</returns>
-            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> is <see langword="null"/>.</exception>
-            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="count"/> is negative.</exception>
-        </member>
-        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Has``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean},System.Int32)">
-            <summary>
-            Check if <paramref name="source"/> has exactly <paramref name="count"/> which match <paramref name="predicate"/> elements.
-            </summary>
-            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
-            <param name="source">Source to check for amount.</param>
-            <param name="predicate">Elements must match this to be count.</param>
-            <param name="count">Amount that must have.</param>
-            <returns>Whenever it has exactly <paramref name="count"/> elements.</returns>
-            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> or <paramref name="predicate"/> are <see langword="null"/>.</exception>
-            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="count"/> is negative.</exception>
-        </member>
-        <member name="M:Enderlook.Extensions.IEnumerableExtensions.IsNullOrEmpty``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Check is <paramref name="source"/> is <see langword="null"/> or empty.
-            </summary>
-            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
-            <param name="source">Source to check.</param>
-            <returns>Whenever <paramref name="source"/> is <see langword="null"/> or empty.</returns>
-        </member>
         <member name="M:Enderlook.Extensions.IEnumerableExtensions.ContainsBy``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
             <summary>
             Check if the <paramref name="source"/> contains an elements which match the given criteria by <paramref name="selector"/>.
             </summary>
-            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
             <param name="source">Source to look for a matching element.</param>
             <param name="selector">Check if the element match the criteria.</param>
             <returns>Whenever the matched item was found or not.</returns>
@@ -663,6 +749,163 @@
             <param name="comparer">Comparer used to compare the values returned by <paramref name="selector"/>.</param>
             <returns>The element with the lowest property.</returns>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> or <paramref name="selector"/> are <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Chunk``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            Split <paramref name="source"/> into chunk of <paramref name="chunkSize"/> length.
+            </summary>
+            <typeparam name="T">Type of element in <paramref name="source"/>.</typeparam>
+            <param name="source">Where elements are take from.</param>
+            <param name="chunkSize">Maximum length of each chunk.</param>
+            <returns>Sequence of chunks.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown <paramref name="chunkSize"/> is lower or equal 0.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.ChunkBy``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Split <paramref name="source"/> into chunk of equal consecutive elements.
+            </summary>
+            <typeparam name="T">Type of element in <paramref name="source"/>.</typeparam>
+            <param name="source">Where elements are take from.</param>
+            <returns>Sequence of chunks.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.ChunkByGroups``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Split <paramref name="source"/> into chunk of equal consecutive elements.
+            </summary>
+            <typeparam name="T">Type of element in <paramref name="source"/>.</typeparam>
+            <param name="source">Where elements are take from.</param>
+            <returns>Sequence of chunks.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.ChunkBy``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>
+            Split <paramref name="source"/> into chunk of equal consecutive elements.
+            </summary>
+            <typeparam name="T">Type of element in <paramref name="source"/>.</typeparam>
+            <param name="source">Where elements are take from.</param>
+            <param name="equalityComparer">Custom equality comparer.</param>
+            <returns>Sequence of chunks.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.ChunkByGroups``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>
+            Split <paramref name="source"/> into chunk of equal consecutive elements.
+            </summary>
+            <typeparam name="T">Type of element in <paramref name="source"/>.</typeparam>
+            <param name="source">Where elements are take from.</param>
+            <param name="equalityComparer">Custom equality comparer.</param>
+            <returns>Sequence of chunks.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.ChunkBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1})">
+            <summary>
+            Split <paramref name="source"/> into chunk of equal consecutive elements.
+            </summary>
+            <typeparam name="T">Type of element in <paramref name="source"/>.</typeparam>
+            <typeparam name="U">Type of element to compare.</typeparam>
+            <param name="source">Where elements are take from.</param>
+            <param name="keySelector">Determines how elements will be compared.</param>
+            <param name="equalityComparer">Determines how keys will be compared.</param>
+            <returns>Sequence of chunks.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/>, <paramref name="keySelector"/> or <paramref name="equalityComparer"/> are <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.ChunkByGroups``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1})">
+            <summary>
+            Split <paramref name="source"/> into chunk of equal consecutive elements.
+            </summary>
+            <typeparam name="T">Type of element in <paramref name="source"/>.</typeparam>
+            <typeparam name="U">Type of element to compare.</typeparam>
+            <param name="source">Where elements are take from.</param>
+            <param name="keySelector">Determines how elements will be compared.</param>
+            <param name="equalityComparer">Determines how keys will be compared.</param>
+            <returns>Sequence of chunks.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/>, <paramref name="keySelector"/> or <paramref name="equalityComparer"/> are <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.ChunkBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
+            <summary>
+            Split <paramref name="source"/> into chunk of equal consecutive elements.
+            </summary>
+            <typeparam name="T">Type of element in <paramref name="source"/>.</typeparam>
+            <typeparam name="U">Type of element to compare.</typeparam>
+            <param name="source">Where elements are take from.</param>
+            <param name="keySelector">Determines how elements will be compared.</param>
+            <returns>Sequence of chunks.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> or <paramref name="keySelector"/> are <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.ChunkByGroups``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
+            <summary>
+            Split <paramref name="source"/> into chunk of equal consecutive elements.
+            </summary>
+            <typeparam name="T">Type of element in <paramref name="source"/>.</typeparam>
+            <typeparam name="U">Type of element to compare.</typeparam>
+            <param name="source">Where elements are take from.</param>
+            <param name="keySelector">Determines how elements will be compared.</param>
+            <returns>Sequence of chunks.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> or <paramref name="keySelector"/> are <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.ChunkBy``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``0,System.Boolean})">
+            <summary>
+            Split <paramref name="source"/> into chunk of equal consecutive elements.
+            </summary>
+            <typeparam name="T">Type of element in <paramref name="source"/>.</typeparam>
+            <param name="source">Where elements are take from.</param>
+            <param name="comparer">Determines how elements will be compared.</param>
+            <returns>Sequence of chunks.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> or <paramref name="comparer"/> are <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.ChunkByGroups``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``0,System.Boolean})">
+            <summary>
+            Split <paramref name="source"/> into chunk of equal consecutive elements.
+            </summary>
+            <typeparam name="T">Type of element in <paramref name="source"/>.</typeparam>
+            <param name="source">Where elements are take from.</param>
+            <param name="comparer">Determines how elements will be compared.</param>
+            <returns>Sequence of chunks.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> or <paramref name="comparer"/> are <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Cycle``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Yield element of <paramref name="source"/> forever.
+            </summary>
+            <typeparam name="T">Type of element to yield.</typeparam>
+            <param name="source">Element to yield.</param>
+            <returns>An infinite sequence of <paramref name="source"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Cycle``1(System.Collections.Generic.IEnumerable{``0},System.Boolean)">
+            <summary>
+            Yield element of <paramref name="source"/> forever.
+            </summary>
+            <typeparam name="T">Type of element to yield.</typeparam>
+            <param name="source">Element to yield.</param>
+            <param name="cacheResults">Whenever it should cache results of <paramref name="source"/> to not iterate it several times.</param>
+            <returns>An infinite sequence of <paramref name="source"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Cycle``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            Yield element of <paramref name="source"/> <paramref name="length"/> times
+            </summary>
+            <typeparam name="T">Type of element to yield.</typeparam>
+            <param name="source">Element to yield.</param>
+            <param name="length">Amount of times <paramref name="source"/> will be yielded. On 0, nothing happends.</param>
+            <returns>An infinite sequence of <paramref name="source"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="length"/> is negative.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Cycle``1(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Boolean)">
+            <summary>
+            Yield element of <paramref name="source"/> <paramref name="length"/> times
+            </summary>
+            <typeparam name="T">Type of element to yield.</typeparam>
+            <param name="source">Element to yield.</param>
+            <param name="length">Amount of times <paramref name="source"/> will be yielded. On 0, nothing happends.</param>
+            <param name="cacheResults">Whenever it should cache results of <paramref name="source"/> to not iterate it several times.</param>
+            <returns>An infinite sequence of <paramref name="source"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="length"/> is negative.</exception>
         </member>
         <member name="M:Enderlook.Extensions.IEnumerableExtensions.HasDuplicates``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
@@ -724,11 +967,42 @@
             <returns>Duplicated elements and their count.</returns>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> or <paramref name="selector"/> are <see langword="null"/>.</exception>
         </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Has``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            Check if <paramref name="source"/> has exactly <paramref name="count"/> elements.
+            </summary>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
+            <param name="source">Source to check for amount.</param>
+            <param name="count">Amount that must have.</param>
+            <returns>Whenever it has exactly <paramref name="count"/> elements.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="count"/> is negative.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Has``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean},System.Int32)">
+            <summary>
+            Check if <paramref name="source"/> has exactly <paramref name="count"/> which match <paramref name="predicate"/> elements.
+            </summary>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
+            <param name="source">Source to check for amount.</param>
+            <param name="predicate">Elements must match this to be count.</param>
+            <param name="count">Amount that must have.</param>
+            <returns>Whenever it has exactly <paramref name="count"/> elements.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> or <paramref name="predicate"/> are <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="count"/> is negative.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.IsNullOrEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Check is <paramref name="source"/> is <see langword="null"/> or empty.
+            </summary>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
+            <param name="source">Source to check.</param>
+            <returns>Whenever <paramref name="source"/> is <see langword="null"/> or empty.</returns>
+        </member>
         <member name="M:Enderlook.Extensions.IEnumerableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
             <summary>
             Performs the specified <paramref name="action"/> on each element of the <paramref name="source"/>.
             </summary>
-            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
             <param name="source">Source to look for element to perform the <paramref name="action"/></param>
             <param name="action">Action to perform on each element of <paramref name="source"/></param>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> or <paramref name="action"/> are <see langword="null"/>.</exception>
@@ -737,7 +1011,7 @@
             <summary>
             Performs the specified <paramref name="action"/> on each element of the <paramref name="source"/> taking into account its index.
             </summary>
-            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
             <param name="source">Source to look for element to perform the <paramref name="action"/></param>
             <param name="action">Action to perform on each element of <paramref name="source"/></param>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> or <paramref name="action"/> are <see langword="null"/>.</exception>
@@ -746,7 +1020,7 @@
             <summary>
             Performs the specified <paramref name="action"/> on each element of the <paramref name="source"/> and returns the same elements without any mutation on them.
             </summary>
-            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
             <param name="source">Source to look for element to perform the <paramref name="action"/></param>
             <param name="action">Action to perform on each element of <paramref name="source"/></param>
             <returns>Elements from <paramref name="source"/>, without any mutations.</returns>
@@ -756,56 +1030,636 @@
             <summary>
             Performs the specified <paramref name="action"/> on each element of the <paramref name="source"/> taking into account its index, and returns the same elements without any mutation on them.
             </summary>
-            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
             <param name="source">Source to look for element to perform the <paramref name="action"/></param>
             <param name="action">Action to perform on each element of <paramref name="source"/></param>
             <returns>Elements from <paramref name="source"/>, without any mutations.</returns>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> or <paramref name="action"/> <see langword="null"/>.</exception>
         </member>
-        <member name="M:Enderlook.Extensions.IEnumerableRandomExtensions.RandomPick``1(System.Collections.Generic.IEnumerable{``0})">
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.IsEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Check if <paramref name="source"/> is empty.
+            </summary>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
+            <param name="source"><see cref="T:System.Collections.Generic.IEnumerable`1"/> to check if empty.</param>
+            <returns>Whenever <paramref name="source"/> is empty or not.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Repeat``1(``0)">
+            <summary>
+            Yield <paramref name="source"/> forever.
+            </summary>
+            <typeparam name="T">Type of element to yield.</typeparam>
+            <param name="source">Element to yield.</param>
+            <returns>An infinite sequence of <paramref name="source"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Repeat``1(``0,System.Int32)">
+            <summary>
+            Yield <paramref name="source"/> <paramref name="length"/> times.
+            </summary>
+            <typeparam name="T">Type of element to yield.</typeparam>
+            <param name="source">Element to yield.</param>
+            <param name="length">Amount of times <paramref name="source"/> will be yielded. On 0, nothing happends.</param>
+            <returns>An infinite sequence of <paramref name="source"/>.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="length"/> is negative.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Yield``1(``0)">
+            <summary>
+            Return an <see cref="T:System.Collections.Generic.IEnumerable`1"/> of a single element of <paramref name="source"/>.
+            </summary>
+            <typeparam name="T">Type of element.</typeparam>
+            <param name="source">Element used to make the sequence.</param>
+            <returns>Sequence of a single item <paramref name="source"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.SelectMany``1(System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{``0}})">
+            <summary>
+            Flattens the sequences of the sequence <paramref name="source"/> into one sequence.
+            </summary>
+            <typeparam name="T">Type of the nested elements.</typeparam>
+            <param name="source"><see cref="T:System.Collections.Generic.IEnumerable`1"/> which is going to be flatten.</param>
+            <returns>Flattened <paramref name="source"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.StartsWith``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Check if <paramref name="source"/> sequence starts with the given <paramref name="startSequence"/> sequence.
+            </summary>
+            <typeparam name="T">Type of element in <paramref name="source"/>.</typeparam>
+            <param name="source">Sequence to check.</param>
+            <param name="startSequence">Start subsequence.</param>
+            <returns>Whenever <paramref name="source"/> starts with <paramref name="startSequence"/> or not.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.StartsWith``1(System.Collections.Generic.IEnumerable{``0},``0[])">
+            <summary>
+            Check if <paramref name="source"/> sequence starts with the given <paramref name="startSequence"/> sequence.
+            </summary>
+            <typeparam name="T">Type of element in <paramref name="source"/>.</typeparam>
+            <param name="source">Sequence to check.</param>
+            <param name="startSequence">Start subsequence.</param>
+            <returns>Whenever <paramref name="source"/> starts with <paramref name="startSequence"/> or not.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.WhereNotNull``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Filter out elements from <paramref name="source"/> that are <see langword="null"/>.
+            </summary>
+            <typeparam name="T">Type of element in <paramref name="source"/>.</typeparam>
+            <param name="source">Sequence to check.</param>
+            <returns>Filtered sequence without <see langword="null"/> elements.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.WhereNotDefault``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Filter out elements from <paramref name="source"/> that are default.
+            </summary>
+            <typeparam name="T">Type of element in <paramref name="source"/>.</typeparam>
+            <param name="source">Sequence to check.</param>
+            <returns>Filtered sequence without default elements.</returns>
+        </member>
+        <member name="T:Enderlook.Extensions.IEnumerableExtensions.Selector`2">
+            <summary>
+            A function which produces a result based on <paramref name="input"/>.
+            </summary>
+            <typeparam name="T">Type of element to return.</typeparam>
+            <typeparam name="U">Type of element to use</typeparam>
+            <param name="input">Input value.</param>
+            <returns>Processed value.</returns>
+        </member>
+        <member name="T:Enderlook.Extensions.IEnumerableExtensions.SelectorWithCount`2">
+            <summary>
+            A function which produces a result based on <paramref name="input"/>.
+            </summary>
+            <typeparam name="T">Type of element to return.</typeparam>
+            <typeparam name="U">Type of element to use</typeparam>
+            <param name="input">Input value.</param>
+            <param name="count">Current index. (The first time is 0).</param>
+            <returns>Processed value.</returns>
+        </member>
+        <member name="T:Enderlook.Extensions.IEnumerableExtensions.SelectorAccumulated`2">
+            <summary>
+            A function which produces a result based on <paramref name="input"/> and <paramref name="accumulated"/>.
+            </summary>
+            <typeparam name="T">Type of element to use and return.</typeparam>
+            <typeparam name="U">Type of accumulated element.</typeparam>
+            <param name="input">Input value.</param>
+            <param name="accumulated">Accumulated value.</param>
+        </member>
+        <member name="T:Enderlook.Extensions.IEnumerableExtensions.SelectorWithCountAccumulated`2">
+            <summary>
+            A function which produces a result based on <paramref name="input"/> and <paramref name="accumulated"/>.
+            </summary>
+            <typeparam name="T">Type of element to use and return.</typeparam>
+            <typeparam name="U">Type of accumulated element.</typeparam>
+            <param name="input">Input value.</param>
+            <param name="accumulated">Accumulated value.</param>
+            <param name="count">Current index. (The first time is 0).</param>
+        </member>
+        <member name="T:Enderlook.Extensions.IEnumerableExtensions.SelectorWithSwitch`1">
+            <summary>
+            A function which produces a result based on <paramref name="input"/>.
+            </summary>
+            <typeparam name="T">Type of element to use and return.</typeparam>
+            <param name="input">Input value.</param>
+            <param name="keep">On <see langword="false"/>, the sequence ends and return is not used.</param>
+            <returns>Processed value.</returns>
+        </member>
+        <member name="T:Enderlook.Extensions.IEnumerableExtensions.SelectorWithCountWithSwitch`1">
+            <summary>
+            A function which produces a result based on <paramref name="input"/>.
+            </summary>
+            <typeparam name="T">Type of element to use and return.</typeparam>
+            <param name="input">Input value.</param>
+            <param name="keep">On <see langword="false"/>, the sequence ends and return is not used.</param>
+            <param name="count">Current index. (The first time is 0).</param>
+            <returns>Processed value.</returns>
+        </member>
+        <member name="T:Enderlook.Extensions.IEnumerableExtensions.SelectorWithSwitch`2">
+            <summary>
+            A function which produces a result based on <paramref name="input"/>.
+            </summary>
+            <typeparam name="T">Type of element to return.</typeparam>
+            <typeparam name="U">Type of element to use</typeparam>
+            <param name="input">Input value.</param>
+            <param name="keep">On <see langword="false"/>, the sequence ends and return is not used.</param>
+            <returns>Processed value.</returns>
+        </member>
+        <member name="T:Enderlook.Extensions.IEnumerableExtensions.SelectorWithCountWithSwitch`2">
+            <summary>
+            A function which produces a result based on <paramref name="input"/>.
+            </summary>
+            <typeparam name="T">Type of element to return.</typeparam>
+            <typeparam name="U">Type of element to use</typeparam>
+            <param name="input">Input value.</param>
+            <param name="keep">On <see langword="false"/>, the sequence ends and return is not used.</param>
+            <param name="count">Current index. (The first time is 0).</param>
+            <returns>Processed value.</returns>
+        </member>
+        <member name="T:Enderlook.Extensions.IEnumerableExtensions.SelectorAccumulatedWithSwitch`2">
+            <summary>
+            A function which produces a result based on <paramref name="input"/> and <paramref name="accumulated"/>.
+            </summary>
+            <typeparam name="T">Type of element to use and return.</typeparam>
+            <typeparam name="U">Type of accumulated element.</typeparam>
+            <param name="input">Input value.</param>
+            <param name="accumulated">Accumulated value.</param>
+            <param name="keep">On <see langword="false"/>, the sequence ends and return is not used.</param>
+        </member>
+        <member name="T:Enderlook.Extensions.IEnumerableExtensions.SelectorWithCountAccumulatedWithSwitch`2">
+            <summary>
+            A function which produces a result based on <paramref name="input"/> and <paramref name="accumulated"/>.
+            </summary>
+            <typeparam name="T">Type of element to use and return.</typeparam>
+            <typeparam name="U">Type of accumulated element.</typeparam>
+            <param name="input">Input value.</param>
+            <param name="accumulated">Accumulated value.</param>
+            <param name="keep">On <see langword="false"/>, the sequence ends and return is not used.</param>
+            <param name="count">Current index. (The first time is 0).</param>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Iterate``1(``0,System.Func{``0,``0})">
+            <summary>
+            Creates an infinite sequence where each item is calculated from the previous one.<br/>
+            The first yield element is <paramref name="source"/>.
+            </summary>
+            <typeparam name="T">Type of element to use and return.</typeparam>
+            <param name="source">Initial value.</param>
+            <param name="function">Aggregate function.</param>
+            <returns>Sequence of aggregate results.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="function"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Iterate``1(``0,System.Func{``0,System.Int32,``0})">
+            <summary>
+            Creates an infinite sequence where each item is calculated from the previous one.<br/>
+            The first yield element is <paramref name="source"/>.
+            </summary>
+            <typeparam name="T">Type of element to use and return.</typeparam>
+            <param name="source">Initial value.</param>
+            <param name="function">Aggregate function.</param>
+            <returns>Sequence of aggregate results.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="function"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Iterate``1(``0,System.Func{``0,``0},System.Int32)">
+            <summary>
+            Creates a sequence of <paramref name="length"/> elements where each item is calculated from the previous one.<br/>
+            The first yield element is <paramref name="source"/>.
+            </summary>
+            <typeparam name="T">Type of element to use and return.</typeparam>
+            <param name="source">Initial value.</param>
+            <param name="function">Aggregate function.</param>
+            <param name="length">Length of the sequence. On 0, nothing happens.</param>
+            <returns>Sequence of aggregate results.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="function"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="length"/> is negative.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Iterate``1(``0,System.Func{``0,System.Int32,``0},System.Int32)">
+            <summary>
+            Creates a sequence of <paramref name="length"/> elements where each item is calculated from the previous one.<br/>
+            The first yield element is <paramref name="source"/>.
+            </summary>
+            <typeparam name="T">Type of element to use and return.</typeparam>
+            <param name="source">Initial value.</param>
+            <param name="function">Aggregate function.</param>
+            <param name="length">Length of the sequence. On 0, nothing happens.</param>
+            <returns>Sequence of aggregate results.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="function"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="length"/> is negative.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Iterate``2(``1,Enderlook.Extensions.IEnumerableExtensions.Selector{``0,``1})">
+            <summary>
+            Creates an infinite sequence where each item is calculated from the previous one.
+            </summary>
+            <typeparam name="T">Type of element to return.</typeparam>
+            <typeparam name="U">Type of element to use.</typeparam>
+            <param name="source">Initial value.</param>
+            <param name="function">Aggregate function.</param>
+            <returns>Sequence of aggregate results.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="function"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Iterate``2(``1,Enderlook.Extensions.IEnumerableExtensions.SelectorWithCount{``0,``1})">
+            <summary>
+            Creates an infinite sequence where each item is calculated from the previous one.
+            </summary>
+            <typeparam name="T">Type of element to return.</typeparam>
+            <typeparam name="U">Type of element to use.</typeparam>
+            <param name="source">Initial value.</param>
+            <param name="function">Aggregate function.</param>
+            <returns>Sequence of aggregate results.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="function"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Iterate``2(``1,Enderlook.Extensions.IEnumerableExtensions.Selector{``0,``1},System.Int32)">
+            <summary>
+            Creates a sequence of <paramref name="length"/> elements where each item is calculated from the previous one.
+            </summary>
+            <typeparam name="T">Type of element to return.</typeparam>
+            <typeparam name="U">Type of element to use.</typeparam>
+            <param name="source">Initial value.</param>
+            <param name="function">Aggregate function.</param>
+            <param name="length">Length of the sequence. On 0, nothing happens.</param>
+            <returns>Sequence of aggregate results.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="function"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="length"/> is negative.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Iterate``2(``1,Enderlook.Extensions.IEnumerableExtensions.SelectorWithCount{``0,``1},System.Int32)">
+            <summary>
+            Creates a sequence of <paramref name="length"/> elements where each item is calculated from the previous one.
+            </summary>
+            <typeparam name="T">Type of element to return.</typeparam>
+            <typeparam name="U">Type of element to use.</typeparam>
+            <param name="source">Initial value.</param>
+            <param name="function">Aggregate function.</param>
+            <param name="length">Length of the sequence. On 0, nothing happens.</param>
+            <returns>Sequence of aggregate results.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="function"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="length"/> is negative.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Iterate``2(``1,Enderlook.Extensions.IEnumerableExtensions.SelectorAccumulated{``1,``0})">
+            <summary>
+            Creates an infinite sequence where each item is calculated from the previous one.
+            </summary>
+            <typeparam name="T">Type of element to return.</typeparam>
+            <typeparam name="U">Type of element to use.</typeparam>
+            <param name="source">Initial value.</param>
+            <param name="function">Aggregate function.</param>
+            <returns>Sequence of aggregate results.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="function"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Iterate``2(``1,Enderlook.Extensions.IEnumerableExtensions.SelectorWithCountAccumulated{``1,``0})">
+            <summary>
+            Creates an infinite sequence where each item is calculated from the previous one.
+            </summary>
+            <typeparam name="T">Type of element to return.</typeparam>
+            <typeparam name="U">Type of element to use.</typeparam>
+            <param name="source">Initial value.</param>
+            <param name="function">Aggregate function.</param>
+            <returns>Sequence of aggregate results.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="function"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Iterate``2(``1,Enderlook.Extensions.IEnumerableExtensions.SelectorAccumulated{``1,``0},System.Int32)">
+            <summary>
+            Creates a <paramref name="length"/> elements sequence where each item is calculated from the previous one.
+            </summary>
+            <typeparam name="T">Type of element to return.</typeparam>
+            <typeparam name="U">Type of element to use.</typeparam>
+            <param name="source">Initial value.</param>
+            <param name="function">Aggregate function.</param>
+            <param name="length">Length of the sequence. On 0, nothing happens.</param>
+            <returns>Sequence of aggregate results.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="function"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="length"/> is negative.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Iterate``2(``1,Enderlook.Extensions.IEnumerableExtensions.SelectorWithCountAccumulated{``1,``0},System.Int32)">
+            <summary>
+            Creates a <paramref name="length"/> elements sequence where each item is calculated from the previous one.
+            </summary>
+            <typeparam name="T">Type of element to return.</typeparam>
+            <typeparam name="U">Type of element to use.</typeparam>
+            <param name="source">Initial value.</param>
+            <param name="function">Aggregate function.</param>
+            <param name="length">Length of the sequence. On 0, nothing happens.</param>
+            <returns>Sequence of aggregate results.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="function"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="length"/> is negative.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Iterate``2(``1,``0,Enderlook.Extensions.IEnumerableExtensions.SelectorAccumulated{``1,``0},System.Int32)">
+            <summary>
+            Creates an infinite sequence where each item is calculated from the previous one.
+            </summary>
+            <typeparam name="T">Type of element to return.</typeparam>
+            <typeparam name="U">Type of element to use.</typeparam>
+            <param name="source">Initial value.</param>
+            <param name="initialValue">Initial accumulated value.</param>
+            <param name="function">Aggregate function.</param>
+            <param name="length">Length of the sequence. On 0, nothing happens.</param>
+            <returns>Sequence of aggregate results.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="function"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="length"/> is negative.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Iterate``2(``1,``0,Enderlook.Extensions.IEnumerableExtensions.SelectorWithCountAccumulated{``1,``0},System.Int32)">
+            <summary>
+            Creates an infinite sequence where each item is calculated from the previous one.
+            </summary>
+            <typeparam name="T">Type of element to return.</typeparam>
+            <typeparam name="U">Type of element to use.</typeparam>
+            <param name="source">Initial value.</param>
+            <param name="initialValue">Initial accumulated value.</param>
+            <param name="function">Aggregate function.</param>
+            <param name="length">Length of the sequence. On 0, nothing happens.</param>
+            <returns>Sequence of aggregate results.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="function"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="length"/> is negative.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Iterate``2(``1,``0,Enderlook.Extensions.IEnumerableExtensions.SelectorAccumulated{``1,``0})">
+            <summary>
+            Creates an infinite sequence where each item is calculated from the previous one.
+            </summary>
+            <typeparam name="T">Type of element to return.</typeparam>
+            <typeparam name="U">Type of element to use.</typeparam>
+            <param name="source">Initial value.</param>
+            <param name="initialValue">Initial accumulated value.</param>
+            <param name="function">Aggregate function.</param>
+            <returns>Sequence of aggregate results.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="function"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Iterate``2(``1,``0,Enderlook.Extensions.IEnumerableExtensions.SelectorWithCountAccumulated{``1,``0})">
+            <summary>
+            Creates an infinite sequence where each item is calculated from the previous one.
+            </summary>
+            <typeparam name="T">Type of element to return.</typeparam>
+            <typeparam name="U">Type of element to use.</typeparam>
+            <param name="source">Initial value.</param>
+            <param name="initialValue">Initial accumulated value.</param>
+            <param name="function">Aggregate function.</param>
+            <returns>Sequence of aggregate results.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="function"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Iterate``1(``0,Enderlook.Extensions.IEnumerableExtensions.SelectorWithSwitch{``0})">
+            <summary>
+            Creates an stopable sequence where each item is calculated from the previous one.<br/>
+            The first yield element is <paramref name="source"/>.
+            </summary>
+            <typeparam name="T">Type of element to use.</typeparam>
+            <param name="source">Initial value.</param>
+            <param name="function">Aggregate function.</param>
+            <returns>Sequence of aggregate results.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="function"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Iterate``1(``0,Enderlook.Extensions.IEnumerableExtensions.SelectorWithCountWithSwitch{``0})">
+            <summary>
+            Creates an stopable sequence where each item is calculated from the previous one.<br/>
+            The first yield element is <paramref name="source"/>.
+            </summary>
+            <typeparam name="T">Type of element to use.</typeparam>
+            <param name="source">Initial value.</param>
+            <param name="function">Aggregate function.</param>
+            <returns>Sequence of aggregate results.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="function"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Iterate``2(``1,Enderlook.Extensions.IEnumerableExtensions.SelectorWithSwitch{``0,``1})">
+            <summary>
+            Creates an stopable sequence where each item is calculated from the previous one.
+            </summary>
+            <typeparam name="T">Type of element to return.</typeparam>
+            <typeparam name="U">Type of element to use.</typeparam>
+            <param name="source">Initial value.</param>
+            <param name="function">Aggregate function.</param>
+            <returns>Sequence of aggregate results.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="function"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Iterate``2(``1,Enderlook.Extensions.IEnumerableExtensions.SelectorWithCountWithSwitch{``0,``1})">
+            <summary>
+            Creates an stopable sequence where each item is calculated from the previous one.
+            </summary>
+            <typeparam name="T">Type of element to return.</typeparam>
+            <typeparam name="U">Type of element to use.</typeparam>
+            <param name="source">Initial value.</param>
+            <param name="function">Aggregate function.</param>
+            <returns>Sequence of aggregate results.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="function"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.JoinStrings(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Concatenate all value of <paramref name="source"/>.
+            </summary>
+            <param name="source">Sequence of values to concatenate.</param>
+            <returns>Concatenated result.</returns>
+            <exception cref="T:System.ArgumentNullException">Throw when <paramref name="source"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.JoinStrings(System.Collections.Generic.IEnumerable{System.Char})">
+            <summary>
+            Concatenate all value of <paramref name="source"/>.
+            </summary>
+            <param name="source">Sequence of values to concatenate.</param>
+            <returns>Concatenated result.</returns>
+            <exception cref="T:System.ArgumentNullException">Throw when <paramref name="source"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.JoinStrings(System.Char[])">
+            <summary>
+            Concatenate all value of <paramref name="source"/>.
+            </summary>
+            <param name="source">Sequence of values to concatenate.</param>
+            <returns>Concatenated result.</returns>
+            <exception cref="T:System.ArgumentNullException">Throw when <paramref name="source"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.JoinStrings``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String})">
+            <summary>
+            Concatenate all value of <paramref name="source"/>.
+            </summary>
+            <param name="source">Sequence of values to concatenate.</param>
+            <param name="selector">Function executed on each element of <paramref name="source"/> to turn into an <see cref="T:System.String"/>.</param>
+            <returns>Concatenated result.</returns>
+            <exception cref="T:System.ArgumentNullException">Throw when <paramref name="source"/> or <paramref name="selector"/> are <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.JoinStrings(System.Collections.Generic.IEnumerable{System.String},System.String)">
+            <summary>
+            Concatenate all value of <paramref name="source"/>.
+            </summary>
+            <param name="source">Sequence of values to concatenate.</param>
+            <param name="separator">Separator used between values.</param>
+            <exception cref="T:System.ArgumentNullException">Throw when <paramref name="source"/> or <paramref name="separator"/> are <see langword="null"/>.</exception>
+            <returns>Concatenated result.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.JoinStrings(System.Collections.Generic.IEnumerable{System.String},System.Char)">
+            <summary>
+            Concatenate all value of <paramref name="source"/>.
+            </summary>
+            <param name="source">Sequence of values to concatenate.</param>
+            <param name="separator">Separator used between values.</param>
+            <exception cref="T:System.ArgumentNullException">Throw when <paramref name="source"/> is <see langword="null"/>.</exception>
+            <returns>Concatenated result.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.JoinStrings``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String},System.String)">
+            <summary>
+            Concatenate all value of <paramref name="source"/>.
+            </summary>
+            <param name="source">Sequence of values to concatenate.</param>
+            <param name="selector">Function executed on each element of <paramref name="source"/> to turn into an <see cref="T:System.String"/>.</param>
+            <param name="separator">Separator used between values.</param>
+            <exception cref="T:System.ArgumentNullException">Throw when <paramref name="source"/>, <paramref name="selector"/> or <paramref name="separator"/> are <see langword="null"/>.</exception>
+            <returns>Concatenated result.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.JoinStrings``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String},System.Char)">
+            <summary>
+            Concatenate all value of <paramref name="source"/>.
+            </summary>
+            <param name="source">Sequence of values to concatenate.</param>
+            <param name="selector">Function executed on each element of <paramref name="source"/> to turn into an <see cref="T:System.String"/>.</param>
+            <param name="separator">Separator used between values.</param>
+            <exception cref="T:System.ArgumentNullException">Throw when <paramref name="source"/> or <paramref name="selector"/> are <see langword="null"/>.</exception>
+            <returns>Concatenated result.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.JoinStrings(System.Collections.Generic.IEnumerable{System.Char},System.String)">
+            <summary>
+            Concatenate all value of <paramref name="source"/>.
+            </summary>
+            <param name="source">Sequence of values to concatenate.</param>
+            <param name="separator">Separator used between values.</param>
+            <exception cref="T:System.ArgumentNullException">Throw when <paramref name="source"/> or <paramref name="separator"/> are <see langword="null"/>.</exception>
+            <returns>Concatenated result.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.JoinStrings(System.Collections.Generic.IEnumerable{System.Char},System.Char)">
+            <summary>
+            Concatenate all value of <paramref name="source"/>.
+            </summary>
+            <param name="source">Sequence of values to concatenate.</param>
+            <param name="separator">Separator used between values.</param>
+            <exception cref="T:System.ArgumentNullException">Throw when <paramref name="source"/> is <see langword="null"/>.</exception>
+            <returns>Concatenated result.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.RandomPick``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
             Returns a random element from <paramref name="source"/>.
             </summary>
-            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
             <param name="source">Source to look for a random element.</param>
             <returns>Random element from <paramref name="source"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="source"/> is <see langword="null"/>.</exception>
         </member>
-        <member name="M:Enderlook.Extensions.IEnumerableRandomExtensions.RandomPickWeighted``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{System.Single})">
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.RandomPick``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            Returns a random element from <paramref name="source"/>.
+            </summary>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
+            <param name="source">Source to look for a random element.</param>
+            <param name="samples">Amount of elements to pick. On 0, nothing happens.</param>
+            <returns>Random element from <paramref name="source"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="source"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.RandomPick``1(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Boolean)">
+            <summary>
+            Returns a random element from <paramref name="source"/>.
+            </summary>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
+            <param name="source">Source to look for a random element.</param>
+            <param name="samples">Amount of elements to pick. On 0, nothing happens.</param>
+            <param name="excludeConsumed">Whenever it should exclude already yielded elements.</param>
+            <returns>Random element from <paramref name="source"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="source"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when <paramref name="samples"/> is greater than <paramref name="source"/> count.</exception>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.RandomPickWeighted``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{System.Single})">
             <summary>
             Returns a random element from <paramref name="source"/> taking into account its weight from <paramref name="weights"/>.
             </summary>
-            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
             <param name="source">Source to look for a random element.</param>
             <param name="weights">Weight of each element.</param>
             <returns>Random element from <paramref name="source"/>.</returns>
         </member>
-        <member name="M:Enderlook.Extensions.IEnumerableRandomExtensions.RandomPickWeighted``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Single})">
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.RandomPickWeighted``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Single})">
             <summary>
             Returns a random element from <paramref name="source"/> taking into account its weight produced by <paramref name="weighter"/>.
             </summary>
-            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
             <param name="source">Source to look for a random element.</param>
             <param name="weighter">Produce weight of elements.</param>
             <returns>Random element from <paramref name="source"/>.</returns>
             <exception cref="T:System.ArgumentNullException">Thrown when any of the parameters is <see langword="null"/>.</exception>
         </member>
-        <member name="M:Enderlook.Extensions.IEnumerableRandomExtensions.RandomPickWeighted``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IList{System.Single})">
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.RandomPickWeighted``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IList{System.Single})">
             <summary>
             Returns a random element from <paramref name="source"/> taking into account its weight from <paramref name="weights"/>.
             </summary>
-            <typeparam name="T">Type of the element inside <paramref name="source"/>.</typeparam>
+            <typeparam name="T">Type of the element in <paramref name="source"/>.</typeparam>
             <param name="source">Source to look for a random element.</param>
             <param name="weights">Weight of each element.</param>
             <returns>Random element from <paramref name="source"/>.</returns>
             <exception cref="T:System.ArgumentNullException">Thrown when any of the parameters is <see langword="null"/>.</exception>
             <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="source"/> have a lower length than <paramref name="weights"/>.</exception>
         </member>
-        <member name="T:Enderlook.Extensions.IEnumerableToExtensions">
+        <member name="T:Enderlook.Extensions.IEnumerableExtensions.ScanFunction`3">
             <summary>
-            Extension methods used to convert <see cref="T:System.Collections.Generic.IEnumerable`1"/> into other types.
+            Applies it over a sequence.
             </summary>
+            <typeparam name="TAccumulate">Type of acuulated value.</typeparam>
+            <typeparam name="TSource">Type of element of the sequence.</typeparam>
+            <typeparam name="TResult">Type of result.</typeparam>
+            <param name="current">Current element frmo the sequence.</param>
+            <param name="accumulate">Accumulated value.</param>
+            <returns>Intermediate result values of the accumulator and the final value.</returns>
         </member>
-        <member name="M:Enderlook.Extensions.IEnumerableToExtensions.ToDictionary``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})">
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Scan``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``0,``0})">
+            <summary>
+            Applies <paramref name="function"/> over a sequence.
+            </summary>
+            <typeparam name="TSource">Type of elements in the <paramref name="source"/>.</typeparam>
+            <param name="source"><see cref="T:System.Collections.Generic.IEnumerable`1"/> to aggregate over.</param>
+            <param name="function">Accumulator function to be invoked on each element of <paramref name="source"/>.</param>
+            <returns>Intermediate values of the accumulator and the final value.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Scan``2(System.Collections.Generic.IEnumerable{``0},``1,System.Func{``1,``0,``1})">
+            <summary>
+            Applies <paramref name="function"/> over a sequence.<br/>
+            </summary>
+            <typeparam name="TSource">Type of elements in the <paramref name="source"/>.</typeparam>
+            <typeparam name="TAccumulate">Type of the accumulator value.</typeparam>
+            <param name="source"><see cref="T:System.Collections.Generic.IEnumerable`1"/> to aggregate over.</param>
+            <param name="seed">The initial accumulator value.</param>
+            <param name="function">Accumulator function to be invoked on each element of <paramref name="source"/>.</param>
+            <returns>Intermediate values of the accumulator and the final value.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Scan``3(System.Collections.Generic.IEnumerable{``0},``1,System.Func{``1,``0,``1},System.Func{``1,``2})">
+            <summary>
+            Applies <paramref name="function"/> over a sequence.<br/>
+            </summary>
+            <typeparam name="TSource">Type of elements in the <paramref name="source"/>.</typeparam>
+            <typeparam name="TAccumulate">Type of the accumulator value.</typeparam>
+            <typeparam name="TResult">The type of the resulting value.</typeparam>
+            <param name="source"><see cref="T:System.Collections.Generic.IEnumerable`1"/> to aggregate over.</param>
+            <param name="seed">The initial accumulator value.</param>
+            <param name="function">Accumulator function to be invoked on each element of <paramref name="source"/>.</param>
+            <param name="resultSelector">Function to transform the accumulator value into the yielded value.</param>
+            <returns>Intermediate result values of the accumulator and the final value.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.Scan``3(System.Collections.Generic.IEnumerable{``0},``1,Enderlook.Extensions.IEnumerableExtensions.ScanFunction{``1,``0,``2})">
+            <summary>
+            Applies <paramref name="function"/> over a sequence.<br/>
+            </summary>
+            <typeparam name="TSource">Type of elements in the <paramref name="source"/>.</typeparam>
+            <typeparam name="TAccumulate">Type of the accumulator value.</typeparam>
+            <typeparam name="TResult">The type of the resulting value.</typeparam>
+            <param name="source"><see cref="T:System.Collections.Generic.IEnumerable`1"/> to aggregate over.</param>
+            <param name="seed">The initial accumulator value.</param>
+            <param name="function">Accumulator function to be invoked on each element of <paramref name="source"/>.</param>
+            <returns>Intermediate result values of the accumulator and the final value.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.ToDictionary``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})">
             <summary>
             Create a <see cref="T:System.Collections.Generic.Dictionary`2"/> from the <see cref="T:System.Collections.Generic.KeyValuePair`2"/> of <paramref name="source"/>.
             </summary>
@@ -815,7 +1669,7 @@
             <returns><see cref="T:System.Collections.Generic.Dictionary`2"/> from <paramref name="source"/>.</returns>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> is <see langword="null"/>.</exception>
         </member>
-        <member name="M:Enderlook.Extensions.IEnumerableToExtensions.ToDictionary``2(System.Collections.Generic.IEnumerable{System.Tuple{``0,``1}})">
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.ToDictionary``2(System.Collections.Generic.IEnumerable{System.Tuple{``0,``1}})">
             <summary>
             Create a <see cref="T:System.Collections.Generic.Dictionary`2"/> from <see cref="T:System.Tuple`2"/> of <paramref name="source"/>.
             </summary>
@@ -825,7 +1679,7 @@
             <returns><see cref="T:System.Collections.Generic.Dictionary`2"/> from <paramref name="source"/>.</returns>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> is <see langword="null"/>.</exception>
         </member>
-        <member name="M:Enderlook.Extensions.IEnumerableToExtensions.ToDictionary``2(System.Collections.Generic.IEnumerable{System.ValueTuple{``0,``1}})">
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.ToDictionary``2(System.Collections.Generic.IEnumerable{System.ValueTuple{``0,``1}})">
             <summary>
             Create a <see cref="T:System.Collections.Generic.Dictionary`2"/> from ><see cref="T:System.ValueTuple`2"/> of <paramref name="source"/>.
             </summary>
@@ -835,7 +1689,7 @@
             <returns><see cref="T:System.Collections.Generic.Dictionary`2"/> from <paramref name="source"/>.</returns>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> is <see langword="null"/>.</exception>
         </member>
-        <member name="M:Enderlook.Extensions.IEnumerableToExtensions.ToDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Collections.Generic.KeyValuePair{``1,``2}})">
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.ToDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Collections.Generic.KeyValuePair{``1,``2}})">
             <summary>
             Create a <see cref="T:System.Collections.Generic.Dictionary`2"/> from the <see cref="T:System.Collections.Generic.KeyValuePair`2"/> generated by <paramref name="predicate"/> using values of <paramref name="source"/>.
             </summary>
@@ -847,7 +1701,7 @@
             <returns><see cref="T:System.Collections.Generic.Dictionary`2"/> from <paramref name="source"/> generated by <paramref name="predicate"/>.</returns>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> or <paramref name="predicate"/> are <see langword="null"/>.</exception>
         </member>
-        <member name="M:Enderlook.Extensions.IEnumerableToExtensions.ToDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Tuple{``1,``2}})">
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.ToDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Tuple{``1,``2}})">
             <summary>
             Create a <see cref="T:System.Collections.Generic.Dictionary`2"/> from the <see cref="T:System.Tuple`2"/> generated by <paramref name="predicate"/> using values of <paramref name="source"/>.
             </summary>
@@ -859,7 +1713,7 @@
             <returns><see cref="T:System.Collections.Generic.Dictionary`2"/> from <paramref name="source"/> generated by <paramref name="predicate"/>.</returns>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> or <paramref name="predicate"/> are <see langword="null"/>.</exception>
         </member>
-        <member name="M:Enderlook.Extensions.IEnumerableToExtensions.ToDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.ValueTuple{``1,``2}})">
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.ToDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.ValueTuple{``1,``2}})">
             <summary>
             Create a <see cref="T:System.Collections.Generic.Dictionary`2"/> from the <see cref="T:System.ValueTuple`2"/> generated by <paramref name="predicate"/> using values of <paramref name="source"/>.
             </summary>
@@ -871,7 +1725,7 @@
             <returns><see cref="T:System.Collections.Generic.Dictionary`2"/> from <paramref name="source"/> generated by <paramref name="predicate"/>.</returns>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> or <paramref name="predicate"/> <see langword="null"/>.</exception>
         </member>
-        <member name="M:Enderlook.Extensions.IEnumerableToExtensions.ToLookup``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})">
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.ToLookup``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})">
             <summary>
             Create a <see cref="T:System.Linq.ILookup`2"/> from the <see cref="T:System.Collections.Generic.KeyValuePair`2"/> of <paramref name="source"/>.
             </summary>
@@ -881,7 +1735,7 @@
             <returns><see cref="T:System.Linq.ILookup`2"/> from <paramref name="source"/>.</returns>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> is <see langword="null"/>.</exception>
         </member>
-        <member name="M:Enderlook.Extensions.IEnumerableToExtensions.ToLookup``2(System.Collections.Generic.IEnumerable{System.Tuple{``0,``1}})">
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.ToLookup``2(System.Collections.Generic.IEnumerable{System.Tuple{``0,``1}})">
             <summary>
             Create a <see cref="T:System.Linq.ILookup`2"/> from the <see cref="T:System.Tuple`2"/> of <paramref name="source"/>.
             </summary>
@@ -891,7 +1745,7 @@
             <returns><see cref="T:System.Linq.ILookup`2"/> from <paramref name="source"/>.</returns>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> is <see langword="null"/>.</exception>
         </member>
-        <member name="M:Enderlook.Extensions.IEnumerableToExtensions.ToLookup``2(System.Collections.Generic.IEnumerable{System.ValueTuple{``0,``1}})">
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.ToLookup``2(System.Collections.Generic.IEnumerable{System.ValueTuple{``0,``1}})">
             <summary>
             Create a <see cref="T:System.Linq.ILookup`2"/> from the <see cref="T:System.ValueTuple`2"/> of <paramref name="source"/>.
             </summary>
@@ -901,7 +1755,7 @@
             <returns><see cref="T:System.Linq.ILookup`2"/> from <paramref name="source"/>.</returns>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> is <see langword="null"/>.</exception>
         </member>
-        <member name="M:Enderlook.Extensions.IEnumerableToExtensions.ToLookup``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Collections.Generic.KeyValuePair{``1,``2}})">
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.ToLookup``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Collections.Generic.KeyValuePair{``1,``2}})">
             <summary>
             Create a <see cref="T:System.Linq.ILookup`2"/> from the <see cref="T:System.Collections.Generic.KeyValuePair`2"/> generated by <paramref name="predicate"/> using values of <paramref name="source"/>..
             </summary>
@@ -913,7 +1767,7 @@
             <returns><see cref="T:System.Linq.ILookup`2"/> from <paramref name="source"/> generated by <paramref name="predicate"/>.</returns>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> or <paramref name="predicate"/> are <see langword="null"/>.</exception>
         </member>
-        <member name="M:Enderlook.Extensions.IEnumerableToExtensions.ToLookup``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Tuple{``1,``2}})">
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.ToLookup``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Tuple{``1,``2}})">
             <summary>
             Create a <see cref="T:System.Linq.ILookup`2"/> from the <see cref="T:System.Tuple`2"/> generated by <paramref name="predicate"/> using values of <paramref name="source"/>..
             </summary>
@@ -925,7 +1779,7 @@
             <returns><see cref="T:System.Linq.ILookup`2"/> from <paramref name="source"/> generated by <paramref name="predicate"/>.</returns>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> or <paramref name="predicate"/> are <see langword="null"/>.</exception>
         </member>
-        <member name="M:Enderlook.Extensions.IEnumerableToExtensions.ToLookup``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.ValueTuple{``1,``2}})">
+        <member name="M:Enderlook.Extensions.IEnumerableExtensions.ToLookup``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.ValueTuple{``1,``2}})">
             <summary>
             Create a <see cref="T:System.Linq.ILookup`2"/> from the <see cref="T:System.ValueTuple`2"/> generated by <paramref name="predicate"/> using values of <paramref name="source"/>..
             </summary>
@@ -987,6 +1841,25 @@
             <param name="max">Maximum value</param>
             <returns>Random number less than<paramref name="max"/>.</returns>
         </member>
+        <member name="M:Enderlook.Extensions.RandomExtension.NextByte(System.Random)">
+            <summary>
+            Produces a random <see cref="T:System.Byte"/>. 
+            </summary>
+            <param name="source"><see cref="T:System.Random"/> generator.</param>
+            <returns>Random <see cref="T:System.Byte"/></returns>
+        </member>
+        <member name="M:Enderlook.Extensions.RandomExtension.NextChar(System.Random)">
+            <summary>
+            Produces a random <see cref="T:System.Char"/>. 
+            </summary>
+            <param name="source"><see cref="T:System.Random"/> generator.</param>
+            <returns>Random <see cref="T:System.Char"/></returns>
+        </member>
+        <member name="T:Enderlook.Extensions.AssemblyExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.Reflection.Assembly"/>.
+            </summary>
+        </member>
         <member name="M:Enderlook.Extensions.AssemblyExtensions.GetReferencedAssemblyNamesRecursive(System.Reflection.Assembly,System.Collections.Generic.IEnumerable{System.Reflection.AssemblyName}@,System.Collections.Generic.IEnumerable{System.Reflection.AssemblyName}@)">
             <summary>
             Get the name of all referenced assemblies recursively.
@@ -1012,9 +1885,98 @@
             <param name="exceptions"><see cref="T:System.Exception"/>s raised while getting types.</param>
             <returns>Whenever it could get all types without error or there were errors.</returns>
         </member>
-        <member name="M:Enderlook.Extensions.ReflectionExtesions.GetValueFromFirstMember``1(System.Object,System.String)">
+        <member name="T:Enderlook.Extensions.ReflectionExtensions">
             <summary>
-            Returns the value of the first member of <see cref="!:obj"/> which:
+            Extension methods for <see cref="T:System.Reflection.MemberInfo"/> related works.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Extensions.ReflectionExtensions.GetInheritedField(System.Type,System.String,System.Reflection.BindingFlags)">
+            <summary>
+            Get the field <paramref name="name"/> recursively through the inheritance hierarchy of <paramref name="source"/>.<br/>
+            Returns the first match.
+            </summary>
+            <param name="source">Initial <see cref="T:System.Type"/> used to get the field.</param>
+            <param name="name">Name of the field to get.</param>
+            <param name="bindingFlags"><see cref="T:System.Reflection.BindingFlags"/> used to get the field.</param>
+            <returns>The first field which match the name <paramref name="name"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.ReflectionExtensions.GetInheritedFields(System.Type,System.String,System.Reflection.BindingFlags)">
+            <summary>
+            Get the fields <paramref name="name"/> recursively through the inheritance hierarchy of <paramref name="source"/>.<br/>
+            Return all the times it's declared.
+            </summary>
+            <param name="source">Initial <see cref="T:System.Type"/> used to get the field.</param>
+            <param name="name">Name of the field to get.</param>
+            <param name="bindingFlags"><see cref="T:System.Reflection.BindingFlags"/> used to get the field.</param>
+            <returns>All the fields which match the name <paramref name="name"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.ReflectionExtensions.GetInheritedProperty(System.Type,System.String,System.Reflection.BindingFlags)">
+            <summary>
+            Get the property <paramref name="name"/> recursively through the inheritance hierarchy of <paramref name="source"/>.<br/>
+            Returns the first match.
+            </summary>
+            <param name="source">Initial <see cref="T:System.Type"/> used to get the property.</param>
+            <param name="name">Name of the property to get.</param>
+            <param name="bindingFlags"><see cref="T:System.Reflection.BindingFlags"/> used to get the property.</param>
+            <returns>The first property which match the name <paramref name="name"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.ReflectionExtensions.GetInheritedProperties(System.Type,System.String,System.Reflection.BindingFlags)">
+            <summary>
+            Get the properties <paramref name="name"/> recursively through the inheritance hierarchy of <paramref name="source"/>.<br/>
+            Return all the times it's declared.
+            </summary>
+            <param name="source">Initial <see cref="T:System.Type"/> used to get the property.</param>
+            <param name="name">Name of the field to get.</param>
+            <param name="bindingFlags"><see cref="T:System.Reflection.BindingFlags"/> used to get the property.</param>
+            <returns>All the properties which match the name <paramref name="name"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.ReflectionExtensions.GetInheritedMethod(System.Type,System.String,System.Reflection.BindingFlags)">
+            <summary>
+            Get the method <paramref name="name"/> recursively through the inheritance hierarchy of <paramref name="source"/>.<br/>
+            Returns the first match.
+            </summary>
+            <param name="source">Initial <see cref="T:System.Type"/> used to get the method.</param>
+            <param name="name">Name of the method to get.</param>
+            <param name="bindingFlags"><see cref="T:System.Reflection.BindingFlags"/> used to get the method.</param>
+            <returns>The first method which match the name <paramref name="name"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.ReflectionExtensions.GetInheritedMethods(System.Type,System.String,System.Reflection.BindingFlags)">
+            <summary>
+            Get the methods <paramref name="name"/> recursively through the inheritance hierarchy of <paramref name="source"/>.<br/>
+            Return all the times it's declared.
+            </summary>
+            <param name="source">Initial <see cref="T:System.Type"/> used to get the method.</param>
+            <param name="name">Name of the field to get.</param>
+            <param name="bindingFlags"><see cref="T:System.Reflection.BindingFlags"/> used to get the method.</param>
+            <returns>All the methods which match the name <paramref name="name"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.ReflectionExtensions.GetInheritedFields(System.Type,System.Reflection.BindingFlags)">
+            <summary>
+            Get all the fields recursively through the inheritance hierarchy of <paramref name="source"/>.
+            </summary>
+            <param name="source">Initial <see cref="T:System.Type"/> used to get the field.</param>
+            <param name="bindingFlags"><see cref="T:System.Reflection.BindingFlags"/> used to get the field.</param>
+            <returns>The all the fields recursively through the inheritance hierarchy.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.ReflectionExtensions.GetInheritedProperties(System.Type,System.Reflection.BindingFlags)">
+            <summary>
+            Get all the properties recursively through the inheritance hierarchy of <paramref name="source"/>.
+            </summary>
+            <param name="source">Initial <see cref="T:System.Type"/> used to get the properties.</param>
+            <param name="bindingFlags"><see cref="T:System.Reflection.BindingFlags"/> used to get the properties.</param>
+            <returns>The all the properties recursively through the inheritance hierarchy.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.ReflectionExtensions.GetInheritedMethods(System.Type,System.Reflection.BindingFlags)">
+            <summary>
+            Get all the methods recursively through the inheritance hierarchy of <paramref name="source"/>.
+            </summary>
+            <param name="source">Initial <see cref="T:System.Type"/> used to get the methods.</param>
+            <param name="bindingFlags"><see cref="T:System.Reflection.BindingFlags"/> used to get the methods.</param>
+            <returns>The all the methods recursively through the inheritance hierarchy.</returns>
+        </member>
+        <member name="M:Enderlook.Extensions.ReflectionExtensions.GetValueFromFirstMember``1(System.Object,System.String)">
+            <summary>
+            Returns the value of the first member of <paramref name="obj"/> which:
             <list type="bullet">
                 <item><description>If <see cref="T:System.Reflection.MethodInfo"/>, its <see cref="P:System.Reflection.MethodInfo.ReturnType"/> must be <typeparamref name="T"/> and it must not require mandatory parameters (can have optionals or params).</description></item>
                 <item><description>If <see cref="T:System.Reflection.PropertyInfo"/>, its <see cref="P:System.Reflection.PropertyInfo.PropertyType"/> must be <typeparamref name="T"/> and it must have a setter.</description></item>
@@ -1024,15 +1986,15 @@
             <typeparam name="T">Result type.</typeparam>
             <param name="obj">Object to look for <see cref="T:System.Reflection.MemberInfo"/> and results.</param>
             <param name="memberName">Name of the <see cref="T:System.Reflection.MemberInfo"/> looked for.</param>
-            <returns>Result of the first <see cref="T:System.Reflection.MemberInfo"/> of <see cref="!:ojb"/> in match the criteria.</returns>
+            <returns>Result of the first <see cref="T:System.Reflection.MemberInfo"/> of <paramref name="obj"/> in match the criteria.</returns>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="obj"/> or <paramref name="memberName"/> are <see langword="null"/>.</exception>
             <exception cref="T:System.ArgumentException">Thrown when <paramref name="memberName"/> is empty.</exception>
             <exception cref="T:Enderlook.Extensions.MemberNotFoundException">Thrown no <see cref="T:System.Reflection.MemberInfo"/> with name <paramref name="memberName"/> could be found in <paramref name="obj"/>.</exception>
             <exception cref="T:Enderlook.Extensions.MatchingMemberNotFoundException">Thrown no <see cref="T:System.Reflection.MemberInfo"/> with name <paramref name="memberName"/> in <paramref name="obj"/> matched the necessary requirements.</exception>
         </member>
-        <member name="M:Enderlook.Extensions.ReflectionExtesions.GetFirstMemberInfoInMatchReturn``1(System.Type,System.String)">
+        <member name="M:Enderlook.Extensions.ReflectionExtensions.GetFirstMemberInfoInMatchReturn``1(System.Type,System.String)">
             <summary>
-            Returns the first member of <see cref="!:obj"/> which:
+            Returns the first member of <paramref name="type"/> which:
             <list type="bullet">
                 <item><description>If <see cref="T:System.Reflection.MethodInfo"/>, its <see cref="P:System.Reflection.MethodInfo.ReturnType"/> must be <typeparamref name="T"/> and it must not require mandatory parameters (can have optionals or params).</description></item>
                 <item><description>If <see cref="T:System.Reflection.PropertyInfo"/>, its <see cref="P:System.Reflection.PropertyInfo.PropertyType"/> must be <typeparamref name="T"/> and it must have a setter.</description></item>
@@ -1043,15 +2005,15 @@
             <typeparam name="T">Result type.</typeparam>
             <param name="type">Type to look for <see cref="T:System.Reflection.MemberInfo"/> and results.</param>
             <param name="memberName">Name of the <see cref="T:System.Reflection.MemberInfo"/> looked for.</param>
-            <returns>Result of the first <see cref="T:System.Reflection.MemberInfo"/> of <see cref="!:ojb"/> in match the criteria.</returns>
+            <returns>Result of the first <see cref="T:System.Reflection.MemberInfo"/> of <paramref name="type"/> in match the criteria.</returns>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="type"/> or <paramref name="memberName"/> are <see langword="null"/>.</exception>
             <exception cref="T:System.ArgumentException">Thrown when <paramref name="memberName"/> is empty.</exception>
-            <exception cref="T:Enderlook.Extensions.MemberNotFoundException">Thrown no <see cref="T:System.Reflection.MemberInfo"/> with name <paramref name="memberName"/> could be found in <paramref name="obj"/>.</exception>
-            <exception cref="T:Enderlook.Extensions.MatchingMemberNotFoundException">Thrown no <see cref="T:System.Reflection.MemberInfo"/> with name <paramref name="memberName"/> in <paramref name="obj"/> matched the necessary requirements.</exception>
+            <exception cref="T:Enderlook.Extensions.MemberNotFoundException">Thrown no <see cref="T:System.Reflection.MemberInfo"/> with name <paramref name="memberName"/> could be found in <paramref name="type"/>.</exception>
+            <exception cref="T:Enderlook.Extensions.MatchingMemberNotFoundException">Thrown no <see cref="T:System.Reflection.MemberInfo"/> with name <paramref name="memberName"/> in <paramref name="type"/> matched the necessary requirements.</exception>
         </member>
-        <member name="M:Enderlook.Extensions.ReflectionExtesions.GetFirstMemberInfoInMatchReturn``2(System.String)">
+        <member name="M:Enderlook.Extensions.ReflectionExtensions.GetFirstMemberInfoInMatchReturn``2(System.String)">
             <summary>
-            Returns the first member of <see cref="!:obj"/> which:
+            Returns the first member of <paramref name="memberName"/> which:
             <list type="bullet">
                 <item><description>If <see cref="T:System.Reflection.MethodInfo"/>, its <see cref="P:System.Reflection.MethodInfo.ReturnType"/> must be <typeparamref name="T"/> and it must not require mandatory parameters (can have optionals or params).</description></item>
                 <item><description>If <see cref="T:System.Reflection.PropertyInfo"/>, its <see cref="P:System.Reflection.PropertyInfo.PropertyType"/> must be <typeparamref name="T"/> and it must have a setter.</description></item>
@@ -1062,13 +2024,13 @@
             <typeparam name="T">Type to look for <see cref="T:System.Reflection.MemberInfo"/> and results.</typeparam>
             <typeparam name="U">Result type.</typeparam>
             <param name="memberName">Name of the <see cref="T:System.Reflection.MemberInfo"/> looked for.</param>
-            <returns>Result of the first <see cref="T:System.Reflection.MemberInfo"/> of <see cref="!:ojb"/> in match the criteria.</returns>
-            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="type"/> or <paramref name="memberName"/> are <see langword="null"/>.</exception>
+            <returns>Result of the first <see cref="T:System.Reflection.MemberInfo"/> of <paramref name="memberName"/> in match the criteria.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="memberName"/> or <paramref name="memberName"/> are <see langword="null"/>.</exception>
             <exception cref="T:System.ArgumentException">Thrown when <paramref name="memberName"/> is empty.</exception>
-            <exception cref="T:Enderlook.Extensions.MemberNotFoundException">Thrown no <see cref="T:System.Reflection.MemberInfo"/> with name <paramref name="memberName"/> could be found in <paramref name="obj"/>.</exception>
-            <exception cref="T:Enderlook.Extensions.MatchingMemberNotFoundException">Thrown no <see cref="T:System.Reflection.MemberInfo"/> with name <paramref name="memberName"/> in <paramref name="obj"/> matched the necessary requirements.</exception>
+            <exception cref="T:Enderlook.Extensions.MemberNotFoundException">Thrown no <see cref="T:System.Reflection.MemberInfo"/> with name <paramref name="memberName"/> could be found in <paramref name="memberName"/>.</exception>
+            <exception cref="T:Enderlook.Extensions.MatchingMemberNotFoundException">Thrown no <see cref="T:System.Reflection.MemberInfo"/> with name <paramref name="memberName"/> in <paramref name="memberName"/> matched the necessary requirements.</exception>
         </member>
-        <member name="M:Enderlook.Extensions.ReflectionExtesions.Invoke(System.Reflection.MethodInfo,System.Object)">
+        <member name="M:Enderlook.Extensions.ReflectionExtensions.Invoke(System.Reflection.MethodInfo,System.Object)">
             <summary>
             Invokes <paramref name="methodInfo"/> using <paramref name="obj"/> has it class instance and without any parameter (expect optionals).
             </summary>
@@ -1077,31 +2039,31 @@
             <returns>Result of the method invoked.</returns>
             <exception cref="T:System.ArgumentNullException">Throw when <paramref name="methodInfo"/> is <see langword="null"/>.</exception>
         </member>
-        <member name="M:Enderlook.Extensions.ReflectionExtesions.HasNoMandatoryParameters(System.Reflection.MethodInfo)">
+        <member name="M:Enderlook.Extensions.ReflectionExtensions.HasNoMandatoryParameters(System.Reflection.MethodInfo)">
             <summary>
             Return if the <paramref name="methodInfo"/> only has optional or params parameters.
             </summary>
             <param name="methodInfo">Method to check.</param>
             <returns>Whenever it only has optional or params parameters.</returns>
-            <see cref="!:https://stackoverflow.com/a/627668/7655838"/>
+            <see url="https://stackoverflow.com/a/627668/7655838"/>
         </member>
-        <member name="M:Enderlook.Extensions.ReflectionExtesions.HasNoMandatoryParameters(System.Reflection.MethodInfo,System.Object[]@)">
+        <member name="M:Enderlook.Extensions.ReflectionExtensions.HasNoMandatoryParameters(System.Reflection.MethodInfo,System.Object[]@)">
             <summary>
             Return if the <paramref name="methodInfo"/> only has optional or params parameters.
             </summary>
             <param name="methodInfo">Method to check.</param>
             <param name="parameters">Array with default parameters to invoke.</param>
             <returns>Whenever it only has optional or params parameters.</returns>
-            <see cref="!:https://stackoverflow.com/a/627668/7655838"/>
+            <see url="https://stackoverflow.com/a/627668/7655838"/>
         </member>
-        <member name="M:Enderlook.Extensions.ReflectionExtesions.IsOptionalOrParam(System.Reflection.ParameterInfo)">
+        <member name="M:Enderlook.Extensions.ReflectionExtensions.IsOptionalOrParam(System.Reflection.ParameterInfo)">
             <summary>
             Determines if the <paramref name="parameterInfo"/> is optional or param, or not.
             </summary>
             <param name="parameterInfo"><paramref name="parameterInfo"/> to check.</param>
             <returns>Whenever it's optional or para, or if it's neither of them.</returns>
         </member>
-        <member name="M:Enderlook.Extensions.ReflectionExtesions.IsOptionalOrParam(System.Reflection.ParameterInfo,System.Object@)">
+        <member name="M:Enderlook.Extensions.ReflectionExtensions.IsOptionalOrParam(System.Reflection.ParameterInfo,System.Object@)">
             <summary>
             Determines if the <paramref name="parameterInfo"/> is optional or param, or not.
             </summary>
@@ -1109,42 +2071,42 @@
             <param name="parameter">Parameter that should by passed to an invoker if the method returns <see langword="true"/>.</param>
             <returns>Whenever it's optional or para, or if it's neither of them.</returns>
         </member>
-        <member name="M:Enderlook.Extensions.ReflectionExtesions.GetDefault(System.Reflection.TypeInfo)">
+        <member name="M:Enderlook.Extensions.ReflectionExtensions.GetDefault(System.Reflection.TypeInfo)">
             <summary>
             Get default value of the given <see cref="T:System.Reflection.TypeInfo"/> <see cref="M:System.Reflection.TypeInfo.AsType"/>.
             </summary>
             <param name="typeInfo"><see cref="T:System.Reflection.TypeInfo"/> to get default value.</param>
             <returns>Default value of <see cref="T:System.Reflection.TypeInfo"/>.</returns>
         </member>
-        <member name="M:Enderlook.Extensions.ReflectionExtesions.GetDefault(System.Type)">
+        <member name="M:Enderlook.Extensions.ReflectionExtensions.GetDefault(System.Type)">
             <summary>
             Get default value of the given <see cref="T:System.Type"/>.
             </summary>
             <param name="type"><see cref="T:System.Type"/> to get default value.</param>
             <returns>Default value of <see cref="T:System.Type"/>.</returns>
         </member>
-        <member name="M:Enderlook.Extensions.ReflectionExtesions.GetBackingFieldName(System.String)">
+        <member name="M:Enderlook.Extensions.ReflectionExtensions.GetBackingFieldName(System.String)">
             <summary>
             Get the name of the backing field of a property.
             </summary>
             <param name="nameOfProperty">Name of the property.</param>
             <returns>Name of the backing field.</returns>
         </member>
-        <member name="M:Enderlook.Extensions.ReflectionExtesions.GetPropertyNameOfBackingField(System.String)">
+        <member name="M:Enderlook.Extensions.ReflectionExtensions.GetPropertyNameOfBackingField(System.String)">
             <summary>
             Get the name of the property of a backing field;
             </summary>
             <param name="backingFieldName">Name of the backing field.</param>
             <returns>Name of the property.</returns>
         </member>
-        <member name="M:Enderlook.Extensions.ReflectionExtesions.IsArrayOrList(System.Type)">
+        <member name="M:Enderlook.Extensions.ReflectionExtensions.IsArrayOrList(System.Type)">
             <summary>
             Determines if <paramref name="type"/> is an array or a <see cref="T:System.Collections.Generic.List`1"/>.
             </summary>
             <param name="type"><see cref="T:System.Type"/> to check.</param>
             <returns>Whenever it's an array or <see cref="T:System.Collections.Generic.List`1"/>, or if not.</returns>
         </member>
-        <member name="M:Enderlook.Extensions.ReflectionExtesions.GetElementTypeOfArrayOrList(System.Type)">
+        <member name="M:Enderlook.Extensions.ReflectionExtensions.GetElementTypeOfArrayOrList(System.Type)">
             <summary>
             Get the element <see cref="T:System.Type"/> of the array or list <see cref="T:System.Type"/> <paramref name="type"/>.
             </summary>
@@ -1152,40 +2114,13 @@
             <returns>Element <see cref="T:System.Type"/>.</returns>
             <exception cref="T:System.InvalidOperationException">Thrown when <paramref name="type"/> isn't array nor a concrete <see cref="T:System.Type"/> of <see cref="T:System.Collections.Generic.List`1"/>.</exception>
         </member>
-        <member name="M:Enderlook.Extensions.ReflectionExtesions.TryGetElementTypeOfArrayOrList(System.Type,System.Type@)">
+        <member name="M:Enderlook.Extensions.ReflectionExtensions.TryGetElementTypeOfArrayOrList(System.Type,System.Type@)">
             <summary>
             Try get element <see cref="T:System.Type"/> of <paramref name="type"/> if it is an array or list.
             </summary>
             <param name="type"><see cref="T:System.Type"/> to check.</param>
             <param name="elementType">Element <see cref="T:System.Type"/> of <paramref name="type"/>, if returns <see langword="true"/>.</param>
             <returns>Whenever it could get the element <see cref="T:System.Type"/> or not (because it wasn't an array nor a concrete <see cref="T:System.Type"/> of <see cref="T:System.Collections.Generic.List`1"/>).</returns>
-        </member>
-        <member name="M:Enderlook.Extensions.ReflectionInheritedExtensions.GetInheritedField(System.Type,System.String,System.Reflection.BindingFlags)">
-            <summary>
-            Get the field <paramref name="name"/> recursively through the inheritance hierarchy of <paramref name="source"/>.
-            </summary>
-            <param name="source">Initial <see cref="T:System.Type"/> used to get the field.</param>
-            <param name="name">Name of the field to get.</param>
-            <param name="bindingFlags"><see cref="T:System.Reflection.BindingFlags"/> used to get the field.</param>
-            <returns>The first field which match the name <paramref name="name"/>.</returns>
-        </member>
-        <member name="M:Enderlook.Extensions.ReflectionInheritedExtensions.GetInheritedProperty(System.Type,System.String,System.Reflection.BindingFlags)">
-            <summary>
-            Get the property <paramref name="name"/> recursively through the inheritance hierarchy of <paramref name="source"/>.
-            </summary>
-            <param name="source">Initial <see cref="T:System.Type"/> used to get the property.</param>
-            <param name="name">Name of the property to get.</param>
-            <param name="bindingFlags"><see cref="T:System.Reflection.BindingFlags"/> used to get the property.</param>
-            <returns>The first property which match the name <paramref name="name"/>.</returns>
-        </member>
-        <member name="M:Enderlook.Extensions.ReflectionInheritedExtensions.GetInheritedMethod(System.Type,System.String,System.Reflection.BindingFlags)">
-            <summary>
-            Get the method <paramref name="name"/> recursively through the inheritance hierarchy of <paramref name="source"/>.
-            </summary>
-            <param name="source">Initial <see cref="T:System.Type"/> used to get the method.</param>
-            <param name="name">Name of the method to get.</param>
-            <param name="bindingFlags"><see cref="T:System.Reflection.BindingFlags"/> used to get the method.</param>
-            <returns>The first method which match the name <paramref name="name"/>.</returns>
         </member>
         <member name="T:Enderlook.Extensions.StringExtensions">
             <summary>
@@ -1346,87 +2281,6 @@
             <param name="source">String to convert.</param>
             <returns>Converted string.</returns>
             <example>Kebab Case -> kebab-case</example>
-        </member>
-        <member name="T:Enderlook.Extensions.code.Linq.Transposer">
-            <summary>
-            Helper extensions for <see cref="T:System.Collections.Generic.IEnumerable`1"/> related to transposition.
-            </summary>
-        </member>
-        <member name="T:Enderlook.Extensions.code.Linq.Transposer.TransposeMode">
-            <summary>
-            Determines how non-uniform enumerations will be handled.
-            </summary>
-        </member>
-        <member name="F:Enderlook.Extensions.code.Linq.Transposer.TransposeMode.StripOnMissing">
-            <summary>
-            It strip rows that have missing elements.
-            </summary>
-        </member>
-        <member name="F:Enderlook.Extensions.code.Linq.Transposer.TransposeMode.DefaultOnMissing">
-            <summary>
-            Replace missing elements with default valuess.
-            </summary>
-        </member>
-        <member name="F:Enderlook.Extensions.code.Linq.Transposer.TransposeMode.ErrorOnMissing">
-            <summary>
-            Raise <see cref="T:System.ArgumentOutOfRangeException"/> when there is a missing value.
-            </summary>
-        </member>
-        <member name="M:Enderlook.Extensions.code.Linq.Transposer.Transpose``1(System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{``0}},Enderlook.Extensions.code.Linq.Transposer.TransposeMode)">
-            <summary>
-            Transpose <paramref name="source"/>.
-            </summary>
-            <typeparam name="T">Type of element of the nested <see cref="T:System.Collections.Generic.IEnumerable`1"/>.</typeparam>
-            <param name="source">Sequence which will be transposed.</param>
-            <param name="mode">How non-uniform sequences are handled.</param>
-            <returns>Transposed <paramref name="source"/>.</returns>
-        </member>
-        <member name="M:Enderlook.Extensions.code.Linq.Transposer.Transpose``1(System.Collections.Generic.IList{System.Collections.Generic.IList{``0}},Enderlook.Extensions.code.Linq.Transposer.TransposeMode)">
-            <summary>
-            Transpose <paramref name="source"/>.
-            </summary>
-            <typeparam name="T">Type of element of the nested <see cref="T:System.Collections.Generic.IEnumerable`1"/>.</typeparam>
-            <param name="source">Sequence which will be transposed.</param>
-            <param name="mode">How non-uniform sequences are handled.</param>
-            <returns>Transposed <paramref name="source"/>.</returns>
-        </member>
-        <member name="M:Enderlook.Extensions.code.Linq.Transposer.TransposeInPlace``1(``0[0:,0:])">
-            <summary>
-            Transpose the values of <paramref name="source"/> in place.<br/>
-            It can only be used in square 2D multidimensional arrays.
-            </summary>
-            <typeparam name="T">Type of element in <paramref name="source"/>.</typeparam>
-            <param name="source">Array to be transposed in place.</param>
-            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> is <see langword="null"/>.</exception>
-            <exception cref="T:System.ArgumentException">Thrown when <paramref name="source"/> width and height aren't the same.</exception>
-        </member>
-        <member name="M:Enderlook.Extensions.code.Linq.Transposer.TransposeInPlace``1(``0[][])">
-            <summary>
-            Transpose the values of <paramref name="source"/> in place.<br/>
-            It can only be used in square 2D multidimensional arrays.
-            </summary>
-            <typeparam name="T">Type of element in <paramref name="source"/>.</typeparam>
-            <param name="source">Array to be transposed in place.</param>
-            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> is <see langword="null"/>.</exception>
-            <exception cref="T:System.ArgumentException">Thrown when <paramref name="source"/> width and height aren't the same.</exception>
-        </member>
-        <member name="M:Enderlook.Extensions.code.Linq.Transposer.TransposeInPlace``1(System.Collections.Generic.IList{System.Collections.Generic.IList{``0}})">
-            <summary>
-            Transpose the values of <paramref name="source"/> in place.<br/>
-            It can only be used in square 2D multidimensional arrays.
-            </summary>
-            <typeparam name="T">Type of element in <paramref name="source"/>.</typeparam>
-            <param name="source">Array to be transposed in place.</param>
-            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="source"/> is <see langword="null"/>.</exception>
-            <exception cref="T:System.ArgumentException">Thrown when <paramref name="source"/> width and height aren't the same.</exception>
-        </member>
-        <member name="M:Enderlook.Extensions.code.Linq.Transposer.Transpose``1(``0[0:,0:])">
-            <summary>
-            Transpose elements of <paramref name="source"/>.
-            </summary>
-            <typeparam name="T">Type of element in <paramref name="source"/>.</typeparam>
-            <param name="source">Array values to be transposed.</param>
-            <returns>Transposed version of <paramref name="source"/>.</returns>
         </member>
     </members>
 </doc>

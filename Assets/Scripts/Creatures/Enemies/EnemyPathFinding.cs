@@ -1,21 +1,16 @@
-﻿using Game.Scene;
+﻿using Enderlook.Unity.Utils.Clockworks;
+
+using Game.Scene;
 
 using UnityEngine;
 using UnityEngine.AI;
 
 namespace Game.Creatures
 {
-    [RequireComponent(typeof(NavMeshAgent)), DefaultExecutionOrder(10)]
-    public class EnemyPathFinding : MonoBehaviour, IPushable
+    [RequireComponent(typeof(NavMeshAgent)), AddComponentMenu("Game/Creatures/Enemy/Path Finding"), DefaultExecutionOrder(10)]
+    public class EnemyPathFinding : MonoBehaviour, IPushable, IDie, IStunnable
     {
-        public NavMeshAgent ThisNavMeshAgent => navMeshAgent;
-
-        public float TargetDistance => targetDistance;
-
-        public Animator ThisAnimator => animator;
-
-        public string WalkAnimation => walkAnimation;
-
+#pragma warning disable CS0649
         [SerializeField, Tooltip("Animator component.")]
         private Animator animator;
 
@@ -31,26 +26,52 @@ namespace Game.Creatures
         [SerializeField, Tooltip("Used to determine push strength.")]
         private float mass = 1;
 
+        [SerializeField, Range(.5f, 1), Tooltip("Speed multiplier on mobile")]
+        private float speedMultiplier = 1f;
+#pragma warning restore CS0649
+
+        public float TargetDistance { get; private set; }
+
+        public Vector3 TargetPosition { get; private set; }
+
         private NavMeshAgent navMeshAgent;
         private NavMeshPath crystalPath;
         private NavMeshPath playerPath;
+
+        private int lastCheckAtFrame;
         private int navMeshFrameCheck;
-
-        private DestroyWhenDie destroyWhenDie;
-
         private static int frameCheck;
-        private const int MaxCheckFrame = 10;
+        private const int MAX_CHECK_FRAME = 10;
 
-        private float targetDistance;
+        private bool isDead;
+        private bool isStunned;
+        private Clockwork stunningClockwork;
+
+        private bool canWalk = true;
+        public bool CanWalk {
+            get => canWalk;
+            set {
+                if (value == canWalk)
+                    return;
+                animator.SetBool(walkAnimation, value);
+                canWalk = value;
+                navMeshAgent.isStopped = !value;
+                if ((lastCheckAtFrame - Time.frameCount) > MAX_CHECK_FRAME)
+                    DetermineTarget();
+            }
+        }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()
         {
-            destroyWhenDie = GetComponent<DestroyWhenDie>();
             navMeshAgent = GetComponent<NavMeshAgent>();
             crystalPath = new NavMeshPath();
             playerPath = new NavMeshPath();
-            navMeshFrameCheck = (frameCheck++) % MaxCheckFrame;
+            navMeshFrameCheck = frameCheck++ % MAX_CHECK_FRAME;
+            stunningClockwork = new Clockwork(0, UnStun, true, 0);
+#if UNITY_ANDROID
+            navMeshAgent.speed *= speedMultiplier;
+#endif
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
@@ -64,29 +85,38 @@ namespace Game.Creatures
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Update()
         {
-            if (!destroyWhenDie.IsDead)
+            if (GameManager.HasWon)
             {
-                if (Time.frameCount % MaxCheckFrame == navMeshFrameCheck)
-                    DetermineTarget();
+                navMeshAgent.isStopped = true;
+                return;
             }
-            else
-                navMeshAgent.enabled = false;
+
+            if (isDead)
+                return;
+
+            if (isStunned)
+                stunningClockwork.UpdateBehaviour(Time.deltaTime);
+            else if (Time.frameCount % MAX_CHECK_FRAME == navMeshFrameCheck)
+                    DetermineTarget();
         }
 
         private void DetermineTarget()
         {
-            float crystalDistance = GetPathDistance(CrystalAndPlayerTracker.Crystal, crystalPath);
-            float playerDistance = GetPathDistance(CrystalAndPlayerTracker.Player, playerPath);
+            lastCheckAtFrame = Time.frameCount;
+            float crystalDistance = GetPathDistance(CrystalAndPlayerTracker.CrystalPosition, crystalPath);
+            float playerDistance = GetPathDistance(CrystalAndPlayerTracker.PlayerPosition, playerPath);
 
             if (crystalDistance * (1 / crystalSeekWeight) < playerDistance * (1 / playerSeekWeight))
             {
-                targetDistance = crystalDistance;
+                TargetDistance = crystalDistance;
                 navMeshAgent.SetPath(crystalPath);
+                TargetPosition = CrystalAndPlayerTracker.CrystalPosition;
             }
             else
             {
-                targetDistance = playerDistance;
+                TargetDistance = playerDistance;
                 navMeshAgent.SetPath(playerPath);
+                TargetPosition = CrystalAndPlayerTracker.PlayerPosition;
             }
         }
 
@@ -95,13 +125,13 @@ namespace Game.Creatures
             switch (mode)
             {
                 case ForceMode.Force:
-                    navMeshAgent.velocity += force * mass / (Time.deltaTime * Time.deltaTime);
+                    navMeshAgent.velocity += force / mass * Time.deltaTime;
                     break;
                 case ForceMode.Acceleration:
-                    navMeshAgent.velocity += force / (Time.deltaTime * Time.deltaTime);
+                    navMeshAgent.velocity += force * Time.deltaTime;
                     break;
                 case ForceMode.Impulse:
-                    navMeshAgent.velocity += force * mass;
+                    navMeshAgent.velocity += force / mass;
                     break;
                 case ForceMode.VelocityChange:
                     navMeshAgent.velocity += force;
@@ -127,6 +157,27 @@ namespace Game.Creatures
                 distance = Mathf.Infinity;
 
             return distance;
+        }
+
+        void IDie.Die()
+        {
+            isDead = true;
+            navMeshAgent.isStopped = true;
+        }
+
+        public void Stun(float duration)
+        {
+            isStunned = true;
+            navMeshAgent.isStopped = true;
+            stunningClockwork.ResetCycles(1);
+            stunningClockwork.ResetTime(duration);
+        }
+
+        private void UnStun()
+        {
+            isStunned = false;
+            if (!isDead)
+                navMeshAgent.isStopped = false;
         }
     }
 }

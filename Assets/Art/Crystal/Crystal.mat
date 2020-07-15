@@ -32,11 +32,17 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _CrackMaskPower: 5
+    - _CrackPower: 4
     - _CracksIntensity: 0.5
-    - _CracksScale: 5
+    - _CracksMaskScale: 5
+    - _CracksScale: 6
     - _Float0: 1
     - _Float2: 1
-    - _Health: 0
+    - _FresnelPower: 2
+    - _FresnelScale: 0.4
+    - _Health: 1
+    - _HealthScalingPower: 2.5
     - _Int0: 0
     - _Intensity: 1.25
     - _MaskScale: 5
@@ -45,8 +51,15 @@ Material:
     - _NoiseOpacity: 0.2
     - _NoiseSca: 3
     - _NoiseScale: 2
+    - _Opacity: 0.65
+    - _OpacityFactor: 15
     - _Power: 3.24
+    - _PrimaryPower: 3
+    - _RotationSpeed: 0.65
     - _Ruptures: 1
+    - _Scale: 7
+    - _SecondaryPower: 2.5
+    - _TextureSpeed: 0.65
     - _ToggleSwitch0: 0
     - _TransAmbient: 0.2
     - _TransDirect: 1
@@ -58,5 +71,7 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 0, b: 0.776, a: 1}
     - _Color0: {r: 0, g: 0, b: 0, a: 0}
+    - _Primary: {r: 0.8862745, g: 0.17254902, b: 0.8784314, a: 0}
+    - _Secondary: {r: 0.8281332, g: 0.2028302, b: 1, a: 0}
     - _VTInfoBlock: {r: 0, g: 0, b: 0, a: 0}
     - _Velocity: {r: 0.1, g: 0.1, b: 0, a: 50}

@@ -10,12 +10,13 @@ namespace Game.Scene
     public class SpawnPointsManager
     {
         // Keep name fields in sync with EnemySpawnerEditor
-
+#pragma warning disable CS0649
         [SerializeField, Tooltip("Points where enemies can spawn.")]
         private Vector3[] points;
 
         [SerializeField, Tooltip("Determine the radius checked for collision on each point.")]
         private float distanceCheck = 1;
+#pragma warning restore CS0649
 
         private const float ADDITIONAL_CHECK = 0.1f;
 

@@ -18,7 +18,9 @@ namespace Game.Scene
         private readonly static GUIContent RANGE_CONTENT = new GUIContent("Range", "Determines the difficulty range showed in the table.");
 
         private readonly static MethodInfo getValueEnemyLevelData = typeof(EnemyLevelData).GetMethod("GetValue", BindingFlags.NonPublic | BindingFlags.Static);
+        private readonly static MethodInfo getEnemyLimitEnemyLevelData = typeof(EnemyLevelData).GetMethod("GetEnemyLimit", BindingFlags.NonPublic | BindingFlags.Instance);
         private readonly static MethodInfo getValueEnemyLevelDataEditorOnly = typeof(EnemyLevelData).GetMethod("GetValueEditorOnly", BindingFlags.NonPublic | BindingFlags.Static);
+        private readonly static MethodInfo getEnemyLimitEnemyLevelDataEditorOnly = typeof(EnemyLevelData).GetMethod("GetEnemyLimitEditorOnly", BindingFlags.NonPublic | BindingFlags.Instance);
         private readonly static MethodInfo getValueEnemyData = typeof(EnemyData).GetMethod("GetValue", BindingFlags.NonPublic | BindingFlags.Instance);
         private readonly static FieldInfo health = typeof(EnemyData).GetField("health", BindingFlags.NonPublic | BindingFlags.Instance);
         private readonly static FieldInfo damage = typeof(EnemyData).GetField("damage", BindingFlags.NonPublic | BindingFlags.Instance);
@@ -42,7 +44,7 @@ namespace Game.Scene
                     EditorGUILayout.BeginVertical(GUI.skin.box);
                     EditorGUILayout.LabelField("Current Difficulty", GameManager.Difficulty.ToString());
 
-                    EditorGUILayout.LabelField("Maximum Enemies", getValueEnemyLevelData.Invoke(null, new object[] { maximumEnemies.vector4Value }).ToString());
+                    EditorGUILayout.LabelField("Maximum Enemies", getEnemyLimitEnemyLevelData.Invoke(target, new object[] { maximumEnemies.vector4Value }).ToString());
 
                     EditorGUILayout.LabelField("Enemies/Seconds", getValueEnemyLevelData.Invoke(null, new object[] { enemiesPerSecond.vector4Value }).ToString());
                     EditorGUILayout.EndVertical();
@@ -106,8 +108,13 @@ namespace Game.Scene
                         range.x,
                         range.y,
                         new[] { maximumEnemies, enemiesPerSecond },
-                        (property, difficulty) => (float)getValueEnemyLevelDataEditorOnly.Invoke(null, new object[] { property.vector4Value, difficulty })
-                    );                    
+                        (property, difficulty) =>
+                        {
+                            object[] parameters = new object[] { property.vector4Value, difficulty };
+                            if (property == maximumEnemies)
+                                return (float)getEnemyLimitEnemyLevelDataEditorOnly.Invoke(target, parameters);
+                            return (float)getValueEnemyLevelDataEditorOnly.Invoke(null, parameters);
+                        });
                 }
             }
         }

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 8362014100527030265, guid: 1ead482a57f2731459aedc005ad1fc1c,
     type: 3}
-  difficultyThreshold: 2
-  difficultyCap: 2
+  difficultyThreshold: 3
+  difficultyCap: 4
   weight: {x: 2, y: 0.5}
-  health: {x: 0.5, y: 1}
+  health: {x: 0.4, y: 1}
   damage: {x: 0.25, y: 1}

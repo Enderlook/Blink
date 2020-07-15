@@ -2,10 +2,13 @@
 #if UNITY_EDITOR
 using Enderlook.Unity.Utils.UnityEditor;
 #endif
+
 using Game.Creatures;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
+
 using UnityEngine;
 
 namespace Game.Scene
@@ -32,9 +35,6 @@ namespace Game.Scene
         [SerializeField, Tooltip("Calculates enemy health multiplier.\nHealth Multiplier = Mathf.Min(Difficulty - Threshold, Cap) * X + Y.")]
         private Vector2 health = new Vector2(1, 0);
 
-        [SerializeField, Tooltip("Calculates enemy damage multiplier.\nDamage Multiplier = Mathf.Min(Difficulty - Threshold, Cap) * X + Y.")]
-        private Vector2 damage = new Vector2(1, 0);
-
         public float GetWeight() => Mathf.Max(GetValue(weight), 0);
 
         public GameObject SpawnEnemy()
@@ -55,7 +55,7 @@ namespace Game.Scene
             return instance;
         }
 
-        private int GetMultipliedFactor(int value, Vector2 parameters)=> Mathf.RoundToInt(GetValue(parameters) * value);
+        private int GetMultipliedFactor(int value, Vector2 parameters) => Mathf.RoundToInt(GetValue(parameters) * value);
 
         private float GetValue(Vector2 parameters)
             => Mathf.Min(GameManager.Difficulty - difficultyThreshold, difficultyCap) * parameters.x + parameters.y;

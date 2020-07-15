@@ -6,9 +6,33 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
+    path: Assets/Scenes/Main Menu.unity
     guid: 145a4117461d47e4dac35a75a342df0b
   - enabled: 1
-    path: Assets/Scenes/Level 1.unity
+    path: Assets/Scenes/Core.unity
+    guid: 0fe246a6e39b0874c9dccece9a083ed1
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level Earth.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level Ice.unity
+    guid: 9a639ae821434184084964b7d94f2faa
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level Fire.unity
+    guid: bbd8eaea5afd7e642bbd8e3def9bbfcb
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level Air.unity
+    guid: 79724faadb362594bb775adc6817e1df
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level Air 2.unity
+    guid: a459f4511fb92cd47bec8c1d7672ed7d
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level Earth 2.unity
+    guid: 049abeabb4b8b2546a96fbe9d386868c
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level Fire 2.unity
+    guid: 8a5147aae4659de41b918abe7b76bcc4
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level Ice 2.unity
+    guid: 36b9144426f2b4342a04dd08eec7e4a6
   m_configObjects: {}

@@ -12,6 +12,36 @@ PrefabInstance:
       propertyPath: baseAtom
       value: 
       objectReference: {fileID: -3525646224441808712}
+    - target: {fileID: 2442326860024221290, guid: 3aff82f3ef27b2a49985700b33e31991,
+        type: 3}
+      propertyPath: valueToSpawn.min
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442326860024221290, guid: 3aff82f3ef27b2a49985700b33e31991,
+        type: 3}
+      propertyPath: valueToSpawn.max
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099877963296298249, guid: 3aff82f3ef27b2a49985700b33e31991,
+        type: 3}
+      propertyPath: energyToSpawn.min
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099877963296298249, guid: 3aff82f3ef27b2a49985700b33e31991,
+        type: 3}
+      propertyPath: energyToSpawn.max
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099877963296298249, guid: 3aff82f3ef27b2a49985700b33e31991,
+        type: 3}
+      propertyPath: valueToSpawn.min
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099877963296298249, guid: 3aff82f3ef27b2a49985700b33e31991,
+        type: 3}
+      propertyPath: valueToSpawn.max
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 3402435639833116197, guid: 3aff82f3ef27b2a49985700b33e31991,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -81,6 +111,27 @@ PrefabInstance:
         type: 3}
       propertyPath: basicAttack
       value: Thow Projectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 5999222558542002253, guid: 3aff82f3ef27b2a49985700b33e31991,
+        type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5999222558542002253, guid: 3aff82f3ef27b2a49985700b33e31991,
+        type: 3}
+      propertyPath: hasProjectile
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5999222558542002253, guid: 3aff82f3ef27b2a49985700b33e31991,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 6988304715198132126, guid: 580963a91926d3742b0de4ce66d7ed10,
+        type: 3}
+    - target: {fileID: 7097982823217107848, guid: 3aff82f3ef27b2a49985700b33e31991,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8116652157970478327, guid: 3aff82f3ef27b2a49985700b33e31991,
         type: 3}

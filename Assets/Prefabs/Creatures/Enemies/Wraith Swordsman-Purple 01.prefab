@@ -7,16 +7,56 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1922355704522019973, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2962016791602870819, guid: ec840790b738373489810ebf165f7199,
         type: 3}
       propertyPath: baseAtom
       value: 
       objectReference: {fileID: -6516640405812693818}
+    - target: {fileID: 3220008560783399071, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: energyToSpawn.min
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3220008560783399071, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: energyToSpawn.max
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3220008560783399071, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: valueToSpawn.min
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3220008560783399071, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: valueToSpawn.max
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3281733224939759508, guid: ec840790b738373489810ebf165f7199,
         type: 3}
       propertyPath: baseAtom
       value: 
       objectReference: {fileID: 339086536735261138}
+    - target: {fileID: 3917812919741757975, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279119262023984044, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: valueToSpawn.min
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279119262023984044, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: valueToSpawn.max
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8081955460697015397, guid: ec840790b738373489810ebf165f7199,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -81,6 +121,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wraith Swordsman-Purple 01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372086392984397763, guid: ec840790b738373489810ebf165f7199,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1352534644918109400, guid: ec840790b738373489810ebf165f7199, type: 3}

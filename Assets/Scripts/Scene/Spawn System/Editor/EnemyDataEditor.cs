@@ -37,14 +37,11 @@ namespace Game.Scene
             SerializedProperty healthProperty = serializedObject.FindProperty("health");
             EditorGUILayout.PropertyField(healthProperty, true);
 
-            SerializedProperty damageProperty = serializedObject.FindProperty("damage");
-            EditorGUILayout.PropertyField(damageProperty, true);
-
             DrawTable(
                 ref step,
                 difficultyThresholdProperty.floatValue,
                 difficultyCapProperty.floatValue,
-                new[] { weightProperty, healthProperty, damageProperty },
+                new[] { weightProperty, healthProperty },
                 (property, difficulty) => (float)getValueEnemyData.Invoke(target, new object[] { property.vector2Value, difficulty })
             );
 

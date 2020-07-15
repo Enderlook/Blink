@@ -1,65 +1,37 @@
 ﻿using Game.Creatures;
 
-using System;
-using System.Collections;
-
 using UnityEngine;
 
 namespace Game.Attacks
 {
     [AddComponentMenu("Game/Attacks/Area of Damage")]
-    [RequireComponent(typeof(Collider))]
-    public class AreaOfDamage : MonoBehaviour
+    public class AreaOfDamage : AreaOfEffect
     {
         [Header("Configuration")]
-        [SerializeField, Tooltip("Damage done on explsoion.")]
+        [SerializeField, Tooltip("Damage done on explosion per tick (4 ticks/second).")]
         private int damage = 10;
 
-        [SerializeField, Tooltip("Amount of force applied to targets.")]
+        [SerializeField, Tooltip("Amount of force applied to targets per tick (4 ticks/second).")]
         private float pushForce = 10;
 
-        [Header("Setup")]
-        [SerializeField, Tooltip("Time since spawn to produce damage.")]
-        private float timeToExplode = 1;
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
-        private void Start() => StartCoroutine(Explode().GetEnumerator());
-
-        private IEnumerable Explode()
+        protected override void ProduceEffect(GameObject otherGameObject)
         {
-            Collider[] colliders = GetComponentsInChildren<Collider>();
-            Array.ForEach(colliders, e => e.enabled = false);
-            yield return new WaitForSeconds(timeToExplode);
-            Array.ForEach(colliders, e => e.enabled = true);
-            yield return null;
-            Array.ForEach(colliders, e => e.enabled = false);
+            if (damage > 0 && otherGameObject.TryGetComponent(out IDamagable damagable))
+                damagable.TakeDamage(damage);
+
+            if (pushForce > 0 && otherGameObject.TryGetComponent(out IPushable pushable))
+                pushable.AddForce((otherGameObject.transform.position - transform.position) * pushForce, ForceMode.Impulse);
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
-        private void OnTriggerEnter(Collider other)
-        {
-            GameObject otherGameObject = other.gameObject;
-            if (damage > 0)
-            {
-                IDamagable damagable = otherGameObject.GetComponent<IDamagable>();
-                if (damagable != null)
-                    damagable.TakeDamage(damage);
-            }
-
-            if (pushForce > 0)
-            {
-                IPushable pushable = otherGameObject.GetComponent<IPushable>();
-                if (pushable != null)
-                    pushable.AddForce((other.transform.position - transform.position) * pushForce, ForceMode.Impulse);
-            }
-        }
-
-        public static void AddComponentTo(GameObject source, float timeToExplode, int damage, float pushForce = 0)
+        public static void AddComponentTo(GameObject source, float timeToExplode, int damage, float pushForce = 0, LayerMask hitLayer = default, float duration = 0)
         {
             AreaOfDamage component = source.AddComponent<AreaOfDamage>();
             component.damage = damage;
             component.pushForce = pushForce;
-            component.timeToExplode = timeToExplode;
+            component.warmupTime = timeToExplode;
+            component.hitLayer = hitLayer;
+            component.duration = duration;
         }
     }
 }
+    
