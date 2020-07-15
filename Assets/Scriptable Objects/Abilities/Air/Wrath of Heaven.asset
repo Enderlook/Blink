@@ -40,5 +40,7 @@ MonoBehaviour:
   <IsSelf>k__BackingField: 0
   <Icon>k__BackingField: {fileID: 21300000, guid: d420466c90bd9ea43b06860823acdffa,
     type: 3}
+  <IconMobile>k__BackingField: {fileID: 21300000, guid: 3c65ce4933547454fb03866c3ca005ea,
+    type: 3}
   animationName: Summon Elemental Attack
   <Key>k__BackingField: Summon Elemental Attack

@@ -19,6 +19,8 @@ MonoBehaviour:
   <IsSelf>k__BackingField: 0
   <Icon>k__BackingField: {fileID: 21300000, guid: f39688f25c7d00d46a09b894d85c9520,
     type: 3}
+  <IconMobile>k__BackingField: {fileID: 21300000, guid: 6c834b363399c034c9fe4b402606ffb8,
+    type: 3}
   animationName: Wave Spell
   <Key>k__BackingField: Wave Spell
 --- !u!114 &3789158990937585984

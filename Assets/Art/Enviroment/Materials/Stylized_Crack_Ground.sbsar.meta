@@ -249,12 +249,12 @@ ScriptedImporter:
     material: {fileID: 612980261962679308, guid: 78ffe3b1010994149bc7d09bc16289e4,
       type: 3}
     generatedTextures:
-    - {fileID: -5569295652641752921, guid: 78ffe3b1010994149bc7d09bc16289e4, type: 3}
     - {fileID: 4581065519501027492, guid: 78ffe3b1010994149bc7d09bc16289e4, type: 3}
-    - {fileID: 7682624283427951685, guid: 78ffe3b1010994149bc7d09bc16289e4, type: 3}
-    - {fileID: -549594620109870044, guid: 78ffe3b1010994149bc7d09bc16289e4, type: 3}
-    - {fileID: 6121852502202274775, guid: 78ffe3b1010994149bc7d09bc16289e4, type: 3}
     - {fileID: -8764186726777063954, guid: 78ffe3b1010994149bc7d09bc16289e4, type: 3}
+    - {fileID: 6121852502202274775, guid: 78ffe3b1010994149bc7d09bc16289e4, type: 3}
+    - {fileID: -549594620109870044, guid: 78ffe3b1010994149bc7d09bc16289e4, type: 3}
+    - {fileID: 7682624283427951685, guid: 78ffe3b1010994149bc7d09bc16289e4, type: 3}
+    - {fileID: -5569295652641752921, guid: 78ffe3b1010994149bc7d09bc16289e4, type: 3}
   - graphLabel: Stylized_Crack_Ground_Level_Four
     prototypeName: Stylized_Crack_Ground_Fire
     graphDescIndex: 0
@@ -495,9 +495,9 @@ ScriptedImporter:
     material: {fileID: -6653859415683340638, guid: 78ffe3b1010994149bc7d09bc16289e4,
       type: 3}
     generatedTextures:
-    - {fileID: -6065189936352454083, guid: 78ffe3b1010994149bc7d09bc16289e4, type: 3}
     - {fileID: 1141826106969590329, guid: 78ffe3b1010994149bc7d09bc16289e4, type: 3}
-    - {fileID: 1389733465518926640, guid: 78ffe3b1010994149bc7d09bc16289e4, type: 3}
-    - {fileID: 4507926283577416101, guid: 78ffe3b1010994149bc7d09bc16289e4, type: 3}
-    - {fileID: 5568221938893325129, guid: 78ffe3b1010994149bc7d09bc16289e4, type: 3}
     - {fileID: -7485138728882243400, guid: 78ffe3b1010994149bc7d09bc16289e4, type: 3}
+    - {fileID: 5568221938893325129, guid: 78ffe3b1010994149bc7d09bc16289e4, type: 3}
+    - {fileID: 4507926283577416101, guid: 78ffe3b1010994149bc7d09bc16289e4, type: 3}
+    - {fileID: 1389733465518926640, guid: 78ffe3b1010994149bc7d09bc16289e4, type: 3}
+    - {fileID: -6065189936352454083, guid: 78ffe3b1010994149bc7d09bc16289e4, type: 3}

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Enderlook.Unity.Attributes;
+
+using System;
 
 using UnityEngine;
 
@@ -8,11 +10,17 @@ namespace Game.Creatures.Player.AbilitySystem
     public class AbilityUIManager : MonoBehaviour
     {
 #pragma warning disable CS0649
-        [SerializeField]
+        [SerializeField, Tooltip("Only for Android.")]
+        private bool isAndroid = false;
+
+        [SerializeField, ShowIf(nameof(isAndroid), false)]
         private RectTransform abilitiesRoot;
 
-        [SerializeField]
+        [SerializeField, ShowIf(nameof(isAndroid), false)]
         private AbilityUI prefab;
+
+        [SerializeField, ShowIf(nameof(isAndroid), true)]
+        private AbilityUI[] prefabs = null; 
 
 #pragma warning disable CS0414
 #if UNITY_EDITOR || UNITY_ANDROID
@@ -32,13 +40,32 @@ namespace Game.Creatures.Player.AbilitySystem
 #endif
 
 #if UNITY_ANDROID
-        public bool CanUseAbility(int index) => currentCancelRequestTimeout <= 0 && abilitiesUIs[index].IsOn;
+        public bool CanUseAbility(int index) => currentCancelRequestTimeout <= 0 && prefabs[index].IsOn;
 #endif
 
-        public void UpdateAbility(int index) => abilitiesUIs[index].SetLoadPercentage(abilities[index]);
+        public void UpdateAbility(int index)
+        {
+#if UNITY_ANDROID
+            Debug.Log(index);
+            prefabs[index].SetLoadPercentage(abilities[index]);
+#else
+            abilitiesUIs[index].SetLoadPercentage(abilities[index]);
+#endif
+        }
 
         public void SetAbilities(AbilitiesPack abilities)
         {
+#if UNITY_ANDROID
+            for (int i = 0; i < prefabs.Length; i++)
+            {
+                AbilityUI instance = prefabs[i];
+                Ability ability = abilities[i];
+                instance.Initialize(this);
+                instance.SetSprite(ability.IconMobile);
+                instance.SetLoadPercentage(ability);
+            }
+#else
+
             for (int i = 0; i < abilitiesUIs.Length; i++)
                 Destroy(abilitiesUIs[i].gameObject);
 
@@ -54,6 +81,7 @@ namespace Game.Creatures.Player.AbilitySystem
                 instance.SetSprite(ability.Icon);
                 instance.SetLoadPercentage(ability);
             }
+#endif
 #if UNITY_ANDROID
             ToggleAbility(0);
 #endif
@@ -62,13 +90,13 @@ namespace Game.Creatures.Player.AbilitySystem
 #if UNITY_ANDROID
         public void ToggleAbility(int index)
         {
-            for (int i = 0; i < abilitiesUIs.Length; i++)
-                abilitiesUIs[i].ManualToggle(i == index);
+            for (int i = 0; i < prefabs.Length; i++)
+                prefabs[i].ManualToggle(i == index);
         }
 
         public void ToggleAbility(AbilityUI abilityUI)
         {
-            foreach (AbilityUI ability in abilitiesUIs)
+            foreach (AbilityUI ability in prefabs)
                 ability.ManualToggle(ability == abilityUI);
             currentCancelRequestTimeout = cancelRequestTimeout;
         }

@@ -49,3 +49,5 @@ MonoBehaviour:
   <IsSelf>k__BackingField: 0
   <Icon>k__BackingField: {fileID: 21300000, guid: a207095f750606d41a993e347372ffd0,
     type: 3}
+  <IconMobile>k__BackingField: {fileID: 21300000, guid: 0b4ce14f2a5740e47874612940bac420,
+    type: 3}

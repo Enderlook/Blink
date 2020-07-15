@@ -38,5 +38,7 @@ MonoBehaviour:
   <IsSelf>k__BackingField: 0
   <Icon>k__BackingField: {fileID: 21300000, guid: efdfb1bfd89cabb458c1d6f92cc583e9,
     type: 3}
+  <IconMobile>k__BackingField: {fileID: 21300000, guid: b96028fc45e14794f927ed462398131c,
+    type: 3}
   animationName: Basic Attack
   <Key>k__BackingField: Basic Shoot

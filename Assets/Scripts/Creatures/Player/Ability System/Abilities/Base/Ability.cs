@@ -28,6 +28,10 @@ namespace Game.Creatures.Player.AbilitySystem
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         [field: SerializeField, IsProperty/*, DrawTexture(50, false)*/]
         public Sprite Icon { get; private set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
+        [field: SerializeField, IsProperty/*, DrawTexture(50, false)*/]
+        public Sprite IconMobile { get; private set; }
 #pragma warning restore CS0649
 
         private float charge;
