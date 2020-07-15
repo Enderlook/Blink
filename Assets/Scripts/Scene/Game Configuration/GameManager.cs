@@ -16,10 +16,10 @@ namespace Game.Scene
         private int startTime = 5;
 
         [SerializeField, Min(1), Tooltip("Required energy to advance level.")]
-        private int baseEnergy = 50;
+        private int baseEnergy = 35;
 
         [SerializeField, Min(0), Tooltip("Increase of required energy to advance level per level.")]
-        private int linearIncreaseEnergy = 10;
+        private int linearIncreaseEnergy = 15;
 
         [SerializeField, Min(.1f), Tooltip("Base difficulty of the game.")]
         private float baseDifficulty = 1;
