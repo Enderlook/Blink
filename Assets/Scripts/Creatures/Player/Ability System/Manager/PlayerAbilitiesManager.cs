@@ -14,10 +14,12 @@ namespace Game.Creatures.Player.AbilitySystem
         [NonSerialized]
         private ControlledAbilitiesPack abilities;
 
+#pragma warning disable CS0649
 #if UNITY_EDITOR || UNITY_ANDROID
         [SerializeField]
         private Joystick joystick;
 #endif
+#pragma warning restore CS0649
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Update()

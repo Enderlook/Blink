@@ -9,8 +9,10 @@ namespace Game.Creatures.Player.AbilitySystem
     {
         private const string NOT_SUPPORTED = "This method should only be called on mobile.";
 
+#pragma warning disable CS0649
         [SerializeField]
         private AbilityUI prefab;
+#pragma warning restore CS0649
 
         private AbilityUI[] abilitiesUIs = Array.Empty<AbilityUI>();
         protected override AbilityUI[] AbilitiesUIs => abilitiesUIs;

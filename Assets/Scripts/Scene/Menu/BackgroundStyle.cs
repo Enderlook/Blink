@@ -7,6 +7,7 @@ namespace Game.Scene
 {
     public class BackgroundStyle : MonoBehaviour
     {
+#pragma warning disable CS0649
         [SerializeField, Tooltip("Values of background menu style dropdown.")]
         private BackgroundsUI[] backgroundsUIs;
 
@@ -15,6 +16,7 @@ namespace Game.Scene
 
         [SerializeField, Tooltip("Image component of Background.")]
         private Image backgroundImage;
+#pragma warning restore CS0649
 
         public IReadOnlyList<BackgroundsUI> BackgroundsUIs => backgroundsUIs;
 

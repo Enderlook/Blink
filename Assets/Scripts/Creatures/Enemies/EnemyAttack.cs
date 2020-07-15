@@ -35,8 +35,10 @@ namespace Game.Creatures
         [SerializeField, Tooltip("Maximum radiants rotated per second.")]
         private float rotationSpeed = .5f;
 
+#pragma warning disable CS0649
         [SerializeField, Tooltip("Enemy throw projectile?")]
         private bool hasProjectile = false;
+#pragma warning restore CS0649
 
         [SerializeField, Tooltip("Projectile prefab"), Enderlook.Unity.Attributes.ShowIf(nameof(hasProjectile), true)]
         private GameObject projectile;
