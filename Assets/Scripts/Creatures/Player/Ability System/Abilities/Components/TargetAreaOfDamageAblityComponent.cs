@@ -34,6 +34,8 @@ namespace Game.Creatures.Player.AbilitySystem
             else
                 position = Input.GetTouch(0).position;
 #endif
+#else
+            position = Input.mousePosition;
 #endif
 #else
             position = Input.mousePosition;

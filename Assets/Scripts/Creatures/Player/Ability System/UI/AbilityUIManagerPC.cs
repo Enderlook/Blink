@@ -39,7 +39,11 @@ namespace Game.Creatures.Player.AbilitySystem
                 Ability ability = abilities[i];
                 instance.name += " " + ability.name;
                 instance.Initialize(this);
+#if UNITY_ANDROID
+                instance.SetSprite(ability.IconMobile);
+#else
                 instance.SetSprite(ability.Icon);
+#endif
                 instance.SetLoadPercentage(ability);
             }
         }
