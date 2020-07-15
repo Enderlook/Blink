@@ -20,7 +20,7 @@ namespace Game.Scene
 
         private PlayerMovement playerMovement;
 
-        public bool IsDragging { get; set; }
+        public bool IsDragging { get; private set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake() => playerMovement = FindObjectOfType<PlayerMovement>();
@@ -38,7 +38,6 @@ namespace Game.Scene
             }
 
             float Tweak(float value) => Mathf.Sign(value) * Mathf.Sqrt(Mathf.Abs(value)) * speedMultiplier;
-        }
         }
 
         public void OnEndDrag(PointerEventData eventData)
