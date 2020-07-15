@@ -215,6 +215,14 @@ MonoBehaviour:
   thresholdDistance: 0.3
   angleOfView: 1
   rotationSpeed: 0.5
+  hasProjectile: 0
+  projectile: {fileID: 0}
+  shotPoint: {fileID: 0}
+  speed: 0
+  pushForce: 0
+  hitLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &2471253571719665823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,6 +382,7 @@ MonoBehaviour:
   crystalSeekWeight: 1
   playerSeekWeight: 1
   mass: 1
+  speedMultiplier: 0.8
 --- !u!114 &5325281911965767813
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -21,6 +21,11 @@ namespace Game.Scene
         [SerializeField, Min(0), Tooltip("Increase of required energy to advance level per level.")]
         private int linearIncreaseEnergy = 15;
 
+#if UNITY_EDITOR || UNITY_ANDROID
+        [SerializeField, Range(.5f, 1), Tooltip("Required energy multiplier on mobile.")]
+        private float requiredEnergyMultipliernOnMobile = 1;
+#endif
+
         [SerializeField, Min(.1f), Tooltip("Base difficulty of the game.")]
         private float baseDifficulty = 1;
 
@@ -152,6 +157,9 @@ namespace Game.Scene
         {
             gameState = GameState.Running;
             currentRequiredEnergy = baseEnergy + (currentLevel * linearIncreaseEnergy);
+#if UNITY_ANDROID
+            currentRequiredEnergy = (int)(currentRequiredEnergy * requiredEnergyMultipliernOnMobile);
+#endif
             FindObjectOfType<EnemySpawner>().StartSpawing();
             timer.enabled = false;
             energyBar.ManualUpdate(CurrentEnergy, currentRequiredEnergy);

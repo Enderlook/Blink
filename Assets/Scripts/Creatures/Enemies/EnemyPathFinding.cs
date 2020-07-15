@@ -25,6 +25,9 @@ namespace Game.Creatures
 
         [SerializeField, Tooltip("Used to determine push strength.")]
         private float mass = 1;
+
+        [SerializeField, Range(.5f, 1), Tooltip("Speed multiplier on mobile")]
+        private float speedMultiplier = 1f;
 #pragma warning restore CS0649
 
         public float TargetDistance { get; private set; }
@@ -66,6 +69,9 @@ namespace Game.Creatures
             playerPath = new NavMeshPath();
             navMeshFrameCheck = frameCheck++ % MAX_CHECK_FRAME;
             stunningClockwork = new Clockwork(0, UnStun, true, 0);
+#if UNITY_ANDROID
+            navMeshAgent.speed *= speedMultiplier;
+#endif
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]

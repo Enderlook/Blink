@@ -3,6 +3,7 @@ using Enderlook.Unity.Components;
 #if UNITY_EDITOR
 using Enderlook.Utils;
 
+using System;
 using System.Linq;
 
 using UnityEditor;
@@ -23,6 +24,9 @@ namespace Game.Scene
         [SerializeField, Tooltip("Calculates amount of enemies spawn per second.\nEnemies Per Second = Mathf.Min(Difficulty * X, Y) * Z + W.")]
         private Vector4 enemiesPerSecond = new Vector4(.5f, 2, 1, .25f);
         private float timeSinceLastSpawn;
+
+        [SerializeField, Range(.5f, 1), Tooltip("Amount of enemies multiplication on mobile.")]
+        private float enemyMultiplication = 1;
 
 #pragma warning disable CS0649
         [SerializeField]
@@ -62,14 +66,14 @@ namespace Game.Scene
         {
             GameObject gameObject = GetRandomEnemyData().SpawnEnemy();
             counter.RegisterGameObject(gameObject);
-            if (counter.Alives >= GetValue(maximumEnemies))
+            if (counter.Alives >= GetEnemyLimit())
                 isCurrentlySpawning = false;
             return gameObject;
         }
 
         private void CheckForSpace(GameObjectCounter gameObjectCounter, GameObject destroyed)
         {
-            if (gameObjectCounter.Alives < GetValue(maximumEnemies))
+            if (gameObjectCounter.Alives < GetEnemyLimit())
                 isCurrentlySpawning = true;
         }
 
@@ -78,9 +82,29 @@ namespace Game.Scene
         private static float GetValue(Vector4 parameters)
             => (Mathf.Min(GameManager.Difficulty * parameters.x, parameters.y) * parameters.z) + parameters.w;
 
+        private float GetEnemyLimit() =>
+#if UNITY_ANDROID
+                Mathf.Max(1, 
+#endif
+                GetValue(maximumEnemies)
+#if UNITY_ANDROID
+                * enemyMultiplication)
+#endif
+;
+
 #if UNITY_EDITOR
         private static float GetValueEditorOnly(Vector4 parameters, float difficulty)
            => (Mathf.Min(difficulty * parameters.x, parameters.y) * parameters.z) + parameters.w;
+
+        private float GetEnemyLimitEditorOnly(Vector4 parameters, float difficulty) =>
+#if UNITY_ANDROID
+                Mathf.Max(1,
+#endif
+                GetValueEditorOnly(parameters, difficulty)
+#if UNITY_ANDROID
+                * enemyMultiplication)
+#endif
+;
 
         [MenuItem("Assets/Game/Create Enemy Level Data")]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]

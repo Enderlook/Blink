@@ -158,6 +158,7 @@ MonoBehaviour:
   crystalSeekWeight: 1
   playerSeekWeight: 1
   mass: 1
+  speedMultiplier: 0.8
 --- !u!114 &2442326860024221290
 MonoBehaviour:
   m_ObjectHideFlags: 0

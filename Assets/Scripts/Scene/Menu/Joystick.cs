@@ -13,6 +13,9 @@ namespace Game.Scene
 
         [SerializeField, Min(.01f), Tooltip("Minimum distance from center to start moving.")]
         private float minDistance;
+
+        [SerializeField, Range(1, 3), Tooltip("Increase player velocity in mobile.")]
+        private float speedMultiplier = 1;
 #pragma warning restore CS0649
 
         private PlayerMovement playerMovement;
@@ -34,7 +37,8 @@ namespace Game.Scene
                 playerMovement.SetMovementInput(Tweak(localPosition.x), Tweak(localPosition.y));
             }
 
-            float Tweak(float value) => Mathf.Sign(value) * Mathf.Sqrt(Mathf.Abs(value));
+            float Tweak(float value) => Mathf.Sign(value) * Mathf.Sqrt(Mathf.Abs(value)) * speedMultiplier;
+        }
         }
 
         public void OnEndDrag(PointerEventData eventData)

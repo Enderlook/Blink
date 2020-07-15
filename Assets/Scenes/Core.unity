@@ -4220,6 +4220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxDistance: 47
   minDistance: 20
+  speedMultiplier: 1.2
 --- !u!114 &1838676440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8573,6 +8574,7 @@ MonoBehaviour:
   startTime: 5
   baseEnergy: 60
   linearIncreaseEnergy: 15
+  requiredEnergyMultipliernOnMobile: 0.8
   baseDifficulty: 1
   linearIncreaseDifficulty: 0.4
   geometryIncreaseDifficulty: 0.5
