@@ -811,6 +811,8 @@ MonoBehaviour:
   - HIGH
   - VERY HIGH
   - ULTRA
+  - EXTREME LOW
+  - MINIMUM
 --- !u!95 &301598321
 Animator:
   serializedVersion: 3
