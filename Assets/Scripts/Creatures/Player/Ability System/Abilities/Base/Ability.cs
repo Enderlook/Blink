@@ -25,13 +25,17 @@ namespace Game.Creatures.Player.AbilitySystem
         public bool IsSelf { get; private set; }
 
         [field: Header("Setup")]
+#if UNITY_EDITOR || !UNITY_ANDROID
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         [field: SerializeField, IsProperty/*, DrawTexture(50, false)*/]
         public Sprite Icon { get; private set; }
+#endif
 
+#if UNITY_EDITOR || UNITY_ANDROID
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         [field: SerializeField, IsProperty/*, DrawTexture(50, false)*/]
         public Sprite IconMobile { get; private set; }
+#endif
 #pragma warning restore CS0649
 
         private float charge;

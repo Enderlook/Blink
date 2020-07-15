@@ -10,8 +10,10 @@ namespace Game.Creatures.Player.AbilitySystem
     public class AbilityUIManager : MonoBehaviour
     {
 #pragma warning disable CS0649
+#if UNITY_EDITOR
         [SerializeField, Tooltip("Only for Android.")]
         private bool isAndroid = false;
+#endif
 
         [SerializeField, ShowIf(nameof(isAndroid), false)]
         private RectTransform abilitiesRoot;
