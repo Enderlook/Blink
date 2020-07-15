@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,6 +25,8 @@ namespace Game.Scene
         private static bool bgStyleMenuChanged;
         private GameObject lastParticleSystem;
 
+        private Dropdown backgroundStyleDropwdown;
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()
         {
@@ -33,6 +36,16 @@ namespace Game.Scene
             lastParticleSystem = Instantiate(backgroundsUIs[CurrentIndexBGUI].Particles);
 
             SetSprite(CurrentIndexBGUI);
+
+            if (backgroundStyleDropwdown != null)
+                backgroundStyleDropwdown.value = CurrentIndexBGUI;
+        }
+
+        public void SetDropdown(Dropdown dropdown)
+        {
+            MainMenu.ConfigureDropdown(dropdown, BackgroundsUIs.Select(e => e.Name));
+
+            backgroundStyleDropwdown = dropdown;
         }
 
         private void SetSprite(int index)

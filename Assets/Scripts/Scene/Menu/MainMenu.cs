@@ -116,7 +116,6 @@ namespace Game.Scene
             dropdown.SetValueWithoutNotify(BackgroundStyle.CurrentIndexBGUI);
         }
 
-        private void SetBGMenuStyleInDropdown()
-            => ConfigureDropdown(backgroundMenuStyleDropdown, backgroundStyle.BackgroundsUIs.Select(e => e.Name));
+        private void SetBGMenuStyleInDropdown() => backgroundStyle.SetDropdown(backgroundMenuStyleDropdown);
     }
 }
