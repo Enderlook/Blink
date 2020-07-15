@@ -48,15 +48,19 @@ namespace Game.Creatures.Player.AbilitySystem
 
         public override void ToggleAbility(int index)
         {
+#if UNITY_ANDROID
             for (int i = 0; i < AbilitiesUIs.Length; i++)
                 AbilitiesUIs[i].ManualToggle(i == index);
+#endif
         }
 
         public override void ToggleAbility(AbilityUI abilityUI)
         {
+#if UNITY_ANDROID
             foreach (AbilityUI ability in AbilitiesUIs)
                 ability.ManualToggle(ability == abilityUI);
             currentCancelRequestTimeout = cancelRequestTimeout;
+#endif
         }
     }
 }
