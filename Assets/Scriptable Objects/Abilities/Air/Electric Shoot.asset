@@ -17,7 +17,7 @@ MonoBehaviour:
   - {fileID: 1185657473198799525}
   <UseTimer>k__BackingField: 1
   <IsSelf>k__BackingField: 0
-  <Icon>k__BackingField: {fileID: 21300000, guid: e0d41f18677c4144fa7c249d3b3842c6,
+  <Icon>k__BackingField: {fileID: 21300000, guid: e14ed88bbef292342a5287e0e6342b36,
     type: 3}
   animationName: Basic Attack
   <Key>k__BackingField: Basic Shoot
