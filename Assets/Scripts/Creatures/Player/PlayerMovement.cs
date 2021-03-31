@@ -1,4 +1,4 @@
-﻿using AvalonStudios.Extensions;
+﻿using AvalonStudios.Additions.Extensions;
 
 using Enderlook.Unity.Atoms;
 

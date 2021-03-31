@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
 
+using AvalonStudios.Additions.Extensions;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,7 +18,7 @@ namespace Game.Scene
         [SerializeField, Tooltip("Component dropdown of quality.")]
         private Dropdown qualityDropdown;
 
-        [SerializeField, Tooltip("Values of quality dropdown")]
+        //[SerializeField, Tooltip("Values of quality dropdown")]
         private string[] qualityValues;
 #pragma warning restore CS0649
 
@@ -25,6 +27,11 @@ namespace Game.Scene
 
         private static int currentQuality;
         private static bool qualityChanged;
+
+        private void Awake()
+        {
+            qualityValues = QualitySettings.names.ToUpper();
+        }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Start()
