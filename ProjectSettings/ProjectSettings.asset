@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: Enderlook
   productName: Blink
-  defaultCursor: {fileID: 2800000, guid: 4ad3dfaed5c54b947b473f2bdba81517, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 3bd06f3855e307c4ca54d1309d4ecaf8, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
