@@ -850,7 +850,7 @@ MonoBehaviour:
   - <Name>k__BackingField: Electricity
     <Sprite>k__BackingField: {fileID: 21300000, guid: cd791a97145c99046b8f3125ddf2aa6d,
       type: 3}
-    <Particles>k__BackingField: {fileID: 8124931423264969857, guid: a2406053162ac7247bed0e713c841eff,
+    <Particles>k__BackingField: {fileID: 217537638659291323, guid: 6c7496aebfe84e544b02341fee0af43b,
       type: 3}
   - <Name>k__BackingField: Fire
     <Sprite>k__BackingField: {fileID: 21300000, guid: ca530a5af76ed904db8be0a4d257cbc2,
